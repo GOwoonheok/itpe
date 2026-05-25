@@ -1,0 +1,13 @@
+node_modules/
+.vercel/
+*.log
+.env
+.env.local
+.env*.local
+.DS_Store
+
+# 임시 디버그/시드 파일
+_*.html
+_*.js
+
+.env*

@@ -1,0 +1,16 @@
+{
+    "name": "itpe-flash",
+    "version": "1.0.0",
+    "private": true,
+    "description": "ITPE Flash — 정보관리기술사 학습 PWA",
+    "type": "module",
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "dependencies": {
+        "ai": "^5.0.0",
+        "@ai-sdk/openai": "^2.0.0",
+        "@ai-sdk/google": "^2.0.0",
+        "zod": "^3.23.0"
+    }
+}

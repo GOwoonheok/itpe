@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ITPE Flash">
+    <title>시트 목록 — ITPE Flash</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.svg">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <main class="app-content menu-content">
+            <div class="sheet-container">
+                <div id="sheet-list" class="sheet-list" aria-busy="true">
+                    <!-- 단원 항목이 app.js 로 채워집니다 -->
+                </div>
+                <div id="empty-state" class="empty-state" hidden>
+                    <p>단원 데이터를 불러오지 못했습니다.</p>
+                    <p style="font-size:0.85rem">data/index.json 을 확인하세요.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- 전체 카드 검색 모달 -->
+        <div class="modal" id="global-find-modal" role="dialog" aria-modal="true" aria-labelledby="global-find-title" hidden>
+            <div class="modal-panel">
+                <header class="modal-head">
+                    <h2 id="global-find-title" class="modal-title">전체 카드 검색</h2>
+                    <button class="modal-close" id="global-find-close" type="button" aria-label="닫기">×</button>
+                </header>
+                <div class="modal-body find-body">
+                    <input class="form-input" id="global-find-input" type="search"
+                           placeholder="분류·토픽·내용·두음·키워드 어디든 검색…" autocomplete="off" maxlength="100">
+                    <div class="find-meta"><span id="global-find-count">0</span>개 카드 (Enter 키로 검색)</div>
+                    <div class="find-list" id="global-find-list" role="listbox"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 공통 하단 툴바 — 한 줄: 메뉴 · 계정 · 로그아웃 · 관리자 · 조회 -->
+        <footer class="toolbar context-list" id="toolbar">
+            <div class="toolbar-row toolbar-actions">
+                <button class="tb-btn tb-menu" id="btn-menu" type="button">메뉴</button>
+                <div class="nav-mid" id="nav-mid">
+                    <span class="nav-account-email" id="nav-account-email" hidden></span>
+                    <button class="nav-logout-btn" id="btn-logout-nav" type="button" aria-label="로그아웃">로그아웃</button>
+                    <!-- 관리자 아이콘 (admin only, admin.js 가 주입) -->
+                </div>
+                <button class="tb-btn tb-icon tb-find" id="btn-find" type="button" aria-label="조회" title="조회">🔍</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/admin-auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

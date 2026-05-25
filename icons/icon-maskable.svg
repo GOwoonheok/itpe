@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+    <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff7043"/>
+            <stop offset="1" stop-color="#f4511e"/>
+        </linearGradient>
+    </defs>
+    <!-- maskable: safe area within central 80% (51..461 px) -->
+    <rect width="512" height="512" fill="url(#bg)"/>
+    <g transform="translate(168 150) scale(3)">
+        <path fill="#ffd54f" d="M32 60c-11 0-19-7.6-19-18 0-7.4 4.6-12.6 9.2-17.5 1-1 2.6-.5 2.8.9.5 3.4 2.2 5.5 4 5.5 2.1 0 3-2.2 3-7 0-7.4-3-13.4-4.6-16.4-.8-1.4.8-2.9 2.2-2.1C39.3 9.7 51 19.5 51 36c0 14-7.7 24-19 24z"/>
+        <path fill="#fff59d" d="M32 54c-6 0-10-4-10-9.4 0-4 2.2-6.6 4.6-9.1.8-.9 2.2-.4 2.4.8.3 1.6 1.2 2.7 2.4 2.7 1.2 0 1.8-1.1 1.8-3.4 0-3.6-1.4-6.4-2.2-7.7-.6-1 .6-2.2 1.6-1.6 4 2.5 9.4 7.2 9.4 14.7 0 7.5-4.3 13-10 13z"/>
+    </g>
+    <text x="50%" y="78%" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-weight="800" font-size="48" fill="#ffffff">ITPE</text>
+</svg>

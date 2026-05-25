@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>학습 — ITPE Flash</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180.png">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <main class="app-content card-content">
+            <div class="card-frame">
+            <!-- 모드 선택 (mode 쿼리 없을 때 표시) -->
+            <section id="mode-screen" class="mode-screen" hidden>
+                <h2 class="mode-question">문제를 어떻게 진행하시겠습니까?</h2>
+                <div class="mode-body">
+                <div class="mode-options">
+                    <button class="mode-option" data-mode="random" type="button">랜덤으로 출제</button>
+                    <button class="mode-option" data-mode="sequence" type="button">순서대로 출제 (기본값)</button>
+                    <button class="mode-option mode-ai" data-mode="sequence" data-filter="ai" type="button" hidden>
+                        ✨ AI 생성 토픽만 (<span id="mode-ai-count">0</span>장)
+                    </button>
+                </div>
+                <p class="mode-hint">번호를 입력하여 선택할 수도 있습니다.</p>
+
+                <!-- 관리자 전용: 이 단원 엑셀 업로드 -->
+                <section class="unit-admin" id="unit-admin" hidden>
+                    <div class="admin-head">
+                        <h3 class="admin-title">🛠 관리자 도구 — <span id="unit-admin-name">이 단원</span></h3>
+                    </div>
+                    <div class="unit-counts" id="unit-counts">현재 카드 수 계산 중…</div>
+                    <div class="admin-btns">
+                        <button class="admin-btn admin-btn-tpl" id="unit-tpl" type="button">📥 이 단원 템플릿</button>
+                        <label class="admin-btn admin-btn-up" for="unit-import-file">📤 엑셀 업로드
+                            <input id="unit-import-file" type="file" accept=".xlsx,.xls" hidden>
+                        </label>
+                        <button class="admin-btn admin-btn-dl" id="unit-download" type="button">📊 이 단원 다운로드</button>
+                        <button class="admin-btn admin-btn-danger" id="unit-clear" type="button">🗑 단원 전체 삭제</button>
+                    </div>
+                    <ol class="step-list" id="step-list" hidden>
+                        <li data-step="read"     class="step">📂 파일 읽기</li>
+                        <li data-step="parse"    class="step">📋 엑셀 파싱</li>
+                        <li data-step="validate" class="step">🔍 검증</li>
+                        <li data-step="save"     class="step">💾 저장</li>
+                    </ol>
+                    <p class="admin-status" id="unit-status"></p>
+                </section>
+
+                <!-- ✨ AI 토픽 자동 생성 (jm 단원 전용 — 정보관리기술사 학습용) -->
+                <section class="unit-admin ai-panel" id="ai-panel" hidden>
+                    <div class="admin-head">
+                        <h3 class="admin-title">✨ AI 토픽 자동 생성 (정보관리기술사)</h3>
+                    </div>
+                    <p class="admin-hint">
+                        토픽을 입력하면 Gemini 2.5 Flash 가 정의(30자)·두음·키워드·참고 URL 을 자동 생성합니다.
+                        줄바꿈으로 여러 토픽을 한 번에 (최대 20개). 생성 결과는 검토 후 저장됩니다.
+                    </p>
+                    <textarea class="form-input form-area" id="ai-input" rows="3"
+                              placeholder="예) Zero Trust&#10;     RAG 패턴&#10;     XSS 방어"></textarea>
+                    <div class="admin-btns" style="margin-top:8px;">
+                        <button class="admin-btn admin-btn-json" id="ai-generate" type="button">✨ 생성하기</button>
+                        <span class="ai-cost-hint">🆓 무료 (Gemini · 일 1,500장 한도)</span>
+                    </div>
+                    <p class="admin-status" id="ai-status"></p>
+                    <div id="ai-results" class="ai-results"></div>
+
+                    <!-- 🔧 프롬프트 직접 편집 (펼침/접힘) -->
+                    <details class="ai-prompt-inline">
+                        <summary>🔧 AI 시스템 프롬프트 편집 (고급)</summary>
+                        <p class="admin-hint" style="margin-top:8px;">
+                            현재 사용 중인 프롬프트를 수정하면 다음 생성부터 즉시 반영됩니다.
+                            비우고 저장하면 기본값 복원.
+                        </p>
+                        <div class="admin-btns" style="margin-bottom:6px; gap:6px;">
+                            <label for="jm-ai-prompt-kind" class="admin-hint" style="margin:0; align-self:center;">대상:</label>
+                            <select id="jm-ai-prompt-kind" class="form-input" style="width:auto; padding:4px 8px;">
+                                <option value="full">전체 (AI 채우기·벌크)</option>
+                                <option value="def">정의 전용 (정의만 재생성)</option>
+                            </select>
+                        </div>
+                        <textarea id="jm-ai-prompt-input" class="form-input form-area" rows="10" placeholder="(불러오는 중…)"></textarea>
+                        <div class="admin-btns" style="margin-top:6px;">
+                            <button class="admin-btn admin-btn-dl"  id="jm-ai-prompt-load"  type="button">📥 현재 불러오기</button>
+                            <button class="admin-btn admin-btn-up"  id="jm-ai-prompt-save"  type="button">💾 저장</button>
+                            <button class="admin-btn admin-btn-tpl" id="jm-ai-prompt-reset" type="button">↺ 기본값 복원</button>
+                        </div>
+                        <p class="admin-status" id="jm-ai-prompt-status"></p>
+                    </details>
+                </section>
+                </div><!-- /.mode-body -->
+            </section>
+
+            <!-- 카드 학습 화면 -->
+            <section id="study-screen" hidden>
+                <div class="card-meta">
+                    <div class="card-meta-text">
+                        <span id="card-progress">[0/0]</span>
+                        <span id="card-unit" style="margin-left:8px;"></span>
+                        <button class="card-img-toggle" id="card-img-toggle" type="button" hidden>🖼 <span id="card-img-toggle-count">0</span></button>
+                    </div>
+                    <div class="card-thumbs" id="card-thumbs" hidden></div>
+                </div>
+
+                <article id="card-body">
+                    <div class="card-section" data-key="topic">
+                        <div class="card-section-label">토픽</div>
+                        <div class="card-section-body topic-text" id="sec-topic"></div>
+                    </div>
+                    <div class="card-section" data-key="definition">
+                        <div class="card-section-label">내용</div>
+                        <div class="card-section-body" id="sec-def"></div>
+                    </div>
+                    <div class="card-section" data-key="mnemonic">
+                        <div class="card-section-label">두음</div>
+                        <div class="card-section-body" id="sec-mn"></div>
+                    </div>
+                    <div class="card-section" data-key="keyword">
+                        <div class="card-section-label">키워드</div>
+                        <div class="card-section-body" id="sec-kw"></div>
+                    </div>
+                    <div class="card-section" data-key="references" hidden>
+                        <div class="card-section-label">🔗 참고자료</div>
+                        <div class="card-section-body" id="sec-ref"></div>
+                    </div>
+                </article>
+            </section>
+            </div><!-- /.card-frame -->
+        </main>
+
+        <!-- 우하단 칩 — 학습 부가 (체크·이동·항목X) -->
+        <div class="chip-row" id="chip-row" hidden>
+            <button class="chip chip-check" id="chip-check" type="button">체크</button>
+            <button class="chip" id="chip-move" type="button">이동</button>
+            <button class="chip" id="chip-hide" type="button">항목X</button>
+        </div>
+
+        <!-- 섹션 숨기기 패널 -->
+        <div class="hide-panel" id="hide-panel" role="menu">
+            <div class="hide-panel-title">항목 숨기기</div>
+            <label class="hide-panel-item"><input type="checkbox" data-key="topic"> 토픽</label>
+            <label class="hide-panel-item"><input type="checkbox" data-key="definition"> 정의</label>
+            <label class="hide-panel-item"><input type="checkbox" data-key="mnemonic"> 두음</label>
+            <label class="hide-panel-item"><input type="checkbox" data-key="keyword"> 키워드</label>
+            <label class="hide-panel-item"><input type="checkbox" data-key="extra"> 추가설명</label>
+        </div>
+
+        <!-- 이미지 확대 오버레이 -->
+        <div class="image-overlay" id="image-overlay" role="dialog" aria-modal="true">
+            <button class="img-close" id="img-close" type="button" aria-label="닫기">×</button>
+            <span class="img-counter" id="img-counter" hidden>1 / 1</span>
+            <img id="image-overlay-img" alt="확대 이미지">
+        </div>
+
+        <!-- 자동 넘김 시간 팝오버 -->
+        <div class="timer-popover" id="timer-popover" role="menu" hidden>
+            <button class="timer-opt" data-sec="0"  type="button">끄기</button>
+            <button class="timer-opt" data-sec="5"  type="button">5초</button>
+            <button class="timer-opt" data-sec="10" type="button">10초</button>
+            <button class="timer-opt" data-sec="20" type="button">20초</button>
+            <button class="timer-opt" data-sec="30" type="button">30초</button>
+            <button class="timer-opt" data-sec="60" type="button">1분</button>
+            <button class="timer-opt" data-sec="120" type="button">2분</button>
+        </div>
+
+        <!-- TTS 음성 읽기 팝오버 -->
+        <div class="timer-popover" id="tts-popover" role="menu" hidden>
+            <button class="tts-opt" data-tts="off"    type="button">끄기</button>
+            <button class="tts-opt" data-tts="td"     type="button">토픽 · 정의</button>
+            <button class="tts-opt" data-tts="all"    type="button">전체</button>
+        </div>
+
+        <!-- 찾기 모달 -->
+        <div class="modal" id="find-modal" role="dialog" aria-modal="true" aria-labelledby="find-title" hidden>
+            <div class="modal-panel">
+                <header class="modal-head">
+                    <h2 id="find-title" class="modal-title">찾기</h2>
+                    <button class="modal-close" id="find-close" type="button" aria-label="닫기">×</button>
+                </header>
+                <div class="modal-body find-body">
+                    <input class="form-input" id="find-input" type="search" placeholder="토픽·정의·두음·키워드·추가설명 검색…" autocomplete="off">
+                    <div class="find-meta"><span id="find-count">0</span>개 카드</div>
+                    <div class="find-list" id="find-list" role="listbox"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 카드 이동 모달 -->
+        <div class="modal" id="move-modal" role="dialog" aria-modal="true" aria-labelledby="move-title" hidden>
+            <div class="modal-panel">
+                <header class="modal-head">
+                    <h2 id="move-title" class="modal-title">어느 단원으로 옮길까요?</h2>
+                    <button class="modal-close" id="move-close" type="button" aria-label="닫기">×</button>
+                </header>
+                <div class="modal-body find-body">
+                    <p class="move-current" id="move-current"></p>
+                    <div class="find-list" id="move-list" role="listbox"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 카드 추가 모달 -->
+        <div class="modal" id="add-modal" role="dialog" aria-modal="true" aria-labelledby="add-title" hidden>
+            <div class="modal-panel">
+                <header class="modal-head">
+                    <h2 id="add-title" class="modal-title">새 카드 추가</h2>
+                    <button class="modal-close" id="add-close" type="button" aria-label="닫기">×</button>
+                </header>
+                <div class="modal-body">
+                    <label class="form-row" data-key="category">
+                        <span class="form-label">분류</span>
+                        <input class="form-input" id="add-cat" type="text" placeholder="예) 보안 / SW공학 / 데이터" maxlength="100">
+                    </label>
+                    <label class="form-row" data-key="topic">
+                        <span class="form-label">토픽 <em class="form-req">*</em></span>
+                        <input class="form-input" id="add-topic" type="text" placeholder="예) SW 테스트" maxlength="200">
+                    </label>
+                    <div class="form-row form-ai-row" id="modal-ai-row" hidden>
+                        <button class="admin-btn admin-btn-json" id="modal-ai-fill" type="button" title="토픽 기반으로 빈 칸 자동 채우기">✨ AI 채우기</button>
+                        <button class="admin-btn admin-btn-up"   id="modal-ai-def"  type="button" title="정의만 다시 생성 — 30자 이내, '~위해 ~명사' 패턴">✏ 정의 재생성</button>
+                        <span class="ai-cost-hint" title="Gemini 2.5 Flash (무료)">🆓</span>
+                    </div>
+                    <label class="form-row" data-key="definition">
+                        <span class="form-label">내용</span>
+                        <textarea class="form-input form-area" id="add-def" rows="4" placeholder="① ...&#10;② ..."></textarea>
+                    </label>
+                    <label class="form-row" data-key="mnemonic">
+                        <span class="form-label">두음</span>
+                        <textarea class="form-input form-area" id="add-mn" rows="4" placeholder="[ ... 7원리 ]&#10;(첫글자 모음)&#10;..."></textarea>
+                    </label>
+                    <label class="form-row" data-key="keyword">
+                        <span class="form-label">키워드</span>
+                        <textarea class="form-input form-area" id="add-kw" rows="2" placeholder="쉼표·줄바꿈으로 구분된 핵심어"></textarea>
+                    </label>
+                    <div class="form-row" data-key="image">
+                        <span class="form-label">이미지 (선택, 여러 장 가능)</span>
+                        <div class="img-picker">
+                            <label class="img-pick-btn" for="add-img-file">
+                                <span class="img-pick-icon">📷</span>
+                                <span>사진/카메라 추가</span>
+                            </label>
+                            <input id="add-img-file" type="file" accept="image/*" multiple hidden>
+                            <div id="add-img-grid" class="add-img-grid" hidden></div>
+                            <p id="add-img-info" class="img-pick-info">선택된 이미지 없음</p>
+                            <p id="add-img-sync-status" class="img-pick-hint"></p>
+                            <p class="img-pick-hint">💡 스크린샷을 Ctrl+V 로 바로 붙여넣거나 이 영역으로 드래그 가능</p>
+                        </div>
+                    </div>
+                    <p class="form-hint">사용자 추가 카드(이미지 포함)는 이 기기의 로컬 저장소에 보관됩니다. 다른 기기에 동기화되지는 않습니다.</p>
+                </div>
+                <footer class="modal-foot">
+                    <button class="form-btn form-cancel" id="add-cancel" type="button">취소</button>
+                    <button class="form-btn form-save"   id="add-save"   type="button">저장</button>
+                </footer>
+            </div>
+        </div>
+
+        <!-- 하단 툴바 -->
+        <footer class="toolbar" id="toolbar">
+            <!-- 1행: [Prev]  [+ ✎ 🗑 메뉴 🔍 − + 🖼]  [Prev] -->
+            <div class="toolbar-row toolbar-actions">
+                <button class="tb-btn tb-prev tb-prev-side" data-act="prev" type="button">Prev</button>
+                <div class="tb-center">
+                    <div class="tb-admins">
+                        <button class="tb-btn tb-icon tb-add"  id="chip-add"  type="button" aria-label="카드 추가" title="추가">+</button>
+                        <button class="tb-btn tb-icon tb-edit" id="chip-edit" type="button" aria-label="카드 수정" title="수정" hidden>✎</button>
+                        <button class="tb-btn tb-icon tb-del"  id="chip-del"  type="button" aria-label="카드 삭제" title="삭제" hidden>🗑</button>
+                    </div>
+                    <button class="tb-btn tb-menu" id="btn-menu" type="button">메뉴</button>
+                    <div class="tb-icons">
+                        <button class="tb-btn tb-icon tb-find"  id="btn-find"  type="button" aria-label="찾기" title="찾기">🔍</button>
+                        <button class="tb-btn tb-icon tb-sign"  id="btn-minus" type="button" aria-label="글자 작게" title="글자 작게">−</button>
+                        <button class="tb-btn tb-icon tb-sign"  id="btn-plus"  type="button" aria-label="글자 크게" title="글자 크게">+</button>
+                        <button class="tb-btn tb-icon tb-cont"  id="btn-cont"  type="button" aria-label="연속그림" title="연속그림">🖼</button>
+                    </div>
+                </div>
+                <button class="tb-btn tb-prev tb-prev-side" data-act="prev" type="button">Prev</button>
+            </div>
+            <!-- 2행: [Enter]  [⏱ 🔊 ★0 모두]  [Enter] -->
+            <div class="toolbar-row toolbar-nav">
+                <button class="tb-btn tb-enter tb-enter-side" data-act="enter" type="button">Enter</button>
+                <div class="num-area">
+                    <button class="timer-btn timer-btn-icon" id="btn-timer" type="button" aria-label="자동 넘김" title="자동 넘김">
+                        <span class="timer-icon" aria-hidden="true">⏱</span>
+                        <span id="timer-label" class="timer-label-text"></span>
+                    </button>
+                    <button class="timer-btn timer-btn-icon" id="btn-tts" type="button" aria-label="음성 읽기" title="음성 읽기">
+                        <span class="timer-icon" aria-hidden="true">🔊</span>
+                        <span id="tts-label" class="timer-label-text"></span>
+                    </button>
+                    <button class="tb-filter" id="btn-filter-checked" type="button">★ <span id="filter-count">0</span></button>
+                    <button class="tb-filter is-on" id="btn-filter-all" type="button">모두</button>
+                </div>
+                <button class="tb-btn tb-enter tb-enter-side" data-act="enter" type="button">Enter</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/admin-auth.js"></script>
+    <script src="js/image-store.js"></script>
+    <script src="js/flash.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

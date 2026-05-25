@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>로그인 — ITPE Flash</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="ITPE">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/auth.js"></script>
+</head>
+<body class="login-body">
+    <main class="login-stage">
+        <div class="login-card">
+            <div class="login-brand">
+                <img src="icons/fire.svg" alt="" width="64" height="64">
+                <h1 class="brand-title">ITPE Flash</h1>
+            </div>
+
+            <p class="login-hint">서비스를 이용하려면 로그인이 필요합니다.</p>
+
+            <form id="login-form" class="login-form" autocomplete="on" novalidate>
+                <label class="login-field">
+                    <span class="login-label">이메일</span>
+                    <input class="form-input" id="login-email" type="email" name="email"
+                           placeholder="you@example.com" autocomplete="email"
+                           maxlength="256" required>
+                </label>
+                <p class="login-error" id="login-error" hidden></p>
+                <button class="form-btn form-save login-submit" type="submit">로그인</button>
+                <button class="form-btn login-purge" id="login-purge" type="button">캐시 비우기 · 재시도</button>
+            </form>
+
+            <p class="login-foot">
+                현재 베타 — 관리자가 등록한 이메일만 접근 가능합니다.
+            </p>
+            <p class="login-foot" style="font-size:0.74rem;margin-top:6px;">
+                로그인이 안 되면 위 "캐시 비우기 · 재시도" 버튼을 한 번 눌러주세요.
+            </p>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const form    = document.getElementById('login-form');
+            const input   = document.getElementById('login-email');
+            const errEl   = document.getElementById('login-error');
+            const purgeBtn = document.getElementById('login-purge');
+
+            function resolveTarget() {
+                const param = new URLSearchParams(location.search).get('redirect');
+                if (param) {
+                    return window.ITPEAuth.safeRedirect(param);
+                }
+                // 로그인 후엔 항상 시트 목록으로. 단원 학습 진입은 사용자가 명시적으로 선택.
+                return 'index.html';
+            }
+
+            // 이미 로그인되어 있으면 바로 이동
+            const sess = window.ITPEAuth && window.ITPEAuth.getSession();
+            if (sess) {
+                location.replace(resolveTarget());
+                return;
+            }
+            // 마지막 사용 이메일 자동 입력
+            try {
+                const last = localStorage.getItem('itpe.lastEmail');
+                if (last && /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$/.test(last)) {
+                    input.value = last;
+                }
+            } catch {}
+
+            purgeBtn.addEventListener('click', () => {
+                if (window.ITPEAuth && window.ITPEAuth.purgeAndReload) {
+                    window.ITPEAuth.purgeAndReload();
+                }
+            });
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                errEl.hidden = true;
+                const email = input.value.trim();
+                if (!email) return;
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = '확인 중…';
+
+                const result = await window.ITPEAuth.verifyEmail(email);
+                if (result.ok) {
+                    try { localStorage.setItem('itpe.lastEmail', email.toLowerCase().trim()); } catch {}
+                    location.replace(resolveTarget());
+                } else {
+                    errEl.textContent = result.message || '로그인에 실패했습니다.';
+                    errEl.hidden = false;
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '로그인';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

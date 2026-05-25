@@ -1,0 +1,7 @@
+node_modules
+.git
+.DS_Store
+docs/design
+serve.json
+*.log
+.vscode

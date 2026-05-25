@@ -1,0 +1,105 @@
+{
+    "title": "ITPE Flash",
+    "description": "정보관리기술사 단원별 플래시카드",
+    "units": [
+        {
+            "id": "gk",
+            "name": "경컨",
+            "emoji": "🧭",
+            "color": "#2f80ed",
+            "file": "gk.json",
+            "description": "경영·컨설팅",
+            "count": 0
+        },
+        {
+            "id": "sg",
+            "name": "소공",
+            "emoji": "🛠️",
+            "color": "#27ae60",
+            "file": "sg.json",
+            "description": "소프트웨어공학",
+            "count": 0
+        },
+        {
+            "id": "ds",
+            "name": "DS",
+            "emoji": "📊",
+            "color": "#8e44ad",
+            "file": "ds.json",
+            "description": "Data Science",
+            "count": 0
+        },
+        {
+            "id": "ai",
+            "name": "AI",
+            "emoji": "🤖",
+            "color": "#16a085",
+            "file": "ai.json",
+            "description": "인공지능",
+            "count": 0
+        },
+        {
+            "id": "st",
+            "name": "통계",
+            "emoji": "📈",
+            "color": "#d35400",
+            "file": "st.json",
+            "description": "통계학",
+            "count": 0
+        },
+        {
+            "id": "sec",
+            "name": "보안",
+            "emoji": "🔐",
+            "color": "#c0392b",
+            "file": "sec.json",
+            "description": "정보보안",
+            "count": 0
+        },
+        {
+            "id": "db",
+            "name": "DB",
+            "emoji": "🗄️",
+            "color": "#2980b9",
+            "file": "db.json",
+            "description": "데이터베이스",
+            "count": 0
+        },
+        {
+            "id": "nw",
+            "name": "NW",
+            "emoji": "🌐",
+            "color": "#0984e3",
+            "file": "nw.json",
+            "description": "네트워크",
+            "count": 0
+        },
+        {
+            "id": "ca",
+            "name": "CA",
+            "emoji": "🧠",
+            "color": "#6c5ce7",
+            "file": "ca.json",
+            "description": "컴퓨터구조",
+            "count": 0
+        },
+        {
+            "id": "os",
+            "name": "OS",
+            "emoji": "🖥️",
+            "color": "#34495e",
+            "file": "os.json",
+            "description": "운영체제",
+            "count": 0
+        },
+        {
+            "id": "jm",
+            "name": "주모",
+            "emoji": "📝",
+            "color": "#e17055",
+            "file": "jm.json",
+            "description": "주제별 모음",
+            "count": 30
+        }
+    ]
+}

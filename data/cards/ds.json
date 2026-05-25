@@ -1,0 +1,9 @@
+[
+    {
+        "topic": "12-Factor App",
+        "definition": "클라우드 네이티브를 위해, 12원칙을 정의한 방법론",
+        "mnemonic": "(C-D-C-B...)\nCodebase·Dep·Config·Backing services·Build/Release/Run·Process·Port·Concurrency·Disposability·Dev/Prod parity·Logs·Admin",
+        "keyword": "Stateless, Config in env, Twelve-Factor, Cloud Native",
+        "extra": "Heroku 창립자가 정의(2011). 클라우드·MSA·컨테이너 시대의 표준 가이드. 환경변수 설정·Stateless·로그 stdout 등이 핵심."
+    }
+]

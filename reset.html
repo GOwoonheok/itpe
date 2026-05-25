@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPE Flash - 캐시/SW 초기화</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; background:#111; color:#eee; padding:24px; line-height:1.6; }
+        button { background:#1e9f50; color:#fff; border:none; padding:14px 22px; border-radius:10px; font-weight:700; font-size:1rem; cursor:pointer; }
+        button + button { margin-left: 10px; background:#2f80ed; }
+        pre { background:#000; color:#7ee787; padding:12px; border-radius:8px; overflow:auto; }
+        h1 { margin-top:0; }
+        a { color:#19b5d6; }
+    </style>
+</head>
+<body>
+    <h1>🧹 ITPE Flash 캐시/SW 초기화</h1>
+    <p>화면이 이상하게 보이거나 변경이 반영되지 않으면 아래 버튼을 누르세요.</p>
+    <p>
+        <button id="btn-clear" type="button">SW · 캐시 모두 비우기</button>
+        <button id="btn-home" type="button">홈으로 이동</button>
+    </p>
+    <pre id="log">대기 중…</pre>
+    <p style="margin-top:24px;font-size:0.9rem;color:#888">
+        실행 후 자동으로 새로고침되지 않으면 <strong>홈으로 이동</strong> 버튼을 누르세요.
+    </p>
+    <script>
+        const log = document.getElementById('log');
+        function w(s){ log.textContent += '\n' + s; }
+        document.getElementById('btn-clear').addEventListener('click', async () => {
+            log.textContent = '시작…';
+            try {
+                if ('serviceWorker' in navigator) {
+                    const regs = await navigator.serviceWorker.getRegistrations();
+                    w(`SW ${regs.length}개 발견`);
+                    for (const r of regs) { await r.unregister(); w(`- unregister: ${r.scope}`); }
+                }
+                if ('caches' in window) {
+                    const keys = await caches.keys();
+                    w(`Cache ${keys.length}개 발견`);
+                    for (const k of keys) { await caches.delete(k); w(`- delete: ${k}`); }
+                }
+                try { localStorage.clear(); w('localStorage 비움'); } catch(e){}
+                try { sessionStorage.clear(); w('sessionStorage 비움'); } catch(e){}
+                w('\n완료. 2초 후 홈으로 이동합니다.');
+                setTimeout(() => { location.href = 'index.html'; }, 2000);
+            } catch (e) {
+                w('오류: ' + e.message);
+            }
+        });
+        document.getElementById('btn-home').addEventListener('click', () => { location.href = 'index.html'; });
+    </script>
+</body>
+</html>

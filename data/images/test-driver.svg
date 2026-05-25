@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" width="360" height="180">
+    <style>
+        .box { fill:#ffffff; stroke:#222; stroke-width:1.4; }
+        .line { stroke:#222; stroke-width:1.4; fill:none; }
+        .dash { stroke-dasharray:5 4; }
+        .label { font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; font-size:12px; fill:#222; }
+    </style>
+    <!-- Test Case stack (left) -->
+    <rect class="box" x="10"  y="80"  width="100" height="42" rx="2"/>
+    <rect class="box" x="14"  y="76"  width="100" height="42" rx="2"/>
+    <rect class="box" x="18"  y="72"  width="100" height="42" rx="2"/>
+    <text class="label" x="40"  y="98">Test Case</text>
+
+    <!-- Test Driver (top right) -->
+    <rect class="box" x="170" y="22" width="130" height="38" rx="2"/>
+    <text class="label" x="206" y="46">Test Driver</text>
+
+    <!-- Test 대상 Module (bottom right) -->
+    <rect class="box" x="170" y="100" width="130" height="48" rx="2"/>
+    <text class="label" x="195" y="123">Test 대상</text>
+    <text class="label" x="200" y="140">Module</text>
+
+    <!-- 결과 -->
+    <rect class="box" x="312" y="22" width="42" height="38" rx="2"/>
+    <text class="label" x="320" y="46">결과</text>
+
+    <!-- Lines -->
+    <path class="line" d="M118,90 L170,41" />
+    <path class="line dash" d="M118,108 L170,124" />
+    <path class="line" d="M300,41 L312,41" />
+    <path class="line" d="M235,60 L235,100" />
+</svg>
