@@ -9,18 +9,6 @@
     "createdAt": "2026-05-24T16:08:02.608Z"
   },
   {
-    "topic": "github",
-    "definition": "협업과 버전관리 위해, Git 기반 소스코드 공유 플랫폼",
-    "mnemonic": "dd",
-    "keyword": "dd",
-    "extra": "",
-    "images": [
-      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/e6832c65-c47d-450a-9ed5-42cc6ffd846c.webp"
-    ],
-    "userId": "u1779680935574",
-    "createdAt": "2026-05-25T03:48:55.574Z"
-  },
-  {
     "topic": "dggg",
     "definition": "데이터 품질 확보 위해, 거버넌스 표준을 정립한 가이드라인",
     "mnemonic": "",
