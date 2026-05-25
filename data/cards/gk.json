@@ -2041,5 +2041,74 @@
     "extra": "",
     "userId": "u1779682116097-57tka",
     "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "category": "SW공학",
+    "topic": "테스트",
+    "definition": "품질 향상을 위해, 결함 검출과 명세를 검증하는 활동",
+    "mnemonic": "[7원칙] 결완초집 살정오\n[레벨] 단통시인 (단위, 통합, 시스템, 인수)\n[기법] 정적(인스펙션, 워크스루), 동적(화이트, 블랙박스)\n[오라클] 참, 샘플링, 휴리스틱, 일관성",
+    "keyword": "정적 테스트, 동적 테스트, 테스트 오라클, 테스트 하네스, V-모델",
+    "extra": "",
+    "references": [
+      {
+        "title": "Wikipedia 소프트웨어 테스트",
+        "url": "https://ko.wikipedia.org/wiki/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4_%ED%85%8C%EC%8A%A4%ED%8A%B8"
+      },
+      {
+        "title": "정적 테스트와 동적 테스트",
+        "url": "https://blog.skby.net/%ec%a0%95%ec%a0%81-%ed%85%cc%ec%8a%a4%ed%8a%b8%ec%99%80-%eb%8f%99%ec%a0%81-%ed%85%cc%ec%8a%a4%ed%8a%b8/"
+      }
+    ],
+    "userId": "u1779685204707-ai-3o5r",
+    "createdAt": "2026-05-25T05:00:04.707Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:00:04.707Z",
+    "aiConfidence": "high"
+  },
+  {
+    "category": "보안",
+    "topic": "ips",
+    "definition": "실시간 침입 차단을 위해, 패킷 분석과 세션 제어를 수행하는 능동형 보안 시스템",
+    "mnemonic": "[동작] Inline 모드 실시간 경로 위치\\n[분석] DPI 깊은 패킷 분석\\n[방식] 오용 및 이상 탐지\\n[대응] 세션 리셋 및 차단",
+    "keyword": "Inline Mode, DPI, Signature Matching, Anomaly Detection, Session Reset",
+    "extra": "",
+    "references": [
+      {
+        "title": "침입 방지 시스템 IPS",
+        "url": "https://blog.skby.net/%EC%B9%A8%EC%9E%85-%EB%B0%A9%EC%A7%80-%EC%8B%9C%EC%8A%A4%ED%85%9C-ips-intrusion-prevention-system/"
+      },
+      {
+        "title": "위키백과 침입 방지 시스템",
+        "url": "https://ko.wikipedia.org/wiki/%EC%B9%A8%EC%9E%85_%EB%B0%A9%EC%A7%80_%EC%8B%9C%EC%8A%A4%ED%85%9C"
+      }
+    ],
+    "userId": "u1779685204707-ai-3t2w",
+    "createdAt": "2026-05-25T05:00:04.707Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:00:04.707Z",
+    "aiConfidence": "high"
+  },
+  {
+    "category": "보안",
+    "topic": "ids",
+    "definition": "비인가 접근을 실시간 탐지하기 위해, 패킷 분석과 시그니처 매칭을 활용한 보안 시스템",
+    "mnemonic": "1. 탐지 기법: 오용 탐지(Signature), 이상 탐지(Anomaly)\n2. 설치 위치: HIDS(호스트 기반), NIDS(네트워크 기반)\n3. 처리 단계: 데이터 수집 -> 데이터 가공 -> 분석 및 탐지 -> 보고 및 조치",
+    "keyword": "오용 탐지, 이상 탐지, HIDS, NIDS, Snort",
+    "extra": "",
+    "references": [
+      {
+        "title": "침입탐지시스템 IDS (Intrusion Detection System) - SKBY",
+        "url": "https://blog.skby.net/%EC%B9%A8%EC%9E%85%ED%83%90%EC%A7%80%EC%8B%9C%EC%8A%A4%ED%85%9C-ids-intrusion-detection-system/"
+      },
+      {
+        "title": "침입 탐지 시스템 - 위키백과",
+        "url": "https://ko.wikipedia.org/wiki/%EC%B9%A8%EC%9E%85_%ED%83%90%EC%A7%80_%EC%8B%9C%EC%8A%A4%ED%85%9C"
+      }
+    ],
+    "userId": "u1779685204707-ai-1lat",
+    "createdAt": "2026-05-25T05:00:04.707Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:00:04.707Z",
+    "aiConfidence": "high"
   }
 ]
