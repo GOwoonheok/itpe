@@ -1067,6 +1067,12 @@
 
     function openAddModal() {
         if (!state.unit) return;
+        // 안전장치 — 관리자만 카드 추가 가능. UI 버튼은 이미 숨김 처리지만 만일을 대비.
+        const isAdmin = !!(window.ITPEAuth && window.ITPEAuth.isAdmin && window.ITPEAuth.isAdmin());
+        if (!isAdmin) {
+            alert('카드 추가는 관리자만 사용할 수 있습니다.');
+            return;
+        }
         setModalMode('add', null);
         addModal.querySelectorAll('.form-row[data-key]').forEach((row) => {
             const k = row.dataset.key;
@@ -1198,6 +1204,12 @@
     }
     function openEditModal() {
         if (!state.unit) return;
+        // 안전장치 — 관리자만 카드 수정 가능.
+        const isAdmin = !!(window.ITPEAuth && window.ITPEAuth.isAdmin && window.ITPEAuth.isAdmin());
+        if (!isAdmin) {
+            alert('카드 수정은 관리자만 사용할 수 있습니다.');
+            return;
+        }
         const c = currentCard();
         if (!c) return;
         setModalMode('edit', c);
@@ -2045,11 +2057,19 @@
     document.getElementById('find-close').addEventListener('click', closeFindModal);
     findModal.addEventListener('click', (e) => { if (e.target === findModal) closeFindModal(); });
 
-    document.getElementById('chip-add').addEventListener('click', openAddModal);
-    // 수정·삭제 칩 — 관리자에게만 노출 (배포 워크플로로 다른 사용자에게도 반영)
+    // 추가·수정·삭제 칩 — 관리자에게만 노출. 일반 사용자는 읽기 전용.
     const isAdminUser = !!(window.ITPEAuth && window.ITPEAuth.isAdmin && window.ITPEAuth.isAdmin());
+    const chipAdd  = document.getElementById('chip-add');
     const chipEdit = document.getElementById('chip-edit');
     const chipDel  = document.getElementById('chip-del');
+    if (chipAdd) {
+        if (isAdminUser) {
+            chipAdd.hidden = false;
+            chipAdd.addEventListener('click', openAddModal);
+        } else {
+            chipAdd.hidden = true;
+        }
+    }
     if (chipEdit && isAdminUser) {
         chipEdit.hidden = false;
         chipEdit.addEventListener('click', openEditModal);
@@ -2059,8 +2079,14 @@
         chipDel.addEventListener('click', deleteCurrentCard);
     }
 
-    // 현재 카드 삭제 (관리자). 시크릿 있으면 Blob PUT 으로 즉시 전체 기기 반영.
+    // 현재 카드 삭제 (관리자 전용). 서버 카드면 PUT 으로 영구 반영, 사용자 카드면 로컬 제거.
     function deleteCurrentCard() {
+        // 안전장치 — UI 칩은 관리자에게만 노출되지만 외부 호출 차단용.
+        const isAdmin = !!(window.ITPEAuth && window.ITPEAuth.isAdmin && window.ITPEAuth.isAdmin());
+        if (!isAdmin) {
+            alert('카드 삭제는 관리자만 사용할 수 있습니다.');
+            return;
+        }
         const c = currentCard();
         if (!c) return;
         const topic = c.topic ?? c.q ?? '(제목 없음)';
