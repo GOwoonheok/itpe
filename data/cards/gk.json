@@ -17,5 +17,17 @@
     "userId": "u1779673270502",
     "createdAt": "2026-05-25T01:41:10.502Z",
     "editedAt": "2026-05-25T03:45:34.114Z"
+  },
+  {
+    "topic": "test",
+    "definition": "SW 품질 확보 위해, 결함을 예방 및 발견하는 활동",
+    "mnemonic": "test",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/7dd6f0d4-b357-4406-90b3-09d47768c698.webp"
+    ],
+    "userId": "u1779681815607",
+    "createdAt": "2026-05-25T04:03:35.607Z"
   }
 ]
