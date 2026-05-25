@@ -3,8 +3,8 @@
     --surface: #1c1c1e;
     --surface-2: #2a2a2c;
     --surface-3: #3a3a3c;
-    --text: #ebe7df;           /* 따뜻한 오프-화이트 — 장시간 읽기 편함 */
-    --text-muted: #a8a39a;     /* 따뜻한 회색 */
+    --text: #f0ece4;           /* 따뜻한 오프-화이트 — 다크모드 대비 ↑, 장시간 읽기 편함 */
+    --text-muted: #b8b3a8;     /* 따뜻한 회색 — 라벨/메타에 적합한 가독성 */
     --text-dim: #6b665e;
     --divider: #2c2c2e;
     --accent-red: #e74c3c;
@@ -23,14 +23,18 @@
 * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
 body {
-    font-family: 'NanumSquareRound', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    /* Pretendard Variable 우선 — 다크모드 가독성 ↑, 한글 세로획 명확.
+       fallback: NanumSquareRound (옛 데이터), Apple SD Gothic Neo (iOS), Noto Sans KR. */
+    font-family: 'Pretendard Variable', Pretendard, 'NanumSquareRound', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    font-weight: 450;               /* Regular(400)보다 살짝 굵게 — 다크모드 ghosting 방지 */
     color: var(--text);
     background: var(--bg);
     overscroll-behavior-y: contain;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    letter-spacing: -0.005em;       /* 한글 약간 좁힘 — 자연스럽고 빽빽함 ↓ */
+    letter-spacing: 0;              /* 자간 중립 — Pretendard 는 압축 안 해도 균형 좋음 */
+    font-feature-settings: "ss06" 1; /* Pretendard 한글 가독성 옵션 (한국형 디지털/숫자 디자인) */
 }
 button { font-family: inherit; touch-action: manipulation; cursor: pointer; }
 a { color: inherit; text-decoration: none; }
@@ -404,28 +408,27 @@ a { color: inherit; text-decoration: none; }
     line-height: 1;
 }
 
-.card-section { margin-bottom: 20px; }
+.card-section { margin-bottom: 24px; }      /* 20 → 24 : 섹션 사이 호흡 ↑ */
 .card-section-label {
     display: inline-block;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    letter-spacing: 0;
-    padding: 2px 10px;
-    margin-bottom: 8px;
+    font-size: 0.82rem;                     /* 0.78 → 0.82 : 라벨 식별성 ↑ */
+    color: #d8d2c4;                         /* 라벨 톤 — 본문보다 살짝 어둡지만 잘 보이게 */
+    letter-spacing: 0.02em;                 /* 라벨은 약간 넓혀 인식 ↑ */
+    padding: 3px 11px;
+    margin-bottom: 10px;
     font-weight: 700;
-    background: #ffffff10;
+    background: #ffffff14;                  /* 살짝 더 보이게 */
     border-radius: 999px;
-    /* 한글 라벨 — uppercase 제거 */
 }
 .card-section[data-key="topic"] .card-section-label { display: none; }
-.card-section[data-key="topic"] { margin-bottom: 24px; }
+.card-section[data-key="topic"] { margin-bottom: 26px; }
 .card-section[data-key="topic"] .card-section-body {
-    font-weight: 800;
-    font-size: calc(1.18rem + var(--font-size-step) * 0.08rem);
+    font-weight: 700;                       /* 800 → 700 : Pretendard 700 이 한글에 적정 */
+    font-size: calc(1.2rem + var(--font-size-step) * 0.08rem);
     padding: 4px 0;
-    line-height: 1.45;
+    line-height: 1.5;                       /* 1.45 → 1.5 : 한글 토픽 가독성 ↑ */
     word-break: keep-all;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.005em;               /* -0.01 → -0.005 : 압축 완화 */
 }
 .th-cat   { color: var(--text-muted); font-weight: 700; }
 .th-sep   { color: var(--text-dim);   font-weight: 700; margin: 0 6px; }
@@ -454,11 +457,22 @@ a { color: inherit; text-decoration: none; }
 
 .card-section-body {
     font-size: calc(1.06rem + var(--font-size-step) * 0.08rem);
-    line-height: 1.75;            /* 한글 가독성 핵심 */
+    font-weight: 500;             /* 명시 (브라우저 default 400 대신) — 다크모드에서 두툼 ↑ */
+    line-height: 1.78;            /* 한글 가독성 핵심 — 1.75 → 1.78 살짝 더 호흡 */
+    letter-spacing: 0;             /* 본문은 자간 중립 */
+    word-spacing: 0.04em;          /* 한글은 띄어쓰기 살짝 넓혀 가독 ↑ */
     padding: 2px 6px;
     white-space: pre-wrap;
     word-break: keep-all;
     color: var(--text);
+}
+/* 두음(mnemonic) 은 여러 줄 나열이 많아 행간 추가 확보 */
+.card-section[data-key="mnemonic"] .card-section-body {
+    line-height: 1.88;
+}
+/* 키워드는 쉼표 구분 인라인 — 단어 단위 끊김 자연스럽게 */
+.card-section[data-key="keyword"] .card-section-body {
+    word-spacing: 0.06em;
 }
 .card-section.is-empty .card-section-body {
     color: var(--text-dim);
@@ -949,7 +963,7 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
 .form-ai-row .ai-cost-hint { flex: 0 0 auto; font-size: 1.1rem; }
 
 /* AI 프롬프트 편집 패널 */
-#ai-prompt-input, #jm-ai-prompt-input { font-family: 'NanumSquareRound', 'Apple SD Gothic Neo', sans-serif; font-size: 0.84rem; line-height: 1.6; min-height: 200px; }
+#ai-prompt-input, #jm-ai-prompt-input { font-family: 'Pretendard Variable', Pretendard, 'NanumSquareRound', 'Apple SD Gothic Neo', sans-serif; font-size: 0.86rem; line-height: 1.65; min-height: 200px; }
 .ai-prompt-inline { margin-top: 14px; border-top: 1px dashed var(--divider); padding-top: 10px; }
 .ai-prompt-inline summary { color: var(--text-muted); font-size: 0.84rem; cursor: pointer; padding: 4px 0; font-weight: 700; }
 .ai-prompt-inline[open] summary { color: #c4a8ff; }
