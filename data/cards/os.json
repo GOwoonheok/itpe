@@ -281,9 +281,13 @@
   {
     "topic": "경쟁조건",
     "definition": "",
-    "mnemonic": "임계영역 진입까지 루핑, 공유자원 접근시 접근의 타이밍, 순서 등이 \r\n결과값에 영향을 줄수 있는 비정상적 상태",
+    "mnemonic": "임계영역 진입까지 루핑, 공유자원 접근시 접근의 타이밍, 순서 등이 \n결과값에 영향을 줄수 있는 비정상적 상태",
     "keyword": "동시에 자원 획득 경쟁상황",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/e23f0112-7e36-4dbc-8bd9-5872adcf6013.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/b7a0d6ae-087a-4d61-8269-fdc3b490857d.webp"
+    ],
     "userId": "u1779705006548-wmqvp",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
