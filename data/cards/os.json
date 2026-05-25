@@ -31,5 +31,15 @@
     "extra": "",
     "userId": "u1779698871241",
     "createdAt": "2026-05-25T08:47:51.241Z"
+  },
+  {
+    "category": "컴퓨터 구조",
+    "topic": "GPU",
+    "definition": "그래픽 및 병렬 연산 위해, 다수의 코어를 활용한 고성능 프로세서",
+    "mnemonic": "이미지, 영상처리 핵심반도체, 넓은 대역폭, 고속병렬, 멀티쓰레드\nNVIDA, AMD, CUDA, OpenGL, 임의접근, 부동소숫점 연산처리",
+    "keyword": "지표 : Throught (num of result / clcye)",
+    "extra": "",
+    "userId": "u1779699189379",
+    "createdAt": "2026-05-25T08:53:09.379Z"
   }
 ]
