@@ -56,9 +56,14 @@
   {
     "topic": "CPU 스케쥴링",
     "definition": "",
-    "mnemonic": "선점, 비선점의 프로세스 CPU할당 /\r\n선점 : RR, SRT, MQ , MFQ, \r\nRM (Rate Monotonic), ED (Earliest Deadline First)\r\n비선점 : 우선순위, 기한부, FCFS, SJF, HRN \r\n/주요문제 \r\n비선점: FCFS(호위효과), SJF(Starvation) -> HRN(Aging 적용),\r\n선점: RR(Job 특성 미반영), SRT(Starvation) -> MQ-> MFQ(Aging 적용),",
+    "mnemonic": "선점, 비선점의 프로세스 CPU할당 /\n선점 : RR, SRT, MQ , MFQ, \nRM (Rate Monotonic), ED (Earliest Deadline First)\n비선점 : 우선순위, 기한부, FCFS, SJF, HRN \n/주요문제 \n비선점: FCFS(호위효과), SJF(Starvation) -> HRN(Aging 적용),\n선점: RR(Job 특성 미반영), SRT(Starvation) -> MQ-> MFQ(Aging 적용),",
     "keyword": "선점, 비선점의 프로세스에 CPU할당",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/c6b23258-4722-4cf6-a7f8-17c0a8b7298d.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/84882ea6-8aaa-40f0-9f7c-3cae86a7cb9f.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/910e5f16-8f80-4851-beff-2edaeec82769.webp"
+    ],
     "userId": "u1779705006548-ub9mo",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
