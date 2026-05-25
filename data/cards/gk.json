@@ -1,33 +1,2045 @@
 [
   {
-    "topic": "SVC",
-    "definition": "IT 서비스 가치 창출을 위해, 6가지 활동을 유기적으로 연계한 운영 모델",
-    "mnemonic": "서비스가치연계모델,  IT거버넌스, ITIL4, \n계참설빌지개(계획,업무참여,설계,빌드,지원,개선)",
+    "topic": "ITSM",
+    "definition": "",
+    "mnemonic": "IT서비스 수준관리 기법, ITIL, eSCM, SLM(SoW, SLA), CMMI / PDCA기반(계획,실행,모니터링,개선프로세스)\r\n영역: 서비스전달(SLM,가용성, 연속성, 용량, 보안, 예산관리), 관계(eSCM,공급자관리), 해결(issue, 문제), 통제(CICD,변경)\r\n인조기프 (인력,조직,기술,프로세스), 전설전운지개, ISO20000 - 전략,설계,전환,운영,지속,개선",
     "keyword": "",
     "extra": "",
-    "userId": "u1779638882608",
-    "createdAt": "2026-05-24T16:08:02.608Z"
+    "userId": "u1779682116095-rwoaw",
+    "createdAt": "2026-05-25T04:08:36.095Z"
   },
   {
-    "topic": "dggg",
-    "definition": "데이터 품질 확보 위해, 거버넌스 표준을 정립한 가이드라인",
+    "topic": "- eSCM",
+    "definition": "",
+    "mnemonic": "전자적 공급망관리, 아웃소싱 능력평가 모델 / 조직, 인력, 사업, 기술, 지식경영 / defacto",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116095-yc45i",
+    "createdAt": "2026-05-25T04:08:36.095Z"
+  },
+  {
+    "topic": "- IT Outsourcing",
+    "definition": "",
+    "mnemonic": "전문가 위탁, 선택집중  / 사조업협이관 / ToSel자Co / 온오니클 / ISO20000 \r\n*(절차)사전준비, 조직, 업체선정, 협상계약, 이행, 관리 / (유형)온쇼어, 오프쇼서, 니어쇼어, 클라우드",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116095-r20zu",
+    "createdAt": "2026-05-25T04:08:36.095Z"
+  },
+  {
+    "topic": "- SOW",
+    "definition": "",
+    "mnemonic": "수준 작업명세서, SoW>SLA>SLM / 업책프(업무범위, 책임범위, 프로세스)  / 고장시간(예측), 지원시간, 보안",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116095-4mz9t",
+    "createdAt": "2026-05-25T04:08:36.095Z"
+  },
+  {
+    "topic": "- SLA",
+    "definition": "",
+    "mnemonic": "서비스 수준 협약서, 기준: 기소Ca메오메보 / (클라우드)가응확신지지고 \r\n기본계약서, SOW, 카달로그, 메트릭스, SLO, Measurement, 보고   / 가용,응답,혹신,신뢰,지속,지지,고객만족도",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116095-adu8t",
+    "createdAt": "2026-05-25T04:08:36.095Z"
+  },
+  {
+    "topic": "- SLA, SLO 지표",
+    "definition": "",
+    "mnemonic": "HW,SW,NW가동률, 장애, 오류건수, NW장애건수 / SLI > SLO > SLA",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116095-0c779",
+    "createdAt": "2026-05-25T04:08:36.095Z"
+  },
+  {
+    "topic": "OLA",
+    "definition": "",
+    "mnemonic": "공급자 관리 vs 운영간 합의서, 목역지프에 / 목표, 역할, 지표, 프로세스 워클플로어, 에스컬레이션 절차",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116095-mj2kl",
+    "createdAt": "2026-05-25T04:08:36.095Z"
+  },
+  {
+    "topic": "SLA지표",
+    "definition": "",
+    "mnemonic": "Penalty/Incentive 관리체계, SIP, Annual Reset\r\n - SLA 미달성 시 서비스 대가 삭감(페널티), 초과 달성 시 보상(인센티브) 부여 → 서비스 품질 유지 동기 부여\r\n - SLA 반복 위반 시, 개선계획 제출 및 실행을 의무화\r\n - LA 지표와 기준을 매년 재검토·조정하여 환경 변화(기술 발전, 서비스 범위 확장 등)에 맞게 리셋",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116095-1yn84",
+    "createdAt": "2026-05-25T04:08:36.095Z"
+  },
+  {
+    "topic": "SLM",
+    "definition": "",
+    "mnemonic": "서비스 관리체계 (SLA + OLA)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116095-h4gea",
+    "createdAt": "2026-05-25T04:08:36.095Z"
+  },
+  {
+    "topic": "ITIL 3.0",
+    "definition": "",
+    "mnemonic": "ITSM, 전설전운지(절차 : 전략,설계,전환,운영,지속개선), \r\n4P(people, process, parners, products) / 전통적 방법",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116095-tjmt1",
+    "createdAt": "2026-05-25T04:08:36.095Z"
+  },
+  {
+    "topic": "ITIL 4.0",
+    "definition": "",
+    "mnemonic": "ITSM BP, Agile, DevOps, Lean, 4차원모델(조정파가), SVS(서비스가치 시스템, 지거서지실, SVC)\r\n / 절차: 플인디오데임(Plan, Engage, design, obtain, deployment, improve / 관점 : 조정파가 > '조직, 정보, 파트너, 가치흐름\r\n// ITSM 성공요건 : 자동화 도구, 통합플랫폼, 데이터기반, 프로세스 전환, 표준화 , 조직, 인력, IT거버넌스, 책임문화(SRE)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116095-wtm0i",
+    "createdAt": "2026-05-25T04:08:36.095Z"
+  },
+  {
+    "topic": "SVS",
+    "definition": "",
+    "mnemonic": "서비스가치시스템(SVC), 지거서지실, 실행: 일서기 34개",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-21rk4",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "SVC",
+    "definition": "",
+    "mnemonic": "서비스가치연계모델,  IT거버넌스, ITIL4, \r\n계참설빌지개(계획,업무참여,설계,빌드,지원,개선)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-b12ml",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "상호관계",
+    "definition": "",
+    "mnemonic": "ITIL(BP) -> ISO20000(국제표준) -> ITSM체계(SVC관리) -> IT아웃소싱 계약(SLA, 품질보증, 인증)\r\n              (기반)                       (적용)                      (활용)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-o3u63",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "ISO 20000",
+    "definition": "",
+    "mnemonic": "ITIL기반으로 IT서비스르 제공, IT아웃소싱 국제표준, 서비스 관계 문제해결, 통제, 릴리즈",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-q48zv",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "ITSM (설계,구축,전환)",
+    "definition": "",
+    "mnemonic": "정보기술서비스 관리체계, ISO20000(ITIL BP기반)\r\n설계: BIZ분석>아키텍처 설계>프로세스설계>서비스 카탈로그 > 위험관리\r\n구축: ITSM도입>프로세스수립> 솔루션도입(CMDB) > RACI>교육내자화\r\n전환: 변경릴리즈관리>지식관리>테스트검증>운영>모니터링",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-cqoup",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "RFI, RFP, Proposal",
+    "definition": "",
+    "mnemonic": "정보요구, 발주자요구, 제안서",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-0vzt0",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "IT 거버넌스",
+    "definition": "",
+    "mnemonic": "리조프(리더십,조직,프로세스)/ 전가위지성(전략, 가치, 위험, 지원, 성과 \r\n/ ISO38500 : 평가,지시,모니터링(EDM) IT,DATA,OSS, AI\r\n핵심원칙 : 책임, 투명, 전략, 성과측정, 리스크 기반관리 @책투전성리 / 거버넌스",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-7f9wq",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "SEM",
+    "definition": "",
+    "mnemonic": "전략적기업경영, 전사 / VBM, ABM, ABC, BSC : 경영,활동,원가,성과 /",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-wxr7e",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "BSC",
+    "definition": "",
+    "mnemonic": "균형성과 재고내학, KPI : 매출,만족,생산,자격증 -매칭-  IT BSC : 기사운미 : 기업,사용자,운영,미래\r\n재무적(ROI, TCO, NPV), 비재무적(고객, 내부프로세스, 학습성장)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-5aomm",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "4C",
+    "definition": "",
+    "mnemonic": "Compay, Competitor, Custumer Channel / Circumstance",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-09jng",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "5 FORCE",
+    "definition": "",
+    "mnemonic": "잠기구공대(잠재,기존,구매자,공급자,대체자)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-0q8xa",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "KPI",
+    "definition": "",
+    "mnemonic": "경영전략 목표 달성도를 당적, 질적으로 측정 및 관리하기 위한 지표 /  미션및 비전 확인 -> KPI와 후보KPI 생성 -> 1차 성과지표 선정 -> KPI조정 및 확정 -> KPI상세화 -> 가중치 부여",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-rb5mr",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "7S Model",
+    "definition": "",
+    "mnemonic": "전조시(제), 공역구스 / strategy, structure, system (Hard) / shared value, skills, style, staff (Soft)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-2pruc",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "경영분석 흐름",
+    "definition": "",
+    "mnemonic": "비젼/목표 -> 환경(5F,7S) -> (분석)SWOT > 해결(3C, 4C) > CSF > KPI\r\n@내부경영분석 : SWOT, BCG, 5F, 7S(정성)  \r\n/ TCO, ROI, NPV, IRR, PP(정량) @ 비재무적 BSC(재고내학)\r\nCompay, Competitor, Customer, Circumstance",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-r2k98",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "MECE",
+    "definition": "",
+    "mnemonic": "중복배제, 전략사고, 전체파악 /  LISS : 중요핵심 분석",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-we36y",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "PEST",
+    "definition": "",
+    "mnemonic": "거시적 환경분석, 정경사기(정치,경제,사회문화,기술)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-pm1hv",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "거시환경 분석",
+    "definition": "",
+    "mnemonic": "How(PEST -> 7S,5F,SWOT ) --> What(CSF,DSS)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-0f1sm",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Design Thinking",
+    "definition": "",
+    "mnemonic": "공감,관찰,창의,사용자중심 / 공정아프테 : 설문,정의,브레인스토밍,시각,사용테스트",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-x73e6",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Backcasting",
+    "definition": "",
+    "mnemonic": "미래설계(30~50년) 방법:목전현외시실영 / Forecasting : (3~5년); 가능한 미래, 트랜드 대처",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-9ufum",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "ISP, ISMP (9판)",
+    "definition": "",
+    "mnemonic": "검토대상 소규모정보시스템 간소화(20억) 미만 생략  / \r\n8판 : 클라우드, 국민, UI/UX, 추진단운영, DPG원칙, FP산정 오류사례\r\n@20억 미만 사업계획서 검토* 및 기재부 재출, 대상, 절차, 검토항목(프로세스) @ISPvsISMP비교\r\n@내용 : 시스템 개요, 현황분석, 목표모델설계, 이행계획 / \r\n사업계획서 검토항목 : 기초자료, 사업유형, 산출물품질(개요,현황분석,목표모델, 이행계획)  ☆환경은 없음\r\n@검토내용 : 정책연계성, 시급성, 타당성, 민간클라우드, 기술적합성, 규모적정성 (정시타클기규)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-mgu6g",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "소규모 사업계획서 검토내용",
+    "definition": "",
+    "mnemonic": "대규모대비, 예산, 기간, 인력, 제약으로 실현가능성과 효율성 중심으로 검토\r\n★필요성–예산–일정–기술–인력–보안–운영–성과",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-am7pw",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "ISP",
+    "definition": "",
+    "mnemonic": "환현정목통 / 경법정, 업정벤, IS, 개업정, 통사효 (RFP작성)  / EA(청사진)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-7x89w",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "ISMP",
+    "definition": "",
+    "mnemonic": "특정SW, 상세RFP, FP도출 / 착방업구이(착수, 방향수립, 업무-IT요건분석, 시스템구조 요건, 이행) \r\n/ 경조프, 방벤, 업정, 아요, 구분예R @경영진, 참여, 프로젝트 수립 > 방향수립, 벤치마킹 > 업무현황분석, 정보기술요건> 아키텍처, 요건분석 > 구축계획, 분리발주, 예산, RFP  \r\n@ 사전준비 > 투입공수 산정 > 직접비 > 제경비/기술료(144~154%, 20-40%), 직접비 >대가산정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-62tpj",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "ISP, ISMP 평가기준",
+    "definition": "",
+    "mnemonic": "사실규 : 필시중 / 사추 기적 / SW대가, HW규모  + 디플정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-lv4ka",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "EA",
+    "definition": "",
+    "mnemonic": "기관의 정보화 체계적 추진의 (업무, 데이터, 응용, 서비스, 정보기술) 구성을 상호관계를 구성한 청사진(설계도\r\nIT거버넌스, BA, AA, DA, TA, SA, RM(참조모델)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-qjhye",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "디플정 5가지 항목",
+    "definition": "",
+    "mnemonic": "하나정보, 국민우선, UI/UX고려, 추진단운영, FP오류사례",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-c5nxm",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Value Chain",
+    "definition": "",
+    "mnemonic": "프서마(주활동, 보조활동, 마진) / (주)내생외마서, (보)기인기조",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-rxmfy",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "추격자, 선도자, 병행자",
+    "definition": "",
+    "mnemonic": "선도자 밴치마킹 / 최초 참여자, 각인(TOM) / 모든 가능성, 산업융합, 다변화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-a9nz6",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "IT 생산성 패러독스",
+    "definition": "",
+    "mnemonic": "IT투자가 생산저하 / 잘못관리, 시간차, 측정오류 // IT거버넌스, 모델링, 프로토타이핑",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-1x6rn",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "IT 투자관리",
+    "definition": "",
+    "mnemonic": "사업타당 경제분석 / BC, BCR, TCO, ROI, PV, NPV, IRR, PP(payback period), BP(breakeven point)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-srr26",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "NPV",
+    "definition": "",
+    "mnemonic": "시그마  CT/ (1+r)t",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-1yqfu",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "ESG",
+    "definition": "",
+    "mnemonic": "기업평가 비재무적 / 환경,사회,지배구조 / 온에, 근정공, 경평이",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-p7egi",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "RE100",
+    "definition": "",
+    "mnemonic": "전력100% 재생에너지 대체 / 녹색요금, 태양광, 지분, 인증서 구매, 전력구매계약(한전)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-ha0j9",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "탄소중립 IT기술",
+    "definition": "",
+    "mnemonic": "탄소배출 절감기술, Blue 카본, 수소에너지 대체, 저전력 그리드, 다크 팩토리, 인터미턴트 IoT기술, 에너지 하베스팅",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-mu2yf",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "디지털 트랜스포메이션",
+    "definition": "",
+    "mnemonic": "기업 가치사슬 디지털화 / 빅데이터, 모바일, IoT, AI / (전략)비전, 인재, 거버넌스, 모델개발, R&D)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-2716e",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "AI 트랜스포메이션",
+    "definition": "",
+    "mnemonic": "준비-시험도입 - 확장통합 - 조직문화변경 - 지속최적화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-27yv0",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "트랜스포메이션 고려사항",
+    "definition": "",
+    "mnemonic": "지속투자, 인식제고, 조직변화, 품질보안, 윤리문제, ROI",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-syk7l",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "ERP",
+    "definition": "",
+    "mnemonic": "전사적 자원관리 /  (XRP) SCM - ERP -CRM / 빅뱅, 기능단계별 사업장별",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-30dav",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "POP",
+    "definition": "",
+    "mnemonic": "생산시점 데이터관리 / 생산, 물류, 품질관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-vwb28",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "SCM",
+    "definition": "",
+    "mnemonic": "어떻게 만들고, 전달에 집중 / 공급체인망 관리 /  SCP, SCE, SCI  /  EC, EDI, RFID, DW, ERP",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-kto35",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "PLM",
+    "definition": "",
+    "mnemonic": "제품의 무엇? 기획, 설계, 폐기 생애주기 관리 /PLM 정확한 BOM -> SCM 전달(JIT), 추적성 강화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-jzhrq",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "채찍효과",
+    "definition": "",
+    "mnemonic": "웨곡, 과잉, 과소, 수요예측실패 / 일괄주문, 가격변동, 과잉주문 // 전략파트너십, 리드타임단축",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-upkbu",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "CPFR",
+    "definition": "",
+    "mnemonic": "채칙최소화/파트너, Hub, P2P, excahnge형 / Collaborative Planning Forecasting & Replenishment",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-oxk59",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "OLAP",
+    "definition": "",
+    "mnemonic": "다차원/질의답변, 대화식 분석 / DB > ETL > DW > OLAP|데이터마이닝 / ODS, Metadata, DataMart",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-j1g4t",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "OLAP 유형",
+    "definition": "",
+    "mnemonic": "RLOAP, MOLAP, HOLAP, DOLAP, WebOLAP / 방법: 큐브설계 > 계층구조 정의 > 레벨정의 > 속성정의",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-p0r1o",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Data Warehouse",
+    "definition": "",
+    "mnemonic": "주제중심, 시계열 비소멸유 /  DW>DataMart (각 모델링, ETL) >  ROLAP, MOLAP > DW운영",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-l7dp5",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Data Mining",
+    "definition": "",
+    "mnemonic": "의미정보 발견, 데이터>정보>지식>지능  (KDD)  Association\r\nAS분군특신의 / 데선전변모평지  \r\n★연관규칙(장바구니분석), 순차패턴, 분류, 군집,특이사항(FDS), 신경망, 의사결정\r\n★데이터준비>선정>전환>변환모델링>모형학습>평가>지식적용(의사결정)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-dmx3k",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "연관규칙 분석지표(137)",
+    "definition": "",
+    "mnemonic": "데이터 항목간의 지지도, 신뢰도, 향상도 \r\n지표롤 기준으로 관계를 도출하는 마이닝 기법\r\n/추가 레버리지, 컨빅션\r\n//활용 : 마케팅, 금융, 교육, 보안",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-5k4fl",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "CRISP-DM",
+    "definition": "",
+    "mnemonic": "데이터마이닝 개발 방법론, SPSS, 비즈니스 과점 / 비데준모평배",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-8kkz5",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "SEMMA",
+    "definition": "",
+    "mnemonic": "기술관점, SAS / (5)샘탐수모평, sample, explore, modity, model, asscessment",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-mz7og",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "KDD",
+    "definition": "",
+    "mnemonic": "데이터 인사이트, Oracle/프로세스기반, Select, Pre_processing, Transformation, DataMining, Evalution",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-hm10l",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "프로세스 마이닝",
+    "definition": "",
+    "mnemonic": "(구성)프조로현 / 데이터(log) 분석 > 식별, 가시화 / \r\n(발순확) log 발견, 순응(적합)검사, 확장(신규모델)  \r\n현실세계 > 정보시스템(로그) > 프로세스모델 > 조직성과 도출 > 재반영(현실세계)\r\n★배경 : LLM 업무자동화 -> 전통적인 프로세스 확인이 필요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-hsdlb",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Text Mining",
+    "definition": "",
+    "mnemonic": "수전분해 / 형태소, 구문, 의미, 문장",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-6o9cc",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Opinion Mining",
+    "definition": "",
+    "mnemonic": "평택자비형 /평문, 텍스트마이닝, 자연어처리, 비정형Data, 형태소",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-wkcc5",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "신경망 분석",
+    "definition": "",
+    "mnemonic": "뉴런 상호작용, 반복경험, 시냅스/ 입출은활가",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-5hdfh",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "BCM",
+    "definition": "",
+    "mnemonic": "복모중 : 복원능력, 모의훈련, 업무중단관리 / PDCA , BIA, BCP / 평시>*비상>재개활동>복원",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-wazga",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "ISO 22301",
+    "definition": "",
+    "mnemonic": "BCMS국제표준,  PDCA측면(계획, 실행, 모니터링, 유지개선) / 조리계지운성개(조직,리더십,계획,지원,운영,성과평가,개선)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-vxbu8",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "BCP (절차)",
+    "definition": "",
+    "mnemonic": "비즈니스 연속성 계획 / ISO22301(표준참조)\r\n흐름 : BIZ멈춤을 생각,  RA > 영향평가 > 복구전략 > DRP(계획서) > TEST\r\nBCP절차 : 경영의지> RA(위험평가) > BIA(RTO,RPO산정) >복구전략 > DRP / DRS(온/오프, Warm/Hot) > 테스트 > 개선",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-acxkm",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "RTO, RPO",
+    "definition": "",
+    "mnemonic": "복구목표시간 , 복구목표시점  / RSO, RCO, BCO",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-6vhsb",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "BIA",
+    "definition": "",
+    "mnemonic": "비상 영향도 평가, 우선순위 및 목표 정의활동/ 절차: 대손복필 : 대상,손실정도, 복구우선, 필수자원\r\n정량지표(RSO, RPO, RTO, RCO, BCO) / 정성지표(경제성, 이동효율성, 유용성, 복구성, 유지보수성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-omn5c",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "DRP",
+    "definition": "",
+    "mnemonic": "데이터 복구 계획",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-ldp9v",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "DRS",
+    "definition": "",
+    "mnemonic": "HA, FT, IP_SAN, DWDM / Mirrow, Hot, Warm, Cold : RTO (0, 2h, 1W, 수개월) / (DR유형)상공위독",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-xdz26",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "DRaaS",
+    "definition": "",
+    "mnemonic": "클라우드 기반 데이터 복구 체계",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-7464f",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "데이터댐",
+    "definition": "",
+    "mnemonic": "5G + AI 융합확산, 데이터 수집,가공, 거래활용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-j01zg",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "FTS",
+    "definition": "",
+    "mnemonic": "HW(TMR, 이중화, Watchdog time)  정보(패리티 체크, checksum), SW(check point, DRB)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-dncml",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "HA",
+    "definition": "",
+    "mnemonic": "RAS, DR / Hot standby, Mutual Takeover, Concurrent Access",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-r3cl5",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "레그테크",
+    "definition": "",
+    "mnemonic": "은행+컴플라이언스 + ICMB  / 위험분석-예측, 실시감시,신원관리, 감독비용//고려(통제,오류,표준)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-7ukr2",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "섭테크",
+    "definition": "",
+    "mnemonic": "금융감독원+첨단IT 도입 / AI약관심사, 사기방지, 금융챗봇 - 기계,AI,빅데이터 분석",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-6sdmk",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "에이지테크",
+    "definition": "",
+    "mnemonic": "자립, 돌봄,기술수용 + IT",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-nel76",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "밀리테크",
+    "definition": "",
+    "mnemonic": "자율감시,정찰,정밀타격,사이버 능동대응 + IT",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-1b2ws",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "디지털 리터러시",
+    "definition": "",
+    "mnemonic": "IT 목적 능력 / 연비창시의기 : 연구, 비판, 문제, 창의, 시민의식, 의사소통, 기술활용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-v4vtx",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "AI 리터러시",
+    "definition": "",
+    "mnemonic": "개인이 AI활용능력/ 이적평윤(이해, 적용, 평가, 윤리)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-moo6q",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "디지털 포용",
+    "definition": "",
+    "mnemonic": "차별없는 디지털환경 서비스 제공/ 포용사회-(ICT)-혁신사회 // 사이버 시니어, 장애지원, 교육",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-9ugde",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "디지털 포용법",
+    "definition": "",
+    "mnemonic": "8(기본),9(시행),12(영향평가),19(접근성보장), 26(기술,표준화), 27(확대, 서비스 지정)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-45y5h",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "오픈뱅킹",
+    "definition": "",
+    "mnemonic": "표준, OPEN API, 테스베드 / (구성)사용자-핀테크사<>뱅킹센터-은행 / Rest API, Oauth, HTTP, JSON",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-8abnj",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "고객여정지도",
+    "definition": "",
+    "mnemonic": "고객브랜드 시계열분석, 인분토페(인터뷰, 분석, 도식화, Pain point도출) / 고객 Journey Map",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-g0pvg",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "공유경제",
+    "definition": "",
+    "mnemonic": "상호대여,교환/상호편익 / 대여자 - 공유경제 플랫폼 - 이용자 / 신뢰, 대여료, 피드백, 수익",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-fhn7a",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "기술경영(MOT)",
+    "definition": "",
+    "mnemonic": "기술사업 지속창출/ 기술획득, 관리, 활용 / 연구,개발,사업화,시장화 /",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-6709i",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "긱 이코노미",
+    "definition": "",
+    "mnemonic": "Gig, 플랫폼, 일시적 고용대가-지불 / IT개인맞춤 노동 트랜드/ Uber, Airbnb, Quicklegal, 크몽, 카풀",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-f8nep",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "구독경제",
+    "definition": "",
+    "mnemonic": "무소요 사용, 회원가입구독 > 정기상품배송 / 상품->공유->구독(이용) 경제 /",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-s3adr",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "디지털카르텔",
+    "definition": "",
+    "mnemonic": "담합행위 / 모자병신(모니터링, 자가학습, 병행, 신호)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-1kizt",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "그로스 해킹",
+    "definition": "",
+    "mnemonic": "Growth Hacking, 스타트업 급성장 기술 / 기업구성원, 기업",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-dfkj0",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "라이프 해킹",
+    "definition": "",
+    "mnemonic": "Life 생활속 생산성 증대, 트릭, 기능 방법, 대상찾는 기술 / 개인, 생활아이디어",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-2ls8x",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "시빅 해킹",
+    "definition": "",
+    "mnemonic": "Civic 도시공동체 협업, 사회문제 해결 / 시민, 도시공동체",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-bjd9v",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "그로스/라이프/시빅 방법",
+    "definition": "",
+    "mnemonic": "(방법) 인지>촉진>유지>추천>매출(AARRR)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-wf5mo",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "AARRR (모고)",
+    "definition": "",
+    "mnemonic": "스타트업 성장단계, 사용자 흐름 및 지표분석위한 프레임워크 / 목적:사용자 행동추적, 성과개선 \r\n@acquisition(유입), activation(활성), retention(유지), revenue(수익), referal(추천)@유활유수추",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-exqel",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "AB테스트",
+    "definition": "",
+    "mnemonic": "두가지버전(A,B), 컨텐츠, 기능을 사용자 그룹으로 나눠제공, \r\n성과차이(전환율, 클릭률) 비교분석@AA테스트  \r\n측정지표 /전환율, 클릭시간, 선호도 확인\r\n절차 : 목표>가설>실험>실험>통계>결론",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-dy015",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Funnel Analysis",
+    "definition": "",
+    "mnemonic": "유입>전환과정, 단계별 이탈률 시각화 => 병목구간 파악분석법 / 전환최적, 이탈률 감소",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-r1h30",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "코호트분석",
+    "definition": "",
+    "mnemonic": "시점별 사용자 변화,행동분석 / 평가지표 : 리텐션(재방문), LTV(공객생애가치), 생존분석",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-om8ye",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "리빙랩",
+    "definition": "",
+    "mnemonic": "사용자 주도 연구소/ 기탐실평피(기획,탐색,실험,평가,피드백)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-g25ae",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "SOS랩",
+    "definition": "",
+    "mnemonic": "지역사회 문제 해결 / 조개구실공사(조직화, 개념화,구체화, 실체화,공유화,사업화)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-7lrhn",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "디지털플랫폼정부",
+    "definition": "",
+    "mnemonic": "모든 데이터 하나로, 함께 문제해결",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-c9umf",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "MVP",
+    "definition": "",
+    "mnemonic": "최소기능, 핵심가치/아빌프메데런 / MVP > MMF, MMR, MMP / idea, build, product, measure, data, learn",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-4wh7r",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "AHP",
+    "definition": "",
+    "mnemonic": "쌍대비교, 계쌍우일최(계측,쌍대비교,우선순위,일관검사,최종순위), 5점척도, CI, CR",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-or5me",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Dark Pattern",
+    "definition": "",
+    "mnemonic": "교묘한 UI설계, (편오방압)편취, 오도, 방해, 압박 / 숨은갱신, 거짓할인, 탈퇴방해, 반복간섭(팝업등)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-roxgg",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "STEEP",
+    "definition": "",
+    "mnemonic": "Socail, Tech, Econ, Env, Political",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-lov9i",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "기술사업계획서",
+    "definition": "",
+    "mnemonic": "자금조달, 기술창업, 가치판단/ 기권시사(기술,권리,시장,사업성) / 특허,권리,현황,자금",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-xo9c9",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "기술부채",
+    "definition": "",
+    "mnemonic": "임시방편해법, 차기 추가위험 비용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-g8cnn",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "캐즘이론",
+    "definition": "",
+    "mnemonic": "일시후퇴 단절현상/혁신,선각> 캐V즘 > 전/후기 다수> 대중시장 // 마케팅, 신제품출시, MVP, UX개선, 가격",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-iw3jb",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "TRL",
+    "definition": "",
+    "mnemonic": "기술성숙도평가/ 기실시용상(기초,실험,시제품,실용화,상업화)총9단계 / (Technology Readiness Level)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-f7nzg",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "지식재산권",
+    "definition": "",
+    "mnemonic": "산업재산권, 저작권, 신지식재산권 -> 특허,실용,상,디자인 / 문학·음악·미술·컴퓨터프로그램 / DB, 영업, AI데이터\r\nAI창작물에 대한 지식재산권 적용: 저작권 창장물 무단학습, AI는 법적 저작불인정, AI컨텐츠 무제한 생성이슈, 학습데이터 적법성\r\n*대응: 법제도정비(가이드라인, WIPO통일), 기술대응(저작권 추적워터마킹, C2PA, 라벨링강화, AI필터링), 산업적(저작권 보상모델, 클린데이터셋,) 이용자측면(AI생성자료 활용시 저작권, 출처명시의무화)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-jy31d",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "기술수용모델(TAM)",
+    "definition": "",
+    "mnemonic": "지각된 유용성 / 사용용이성 -> 태도 > 사용의도(행동)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-89yu4",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "기술수용주기",
+    "definition": "",
     "mnemonic": "",
     "keyword": "",
     "extra": "",
-    "userId": "u1779673270502",
-    "createdAt": "2026-05-25T01:41:10.502Z",
-    "editedAt": "2026-05-25T03:45:34.114Z"
+    "userId": "u1779682116096-65y1i",
+    "createdAt": "2026-05-25T04:08:36.096Z"
   },
   {
-    "topic": "test",
-    "definition": "SW 품질 확보 위해, 결함을 예방 및 발견하는 활동",
-    "mnemonic": "test",
+    "topic": "화이트 레이블 마케팅",
+    "definition": "",
+    "mnemonic": "타사제품 자사 브랜드화, 제조사(개발)->판매사(유통)/ 비용,빠른시장화, 브랜드확장 마켓팅",
     "keyword": "",
     "extra": "",
-    "images": [
-      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/7dd6f0d4-b357-4406-90b3-09d47768c698.webp"
-    ],
-    "userId": "u1779681815607",
-    "createdAt": "2026-05-25T04:03:35.607Z"
+    "userId": "u1779682116096-hi3zy",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "BCR",
+    "definition": "",
+    "mnemonic": "Benefit cost Ratio = 수익/비용,  >=1,",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-58vob",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "PP",
+    "definition": "",
+    "mnemonic": "투자원금 회수기간 = 투자비용 / 연간현금 흐름  -> PP길면 리스크 증가 / BEP(Break Even Point) 매출/비용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-iwcyo",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "IRR",
+    "definition": "",
+    "mnemonic": "투자기회(IRR)  기회비용(이자율) 보다 크면 채택, NPV=0이 되는 할인율®",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-xa81z",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "IT_ROI 투자성과평가 모델",
+    "definition": "",
+    "mnemonic": "사중후(사전, 중간, 사후평가) / \r\n현황계획> 투자비용분석 > 전략판단 > 리스크평가 > 사업평가 > 의사결정\r\n지표(투품이효) - 투자, 품질, 이행, 효과지표",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-9745c",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "AI 투자성과지표",
+    "definition": "",
+    "mnemonic": "투자지표(투입데이터, 컴퓨터지원, 인력수준), 과정지표(개방운영 중간산출물) > \r\n산출지표(구축완료후, 서비스 산출지표 1차 : 지능형, ) \r\n결과지표 (공공서비스 개선, 행정효율개선, 사회현안 해결)\r\n@투과산결",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-d4vxt",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "GovTech",
+    "definition": "",
+    "mnemonic": "정부 혁신을 위한 디지털 생태계 모델 / 공공데이터 개방·AI·블록 체인·클라우드 등 신기술/ 국민 중심의 스마트 행정 서비스\r\n정부 혁신 방향 + 민관협력 구조 + 기술적 요소 @데플혁참안\r\n구성요소 : 디지털기반(데이터 거버넌스, 클라우드/플랫폼), 혁신기술(AI, 빅데이터, 블록체인, IoT), 참여협력(스타트업, 민관협력), 안전(보안규체)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-2y4gq",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "가트너 2026",
+    "definition": "",
+    "mnemonic": "(설계자) AI 네이티브 개발 플랫폼 , AI슈퍼컴퓨팅 플랫폼, 기밀컴퓨팅  (디지털 환경 구축, 속도, 보안, 확장)\r\n(통합자) 멀티에이전트 시스템, 도메인 특화언어 모델, 물리적 AI (워크플로어, 제품, 경험 전반 혁신주도)\r\n(선봉장) 선제적 사이버보안, 디지털 출처확인, AI보안 플랫폼, 지오패트리에이션(리스크,신뢰, 소버린 초점)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-d8pz5",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "OSPO",
+    "definition": "",
+    "mnemonic": "(개념) 기업내 오픈소스 사용과 기여에 대한 가이드 제공, 기술검수, 오픈소스 프로젝트와 교육, 마케팅 총괄 지원팀\r\nISO5230 (기업이 조직이 오픈소스 라이선스 컴플라이언스를 체계적으로 관리할수 있도록 업무, 산출물, 기여에 대한 기준을 제시하는 국제표준\r\nISO 18974( 기업이나 조직이 오픈소스의 보안 취약점 관리와 공급망 보안을 위한 요구사항 규정하는",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-3mdni",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "프로젝트 특징",
+    "definition": "",
+    "mnemonic": "한유점제자변착가(한시, 유일, 점진상세, 제약, 자원-품질, 변화추구, 착수배경, 가치창출)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-zd0xk",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "ISO 21500",
+    "definition": "",
+    "mnemonic": "프로젝트 관리 국제표준, 5개(착기이통종), 10개 주제, 39개 프로세스, 법 Dejure\r\n★착수,계획, 이행, 통감, 종료",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-dulzc",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "프로젝트 유형",
+    "definition": "",
+    "mnemonic": "프로젝트<프로그램<포트폴리오/ 고유제품 < 더중요 이익,범위 < 조직전략 목표집합체  (BCG, GE 매트릭스)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-jq6jt",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "프로젝트 조직유형",
+    "definition": "",
+    "mnemonic": "기능조직,  매트릭스조직(Weak, balanced, strong), 프로젝트중심조직",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-1vfdp",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "프로젝트그룹",
+    "definition": "",
+    "mnemonic": "착계실통종 / 헌장, OPA, EEF >  관리계획서, 기준선 > 인도물 작성 > 변경승인, 승인된 인도물, CR > 종료",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-ei5zy",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "지식영역 구성",
+    "definition": "",
+    "mnemonic": "통합,범위,일정,원가,품질, 자원,의사소통,위험,조달,이해관계자",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-011kl",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "지식영역 관리",
+    "definition": "",
+    "mnemonic": "1+3+1+RCR+P+S / 통범일원품 자의위조이  @통합,범위,일정,예산, 품질, 자원소통위험, 조달 이해관계자 (47개프로세스)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-uexln",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "테일러링",
+    "definition": "",
+    "mnemonic": "조직 커스터마이징, 특표상세문",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-old1h",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "통합관리",
+    "definition": "",
+    "mnemonic": "현P작지감변종(헌장, PMP, 작업지시, 지식관리, 감시, 통제, 종료) / CR(예방조치,결함수정,갱신,시정조치)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-mgarz",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "범위관리",
+    "definition": "",
+    "mnemonic": "계요정작(W)범통(계획, 요구사항수집, 범위정의, WBS, 범위확인, 범위통제)\r\n* 수분표의대프컨전\r\n (인포설밴브, 문서분석, 마인드매핑, 친화도,  다기준의사결정 분석, 투표, 명목집단 기법, 관찰, 촉진, 프로토타입, 컨텐스특 다이어그램, 전문가집단)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-enj6g",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "일정관리",
+    "definition": "",
+    "mnemonic": "계정순기개통(일정관리계획, 활동정의, 활동순서, 기간산정, 일정개발, 일정통제)\r\n@일정개발기법 (정량) 1점, 3점, PERT (정성) 델파이, 유사산정 \r\n(개발) CPM, CCM (관리)자원평준화, 평탄화, 공정압축, 공정단축)/\r\n정방향,역방향,여유,주경로",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-kdtg6",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "원가관리",
+    "definition": "",
+    "mnemonic": "계산결통(계획수립, 원가산정, 예산결정, 원가통제)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-pa011",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "품질관리",
+    "definition": "",
+    "mnemonic": "계관통(품질관리계획, 품질관리/보증, 품질통제)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-19mmm",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "품질비용",
+    "definition": "",
+    "mnemonic": "(적합|부적합)예평|내외(실패비용) / (Tool)파히체특산관\r\n★ 예방(BCP,BIA도출), 평가(인스펙션, 테스트SW지원), 내부실패비용(테스트실패, 개발오류부채), 외부실패(연계오류, 소송비)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-p390d",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "자원관리",
+    "definition": "",
+    "mnemonic": "계자확개관통(자원관리계획, 자원산정,확보, 팀개발, 팀관리, 자원통제)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-d2bhu",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "의사소통관리",
+    "definition": "",
+    "mnemonic": "계실통(의사소통관리 계획, 소통관리, 소통감시) / 대화,전달,유인식-전화,편지,게시판",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-f3zxm",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "위험관리",
+    "definition": "",
+    "mnemonic": "계식성량대실감(계획,위험식별,정성,정량,대응계획,대응실행,감시) / E회전완수, E활공증수 / 인력,일정,예산",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-uhkul",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "보햄 10대위험",
+    "definition": "",
+    "mnemonic": "인비잘잘과 지외외선취",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-7xsqi",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "이슈관리",
+    "definition": "",
+    "mnemonic": "현 프로젝트 장애에 미치는 문제 해결관리 기법 / CR, 버그, 장애, 이슈, 로그",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-c15ly",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "조달관리",
+    "definition": "",
+    "mnemonic": "계수통(조달관리계획, 조달수행, 조달통제),",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-dlpz3",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "이해관계자관리",
+    "definition": "",
+    "mnemonic": "식계참감(이해자 식별, 참여계획수립, 참여관리, 참여감시) // 갈등해결 : 협상, 조정, 중재",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-oa1bj",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "이해관계자 분석모델",
+    "definition": "",
+    "mnemonic": "이해관계자별 권력/관심(Power+Interest) :  관찰,만족유지|정보제공,집중관리 // 영향/관심(무관심,잠재|옹호,후원)\r\n현저성 모델  권력/합법성/긴급성(결지위의 잠임요), 의사소통, 대인관계 기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-igtlo",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "갈등관리",
+    "definition": "",
+    "mnemonic": "자기주장성|타인수용성 > 강요,문제해결,철회,수용 [타협]  // 동기부여 이론 (매허맥맥 기목공 스)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-beel7",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "동기부여이론",
+    "definition": "",
+    "mnemonic": "매허맥맥 기목공스 / [내용이론] 매슬로우 욕구5단계 생안사존자 (생리,안전,사회지위,존경,자아실현) / \r\n허츠버그 2요인 위동(위생:불만, 동기:만족), Locke 목표설정이론 매클랜드(욕구)/\r\n[과정이론] Vroom 기대이론(노력->성과), Locke 목표설정이론, Adams 공정성이론\r\n동기부여방법 : (개인) 보상,인정(승진,칭찬, 교육, 멘토링), 팀(R&R정립, 의사소통채널, 성과공유), 조직(성과평가 피드백)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-ezgnf",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "헌장",
+    "definition": "",
+    "mnemonic": "관리자 승인문서",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-qtfnb",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "PMP",
+    "definition": "",
+    "mnemonic": "착계실통종 방법명시 관리문서",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-7ie3d",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "인도물",
+    "definition": "",
+    "mnemonic": "산출물/ 작업지시-인도물-품질통제-검증인도-범위확인-승인인도-종료",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-mribv",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "요구사항 수집기법",
+    "definition": "",
+    "mnemonic": "범위관리> 수분표의데프컨전 = 인포설벤브 문마친 다투 명관촉",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-1s5ut",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "-수집/분석/표현",
+    "definition": "",
+    "mnemonic": "인터뷰, 포커스 그룹, 설문조사, 벤치마킹, 브레인스토밍/문서분석/마인드매핑, 친화도",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-6z1g7",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "-의사결정/대인관계",
+    "definition": "",
+    "mnemonic": "다기준 의사결정분석,투표/명목집단기법, 관찰,촉진  / 기타: 프토토타이핑, 컨텍스다이어그램, 전문가판단",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-tl9q2",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "IT 요구사항",
+    "definition": "",
+    "mnemonic": "기능(FP), 비기능(보정계수, 성능), 기타(컨설팅,공사)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-4kjgt",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "요구사항 개발프로세스",
+    "definition": "",
+    "mnemonic": "추분명검(추출,분석,명세,검증) / 인터뷰,브레인스토밍 * UML, ERD * SRS * 요구사항문서, V&V, 리뷰, 인스펙션",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-rn911",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "요구사항 추적표",
+    "definition": "",
+    "mnemonic": "ID, 내용, 출처, 엔터티/테이블/프로그렘/화면/토합테스트Case/승인자 ID",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-wo0lo",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "SRS",
+    "definition": "",
+    "mnemonic": "범목개제, 기능, 비기능, 인수조건, IEEE830",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-6cqyt",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "IEEE 830",
+    "definition": "",
+    "mnemonic": "정명완일중검수추",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-l82qq",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "WBS",
+    "definition": "",
+    "mnemonic": "분할계층도, 작계사분통R / 원칙: 100% 룰, 1~4Level, MECE, 80h, 10%, 연동기획(점진적, PP * WP), RACI\r\n@2주단위분할,  @구성: 작업패키지, 계획패키지, 작업분류사전, 분류코드, 통계계정(control account), RAM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-e52bb",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "WBS 추가",
+    "definition": "",
+    "mnemonic": "장점: 가시화, 정교화,진척관리,의사소통,중복방지,업무누수방지,지원최적화, 커뮤니케이션, 위험관리, 책임명확\r\n고려사항 : Top-down, 일관성, 문서화, 책임명확화, 일정수립, 의견수렴, 방법론(SW개발), 고객참여, 도구\r\n일정단축 : 크래싱(인력추가투입), Fast Tracking(병행추진)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-yn8h6",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "-변경요청",
+    "definition": "",
+    "mnemonic": "변경기준선, CCB",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-dhsv5",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "-연동기획",
+    "definition": "",
+    "mnemonic": "과업이 불명확, 장시간 과업대상/ 가까운 상세화, 먼나중 대략, 애자일(스크럼)  @Up-Front Planning (폭포수)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-6pgut",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Scope Creep",
+    "definition": "",
+    "mnemonic": "요구증가, 프로젝트 증가 //과심의로 방지, 발주측 초기오류",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-now29",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Gold Plating",
+    "definition": "",
+    "mnemonic": "요구이상 이용낭비 / 사업자측 오류",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-rfmsb",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "성과관리",
+    "definition": "",
+    "mnemonic": "0/100%, 50/50%, 20/80%,",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-b6tkb",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "활동기간 산정기법",
+    "definition": "",
+    "mnemonic": "전문가, 유사, 모수산정(데이터통계), 3점산정, 상향식, 데이터분석, 의사결정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-rivon",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "3점산정",
+    "definition": "",
+    "mnemonic": "비평낙 (PERT > 낙관, 평균, 비관 : 삼각(O+M+P/3), 베타(O+4M+P/6), 시그마(P-O)/6)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-v9ogg",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "프로젝트 일정개발",
+    "definition": "",
+    "mnemonic": "주공정 CPM, 연쇄법 CCM / 자원평준화(리소스레벨링, CP변경), 자원평활화(리소스스무딩)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-l7f2d",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "프로젝트 일정단축",
+    "definition": "",
+    "mnemonic": "크자배병(크래싱 - 자원툳입, 패스트 트래킹 - 병행)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-0ywxy",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "CPM",
+    "definition": "",
+    "mnemonic": "최소시간, 정순기전후C순 / ES EF LS LF TF FF",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-qcr5y",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "CCM",
+    "definition": "",
+    "mnemonic": "통합버퍼, 프피자 프로젝트(안모행), 피딩, 자원버퍼 / 납기지연사유: 파자후학",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-heaom",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "Free Float, Total Float",
+    "definition": "",
+    "mnemonic": "후행 활동 영향없는 여유기간 / 총 여유기간",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-4v0lr",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "자원평준화",
+    "definition": "",
+    "mnemonic": "Resource Leveling 긴작업(CP)변경, 과도작업시간 조정(TF=0인 활동) / 일정지연",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-18yhs",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "자원유연화(평활화)",
+    "definition": "",
+    "mnemonic": "Resource Smoothing 주공정(CP)고정, FF,TF활동내 조정, 자원고르게 사용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-qb2be",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "원가산정 기법",
+    "definition": "",
+    "mnemonic": "상향식 LOC, MM / 하향식 전문가, 델파이 / 수학적 : FP, COCOMO  // 유사산정, 모수산정, 상향식, 전문가, 3점추정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-u7lyk",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "획득가치관리(EVM)",
+    "definition": "",
+    "mnemonic": "원가통제기법, 측분예, BAC, PV, EV, AC / SV, CV, SPI, CPI  (가운데 EV) /  ETC, EAC, VAC",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116096-qqofh",
+    "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "품질관리 기법",
+    "definition": "",
+    "mnemonic": "품질계획 : 전테검 / 품질관리: PWIA / 품질통제 : 인산파체흐히관   //",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-q8ew0",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "형상관리",
+    "definition": "",
+    "mnemonic": "산출물관리, 식통감기, CCB, 기준선 : 기분설시제운 (기능,분배,설계,시험,제품,운영) // 이것이 안되면 리버스E\r\n단계별 기준선(BaseLine) 기능적 기준선, 분배적 기준선, 설계기준선, 시험기준선, 제품기준선, 운영기준선\r\n형상, 변경, 버전, 소스관리 (범위가 좁혀서 감) / 도구( SVN, Git ) / 무결성, 메타화 필요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-18hd7",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "RACI",
+    "definition": "",
+    "mnemonic": "실책컨보(실무자, 책임자, 컨설턴트, 보고자) 역할구분 차트 / (R-A), (1A), (옵션 AI)  // 그레이존 방지책\r\nResponsible, Accountable, Consult, Inform",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-g7pwr",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "터크만 5단계",
+    "definition": "",
+    "mnemonic": "형스표수해 / 팀발단 설명모델 /  지시,지도,함여,위임",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-48nje",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "자원 최적화",
+    "definition": "",
+    "mnemonic": "자원평준화(CP변경가능), 자원평활화(CP변경 못함)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-gs2ur",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "수확체감의 법칙",
+    "definition": "",
+    "mnemonic": "1인당 수확량 감소 / \r\n리소스 레벨링(자원고다 배치감속하도록 일정 평준화하여 최적화 기법), \r\n리소스 스무딩(일정지연 없는 선에서 자원을 균형있게 최적화 기법)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-byntu",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "브룩스 법칙",
+    "definition": "",
+    "mnemonic": "추가인력 의사소통비용 발생",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-x7wa3",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "프로젝트 위험관리",
+    "definition": "",
+    "mnemonic": "부정: 회전완수, 긍정: 활공증수",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-2uz1f",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "정성위험분석",
+    "definition": "",
+    "mnemonic": "위험영향평가, 우선순위, 델파이, 시나리오, 우선순위법",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-sm3af",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "정량위험분석",
+    "definition": "",
+    "mnemonic": "시민의영 (몬테카를로 시뮬레이션, 민감도-토네이도 다이어그램, 의사결정 나무분석, 영향도)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-uggj7",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "계약유형",
+    "definition": "",
+    "mnemonic": "고정가, 원가정산, 시간자재계약",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-5blsc",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "현저성 모델",
+    "definition": "",
+    "mnemonic": "권긴적(권력, 긴급성, 적합성), 7특징 : 결지위의잠미요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-78hhb",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "감리",
+    "definition": "",
+    "mnemonic": "57조1, 제3자관점, 2,3 단계 감리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-ktlls",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "클라우드 정보화사업 감리",
+    "definition": "",
+    "mnemonic": "모델: Gcloude, 자체, 민간 / 개발 : 기획, 구축, 활용운용 / 운영: SaaS, PaaS, IaaS\r\n클라우드 계획 > 활용사업(자체,민간) > 전환사업(계획,전환, 안정화)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-x4ct5",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "- 클라우드 계획수립 단계 점검항목",
+    "definition": "",
+    "mnemonic": "(현환분석, 전략수립) 현황·전략: 현행진단, 목표·타당, 분류·적합, 보안·SRM, 기술전략.\r\n(개선모델 실행계획) 개선모델·실행계획: 전환로드맵, 관제·SLA, DR/BCP·기술적용, 조직·교육, 비용·성과",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-jxmc1",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "빅데이터 정보화 감리",
+    "definition": "",
+    "mnemonic": "기술: 수집,저장,분석 /감리 :품질, 보안, 개인정보 / 위험: 비용, 편향, 법제문제",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-2iyqa",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "- 빅데이터 분석단계 점검항목",
+    "definition": "",
+    "mnemonic": "(데이터)데이터요구·요원시확보·타당성·연계환경, (시스템)시각화·기능성능품질·도구, (운영)운영인력·품질절차·관리체계",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-asuf1",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "지능정보 운영유지 감리",
+    "definition": "",
+    "mnemonic": "분야(항목) : 운영관리(조직,절차,API모니터링), AI모델(성능, 재학습, 편향, XAI), 데이터품질(품질, 정제,오류, 비식별화)\r\n시스템인프라(자원확보, 모니터링, 백업,MLOPS), 보안-개인정보보호(암호화,접근제어, 인증)  @운모데인개보",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-yxina",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "유지관리사업 감리 (137)",
+    "definition": "",
+    "mnemonic": "유지관리사업 감리 : APP, 상용SW, 인프라 \r\n/ APP모니터링-성능관리 , 유지보수계획-업그레이드 패치예방,  OS,HW,긴급장애처리 등\r\n운영관리사업 감리 : 시스템 전반운영(인력, 절차, 보안, SLA, 모니터링 사용자 지원 변경관리)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-44gli",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "PMO",
+    "definition": "",
+    "mnemonic": "64조2, 발주자관점, R&R, 기지관(기상대, 지도, 관제탑)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-f7hcp",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "PMO vs agile PMO",
+    "definition": "",
+    "mnemonic": "전통(계획,통제,간섭) -> agile(지원,자문,상담)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-x0z8s",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "상주감리",
+    "definition": "",
+    "mnemonic": "개념: 프로젝트 기간동안 상주하녀 사업품질, 보안, 일정, 비용 등 점검하는 감리형태\r\n역할 : 품질(산출물검증), 보안준수점검, 일전공정 관리, 위험, 의사소통조정, 투명성 확보\r\n[착수단계] → [상주활동(품질/보안/일정/위험 관리)] → [중간점검] → [최종평가]",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-4rans",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "Agile 12개 원칙",
+    "definition": "",
+    "mnemonic": "개소협변 개인,소프트웨어,협력,변화 (4가지가치) / 12가지 원칠 고요배의 동대지소 좋단자효 \r\n@고객소통, 요구수용, 배포, 의사소통, 동작SW, 대면, 지표, SW개발지속, 좋은기술, 단순성, 자율조직, 효과적 성찰",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-bhq86",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "애자일 장단점",
+    "definition": "",
+    "mnemonic": "장: 고객소통, 요구사항, 동작SW, 짧은개발, 상호협력, 변화용이 \r\n단: 협의시간부하, 현업이해난이, 잦은변경, 운영난이도, 변화에 민감, 청사진중심, 산출물 없음",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-46yv9",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "스크럼",
+    "definition": "",
+    "mnemonic": "점진,반복, 애자일, Burndown chart, Backlog,",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-953aq",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "칸반",
+    "definition": "",
+    "mnemonic": "WIP제한, Workflow 시각화, 칸반보드",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-h6ll5",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "스크럼반",
+    "definition": "",
+    "mnemonic": "스크럼 + 칸반",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-bhudw",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "Lean",
+    "definition": "",
+    "mnemonic": "낭배결빠위통씨, 이가재이작지결",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-x8bmi",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "린스타트업",
+    "definition": "",
+    "mnemonic": "MVP, 빠른인도, Agile /",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-01yye",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "XP 원칙",
+    "definition": "",
+    "mnemonic": "용단커피존, 개간구환 - 공지페 메게작 리테디 4상표",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-hh8fv",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "XP 구조",
+    "definition": "",
+    "mnemonic": "TDD, Userstory, Spike, 배포, 반복, 시험",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-ne0q6",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "Pair 프로그래밍",
+    "definition": "",
+    "mnemonic": "Driver, Partner",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-ssil3",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "CI/CD",
+    "definition": "",
+    "mnemonic": "자동화 빌드, 테스트, 배포",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-687e5",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "Product backlog",
+    "definition": "",
+    "mnemonic": "요구사항 목록,우선순위 정리, Story Point",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-hb6ss",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "Burn downchart",
+    "definition": "",
+    "mnemonic": "Story point 산정, 속도파악",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-iuacf",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "아키텍처",
+    "definition": "",
+    "mnemonic": "모노로식, MSA",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-5d1pk",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "플래닝 포커",
+    "definition": "",
+    "mnemonic": "Userstory 공수 규모산정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-pcymh",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "Gray Zone",
+    "definition": "",
+    "mnemonic": "책임과 역할이 불명확, 비 식별된 과업",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-3lfg3",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "애자일 추정",
+    "definition": "",
+    "mnemonic": "PJ 추정,  Product Backlog, Story Point 기반 추정 (전통:3점,PERT, 모수,유사,전문가판단 / \r\n애자일: 플래닝 포커, 스토리 포인트, 유사, 선호도 매핑, 도트 투표 )",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-iezeo",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "공공AI과제 성과지표",
+    "definition": "",
+    "mnemonic": "투과산결 / 투입지표(인력수,비용, 학습데이터, AI모델, 윤리), 과정지표(구축율, 테스트커버리지, 보안취약개선)\r\n,산출지표(검색,응답시간,매칭율), 결과지표(공공서비스 행정효율, 사회현항해결수)\r\n /AI기능( 분야: 지능형 처리, 자동화 업무, 대화형, 모니터링 알람)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-iff1b",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "디지털 안전3법",
+    "definition": "",
+    "mnemonic": "발망신(방송통신발전법, 정보통신망, 전기통신사업법) vs 개망신(개인정보, 정보통신망, 신용정보법)\r\n부가통신사업자포함, 데이터센터 사업자 포함, 안전성확보 초지 의무마련",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-l5owv",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "리쇼링(Reshoring",
+    "definition": "",
+    "mnemonic": "해외나간기업 자국 복귀 현상 /(유인책) 스마트 팩토리, 내부기술강화, 외국투자 유치 / vs 오프쇼링(off-shoring)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-z6hhu",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "BPR",
+    "definition": "",
+    "mnemonic": "One time change 혁신, Zero_Based, 재설계, 장기관점 / 급진적, 위험높음, Top Down",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-xcqm9",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "PI",
+    "definition": "",
+    "mnemonic": "지속적, 구성원 참여, 점차혁신, 단계적관점 / 반복적 편화, 고객시점, 양방향",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-ncbb0",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "과심의역할 및 과업변경 적정 판단기준",
+    "definition": "",
+    "mnemonic": "역할: 발주·수행기관 간 이해조정 및 객관적 검증으로 사업의 투명성과 품질을 담보\r\n적정성 판단기준: 계약 범위·기술적 필요성·예산 타당성·사업목표 달성·품질 확보",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-xww85",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "SW 품질성능 평가 시험, 대상, 절차",
+    "definition": "",
+    "mnemonic": "개념 : SW제품 요구의 품질, 특성과 성능을 충족하는지 검증, 평가하는 활동\r\nISO 25000(SQuaRE), 기능 적합성, 성능효율성, 호환성, 보안성, 유지보수성, 이식성\r\n절차 : 준비>시험환경구축>시험설계>시험>결과분석>평가보고>사후관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-d7gt0",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "AX > 한계대응",
+    "definition": "",
+    "mnemonic": "AI기술을 전사적 적용 사업모델, 프로세스, 제품, 서비스 재창조 전략\r\n장애요인 : 리더십,관심부족, 협업부족, 변화저항, 데이터품질과 인프라부족\r\n인력, AI기술부적절 선택, 개인정보보호  대응미흡, 윤리 \r\n대응방안 :  조직문화, 전략, 데이터 품질, 인력측면에서 해결 필요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-4kb4o",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "DX",
+    "definition": "",
+    "mnemonic": "기업에서 디지털기술 이용 전통 BIZ, 서비스를 혁신전략 / 4차산업혁명 \r\n절차 : 전략수립>문화대비>점진전략시작> 기술구추계획>파트너전문가 찾기> 피드백세분화>확장 혁신\r\nESG * 산업군 : 물류(빅데이터+IoT), 전력(센서, GPS), 수산(AI+수질), \r\n제조(여성임원고용), 금융(디지털화), IT(소외포용),회계(IT감사)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-f7a73",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "TAM, SAM, SOM",
+    "definition": "",
+    "mnemonic": "스타트업의 시장규모 추정 위한 프레임워크\r\nTOM : Total 전체시장, SAM : Available 유효시장, SOM : Obtainable 수익시장",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-nx8yz",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "트랜스모머 아키텍처의 한계와 망바 아키텍처",
+    "definition": "",
+    "mnemonic": "상태 공간 모델(SSM)에서 파생된 신경망 아키텍처, 언어 모델링 및 기타 시퀀스 모델링 작업에 사용\r\n1) 선택적 SSM(Selective SSM), 2)간소화된 구조 3)하드웨어 인식 알고리즘\r\n상태공간모델 기반으로 O(n) 복잡도를 달성하고, 선택적 상태 업데이트를 통해 긴 문맥과 시계열 데이터를 효율적으로 처리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-i26b4",
+    "createdAt": "2026-05-25T04:08:36.097Z"
+  },
+  {
+    "topic": "COSO",
+    "definition": "",
+    "mnemonic": "COSO(Committee of Sponsoring Organization) Framework , (개념) 조직의 재무보고 신뢰성, 운영 효율성, 법규 준수를 보장하기 위해 내부통제를 체계적으로 설계·운영·평가하는 표준 프레임워크\r\n- 전사적 내부통제, 재무보고 신뢰성, IT컴플라이언스, 위험기반 통제구조",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779682116097-57tka",
+    "createdAt": "2026-05-25T04:08:36.097Z"
   }
 ]
