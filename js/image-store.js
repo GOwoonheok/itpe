@@ -185,6 +185,13 @@
                 + '\n받은 시작: ' + (d.preview || preview)
                 + '\n클라이언트 길이: ' + len
                 + '\n클라이언트 시작: ' + preview;
+        } else if (status === 410) {
+            title = '🚫 이미지 업로드 비활성';
+            body = '이미지 업로드 기능이 일시 중단됨. 텍스트 카드만 저장 가능.';
+        } else if (status === 503) {
+            title = '⚙ R2 미설정';
+            body = '이미지 저장소 환경변수 미설정.\nmissing: ' + ((d.missing || []).join(', ') || '?')
+                + '\n관리자: Vercel 환경변수 추가 후 재배포 필요.';
         } else {
             title = '☁ 서버 에러 ' + (status || '?');
             body = JSON.stringify(d).slice(0, 300);
@@ -202,7 +209,8 @@
                 return null;
             }
             const r = await window.ITPEAdmin.uploadImage(dataUrl);
-            if (r && r.url && /^https:\/\/.+\.public\.blob\.vercel-storage\.com\//.test(r.url)) {
+            // R2 (pub-*.r2.dev / 커스텀 도메인) · 또는 그 외 https 이미지 URL 도 수용
+            if (r && r.url && /^https:\/\/[^\s]+\.(webp|jpe?g|png|gif|svg)(\?[^\s]*)?$/i.test(r.url)) {
                 return r.url;
             }
             return null;
