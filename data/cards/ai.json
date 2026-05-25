@@ -484,10 +484,13 @@
   },
   {
     "topic": "커널법",
-    "definition": "Kernel : 비선형 분류 문제 -> 저차원값을 고차원 공간으로 변환",
+    "definition": "비선형 데이터 분류 위해, 고차원 공간 매핑한 기법",
     "mnemonic": "",
     "keyword": "",
-    "extra": ""
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/a051526c-a321-41e8-adb8-f5064d47b476.webp"
+    ]
   },
   {
     "topic": "Clustering",
