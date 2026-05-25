@@ -299,9 +299,12 @@
   {
     "topic": "문맥교환",
     "definition": "",
-    "mnemonic": "(개념) CPU가 할당된 프로세스가 시스템콜에 의해 PCB에 상태저장, 타프로세스에 상태가 복구과정\r\n생성(Create), 준비(Ready), 대기(Wait), 실행(Run), 종료(Terminated),\r\nDispatching, Time Slice, 입출력, 시스템콜\r\n병행처리, 상태전이 5, PCB, Stack, StackPointer, CPU Register\r\n[문맥교환 오버헤드 대응]\r\n(SW) 다중 프로그래밍 정도 낮춤, Stack 포인터 레지스터로 변경, \r\n  스레드(Thread) 이용으로 부하 최소화, 스케줄링 알고리즘 개선\r\n(HW) 공간/시간 지역성, 인터럽트 최소화, 메모리 할당 최적화\"",
+    "mnemonic": "(개념) CPU가 할당된 프로세스가 시스템콜에 의해 PCB에 상태저장, 타프로세스에 상태가 복구과정\n생성(Create), 준비(Ready), 대기(Wait), 실행(Run), 종료(Terminated),\nDispatching, Time Slice, 입출력, 시스템콜\n병행처리, 상태전이 5, PCB, Stack, StackPointer, CPU Register\n[문맥교환 오버헤드 대응]\n(SW) 다중 프로그래밍 정도 낮춤, Stack 포인터 레지스터로 변경, \n  스레드(Thread) 이용으로 부하 최소화, 스케줄링 알고리즘 개선\n(HW) 공간/시간 지역성, 인터럽트 최소화, 메모리 할당 최적화\"",
     "keyword": "",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/a66d83b2-2f60-4eef-9173-ef2aacf36687.webp"
+    ],
     "userId": "u1779705006548-elgng",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
