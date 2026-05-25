@@ -1,4 +1,4 @@
-// 카드 학습 화면 — 토픽/정의/두음/추가설명 4섹션, 이미지 확대, 섹션 숨기기, 하단 툴바
+// 카드 학습 화면 — 토픽/정의/내용/키워드 4섹션, 이미지 확대, 섹션 숨기기, 하단 툴바
 (function () {
     const params = new URLSearchParams(location.search);
     const unitId = params.get('unit');
@@ -281,7 +281,7 @@
         els.unitName.textContent = state.unit?.name || '';
         updateCheckUI();
 
-        // 호환: 분류·토픽·내용·두음·키워드 (+추가설명은 숨김 유지)
+        // 호환: 분류·토픽·정의·내용·키워드 (+추가설명은 숨김 유지)
         const cat   = c.category ?? '';
         const topic = c.topic ?? c.q ?? '';
         const def   = c.definition ?? c.a ?? '';
@@ -292,8 +292,8 @@
 
         // 카드 헤더 한 줄 — "분류명 >> 토픽명" (토픽명만 군청색 강조)
         renderTopicHeader(cat, topic);
-        setSectionContent('definition', els.secDef,   def,       '내용이 비어 있습니다');
-        setSectionContent('mnemonic',   els.secMn,    mn,        '두음이 비어 있습니다');
+        setSectionContent('definition', els.secDef,   def,       '정의가 비어 있습니다');
+        setSectionContent('mnemonic',   els.secMn,    mn,        '내용이 비어 있습니다');
         setSectionContent('keyword',    els.secKw,    kw,        '키워드가 비어 있습니다');
         // 참고자료 — 링크 리스트 (있을 때만 표시)
         renderReferences(c.references);
@@ -757,7 +757,7 @@
         if (topic) parts.push('토픽. ' + topic + '.');
         if (def)   parts.push('정의. ' + def + '.');
         if (ttsMode === 'all') {
-            if (mn) parts.push('두음. ' + mn + '.');
+            if (mn) parts.push('내용. ' + mn + '.');
             if (kw) parts.push('키워드. ' + kw + '.');
             if (ex) parts.push('추가설명. ' + ex + '.');
         }

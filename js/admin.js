@@ -7,10 +7,14 @@
 // 권한: ADMINS 배열에 포함된 이메일만 관리자 기능 사용 가능.
 // 비관리자가 admin.html 에 접근하면 알림 후 시트 목록으로 리다이렉트.
 (function () {
-    // 엑셀 컬럼 — '이미지' 컬럼 추가 (=IMAGE() 수식)
-    const COLS = ['단원ID', '단원명', '분류', '토픽', '내용', '두음', '키워드', '이미지', '출처'];
+    // 엑셀 컬럼 — UI 라벨 매핑:
+    //   '정의' = card.definition  (옛 라벨 '내용')
+    //   '내용' = card.mnemonic    (옛 라벨 '두음', 두음·핵심요약·구성요소)
+    //   '이미지' = first https URL → =IMAGE() 수식
+    // 옛 엑셀 (내용=definition, 두음=mnemonic) 업로드도 rowToCard 에서 자동 인식.
+    const COLS = ['단원ID', '단원명', '분류', '토픽', '정의', '내용', '키워드', '이미지', '출처'];
     const COL_WIDTHS = [10, 10, 8, 18, 28, 42, 22, 25, 8];
-    const UNIT_COLS = ['분류', '토픽', '내용', '두음', '키워드', '이미지'];
+    const UNIT_COLS = ['분류', '토픽', '정의', '내용', '키워드', '이미지'];
     const UNIT_COL_WIDTHS = [8, 18, 28, 42, 22, 25];
     // CDN 라이브러리 — 무결성 해시(SRI) 검증 적용
     // xlsx-js-style: SheetJS Community fork — 동일 API + 셀 스타일 (정렬·wrap·색·테두리) 지원
@@ -174,12 +178,28 @@
         const topicRaw = String(row['토픽'] ?? '');
         const topic = topicRaw.replace(/\s+/g, ' ').trim();
         if (!topic) return null;
+        // 새 포맷: 정의=card.definition, 내용=card.mnemonic
+        // 옛 포맷: 내용=card.definition, 두음=card.mnemonic
+        // 헤더 존재 여부로 자동 인식 (정의 컬럼 있으면 새 포맷).
+        const hasNew = Object.prototype.hasOwnProperty.call(row, '정의');
+        const hasOld = Object.prototype.hasOwnProperty.call(row, '두음');
+        let definition, mnemonic;
+        if (hasNew) {
+            definition = get('정의');
+            mnemonic   = get('내용');     // 새 포맷에선 '내용' 컬럼이 mnemonic
+        } else if (hasOld) {
+            definition = get('내용');     // 옛 포맷
+            mnemonic   = get('두음');
+        } else {
+            // 둘 다 없음 — 정의/내용 둘 중 있는 것 사용
+            definition = get('정의') || get('내용');
+            mnemonic   = '';
+        }
         return {
             category:   get('분류'),
             topic,
-            // '내용' 컬럼 우선, '정의'는 옛 호환
-            definition: get('내용') || get('정의'),
-            mnemonic:   get('두음'),
+            definition,
+            mnemonic,
             keyword:    get('키워드'),
             // 옛 엑셀 호환 — 추가설명 컬럼 있으면 가져옴 (없으면 빈)
             extra:      get('추가설명'),
@@ -474,7 +494,7 @@
         function setHint(k) {
             hint.textContent = (k === 'def')
                 ? '카드 추가 모달의 "AI 채우기 (정의)" 가 사용. 30자 이내 정의 한 줄만 생성.'
-                : '"AI 채우기" 가 카드 한 장(분류·정의·두음·키워드·출처) 전체를 생성.';
+                : '"AI 채우기" 가 카드 한 장(분류·정의·내용·키워드·출처) 전체를 생성.';
         }
         function selectTab(k) {
             activeKind = k;
@@ -932,15 +952,15 @@
                 [COLS[0]]: u.id, [COLS[1]]: u.name,
                 [COLS[2]]: '분류 (선택)',
                 [COLS[3]]: '예시: 토픽명',
-                [COLS[4]]: '내용 (정의)',
-                [COLS[5]]: '두음 (선택)',
+                [COLS[4]]: '정의 (30자 이내)',
+                [COLS[5]]: '내용 (두음·핵심요약, 선택)',
                 [COLS[6]]: '쉼표로 구분된 키워드 (선택)',
                 [COLS[7]]: '', [COLS[8]]: '',
             }));
             for (let i = 0; i < 30; i++) rows.push({});
             const wb = XLSX.utils.book_new();
             const ws = XLSX.utils.json_to_sheet(rows, { header: COLS });
-            applySheetStyles(ws, COLS, COL_WIDTHS, ['내용', '두음', '키워드']);
+            applySheetStyles(ws, COLS, COL_WIDTHS, ['정의', '내용', '키워드']);
             XLSX.utils.book_append_sheet(wb, ws, '카드');
             const ref = (idx.units || []).map((u) => ({ '단원ID': u.id, '단원명': u.name, '설명': u.description || '' }));
             const wsRef = XLSX.utils.json_to_sheet(ref);
@@ -1140,7 +1160,7 @@
             if (rows.length === 0) { setStatus('admin-status', '내보낼 카드가 없습니다.', 'err'); return; }
             const wb = XLSX.utils.book_new();
             const ws = XLSX.utils.json_to_sheet(rows, { header: COLS });
-            applySheetStyles(ws, COLS, COL_WIDTHS, ['내용', '두음', '키워드']);
+            applySheetStyles(ws, COLS, COL_WIDTHS, ['정의', '내용', '키워드']);
             injectImageFormulas(ws, COLS);
             XLSX.utils.book_append_sheet(wb, ws, '카드');
             downloadWorkbook(wb, `ITPE_export_${todayTag()}.xlsx`);
@@ -1509,7 +1529,7 @@
             }
         }
 
-        // 이 단원 카드 → 엑셀 다운로드 (분류·토픽·내용·두음·키워드, 행 순서 그대로)
+        // 이 단원 카드 → 엑셀 다운로드 (분류·토픽·정의·내용·키워드, 행 순서 그대로)
         async function doUnitDownload(u) {
             if (!u) return;
             setStatus('unit-status', '카드 모으는 중…');
@@ -1535,15 +1555,15 @@
                     return {
                         '분류':    c.category   ?? '',
                         '토픽':    c.topic      ?? c.q ?? '',
-                        '내용':    c.definition ?? c.a ?? '',
-                        '두음':    c.mnemonic   ?? '',
+                        '정의':    c.definition ?? c.a ?? '',
+                        '내용':    c.mnemonic   ?? '',
                         '키워드':  c.keyword    ?? '',
                         '이미지':  firstImg || '',
                     };
                 });
                 const wb = XLSX.utils.book_new();
                 const ws = XLSX.utils.json_to_sheet(rows, { header: UNIT_COLS });
-                applySheetStyles(ws, UNIT_COLS, UNIT_COL_WIDTHS, ['내용', '두음', '키워드']);
+                applySheetStyles(ws, UNIT_COLS, UNIT_COL_WIDTHS, ['정의', '내용', '키워드']);
                 injectImageFormulas(ws, UNIT_COLS);
                 XLSX.utils.book_append_sheet(wb, ws, u.name || u.id);
                 downloadWorkbook(wb, `ITPE_${u.id}_${todayTag()}.xlsx`);
@@ -1626,11 +1646,11 @@
             try {
                 await loadXlsx();
                 const rows = [];
-                rows.push({ '분류':'분류 (선택)', '토픽':'예시 토픽', '내용':'내용 (정의)', '두음':'두음 (선택)', '키워드':'쉼표 구분 키워드', '이미지':'' });
+                rows.push({ '분류':'분류 (선택)', '토픽':'예시 토픽', '정의':'정의 (30자 이내)', '내용':'내용 (두음·핵심요약, 선택)', '키워드':'쉼표 구분 키워드', '이미지':'' });
                 for (let i = 0; i < 20; i++) rows.push({});
                 const wb = XLSX.utils.book_new();
                 const ws = XLSX.utils.json_to_sheet(rows, { header: UNIT_COLS });
-                applySheetStyles(ws, UNIT_COLS, UNIT_COL_WIDTHS, ['내용', '두음', '키워드']);
+                applySheetStyles(ws, UNIT_COLS, UNIT_COL_WIDTHS, ['정의', '내용', '키워드']);
                 XLSX.utils.book_append_sheet(wb, ws, u.name || u.id);
                 downloadWorkbook(wb, `ITPE_${u.id}_template_${todayTag()}.xlsx`);
                 setStatus('unit-status', `템플릿 다운로드 완료 — ${u.name}`, 'ok');

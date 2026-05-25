@@ -195,7 +195,7 @@
             sub.style.fontSize = '0.78rem';
             sub.style.color = 'var(--text-dim)';
             sub.style.marginTop = '8px';
-            sub.textContent = '분류 · 토픽 · 내용 · 두음 · 키워드 어디든 매칭';
+            sub.textContent = '분류 · 토픽 · 정의 · 내용 · 키워드 어디든 매칭';
             hint.appendChild(sub);
             findList.appendChild(hint);
             return;
