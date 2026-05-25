@@ -16,6 +16,9 @@
     "mnemonic": "RISC, 파이프라인 기술사용, 폰노이만 단점해결\n메모리 분리 : 명령어  메모리 - 데이터 메모리 분리\n병렬성 우수, ARM적용\n\n메모리 > FI > DI > EI  \nStore > 데이터  ==> 동시처리",
     "keyword": "Microchip 기술의 PC\n동시에 Excute(실행)와 Store(저장) 가능\nAtmel AVR = 하바드 구조로 수정된 8비트 RISC 단일칩 마이크로 컨트롤러",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/669134a8-da43-4fca-b54b-beca3f490c31.webp"
+    ],
     "userId": "u1779698572301",
     "createdAt": "2026-05-25T08:42:52.301Z"
   }
