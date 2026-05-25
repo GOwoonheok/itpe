@@ -1,12 +1,15 @@
 [
   {
-    "category": "컴퓨터구조",
-    "topic": "폰노이만 아키텍처",
-    "definition": "컴퓨터 효율적 동작 위해, 프로그램과 데이터를 단일 기억장치에 저장한 구조",
-    "mnemonic": "하나의 메모리에 명령어+데이터, 파이프라인 구조적 헤저드, 병목현상(단점)",
-    "keyword": "프로그램 내장방식(Stored Program), SISD,",
+    "category": "컴퓨터 구조",
+    "topic": "하바드 아키텍처",
+    "definition": "명령어와 데이터 메모리가 구분되어 병렬적으로 작업이 처리되도록 구현된 컴퓨터 아키텍처",
+    "mnemonic": "RISC, 파이프라인 기술사용, 폰노이만 단점해결\n메모리 분리 : 명령어  메모리 - 데이터 메모리 분리\n병렬성 우수, ARM적용\n\n메모리 > FI > DI > EI  \nStore > 데이터  ==> 동시처리",
+    "keyword": "Microchip 기술의 PC\n동시에 Excute(실행)와 Store(저장) 가능\nAtmel AVR = 하바드 구조로 수정된 8비트 RISC 단일칩 마이크로 컨트롤러",
     "extra": "",
-    "userId": "u1779700403442-mv-kfkd",
-    "createdAt": "2026-05-25T08:18:11.423Z"
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/669134a8-da43-4fca-b54b-beca3f490c31.webp"
+    ],
+    "userId": "u1779700410304-mv-79pw",
+    "createdAt": "2026-05-25T08:42:52.301Z"
   }
 ]
