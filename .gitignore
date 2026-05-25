@@ -6,8 +6,8 @@ node_modules/
 .env*.local
 .DS_Store
 
-# 임시 디버그/시드 파일
+# 임시 디버그 HTML 파일.
+# (api/_auth.js, api/_github.js 같은 private 모듈은 빌드에 필요하므로 _*.js 규칙 두지 않음.)
 _*.html
-_*.js
 
 .env*
