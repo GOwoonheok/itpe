@@ -2,7 +2,8 @@
   "note": "사용자/관리자 화이트리스트. 추후 호스팅 서버 DB로 이관 예정.",
   "registeredEmails": [
     "whko337@gmail.com",
-    "whko@korea.kr"
+    "whko@korea.kr",
+    "test@mail.kr"
   ],
   "admins": [
     "whko337@gmail.com"
