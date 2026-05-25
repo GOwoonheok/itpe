@@ -208,7 +208,7 @@
   },
   {
     "topic": "7S Model",
-    "definition": "",
+    "definition": "조직 혁신을 위해, 하드/소프트 7대 요소를 상호 연계하여 진단하는 경영 분석 모델",
     "mnemonic": "전조시(제), 공역구스 / strategy, structure, system (Hard) / shared value, skills, style, staff (Soft)",
     "keyword": "",
     "extra": "",
@@ -421,6 +421,15 @@
     "extra": "",
     "userId": "u1779682116096-27yv0",
     "createdAt": "2026-05-25T04:08:36.096Z"
+  },
+  {
+    "topic": "test",
+    "definition": "ddd",
+    "mnemonic": "dd",
+    "keyword": "ddd",
+    "extra": "",
+    "userId": "u1779685407815",
+    "createdAt": "2026-05-25T05:03:27.815Z"
   },
   {
     "topic": "트랜스포메이션 고려사항",
