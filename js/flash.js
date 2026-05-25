@@ -106,6 +106,11 @@
             state.checked = loadChecked();
             // 카드 0장이어도 모드 선택 화면(엑셀 업로드 등 관리자 도구 포함)은 노출
 
+            // 📓 NotebookLM URL — data/index.json 의 전역 메타. 있으면 툴바 버튼 노출.
+            state.notebooklmUrl = (data && typeof data.notebooklmUrl === 'string' && data.notebooklmUrl.trim()) || '';
+            const nlmBtn = document.getElementById('btn-nlm');
+            if (nlmBtn) nlmBtn.hidden = !state.notebooklmUrl;
+
             // 🤖 빈 정의 자동 생성 패널 갱신 — cards 가 채워진 시점
             if (window.ITPEFlash && window.ITPEFlash.refreshAutoDef) {
                 try { window.ITPEFlash.refreshAutoDef(); } catch {}
@@ -487,6 +492,37 @@
         }
         openImageOverlay(images, 0);
     });
+
+    // 📓 NotebookLM — 현재 토픽을 클립보드에 복사 후 노트북 새 탭으로 열기
+    //   NotebookLM 은 URL 로 query 주입 불가 → 클립보드 + 토스트로 우회
+    //   사용자는 NotebookLM 채팅창 클릭 → Ctrl+V → Enter 로 검색
+    {
+        const nlmBtn = document.getElementById('btn-nlm');
+        if (nlmBtn) nlmBtn.addEventListener('click', async () => {
+            const url = state.notebooklmUrl;
+            if (!url) { ttsToast('NotebookLM URL 미설정', 'err'); return; }
+            const c = currentCard();
+            const topic = (c && (c.topic ?? c.q) || '').trim();
+            if (!topic) {
+                window.open(url, '_blank', 'noopener,noreferrer');
+                ttsToast('📓 NotebookLM 열림 (토픽 없음)', 'info');
+                return;
+            }
+            // 클립보드 복사 — 권한 거부 시에도 새 탭은 무조건 열어줌
+            let copied = false;
+            try {
+                await navigator.clipboard.writeText(topic);
+                copied = true;
+            } catch {}
+            window.open(url, '_blank', 'noopener,noreferrer');
+            ttsToast(
+                copied
+                    ? `📓 "${topic}" 클립보드 복사됨 — 새 탭의 채팅창에 Ctrl+V → Enter`
+                    : `📓 NotebookLM 열림. 채팅창에 "${topic}" 직접 입력`,
+                'ok'
+            );
+        });
+    }
 
     // ============ 항목숨기기 / 카드모드 ============
     els.chipHide.addEventListener('click', () => {

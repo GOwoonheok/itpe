@@ -66,9 +66,18 @@ export default async function handler(req, res) {
             seen.add(u.id);
             dedup.push(u);
         }
+        // notebooklmUrl — body 에 명시되면 검증·저장, 미명시면 기존 값 유지 (units 편집 시 보존)
+        let notebooklmUrl = (typeof body.notebooklmUrl === 'string') ? body.notebooklmUrl.trim() : DATA.notebooklmUrl;
+        if (notebooklmUrl) {
+            // 안전: https URL + notebooklm 도메인만 허용
+            if (!/^https:\/\/(?:[a-z0-9-]+\.)?notebooklm\.google\.com\//i.test(notebooklmUrl) || notebooklmUrl.length > 500) {
+                notebooklmUrl = '';
+            }
+        }
         const out = {
             title: String(body.title || DATA.title || 'ITPE Flash').slice(0, 60),
             description: String(body.description || DATA.description || '').slice(0, 200),
+            ...(notebooklmUrl ? { notebooklmUrl } : {}),
             units: dedup,
         };
         try {
