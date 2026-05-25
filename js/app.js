@@ -19,6 +19,7 @@
         .catch(() => fetch('data/index.json', { cache: 'no-cache' }).then((r) => r.json()))
         .then((data) => {
             state.units = Array.isArray(data.units) ? data.units : [];
+            if (maybeAutoResume()) return;   // 마지막 본 카드로 자동 복귀 (리다이렉트됨)
             render();
         })
         .catch((err) => {
@@ -26,6 +27,25 @@
             list.hidden = true;
             empty.hidden = false;
         });
+
+    // 앱 재접속(홈 진입) 시 마지막 본 카드로 자동 복귀.
+    //   - flash 의 '메뉴' 버튼으로 목록을 명시적으로 열면(itpe.toList) 이 세션 동안 복귀 안 함 → 목록 유지
+    //     (목록에서 새로고침해도 카드로 튕기지 않음). 앱 재실행은 새 세션이라 다시 복귀.
+    //   - 저장된 단원이 현재 목록에 없으면(삭제됨) 건너뜀.
+    function maybeAutoResume() {
+        try {
+            if (sessionStorage.getItem('itpe.toList') === '1') return false;
+            const raw = localStorage.getItem('itpe.lastPosition');
+            if (!raw) return false;
+            const saved = JSON.parse(raw);
+            if (!saved || !saved.unitId || !saved.cardKey) return false;
+            if (!state.units.some((u) => u.id === saved.unitId)) return false;
+            const mode = saved.mode === 'random' ? 'random' : 'sequence';
+            // replace — 뒤로가기로 홈에 와도 다시 튕기지 않게 히스토리 오염 방지
+            location.replace('flash.html?unit=' + encodeURIComponent(saved.unitId) + '&mode=' + mode);
+            return true;
+        } catch { return false; }
+    }
 
     function render() {
         list.innerHTML = '';

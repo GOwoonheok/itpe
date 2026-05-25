@@ -155,6 +155,20 @@
                 }
                 showStudy();
                 render();
+            } else if (savedSameUnit && saved.cardKey
+                       && state.cards.some((c) => cardKey(c) === saved.cardKey)) {
+                // 명시적 mode 가 없어도 — 이 단원에 마지막 본 카드가 남아 있으면 학습 화면으로 복귀.
+                state.mode = (saved.mode === 'random') ? 'random' : 'sequence';
+                if (state.mode === 'random') shuffleOrder();
+                resumeCardIfPossible(saved);
+                // 새로고침해도 유지되도록 URL 에 mode 반영
+                try {
+                    const url = new URL(location.href);
+                    url.searchParams.set('mode', state.mode);
+                    history.replaceState(null, '', url);
+                } catch {}
+                showStudy();
+                render();
             } else {
                 showModeSelect();
             }
@@ -476,6 +490,8 @@
 
     // ============ 하단 툴바 ============
     document.getElementById('btn-menu').addEventListener('click', () => {
+        // '목록 보기'를 명시 — 시트 목록에서 마지막 카드로 자동 복귀하지 않도록 1회 표시
+        try { sessionStorage.setItem('itpe.toList', '1'); } catch {}
         location.href = 'index.html';
     });
     // 좌·우 대칭 Prev / Enter (양 손 엄지 모두 닿도록)
