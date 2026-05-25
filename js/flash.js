@@ -407,13 +407,16 @@
         });
     }
 
-    // 토픽 빠른검색(🔎) — 토픽을 URL 쿼리로 바로 넣어 새 탭. {q} 자리에 encodeURIComponent(topic).
+    // 토픽 빠른검색(🔎) — 토픽을 URL 쿼리로 바로 넣어 새 탭. {q} 자리에 encodeURIComponent(질의).
     //   바꾸고 싶으면 이 한 줄만 교체: 예) 'https://www.google.com/search?q={q}'
     const TOPIC_SEARCH_URL = 'https://www.perplexity.ai/search?q={q}';
+    //   답변 언어를 한국어로 유도하는 지시문 — 토픽 뒤에 붙여 질의.
+    const TOPIC_SEARCH_SUFFIX = ' 한국어로 답변해줘';
     function openTopicSearch(topic) {
         const t = (topic || '').trim();
         if (!t) return;
-        const url = TOPIC_SEARCH_URL.replace('{q}', encodeURIComponent(t));
+        const q = encodeURIComponent(t + TOPIC_SEARCH_SUFFIX);
+        const url = TOPIC_SEARCH_URL.replace('{q}', q);
         window.open(url, '_blank', 'noopener,noreferrer');
     }
 
