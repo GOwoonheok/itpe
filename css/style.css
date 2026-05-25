@@ -1337,8 +1337,9 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
     color: #fff;
     font-weight: 800;
 }
-.tb-icon.tb-add  { background: var(--accent-green); }
-.tb-icon.tb-edit { background: var(--accent-orange); }
+/* 추가·수정 — 자주 쓰는 액션이라 가로로 살짝 넓힘 (시각적 인지·터치 적중률 ↑) */
+.tb-icon.tb-add  { background: var(--accent-green);  width: 42px; padding: 0 6px; }
+.tb-icon.tb-edit { background: var(--accent-orange); width: 42px; padding: 0 6px; }
 .tb-icon.tb-del  { background: #c0392b; font-size: 0.74rem; }
 .tb-icons {
     display: flex;
@@ -1352,7 +1353,8 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
     line-height: 1;
     border-radius: 6px;
 }
-.tb-icons .tb-icon.tb-sign { font-size: 1rem; font-weight: 900; }
+/* − + 글자 크기 조정 — 최소화 (자주 안 쓰는 버튼) */
+.tb-icons .tb-icon.tb-sign { width: 20px; height: 20px; font-size: 0.86rem; font-weight: 900; }
 .tb-icons .tb-icon.tb-find,
 .tb-icons .tb-icon.tb-cont { font-size: 0.78rem; }
 
@@ -1632,6 +1634,10 @@ body[data-fz="-2"] { --font-size-step: -2; }
         height: 24px;
         font-size: 0.78rem;
     }
+    /* 자주 쓰는 버튼은 가로로 더 넓게, − + 는 최소화 (이 화면폭에서도 동일 원칙) */
+    .tb-icon.tb-add,
+    .tb-icon.tb-edit { width: 38px; padding: 0 5px; }
+    .tb-icons .tb-icon.tb-sign { width: 18px; height: 18px; }
     .toolbar-actions .tb-center { gap: 4px; }
 
     /* 시트 목록 큰 버튼도 살짝 축소 */
@@ -1698,6 +1704,9 @@ body[data-fz="-2"] { --font-size-step: -2; }
         height: 22px;
         font-size: 0.72rem;
     }
+    .tb-icon.tb-add,
+    .tb-icon.tb-edit { width: 34px; padding: 0 4px; }
+    .tb-icons .tb-icon.tb-sign { width: 16px; height: 16px; font-size: 0.76rem; }
     .num-area { gap: 4px; }
     .num-area .timer-btn { width: 38px; height: 34px; }
     .num-area .timer-btn .timer-icon { font-size: 0.92rem; }
@@ -1753,6 +1762,9 @@ body[data-fz="-2"] { --font-size-step: -2; }
         font-size: 0.64rem;
     }
     .tb-admins .tb-icon.tb-del { font-size: 0.58rem; }
+    .tb-icon.tb-add,
+    .tb-icon.tb-edit { width: 30px; padding: 0 3px; }
+    .tb-icons .tb-icon.tb-sign { width: 14px; height: 14px; font-size: 0.68rem; }
     .num-area .timer-btn { width: 34px; height: 32px; }
     .num-area .timer-btn .timer-icon { font-size: 0.82rem; }
     .num-area .tb-filter { min-width: 36px; height: 32px; padding: 0 6px; font-size: 0.72rem; }
