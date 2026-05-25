@@ -433,6 +433,23 @@ a { color: inherit; text-decoration: none; }
 .th-cat   { color: var(--text-muted); font-weight: 700; }
 .th-sep   { color: var(--text-dim);   font-weight: 700; margin: 0 6px; }
 .th-topic { color: #6f9bff; font-weight: 900; letter-spacing: -0.005em; }  /* 군청 + 다크 가독성 */
+/* 토픽 옆 🔎 빠른검색 버튼 — 작고 조용하게, 충분한 탭 영역 */
+.th-search {
+    appearance: none;
+    border: 0;
+    background: #ffffff14;
+    border-radius: 999px;
+    margin-left: 8px;
+    padding: 2px 9px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    cursor: pointer;
+    vertical-align: middle;
+    opacity: 0.85;
+    transition: opacity 0.15s, background 0.15s;
+}
+.th-search:hover  { opacity: 1; background: #ffffff26; }
+.th-search:active { transform: scale(0.94); }
 .th-ai-badge {
     display: inline-block;
     margin-left: 10px;

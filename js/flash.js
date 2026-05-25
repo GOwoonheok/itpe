@@ -407,7 +407,17 @@
         });
     }
 
-    // 카드 헤더 — 분류명(일반) + ">>" + 토픽명(군청색) + ✨ AI 배지
+    // 토픽 빠른검색(🔎) — 토픽을 URL 쿼리로 바로 넣어 새 탭. {q} 자리에 encodeURIComponent(topic).
+    //   바꾸고 싶으면 이 한 줄만 교체: 예) 'https://www.google.com/search?q={q}'
+    const TOPIC_SEARCH_URL = 'https://www.perplexity.ai/search?q={q}';
+    function openTopicSearch(topic) {
+        const t = (topic || '').trim();
+        if (!t) return;
+        const url = TOPIC_SEARCH_URL.replace('{q}', encodeURIComponent(t));
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    // 카드 헤더 — 분류명(일반) + ">>" + 토픽명(군청색) + 🔎 빠른검색
     function renderTopicHeader(cat, topic) {
         const sec = document.querySelector('.card-section[data-key="topic"]');
         if (!sec) return;
@@ -430,6 +440,20 @@
         tEl.className = 'th-topic';
         tEl.textContent = hasTopic ? topic : '주제를 입력하세요';
         body.appendChild(tEl);
+        // 토픽 옆 🔎 빠른검색 — 이 토픽을 Perplexity 새 탭으로 (클립보드 우회 없이 바로)
+        if (hasTopic) {
+            const searchBtn = document.createElement('button');
+            searchBtn.type = 'button';
+            searchBtn.className = 'th-search';
+            searchBtn.textContent = '🔎';
+            searchBtn.setAttribute('aria-label', '이 토픽 검색');
+            searchBtn.title = '이 토픽 빠른검색 (Perplexity)';
+            searchBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openTopicSearch(topic);
+            });
+            body.appendChild(searchBtn);
+        }
         // AI 표시는 토픽 헤더가 아니라 '정의' 라벨 옆에 작게 (markAiDefinition)
     }
 
