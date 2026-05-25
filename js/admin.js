@@ -7,15 +7,17 @@
 // 권한: ADMINS 배열에 포함된 이메일만 관리자 기능 사용 가능.
 // 비관리자가 admin.html 에 접근하면 알림 후 시트 목록으로 리다이렉트.
 (function () {
-    const COLS = ['단원ID', '단원명', '분류', '토픽', '내용', '두음', '키워드', '이미지수', '출처'];
-    const COL_WIDTHS = [10, 10, 14, 24, 50, 36, 28, 8, 8];
-    const UNIT_COLS = ['분류', '토픽', '내용', '두음', '키워드'];
-    const UNIT_COL_WIDTHS = [14, 24, 50, 36, 28];
+    // 엑셀 컬럼 — '이미지' 컬럼 추가 (=IMAGE() 수식)
+    const COLS = ['단원ID', '단원명', '분류', '토픽', '내용', '두음', '키워드', '이미지', '출처'];
+    const COL_WIDTHS = [10, 10, 8, 18, 28, 42, 22, 25, 8];
+    const UNIT_COLS = ['분류', '토픽', '내용', '두음', '키워드', '이미지'];
+    const UNIT_COL_WIDTHS = [8, 18, 28, 42, 22, 25];
     // CDN 라이브러리 — 무결성 해시(SRI) 검증 적용
+    // xlsx-js-style: SheetJS Community fork — 동일 API + 셀 스타일 (정렬·wrap·색·테두리) 지원
     const CDN = {
         xlsx: {
-            url: 'https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js',
-            integrity: 'sha384-vtjasyidUo0kW94K5MXDXntzOJpQgBKXmE7e2Ga4LG0skTTLeBi97eFAXsqewJjw',
+            url: 'https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js',
+            integrity: 'sha384-OUW9euuUyxyHcAhTqbhI+Iyb8LMssXt/cpz0yXhs9UWG2/R/uaWdakx/4cfww7Vb',
             global: 'XLSX',
         },
         jszip: {
@@ -24,6 +26,62 @@
             global: 'JSZip',
         },
     };
+
+    // 스타일 프리셋 — 모든 export 에서 재사용
+    const STYLE_HEADER = {
+        font: { bold: true, sz: 11, color: { rgb: 'FFFFFF' } },
+        fill: { patternType: 'solid', fgColor: { rgb: '2F80ED' } },
+        alignment: { horizontal: 'center', vertical: 'center', wrapText: true },
+        border: {
+            top:    { style: 'thin', color: { rgb: '888888' } },
+            bottom: { style: 'thin', color: { rgb: '888888' } },
+            left:   { style: 'thin', color: { rgb: '888888' } },
+            right:  { style: 'thin', color: { rgb: '888888' } },
+        },
+    };
+    const STYLE_CELL = {
+        font: { sz: 11 },
+        alignment: { horizontal: 'center', vertical: 'center', wrapText: true },
+        border: {
+            top:    { style: 'thin', color: { rgb: 'DDDDDD' } },
+            bottom: { style: 'thin', color: { rgb: 'DDDDDD' } },
+            left:   { style: 'thin', color: { rgb: 'DDDDDD' } },
+            right:  { style: 'thin', color: { rgb: 'DDDDDD' } },
+        },
+    };
+    // 긴 텍스트(내용·두음) 는 좌측 정렬이 가독성 ↑ — 가운데 정렬은 짧은 셀에만 적합
+    const STYLE_CELL_LEFT = {
+        ...STYLE_CELL,
+        alignment: { horizontal: 'left', vertical: 'center', wrapText: true, indent: 1 },
+    };
+
+    // 시트의 모든 셀에 스타일 적용 + 컬럼 너비 + 행 높이 자동
+    // longCols: 좌측 정렬할 컬럼 헤더명 배열 (예: ['내용', '두음'])
+    function applySheetStyles(ws, headers, widths, longCols) {
+        const range = XLSX.utils.decode_range(ws['!ref']);
+        const longSet = new Set(longCols || []);
+        const longIdx = new Set();
+        headers.forEach((h, i) => { if (longSet.has(h)) longIdx.add(i); });
+
+        // 헤더 행 (0) 과 본문 (1~)
+        for (let R = range.s.r; R <= range.e.r; R++) {
+            for (let C = range.s.c; C <= range.e.c; C++) {
+                const addr = XLSX.utils.encode_cell({ r: R, c: C });
+                if (!ws[addr]) ws[addr] = { v: '', t: 's' };
+                if (R === 0) {
+                    ws[addr].s = STYLE_HEADER;
+                } else {
+                    ws[addr].s = longIdx.has(C) ? STYLE_CELL_LEFT : STYLE_CELL;
+                }
+            }
+        }
+        // 컬럼 너비
+        ws['!cols'] = widths.map((w) => ({ wch: w }));
+        // 행 높이 — 헤더 24pt, 본문 자동(wrap 시 늘어남), 명시 50pt 정도 권장
+        const rows = [{ hpt: 28 }];  // 헤더
+        for (let r = 1; r <= range.e.r; r++) rows.push({ hpt: 60 });
+        ws['!rows'] = rows;
+    }
 
     const sess = window.ITPEAuth && window.ITPEAuth.getSession();
     const email = sess && sess.email ? sess.email.toLowerCase().trim() : null;
@@ -71,7 +129,10 @@
         localStorage.setItem('itpe.userCards.' + unitId, JSON.stringify(cards));
     }
     function cardToRow(card, unit, source) {
-        const imgs = Array.isArray(card.images) ? card.images.length : (card.image ? 1 : 0);
+        // 이미지: 첫 번째 https URL (R2 등) → =IMAGE() 수식. Excel 365 / Excel Web 에서 인라인 렌더링.
+        // data:image base64 는 제외 (수식에 못 넣음). 이미지 없으면 빈 칸.
+        const firstHttpsImg = (Array.isArray(card.images) ? card.images : [])
+            .find((s) => typeof s === 'string' && /^https:\/\//i.test(s));
         return {
             [COLS[0]]: unit.id, [COLS[1]]: unit.name,
             [COLS[2]]: card.category ?? '',
@@ -79,8 +140,33 @@
             [COLS[4]]: card.definition ?? card.a ?? '',
             [COLS[5]]: card.mnemonic ?? '',
             [COLS[6]]: card.keyword ?? '',
-            [COLS[7]]: imgs, [COLS[8]]: source,
+            // 빈 셀로 두고 export 시 수식을 따로 주입 (json_to_sheet 가 수식을 못 만들기 때문)
+            [COLS[7]]: firstHttpsImg || '',
+            [COLS[8]]: source,
         };
+    }
+
+    // export 후 — '이미지' 컬럼의 URL 셀들을 =IMAGE() 수식으로 변환
+    function injectImageFormulas(ws, headers) {
+        const imgIdx = headers.indexOf('이미지');
+        if (imgIdx < 0) return;
+        const range = XLSX.utils.decode_range(ws['!ref']);
+        for (let R = range.s.r + 1; R <= range.e.r; R++) {  // 헤더 제외
+            const addr = XLSX.utils.encode_cell({ r: R, c: imgIdx });
+            const cell = ws[addr];
+            if (!cell || !cell.v) continue;
+            const url = String(cell.v);
+            if (!/^https:\/\//i.test(url)) continue;
+            // Excel 의 IMAGE 함수: =IMAGE("url", [alt_text], [sizing])  sizing=1 stretch fit
+            // 내장 escape — URL 안의 큰따옴표 차단
+            const safe = url.replace(/"/g, '');
+            ws[addr] = {
+                t: 's',                                  // 문자열로 두되 f 필드로 수식 표시
+                f: `IMAGE("${safe}", "", 1)`,
+                v: url,                                  // Excel 2019 등 비호환 환경 폴백
+                s: ws[addr].s,                            // 스타일 보존
+            };
+        }
     }
     function rowToCard(row) {
         const get = (k) => String(row[k] ?? '').trim();
@@ -854,11 +940,11 @@
             for (let i = 0; i < 30; i++) rows.push({});
             const wb = XLSX.utils.book_new();
             const ws = XLSX.utils.json_to_sheet(rows, { header: COLS });
-            ws['!cols'] = COL_WIDTHS.map((w) => ({ wch: w }));
+            applySheetStyles(ws, COLS, COL_WIDTHS, ['내용', '두음', '키워드']);
             XLSX.utils.book_append_sheet(wb, ws, '카드');
             const ref = (idx.units || []).map((u) => ({ '단원ID': u.id, '단원명': u.name, '설명': u.description || '' }));
             const wsRef = XLSX.utils.json_to_sheet(ref);
-            wsRef['!cols'] = [{ wch: 10 }, { wch: 14 }, { wch: 24 }];
+            applySheetStyles(wsRef, ['단원ID', '단원명', '설명'], [10, 14, 30], ['설명']);
             XLSX.utils.book_append_sheet(wb, wsRef, '단원목록');
             downloadWorkbook(wb, `ITPE_template_${todayTag()}.xlsx`);
             setStatus('admin-status', '템플릿 다운로드 완료', 'ok');
@@ -1054,10 +1140,11 @@
             if (rows.length === 0) { setStatus('admin-status', '내보낼 카드가 없습니다.', 'err'); return; }
             const wb = XLSX.utils.book_new();
             const ws = XLSX.utils.json_to_sheet(rows, { header: COLS });
-            ws['!cols'] = COL_WIDTHS.map((w) => ({ wch: w }));
+            applySheetStyles(ws, COLS, COL_WIDTHS, ['내용', '두음', '키워드']);
+            injectImageFormulas(ws, COLS);
             XLSX.utils.book_append_sheet(wb, ws, '카드');
             downloadWorkbook(wb, `ITPE_export_${todayTag()}.xlsx`);
-            setStatus('admin-status', `다운로드 완료 — 총 ${rows.length}장`, 'ok');
+            setStatus('admin-status', `다운로드 완료 — 총 ${rows.length}장 (Excel 365 에서 이미지 자동 표시)`, 'ok');
         } catch (e) {
             console.error(e); setStatus('admin-status', '다운로드 실패: ' + e.message, 'err');
         }
@@ -1442,16 +1529,22 @@
                     setStatus('unit-status', '내보낼 카드가 없습니다.', 'err');
                     return;
                 }
-                const rows = all.map((c) => ({
-                    '분류':    c.category   ?? '',
-                    '토픽':    c.topic      ?? c.q ?? '',
-                    '내용':    c.definition ?? c.a ?? '',
-                    '두음':    c.mnemonic   ?? '',
-                    '키워드':  c.keyword    ?? '',
-                }));
+                const rows = all.map((c) => {
+                    const firstImg = (Array.isArray(c.images) ? c.images : [])
+                        .find((s) => typeof s === 'string' && /^https:\/\//i.test(s));
+                    return {
+                        '분류':    c.category   ?? '',
+                        '토픽':    c.topic      ?? c.q ?? '',
+                        '내용':    c.definition ?? c.a ?? '',
+                        '두음':    c.mnemonic   ?? '',
+                        '키워드':  c.keyword    ?? '',
+                        '이미지':  firstImg || '',
+                    };
+                });
                 const wb = XLSX.utils.book_new();
                 const ws = XLSX.utils.json_to_sheet(rows, { header: UNIT_COLS });
-                ws['!cols'] = UNIT_COL_WIDTHS.map((w) => ({ wch: w }));
+                applySheetStyles(ws, UNIT_COLS, UNIT_COL_WIDTHS, ['내용', '두음', '키워드']);
+                injectImageFormulas(ws, UNIT_COLS);
                 XLSX.utils.book_append_sheet(wb, ws, u.name || u.id);
                 downloadWorkbook(wb, `ITPE_${u.id}_${todayTag()}.xlsx`);
                 setStatus('unit-status', `✓ 다운로드 완료 — ${all.length}장 (${u.name})`, 'ok');
@@ -1533,11 +1626,11 @@
             try {
                 await loadXlsx();
                 const rows = [];
-                rows.push({ '분류':'분류 (선택)', '토픽':'예시 토픽', '내용':'내용 (정의)', '두음':'두음 (선택)', '키워드':'쉼표 구분 키워드' });
+                rows.push({ '분류':'분류 (선택)', '토픽':'예시 토픽', '내용':'내용 (정의)', '두음':'두음 (선택)', '키워드':'쉼표 구분 키워드', '이미지':'' });
                 for (let i = 0; i < 20; i++) rows.push({});
                 const wb = XLSX.utils.book_new();
                 const ws = XLSX.utils.json_to_sheet(rows, { header: UNIT_COLS });
-                ws['!cols'] = UNIT_COL_WIDTHS.map((w) => ({ wch: w }));
+                applySheetStyles(ws, UNIT_COLS, UNIT_COL_WIDTHS, ['내용', '두음', '키워드']);
                 XLSX.utils.book_append_sheet(wb, ws, u.name || u.id);
                 downloadWorkbook(wb, `ITPE_${u.id}_template_${todayTag()}.xlsx`);
                 setStatus('unit-status', `템플릿 다운로드 완료 — ${u.name}`, 'ok');
