@@ -39,6 +39,9 @@
     "mnemonic": "이미지, 영상처리 핵심반도체, 넓은 대역폭, 고속병렬, 멀티쓰레드\nNVIDA, AMD, CUDA, OpenGL, 임의접근, 부동소숫점 연산처리",
     "keyword": "지표 : Throught (num of result / clcye)",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/a0c9a43b-38be-4799-821e-7f8cd22c9872.webp"
+    ],
     "userId": "u1779699189379",
     "createdAt": "2026-05-25T08:53:09.379Z"
   }
