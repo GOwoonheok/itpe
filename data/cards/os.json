@@ -1,1 +1,380 @@
-[]
+[
+  {
+    "topic": "OS",
+    "definition": "",
+    "mnemonic": "사용자 모드1, 커널모드 0",
+    "keyword": "시스템 소프트웨어",
+    "extra": "",
+    "userId": "u1779704417721-2fa72",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "부트로더",
+    "definition": "",
+    "mnemonic": "OS 시동프로그램, 메모리(HW초기화, 커널적제 및 부팅, 윈도우(NTLDR), 절차: PB부커O, 종류: LG\r\nPower On (전원인가) > BIOS (장치 정보 수집)  > 부트로더 (MBR의 부트로더 로딩) > 커널 시동준비(로딩 커널을 Mem 로딩) > OS 시동,  종류 : LILO/전통적, 리눅스(GRUB/유연성/기능개선)",
+    "keyword": "os 시동프로그램",
+    "extra": "",
+    "userId": "u1779704417721-t52ps",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "커널",
+    "definition": "",
+    "mnemonic": "Monolithic 커널(많은 서비스, 높은 추상화),  Micro 커널(kernel 기능 최소화, IPC), \r\nExo Kernel (라이브러리, 낮은수준/HW접근, 최소한 추상화) Unikernels (커널 가볍게, 보안성 강화) Nano커널",
+    "keyword": "운영체제 핵심 프로그램",
+    "extra": "",
+    "userId": "u1779704417721-lx5ni",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "모놀리틱 커널",
+    "definition": "",
+    "mnemonic": "Monolithic 커널: 높은 수준의 가상계층, 고수준의 플랫폼 제공 / 모몰로식: 메모리관리, 프로세스관리, 관리자모드, 안정성 낮음, 오버헤드",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-n5qy3",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "마이크로 커널",
+    "definition": "",
+    "mnemonic": "Micro 커널: HW 추상화 최소화, 사용자 구현으로 기능 제공 / 마이크로: 최소, 작아서 안전성은 큼, 이해관계 서비스, 최적화 여지, 임베디드 시스템(증권시스템 등)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-9ptg6",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "운영체제 특권레벨",
+    "definition": "",
+    "mnemonic": "분류 : 커널모드, 사용자 모드 / Ring0(커널), 1,2(드라이버), 3(사용자 모드), 권한 접근",
+    "keyword": "메모리 접근 권한의 범위",
+    "extra": "",
+    "userId": "u1779704417721-y2oxk",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "CPU 스케쥴링",
+    "definition": "",
+    "mnemonic": "선점, 비선점의 프로세스 CPU할당 /\r\n선점 : RR, SRT, MQ , MFQ, \r\nRM (Rate Monotonic), ED (Earliest Deadline First)\r\n비선점 : 우선순위, 기한부, FCFS, SJF, HRN \r\n/주요문제 \r\n비선점: FCFS(호위효과), SJF(Starvation) -> HRN(Aging 적용),\r\n선점: RR(Job 특성 미반영), SRT(Starvation) -> MQ-> MFQ(Aging 적용),",
+    "keyword": "선점, 비선점의 프로세스에 CPU할당",
+    "extra": "",
+    "userId": "u1779704417721-m2zt1",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "SSTF / SLTF",
+    "definition": "",
+    "mnemonic": "근거리 요청 처리 우선 / 회전지연 최적화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-c8dv7",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "선점방식",
+    "definition": "",
+    "mnemonic": "유형: RS멀레RE   / 우선순위 높은자가 현재를 뺏을수 있음\r\n라운드 로빈, SRTF(Shortest Remaining Time First), Multi-level Queue, Multi-level Feedback Queue, RM(정적, 수행주기), EDF(동적, 임계시간)",
+    "keyword": "우선순위 높은 프로세스가 CPU 차지 스케줄링",
+    "extra": "",
+    "userId": "u1779704417721-0gos1",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "라운드 로빈",
+    "definition": "",
+    "mnemonic": "시분할 시스템, 순서대로, 끝나지 않으면 다시 돌아감(순환형), 시간순서로 CPU할당 기법",
+    "keyword": "CPU 할당방식",
+    "extra": "",
+    "userId": "u1779704417721-oow94",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "SRT(137)",
+    "definition": "",
+    "mnemonic": "Shortest Remaining Time  First  /  시간이 짧은것 우선,  긴것은 무한대기 잦은교체, 문맥교환 단점 존재",
+    "keyword": "짧은 실행시간에 CPU 할당 방식",
+    "extra": "",
+    "userId": "u1779704417721-y2ttb",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "MLQ",
+    "definition": "",
+    "mnemonic": "프로세스 그룹 별 준비큐 적용기법",
+    "keyword": "프로세스 그룹 별 준비큐 적용기법",
+    "extra": "",
+    "userId": "u1779704417721-ef7rb",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "MLFQ",
+    "definition": "",
+    "mnemonic": "상위그릅에서 CPU time slice를 부여 , 수행후 점차 낮은 우선순위 부여 (RR형태)",
+    "keyword": "MLQ보완기법",
+    "extra": "",
+    "userId": "u1779704417721-605he",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "RM",
+    "definition": "",
+    "mnemonic": "실시간 CPU 스캐쥴링, Rate Monotonic, 비율단조, 스케쥴링  @ R정연 (RM, 정적, 연성)\r\n방식, 스케쥴 기준(짧은), 프로세스 효율성, (장단점)\r\n정적,  짧은 주기, 100%> 85% > 69% 한계 (프로세스 증가 시)\r\n(장점) 연성 실시간 시스템 요구(장점)  \r\n(단점) 경성에 미흡, 마감시간 만족못함,  n(n^1/2 -1) \r\n주기, Soft RTOS에 적합, 선행조검 없음",
+    "keyword": "\"실시간 CPU 스케쥴링\r\nRate Monotonic\r\n비율단조 스케쥴링\"",
+    "extra": "",
+    "userId": "u1779704417721-dpcmo",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "EDF",
+    "definition": "",
+    "mnemonic": "최단 마감시간 우선 /  E동경(EDF, 동적, 경성)\r\n방식, 스케쥴 기준, 프로세스 효율성, (장단점)\r\n동적, 마감 시간 짧은것, 이론적으로 100% 가능 (단, 문맥교환 비용 존재)\r\n* RM에 DeadLine 추가, 가장 높은 순위 실시\r\n(장점) 경성실시간, 마감시간 만족\r\n(단점) 마감시간을 알려줘야함, 정확히 예측은 불가",
+    "keyword": "\"실시간 CPU 스케쥴링\r\nEarlest Deadline First\r\n최단마감우선 \"",
+    "extra": "",
+    "userId": "u1779704417721-rbc5o",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "RM, EDF 비교",
+    "definition": "",
+    "mnemonic": "대상, 스케쥴링, 시스템, CPU, 마감시간, 오버헤드, 복잡도\r\nCPU스케쥴링 기법 : (선점) RR, SRT, MLQ, MLFQ, RM, EDF (RS멀레RE)\r\n(비선점) 우선순위, 기한부, FIFO, SJF, HRN 우기피소희",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-4xuqb",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "호위효과(convoy effect)",
+    "definition": "",
+    "mnemonic": "CPU이용율 저하 현상, 조건 : FCFS, 다수며령어 \r\n기아현상 : 비선점(Priority, SJF), 선점(RR, SRT) // 대응: Aging, 비선점(HRN), 선점(MFQ)",
+    "keyword": "CPU 이용률 저하 현상",
+    "extra": "",
+    "userId": "u1779704417721-c3gjw",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "비선점방식",
+    "definition": "",
+    "mnemonic": "우기피소희~, 우선순위, 기한부, FCFS, SJF(Starvation), HRN(1 + 대기시간/서비스시간)",
+    "keyword": "우~기피소희",
+    "extra": "",
+    "userId": "u1779704417721-gc53c",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "SJF(137)",
+    "definition": "",
+    "mnemonic": "준비 상태 큐, 실행 시간(Burst Time) / 비선점 스케쥴링",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-mcy7i",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "Critical Section",
+    "definition": "",
+    "mnemonic": "공유자원 접근 코드임계 영역 / 상호배체, 영역 Lock /\r\n임계영역 문제 해결 조건(상호배제, 동기화) : 상진대속\r\n상호배제 기법 발전 : 알고리즘(데피렘) : 구현 복장> HW(Test&Set, SWAP, Spin lock), Busy Waiting > OS(세뮤) : TIming 문제 > Prog Level(모니터)\r\n임계영역 문제 해결 조건 > \r\n상호배제(임계 배타 점유), 진행조건(임계 밖의 프로세스, 진입방해 불가), \r\n대기제한(임계 집입 대기시간 한정), 속도조건 (상대속도 가정 없음),\r\n임계영역이용 공격: Race Condition",
+    "keyword": "공유자원 접근 코드 임계영역",
+    "extra": "",
+    "userId": "u1779704417721-rtlc6",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "Mutual Exclusion",
+    "definition": "",
+    "mnemonic": "Race Concition 방지, 공유자원 사용 제한 기법\r\n\"데커(Dekker, Flag/사용의사, Turn/차례, 자신프로세스 우선), \r\n피터슨(Peterson, Flag/사용의사, Turn/차례, 양보), \r\n램포트(Lamport, 수행순서 번호, 낮은번호우선)\r\nTest and Set(word 변경), Interrupt 금지, \r\nSwap (원자적 교환), Spin Lock, \r\n세마포어 (변수 S, 연산 P/V), 뮤텍스(Locking, Unlocking), 모니터\"",
+    "keyword": "Race Concition 방지, 공유자원 사용 제한 기법",
+    "extra": "",
+    "userId": "u1779704417721-rfpsc",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "테스트 동기화",
+    "definition": "",
+    "mnemonic": "멀티프로세스 환경, 순서 조정, 일관성 확보",
+    "keyword": "순차 수행 보장 매커니즘",
+    "extra": "",
+    "userId": "u1779704417721-w7t0c",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "세마포어",
+    "definition": "",
+    "mnemonic": "프로세스간 공유 자원 통제방법\r\n\"P연산: P(s)/ wait함수/ S--, \r\n V연산: V(s) / signal 함수/ S++, \r\nS: 커널만 접근/ mutex 시스템 변수,\r\n이진 세마포어 (변수가 0 or 1), Mutex와 동일,\r\n계수형 세마포어 (변수가 0 이상 정수)\r\nMutex: Task가 세마포어 획득해도 Mutex 있어야 리소스 접근 가능",
+    "keyword": "프로세스간 공유 자원 통제방법",
+    "extra": "",
+    "userId": "u1779704417721-4sj3z",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "뮤텍스",
+    "definition": "",
+    "mnemonic": "Lock, Unlock / 임계영역에 단 하나의 스레드만 실행, 이진세마포어(0,1)",
+    "keyword": "Lock, Unlock",
+    "extra": "",
+    "userId": "u1779704417721-2o0sy",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "우선순위역전",
+    "definition": "",
+    "mnemonic": "OS레밸, 구성: PV와씨, 유형 : 이계",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-9k8v9",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "모니터",
+    "definition": "",
+    "mnemonic": "타이밍 문제, 언어수준의 \r\n동기화요소 : 배타동기, 임계영역, 조건동기, \r\n언어적요소: synchronized, wait, notify, \r\n                     notifyAll\r\n1. 모니터에 작업요청\r\n 2. 큐에 저장후 순서처리\r\n임계구역 최대 하나의 쓰레드만 처리",
+    "keyword": "프로그램 수준 동기화 제공 기법",
+    "extra": "",
+    "userId": "u1779704417721-3tuxq",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "교착상태",
+    "definition": "",
+    "mnemonic": "다중프로세스 무한대기 상태 \r\n/ 상점비환(발생원인) 예회발복(해결방법) \r\n상호배제(자원 배타적 점유), 점유와 대기(자원 점유+다른 자원요청), \r\n비선점, 환형대기(원형), \r\n예방(조건 부정), 회피(은행가, wait-die, wound-wait), \r\n발견(자원할당 그래프), 회복(프로세스 Kill)",
+    "keyword": "다중프로세스 무한대기 상태",
+    "extra": "",
+    "userId": "u1779704417721-c2joh",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "wait die wound wait",
+    "definition": "",
+    "mnemonic": "\"Wait-Die 기법은 환형대기 조건의 부정, \r\nWound-Wait 기법은 비선점 조건의 부정\"\r\n고기신다 신참다이 (고참이 기다리고 신잠이 다이)\r\n고다신기 심참대기 (고참이 기다리고 신참이 대기)\"",
+    "keyword": "교착상태 회피",
+    "extra": "",
+    "userId": "u1779704417721-mz0dj",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "자원할당 그래프",
+    "definition": "",
+    "mnemonic": "교착상태 발견 목적(순환상태이면, 교착사애) / \r\n정점(Vertex): 프로세스, 자원,  간선(Edge): 요청 간선, 할당 간선",
+    "keyword": "사이클 표현 그래프",
+    "extra": "",
+    "userId": "u1779704417721-awus8",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "Banker's 알고리즘",
+    "definition": "",
+    "mnemonic": "\"가용 자원 (AVAILABLE[j] = k), 최대요구 (MAX[i , j] = k), \r\n추가요구 (NEED[i , j] = k), 할당자원 (ALLOCATE[i , j] = k), Request[i , j]\"",
+    "keyword": "\"동작: 준비 -> 자원할당 요청 -> 안정 (자원할당/ 할당 거부)\r\n구성: AMAN+R\"",
+    "extra": "",
+    "userId": "u1779704417721-4914w",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "스핀락",
+    "definition": "",
+    "mnemonic": "\"무한 루프를 돌면서 재시도한하는 구현된 락\r\n- 획득 - Fre spinlock 획득, 재시도 - 자원요청 스피닝,  >- 스핀락 획득\"",
+    "keyword": "Locking 매커니즘",
+    "extra": "",
+    "userId": "u1779704417721-johdu",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "경쟁조건",
+    "definition": "",
+    "mnemonic": "임계영역 진입까지 루핑, 공유자원 접근시 접근의 타이밍, 순서 등이 \r\n결과값에 영향을 줄수 있는 비정상적 상태",
+    "keyword": "동시에 자원 획득 경쟁상황",
+    "extra": "",
+    "userId": "u1779704417721-5mrkg",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "경쟁조건 해결방안",
+    "definition": "",
+    "mnemonic": "상호배제, 진행, 한계대기",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-wvc66",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "문맥교환",
+    "definition": "",
+    "mnemonic": "(개념) CPU가 할당된 프로세스가 시스템콜에 의해 PCB에 상태저장, 타프로세스에 상태가 복구과정\r\n생성(Create), 준비(Ready), 대기(Wait), 실행(Run), 종료(Terminated),\r\nDispatching, Time Slice, 입출력, 시스템콜\r\n병행처리, 상태전이 5, PCB, Stack, StackPointer, CPU Register\r\n[문맥교환 오버헤드 대응]\r\n(SW) 다중 프로그래밍 정도 낮춤, Stack 포인터 레지스터로 변경, \r\n  스레드(Thread) 이용으로 부하 최소화, 스케줄링 알고리즘 개선\r\n(HW) 공간/시간 지역성, 인터럽트 최소화, 메모리 할당 최적화\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-zc8sn",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "프로세스 상태5단계",
+    "definition": "",
+    "mnemonic": "\"하나의 프로세스가 생성 종료하는\r\n동안 여러 상태를 전이하며 실행\r\n생성 >  준비 > 실행(디스패치)  > 대기(IO이벤트)      = 1년",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-mxyx1",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "인터럽트 종류",
+    "definition": "",
+    "mnemonic": "외부인터럽트>내부 인터럽트 > SW 인터럽트 // \r\n전원이상-> 기계 착오 -> 외부 신호->입.출력 ->프로그램검사->SVC 인터럽트\r\n\r\n처리방식: (HW)직렬, 병렬, (SW) 폴링, \r\n인터럽트 벡터 테이블(IVT), 인터럽트 처리(서비스) 루틴(ISR)\r\nISR: 인터럽트 금지, 저장/인터럽트 처리,인터럽트 허용",
+    "keyword": "분류: 외내소 \r\n종류: 전기외입 - 프 - 서\r\n\r\n처리과정: IVT, ISR(금저복), PCB (복구)",
+    "extra": "",
+    "userId": "u1779704417721-me2mv",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "Locality(시간,지역,공간)",
+    "definition": "",
+    "mnemonic": "\"유형: 시공순\r\n활용사례: Cache (LRU/시간지역성, Pre-fetch/공간 지역성), CDN(공간)\r\nMemory (Trashing 대응 Working Set/공간 지역성, \r\n                페이지교체/ NRU/LRU/LFU/ 시간&공간)\"",
+    "keyword": "시간 : 최근 데이터 재이용 (Loop, Stack, Sub Prog), \r\n공간: 인접 데이터 사용률 (Array, Prefetch),\r\n순차: 분기 미존재 시, 순차적 인출/실행 다수 (순서처리),",
+    "extra": "",
+    "userId": "u1779704417721-joauh",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "쓰레싱_WS,FPF",
+    "definition": "",
+    "mnemonic": "WS (Reference Page/참조, Working Set Size/크기, \r\n       Working Set Page/크기 결정 기반/최근 사용 page 집합),\r\nPFF (상한선, 하한선, Overhead 적음)",
+    "keyword": "\"부적절한 페이지 교체 정책, \r\nLocality, WS(Working-Set), \r\nPFF(Page Fault Frequency)\"",
+    "extra": "",
+    "userId": "u1779704417721-fxn3t",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "페이징기법 (고정분할 세그멘테이션 가변)",
+    "definition": "",
+    "mnemonic": "\"주소형식 \r\n-페이징: 가상(페이징번호 + 오프셋) -> 물리(프레임번호 + 오프셋)\r\n-세그멘테이션: 가상(세그먼트번호 + 오프셋) -> 물리(ST + 오프셋) \r\n페이징+세그멘테이션(하이브리드)\r\n\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-w4gh0",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "스레드",
+    "definition": "",
+    "mnemonic": "레지스터, 스택 별도 사용, TCB, 프로세스 1:n, PCB공유, \r\n 멀티쓰레딩종류: Interleaved(번갈아), Blocked, 동시멀티(병렬실행), Chip(칩하나로다수실행)",
+    "keyword": "프로세스 내에서 실행되는 독립적인 흐름의 단위",
+    "extra": "",
+    "userId": "u1779704417721-p20z2",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "프로세스",
+    "definition": "",
+    "mnemonic": "운영체제가 관리하는 자원할당 단위, 실행되는 프로그램으로 프로세스ID를 할당받고, PCB유지상태로 실행되는 명령어 집합",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-28lzv",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  },
+  {
+    "topic": "양자컴퓨터",
+    "definition": "",
+    "mnemonic": "큐비트(양자비트)를 사용해 동시에 어러상태를 표현, 연산을 병렬로 수행하는 컴퓨터\r\n구성 : 양자비트, 양자게이트, 양자레지스터, 센서및제어장치,  SW:양자알고리즘, 언어, 시뮬레이션\r\n초전도 루프, 이온트랩, 다이아몬드 결함, 양자 어닐링",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704417721-3691c",
+    "createdAt": "2026-05-25T10:20:17.721Z"
+  }
+]
