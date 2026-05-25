@@ -1226,7 +1226,8 @@
         const fmt = window.ImageStore?.fmtBytes || ((b) => Math.round(b/1024) + 'KB');
         const orig = addImgState.originalBytes;
         const comp = addImgState.compressedBytes;
-        const remoteN = addImgState.images.filter((s) => /^https:\/\/.+\.public\.blob\.vercel-storage\.com\//.test(s)).length;
+        // 원격 URL = http(s) 로 시작 (R2 · 옛 Blob · 일반 https 이미지 호스트 등). dataURL 은 로컬로 간주.
+        const remoteN = addImgState.images.filter((s) => /^https?:\/\//i.test(s)).length;
         const localN = n - remoteN;
         const statusTxt = remoteN > 0 && localN === 0
             ? `☁ 서버 ${remoteN}장 (다른 기기와 공유)`

@@ -1,20 +1,27 @@
 // 이미지 저장 추상 레이어.
-// 현재: 클라이언트에서 압축 후 dataURL 로 반환 (localStorage 보관).
-// 향후: 호스팅 서버가 생기면 ImageStore.save() 만 fetch('/api/images', { body: blob })
-//       로 교체하면 카드 데이터(`card.images`) 구조는 그대로 유지된다.
+// 현재: 클라이언트에서 압축 후 dataURL 반환 → /api/upload-image 가 R2 업로드.
 //
-// 압축 정책 — 호스팅 비용·전송량 절감을 위한 보수적 기본값
-//   · 최대 변(maxDim) : 1024px  (학습 카드 디스플레이에 충분)
-//   · 품질(quality)   : 0.78    (JPEG/WebP 모두 시각적 손실 미미)
-//   · 포맷 우선순위   : WebP → JPEG (WebP 미지원 브라우저 폴백)
-//   · 스킵 조건       : SVG 그대로, 50KB 미만 원본 그대로 (재인코딩이 더 커지는 역효과 방지)
-//   · 안전망          : 압축 결과가 원본보다 크면 원본 사용
+// 압축 정책 — 학습 카드 가독성 유지 + 저장·전송량 최소화
+//   · 최대 변(maxDim)   : 800px  (학습 카드 표시 영역에 충분, 모바일·데스크탑 모두 OK)
+//   · 시작 품질         : 0.60   (WebP 기준 텍스트·도식 선명도 유지)
+//   · 목표 크기         : 150KB  (이 이하 되도록 적응 압축)
+//   · 적응 압축 단계    : (1) quality 0.60→0.52→0.45→0.38 순차 하강
+//                         (2) 0.38 이하로 못 줄면 해상도를 0.85x 단계 축소 + quality 0.55 부터 재시도
+//   · 품질 하한선       : 0.35  · 해상도 하한선: 400px
+//   · 포맷              : WebP 우선 (텍스트·도식에 강함), JPEG 폴백
+//   · 스킵 조건         : SVG 그대로, 16KB 미만 원본 그대로 (재인코딩이 더 커지는 역효과 방지)
+//   · 안전망            : 압축 결과가 원본보다 크면 원본 사용
 (function () {
-    // 스토리지·트래픽 최소화 — 학습 카드 디스플레이에 충분한 수준에서 공격적으로 압축
     const DEFAULTS = {
-        maxDim: 900,              // 1024 → 900 (대각선 ~1270px 충분)
-        quality: 0.72,            // 0.78 → 0.72 (시각적 손실 미미, 약 25% 추가 절감)
-        skipUnder: 24 * 1024,     // 50KB → 24KB (작은 이미지도 적극 압축)
+        maxDim: 800,
+        quality: 0.60,
+        targetBytes: 150 * 1024,
+        minQuality: 0.35,
+        minDim: 400,
+        qualityStep: 0.08,
+        dimStep: 0.85,
+        maxAttempts: 8,
+        skipUnder: 16 * 1024,
         preferFormat: 'image/webp',
         fallbackFormat: 'image/jpeg',
     };
@@ -105,8 +112,9 @@
             w = Math.round(w * r);
             h = Math.round(h * r);
         }
-        // iOS Safari·모바일은 canvas 크기 한도(보통 16MP 이하). 너무 크면 단계적으로 축소 재시도.
-        const tryEncode = (cw, ch) => {
+        // 캔버스 인코딩 — quality 인자 가변
+        // iOS Safari·모바일은 canvas 크기 한도(보통 16MP). 너무 크면 단계적 축소 재시도.
+        const tryEncode = (cw, ch, q) => {
             const canvas = document.createElement('canvas');
             canvas.width = cw; canvas.height = ch;
             const ctx = canvas.getContext('2d', { alpha: false });
@@ -115,28 +123,55 @@
             ctx.drawImage(img, 0, 0, cw, ch);
             let fmt = checkWebPSupport() ? cfg.preferFormat : cfg.fallbackFormat;
             let out = '';
-            try { out = canvas.toDataURL(fmt, cfg.quality); } catch { out = ''; }
+            try { out = canvas.toDataURL(fmt, q); } catch { out = ''; }
             if (!isValidDataUrl(out) || !out.startsWith('data:' + fmt)) {
                 fmt = cfg.fallbackFormat;
-                try { out = canvas.toDataURL(fmt, cfg.quality); } catch { out = ''; }
+                try { out = canvas.toDataURL(fmt, q); } catch { out = ''; }
             }
             return { out, fmt };
         };
 
-        let result = tryEncode(w, h);
-        // 빈 결과 또는 결과 dataURL 이 3MB 초과 시 단계 축소 (API 한도 4MB · 안전 마진)
-        const TARGET_MAX = 3 * 1024 * 1024;
-        let tries = 0;
+        // 적응 압축 루프
+        //   1) 초기 시도: maxDim · 시작 quality
+        //   2) 목표 초과 시 quality 단계 하강 (minQuality 까지)
+        //   3) quality 하한 도달해도 큰 경우 dim 0.85x 축소 + quality 0.55 로 리셋 후 반복
+        //   4) attempts/하한선 도달하면 그때까지 최선의 결과 사용
+        const TARGET = cfg.targetBytes;
+        const HARD_MAX = 3 * 1024 * 1024;  // API 한도 4MB · 절대 한도
+        let q = cfg.quality;
+        let result = tryEncode(w, h, q);
+        let bestResult = result;
+        let bestSize = isValidDataUrl(result.out) ? dataUrlBytes(result.out) : Infinity;
+        let attempts = 1;
+
         while (
-            (!isValidDataUrl(result.out) || dataUrlBytes(result.out) > TARGET_MAX)
-            && tries < 5 && (w > 200 || h > 200)
+            attempts < cfg.maxAttempts
+            && (!isValidDataUrl(result.out) || bestSize > TARGET)
         ) {
-            w = Math.round(w * 0.75);
-            h = Math.round(h * 0.75);
-            result = tryEncode(w, h);
-            tries++;
+            // 안전 — 절대 한도 초과면 무조건 dim 축소
+            const exceedsHard = isValidDataUrl(result.out) && dataUrlBytes(result.out) > HARD_MAX;
+
+            if (q > cfg.minQuality && !exceedsHard) {
+                // Phase 1: quality 단계 하강
+                q = Math.max(cfg.minQuality, q - cfg.qualityStep);
+            } else if (Math.min(w, h) > cfg.minDim) {
+                // Phase 2: dim 축소 + quality 약간 회복 (저화질 + 저해상 동시 효과)
+                w = Math.max(cfg.minDim, Math.round(w * cfg.dimStep));
+                h = Math.max(cfg.minDim, Math.round(h * cfg.dimStep));
+                q = Math.min(cfg.quality - 0.05, 0.55);  // 새 해상도에서 살짝 보수적으로
+            } else {
+                break;  // 더 줄일 곳 없음
+            }
+
+            result = tryEncode(w, h, q);
+            if (isValidDataUrl(result.out)) {
+                const size = dataUrlBytes(result.out);
+                if (size < bestSize) { bestResult = result; bestSize = size; }
+            }
+            attempts++;
         }
 
+        result = bestResult;
         let out = result.out;
         let format = result.fmt;
         // canvas 완전 실패 시 원본 dataURL 그대로 사용 (이미 표준 형식)
