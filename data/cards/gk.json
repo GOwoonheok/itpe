@@ -46,7 +46,7 @@
   },
   {
     "topic": "- SLA, SLO 지표",
-    "definition": "",
+    "definition": "품질 보장을 위해 합의 수준과 정량 목표를 정의한 지표",
     "mnemonic": "HW,SW,NW가동률, 장애, 오류건수, NW장애건수 / SLI > SLO > SLA",
     "keyword": "",
     "extra": "",
