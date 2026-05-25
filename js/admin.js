@@ -1268,10 +1268,38 @@
         if (!isAdmin) return;
         const panel = document.getElementById('unit-admin');
         if (!panel) return;
-        panel.hidden = false;
+        // 패널 자체는 기본 숨김 — 토글 버튼으로만 활성화
         const unitId = new URLSearchParams(location.search).get('unit');
         if (!unitId) return;
         let unit = null;
+
+        // 🛠 관리자 도구 토글 & 나가기 — 위/아래 두 버튼이 동일 동작
+        const toggleBtn = document.getElementById('admin-tools-toggle');
+        const exitBtn   = document.getElementById('admin-tools-exit');
+        const adminSections = ['unit-admin', 'autodef-panel', 'ai-panel'];
+        function setAdminToolsOpen(open) {
+            adminSections.forEach((id) => {
+                const el = document.getElementById(id);
+                if (el) el.hidden = !open;
+            });
+            if (toggleBtn) toggleBtn.hidden = open;
+            if (exitBtn)   exitBtn.hidden   = !open;
+            // 열 때마다 autodef 패널 상태 갱신
+            if (open && window.ITPEFlash && typeof window.ITPEFlash.refreshAutoDef === 'function') {
+                try { window.ITPEFlash.refreshAutoDef(); } catch {}
+            }
+        }
+        if (toggleBtn) {
+            toggleBtn.hidden = false;     // 관리자에게 토글 노출
+            toggleBtn.addEventListener('click', () => setAdminToolsOpen(true));
+        }
+        if (exitBtn) {
+            exitBtn.addEventListener('click', () => {
+                setAdminToolsOpen(false);
+                // 모드 선택 화면 상단으로 스크롤
+                try { document.getElementById('mode-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch {}
+            });
+        }
 
         (async () => {
             const idx = await loadIndex();
@@ -1294,25 +1322,15 @@
 
         // ✨ AI 토픽 자동 생성 패널 — jm 단원 전용 우선 노출 (다른 단원도 동작은 함)
         const aiPanel = document.getElementById('ai-panel');
+        // ✨ AI 패널 — 이벤트 바인딩만 (토글로 가시성 제어)
         if (aiPanel) {
-            aiPanel.hidden = false; // 관리자에게 모든 단원에서 노출 (jm 권장)
             const aiInput = document.getElementById('ai-input');
             const aiBtn = document.getElementById('ai-generate');
             const aiResults = document.getElementById('ai-results');
             aiBtn.addEventListener('click', () => doAiGenerate(unit, aiInput, aiResults, aiBtn));
-            // 🔧 프롬프트 편집 — details 펼침 시 자동 로드 + 저장 버튼
             bindInlinePromptEditor();
         }
-
-        // 🤖 빈 정의 자동 생성 패널 — 관리자에 노출, 실제 로직은 flash.js 가 담당
-        const autodefPanel = document.getElementById('autodef-panel');
-        if (autodefPanel) {
-            autodefPanel.hidden = false;
-            // flash.js 에 카드 로드 끝났음을 알림 — 패널 갱신 트리거
-            if (window.ITPEFlash && typeof window.ITPEFlash.refreshAutoDef === 'function') {
-                window.ITPEFlash.refreshAutoDef();
-            }
-        }
+        // 🤖 빈 정의 자동 생성 패널 — 이벤트는 flash.js 가, 가시성은 토글이 담당
 
         function bindInlinePromptEditor() {
             const ta       = document.getElementById('jm-ai-prompt-input');
@@ -1502,37 +1520,56 @@
             if (!u || !items || items.length === 0) return;
             setStatus('ai-status', `☁ 서버 저장 중… (${items.length}장)`, 'ok');
             try {
-                // 현재 단원 카드 fetch → 새 카드 추가 → PUT
+                // 현재 단원 카드 fetch → 신규 추가 + 기존 토픽은 덮어쓰기
                 const base = await window.ITPEAdmin.fetchCards(u.id);
                 const baseCards = Array.isArray(base) ? base.slice() : [];
-                const existing = new Set(baseCards.map((c) => normalizeTopic(cardTopic(c))));
-                const toAdd = [];
-                let dup = 0;
+                // 정규화된 토픽 → baseCards 인덱스 맵
+                const idxByTopic = new Map();
+                baseCards.forEach((c, i) => idxByTopic.set(normalizeTopic(cardTopic(c)), i));
+
+                let added = 0, updated = 0;
                 items.forEach((it) => {
-                    const t = normalizeTopic(it.topic);
-                    if (existing.has(t)) { dup++; return; }
-                    existing.add(t);
-                    toAdd.push({
+                    const tNorm = normalizeTopic(it.topic);
+                    const aiFields = {
                         category: it.category || '',
                         topic: it.topic,
                         definition: it.definition || '',
                         mnemonic: it.mnemonic || '',
                         keyword: it.keyword || '',
                         references: Array.isArray(it.references) ? it.references : [],
-                        userId: 'u' + Date.now() + '-ai-' + Math.random().toString(36).slice(2, 6),
-                        createdAt: new Date().toISOString(),
-                        source: 'ai',                        // ✨ AI 생성 표식
+                        source: 'ai',
                         aiGeneratedAt: new Date().toISOString(),
                         aiConfidence: it.confidence || 'medium',
-                    });
+                    };
+                    if (idxByTopic.has(tNorm)) {
+                        // 기존 카드 덮어쓰기 — 식별자/이미지/생성일 보존
+                        const i = idxByTopic.get(tNorm);
+                        const prev = baseCards[i] || {};
+                        baseCards[i] = {
+                            ...prev,
+                            ...aiFields,
+                            userId: prev.userId || ('u' + Date.now() + '-ai-' + Math.random().toString(36).slice(2, 6)),
+                            createdAt: prev.createdAt || new Date().toISOString(),
+                            editedAt: new Date().toISOString(),
+                            images: prev.images,  // 기존 이미지 유지 (AI는 이미지 생성 안 함)
+                        };
+                        updated++;
+                    } else {
+                        baseCards.push({
+                            ...aiFields,
+                            userId: 'u' + Date.now() + '-ai-' + Math.random().toString(36).slice(2, 6),
+                            createdAt: new Date().toISOString(),
+                        });
+                        idxByTopic.set(tNorm, baseCards.length - 1);
+                        added++;
+                    }
                 });
-                if (toAdd.length === 0) {
-                    setStatus('ai-status', `중복 ${dup}장 — 저장할 신규 없음.`, 'err');
+                if (added === 0 && updated === 0) {
+                    setStatus('ai-status', '저장할 항목 없음.', 'err');
                     return;
                 }
-                const combined = [...baseCards, ...toAdd];
-                await window.ITPEAdmin.saveCards(u.id, combined);
-                setStatus('ai-status', `✓ ${toAdd.length}장 저장됨 · 중복 ${dup}장 제외`, 'ok');
+                await window.ITPEAdmin.saveCards(u.id, baseCards);
+                setStatus('ai-status', `✓ 신규 ${added}장 추가 · 기존 ${updated}장 갱신`, 'ok');
                 await refreshCounts();
             } catch (e) {
                 setStatus('ai-status', '저장 실패: ' + (e?.message || e), 'err');

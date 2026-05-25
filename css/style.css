@@ -871,6 +871,33 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
 }
 .admin-hint { font-size: 0.8rem; color: var(--text-muted); margin: 6px 0 12px; line-height: 1.4; }
 
+/* 🛠 관리자 도구 토글 / 나가기 버튼 (모드 선택 화면) */
+.admin-tools-toggle, .admin-tools-exit {
+    display: block;
+    width: 100%;
+    margin: 16px 0 4px;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px dashed #2f80ed80;
+    border-radius: 10px;
+    color: #9ec4ff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.admin-tools-toggle:hover, .admin-tools-exit:hover {
+    background: #2f80ed18;
+    color: #fff;
+    border-color: #2f80ed;
+}
+.admin-tools-exit {
+    border-color: #c0392b80;
+    color: #ffb3aa;
+    margin: 18px 0 8px;
+}
+.admin-tools-exit:hover { background: #c0392b22; color: #fff; border-color: #c0392b; }
+
 /* AI 프롬프트 패널 — full/def 탭 */
 .ai-prompt-tabs {
     display: flex;

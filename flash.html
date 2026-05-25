@@ -34,6 +34,11 @@
                 </div>
                 <p class="mode-hint">번호를 입력하여 선택할 수도 있습니다.</p>
 
+                <!-- 🛠 관리자 도구 토글 — 관리자만 표시. 클릭 시 아래 admin 패널들 펼침. -->
+                <button id="admin-tools-toggle" class="admin-tools-toggle" type="button" hidden>
+                    🛠 관리자 도구 펼치기 ▼
+                </button>
+
                 <!-- 관리자 전용: 이 단원 엑셀 업로드 -->
                 <section class="unit-admin" id="unit-admin" hidden>
                     <div class="admin-head">
@@ -115,6 +120,11 @@
                         <p class="admin-status" id="jm-ai-prompt-status"></p>
                     </details>
                 </section>
+
+                <!-- 🛠 관리자 도구 접기 (하단) — 위 토글과 동일 동작 -->
+                <button id="admin-tools-exit" class="admin-tools-exit" type="button" hidden>
+                    ✕ 관리자 도구 나가기
+                </button>
                 </div><!-- /.mode-body -->
             </section>
 
