@@ -5,6 +5,9 @@
     "mnemonic": "(파-검-최-우)\n파라미터 바인딩 + 입력검증 + 최소권한 + WAF",
     "keyword": "Prepared Statement, ORM, WAF, Stored Procedure",
     "extra": "1순위 방어: Prepared Statement(파라미터 바인딩). 2순위: 입력 화이트리스트 검증. DB 계정은 최소권한 부여.",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/8b47321a-6e89-4349-8ae7-ce8706804e46.webp"
+    ],
     "userId": "u1779702050812-mv-u1y7",
     "createdAt": "2026-05-25T09:40:50.812Z"
   }
