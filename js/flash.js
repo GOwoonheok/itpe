@@ -407,19 +407,21 @@
         });
     }
 
-    // 토픽 빠른검색(🔎) — 토픽을 URL 쿼리로 바로 넣어 새 대화/검색 탭. {q}=encodeURIComponent(질의).
-    //   Claude: claude.ai/new?q= (로그인 필요·유료 구독자 OK, 질문 프리필 후 새 대화)
-    //   바꾸고 싶으면 이 한 줄만 교체: 예) 'https://www.perplexity.ai/search?q={q}' / 'https://www.google.com/search?q={q}'
-    const TOPIC_SEARCH_URL = 'https://claude.ai/new?q={q}';
-    //   답변 형식·언어를 유도하는 지시문 — 토픽 뒤에 붙여 질의.
+    // 답변 형식·언어 유도 지시문 — 토픽 뒤에 붙여 질의.
     //   (정의=개조식, 관련 기술요소, 구성요소, 활용방안 측면으로 한국어 간단 요약)
     const TOPIC_SEARCH_SUFFIX = ' 에 대해 한국어로 간단히 요약 정리해줘: ① 정의(개조식 2줄), ② 관련 기술요소 : 간단설명, ③ 구성요소: 간단설명, ④ 활용방안 측면';
-    function openTopicSearch(topic) {
+    // 토픽 옆 검색 아이콘 — 사용자가 골라서 사용. {q}=encodeURIComponent(토픽+지시문).
+    //   🔎 Perplexity: 새 탭에서 자동 조회 (로그인 불필요)
+    //   🤖 Claude    : 새 대화에 질문 프리필 (로그인 필요·유료 OK, Enter 로 전송)
+    const TOPIC_SEARCHERS = [
+        { icon: '🔎', title: '이 토픽 Perplexity 조회 (자동 검색)', url: 'https://www.perplexity.ai/search?q={q}' },
+        { icon: '🤖', title: '이 토픽 Claude 질문 (새 대화)',        url: 'https://claude.ai/new?q={q}' },
+    ];
+    function openTopicSearch(urlTemplate, topic) {
         const t = (topic || '').trim();
         if (!t) return;
         const q = encodeURIComponent(t + TOPIC_SEARCH_SUFFIX);
-        const url = TOPIC_SEARCH_URL.replace('{q}', q);
-        window.open(url, '_blank', 'noopener,noreferrer');
+        window.open(urlTemplate.replace('{q}', q), '_blank', 'noopener,noreferrer');
     }
 
     // 카드 헤더 — 분류명(일반) + ">>" + 토픽명(군청색) + 🔎 빠른검색
@@ -445,19 +447,21 @@
         tEl.className = 'th-topic';
         tEl.textContent = hasTopic ? topic : '주제를 입력하세요';
         body.appendChild(tEl);
-        // 토픽 옆 🔎 빠른검색 — 이 토픽을 Claude 새 대화로 (클립보드 우회 없이 바로)
+        // 토픽 옆 검색 아이콘들 — 🔎 Perplexity(자동 조회) · 🤖 Claude(질문). 골라서 사용.
         if (hasTopic) {
-            const searchBtn = document.createElement('button');
-            searchBtn.type = 'button';
-            searchBtn.className = 'th-search';
-            searchBtn.textContent = '🔎';
-            searchBtn.setAttribute('aria-label', '이 토픽 Claude 질문');
-            searchBtn.title = '이 토픽 Claude 에게 질문 (새 대화)';
-            searchBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                openTopicSearch(topic);
-            });
-            body.appendChild(searchBtn);
+            for (const s of TOPIC_SEARCHERS) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'th-search';
+                btn.textContent = s.icon;
+                btn.setAttribute('aria-label', s.title);
+                btn.title = s.title;
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openTopicSearch(s.url, topic);
+                });
+                body.appendChild(btn);
+            }
         }
         // AI 표시는 토픽 헤더가 아니라 '정의' 라벨 옆에 작게 (markAiDefinition)
     }
