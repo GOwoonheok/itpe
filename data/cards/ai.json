@@ -1,1106 +1,1953 @@
 [
-    {
-        "topic": "인공지능",
-        "definition": "인간지능과 같은 시스템, Neuron, NN, 머신러닝, 기계학습",
-        "mnemonic": "두음 (선택)",
-        "keyword": "쉼표 구분 키워드",
-        "extra": "추가설명 (선택)"
-    },
-    {
-        "topic": "귀납적 사고",
-        "definition": "사례일반화, 패턴모델 추출/ 대량학습하여 숨은 패턴찾기"
-    },
-    {
-        "topic": "특이점",
-        "definition": "Singularity, 약강초AI, Weak/Strong/Superintelligent AI \r\n@1암흑(XOR, 비선형) 2차(HW한계)"
-    },
-    {
-        "topic": "튜링테스트",
-        "definition": "PC-사람 |<-3자평가, CAPTCHA / 구텐베르크, 엘리자, 패리(C구알페) / imitation game"
-    },
-    {
-        "topic": "기계학습",
-        "definition": "원리: 균등(가정최소화),오캄(단순우선),양보(성능에 공짜없음)의 원리\r\n@학습데이터 =>[기계학습 알고리즘] -> 예측모델 // 입력 -> 예측모델 -> 출력\r\n@응용 : 정보검색(추출,요약), 시각(얼굴,화상 복구), 언어(대화), HCI(동작인식), 서비스(CRM), 바이오메트릭스, 로보틱스"
-    },
-    {
-        "topic": "-지도학습",
-        "definition": "라벨있음, 분류, 신경망(다층), HMM, SVM, 베이지안 분류, CNN, 결정트리, KNN, LDA, \r\n@신은 다서베 C결\r\n@활용: 이미지인식, OCR, 음성인식, NLP, 추세예측(회귀분석)\r\n@평가 : 교차검증, 정밀도(P,tp/(tp+fp), 재현율R,tp/(tp+fn)혼동 : 예실|PR|참거짓| 'tpfp,fntn'"
-    },
-    {
-        "topic": "-비지도학습",
-        "definition": "라벨없음, 데이터자체 유사> 유형구분, clustering ||데이터가 어떻게 구성되었는지?확인\r\n@종류:군집화(clustering),DBSCAN,K-means, EM clustring,PCA,ICA,SOM, HC(계층군집) \r\n@활용 : 마케팅 세분화, 뉴스요약"
-    },
-    {
-        "topic": "-준지도학습",
-        "definition": "지도학습 + 비지도학습(학습->자율), 그래프생성모형 // ?"
-    },
-    {
-        "topic": "-강화학습",
-        "definition": "Reward<-환경(Env)->State->Agent->Action>(환경)/상태반응 행위에 환경, 보상학습\r\n@종류: Q러닝, MDP, MC(마코브체이), DQN, DP(다이나믹 프로그램)   \r\n@활용: 게임, 로봇제어, 자율주행, 금융서비스"
-    },
-    {
-        "topic": "-기계학습",
-        "definition": "수탐전모평배(수집,탐색,전처리,모데링,평가,배포) @신서비스 >모델옵스(ModelOps)"
-    },
-    {
-        "topic": "-머신 언러닝",
-        "definition": "[개념]개인정보보호를 위해, 학습모델에서 특정 데이터의 영향을 제거하거나 무효화하여 해당 데이터를 학습하지 않았던 것처럼 모델을 재구성하는 기술 \r\n/프라이버시 보호 : GDPR, CCPA, 데이터 정확성 유지, 윤리\r\n/절차 : 언러닝 대상(삭제)>영향도 분석 >대상 노이즈>Repair단계(재적용) > 평가/검증\r\n/기술 : loss극대화, impair/Repair, SISA (분할,독립화, 슬라이싱, 통합)\r\n/보안기술 : Differential Privacy, Model Distillation"
-    },
-    {
-        "topic": "-기계학습알고리즘",
-        "definition": "지도학습( 분류 : K-NN, MLP, SVM, DBN, CNN, RNN, DQN, 회귀 : 다변량, Logistic, 포아송, 커널회귀분석)\r\n 비지도학습(군집화 : K-means, EM Clustering, Dendrogram clustering \r\n              잠재변수모델 : PCA, LDA, GAN, ICA, SOM, RBM, LDA, Word2Vec)"
-    },
-    {
-        "topic": "신명망분석",
-        "definition": "입출은활가 / 유형: 디지털입력(지도,비지도,준지도), 아날로그입력(퍼셉트론, SOM)"
-    },
-    {
-        "topic": "- 퍼셉트론",
-        "definition": "다수(입력) -> 하나출력(1,-1) 알고리즘 / 인공신경망의 연속적 교사학습\r\n@Net, 임계값, 활성화함수, 가중치"
-    },
-    {
-        "topic": "- 단층퍼셉트론",
-        "definition": "XOR불가 / 입력(가중치, 편향), 출력(임계값, Net)"
-    },
-    {
-        "topic": "- 다층퍼셉트론",
-        "definition": "은닉층 추가, 비선형(곡선)"
-    },
-    {
-        "topic": "딥러닝",
-        "definition": "개념: 기계학습중 하나인 인공신경망 히든층을 깊게 쌓아 만든 기술>인간개입없는 발전\r\n배경: 인공신경망 극복, 은닉층깊게, 과적합해결, HW발전, 빅데이터 \r\n@종류 : RNN, CNN, DNN, 제한볼츠만 머신, 심층신뢰 신경망(DBN)\r\n@활용 :패턴,NLP,자동제어,가상현실,DataMining,시멘틱웹"
-    },
-    {
-        "topic": "- Feed Forward",
-        "definition": "input L, hidden L(가중치,활성화함수), output L, ChainRule(error전파, 최종오류변화), Backpropagation(출력-목표 오차, weight조절)"
-    },
-    {
-        "topic": "- 하이퍼파라미터",
-        "definition": "사람직접, 학은배/학습율, 은닉층갯수,배치크기,경사하강법 반복횟수(epoch),활성함수  >> 모델자동생성(최적화 파라임미터, 가편)"
-    },
-    {
-        "topic": "- 파라미터",
-        "definition": "모델내부결정,가편/가중치,편향/종류:인공신경망 가중치, svm(SV), 선형회귀(결정계수)"
-    },
-    {
-        "topic": "학습률유형\r\n최적화알고리즘",
-        "definition": "하이퍼파라미터, Loss줄이는 경사하강법의 최적해 도달 크기의 보폭(Step size)\r\n@유형: 배치(GD,SGD)>관성(Momentum, NAG), \r\n학습(AdaGrad, RMSProp), Adam, Nadam\r\n@MoNARA / \r\n최적해 찾는 방법(옵티마이저) /"
-    },
-    {
-        "topic": "경사하강법",
-        "definition": "인공신경망 비용함수 최소화 / 미분>함수 기울기(경사) 최저점 반복 알고리즘 (MSE)"
-    },
-    {
-        "topic": "- SGD",
-        "definition": "랜덤이동  / 한계극복 -> MoNARA"
-    },
-    {
-        "topic": "- BGD",
-        "definition": "하나 배치 이동"
-    },
-    {
-        "topic": "- MSGD",
-        "definition": "배치사이즈 나눠 이동"
-    },
-    {
-        "topic": "단극성 활성화",
-        "definition": "항등, 경사, 계단"
-    },
-    {
-        "topic": "양극성",
-        "definition": "시그모이드, Tanh, ReLu, Leaky ReLu"
-    },
-    {
-        "topic": "은닉층 활성화함수",
-        "definition": "(단극)sigmoid, ReLU (양극)Tanh, Leaky ReLU @PReLU, ELU\r\ntanh(하이퍼볼릭 탄젠트, hyperbolic tangent) -1<tanh(x)<1"
-    },
-    {
-        "topic": "출력증 활성화함수",
-        "definition": "(이진)Sigmoid, (다중)Softmax, (회귀)Linear / 활성 수식 반드시 암기\r\nsigmod(x, 0~1) = 1/1+e-x"
-    },
-    {
-        "topic": "Softmax",
-        "definition": "출력값 정규화(0~1실수, 총합1, 확률) // But, 과적합 문제 발생"
-    },
-    {
-        "topic": "One Hot 인코딩",
-        "definition": "고유값 컬럼 1, Bag, Vector(0,1) \r\n// But, 차원저주 문제 발생\r\n// 컬럼증가, 희소백터, 해석오래\r\n해결: 임배딩기법, 피처해싱, PCA, 바이너리 인코딩"
-    },
-    {
-        "topic": "편향(Biased)\r\n원인",
-        "definition": "이유: 편향된 데이터(인숨데롱고), 가공과정, 모델자체에서 편향\r\n@종류 : 인간의편향, 숨겨진편향, \r\n데이터표본 편향, 롱테일 편향, 고의적 편향\r\n개념 : 예측값과 평균과 실제값의 차이"
-    },
-    {
-        "topic": "편향 대응방안",
-        "definition": "설명요구, XAI, 알고리즘, AI감리, 기업AI윤리"
-    },
-    {
-        "topic": "분산",
-        "definition": "예측값과 평균과 예측값의 차이 : 예측값의 흩어진 정도"
-    },
-    {
-        "topic": "기울기 소실문제",
-        "definition": "BP-오차미전달,(Layer깊이)미분 국부해수렴, (활성함수측면)시그모이드 함수의 Squash"
-    },
-    {
-        "topic": "기울기 소실문제해결",
-        "definition": "학습효율:LSTM(장기의존성 해결), DBN(사전학습으로 예측높임), ReLU, LeakyReLU(활성함수개선) * LSTM은 오래 기억, DBN은 예습, ReLU는 크게 외치기로 문제를 해결해요"
-    },
-    {
-        "topic": "손실함수",
-        "definition": "개별오차측정,실제-예측차이,단일샘플,역전파시 기울기,비가역적\r\n/MSE, RMSE, MAE, BCE, CCE, SCCE\r\n@비가역: 손실함수값이 낮다고, 예측결과가 항상좋은것은 아님"
-    },
-    {
-        "topic": "비용함수",
-        "definition": "DataSet 전체 손실함수, 모델전체가 얼마나 틀렸는지? \r\n/ 회귀: MAE, MSE,MSE / 분류: BCE, CCE, CE"
-    },
-    {
-        "topic": "Object 함수",
-        "definition": "비용함수 활용해 오차가 최소가 되는 지점을 찾음 수행\r\n/ Gradient Descent 이용해 비용최소화"
-    },
-    {
-        "topic": "언터피팅",
-        "definition": "큰 데이터 축소, 부족 / 모델링 변경, ReLU함수 사용, 정규화, 특성강화, XAI도입, 활성화 함수 변경 @과소적합, 고편항모델"
-    },
-    {
-        "topic": "오버피팅",
-        "definition": "학습정확, 부족학습셋 / \r\nDropout, Early stop, cross validation(hold out/ k=fold), 정규화 @고분산"
-    },
-    {
-        "topic": "모델발굴",
-        "definition": "편향, 분산 trade off / 단점보완, 장점부각 \r\n@ (방향) 저편향, 저분산"
-    },
-    {
-        "topic": "역전파",
-        "definition": "신경망 오차를 역방향으로 앞쪽전달 가중치(0)조정의 신경망\r\n절차: 순전파> 역전파, 가중치조정, 반복실시 > (SOTA생성) State of the Art\r\nex: 이미지넷, COCO || GLUE/MMLU NLP점수|| BELU, METEOR 번역  평가\r\n                         || CLIP, LAION(멀티)"
-    },
-    {
-        "topic": "역전파 문제점/해결",
-        "definition": "문제//해결\r\n기울기 소실-폭주 // 가중치 초기화, 활성화 함수선택, 배치정규화\r\n과적합//정규화, 드롭아웃, 데이터증강\r\n학습속도와 수렴속도 // 학습률 조정, 모멘텀, Adam 등 최적화 알고리즘 사용\r\n하이퍼파라미터 튜닝 // 최적화, 자동화 도구(하이퍼파라미터)"
-    },
-    {
-        "topic": "순전파",
-        "definition": "입력, 히든, 출력방향 전달의 비순환 구조의 가중치 조정 신경망\r\n/절차: 초기화, input, 히든, output, 오차개선"
-    },
-    {
-        "topic": "Dropout",
-        "definition": "일부은닉 미사용/ Rate (%)>비활성화>학습>역전파 > 테스트수행 / 오버피팅, 소실"
-    },
-    {
-        "topic": "언더샘플링",
-        "definition": "높은 class를 낮은 분포화 / Random under sampling, Tomek_link, CNN, ENN @CERT\r\n(장): 유의미한 데이터만 보관, (단): 정보손실"
-    },
-    {
-        "topic": "오버샘플링",
-        "definition": "소수 데이터 증대 / Random over sampling, ADASYN, SMOTE / @RAS\r\n(장): 정보의 손실방지 (단)여러정보가 추가로 오히려 오버피팅 야기\r\n@복합 :  SMOTE + ENN,  SMOTE + TOMEK"
-    },
-    {
-        "topic": "능동학습",
-        "definition": "일부라벨링 , 결과를 통해 오토라벨링* /@프로세스: 학습>선별>교정>평가 @학선교평\r\n@미라벨 데이터를 골라 사람(오라클)에 라벨을 요청"
-    },
-    {
-        "topic": "자기지도학습",
-        "definition": "원천>레이블 자동생성, 비지도학습, 자동레이블\r\n/절차: PDF(pre-text, Downstream, Fine tunning)\r\n@P데이터 핵심표현 추출(레이어학습)>\r\nD지도학습(전이학습)적은양 라벨이용 지도학습>F튜닝\r\n@종류:영상재건, 생성기반, 문맥기반, 대조학습 기반 @필요성: 수집,비용 한계, 편향성"
-    },
-    {
-        "topic": "합성데이터",
-        "definition": "원본데이터 부족 문제 해소, 실제분포와 차이있음 / 부분, 완전 합성데이터"
-    },
-    {
-        "topic": "지식증류",
-        "definition": "앙상블, Teacher>Student, 활성화, 손실함수\r\n/숙련대형모델(Teacher)>경량모델(Student)\r\n@큰모델 무거워 쓰기 어려움>교사(큰모델) 예측분포(soft)|풀이과정 보여줌(how, soft) 학생은 풀이과정 모방하며, 감(패턴) 익힘\r\n>>교사의 힌트(확률분포, 관계)로 작고단순한 구조로 문제 해결"
-    },
-    {
-        "topic": "지식증류 유형",
-        "definition": "로짓(응답), 피처기반, 관계기반 증류 / 오프라인, 온라인, 자기증류 / 딥시크(MoE활용)"
-    },
-    {
-        "topic": "HMM",
-        "definition": "은닉마르코프, 숨겨진 상태순서로 모델링/ \r\n(유형)Ergodic model(연결구조), Left to Right(순차) Model /초상관(확률)\r\n@결과(관찰)->은닉상태를 추측모델/(구성)상태, 관측, (초기상태, 상태전이, 관측) 확률"
-    },
-    {
-        "topic": "CNN",
-        "definition": "Convolution(특추), Pooling(이미지축소), Fully connected(정규화,분류)\r\n@작은창으로 특징 뽑고, 풀링으로 압축한 뒤, 완전연결층으로 결론\r\n> 과정의 이미지 분류를 수행\r\n@[Convolution→Activation]×N>[Pooling]×M>Flatten→Fully Connected→Softmax"
-    },
-    {
-        "topic": "CNN하이퍼파라미터",
-        "definition": "Kernel Size, Padding, Stride, 필터사이즈, Pooling size"
-    },
-    {
-        "topic": "EfficientNet",
-        "definition": "이미지 분류, Compound Scaling / AutoML @CNN성능과 효율향상 모델\r\n@사진속 고양이,사람인지?, 3가지(깊이,넓이,해상도) \r\n> 비유: 책속 줄거리,단어,그림 조금씩 보는것"
-    },
-    {
-        "topic": "EfficientDet",
-        "definition": "Object 탐지, BiFPN, Compound Scaling / 컴퓨터비전 @CNN성능과 효율향상 모델\r\n@사진속 물체 위치/종류 찾기/BiFPN이용해 크고,작은 동시찾음 >비유: 돋보기, 망원경 동시사용"
-    },
-    {
-        "topic": "EfficientSeq",
-        "definition": "텍스트·음성·시계열 같은 순차(시퀀스) 데이터를 빠르고 가볍게 처리/ 3가지(깊이,넓이,해상도)"
-    },
-    {
-        "topic": "U-Net",
-        "definition": "이미지 세그멘테이션 AI모델, CNN단점 극복, FCN(Fully Convolution Net)(완전합성곱)\r\n@수축>전환>확장/넓은이미지 의미정보 추출하여 객체 분류, U모양 FCN기반 인공지능\r\n@너비(Width), 높이(Height), 채널(Channel)의 3가지 차원 // 접기<->펼치기 (스킵연결)"
-    },
-    {
-        "topic": "YOLO",
-        "definition": "이미지 -> SXS 그리드 > 바운딩 박스/  클래스 확율맵 > 최종객체 인식  @S바클객"
-    },
-    {
-        "topic": "RNN",
-        "definition": "시계열분석, 연속적 정보흐름(시간) 파악 인공신경망 // 장기의존성 문제\r\n학습과정 : Recurrent Weight, seq data, BPTT(역전파 + 시간 확장판)\r\n신경망구조 : Input, Hidden, Output Layer,"
-    },
-    {
-        "topic": "LSTM",
-        "definition": "히든레이어(Forget,Input, Output Gate, Cell state)시,시탄,시탄 / RNN 장기의존성해결"
-    },
-    {
-        "topic": "GRU",
-        "definition": "LSTM간결구조, Reset Gate, Update Gate\r\nRNN > LSTM > GRU"
-    },
-    {
-        "topic": "DBSCAN",
-        "definition": "비지도학습, 군집분석 / 한점기준 n개 있으면 하나군집 인식 \r\n/ Core, Border, Connected, Noise Point\r\n밀도기준, 중심과 군집의 반경(epsilon) \r\n// 동작: epsilon 설정>minPts설정>core, Border point분류"
-    },
-    {
-        "topic": "군집분석",
-        "definition": "비지도학습, 상호간 유사 특성 집단화(거리 최소화로 하는 기법) @절차: 문제형성>거리측도선택>절차선택> 군집수 결정> 군집해석 > 타당성 평가 #문거철수 프타\r\n기법: 거리중심(계층적 군집, K-means, SOM) 차원축소(PCA, MDS)"
-    },
-    {
-        "topic": "의사결정트리",
-        "definition": "지도학습, 형가타해(형성>가지치기>타당성평가>해석) \r\n/ 분류기준기법 : 불순도(엔트로피, 지니계수)로 \r\n장점: 해석용이, 미모수적 모형, 분류직관성,  단점: 불안전성, 비연속성, 낮은 정확도"
-    },
-    {
-        "topic": "KNN",
-        "definition": "지도,분류/ 최고인접, 다수결, 유사도(거리)기반/ Fingerprint >그룹분류 >K값 선정>매칭\r\nlazy Learning기법, 단순유연성 / 유클리이디안, 마할라노비스거리, 코사인유사도\r\n장점: 효율성, 간단학습,높은정확도/ 단점:K값선정, 고비용, 거리계산복잡,노이즈에약함"
-    },
-    {
-        "topic": "SVM",
-        "definition": "초평면/hyperplane, Support vector, Margin(Hard,soft),커널기법\r\n//활용: 전처리, 변수선택, 통계분류"
-    },
-    {
-        "topic": "커널법",
-        "definition": "Kernel : 비선형 분류 문제 -> 저차원값을 고차원 공간으로 변환"
-    },
-    {
-        "topic": "Clustering",
-        "definition": "(분할군집) K-means, DBSCAN (계층군집) Dendrogram, EM clustering"
-    },
-    {
-        "topic": "K-means",
-        "definition": "(개념)데이터를 k개의 그룹 나누고, 각그룹의 평균 위치(centroid)를 중심으로 묶는 방법\r\n거리기반 군집화, Centroid, K개군집, 데이터양자화(오류최소화), 반복적 최적해\r\n@절차:K개지정>초기평균계산(가상좌표)>다시 거리계산 군집할당>반복(변화없기까지)"
-    },
-    {
-        "topic": "K-선택",
-        "definition": "엘보우(SSE 최소의 K), 실루엣(군집간 거리 분리척도 1굿, 0나쁨, 0.5이상), 덴드로그램(시각화, 계층)"
-    },
-    {
-        "topic": "분류유형",
-        "definition": "지도학습/ KNN, 결정트리, Random Forest, Navie Bayes, SVM, Logistic Regression"
-    },
-    {
-        "topic": "차원축소",
-        "definition": "PCA(주성분분석), ICA, LDA(주성분분석, 다변량의신호, 데이터 축소)SOM, AE, ISOMAP\r\n<차원축소 알고리즘> \r\n- 선형 차원 축소 (Linear Dimensionality Reduction)\r\n  ㄴ PCA (Principal Component Analysis, 주성분 분석)\r\n  ㄴ LDA (Linear Discriminant Analysis, 선형 판별 분석)\r\n  ㄴ FA (Factor Analysis, 요인 분석)\r\n- 비선형 차원 축소 (Non-Linear Dimensionality Reduction)\r\n  ㄴ t-SNE (t-Distributed Stochastic Neighbor Embedding)\r\n  ㄴ UMAP (Uniform Manifold Approximation and Projection)\r\n  ㄴ Isomap (Isometric Mapping)\r\n  ㄴ LLE (Locally Linear Embedding, 국소적 선형 임베딩)\r\n- 신경망 기반 차원 축소 (Deep Learning-Based Dimensionality Reduction)\r\n  ㄴ Autoencoder\r\n  ㄴ Variational Autoencoder (VAE)\r\n  ㄴ RBM (Restricted Boltzmann Machine)\r\n- 행렬 분해 기반 차원 축소 (Matrix Factorization)\r\n  ㄴ SVD (Singular Value Decomposition, 특이값 분해)\r\n  ㄴ NMF (Non-Negative Matrix Factorization, 비음수 행렬 분해)\r\n  ㄴ MDS (Multidimensional Scaling, 다차원 척도법)"
-    },
-    {
-        "topic": "PCA",
-        "definition": "절차 : 데이터전처리, 공분산 행렬계산, 고유값/고유백터 계산, 데이터 투영/변환\r\n기술 : 공분산, 공분산행렬, eigen vector(고유백터), eigen value(고유상수), 변환행렬(A)\r\n활용 : 얼굴인식 대표알고리즘"
-    },
-    {
-        "topic": "SOM",
-        "definition": "(개념) 비슷한 데이터끼리 가깝게 정리된 지도(Map)를 만드는 AI,\r\n(특징)주변 이웃 확인, 시각화\r\n차원축소 + 군집화(시각)@차원축소 1~n차원 출력층, BMU(best matching unit)\r\n(절차) 시작점, Nw초기화 > 반복계산 클러스터링 > BMU탐색(유클리드거리) > SOM파라미터업뎃 > 가중치업뎃\r\n과일놀이(지도) 3*3, 스티커 / 초기배치(1선택) > 새과일(BMU) 비슷선택  >  비슷한끼리 이동 > 반복(바나나, 포도 등)"
-    },
-    {
-        "topic": "GAN",
-        "definition": "노생판 / 노이즈, 생성자, 판별자, 1/0 \r\n기술: DCGAN, SRGAN, 스택GAN,\r\n 3D-GAN, 사이클GAN, 디스코GAN"
-    },
-    {
-        "topic": "DCGAN(Deep Convolution GAN)",
-        "definition": "GAN 안정화, 확장성 제고, Fully connected layer 제거\r\n구성 : 제라타, 디리노/ Generator : ReLU, Tanh함수 /  Discr~(Leaky ReLU, Normalization) \r\n@작은 칸마다 붓질 공장처럼 그림, 검사로봇과 연습하면서, 잘 그려지는 그림로봇"
-    },
-    {
-        "topic": "인공지능 분석모델평가",
-        "definition": "개념: 훈련모델의 예러율 예측을 통해 모델의 타당성을 평가 검증방법\r\n(정확도기법) Train Validation : 훈련/테스트/검증 집합으로 모델정확도 검증\r\n(재샘플일) Cross Validation, 부트스트랩(복원추출)\r\nK-fold, RMES, 혼동행렬, F1 score, Dunn's index, ROC, AUC, PR plot, BELU"
-    },
-    {
-        "topic": "오토인코더",
-        "definition": "특징복원추출, Latent Variable(잠재변수), 인코더, 디코더"
-    },
-    {
-        "topic": "VAE",
-        "definition": "평균,표준편차, 유사데이터 생성, Latent space, Latent Vector / 인코더 디코더 @의료,금융,엔터테인먼트"
-    },
-    {
-        "topic": "잠재변수모델",
-        "definition": "관측불가 요인 구조화, 관측값 뒤의 숨은 요인을 확률적으로 추정해 설명력과 예측력을 높이는 모델링 접근"
-    },
-    {
-        "topic": "Q-러닝",
-        "definition": "모델없이 학습 가능한 강화학습 / 환경 내부구조 몰라도 경험기반 학습 가능\r\n최적행동 찾기, Q함수(범용, Model Free), 강화학습\r\n학습 : Q함수, MAX Q, 정책"
-    },
-    {
-        "topic": "몬테칼르로트리탐색",
-        "definition": "MCTS, 전체경로탐색 불가시, 효율경로 탐색\r\n/선택>확장>시뮬레이션>역전파(반복) @선확시역\r\n@바둑에 활용, 정책(Policy, 폭제한), 가치(value, 깊이제한)"
-    },
-    {
-        "topic": "연합학습",
-        "definition": "분산형 머신러닝, 프라이버시/\r\n분갱취갱(전역모델 분배> 지역모델 갱신 > 지역취합> 전역갱신)\r\n@알고리즘 : FedSGD(1회학습 파라미터 중앙전송, 평균계산), FedAVG(K반복 수행 파라미터 서버전달)\r\n - FedSGD (Federated Stochastic Gradient Descent)\r\n - FedAvg (Federated Averaging)\r\n - FedProx (Federated Proximal)\r\n - FedOpt (Federated Optimization)\r\n - FedMA (Federated Matched Averaging)\r\n - FedBN (Federated Batch Normalization)\r\n - FedGKT (Federated Gradient Knowledge Transfer)\r\n - FedReID (Federated Learning for Person Re-identification)"
-    },
-    {
-        "topic": "연합학습 보안 \r\n프라이버시 보호",
-        "definition": "동차간다영연기, 동형, 장등정보보호,GAN"
-    },
-    {
-        "topic": "SNN",
-        "definition": "SNN->뉴모로픽 칩구현, Synapse, 뉴론 /STDP*(Spike timing dependent plasticity) / Low 파워(필요한 때만 신호(이벤트) /*시냅스 전후 뉴런 발생시간 상관관계 이용, 가중치 조절하는 학습 알고리즘"
-    },
-    {
-        "topic": "GNN (137)",
-        "definition": "그래프데이터(노드,엣지) 학습알고리즘, graph=노드특징행렬 x 인접행렬 / 집결요(ACR) \r\n@학습과정 : 변환(인접행렬, 노드특징행렬) >취합 >업데이트>생성\r\n@구성: input>GNN(aggregate ,combie, Readout)반복>Output // \r\n변환>취합>업데이트>생성"
-    },
-    {
-        "topic": "GCN",
-        "definition": "GNN + CNN - Convolution , 심층신경망"
-    },
-    {
-        "topic": "경량화",
-        "definition": "알고리즘 : 모델압축, 지식증류, HW가속기, 모델압축 자동탐색(압증가탐) \r\n1. 가중치 가지치키, 양장화, 가중치 공유 2. 전이학습,교사,학생모델 3.선형대수학, 백터/행렬연산  모델경량 : 구조변경, 합성곱필터, 경량모델자동탐색(구합탐)"
-    },
-    {
-        "topic": "경량화기술",
-        "definition": "양PS : 양자화(정밀도), Pruning(제거), Sparsity(희소성)\r\n구조변경) Resnet, DenseNet, SqueezeNet / 합성곱)MobileNet, SuffleNet /탐색)NetAdapt, MNasNet"
-    },
-    {
-        "topic": "과적합 문제",
-        "definition": "학습과다 / 이유: 차원저주, 모델복잡, 편향-분산 Tradeoff, 데이터 불충분, 쏠림@차모편불쏠\r\n기계학습시 패턴이라 관계에 훈련시 너무 학습을 많이 해서 불필요한 내용까지 학습된 상태"
-    },
-    {
-        "topic": "과적합 해결",
-        "definition": "DropOut, 조기종료, 정규화, PCA, ICA, LDA, Cross Validation, 특징추출/선택, 추가데이터 확보"
-    },
-    {
-        "topic": "과적합 방지이론",
-        "definition": "오컴의 면도날 / 논리적으로 단순함이 진실가능성 높음, 단순모델, 선형모델"
-    },
-    {
-        "topic": "차원의 저주",
-        "definition": "학습데이터<차원수 / 변수증가 : 학습셋부족, 과적합발생, 설명력저하 // \r\n@Feature선택 : Filter, Wrapper-based Method, Embedded method,  \r\n@Feature추출 : PCA, LDA, t-SNE(비선형 차원축소)"
-    },
-    {
-        "topic": "파괴적 망각",
-        "definition": "단일과제만 우수 / AI알츠하이머 //범용AI개발, 성능개선, 정규화, 증류, 동적구조, DropOut"
-    },
-    {
-        "topic": "할루시네이션",
-        "definition": "생셩형AI데이터 오류, 편향, 부정확, 조작 \r\n// RAG, Defense-GAN, Adaptive AI, data클린징, XAI, AI거버넌스, 합성데이터, 프롬프트 Eng~, SLM"
-    },
-    {
-        "topic": "교차검증",
-        "definition": "Hold-Out, K-Fold Cross Validation, Leave-one/few-out, Randoms Subsampling,"
-    },
-    {
-        "topic": "혼동행렬",
-        "definition": "지도학습 분류모델 성능시각화, @예실, PNPN || TPTF TFTN  정밀도(P), 재현율(R), 정확도, 특이도"
-    },
-    {
-        "topic": "F1 스코어",
-        "definition": "2*재현율*정확도 / (재현율 + 정확도)"
-    },
-    {
-        "topic": "Precision",
-        "definition": "TP/(TP+FP) (정밀도)"
-    },
-    {
-        "topic": "Recall",
-        "definition": "TP/(TP+FN) 재현율"
-    },
-    {
-        "topic": "Accuracy",
-        "definition": "(TP+TN)/(TP+FN+FP+TN) 정확도"
-    },
-    {
-        "topic": "TF-IDF",
-        "definition": "TF(단어빈도), IDF(역문서 빈도)"
-    },
-    {
-        "topic": "IOU",
-        "definition": "교집합/합집합  |AXB| / |AUB|   = |AXB| /  |AUB| -  |AXB|"
-    },
-    {
-        "topic": "유사도",
-        "definition": "유코피자실 / 유사도, 코사인, 피어슨상관계수,자카드\r\n// 군집도 평가지표:실루엣계수, 응집도 \r\n@거리기반 : 유클리디안, 맨하튼, 체비소프, 인코프스키\r\n/ 관계기반 : 코사인, 해밍거리, 자카드,"
-    },
-    {
-        "topic": "심층강화학습",
-        "definition": "딥러닝(DNN, MDP, Q러닝) + 강화학습(환경,상태,에이전트,행동,보상)"
-    },
-    {
-        "topic": "XAI",
-        "definition": "모델비종속적:LIME(신뢰도, 희소선형 결합), SHARP(공헌도,기여도 설명), \r\n                 BRL(간단해석 조건문) \r\n모델종속적 : LRP(기여도 히트맵 구성), DGNN탐색적 샘플링, ZeroShot, Rule extraction"
-    },
-    {
-        "topic": "XAI 핵심과제",
-        "definition": "대규모 모델설명, 성능개선, 명확한 정의, 정교한 평가, \r\n사람중심설명, 사용자맞춤, 부정영향완화"
-    },
-    {
-        "topic": "XAI 평가기술",
-        "definition": "(인간) AB, AMT(아마존),  교란(Inpu, Output교란) \r\n/밴치마크 이미지넷, MMLU(NLP), SW SPEC, BLEU(기계번역)\r\nSOTA (전분야, 특정시점에서 최고AL)"
-    },
-    {
-        "topic": "전이학습",
-        "definition": "유사모델 재사용, 과도(적용범위 )귀변자(데이터) \r\n//data부족해결, 학습시간단축, 성능향상, 비용절감\r\n과업전이, 도메인전이/귀납,변형,자율\r\n (종류) 과업전이(파인튜닝, Multitask 튜닝, RuleBased전이)"
-    },
-    {
-        "topic": "Adaptive AI",
-        "definition": "변화에 민첩대응, DL, SLAM /즉각대응, 개인화 처리, RLHF, 메타러닝, 전이학습"
-    },
-    {
-        "topic": "파인튜닝",
-        "definition": "사전학습 모델, 가중치 조정, 추가학습, 최적화(평가) \r\n/ 종류 : Supervised, Instruction, PEFT, RLHF \r\n@손실함수, Optimizer, 하이퍼파라미터 / 전이학습, LoRA"
-    },
-    {
-        "topic": "PEFT",
-        "definition": "대부분 파라미터 프리징, 일부만 파인튜닝, Prefix-Turning, Prompt 튜닝, Bitfit, Diff Pruning, LORA\r\n배경: 모델크기 급격한 증가(GPT, BERT, T5), 전체 모델 미세조정(재학습)은 자원소모\r\n목적: 경제적, 인프라비용, 모델성능유지, 맞춤조정, 빠른학습 (일부 파라미터만 학습)\r\n기법: 가산형(Adapter layer, Prompt 튜닝, Prefix 튜닝), \r\n       재매개변수화(LoRA), 선택적(BitFit, Diff 푸르닝)"
-    },
-    {
-        "topic": "LORA",
-        "definition": "Low Rank Adaption,저차원(row-rank) 행렬추가 모델미세조정, 기존가중치, 저차원 행렬"
-    },
-    {
-        "topic": "AI 최적화 순서",
-        "definition": "프롬프트 엔지니어링 > RAG > FineTunng"
-    },
-    {
-        "topic": "ML파이프라인",
-        "definition": "수전학배예 (수집, 전처리, 학습, 배포, 예측)"
-    },
-    {
-        "topic": "AutoML",
-        "definition": "AI 반복업무 자동화/피하신 \r\n@피처엔지니어링, 하이퍼파라미터, 신경망구조탐색 -> 모델최적"
-    },
-    {
-        "topic": "ModelOps",
-        "definition": "절차: Discovery, Governacne, Deployment, CI/CD/CT, 운영자동화  \r\n//기능 : 운영자동화, 생명주기관리, 가속화"
-    },
-    {
-        "topic": "메타학습",
-        "definition": "학습방법을 학습 / 거리기반, 모델기반, 최적화 학습방식/ zero, few, one shot 러닝"
-    },
-    {
-        "topic": "MLOps",
-        "definition": "dataOps + AutoML +  머신러닝 /"
-    },
-    {
-        "topic": "DSML",
-        "definition": "데이터 사이언스 + 머신러닝"
-    },
-    {
-        "topic": "AIOps",
-        "definition": "IT인프라 운영 자동제어"
-    },
-    {
-        "topic": "FMOPS",
-        "definition": "파운데이터 모델기반, LLM기반 앱 개발 위한 방법론\r\n/ 멀티모달, 플스택 플랫폼 시도,  Prompt 엔지니어링, 체이닝, 임베딩, 파인튜닝"
-    },
-    {
-        "topic": "LLMOps",
-        "definition": "LLM운영, 평가튜닝(수집,전처리, 모델센택, 파인튜닝, 평가배포, 모니터링,피드백)\r\n/커버리지, 응답속도\r\n@참조기술: 청킹, Zero, Few-shot 설계, LangServce,  RAG, RLHF"
-    },
-    {
-        "topic": "NER",
-        "definition": "Word2Vec, seq2seq, glove, fastTEXT / 자연어처리기술 : Word임베딩, MRC, NER\r\n임베딩(TF-TIF, one hot 인코딩, Seq2seq)"
-    },
-    {
-        "topic": "워드임배딩",
-        "definition": "자연어 > 숫자, 백터 > 기계학습 활용 형태기반"
-    },
-    {
-        "topic": "BM24",
-        "definition": "문서와 질의간 적합도 계산 우선순위화 / TF, TDF, Score emd"
-    },
-    {
-        "topic": "트랜스포머",
-        "definition": "관계추적 맥락이해, 포인피 마인피 리소 / Positional encoding, Encoder Self 어텐션, FeedForward/ Masked, Encoder-Decoding, 피드포워드 신경망 / Linear, Softmax @all you need is attention"
-    },
-    {
-        "topic": "chatGPT",
-        "definition": "파인튜닝, 강화학습, RLHF, PPO(Proximal Policy Optimization, 강화학습알고리즘)"
-    },
-    {
-        "topic": "초거대AI",
-        "definition": "대규모 파라미터, 사전학습, 파인튜닝 \r\n/ 파라미터(매개변수)가 무수히 많은 AI모델\r\n@발전 : 신경망 언어모델(LM) >\r\n>트랜스포머(인코더, 디코더, 어텐션)\r\n>LLM(언어모델, BERT, GPT)>초거대AI.(LaMDA, GPT3 )"
-    },
-    {
-        "topic": "초거대AI 도입 활용가이드라인",
-        "definition": "#등클모서운성 (절차) : 보안등급(CSO), 클라우드 서비스 구성, 데이터학습 방식(FM, 파인튜닝, 사후학습, RAG)구분, 서비스 도입방식(SaaS, 조달), 유지운영(최적운영관리) > 성과관리(지표설정, 관리) \r\n성과프레임워크 : AI생애주기 : 투입 > 과정 > 산출 > 결과  > 영향(공공/행정/사회현안 해결)//(분류)지능형 정보처리, 업무자동화, 대화형 서비스, 모니터링 알람"
-    },
-    {
-        "topic": "멀티모달AI",
-        "definition": "다른 특성 데이터 임베딩 추출/모델통합, 임베딩백터 결합/\r\n/기술요소 : 인코더(백터변환)> 융햡(Fusion, 어텐션)> 디코더(텍스트, 이미지 디코더)\r\n//문제점 : 데이터편향, 프라이버시침해, 책임소재불명확, 허위정보, 저작권교란\r\n//대응 : 위험분류, 고위험평가(적합성 평가, 투명성등), 저작권 보호, 개인정보 보호 강화, AI거버넌스, 교육강화, XAI, 데이터품질강화, AI보안(적대적 공격 방어), 접근통제, 암호화, 무결성\r\n@언어 NLG, 음성 STT, 이미지 Filtering,추론(회귀, 시계열분석))\r\n@DALL-E, Stable Diffusion(이미지), Sora(비디오)"
-    },
-    {
-        "topic": "멀티모달AI \r\n보안위협 //대응",
-        "definition": "(데이터) 할루시네이션(생성결과 미흡, 혼란)-> 잘못의사결정 (특히 영상)\r\n(AI모델악용)피싱,인물딥페이크,사업보안 위협코드 작성, 가짜뉴스 생성>사회공학이슈\r\n(데이터유출) 합성과정, 훈련과정에서 민감정보 유출(개인음성,얼굴이미지)\r\n(플러그 취약) 저급한 AI모델에 플러그인 연결 > 악용가능\r\n(확장APP취약) 악성서비스 설치시 공격, 호스팅 대상 및 API 키관리 불명화로 탈취\r\n//민감콘텐츠 필터링(자동화필터링), 중복데이터 제거(추론방지, 민감정보 보호), 익명화\r\n//개인정보 유출최소화(차등정보호), 강건성모델 선정\r\n//평가(협오발언 답변거부), 답변횟수, 적대적 공격테스트>유출대책마련, 출력회수 제한"
-    },
-    {
-        "topic": "비전 언어모델\r\nVLM",
-        "definition": "개념 : 이미지와 텍스트 동시 수용 연산생성하는 AI기술\r\n이미지 : VIT, CLIP\r\n텍스트 : BERT, 트랜스포머\r\n연산모델 : Chat GPT, Genimi, Claude \r\n@PDF파일 - Screen shot -> 이미지백터화 , VLM인식처리"
-    },
-    {
-        "topic": "GPT4",
-        "definition": "멀티모달+GPT"
-    },
-    {
-        "topic": "sLLM",
-        "definition": "비교적 작은 크기, 사전학습, 파인튜닝, 지식증류"
-    },
-    {
-        "topic": "LangChain",
-        "definition": "설비이상, 사전예측 정비조치/@센싱(설비이력data + 센서데이터) > LC(예측분석, 실시간모니터링) @LLM기반 파이프라인 구성, 순차적 분기 체인, 챗봇, RAG 도구 연동"
-    },
-    {
-        "topic": "LangGraph",
-        "definition": "상태머신 워크플로우, 노드, 엣지, 상태기반, 방향성 그래프, 복잡한 조건분기, 반복 등 고급제어 적합"
-    },
-    {
-        "topic": "프롬프트 엔지니어링",
-        "definition": "AI인터페이스개발/ 작업설명, input 지표 (zero, one, few 샷), CoT\r\n/ 원칙: 방향,형식,예시,평가,분할\r\n지식작업, 문맥배경(context), 입력데이터, 출력형식 제시 \r\n/ 페스소나, 예시, 포멧, 어조 Prompt Chaining\r\n절차 : 문제정의>리소스이해>프롬프트 유형결정>페르소나설정>사용중모델 고려>프롬프트 구성>지속적인 개선"
-    },
-    {
-        "topic": "컨텍스트 엔지니어링",
-        "definition": "LLM의 입력 작동방식에 사용자 의도와 목적배경 따라 문맥(Context) 정형화, 조작, 정밀도 향상기법 COT, TOT,  RAG, 외부지식, DB,API 호출 LLM개선 \r\n절차: 사용자 문제  > 맥락, 이력, 외부지식(DB,RAG 등)\r\n -> 프롬프트 >  LLM 응답생성 > 결과평가 튜닝 (피드백)"
-    },
-    {
-        "topic": "*"
-    },
-    {
-        "topic": "파운데이션모델",
-        "definition": "사전학습, 출력범용성, AI기초모델/\r\n대규모 학습데이터, 파라미터, 전이학습, 균일화, 창발성,다목적성\r\n최적화 : 지슥증류, 푸르닝, 양자화, Sparsity"
-    },
-    {
-        "topic": "자연어 음성인식",
-        "definition": "EPD(발화 시작끝 검출기술) / 전처리, 후처리, 음향모델, 발음사전, 언어모델"
-    },
-    {
-        "topic": "MRC",
-        "definition": "기계독해/유형: Extractive Answer Datasets(SQuAD, NewsAD) , \r\n질의에 맞게 문장 생성(Narrative QA), 여러답변중 선택(ARC)\r\n/평가 : Extract Match, F1, HEQ"
-    },
-    {
-        "topic": "협업필터링",
-        "definition": "선호도예측/ 사용자기반, 아이템기반, 컨텐츠기반\r\n@거리측정 : 유클리이안, 맨하튼, 코사인 유사도, 피어슨 상관계수, 자카드 유사도\r\n@추천시스템, Graph DB"
-    },
-    {
-        "topic": "GraphDB\r\n/추천시스템",
-        "definition": "접합이유 : 사용자-아이템관계, 연결기반, 컨텐츠+협업기반, 실시간 개인화 추천\r\n@그래프DB : 노느(정점) + 간선(관계) 표현, 관계중심, Nego4J, Amazon, TigerGraph (User-아이템)\r\n@추천시스템 : 사용자 과거행동(구매,클릭,조회)기반 선호할 아이템 예측 / \r\n협업필터링(CF), 콘텐츠 기반 필터링, 하이브리드 방식, TOP-K\r\n@평가지표 : 랭킹(Hit rate), 분류(정확도, F1), 회귀(RMSE, MSE)"
-    },
-    {
-        "topic": "어텐션 매커니즘",
-        "definition": "QKV(qurey, key, value), 어텐션 함수(스코어함수), 어텐션 분포, 어텐션 값\r\n@스코어, 가중치, 컨텍스트 백터, 어텐션 타입 / 문장중, 더중요한 부분에 가중치 부터하여 결합방식"
-    },
-    {
-        "topic": "생성형AI",
-        "definition": "멀티모달 GAN, VAE, SAM, TAM / 트랜스포머, LLM  @chatGPT, Gemini, CLOVA x, Sora"
-    },
-    {
-        "topic": "추론형AI",
-        "definition": "논리적 사고 과정, 새로운 답변 생성, CoT과정 추론"
-    },
-    {
-        "topic": "생성형AI문제",
-        "definition": "환각, 최신미반영, 차별, 개인정보노출, 고성능자원필요, 에너지 낭비, 저작권 침해"
-    },
-    {
-        "topic": "생성형AI동향",
-        "definition": "EU: AI Act / 미국: 선도기업 협약 / 중국 : 딥페이크 규제, R1, 딥시크 \r\n국내: 생성형AI보안가이드, KorQuad, KLUE, K-cloud 등"
-    },
-    {
-        "topic": "AI ACT",
-        "definition": "유럽연합 : 인공지능 개발시 사용규제 법률 \r\n/ 유형: 금지된 위험, 고위험, 제한위험,  최소위험AI  (차등규제)"
-    },
-    {
-        "topic": "AI 기본법",
-        "definition": "목적 : 안전,사회적 측면, 안전성 확보적용, 산업체계 육성, 고영향 AI, 경쟁력 강화\r\n대상: AI시스템, 의무사용자 사업자, 실질사업자 \r\n활동 : 위험평가, 위험제거 완화, 모니터링, 안전사고 처리, 예방조치, 결과제출 \r\n고영향 : 사람이 중대한 영향 위험평가(에너지, 원자력, 물)\r\n책무 : 설계, 모델, 운영 측면에서 강화 (설명방안, 문서작성 등)"
-    },
-    {
-        "topic": "AI 앙상블기법",
-        "definition": "Bagging, Boosting, Stacking // Random Forest, Adaboot\r\n다수모형을 통해, 예측/분류 결과를 종합적 최종의사결정 기법\r\n샘플: 배깅, 부스팅, 변수 : 랜덤포레스트"
-    },
-    {
-        "topic": "- Bagging",
-        "definition": "Bootstrap 집계, 병렬수행 / * Bootstrap : Random 샘플링 평균점수 내기\r\n샘플을 무작위 중복추출(부트스트랩) \r\n→ 여러 개 모델 학습 → 결과를 평균(회귀) 또는 투표(분류)\r\n - 장점 : 분산감소, 안정적 예측, 단점: 편향\r\n대표 : 랜덤포레스트(Random Forest) : 의사결정 여러 개"
-    },
-    {
-        "topic": "- Boosting",
-        "definition": "Bootstrap의 가중치 조정, 오류, 순차적 수행 / 첫번째 틀린것 고쳐 두번째 전달\r\n이전 모델의 오차를 보완하는 방식으로 순차적 학습\r\n대표 : AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost\r\n장점 : 높은정확, 비선형에 강함, 단점: 과적합 위험"
-    },
-    {
-        "topic": "- Stacking",
-        "definition": "Base Learner + Meta Learner / 여러 친구들이 풀고, 선생님이 누가 맞았는지 판단\r\n다른 알고리즘 모델을 학습시킨 뒤, 최종 메타모델(meta-learner)이 이들의 출력을 결합\r\n1단계: 친구들 문제품(DSS, SVM, 로직회귀) > 2단계 메타모델로 판단-> 최종선택\r\n장점: 다양한 모델 적용, 단점: 구조복잡"
-    },
-    {
-        "topic": "Random forest\r\n(Bagging)",
-        "definition": "조합(Decision Tree + 부트스트래핑+보팅) / 병렬모델, 분산감소, 가중치 고정"
-    },
-    {
-        "topic": "보팅",
-        "definition": "데이터셋 > 선형, SVM  --> 투표(최종예측결과)"
-    },
-    {
-        "topic": "Adaboost\r\n(Boosting)",
-        "definition": "약분류기, 강분류기, 가중치 / 순차적 모델"
-    },
-    {
-        "topic": "데이터레이블링",
-        "definition": "dataset, 지도, 비지도 데이터 라벨링 / 약지도, 반지도 라벨링"
-    },
-    {
-        "topic": "어노테이션",
-        "definition": "라벨링시, 주석을 표시, 설명정보//이미지(클래스 라벨, 바운딩 박스, 폴리곤, 픽셀/점)\r\n/동영상(분류, 바운딩박스, 키 포인트, 폴리곤(모양, 선) / 오디오(분류, STT)"
-    },
-    {
-        "topic": "컨셉 드리프트",
-        "definition": "정의 변환"
-    },
-    {
-        "topic": "데이터 드리프트",
-        "definition": "환경 변화"
-    },
-    {
-        "topic": "AI벤치마크셋",
-        "definition": "공공데이터 공유, 정확도 평가/ 텍스트, 이미지, 동영상, 오디오, 기타\r\n이미지넷, COCO || GLUE/MMLU NLP점수|| BELU, METEOR 번역  평가 || CLIP, LAION(멀티)"
-    },
-    {
-        "topic": "AI학습데이터 품질 가이드라인3.0",
-        "definition": "계구운(100,200,300) / 준비계획, 구축(수집,정제,가공,학습), 운영활용\r\n@준완유, 적적다 구의알유"
-    },
-    {
-        "topic": "AI데이터 구축비용",
-        "definition": "텍스트, 이미지, 음성, 비디오"
-    },
-    {
-        "topic": "인공지능 윤리기준",
-        "definition": "존공합(인간존중, 사회공공선, 기술합적성)/ 인프다침공연 데책안투\r\n인권보장, 프라이버시보호, 다양성, 침해금지, 공공성, 연대성, 데이터관리, 책임성, 안전성, 투명성"
-    },
-    {
-        "topic": "AI 프라이버시 리스크 관리 모델",
-        "definition": "목적: 국민신뢰확보, AI기업의 자율적 리스트 대응지원"
-    },
-    {
-        "topic": "전도공격",
-        "definition": "정상 라벨정상 데이터처럼 보이게 주입한뒷, 모델이 특정 입력을 의도와 반대로 학습판단하도록 만드는 공격 기법 / 학습데이터 오염 (포모도회)=>"
-    },
-    {
-        "topic": "적대적 공격",
-        "definition": "IMPE(Invasion, Model 추출, Poisoning, Evasion 공격) / \r\n@무결성 : 오염공격(Poisoning/모델학습), 회피공격(Evation모델테스트) \r\n@기밀성 : 전도공격, 모델추출"
-    },
-    {
-        "topic": "적대적 공격 대응",
-        "definition": "Defense GAN(적대적 예제를 추가학습, 변조도 정상적 판단), \r\n적대적 훈련, 결과값 분석차단, 공격탐색, 쿼리횟수제한"
-    },
-    {
-        "topic": "AI-Trism",
-        "definition": "XAI, ModelOPs, AI앱보안, Privacy (AI신뢰, 위험,보안관리 프레임워크)"
-    },
-    {
-        "topic": "인공지능 감리",
-        "definition": "특성(전처리, 데이터셋, 모델개발, 시험, 경량화, 준거성)\r\n프레임웍(감리영역 - 점검기준 - 사업유형) / 분석,설계,구현,시험,운영 // \r\n구축계획, 데이터획득-수집, AI모델설명, 모델테스트, 매뉴얼하자계획"
-    },
-    {
-        "topic": "온디바이스AI",
-        "definition": "HW : AI가속기, NPU, AISOC, NNP, 엣지TPU/ SW :경량AI모델(구합탐), AI모델 경량화(압축, 증류, 가속,탐색), 양PS : 양자화(정밀도), Pruning(제거), Sparsity(희소성) // 구조변경) Resnet, DenseNet, SqueezeNe /합성곱필터)MobileNet, SuffleNet / 탐색)NetAdapt, MNasNet \r\n@ 앰비언트 컴퓨팅, 스몰데이터 부상"
-    },
-    {
-        "topic": "NPU",
-        "definition": "머신러닝 전용칩, Sigmoid LUT, 누산기, Neurn Weights(가중치) // @DNN, CNN, RNN"
-    },
-    {
-        "topic": "GPU",
-        "definition": "이미지 영상처리 핵심 반도체, 넓은 대역폭, 고속병렬, \r\n멀티스레드, 부동소숫점, 연산장치, Throught(지표)\r\n구성 : SM, SP, WARP, 글로벌 메모리, CUDA"
-    },
-    {
-        "topic": "GPGPU",
-        "definition": "GPU 일반 컴퓨팅 영역 활용 / PCI, 그래픽메모리, 캐시메모리, SIMD코어"
-    },
-    {
-        "topic": "AI학습하드웨어",
-        "definition": "GPU, TPU, FPGA, NPU, HBM, PIM, PNM"
-    },
-    {
-        "topic": "RAG",
-        "definition": "LLM모델 검색증강, 백터유, 청크, 임베딩, 유사문맥추천, Chunking, Top-K/유사도"
-    },
-    {
-        "topic": "Agentic RAG",
-        "definition": "RAG활용간 다중 agent를 통해서 자율적, 독립적, 검색증강 수행 가능 RAG"
-    },
-    {
-        "topic": "RAGaaS",
-        "definition": "LLM성능향상, 외부지식검색 \r\n/기술:클라우드(오토스케일링), AI(임베딩,vectorDB , 데이터(외부지식)"
-    },
-    {
-        "topic": "Function calling",
-        "definition": "LLM함수호출, 외부시스템과 동적 상호작용(API)"
-    },
-    {
-        "topic": "Vector DB",
-        "definition": "인덱싱, 쿼리, Post Processing, Embedding Model, vector embedding"
-    },
-    {
-        "topic": "프롬프트 인젝션",
-        "definition": "지시문 무력화, 탈출시도, RAG기반 주입, COT조작 \r\n// 필터링, 입력검증, AI보안 프레임워크"
-    },
-    {
-        "topic": "AICC",
-        "definition": "인공지능 콜센터/ PBX(교환기), CTI(PC기반 전화),  STT, VoiceGW, EPD, 챗봇"
-    },
-    {
-        "topic": "LAM",
-        "definition": "Large Action Model,  다중모드학습모델, 지침추상화"
-    },
-    {
-        "topic": "AGI",
-        "definition": "인공 일반 지능/ 범용적, 인간지능 모방, 다양한 분야, 창의적 수행,\r\n@기술: 추론, 멀티모달, 로보틱스, 상황인지 알고리즘"
-    },
-    {
-        "topic": "Narrow AI",
-        "definition": "도메인 특화, 특정작업 최적화"
-    },
-    {
-        "topic": "LMM대규모멀티모달",
-        "definition": "멀티모달기반, Transformer + vision language, Cross Modal"
-    },
-    {
-        "topic": "초거대AI 데이터 품질관리지표",
-        "definition": "준완유 적적다 의구알유 > 최신?"
-    },
-    {
-        "topic": "유효성 품질측정",
-        "definition": "질의응답 : ACC(올바른 답변), BLBU(유사성측정), F1(정밀도재현율) \r\n말뭉치 : 리커트척도(태도, 감정평가), PPO모델(자연어 처리)\r\n공통평가: 사람평가, 튜링테스트"
-    },
-    {
-        "topic": "앙상블 보팅",
-        "definition": "(하드)다수결 원칙, 이진분류 / (소프트)확율값, 평균"
-    },
-    {
-        "topic": "공간지능",
-        "definition": "3차원 현실인지(인지,기억,학습,추론,표현,상호)/컴퓨터비전, SLAM,센싱,MR,경로탐색"
-    },
-    {
-        "topic": "Agentic AI",
-        "definition": "자율성(Autonomy), 목표 지향성(Goal-Driven), 학습·적응(Adaptation) 능력을 가진 고도화된 인공지능 / LLM, RAG, API, 자율의사결정"
-    },
-    {
-        "topic": "AI 리터러시",
-        "definition": "(개념) AI의 기본 원리와 알고리즘 작동 방식을 '이해'하고 AI 기반 서비스(챗봇·추천시스템·생성형 AI 등)를 '활용'하며 AI가 생성한 결과물을 비판적으로 '분석(Analyzing)'\r\n/활용시 : 사생활 보호, AI편향, 자동화 등 사회적 영향 - 윤리적 판단 / AI와 협업 도구(소통협업)능력"
-    },
-    {
-        "topic": "AI 에이젼트",
-        "definition": "추론을 통한 특정작업 자동수행 / 목표를 설정하고 외부 시스템과 상호작용하며 태스크를 수행하는 지능형 에이전트 @자동보고서 작성, 메일발송"
-    },
-    {
-        "topic": "소버린AI",
-        "definition": "가치관 종속우려, DQM, 문화, 역사, 윤리, Langchain\r\n/ 하이퍼클로바X \r\nAI민주화, 자체인프라, AI독자적 구축 및 운영가능 체계 \r\n/기술 : 분산학습, XAI(LIME, SHARP), 데이터저장기술\r\n/지역적, 법률적, 신분적"
-    },
-    {
-        "topic": "생성형AI서비스 이용자 보호 가이드라인",
-        "definition": "(원칙 4) 인간존중, 설명가능, 안전성, 공정성 \r\n(실행 6) 이용자보호, XAI, 다양성 존중,  학습데이터 동의,  서비스관련자 책임, 윤리 \r\n(개념) 생성형AI 개인정보침해 이슈안내/ 배경: 해석모호, 법근거부재, 책임(제공,이용자)\r\n단계별 리스크, RISK : 수집(미동의, 자동수집정보) 학습(식별가능, 학습경우 삭제불가) 활용(그냥 입력, 개인정보 포함된 생성물) \r\n//대응방안 : 모델(비식별화기법, 자동화된 비식별화, 입력필터링), 활용(입력문구, RED팀운영, 교육, 개인정보 인식개선)"
-    },
-    {
-        "topic": "텍소노미",
-        "definition": "Taxonomy, 전문가설계한 체계 분류, 위계적, 전문가, 정보체계  > 계층화 구분"
-    },
-    {
-        "topic": "폭사노미",
-        "definition": "Folksonomy, 일반사용, 자유테크, 비구조화, 사용자 주도, 다양언어 > 사용자 테그 기반"
-    },
-    {
-        "topic": "AI 테스트(커버리지 검증)",
-        "definition": "AI학습모델 결과 검증/ 설정, 정의, 모델체크-변환, 특성처리, 충족여부 판단"
-    },
-    {
-        "topic": "딥페이크 탐지",
-        "definition": "규제: 가짜금지법(No Fakes), EU : AI법안,  EU디지털서비스법\r\n@기술: C2PA, 클로바 그린아이, 모니터링, 검색, Fakecatcher(인텔)"
-    },
-    {
-        "topic": "LLM성능",
-        "definition": "추론첐, 검색, RAG, RIG병합, 효율(MoE, 양자화, LoRa, PEFT, 멀티모달 통합)"
-    },
-    {
-        "topic": "AI Drift",
-        "definition": "시간이 지나면서 성능모델이 저하현상  예) 최초 네비게이션(도로 생성 등) 구실못함\r\n(이유) 데이터 특징변화(환경변화)로 학습모델이 현실반영 못함\r\n(유형) 데이터 , 개념 , 레이블, quality, 모델 드리프트 \r\n/(감지) : 이산치, 결측치, 클린징 - 모델성능평가 F1, 혼동행렬, MSE, MAE, - 데이터특징, 변경, 라벨 // 추가: 분류(Recall, Precision), 예측(MAE, MSE, RMSE), 군집(실루엣, 엘보우) 벤치마크(Rouge, BLEU)\r\n(대응) 지속모니터링, 재학습, 드리프트 감지(Stability, K-S test) 피처 엔지니어링 , 자동재학습, 파이프라인, 그리드 Search(하이퍼파라미터 수정) / CICD, Devops, MLOPS, quality Drift 탐지"
-    },
-    {
-        "topic": "AI테스트",
-        "definition": "ISO29119-11(AI테스트 국제표준), \r\n커버리지(뉴런커버리지, \r\n안전반경, 메타모픽, \r\n커버로지 테스트)  \r\n정보(블랙박스, 화이트박스)"
-    },
-    {
-        "topic": "AI 위험",
-        "definition": "EU(수용불가, 고, 제한, 저위험) / 분류, 프레임워크"
-    },
-    {
-        "topic": "AI IDE",
-        "definition": "IDE+LLM, 코드생성, 바이브코딩, 프롬프트기술"
-    },
-    {
-        "topic": "MAS",
-        "definition": "다중 에이젼트 시스템 (Multi agent system)"
-    },
-    {
-        "topic": "Embedied AI",
-        "definition": "물리적인 구조물, 감각, 센서, 행동(엑추레이터), 상호작용, 물리적, 휴머노이드"
-    },
-    {
-        "topic": "칩렛",
-        "definition": "작은칩(모듈)조합, 확장성, 침렛간 고속 인터커넥터, 전력효율/GPU, AI가속기\r\n@하나의 대형 반도체침(SoC)을 여러 개 작은칩으로 나누는것"
-    },
-    {
-        "topic": "한국형 k-LLM",
-        "definition": "★K-LLM 구축방향  @데신도경생\r\n데이터주권(한국어 특화 말뭉치 확보, 민간/공공데이터 결합 한국어 비중확대)\r\n신뢰성 안전성 확보(개인정보,민감정보 제거, 편향최소화, 신뢰확보), \r\n도메인 전문화(RAG포함), 경량화(모델압축, 공공에서도 이용), \r\n생태계조성 개방(오픈소스 기업활용, 학습데이터 개방)\r\n★K-LLM구축유형) 초거대범용, 도메인특화, 경량압축, 하이브리드, 연합/분산형\r\n★오픈소스 현황 ) 국내 : 하이퍼클로버(naver), koGPT, 엑사온, 에이닷, 믿음2.0, \r\n국외: GPT5.0, LLaMA, 엔트로픽 Claude, 구글 제미니, 딥시크"
-    },
-    {
-        "topic": "LLM 오픈소스",
-        "definition": "(개념) 학습코드, 가중치, 학습데이터셋 일부를 공개>개발자 자유롭게 수정의 AI소스 \r\n(특징) 개방성(일부 공개), 확장성(파인튜닝, RAG, 경량화), 비용효율(폐쇄형 대비, 자체인프라 구성), 생태계(GitHub, HuggingFace 커뮤니티 주도), 한계점(학습데이터, 안전측면은 고려대상)\r\n(현황) 메타(LLamA), OPenAI(쳇gpt공개), 딥시크, Qween, Falcon, Bloom, StableLM / 하이퍼클로버(naver), koGPT, 엑사온,  kakao, ETRI koGPT, 솔라(Sola 2.0) \r\n//K-LLM 모델 구축 대상기업 : naver, SKT, NC AI, 엑사온, 업스테이지 솔라 선정\r\n★(시사점) 민투산연정(AI민주화, 투자확대, 산업경쟁력, 연구생태, 정책적)"
-    },
-    {
-        "topic": "양자머신러닝\r\n(QML)",
-        "definition": "배경 : 데이터·연산 자원의 요와 NP-Hard 문제, > 중첩, 얽힘, 간섭원리 활용 QML 주목\r\n개념 : Qubit를 활용하여 고차원 벡터공간에서 데이터 표현> ML에 양자알고리즘 적용\r\n기술 : 인코딩(백터화), 모델(QNN/QAOA/VQA), 하이브리드QML, 양자커널(QSVM) 분류높임\r\n응용 사례 : 의금물보머 → 의약, 금융, 물류, 보안, 머신러닝 / 지수적 연산 속도향상\r\n한계 : NISQ단계(미성숙), 양자오류, 양자인코딩 비용 다수"
-    },
-    {
-        "topic": "인공지능법",
-        "definition": "개념 : AI발전 산업경쟁력 강화 위한 AI체계, 윤리, 고영향 등 관련 제반사항 법제도\r\n추진 : 6~8(기본계획3년, 실행계획, 인공지능위원회, 기능 \r\n산업 : 21~23(전문인력, 국제협력 해외시장, 인공지능 직접단지조성)\r\n윤리 : 27~32(윤리원칙, 민간자율위원회, 안전성/신뢰성/투명성 확보 의무\r\n영향 : 33~36(고영향먀, 사업자책무, 고영향평가, 대리인지정, 과태료 3천만)"
-    },
-    {
-        "topic": "인공지능 \r\n모델 경량화",
-        "definition": "개념 : 초거대 모델의 한계를 보완, 엣지·모바일 환경에서 AI 활용을 확대하는 핵심 기술\r\n기술요소 : 프양증저스아 : 프루닝 / 양자화(int4 저비트화)  / 증류(teacher > student)\r\n / 저랭크(LoRA, PEFT, 행렬저차원근사 연산량감소) / 스파스화(가중치 공유) / \r\n아키텍처 최적화(MobileNet, EfficenetNet, ShuffleNet, SqueezeNet, 트랜포머 경량화)\r\n적용사례 : 모엣산LLM : 모바일 / 엣지 / 산업 / LLM 경량화\r\n시사점 : 성확표주 :성능보존 / 확산(모바일·엣지) / 표준화 / 디지털 주권"
-    },
-    {
-        "topic": "AI 거버넌스",
-        "definition": "AI개발, 배포, 운영, 활용 과정에서 리스크 식별하고, 해당 리스크 및 잠재적 영향 최소화 제어 감독체계 // 관리(모니터링, 보안, 편향성, 리스크관리), 기술요소(모니터링툴, XAI, 편향)   *AI참조 : AI ACT, AI기본법, ISO 42001, AI TRiSM(프레임워크)"
-    },
-    {
-        "topic": "TEXT2SQL",
-        "definition": "자연어 입력하면 SQL를 뽑아내는 기술\r\nNLP(토큰화, 시멘틱파싱) 딥러닝(트랜스포머, Seq2seq, BERT), DB(스키마, SQL최적화), 학습유(Spider dataset) //RAG로 오류잡고, 카탈로그 관련활용"
-    },
-    {
-        "topic": "신체화AI",
-        "definition": "인간의 행동을 가진 로봇 휴모노이이드와 비슷 \r\n[구성] 현실세계 ->센서,이미지,신호>AI(모델,인식 제어, 행동) >출력(물리행동) 현실  \r\n/감지인식(센서, 융합, 컴퓨터비전, 음성인식) \r\n/인지학습(RL, 전이, LLM) \r\n/행동제어(로보틱스, SLAM, 물리)  휴머노이드 (신체화 AI의 사례)"
-    },
-    {
-        "topic": "Vertical AI",
-        "definition": "학습/최적화 (도메인 특화, 파인튜닝), 언어처리(NLU, NLG, 멀티모달 통합처리), 알고리즘(Prompt 엔지어링, Instruction Tunning, RAG, Data Augmentation, 할루시네이션)\r\n- 데이터 관리 통합(산업별 전문 데이터셋, 실시간 산업데이터)"
-    },
-    {
-        "topic": "AI분야 개인정보 평가",
-        "definition": "AI영향평가(5개영역, 27개 평가분야 체계) \r\n- 개요, 법적근거(38조), 평가분야(AI학습 및 개발 / 시스템 운영 및 관리)\r\n- 절차 : AI리스크 유형파악 > 리스크 식별> 측정 > 평가"
-    },
-    {
-        "topic": "지식그래프",
-        "definition": "[개념]개체, 관계, 속성을 그래프 구조(노드, 엣지, 속성)정리하여 정보의 의미상으로 구조화적으로 표현한 그래프 기반 지식 구조\r\n[기술] 온톨로지, 지식추론, KGE(지식그래프 임베딩), 지식추론\r\n[LLM과 관계]  KG주입형, LLM활용형, 통합형"
-    },
-    {
-        "topic": "공공 LLM구축",
-        "definition": "[개념] 정부의 위기인식, 전략적 역할\r\n[프레임워크] 데이터, 모델, 인프라, 인력/조직, 인력조직 \r\n[기능] LLM통합, 데이터처리, 선응확장성, 커스터마이징, 상호운용성 \r\n[대규모 구조] MSP, CSP, 파운데이션 모델, 멀티클라우드"
-    },
-    {
-        "topic": "통계"
-    },
-    {
-        "topic": "통계학과 머신러닝",
-        "definition": "분류, 회귀, 차원압축 등 머신러닝 기반 기준이 통계학 기반 \r\n(4가지 척도) 명서등비 /범주형(명목,서열), 연속형(등간,비율) -> \r\n(회귀분석) 다중회귀(연속형결과), 로지스틱(범주형 결과)"
-    },
-    {
-        "topic": "이산확률분포",
-        "definition": "정수,셀수있음, 확률질량함수(PMF), 주사위, 동전 / 이항분포, 포아송, 기하분포"
-    },
-    {
-        "topic": "연속확률분포",
-        "definition": "실수,무한많음, 확률밀도합수(PDF), 몸무게, 온도/정규분포(가우시안),지수분포, 균등분포"
-    },
-    {
-        "topic": "통계학 척도",
-        "definition": "명서등비(명목: 성별,  서열:학력, 등간:온도, 비율:소득) // 측정 대상에 적용하는 기호나 숫자를 의미"
-    },
-    {
-        "topic": "추정, 가설",
-        "definition": "추정: 모집단을 샘플을 통해 추정함(표본평균, 분산, 불편성, 유효성, 불편추정,유효추정량), 점,구간\r\n가설: 가설채택, 귀무(H0), 대립(H1) /  제1종오류(a), 제2종오류(b)\r\n@절차:가설설정>유의수준>검정통계량 설정>기각역>검정통계량 계산>결과해석 @가유검기통결"
-    },
-    {
-        "topic": "기술통계/추론통계",
-        "definition": "평귬, 중위수, 최빈, 범위, 분산, 표준편차, 첨도, 왜도\r\n추정 : 점추정, 구간추정, 가설검정, 차이검정, 관계검정"
-    },
-    {
-        "topic": "표본추출",
-        "definition": "비확율적(단순, 군집, 계층, 층화), 확율적(판단, 편의적, 할당, 유의, 눈덩이추출)\r\n@단군계층, 판편할유눈 > 명목, 순서, 등간, 비율"
-    },
-    {
-        "topic": "타당도, 신뢰성",
-        "definition": "타당도: 측정의 정확도 정도(내용,구인,준거,예측,공인 타당도)\r\n신뢰도: 측정대상의 일관적 측정 정도 \r\n@과녁:  분산퍼진(신뢰도낮도,타당도낮고),, 10점만점(신뢰도, 타당도 높음),  1점몰림(신뢰도o,타당x)"
-    },
-    {
-        "topic": "가설검정(1종오류)",
-        "definition": "기본: 귀무(H0), 대립(H1)  > 귀무가설 기각 목표 / 잘못된 기각, 사실은 H0맞음 (잘못 기각)"
-    },
-    {
-        "topic": "가설검증(2종오류)",
-        "definition": "기본 : 귀무(H0), 대립(H1)  > 귀무가설 기각 목표 / 잘못된 채택, 사실은 H0 맞음, (잘못된 채택)"
-    },
-    {
-        "topic": "오류판단",
-        "definition": "조건: Ho(참) : Ho (채택) /  Ho(기각) --> 1종오류 알파   (맞는 귀무가설을 잘못 기각)\r\n조건: H1(참)  H0 (채택) -> 2종오류 / Ho(기각)    베타   (틀린 귀무가설을 잘못 채택)"
-    },
-    {
-        "topic": "혼돈행렬/가설검증\r\n(비교)",
-        "definition": "머신러링,분류문제 / 통계학,추론   실제값 예측값비교 / 귀무가설 검정\r\nFP, FN / 1종오류(알파), 2종오류(베타) ,  정확도,정밀도,재현율,F1 / P, 유의수준, (1-B)"
-    },
-    {
-        "topic": "선형/비선형 비교",
-        "definition": "입출력 직선/곡선면 ,  y=ax+b / 지수다형식,  빠름해석용이 / 복잡,표현다양 , 단순/복잡\r\n예: 선형회귀, 로지스틱, SVM , LDA / K-NN, DSS, 신경망, 랜덤포레스트"
-    },
-    {
-        "topic": "릿지, 라쏘",
-        "definition": "회귀분석에서 과적합을 막고 성능을 높이기 위해 쓰는 규제기법, 다중공선성 완화 목적\r\n☆릿지(L2규제, 계수들의 제곱합(Σ β²)에 패널티, 0은 아니며, 전체변수 골고루 중요, 크기조정) \r\n☆라쏘(L1규제, 계수들의 절댓값 합(Σ |β|)에 패널티를 줌, 0으로 만들고, 변수제거하여 활용) L2 + L1 융합 -> 엘라스틱넷 회귀"
-    },
-    {
-        "topic": "A2A",
-        "definition": "다양한 공급사, 플랫폼 연계한 멀티에이전트 구현, JSON-RPC, SSE표준, 상호작용 개방프로토콜  비동기처리&상태기반, 스트리밍/폴링/푸시, 모달리티 독립(텍스트외 이미지,오디오,JSON @Agnet - Agent 직접협업, 비정형-비동기-멀티모달, 분산된 Agent 협업"
-    },
-    {
-        "topic": "MCP",
-        "definition": "AI에이전트가 외부 도구/ API호출시 입력출력형태와 컨텍스트를 표준화 프로토콜\r\n함수호출 지향, OpenAPI function calling 구조함/ @에이전트 <-> 도구API연결 / 구조: MCP host(LLM) - MCP Client - MCP Server - DB/API/Files"
-    },
-    {
-        "topic": "AX",
-        "definition": "AI기술 전사적 DX패러다임, 조직 전반, 업무,고객경험 혁신접근법 / 필요성: 생산성, CX, BPR, PI @절차:  목표설정 > 핵심프로세스, 데이터전략 > AI솔루션, 자동화, 조직강화\r\n@활용: 고객(AI챗봇,분류), 생산(CNN,예지), 개발(NLP), 인사(분류),보안(SVM,AE)"
-    },
-    {
-        "topic": "AX한계/대응방안",
-        "definition": "(한계) 기술(기술수용수준, 빠른기술변화), 활용(리터러시, 확산미비), 정책(AX정책부재, 기술간극)\r\n(대응) 교육,캠패인, AI기본법세부화, AI윤리강화, AI거버넌스구축, ISO42001, AI소버린 인프라구축"
-    },
-    {
-        "topic": "다중 예시 탈옥기법(Many-Shot Jailbreaking, MSJ)",
-        "definition": "모델에 탈옥 예시, 안전정책 경로를 우회 프롬프트 공격기법 // 안전질문(장문) > 최종에 폭탄"
-    },
-    {
-        "topic": "LLM Jailbreak\r\n유형/해결",
-        "definition": "가드레인 우회공격, 허위정보와 역할재할당으로 LLM 가드레인 우회공격 \r\n유형: 무력(Prompt조작, 문맥간 삽입, 지침무력,역할재정의), \r\n혼동(맥락혼동, 포메팅 악용), 관리(유사어 사용, 공익목적 사용)\r\n//해결방안 : 안전Prompt, 출력필터링, RED팀, 적재적 공격, 가드레일, Agentic RAG, Q제한, 악의시나리오 차단, 우회시나리오 파악"
-    },
-    {
-        "topic": "연결리스트",
-        "definition": "데이터(노드)저장시 주소를 참조연결/노드,포인터,헤드,테일 // 메모리,OS,DB,그래프알고리즘\r\n@구현: 단일연결, 이중연결, 순환연결리스트"
-    },
-    {
-        "topic": "LLM고려사항",
-        "definition": "고려사항: 보안, 학습데이터, 기능비용, 운영환경, 전문가확보\r\n모델: GPT+API, FM(OSS), RM+파인튜닝,"
-    },
-    {
-        "topic": "AI 신뢰성 인증제도(CAT)",
-        "definition": "CAT(Compliance / Assurance / Transparency) / 준수성, 보증성, 투명성 \r\n@AI가 법과 윤리를 지키고, 성능과 품질을 보장하여 사용자에게 설명가능하도록 관리하는 체계\r\n/AI모델, 시스템, 거버넌스체계, 제품신뢰성"
-    },
-    {
-        "topic": "에이전틱 AI",
-        "definition": "스스로 목표 설정,계획,결정하는 자율적 AI, 자기주도적, 다중 에이전트 협업, AutoGPT (LLM+mem+planner + tool + 환경) /투명성, 책무성, 책임성, 저작권보호 등 15가지 품목 등"
-    },
-    {
-        "topic": "AI 에이전트",
-        "definition": "주어진 명령을 수행하는 프로그래머블 AI , 수동적, LLM기반 단일작업, 챗봇(인간명령기반)\r\n@보안요소(생성이상 역할수행, 외부도구와 연계 공격경로 증가 > 프롬프트, URL, 시스템Msg)\r\n@위험 : 에이전트 납치, 도구오염, 비의도적 행동, 공격표면 확대\r\n@대응 : 입력필터링 통제, 도구검증, 실행제한, Zero Trust적용(ASM, CTEM)"
-    },
-    {
-        "topic": "온톨로지(사전)",
-        "definition": "(개념) 개념과 개념간의 속성, 상호의미적 연결 및 개념 집합체\r\n표현, 속성, 관계의 사전 > 팔란티어(기업의 이벤트 행위를 온톨로지화, 프로세스 효율화)\r\n데이터가 핵심 > 의미론적 데이터를 맥락을 알고 지원해 주는 것 \r\n(구성) 클래스, 인스턴스, 속성, 관계, 제약조건 / (언어) RDFS, RDF스키마, OWL, XTM \r\n(구축) 도메일 결정 > 재사용검토 > 용어열거 > 속성정의 > 제약조건 > 인스턴스 생성"
-    },
-    {
-        "topic": "가상현실",
-        "definition": "코스모스 플랫폼"
-    },
-    {
-        "topic": "멀티클라우드",
-        "definition": "보안 ASM 공격표면관리, CTEM 프레임워크(주간기술동향)"
-    },
-    {
-        "topic": "자동화 LLM기반",
-        "definition": "비정형 업무도 지시하면 처리할수 있는 방향으로 바뀌었음, 자동화,"
-    },
-    {
-        "topic": "HCI",
-        "definition": "AI 데이터센터,"
-    },
-    {
-        "topic": "CBDC"
-    },
-    {
-        "topic": "STO",
-        "definition": "실물가치와 연동 -> 보안, 기술고려사항 등"
-    },
-    {
-        "topic": "에너지효율컴퓨팅",
-        "definition": "초저지연,  효율적 코드, 알고르밎, 새로운 하드웨어, 친환경"
-    },
-    {
-        "topic": "AI기본법"
-    },
-    {
-        "topic": "국가AI데이터 사업",
-        "definition": "GPU기반 인프라 확보, AI-HUB"
-    },
-    {
-        "topic": "ISO 42001",
-        "definition": "인공지능 관리시스템"
-    },
-    {
-        "topic": "신뢰성 인증 제도"
-    },
-    {
-        "topic": "AI 컨텐츠 식별",
-        "definition": "딥페이크 탐지기술,"
-    },
-    {
-        "topic": "유전자알고리즘"
-    },
-    {
-        "topic": "컨첸츠 라이선스 확보",
-        "definition": "워터마킹, C2PA, 탐지알고리즘"
-    },
-    {
-        "topic": "LLM기반 절차",
-        "definition": "Ppre- Fine - PEFT*(파라미터 최적화) 미세조정 프로그램 (일부만 학습) \r\n* 튜닝(Adapter, Prefix, Prompt) LoRA"
-    },
-    {
-        "topic": "MOE(137)\r\nCOT",
-        "definition": "MOE 다수의 전문 모델에서 게이팅 NW통해 선택 머신러닝 기법 \r\n/ 전문가모델, 특정도메인, GW(게이팅NW)\r\nCOT 단계적 추론하여 복잡문제 해결하는 프롬프트 기법\r\n/단계적 추론, 복잡문제 해결, 추론"
-    },
-    {
-        "topic": "에이전트 i/F"
-    },
-    {
-        "topic": "비식별 조치",
-        "definition": "정형(가총삭범바),, 비정형(영상, 이미지, 음성, 텍스트 ) / 가우시안, 인페인팅 - 마스킹, - STT, -> 핵심이 디는 것?  스크러빙 (나는 고운혁 갑니다. 에서 고운혁 빅식별화 처리)\r\n@절차 : 대상, 비석별화처리 안전환 관리"
-    },
-    {
-        "topic": "개발 운영",
-        "definition": "AI 거버넌스,  AI거버넌스 플랫폼(가트너), 대가산정("
-    },
-    {
-        "topic": "AI 대가산정 (137)",
-        "definition": "1) 단순 AI  2) 커스터마이징(알고리즘 조정, 사용자 교육)  3) 시스템통합 기반 사업\r\n라이선스 비요, 전문작업비(학습비 , 투입공수 방식 /M/M, 시스템(SI) FP방식"
-    },
-    {
-        "topic": "AI개발 방법론",
-        "definition": "데이터 + 모델학습 + 운영(MLOps),  CRISS-DM(업데준모평전), SEMMA(샘탐수모평) /\r\nTDSP(MS) Biz이해 > 획득 > 모델개발 > 배포프드백"
-    },
-    {
-        "topic": "LLM  테스트",
-        "definition": "모하모픽 테스트, (벤치마크 테스트, BLEU, MMLU, 지식테스트) \r\n메타모픽, ROUGE-L, METEOR\r\n언어모델 이해, MMLU"
-    },
-    {
-        "topic": "개인정보 보호",
-        "definition": "자동화된 결정권리, 프라이버시 보호모델"
-    },
-    {
-        "topic": "AI 프라이버시 리스크",
-        "definition": "기업에서 개인정보를 안전히 관리하는 모델응"
-    },
-    {
-        "topic": "메타휴리스틱(Metaheuristic)",
-        "definition": "복잡한 최적화 문제에서 전역 최적해에 근접한 근사해를 합리적 시간 내에 탐색하기 위한 상위 수준(higher-level)의 휴리스틱 알고리즘\r\n// <주요 기법> \r\n- 단일 해 기반 기법: 시뮬레이티드 어닐링(SA), 탭 서치(TS), 확률적 탐색(Randomized Search)\r\n- 집단 기반 기법: 유전자 알고리즘(GA), 개미 군집 최적화(ACO), 입자 군집 최적화(PSO)\r\n- 하이브리드 기법: GRASP(Greedy Randomized Adaptive Search Procedure), MA(Memetic Algorithm)"
-    }
+  {
+    "topic": "인공지능",
+    "definition": "인간지능과 같은 시스템, Neuron, NN, 머신러닝, 기계학습",
+    "mnemonic": "두음 (선택)",
+    "keyword": "쉼표 구분 키워드",
+    "extra": "추가설명 (선택)"
+  },
+  {
+    "topic": "귀납적 사고",
+    "definition": "사례일반화, 패턴모델 추출/ 대량학습하여 숨은 패턴찾기",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "특이점",
+    "definition": "Singularity, 약강초AI, Weak/Strong/Superintelligent AI \r\n@1암흑(XOR, 비선형) 2차(HW한계)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "튜링테스트",
+    "definition": "PC-사람 |<-3자평가, CAPTCHA / 구텐베르크, 엘리자, 패리(C구알페) / imitation game",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "기계학습",
+    "definition": "원리: 균등(가정최소화),오캄(단순우선),양보(성능에 공짜없음)의 원리\r\n@학습데이터 =>[기계학습 알고리즘] -> 예측모델 // 입력 -> 예측모델 -> 출력\r\n@응용 : 정보검색(추출,요약), 시각(얼굴,화상 복구), 언어(대화), HCI(동작인식), 서비스(CRM), 바이오메트릭스, 로보틱스",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "-지도학습",
+    "definition": "라벨있음, 분류, 신경망(다층), HMM, SVM, 베이지안 분류, CNN, 결정트리, KNN, LDA, \r\n@신은 다서베 C결\r\n@활용: 이미지인식, OCR, 음성인식, NLP, 추세예측(회귀분석)\r\n@평가 : 교차검증, 정밀도(P,tp/(tp+fp), 재현율R,tp/(tp+fn)혼동 : 예실|PR|참거짓| 'tpfp,fntn'",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "-비지도학습",
+    "definition": "라벨없음, 데이터자체 유사> 유형구분, clustering ||데이터가 어떻게 구성되었는지?확인\r\n@종류:군집화(clustering),DBSCAN,K-means, EM clustring,PCA,ICA,SOM, HC(계층군집) \r\n@활용 : 마케팅 세분화, 뉴스요약",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "-준지도학습",
+    "definition": "지도학습 + 비지도학습(학습->자율), 그래프생성모형 // ?",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "-강화학습",
+    "definition": "Reward<-환경(Env)->State->Agent->Action>(환경)/상태반응 행위에 환경, 보상학습\r\n@종류: Q러닝, MDP, MC(마코브체이), DQN, DP(다이나믹 프로그램)   \r\n@활용: 게임, 로봇제어, 자율주행, 금융서비스",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "-기계학습",
+    "definition": "수탐전모평배(수집,탐색,전처리,모데링,평가,배포) @신서비스 >모델옵스(ModelOps)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "-머신 언러닝",
+    "definition": "[개념]개인정보보호를 위해, 학습모델에서 특정 데이터의 영향을 제거하거나 무효화하여 해당 데이터를 학습하지 않았던 것처럼 모델을 재구성하는 기술 \r\n/프라이버시 보호 : GDPR, CCPA, 데이터 정확성 유지, 윤리\r\n/절차 : 언러닝 대상(삭제)>영향도 분석 >대상 노이즈>Repair단계(재적용) > 평가/검증\r\n/기술 : loss극대화, impair/Repair, SISA (분할,독립화, 슬라이싱, 통합)\r\n/보안기술 : Differential Privacy, Model Distillation",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "-기계학습알고리즘",
+    "definition": "지도학습( 분류 : K-NN, MLP, SVM, DBN, CNN, RNN, DQN, 회귀 : 다변량, Logistic, 포아송, 커널회귀분석)\r\n 비지도학습(군집화 : K-means, EM Clustering, Dendrogram clustering \r\n              잠재변수모델 : PCA, LDA, GAN, ICA, SOM, RBM, LDA, Word2Vec)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "신명망분석",
+    "definition": "입출은활가 / 유형: 디지털입력(지도,비지도,준지도), 아날로그입력(퍼셉트론, SOM)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- 퍼셉트론",
+    "definition": "다수(입력) -> 하나출력(1,-1) 알고리즘 / 인공신경망의 연속적 교사학습\r\n@Net, 임계값, 활성화함수, 가중치",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- 단층퍼셉트론",
+    "definition": "XOR불가 / 입력(가중치, 편향), 출력(임계값, Net)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- 다층퍼셉트론",
+    "definition": "은닉층 추가, 비선형(곡선)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "딥러닝",
+    "definition": "개념: 기계학습중 하나인 인공신경망 히든층을 깊게 쌓아 만든 기술>인간개입없는 발전\r\n배경: 인공신경망 극복, 은닉층깊게, 과적합해결, HW발전, 빅데이터 \r\n@종류 : RNN, CNN, DNN, 제한볼츠만 머신, 심층신뢰 신경망(DBN)\r\n@활용 :패턴,NLP,자동제어,가상현실,DataMining,시멘틱웹",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- Feed Forward",
+    "definition": "input L, hidden L(가중치,활성화함수), output L, ChainRule(error전파, 최종오류변화), Backpropagation(출력-목표 오차, weight조절)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- 하이퍼파라미터",
+    "definition": "사람직접, 학은배/학습율, 은닉층갯수,배치크기,경사하강법 반복횟수(epoch),활성함수  >> 모델자동생성(최적화 파라임미터, 가편)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- 파라미터",
+    "definition": "모델내부결정,가편/가중치,편향/종류:인공신경망 가중치, svm(SV), 선형회귀(결정계수)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "학습률유형\r\n최적화알고리즘",
+    "definition": "하이퍼파라미터, Loss줄이는 경사하강법의 최적해 도달 크기의 보폭(Step size)\r\n@유형: 배치(GD,SGD)>관성(Momentum, NAG), \r\n학습(AdaGrad, RMSProp), Adam, Nadam\r\n@MoNARA / \r\n최적해 찾는 방법(옵티마이저) /",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "경사하강법",
+    "definition": "인공신경망 비용함수 최소화 / 미분>함수 기울기(경사) 최저점 반복 알고리즘 (MSE)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- SGD",
+    "definition": "랜덤이동  / 한계극복 -> MoNARA",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- BGD",
+    "definition": "하나 배치 이동",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- MSGD",
+    "definition": "배치사이즈 나눠 이동",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "단극성 활성화",
+    "definition": "항등, 경사, 계단",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "양극성",
+    "definition": "시그모이드, Tanh, ReLu, Leaky ReLu",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "은닉층 활성화함수",
+    "definition": "(단극)sigmoid, ReLU (양극)Tanh, Leaky ReLU @PReLU, ELU\r\ntanh(하이퍼볼릭 탄젠트, hyperbolic tangent) -1<tanh(x)<1",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "출력증 활성화함수",
+    "definition": "(이진)Sigmoid, (다중)Softmax, (회귀)Linear / 활성 수식 반드시 암기\r\nsigmod(x, 0~1) = 1/1+e-x",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Softmax",
+    "definition": "출력값 정규화(0~1실수, 총합1, 확률) // But, 과적합 문제 발생",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "One Hot 인코딩",
+    "definition": "고유값 컬럼 1, Bag, Vector(0,1) \r\n// But, 차원저주 문제 발생\r\n// 컬럼증가, 희소백터, 해석오래\r\n해결: 임배딩기법, 피처해싱, PCA, 바이너리 인코딩",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "편향(Biased)\r\n원인",
+    "definition": "이유: 편향된 데이터(인숨데롱고), 가공과정, 모델자체에서 편향\r\n@종류 : 인간의편향, 숨겨진편향, \r\n데이터표본 편향, 롱테일 편향, 고의적 편향\r\n개념 : 예측값과 평균과 실제값의 차이",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "편향 대응방안",
+    "definition": "설명요구, XAI, 알고리즘, AI감리, 기업AI윤리",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "분산",
+    "definition": "예측값과 평균과 예측값의 차이 : 예측값의 흩어진 정도",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "기울기 소실문제",
+    "definition": "BP-오차미전달,(Layer깊이)미분 국부해수렴, (활성함수측면)시그모이드 함수의 Squash",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "기울기 소실문제해결",
+    "definition": "학습효율:LSTM(장기의존성 해결), DBN(사전학습으로 예측높임), ReLU, LeakyReLU(활성함수개선) * LSTM은 오래 기억, DBN은 예습, ReLU는 크게 외치기로 문제를 해결해요",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "손실함수",
+    "definition": "개별오차측정,실제-예측차이,단일샘플,역전파시 기울기,비가역적\r\n/MSE, RMSE, MAE, BCE, CCE, SCCE\r\n@비가역: 손실함수값이 낮다고, 예측결과가 항상좋은것은 아님",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "비용함수",
+    "definition": "DataSet 전체 손실함수, 모델전체가 얼마나 틀렸는지? \r\n/ 회귀: MAE, MSE,MSE / 분류: BCE, CCE, CE",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Object 함수",
+    "definition": "비용함수 활용해 오차가 최소가 되는 지점을 찾음 수행\r\n/ Gradient Descent 이용해 비용최소화",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "언터피팅",
+    "definition": "큰 데이터 축소, 부족 / 모델링 변경, ReLU함수 사용, 정규화, 특성강화, XAI도입, 활성화 함수 변경 @과소적합, 고편항모델",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "오버피팅",
+    "definition": "학습정확, 부족학습셋 / \r\nDropout, Early stop, cross validation(hold out/ k=fold), 정규화 @고분산",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "모델발굴",
+    "definition": "편향, 분산 trade off / 단점보완, 장점부각 \r\n@ (방향) 저편향, 저분산",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "역전파",
+    "definition": "신경망 오차를 역방향으로 앞쪽전달 가중치(0)조정의 신경망\r\n절차: 순전파> 역전파, 가중치조정, 반복실시 > (SOTA생성) State of the Art\r\nex: 이미지넷, COCO || GLUE/MMLU NLP점수|| BELU, METEOR 번역  평가\r\n                         || CLIP, LAION(멀티)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "역전파 문제점/해결",
+    "definition": "문제//해결\r\n기울기 소실-폭주 // 가중치 초기화, 활성화 함수선택, 배치정규화\r\n과적합//정규화, 드롭아웃, 데이터증강\r\n학습속도와 수렴속도 // 학습률 조정, 모멘텀, Adam 등 최적화 알고리즘 사용\r\n하이퍼파라미터 튜닝 // 최적화, 자동화 도구(하이퍼파라미터)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "순전파",
+    "definition": "입력, 히든, 출력방향 전달의 비순환 구조의 가중치 조정 신경망\r\n/절차: 초기화, input, 히든, output, 오차개선",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Dropout",
+    "definition": "일부은닉 미사용/ Rate (%)>비활성화>학습>역전파 > 테스트수행 / 오버피팅, 소실",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "언더샘플링",
+    "definition": "높은 class를 낮은 분포화 / Random under sampling, Tomek_link, CNN, ENN @CERT\r\n(장): 유의미한 데이터만 보관, (단): 정보손실",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "오버샘플링",
+    "definition": "소수 데이터 증대 / Random over sampling, ADASYN, SMOTE / @RAS\r\n(장): 정보의 손실방지 (단)여러정보가 추가로 오히려 오버피팅 야기\r\n@복합 :  SMOTE + ENN,  SMOTE + TOMEK",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "능동학습",
+    "definition": "일부라벨링 , 결과를 통해 오토라벨링* /@프로세스: 학습>선별>교정>평가 @학선교평\r\n@미라벨 데이터를 골라 사람(오라클)에 라벨을 요청",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "자기지도학습",
+    "definition": "원천>레이블 자동생성, 비지도학습, 자동레이블\r\n/절차: PDF(pre-text, Downstream, Fine tunning)\r\n@P데이터 핵심표현 추출(레이어학습)>\r\nD지도학습(전이학습)적은양 라벨이용 지도학습>F튜닝\r\n@종류:영상재건, 생성기반, 문맥기반, 대조학습 기반 @필요성: 수집,비용 한계, 편향성",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "합성데이터",
+    "definition": "원본데이터 부족 문제 해소, 실제분포와 차이있음 / 부분, 완전 합성데이터",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "지식증류",
+    "definition": "앙상블, Teacher>Student, 활성화, 손실함수\r\n/숙련대형모델(Teacher)>경량모델(Student)\r\n@큰모델 무거워 쓰기 어려움>교사(큰모델) 예측분포(soft)|풀이과정 보여줌(how, soft) 학생은 풀이과정 모방하며, 감(패턴) 익힘\r\n>>교사의 힌트(확률분포, 관계)로 작고단순한 구조로 문제 해결",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "지식증류 유형",
+    "definition": "로짓(응답), 피처기반, 관계기반 증류 / 오프라인, 온라인, 자기증류 / 딥시크(MoE활용)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "HMM",
+    "definition": "은닉마르코프, 숨겨진 상태순서로 모델링/ \r\n(유형)Ergodic model(연결구조), Left to Right(순차) Model /초상관(확률)\r\n@결과(관찰)->은닉상태를 추측모델/(구성)상태, 관측, (초기상태, 상태전이, 관측) 확률",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "CNN",
+    "definition": "Convolution(특추), Pooling(이미지축소), Fully connected(정규화,분류)\r\n@작은창으로 특징 뽑고, 풀링으로 압축한 뒤, 완전연결층으로 결론\r\n> 과정의 이미지 분류를 수행\r\n@[Convolution→Activation]×N>[Pooling]×M>Flatten→Fully Connected→Softmax",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "CNN하이퍼파라미터",
+    "definition": "Kernel Size, Padding, Stride, 필터사이즈, Pooling size",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "EfficientNet",
+    "definition": "이미지 분류, Compound Scaling / AutoML @CNN성능과 효율향상 모델\r\n@사진속 고양이,사람인지?, 3가지(깊이,넓이,해상도) \r\n> 비유: 책속 줄거리,단어,그림 조금씩 보는것",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "EfficientDet",
+    "definition": "Object 탐지, BiFPN, Compound Scaling / 컴퓨터비전 @CNN성능과 효율향상 모델\r\n@사진속 물체 위치/종류 찾기/BiFPN이용해 크고,작은 동시찾음 >비유: 돋보기, 망원경 동시사용",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "EfficientSeq",
+    "definition": "텍스트·음성·시계열 같은 순차(시퀀스) 데이터를 빠르고 가볍게 처리/ 3가지(깊이,넓이,해상도)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "U-Net",
+    "definition": "이미지 세그멘테이션 AI모델, CNN단점 극복, FCN(Fully Convolution Net)(완전합성곱)\r\n@수축>전환>확장/넓은이미지 의미정보 추출하여 객체 분류, U모양 FCN기반 인공지능\r\n@너비(Width), 높이(Height), 채널(Channel)의 3가지 차원 // 접기<->펼치기 (스킵연결)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "YOLO",
+    "definition": "이미지 -> SXS 그리드 > 바운딩 박스/  클래스 확율맵 > 최종객체 인식  @S바클객",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "RNN",
+    "definition": "시계열분석, 연속적 정보흐름(시간) 파악 인공신경망 // 장기의존성 문제\r\n학습과정 : Recurrent Weight, seq data, BPTT(역전파 + 시간 확장판)\r\n신경망구조 : Input, Hidden, Output Layer,",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LSTM",
+    "definition": "히든레이어(Forget,Input, Output Gate, Cell state)시,시탄,시탄 / RNN 장기의존성해결",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "GRU",
+    "definition": "LSTM간결구조, Reset Gate, Update Gate\r\nRNN > LSTM > GRU",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "DBSCAN",
+    "definition": "비지도학습, 군집분석 / 한점기준 n개 있으면 하나군집 인식 \r\n/ Core, Border, Connected, Noise Point\r\n밀도기준, 중심과 군집의 반경(epsilon) \r\n// 동작: epsilon 설정>minPts설정>core, Border point분류",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "군집분석",
+    "definition": "비지도학습, 상호간 유사 특성 집단화(거리 최소화로 하는 기법) @절차: 문제형성>거리측도선택>절차선택> 군집수 결정> 군집해석 > 타당성 평가 #문거철수 프타\r\n기법: 거리중심(계층적 군집, K-means, SOM) 차원축소(PCA, MDS)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "의사결정트리",
+    "definition": "지도학습, 형가타해(형성>가지치기>타당성평가>해석) \r\n/ 분류기준기법 : 불순도(엔트로피, 지니계수)로 \r\n장점: 해석용이, 미모수적 모형, 분류직관성,  단점: 불안전성, 비연속성, 낮은 정확도",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "KNN",
+    "definition": "지도,분류/ 최고인접, 다수결, 유사도(거리)기반/ Fingerprint >그룹분류 >K값 선정>매칭\r\nlazy Learning기법, 단순유연성 / 유클리이디안, 마할라노비스거리, 코사인유사도\r\n장점: 효율성, 간단학습,높은정확도/ 단점:K값선정, 고비용, 거리계산복잡,노이즈에약함",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "SVM",
+    "definition": "초평면/hyperplane, Support vector, Margin(Hard,soft),커널기법\r\n//활용: 전처리, 변수선택, 통계분류",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "커널법",
+    "definition": "Kernel : 비선형 분류 문제 -> 저차원값을 고차원 공간으로 변환",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Clustering",
+    "definition": "(분할군집) K-means, DBSCAN (계층군집) Dendrogram, EM clustering",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "K-means",
+    "definition": "(개념)데이터를 k개의 그룹 나누고, 각그룹의 평균 위치(centroid)를 중심으로 묶는 방법\r\n거리기반 군집화, Centroid, K개군집, 데이터양자화(오류최소화), 반복적 최적해\r\n@절차:K개지정>초기평균계산(가상좌표)>다시 거리계산 군집할당>반복(변화없기까지)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "K-선택",
+    "definition": "엘보우(SSE 최소의 K), 실루엣(군집간 거리 분리척도 1굿, 0나쁨, 0.5이상), 덴드로그램(시각화, 계층)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "분류유형",
+    "definition": "지도학습/ KNN, 결정트리, Random Forest, Navie Bayes, SVM, Logistic Regression",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "차원축소",
+    "definition": "PCA(주성분분석), ICA, LDA(주성분분석, 다변량의신호, 데이터 축소)SOM, AE, ISOMAP\r\n<차원축소 알고리즘> \r\n- 선형 차원 축소 (Linear Dimensionality Reduction)\r\n  ㄴ PCA (Principal Component Analysis, 주성분 분석)\r\n  ㄴ LDA (Linear Discriminant Analysis, 선형 판별 분석)\r\n  ㄴ FA (Factor Analysis, 요인 분석)\r\n- 비선형 차원 축소 (Non-Linear Dimensionality Reduction)\r\n  ㄴ t-SNE (t-Distributed Stochastic Neighbor Embedding)\r\n  ㄴ UMAP (Uniform Manifold Approximation and Projection)\r\n  ㄴ Isomap (Isometric Mapping)\r\n  ㄴ LLE (Locally Linear Embedding, 국소적 선형 임베딩)\r\n- 신경망 기반 차원 축소 (Deep Learning-Based Dimensionality Reduction)\r\n  ㄴ Autoencoder\r\n  ㄴ Variational Autoencoder (VAE)\r\n  ㄴ RBM (Restricted Boltzmann Machine)\r\n- 행렬 분해 기반 차원 축소 (Matrix Factorization)\r\n  ㄴ SVD (Singular Value Decomposition, 특이값 분해)\r\n  ㄴ NMF (Non-Negative Matrix Factorization, 비음수 행렬 분해)\r\n  ㄴ MDS (Multidimensional Scaling, 다차원 척도법)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "PCA",
+    "definition": "절차 : 데이터전처리, 공분산 행렬계산, 고유값/고유백터 계산, 데이터 투영/변환\r\n기술 : 공분산, 공분산행렬, eigen vector(고유백터), eigen value(고유상수), 변환행렬(A)\r\n활용 : 얼굴인식 대표알고리즘",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "SOM",
+    "definition": "(개념) 비슷한 데이터끼리 가깝게 정리된 지도(Map)를 만드는 AI,\r\n(특징)주변 이웃 확인, 시각화\r\n차원축소 + 군집화(시각)@차원축소 1~n차원 출력층, BMU(best matching unit)\r\n(절차) 시작점, Nw초기화 > 반복계산 클러스터링 > BMU탐색(유클리드거리) > SOM파라미터업뎃 > 가중치업뎃\r\n과일놀이(지도) 3*3, 스티커 / 초기배치(1선택) > 새과일(BMU) 비슷선택  >  비슷한끼리 이동 > 반복(바나나, 포도 등)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "GAN",
+    "definition": "노생판 / 노이즈, 생성자, 판별자, 1/0 \r\n기술: DCGAN, SRGAN, 스택GAN,\r\n 3D-GAN, 사이클GAN, 디스코GAN",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "DCGAN(Deep Convolution GAN)",
+    "definition": "GAN 안정화, 확장성 제고, Fully connected layer 제거\r\n구성 : 제라타, 디리노/ Generator : ReLU, Tanh함수 /  Discr~(Leaky ReLU, Normalization) \r\n@작은 칸마다 붓질 공장처럼 그림, 검사로봇과 연습하면서, 잘 그려지는 그림로봇",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "인공지능 분석모델평가",
+    "definition": "개념: 훈련모델의 예러율 예측을 통해 모델의 타당성을 평가 검증방법\r\n(정확도기법) Train Validation : 훈련/테스트/검증 집합으로 모델정확도 검증\r\n(재샘플일) Cross Validation, 부트스트랩(복원추출)\r\nK-fold, RMES, 혼동행렬, F1 score, Dunn's index, ROC, AUC, PR plot, BELU",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "오토인코더",
+    "definition": "특징복원추출, Latent Variable(잠재변수), 인코더, 디코더",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "VAE",
+    "definition": "평균,표준편차, 유사데이터 생성, Latent space, Latent Vector / 인코더 디코더 @의료,금융,엔터테인먼트",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "잠재변수모델",
+    "definition": "관측불가 요인 구조화, 관측값 뒤의 숨은 요인을 확률적으로 추정해 설명력과 예측력을 높이는 모델링 접근",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Q-러닝",
+    "definition": "모델없이 학습 가능한 강화학습 / 환경 내부구조 몰라도 경험기반 학습 가능\r\n최적행동 찾기, Q함수(범용, Model Free), 강화학습\r\n학습 : Q함수, MAX Q, 정책",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "몬테칼르로트리탐색",
+    "definition": "MCTS, 전체경로탐색 불가시, 효율경로 탐색\r\n/선택>확장>시뮬레이션>역전파(반복) @선확시역\r\n@바둑에 활용, 정책(Policy, 폭제한), 가치(value, 깊이제한)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "연합학습",
+    "definition": "분산형 머신러닝, 프라이버시/\r\n분갱취갱(전역모델 분배> 지역모델 갱신 > 지역취합> 전역갱신)\r\n@알고리즘 : FedSGD(1회학습 파라미터 중앙전송, 평균계산), FedAVG(K반복 수행 파라미터 서버전달)\r\n - FedSGD (Federated Stochastic Gradient Descent)\r\n - FedAvg (Federated Averaging)\r\n - FedProx (Federated Proximal)\r\n - FedOpt (Federated Optimization)\r\n - FedMA (Federated Matched Averaging)\r\n - FedBN (Federated Batch Normalization)\r\n - FedGKT (Federated Gradient Knowledge Transfer)\r\n - FedReID (Federated Learning for Person Re-identification)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "연합학습 보안 \r\n프라이버시 보호",
+    "definition": "동차간다영연기, 동형, 장등정보보호,GAN",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "SNN",
+    "definition": "SNN->뉴모로픽 칩구현, Synapse, 뉴론 /STDP*(Spike timing dependent plasticity) / Low 파워(필요한 때만 신호(이벤트) /*시냅스 전후 뉴런 발생시간 상관관계 이용, 가중치 조절하는 학습 알고리즘",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "GNN (137)",
+    "definition": "그래프데이터(노드,엣지) 학습알고리즘, graph=노드특징행렬 x 인접행렬 / 집결요(ACR) \r\n@학습과정 : 변환(인접행렬, 노드특징행렬) >취합 >업데이트>생성\r\n@구성: input>GNN(aggregate ,combie, Readout)반복>Output // \r\n변환>취합>업데이트>생성",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "GCN",
+    "definition": "GNN + CNN - Convolution , 심층신경망",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "경량화",
+    "definition": "알고리즘 : 모델압축, 지식증류, HW가속기, 모델압축 자동탐색(압증가탐) \r\n1. 가중치 가지치키, 양장화, 가중치 공유 2. 전이학습,교사,학생모델 3.선형대수학, 백터/행렬연산  모델경량 : 구조변경, 합성곱필터, 경량모델자동탐색(구합탐)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "경량화기술",
+    "definition": "양PS : 양자화(정밀도), Pruning(제거), Sparsity(희소성)\r\n구조변경) Resnet, DenseNet, SqueezeNet / 합성곱)MobileNet, SuffleNet /탐색)NetAdapt, MNasNet",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "과적합 문제",
+    "definition": "학습과다 / 이유: 차원저주, 모델복잡, 편향-분산 Tradeoff, 데이터 불충분, 쏠림@차모편불쏠\r\n기계학습시 패턴이라 관계에 훈련시 너무 학습을 많이 해서 불필요한 내용까지 학습된 상태",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "과적합 해결",
+    "definition": "DropOut, 조기종료, 정규화, PCA, ICA, LDA, Cross Validation, 특징추출/선택, 추가데이터 확보",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "과적합 방지이론",
+    "definition": "오컴의 면도날 / 논리적으로 단순함이 진실가능성 높음, 단순모델, 선형모델",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "차원의 저주",
+    "definition": "학습데이터<차원수 / 변수증가 : 학습셋부족, 과적합발생, 설명력저하 // \r\n@Feature선택 : Filter, Wrapper-based Method, Embedded method,  \r\n@Feature추출 : PCA, LDA, t-SNE(비선형 차원축소)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "파괴적 망각",
+    "definition": "단일과제만 우수 / AI알츠하이머 //범용AI개발, 성능개선, 정규화, 증류, 동적구조, DropOut",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "할루시네이션",
+    "definition": "생셩형AI데이터 오류, 편향, 부정확, 조작 \r\n// RAG, Defense-GAN, Adaptive AI, data클린징, XAI, AI거버넌스, 합성데이터, 프롬프트 Eng~, SLM",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "교차검증",
+    "definition": "Hold-Out, K-Fold Cross Validation, Leave-one/few-out, Randoms Subsampling,",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "혼동행렬",
+    "definition": "지도학습 분류모델 성능시각화, @예실, PNPN || TPTF TFTN  정밀도(P), 재현율(R), 정확도, 특이도",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "F1 스코어",
+    "definition": "2*재현율*정확도 / (재현율 + 정확도)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Precision",
+    "definition": "TP/(TP+FP) (정밀도)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Recall",
+    "definition": "TP/(TP+FN) 재현율",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Accuracy",
+    "definition": "(TP+TN)/(TP+FN+FP+TN) 정확도",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "TF-IDF",
+    "definition": "TF(단어빈도), IDF(역문서 빈도)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "IOU",
+    "definition": "교집합/합집합  |AXB| / |AUB|   = |AXB| /  |AUB| -  |AXB|",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "유사도",
+    "definition": "유코피자실 / 유사도, 코사인, 피어슨상관계수,자카드\r\n// 군집도 평가지표:실루엣계수, 응집도 \r\n@거리기반 : 유클리디안, 맨하튼, 체비소프, 인코프스키\r\n/ 관계기반 : 코사인, 해밍거리, 자카드,",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "심층강화학습",
+    "definition": "딥러닝(DNN, MDP, Q러닝) + 강화학습(환경,상태,에이전트,행동,보상)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "XAI",
+    "definition": "모델비종속적:LIME(신뢰도, 희소선형 결합), SHARP(공헌도,기여도 설명), \r\n                 BRL(간단해석 조건문) \r\n모델종속적 : LRP(기여도 히트맵 구성), DGNN탐색적 샘플링, ZeroShot, Rule extraction",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "XAI 핵심과제",
+    "definition": "대규모 모델설명, 성능개선, 명확한 정의, 정교한 평가, \r\n사람중심설명, 사용자맞춤, 부정영향완화",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "XAI 평가기술",
+    "definition": "(인간) AB, AMT(아마존),  교란(Inpu, Output교란) \r\n/밴치마크 이미지넷, MMLU(NLP), SW SPEC, BLEU(기계번역)\r\nSOTA (전분야, 특정시점에서 최고AL)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "전이학습",
+    "definition": "유사모델 재사용, 과도(적용범위 )귀변자(데이터) \r\n//data부족해결, 학습시간단축, 성능향상, 비용절감\r\n과업전이, 도메인전이/귀납,변형,자율\r\n (종류) 과업전이(파인튜닝, Multitask 튜닝, RuleBased전이)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Adaptive AI",
+    "definition": "변화에 민첩대응, DL, SLAM /즉각대응, 개인화 처리, RLHF, 메타러닝, 전이학습",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "파인튜닝",
+    "definition": "사전학습 모델, 가중치 조정, 추가학습, 최적화(평가) \r\n/ 종류 : Supervised, Instruction, PEFT, RLHF \r\n@손실함수, Optimizer, 하이퍼파라미터 / 전이학습, LoRA",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "PEFT",
+    "definition": "대부분 파라미터 프리징, 일부만 파인튜닝, Prefix-Turning, Prompt 튜닝, Bitfit, Diff Pruning, LORA\r\n배경: 모델크기 급격한 증가(GPT, BERT, T5), 전체 모델 미세조정(재학습)은 자원소모\r\n목적: 경제적, 인프라비용, 모델성능유지, 맞춤조정, 빠른학습 (일부 파라미터만 학습)\r\n기법: 가산형(Adapter layer, Prompt 튜닝, Prefix 튜닝), \r\n       재매개변수화(LoRA), 선택적(BitFit, Diff 푸르닝)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LORA",
+    "definition": "Low Rank Adaption,저차원(row-rank) 행렬추가 모델미세조정, 기존가중치, 저차원 행렬",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 최적화 순서",
+    "definition": "프롬프트 엔지니어링 > RAG > FineTunng",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "ML파이프라인",
+    "definition": "수전학배예 (수집, 전처리, 학습, 배포, 예측)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AutoML",
+    "definition": "AI 반복업무 자동화/피하신 \r\n@피처엔지니어링, 하이퍼파라미터, 신경망구조탐색 -> 모델최적",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "ModelOps",
+    "definition": "절차: Discovery, Governacne, Deployment, CI/CD/CT, 운영자동화  \r\n//기능 : 운영자동화, 생명주기관리, 가속화",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "메타학습",
+    "definition": "학습방법을 학습 / 거리기반, 모델기반, 최적화 학습방식/ zero, few, one shot 러닝",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "MLOps",
+    "definition": "dataOps + AutoML +  머신러닝 /",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "DSML",
+    "definition": "데이터 사이언스 + 머신러닝",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AIOps",
+    "definition": "IT인프라 운영 자동제어",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "FMOPS",
+    "definition": "파운데이터 모델기반, LLM기반 앱 개발 위한 방법론\r\n/ 멀티모달, 플스택 플랫폼 시도,  Prompt 엔지니어링, 체이닝, 임베딩, 파인튜닝",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LLMOps",
+    "definition": "LLM운영, 평가튜닝(수집,전처리, 모델센택, 파인튜닝, 평가배포, 모니터링,피드백)\r\n/커버리지, 응답속도\r\n@참조기술: 청킹, Zero, Few-shot 설계, LangServce,  RAG, RLHF",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "NER",
+    "definition": "Word2Vec, seq2seq, glove, fastTEXT / 자연어처리기술 : Word임베딩, MRC, NER\r\n임베딩(TF-TIF, one hot 인코딩, Seq2seq)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "워드임배딩",
+    "definition": "자연어 > 숫자, 백터 > 기계학습 활용 형태기반",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "BM24",
+    "definition": "문서와 질의간 적합도 계산 우선순위화 / TF, TDF, Score emd",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "트랜스포머",
+    "definition": "관계추적 맥락이해, 포인피 마인피 리소 / Positional encoding, Encoder Self 어텐션, FeedForward/ Masked, Encoder-Decoding, 피드포워드 신경망 / Linear, Softmax @all you need is attention",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "chatGPT",
+    "definition": "파인튜닝, 강화학습, RLHF, PPO(Proximal Policy Optimization, 강화학습알고리즘)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "초거대AI",
+    "definition": "대규모 파라미터, 사전학습, 파인튜닝 \r\n/ 파라미터(매개변수)가 무수히 많은 AI모델\r\n@발전 : 신경망 언어모델(LM) >\r\n>트랜스포머(인코더, 디코더, 어텐션)\r\n>LLM(언어모델, BERT, GPT)>초거대AI.(LaMDA, GPT3 )",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "초거대AI 도입 활용가이드라인",
+    "definition": "#등클모서운성 (절차) : 보안등급(CSO), 클라우드 서비스 구성, 데이터학습 방식(FM, 파인튜닝, 사후학습, RAG)구분, 서비스 도입방식(SaaS, 조달), 유지운영(최적운영관리) > 성과관리(지표설정, 관리) \r\n성과프레임워크 : AI생애주기 : 투입 > 과정 > 산출 > 결과  > 영향(공공/행정/사회현안 해결)//(분류)지능형 정보처리, 업무자동화, 대화형 서비스, 모니터링 알람",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "멀티모달AI",
+    "definition": "다른 특성 데이터 임베딩 추출/모델통합, 임베딩백터 결합/\r\n/기술요소 : 인코더(백터변환)> 융햡(Fusion, 어텐션)> 디코더(텍스트, 이미지 디코더)\r\n//문제점 : 데이터편향, 프라이버시침해, 책임소재불명확, 허위정보, 저작권교란\r\n//대응 : 위험분류, 고위험평가(적합성 평가, 투명성등), 저작권 보호, 개인정보 보호 강화, AI거버넌스, 교육강화, XAI, 데이터품질강화, AI보안(적대적 공격 방어), 접근통제, 암호화, 무결성\r\n@언어 NLG, 음성 STT, 이미지 Filtering,추론(회귀, 시계열분석))\r\n@DALL-E, Stable Diffusion(이미지), Sora(비디오)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "멀티모달AI \r\n보안위협 //대응",
+    "definition": "(데이터) 할루시네이션(생성결과 미흡, 혼란)-> 잘못의사결정 (특히 영상)\r\n(AI모델악용)피싱,인물딥페이크,사업보안 위협코드 작성, 가짜뉴스 생성>사회공학이슈\r\n(데이터유출) 합성과정, 훈련과정에서 민감정보 유출(개인음성,얼굴이미지)\r\n(플러그 취약) 저급한 AI모델에 플러그인 연결 > 악용가능\r\n(확장APP취약) 악성서비스 설치시 공격, 호스팅 대상 및 API 키관리 불명화로 탈취\r\n//민감콘텐츠 필터링(자동화필터링), 중복데이터 제거(추론방지, 민감정보 보호), 익명화\r\n//개인정보 유출최소화(차등정보호), 강건성모델 선정\r\n//평가(협오발언 답변거부), 답변횟수, 적대적 공격테스트>유출대책마련, 출력회수 제한",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "비전 언어모델\r\nVLM",
+    "definition": "개념 : 이미지와 텍스트 동시 수용 연산생성하는 AI기술\r\n이미지 : VIT, CLIP\r\n텍스트 : BERT, 트랜스포머\r\n연산모델 : Chat GPT, Genimi, Claude \r\n@PDF파일 - Screen shot -> 이미지백터화 , VLM인식처리",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "GPT4",
+    "definition": "멀티모달+GPT",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "sLLM",
+    "definition": "비교적 작은 크기, 사전학습, 파인튜닝, 지식증류",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LangChain",
+    "definition": "설비이상, 사전예측 정비조치/@센싱(설비이력data + 센서데이터) > LC(예측분석, 실시간모니터링) @LLM기반 파이프라인 구성, 순차적 분기 체인, 챗봇, RAG 도구 연동",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LangGraph",
+    "definition": "상태머신 워크플로우, 노드, 엣지, 상태기반, 방향성 그래프, 복잡한 조건분기, 반복 등 고급제어 적합",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "프롬프트 엔지니어링",
+    "definition": "AI인터페이스개발/ 작업설명, input 지표 (zero, one, few 샷), CoT\r\n/ 원칙: 방향,형식,예시,평가,분할\r\n지식작업, 문맥배경(context), 입력데이터, 출력형식 제시 \r\n/ 페스소나, 예시, 포멧, 어조 Prompt Chaining\r\n절차 : 문제정의>리소스이해>프롬프트 유형결정>페르소나설정>사용중모델 고려>프롬프트 구성>지속적인 개선",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "컨텍스트 엔지니어링",
+    "definition": "LLM의 입력 작동방식에 사용자 의도와 목적배경 따라 문맥(Context) 정형화, 조작, 정밀도 향상기법 COT, TOT,  RAG, 외부지식, DB,API 호출 LLM개선 \r\n절차: 사용자 문제  > 맥락, 이력, 외부지식(DB,RAG 등)\r\n -> 프롬프트 >  LLM 응답생성 > 결과평가 튜닝 (피드백)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "*",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "파운데이션모델",
+    "definition": "사전학습, 출력범용성, AI기초모델/\r\n대규모 학습데이터, 파라미터, 전이학습, 균일화, 창발성,다목적성\r\n최적화 : 지슥증류, 푸르닝, 양자화, Sparsity",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "자연어 음성인식",
+    "definition": "EPD(발화 시작끝 검출기술) / 전처리, 후처리, 음향모델, 발음사전, 언어모델",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "MRC",
+    "definition": "기계독해/유형: Extractive Answer Datasets(SQuAD, NewsAD) , \r\n질의에 맞게 문장 생성(Narrative QA), 여러답변중 선택(ARC)\r\n/평가 : Extract Match, F1, HEQ",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "협업필터링",
+    "definition": "선호도예측/ 사용자기반, 아이템기반, 컨텐츠기반\r\n@거리측정 : 유클리이안, 맨하튼, 코사인 유사도, 피어슨 상관계수, 자카드 유사도\r\n@추천시스템, Graph DB",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "GraphDB\r\n/추천시스템",
+    "definition": "접합이유 : 사용자-아이템관계, 연결기반, 컨텐츠+협업기반, 실시간 개인화 추천\r\n@그래프DB : 노느(정점) + 간선(관계) 표현, 관계중심, Nego4J, Amazon, TigerGraph (User-아이템)\r\n@추천시스템 : 사용자 과거행동(구매,클릭,조회)기반 선호할 아이템 예측 / \r\n협업필터링(CF), 콘텐츠 기반 필터링, 하이브리드 방식, TOP-K\r\n@평가지표 : 랭킹(Hit rate), 분류(정확도, F1), 회귀(RMSE, MSE)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "어텐션 매커니즘",
+    "definition": "QKV(qurey, key, value), 어텐션 함수(스코어함수), 어텐션 분포, 어텐션 값\r\n@스코어, 가중치, 컨텍스트 백터, 어텐션 타입 / 문장중, 더중요한 부분에 가중치 부터하여 결합방식",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "생성형AI",
+    "definition": "멀티모달 GAN, VAE, SAM, TAM / 트랜스포머, LLM  @chatGPT, Gemini, CLOVA x, Sora",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "추론형AI",
+    "definition": "논리적 사고 과정, 새로운 답변 생성, CoT과정 추론",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "생성형AI문제",
+    "definition": "환각, 최신미반영, 차별, 개인정보노출, 고성능자원필요, 에너지 낭비, 저작권 침해",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "생성형AI동향",
+    "definition": "EU: AI Act / 미국: 선도기업 협약 / 중국 : 딥페이크 규제, R1, 딥시크 \r\n국내: 생성형AI보안가이드, KorQuad, KLUE, K-cloud 등",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI ACT",
+    "definition": "유럽연합 : 인공지능 개발시 사용규제 법률 \r\n/ 유형: 금지된 위험, 고위험, 제한위험,  최소위험AI  (차등규제)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 기본법",
+    "definition": "목적 : 안전,사회적 측면, 안전성 확보적용, 산업체계 육성, 고영향 AI, 경쟁력 강화\r\n대상: AI시스템, 의무사용자 사업자, 실질사업자 \r\n활동 : 위험평가, 위험제거 완화, 모니터링, 안전사고 처리, 예방조치, 결과제출 \r\n고영향 : 사람이 중대한 영향 위험평가(에너지, 원자력, 물)\r\n책무 : 설계, 모델, 운영 측면에서 강화 (설명방안, 문서작성 등)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 앙상블기법",
+    "definition": "Bagging, Boosting, Stacking // Random Forest, Adaboot\r\n다수모형을 통해, 예측/분류 결과를 종합적 최종의사결정 기법\r\n샘플: 배깅, 부스팅, 변수 : 랜덤포레스트",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- Bagging",
+    "definition": "Bootstrap 집계, 병렬수행 / * Bootstrap : Random 샘플링 평균점수 내기\r\n샘플을 무작위 중복추출(부트스트랩) \r\n→ 여러 개 모델 학습 → 결과를 평균(회귀) 또는 투표(분류)\r\n - 장점 : 분산감소, 안정적 예측, 단점: 편향\r\n대표 : 랜덤포레스트(Random Forest) : 의사결정 여러 개",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- Boosting",
+    "definition": "Bootstrap의 가중치 조정, 오류, 순차적 수행 / 첫번째 틀린것 고쳐 두번째 전달\r\n이전 모델의 오차를 보완하는 방식으로 순차적 학습\r\n대표 : AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost\r\n장점 : 높은정확, 비선형에 강함, 단점: 과적합 위험",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "- Stacking",
+    "definition": "Base Learner + Meta Learner / 여러 친구들이 풀고, 선생님이 누가 맞았는지 판단\r\n다른 알고리즘 모델을 학습시킨 뒤, 최종 메타모델(meta-learner)이 이들의 출력을 결합\r\n1단계: 친구들 문제품(DSS, SVM, 로직회귀) > 2단계 메타모델로 판단-> 최종선택\r\n장점: 다양한 모델 적용, 단점: 구조복잡",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Random forest\r\n(Bagging)",
+    "definition": "조합(Decision Tree + 부트스트래핑+보팅) / 병렬모델, 분산감소, 가중치 고정",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "보팅",
+    "definition": "데이터셋 > 선형, SVM  --> 투표(최종예측결과)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Adaboost\r\n(Boosting)",
+    "definition": "약분류기, 강분류기, 가중치 / 순차적 모델",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "데이터레이블링",
+    "definition": "dataset, 지도, 비지도 데이터 라벨링 / 약지도, 반지도 라벨링",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "어노테이션",
+    "definition": "라벨링시, 주석을 표시, 설명정보//이미지(클래스 라벨, 바운딩 박스, 폴리곤, 픽셀/점)\r\n/동영상(분류, 바운딩박스, 키 포인트, 폴리곤(모양, 선) / 오디오(분류, STT)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "컨셉 드리프트",
+    "definition": "정의 변환",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "데이터 드리프트",
+    "definition": "환경 변화",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI벤치마크셋",
+    "definition": "공공데이터 공유, 정확도 평가/ 텍스트, 이미지, 동영상, 오디오, 기타\r\n이미지넷, COCO || GLUE/MMLU NLP점수|| BELU, METEOR 번역  평가 || CLIP, LAION(멀티)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI학습데이터 품질 가이드라인3.0",
+    "definition": "계구운(100,200,300) / 준비계획, 구축(수집,정제,가공,학습), 운영활용\r\n@준완유, 적적다 구의알유",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI데이터 구축비용",
+    "definition": "텍스트, 이미지, 음성, 비디오",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "인공지능 윤리기준",
+    "definition": "존공합(인간존중, 사회공공선, 기술합적성)/ 인프다침공연 데책안투\r\n인권보장, 프라이버시보호, 다양성, 침해금지, 공공성, 연대성, 데이터관리, 책임성, 안전성, 투명성",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 프라이버시 리스크 관리 모델",
+    "definition": "목적: 국민신뢰확보, AI기업의 자율적 리스트 대응지원",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "전도공격",
+    "definition": "정상 라벨정상 데이터처럼 보이게 주입한뒷, 모델이 특정 입력을 의도와 반대로 학습판단하도록 만드는 공격 기법 / 학습데이터 오염 (포모도회)=>",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "적대적 공격",
+    "definition": "IMPE(Invasion, Model 추출, Poisoning, Evasion 공격) / \r\n@무결성 : 오염공격(Poisoning/모델학습), 회피공격(Evation모델테스트) \r\n@기밀성 : 전도공격, 모델추출",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "적대적 공격 대응",
+    "definition": "Defense GAN(적대적 예제를 추가학습, 변조도 정상적 판단), \r\n적대적 훈련, 결과값 분석차단, 공격탐색, 쿼리횟수제한",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI-Trism",
+    "definition": "XAI, ModelOPs, AI앱보안, Privacy (AI신뢰, 위험,보안관리 프레임워크)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "인공지능 감리",
+    "definition": "특성(전처리, 데이터셋, 모델개발, 시험, 경량화, 준거성)\r\n프레임웍(감리영역 - 점검기준 - 사업유형) / 분석,설계,구현,시험,운영 // \r\n구축계획, 데이터획득-수집, AI모델설명, 모델테스트, 매뉴얼하자계획",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "온디바이스AI",
+    "definition": "HW : AI가속기, NPU, AISOC, NNP, 엣지TPU/ SW :경량AI모델(구합탐), AI모델 경량화(압축, 증류, 가속,탐색), 양PS : 양자화(정밀도), Pruning(제거), Sparsity(희소성) // 구조변경) Resnet, DenseNet, SqueezeNe /합성곱필터)MobileNet, SuffleNet / 탐색)NetAdapt, MNasNet \r\n@ 앰비언트 컴퓨팅, 스몰데이터 부상",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "NPU",
+    "definition": "머신러닝 전용칩, Sigmoid LUT, 누산기, Neurn Weights(가중치) // @DNN, CNN, RNN",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "GPU",
+    "definition": "이미지 영상처리 핵심 반도체, 넓은 대역폭, 고속병렬, \r\n멀티스레드, 부동소숫점, 연산장치, Throught(지표)\r\n구성 : SM, SP, WARP, 글로벌 메모리, CUDA",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "GPGPU",
+    "definition": "GPU 일반 컴퓨팅 영역 활용 / PCI, 그래픽메모리, 캐시메모리, SIMD코어",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI학습하드웨어",
+    "definition": "GPU, TPU, FPGA, NPU, HBM, PIM, PNM",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "RAG",
+    "definition": "LLM모델 검색증강, 백터유, 청크, 임베딩, 유사문맥추천, Chunking, Top-K/유사도",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Agentic RAG",
+    "definition": "RAG활용간 다중 agent를 통해서 자율적, 독립적, 검색증강 수행 가능 RAG",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "RAGaaS",
+    "definition": "LLM성능향상, 외부지식검색 \r\n/기술:클라우드(오토스케일링), AI(임베딩,vectorDB , 데이터(외부지식)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Function calling",
+    "definition": "LLM함수호출, 외부시스템과 동적 상호작용(API)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Vector DB",
+    "definition": "인덱싱, 쿼리, Post Processing, Embedding Model, vector embedding",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "프롬프트 인젝션",
+    "definition": "지시문 무력화, 탈출시도, RAG기반 주입, COT조작 \r\n// 필터링, 입력검증, AI보안 프레임워크",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AICC",
+    "definition": "인공지능 콜센터/ PBX(교환기), CTI(PC기반 전화),  STT, VoiceGW, EPD, 챗봇",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LAM",
+    "definition": "Large Action Model,  다중모드학습모델, 지침추상화",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AGI",
+    "definition": "인공 일반 지능/ 범용적, 인간지능 모방, 다양한 분야, 창의적 수행,\r\n@기술: 추론, 멀티모달, 로보틱스, 상황인지 알고리즘",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Narrow AI",
+    "definition": "도메인 특화, 특정작업 최적화",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LMM대규모멀티모달",
+    "definition": "멀티모달기반, Transformer + vision language, Cross Modal",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "초거대AI 데이터 품질관리지표",
+    "definition": "준완유 적적다 의구알유 > 최신?",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "유효성 품질측정",
+    "definition": "질의응답 : ACC(올바른 답변), BLBU(유사성측정), F1(정밀도재현율) \r\n말뭉치 : 리커트척도(태도, 감정평가), PPO모델(자연어 처리)\r\n공통평가: 사람평가, 튜링테스트",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "앙상블 보팅",
+    "definition": "(하드)다수결 원칙, 이진분류 / (소프트)확율값, 평균",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "공간지능",
+    "definition": "3차원 현실인지(인지,기억,학습,추론,표현,상호)/컴퓨터비전, SLAM,센싱,MR,경로탐색",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Agentic AI",
+    "definition": "자율성(Autonomy), 목표 지향성(Goal-Driven), 학습·적응(Adaptation) 능력을 가진 고도화된 인공지능 / LLM, RAG, API, 자율의사결정",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 리터러시",
+    "definition": "(개념) AI의 기본 원리와 알고리즘 작동 방식을 '이해'하고 AI 기반 서비스(챗봇·추천시스템·생성형 AI 등)를 '활용'하며 AI가 생성한 결과물을 비판적으로 '분석(Analyzing)'\r\n/활용시 : 사생활 보호, AI편향, 자동화 등 사회적 영향 - 윤리적 판단 / AI와 협업 도구(소통협업)능력",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 에이젼트",
+    "definition": "추론을 통한 특정작업 자동수행 / 목표를 설정하고 외부 시스템과 상호작용하며 태스크를 수행하는 지능형 에이전트 @자동보고서 작성, 메일발송",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "소버린AI",
+    "definition": "가치관 종속우려, DQM, 문화, 역사, 윤리, Langchain\r\n/ 하이퍼클로바X \r\nAI민주화, 자체인프라, AI독자적 구축 및 운영가능 체계 \r\n/기술 : 분산학습, XAI(LIME, SHARP), 데이터저장기술\r\n/지역적, 법률적, 신분적",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "생성형AI서비스 이용자 보호 가이드라인",
+    "definition": "(원칙 4) 인간존중, 설명가능, 안전성, 공정성 \r\n(실행 6) 이용자보호, XAI, 다양성 존중,  학습데이터 동의,  서비스관련자 책임, 윤리 \r\n(개념) 생성형AI 개인정보침해 이슈안내/ 배경: 해석모호, 법근거부재, 책임(제공,이용자)\r\n단계별 리스크, RISK : 수집(미동의, 자동수집정보) 학습(식별가능, 학습경우 삭제불가) 활용(그냥 입력, 개인정보 포함된 생성물) \r\n//대응방안 : 모델(비식별화기법, 자동화된 비식별화, 입력필터링), 활용(입력문구, RED팀운영, 교육, 개인정보 인식개선)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "텍소노미",
+    "definition": "Taxonomy, 전문가설계한 체계 분류, 위계적, 전문가, 정보체계  > 계층화 구분",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "폭사노미",
+    "definition": "Folksonomy, 일반사용, 자유테크, 비구조화, 사용자 주도, 다양언어 > 사용자 테그 기반",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 테스트(커버리지 검증)",
+    "definition": "AI학습모델 결과 검증/ 설정, 정의, 모델체크-변환, 특성처리, 충족여부 판단",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "딥페이크 탐지",
+    "definition": "규제: 가짜금지법(No Fakes), EU : AI법안,  EU디지털서비스법\r\n@기술: C2PA, 클로바 그린아이, 모니터링, 검색, Fakecatcher(인텔)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LLM성능",
+    "definition": "추론첐, 검색, RAG, RIG병합, 효율(MoE, 양자화, LoRa, PEFT, 멀티모달 통합)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI Drift",
+    "definition": "시간이 지나면서 성능모델이 저하현상  예) 최초 네비게이션(도로 생성 등) 구실못함\r\n(이유) 데이터 특징변화(환경변화)로 학습모델이 현실반영 못함\r\n(유형) 데이터 , 개념 , 레이블, quality, 모델 드리프트 \r\n/(감지) : 이산치, 결측치, 클린징 - 모델성능평가 F1, 혼동행렬, MSE, MAE, - 데이터특징, 변경, 라벨 // 추가: 분류(Recall, Precision), 예측(MAE, MSE, RMSE), 군집(실루엣, 엘보우) 벤치마크(Rouge, BLEU)\r\n(대응) 지속모니터링, 재학습, 드리프트 감지(Stability, K-S test) 피처 엔지니어링 , 자동재학습, 파이프라인, 그리드 Search(하이퍼파라미터 수정) / CICD, Devops, MLOPS, quality Drift 탐지",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI테스트",
+    "definition": "ISO29119-11(AI테스트 국제표준), \r\n커버리지(뉴런커버리지, \r\n안전반경, 메타모픽, \r\n커버로지 테스트)  \r\n정보(블랙박스, 화이트박스)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 위험",
+    "definition": "EU(수용불가, 고, 제한, 저위험) / 분류, 프레임워크",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI IDE",
+    "definition": "IDE+LLM, 코드생성, 바이브코딩, 프롬프트기술",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "MAS",
+    "definition": "다중 에이젼트 시스템 (Multi agent system)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Embedied AI",
+    "definition": "물리적인 구조물, 감각, 센서, 행동(엑추레이터), 상호작용, 물리적, 휴머노이드",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "칩렛",
+    "definition": "작은칩(모듈)조합, 확장성, 침렛간 고속 인터커넥터, 전력효율/GPU, AI가속기\r\n@하나의 대형 반도체침(SoC)을 여러 개 작은칩으로 나누는것",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "한국형 k-LLM",
+    "definition": "★K-LLM 구축방향  @데신도경생\r\n데이터주권(한국어 특화 말뭉치 확보, 민간/공공데이터 결합 한국어 비중확대)\r\n신뢰성 안전성 확보(개인정보,민감정보 제거, 편향최소화, 신뢰확보), \r\n도메인 전문화(RAG포함), 경량화(모델압축, 공공에서도 이용), \r\n생태계조성 개방(오픈소스 기업활용, 학습데이터 개방)\r\n★K-LLM구축유형) 초거대범용, 도메인특화, 경량압축, 하이브리드, 연합/분산형\r\n★오픈소스 현황 ) 국내 : 하이퍼클로버(naver), koGPT, 엑사온, 에이닷, 믿음2.0, \r\n국외: GPT5.0, LLaMA, 엔트로픽 Claude, 구글 제미니, 딥시크",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LLM 오픈소스",
+    "definition": "(개념) 학습코드, 가중치, 학습데이터셋 일부를 공개>개발자 자유롭게 수정의 AI소스 \r\n(특징) 개방성(일부 공개), 확장성(파인튜닝, RAG, 경량화), 비용효율(폐쇄형 대비, 자체인프라 구성), 생태계(GitHub, HuggingFace 커뮤니티 주도), 한계점(학습데이터, 안전측면은 고려대상)\r\n(현황) 메타(LLamA), OPenAI(쳇gpt공개), 딥시크, Qween, Falcon, Bloom, StableLM / 하이퍼클로버(naver), koGPT, 엑사온,  kakao, ETRI koGPT, 솔라(Sola 2.0) \r\n//K-LLM 모델 구축 대상기업 : naver, SKT, NC AI, 엑사온, 업스테이지 솔라 선정\r\n★(시사점) 민투산연정(AI민주화, 투자확대, 산업경쟁력, 연구생태, 정책적)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "양자머신러닝\r\n(QML)",
+    "definition": "배경 : 데이터·연산 자원의 요와 NP-Hard 문제, > 중첩, 얽힘, 간섭원리 활용 QML 주목\r\n개념 : Qubit를 활용하여 고차원 벡터공간에서 데이터 표현> ML에 양자알고리즘 적용\r\n기술 : 인코딩(백터화), 모델(QNN/QAOA/VQA), 하이브리드QML, 양자커널(QSVM) 분류높임\r\n응용 사례 : 의금물보머 → 의약, 금융, 물류, 보안, 머신러닝 / 지수적 연산 속도향상\r\n한계 : NISQ단계(미성숙), 양자오류, 양자인코딩 비용 다수",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "인공지능법",
+    "definition": "개념 : AI발전 산업경쟁력 강화 위한 AI체계, 윤리, 고영향 등 관련 제반사항 법제도\r\n추진 : 6~8(기본계획3년, 실행계획, 인공지능위원회, 기능 \r\n산업 : 21~23(전문인력, 국제협력 해외시장, 인공지능 직접단지조성)\r\n윤리 : 27~32(윤리원칙, 민간자율위원회, 안전성/신뢰성/투명성 확보 의무\r\n영향 : 33~36(고영향먀, 사업자책무, 고영향평가, 대리인지정, 과태료 3천만)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "인공지능 \r\n모델 경량화",
+    "definition": "개념 : 초거대 모델의 한계를 보완, 엣지·모바일 환경에서 AI 활용을 확대하는 핵심 기술\r\n기술요소 : 프양증저스아 : 프루닝 / 양자화(int4 저비트화)  / 증류(teacher > student)\r\n / 저랭크(LoRA, PEFT, 행렬저차원근사 연산량감소) / 스파스화(가중치 공유) / \r\n아키텍처 최적화(MobileNet, EfficenetNet, ShuffleNet, SqueezeNet, 트랜포머 경량화)\r\n적용사례 : 모엣산LLM : 모바일 / 엣지 / 산업 / LLM 경량화\r\n시사점 : 성확표주 :성능보존 / 확산(모바일·엣지) / 표준화 / 디지털 주권",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 거버넌스",
+    "definition": "AI개발, 배포, 운영, 활용 과정에서 리스크 식별하고, 해당 리스크 및 잠재적 영향 최소화 제어 감독체계 // 관리(모니터링, 보안, 편향성, 리스크관리), 기술요소(모니터링툴, XAI, 편향)   *AI참조 : AI ACT, AI기본법, ISO 42001, AI TRiSM(프레임워크)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "TEXT2SQL",
+    "definition": "자연어 입력하면 SQL를 뽑아내는 기술\r\nNLP(토큰화, 시멘틱파싱) 딥러닝(트랜스포머, Seq2seq, BERT), DB(스키마, SQL최적화), 학습유(Spider dataset) //RAG로 오류잡고, 카탈로그 관련활용",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "신체화AI",
+    "definition": "인간의 행동을 가진 로봇 휴모노이이드와 비슷 \r\n[구성] 현실세계 ->센서,이미지,신호>AI(모델,인식 제어, 행동) >출력(물리행동) 현실  \r\n/감지인식(센서, 융합, 컴퓨터비전, 음성인식) \r\n/인지학습(RL, 전이, LLM) \r\n/행동제어(로보틱스, SLAM, 물리)  휴머노이드 (신체화 AI의 사례)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "Vertical AI",
+    "definition": "학습/최적화 (도메인 특화, 파인튜닝), 언어처리(NLU, NLG, 멀티모달 통합처리), 알고리즘(Prompt 엔지어링, Instruction Tunning, RAG, Data Augmentation, 할루시네이션)\r\n- 데이터 관리 통합(산업별 전문 데이터셋, 실시간 산업데이터)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI분야 개인정보 평가",
+    "definition": "AI영향평가(5개영역, 27개 평가분야 체계) \r\n- 개요, 법적근거(38조), 평가분야(AI학습 및 개발 / 시스템 운영 및 관리)\r\n- 절차 : AI리스크 유형파악 > 리스크 식별> 측정 > 평가",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "지식그래프",
+    "definition": "[개념]개체, 관계, 속성을 그래프 구조(노드, 엣지, 속성)정리하여 정보의 의미상으로 구조화적으로 표현한 그래프 기반 지식 구조\r\n[기술] 온톨로지, 지식추론, KGE(지식그래프 임베딩), 지식추론\r\n[LLM과 관계]  KG주입형, LLM활용형, 통합형",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "공공 LLM구축",
+    "definition": "[개념] 정부의 위기인식, 전략적 역할\r\n[프레임워크] 데이터, 모델, 인프라, 인력/조직, 인력조직 \r\n[기능] LLM통합, 데이터처리, 선응확장성, 커스터마이징, 상호운용성 \r\n[대규모 구조] MSP, CSP, 파운데이션 모델, 멀티클라우드",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "통계",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "통계학과 머신러닝",
+    "definition": "분류, 회귀, 차원압축 등 머신러닝 기반 기준이 통계학 기반 \r\n(4가지 척도) 명서등비 /범주형(명목,서열), 연속형(등간,비율) -> \r\n(회귀분석) 다중회귀(연속형결과), 로지스틱(범주형 결과)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "이산확률분포",
+    "definition": "정수,셀수있음, 확률질량함수(PMF), 주사위, 동전 / 이항분포, 포아송, 기하분포",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "연속확률분포",
+    "definition": "실수,무한많음, 확률밀도합수(PDF), 몸무게, 온도/정규분포(가우시안),지수분포, 균등분포",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "통계학 척도",
+    "definition": "명서등비(명목: 성별,  서열:학력, 등간:온도, 비율:소득) // 측정 대상에 적용하는 기호나 숫자를 의미",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "추정, 가설",
+    "definition": "추정: 모집단을 샘플을 통해 추정함(표본평균, 분산, 불편성, 유효성, 불편추정,유효추정량), 점,구간\r\n가설: 가설채택, 귀무(H0), 대립(H1) /  제1종오류(a), 제2종오류(b)\r\n@절차:가설설정>유의수준>검정통계량 설정>기각역>검정통계량 계산>결과해석 @가유검기통결",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "기술통계/추론통계",
+    "definition": "평귬, 중위수, 최빈, 범위, 분산, 표준편차, 첨도, 왜도\r\n추정 : 점추정, 구간추정, 가설검정, 차이검정, 관계검정",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "표본추출",
+    "definition": "비확율적(단순, 군집, 계층, 층화), 확율적(판단, 편의적, 할당, 유의, 눈덩이추출)\r\n@단군계층, 판편할유눈 > 명목, 순서, 등간, 비율",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "타당도, 신뢰성",
+    "definition": "타당도: 측정의 정확도 정도(내용,구인,준거,예측,공인 타당도)\r\n신뢰도: 측정대상의 일관적 측정 정도 \r\n@과녁:  분산퍼진(신뢰도낮도,타당도낮고),, 10점만점(신뢰도, 타당도 높음),  1점몰림(신뢰도o,타당x)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "가설검정(1종오류)",
+    "definition": "기본: 귀무(H0), 대립(H1)  > 귀무가설 기각 목표 / 잘못된 기각, 사실은 H0맞음 (잘못 기각)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "가설검증(2종오류)",
+    "definition": "기본 : 귀무(H0), 대립(H1)  > 귀무가설 기각 목표 / 잘못된 채택, 사실은 H0 맞음, (잘못된 채택)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "오류판단",
+    "definition": "조건: Ho(참) : Ho (채택) /  Ho(기각) --> 1종오류 알파   (맞는 귀무가설을 잘못 기각)\r\n조건: H1(참)  H0 (채택) -> 2종오류 / Ho(기각)    베타   (틀린 귀무가설을 잘못 채택)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "혼돈행렬/가설검증\r\n(비교)",
+    "definition": "머신러링,분류문제 / 통계학,추론   실제값 예측값비교 / 귀무가설 검정\r\nFP, FN / 1종오류(알파), 2종오류(베타) ,  정확도,정밀도,재현율,F1 / P, 유의수준, (1-B)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "선형/비선형 비교",
+    "definition": "입출력 직선/곡선면 ,  y=ax+b / 지수다형식,  빠름해석용이 / 복잡,표현다양 , 단순/복잡\r\n예: 선형회귀, 로지스틱, SVM , LDA / K-NN, DSS, 신경망, 랜덤포레스트",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "릿지, 라쏘",
+    "definition": "회귀분석에서 과적합을 막고 성능을 높이기 위해 쓰는 규제기법, 다중공선성 완화 목적\r\n☆릿지(L2규제, 계수들의 제곱합(Σ β²)에 패널티, 0은 아니며, 전체변수 골고루 중요, 크기조정) \r\n☆라쏘(L1규제, 계수들의 절댓값 합(Σ |β|)에 패널티를 줌, 0으로 만들고, 변수제거하여 활용) L2 + L1 융합 -> 엘라스틱넷 회귀",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "A2A",
+    "definition": "다양한 공급사, 플랫폼 연계한 멀티에이전트 구현, JSON-RPC, SSE표준, 상호작용 개방프로토콜  비동기처리&상태기반, 스트리밍/폴링/푸시, 모달리티 독립(텍스트외 이미지,오디오,JSON @Agnet - Agent 직접협업, 비정형-비동기-멀티모달, 분산된 Agent 협업",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "MCP",
+    "definition": "AI에이전트가 외부 도구/ API호출시 입력출력형태와 컨텍스트를 표준화 프로토콜\r\n함수호출 지향, OpenAPI function calling 구조함/ @에이전트 <-> 도구API연결 / 구조: MCP host(LLM) - MCP Client - MCP Server - DB/API/Files",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AX",
+    "definition": "AI기술 전사적 DX패러다임, 조직 전반, 업무,고객경험 혁신접근법 / 필요성: 생산성, CX, BPR, PI @절차:  목표설정 > 핵심프로세스, 데이터전략 > AI솔루션, 자동화, 조직강화\r\n@활용: 고객(AI챗봇,분류), 생산(CNN,예지), 개발(NLP), 인사(분류),보안(SVM,AE)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AX한계/대응방안",
+    "definition": "(한계) 기술(기술수용수준, 빠른기술변화), 활용(리터러시, 확산미비), 정책(AX정책부재, 기술간극)\r\n(대응) 교육,캠패인, AI기본법세부화, AI윤리강화, AI거버넌스구축, ISO42001, AI소버린 인프라구축",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "다중 예시 탈옥기법(Many-Shot Jailbreaking, MSJ)",
+    "definition": "모델에 탈옥 예시, 안전정책 경로를 우회 프롬프트 공격기법 // 안전질문(장문) > 최종에 폭탄",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LLM Jailbreak\r\n유형/해결",
+    "definition": "가드레인 우회공격, 허위정보와 역할재할당으로 LLM 가드레인 우회공격 \r\n유형: 무력(Prompt조작, 문맥간 삽입, 지침무력,역할재정의), \r\n혼동(맥락혼동, 포메팅 악용), 관리(유사어 사용, 공익목적 사용)\r\n//해결방안 : 안전Prompt, 출력필터링, RED팀, 적재적 공격, 가드레일, Agentic RAG, Q제한, 악의시나리오 차단, 우회시나리오 파악",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "연결리스트",
+    "definition": "데이터(노드)저장시 주소를 참조연결/노드,포인터,헤드,테일 // 메모리,OS,DB,그래프알고리즘\r\n@구현: 단일연결, 이중연결, 순환연결리스트",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LLM고려사항",
+    "definition": "고려사항: 보안, 학습데이터, 기능비용, 운영환경, 전문가확보\r\n모델: GPT+API, FM(OSS), RM+파인튜닝,",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 신뢰성 인증제도(CAT)",
+    "definition": "CAT(Compliance / Assurance / Transparency) / 준수성, 보증성, 투명성 \r\n@AI가 법과 윤리를 지키고, 성능과 품질을 보장하여 사용자에게 설명가능하도록 관리하는 체계\r\n/AI모델, 시스템, 거버넌스체계, 제품신뢰성",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "에이전틱 AI",
+    "definition": "스스로 목표 설정,계획,결정하는 자율적 AI, 자기주도적, 다중 에이전트 협업, AutoGPT (LLM+mem+planner + tool + 환경) /투명성, 책무성, 책임성, 저작권보호 등 15가지 품목 등",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 에이전트",
+    "definition": "주어진 명령을 수행하는 프로그래머블 AI , 수동적, LLM기반 단일작업, 챗봇(인간명령기반)\r\n@보안요소(생성이상 역할수행, 외부도구와 연계 공격경로 증가 > 프롬프트, URL, 시스템Msg)\r\n@위험 : 에이전트 납치, 도구오염, 비의도적 행동, 공격표면 확대\r\n@대응 : 입력필터링 통제, 도구검증, 실행제한, Zero Trust적용(ASM, CTEM)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "온톨로지(사전)",
+    "definition": "(개념) 개념과 개념간의 속성, 상호의미적 연결 및 개념 집합체\r\n표현, 속성, 관계의 사전 > 팔란티어(기업의 이벤트 행위를 온톨로지화, 프로세스 효율화)\r\n데이터가 핵심 > 의미론적 데이터를 맥락을 알고 지원해 주는 것 \r\n(구성) 클래스, 인스턴스, 속성, 관계, 제약조건 / (언어) RDFS, RDF스키마, OWL, XTM \r\n(구축) 도메일 결정 > 재사용검토 > 용어열거 > 속성정의 > 제약조건 > 인스턴스 생성",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "가상현실",
+    "definition": "코스모스 플랫폼",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "멀티클라우드",
+    "definition": "보안 ASM 공격표면관리, CTEM 프레임워크(주간기술동향)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "자동화 LLM기반",
+    "definition": "비정형 업무도 지시하면 처리할수 있는 방향으로 바뀌었음, 자동화,",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "HCI",
+    "definition": "AI 데이터센터,",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "CBDC",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "STO",
+    "definition": "실물가치와 연동 -> 보안, 기술고려사항 등",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "에너지효율컴퓨팅",
+    "definition": "초저지연,  효율적 코드, 알고르밎, 새로운 하드웨어, 친환경",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI기본법",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "국가AI데이터 사업",
+    "definition": "GPU기반 인프라 확보, AI-HUB",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "ISO 42001",
+    "definition": "인공지능 관리시스템",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "신뢰성 인증 제도",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 컨텐츠 식별",
+    "definition": "딥페이크 탐지기술,",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "유전자알고리즘",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "컨첸츠 라이선스 확보",
+    "definition": "워터마킹, C2PA, 탐지알고리즘",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LLM기반 절차",
+    "definition": "Ppre- Fine - PEFT*(파라미터 최적화) 미세조정 프로그램 (일부만 학습) \r\n* 튜닝(Adapter, Prefix, Prompt) LoRA",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "MOE(137)\r\nCOT",
+    "definition": "MOE 다수의 전문 모델에서 게이팅 NW통해 선택 머신러닝 기법 \r\n/ 전문가모델, 특정도메인, GW(게이팅NW)\r\nCOT 단계적 추론하여 복잡문제 해결하는 프롬프트 기법\r\n/단계적 추론, 복잡문제 해결, 추론",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "에이전트 i/F",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "비식별 조치",
+    "definition": "정형(가총삭범바),, 비정형(영상, 이미지, 음성, 텍스트 ) / 가우시안, 인페인팅 - 마스킹, - STT, -> 핵심이 디는 것?  스크러빙 (나는 고운혁 갑니다. 에서 고운혁 빅식별화 처리)\r\n@절차 : 대상, 비석별화처리 안전환 관리",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "개발 운영",
+    "definition": "AI 거버넌스,  AI거버넌스 플랫폼(가트너), 대가산정(",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 대가산정 (137)",
+    "definition": "1) 단순 AI  2) 커스터마이징(알고리즘 조정, 사용자 교육)  3) 시스템통합 기반 사업\r\n라이선스 비요, 전문작업비(학습비 , 투입공수 방식 /M/M, 시스템(SI) FP방식",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI개발 방법론",
+    "definition": "데이터 + 모델학습 + 운영(MLOps),  CRISS-DM(업데준모평전), SEMMA(샘탐수모평) /\r\nTDSP(MS) Biz이해 > 획득 > 모델개발 > 배포프드백",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "LLM  테스트",
+    "definition": "모하모픽 테스트, (벤치마크 테스트, BLEU, MMLU, 지식테스트) \r\n메타모픽, ROUGE-L, METEOR\r\n언어모델 이해, MMLU",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "개인정보 보호",
+    "definition": "자동화된 결정권리, 프라이버시 보호모델",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "AI 프라이버시 리스크",
+    "definition": "기업에서 개인정보를 안전히 관리하는 모델응",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "메타휴리스틱(Metaheuristic)",
+    "definition": "복잡한 최적화 문제에서 전역 최적해에 근접한 근사해를 합리적 시간 내에 탐색하기 위한 상위 수준(higher-level)의 휴리스틱 알고리즘\r\n// <주요 기법> \r\n- 단일 해 기반 기법: 시뮬레이티드 어닐링(SA), 탭 서치(TS), 확률적 탐색(Randomized Search)\r\n- 집단 기반 기법: 유전자 알고리즘(GA), 개미 군집 최적화(ACO), 입자 군집 최적화(PSO)\r\n- 하이브리드 기법: GRASP(Greedy Randomized Adaptive Search Procedure), MA(Memetic Algorithm)",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": ""
+  },
+  {
+    "topic": "recall2",
+    "definition": "모델 성능 평가 위해, 실제 긍정 중 올바르게 예측한 비율",
+    "mnemonic": "재현율",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "data:image/webp;base64,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"
+    ],
+    "userId": "u1779676705969",
+    "createdAt": "2026-05-25T02:38:25.969Z"
+  }
 ]
