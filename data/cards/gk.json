@@ -883,7 +883,7 @@
   },
   {
     "topic": "Funnel Analysis",
-    "definition": "",
+    "definition": "전환율 극대화를 위해, 단계별 이탈률과 사용자 행동을 추적하는 분석 기법",
     "mnemonic": "유입>전환과정, 단계별 이탈률 시각화 => 병목구간 파악분석법 / 전환최적, 이탈률 감소",
     "keyword": "",
     "extra": "",
