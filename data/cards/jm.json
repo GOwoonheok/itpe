@@ -176,5 +176,51 @@
     "mnemonic": "(E-C)\nES: 상태 대신 이벤트 저장\nCQRS: 쓰기/읽기 모델 분리",
     "keyword": "Event Store, Aggregate, Projection, Eventual Consistency",
     "extra": "Event Sourcing은 현재 상태 대신 이벤트 시퀀스 저장(감사·재현 가능). CQRS는 쓰기·읽기 모델 분리. 둘은 자주 함께 사용."
+  },
+  {
+    "category": "AI",
+    "topic": "RAG",
+    "definition": "환각 방지를 위해, 외부 지식을 검색·결합하는 기술",
+    "mnemonic": "문서 분할 (Chunking)\\n벡터 변환 (Embedding)\\n벡터 저장소 (Vector DB)\\n유사도 검색 (Retrieval)\\n답변 생성 (Generation)",
+    "keyword": "벡터 데이터베이스, 청킹, 임베딩, 코사인 유사도, 환각 현상",
+    "extra": "",
+    "references": [
+      {
+        "title": "AWS What is RAG",
+        "url": "https://aws.amazon.com/what-is/retrieval-augmented-generation/"
+      },
+      {
+        "title": "NVIDIA What is RAG",
+        "url": "https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/"
+      }
+    ],
+    "userId": "u1779682420175-ai-2lti",
+    "createdAt": "2026-05-25T04:13:40.175Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T04:13:40.176Z",
+    "aiConfidence": "high"
+  },
+  {
+    "category": "SW공학",
+    "topic": "test",
+    "definition": "결함 발견을 위해, 명세와 실제 결과를 비교 검증하는 활동",
+    "mnemonic": "결함 존재 증명\n완벽한 테스팅 불가능\n초기 테스팅\n결함 집중\n살충제 패러독스",
+    "keyword": "정적 테스트,동적 테스트,화이트박스,블랙박스,V-모델",
+    "extra": "",
+    "references": [
+      {
+        "title": "ISTQB Glossary",
+        "url": "https://glossary.istqb.org/"
+      },
+      {
+        "title": "ISO/IEC/IEEE 29119",
+        "url": "https://www.iso.org/standard/81291.html"
+      }
+    ],
+    "userId": "u1779682420176-ai-zz3l",
+    "createdAt": "2026-05-25T04:13:40.176Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T04:13:40.176Z",
+    "aiConfidence": "high"
   }
 ]
