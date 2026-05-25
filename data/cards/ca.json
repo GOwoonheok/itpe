@@ -1,15 +1,12 @@
 [
   {
     "category": "컴퓨터 구조",
-    "topic": "GPU",
-    "definition": "그래픽 및 병렬 연산 위해, 다수의 코어를 활용한 고성능 프로세서",
-    "mnemonic": "이미지, 영상처리 핵심반도체, 넓은 대역폭, 고속병렬, 멀티쓰레드\nNVIDA, AMD, CUDA, OpenGL, 임의접근, 부동소숫점 연산처리\n구성 :  DRAM, 소형Cache/control, 다수ALU, SP, SM, TPC\n           수백 Core",
-    "keyword": "지표 : Throught (num of result / clcye)",
+    "topic": "GPGPU",
+    "definition": "병렬 연산 가속화 위해, GPU 기반 컴퓨팅 방식",
+    "mnemonic": "CPU+GPU 기술 \n그래픽처리 + 일반 컴퓨팅 CPU 응용 계산에 GPU활용기술\n3. HAS\n절차 : 1.메인->GPU로 복사 2. CPU가 GPU지시 3.GPU가 코어에 병렬수행 4.GPU에서 메인에 복사",
+    "keyword": "- 구성 : PCI express 버스, 연동부, SIMD 코어, 그래픽 메모리, 캐시 메모리\n- GPGPU플랫폼 :  CUDA, Open CL, C++AMP, Open CC",
     "extra": "",
-    "images": [
-      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/a0c9a43b-38be-4799-821e-7f8cd22c9872.webp"
-    ],
-    "userId": "u1779700417910-mv-8zzz",
-    "createdAt": "2026-05-25T08:53:09.379Z"
+    "userId": "u1779700421238-mv-fsvr",
+    "createdAt": "2026-05-25T09:02:32.866Z"
   }
 ]
