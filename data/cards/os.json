@@ -36,7 +36,7 @@
     "category": "컴퓨터 구조",
     "topic": "GPU",
     "definition": "그래픽 및 병렬 연산 위해, 다수의 코어를 활용한 고성능 프로세서",
-    "mnemonic": "이미지, 영상처리 핵심반도체, 넓은 대역폭, 고속병렬, 멀티쓰레드\nNVIDA, AMD, CUDA, OpenGL, 임의접근, 부동소숫점 연산처리",
+    "mnemonic": "이미지, 영상처리 핵심반도체, 넓은 대역폭, 고속병렬, 멀티쓰레드\nNVIDA, AMD, CUDA, OpenGL, 임의접근, 부동소숫점 연산처리\n구성 :  DRAM, 소형Cache/control, 다수ALU, SP, SM, TPC\n           수백 Core",
     "keyword": "지표 : Throught (num of result / clcye)",
     "extra": "",
     "images": [
