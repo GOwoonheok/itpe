@@ -1,12 +1,14 @@
 [
   {
-    "category": "컴퓨터 구조",
-    "topic": "GPGPU",
-    "definition": "병렬 연산 가속화 위해, GPU 기반 컴퓨팅 방식",
-    "mnemonic": "CPU+GPU 기술 \n그래픽처리 + 일반 컴퓨팅 CPU 응용 계산에 GPU활용기술\n3. HAS\n절차 : 1.메인->GPU로 복사 2. CPU가 GPU지시 3.GPU가 코어에 병렬수행 4.GPU에서 메인에 복사",
-    "keyword": "- 구성 : PCI express 버스, 연동부, SIMD 코어, 그래픽 메모리, 캐시 메모리\n- GPGPU플랫폼 :  CUDA, Open CL, C++AMP, Open CC",
+    "topic": "멀티GPU",
+    "definition": "병렬 처리 성능 향상 위해, 여러 GPU를 연동하여 사용하는 시스템",
+    "mnemonic": "- 다중 그래픽 장치를 병렬로 작동하기 위해 사용하는 기술\n - 구성 :  GPU, 메인보드, PSU(Power Supply Unit, 전원공급장치)\n - 연결 기술(GPU간 인터커넥트, CXL 추가), 미들 웨어, 라이브러리",
+    "keyword": "nvlink",
     "extra": "",
-    "userId": "u1779700421238-mv-fsvr",
-    "createdAt": "2026-05-25T09:02:32.866Z"
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/46ed0774-7b0d-4e7d-b8bc-176e94d844b6.webp"
+    ],
+    "userId": "u1779700424420-mv-7q4j",
+    "createdAt": "2026-05-25T09:11:14.516Z"
   }
 ]
