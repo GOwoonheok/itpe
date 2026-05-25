@@ -44,5 +44,15 @@
     ],
     "userId": "u1779699189379",
     "createdAt": "2026-05-25T08:53:09.379Z"
+  },
+  {
+    "category": "컴퓨터 구조",
+    "topic": "GPGPU",
+    "definition": "병렬 연산 가속화 위해, GPU 기반 컴퓨팅 방식",
+    "mnemonic": "CPU+GPU 기술 \n그래픽처리 + 일반 컴퓨팅 CPU 응용 계산에 GPU활용기술\n3. HAS\n절차 : 1.메인->GPU로 복사 2. CPU가 GPU지시 3.GPU가 코어에 병렬수행 4.GPU에서 메인에 복사",
+    "keyword": "- 구성 : PCI express 버스, 연동부, SIMD 코어, 그래픽 메모리, 캐시 메모리\n- GPGPU플랫폼 :  CUDA, Open CL, C++AMP, Open CC",
+    "extra": "",
+    "userId": "u1779699752866",
+    "createdAt": "2026-05-25T09:02:32.866Z"
   }
 ]
