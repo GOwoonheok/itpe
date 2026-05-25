@@ -1,10 +1,11 @@
 {
-    "note": "사용자/관리자 화이트리스트. 추후 호스팅 서버 DB로 이관 예정.",
-    "registeredEmails": [
-        "whko337@gmail.com"
-    ],
-    "admins": [
-        "whko337@gmail.com"
-    ],
-    "adminContact": "관리자에게 문의 바랍니다."
+  "note": "사용자/관리자 화이트리스트. 추후 호스팅 서버 DB로 이관 예정.",
+  "registeredEmails": [
+    "whko337@gmail.com",
+    "whko@korea.kr"
+  ],
+  "admins": [
+    "whko337@gmail.com"
+  ],
+  "adminContact": "관리자에게 문의 바랍니다."
 }
