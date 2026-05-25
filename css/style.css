@@ -704,6 +704,9 @@ a { color: inherit; text-decoration: none; }
 .form-input:focus { outline: 2px solid var(--accent-blue); outline-offset: 1px; border-color: var(--accent-blue); }
 .form-input::placeholder { color: #58585c; }
 .form-area { resize: vertical; min-height: 80px; white-space: pre-wrap; }
+/* 카드 추가·편집 모달 — 정의는 짧게 (50자 한도), 내용은 길게 (두음·구성요소 여러 줄) */
+#add-def { min-height: 48px; }
+#add-mn  { min-height: 150px; }
 .form-hint { font-size: 0.78rem; color: var(--text-muted); margin-top: 8px; }
 
 .form-btn {
