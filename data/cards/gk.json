@@ -10,39 +10,51 @@
   },
   {
     "topic": "- eSCM",
-    "definition": "",
+    "definition": "공급망 위험 관리 위해, 가시성 확보한 프로세스",
     "mnemonic": "전자적 공급망관리, 아웃소싱 능력평가 모델 / 조직, 인력, 사업, 기술, 지식경영 / defacto",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116095-yc45i",
-    "createdAt": "2026-05-25T04:08:36.095Z"
+    "createdAt": "2026-05-25T04:08:36.095Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:40:56.742Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "- IT Outsourcing",
-    "definition": "",
+    "definition": "비용 절감 위해, 핵심역량 집중한 아웃소싱 체계",
     "mnemonic": "전문가 위탁, 선택집중  / 사조업협이관 / ToSel자Co / 온오니클 / ISO20000 \r\n*(절차)사전준비, 조직, 업체선정, 협상계약, 이행, 관리 / (유형)온쇼어, 오프쇼서, 니어쇼어, 클라우드",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116095-r20zu",
-    "createdAt": "2026-05-25T04:08:36.095Z"
+    "createdAt": "2026-05-25T04:08:36.095Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:41:11.560Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "- SOW",
-    "definition": "",
+    "definition": "프로젝트 범위 정의 위해, 업무 내용, 산출물, 일정 명시한 문서",
     "mnemonic": "수준 작업명세서, SoW>SLA>SLM / 업책프(업무범위, 책임범위, 프로세스)  / 고장시간(예측), 지원시간, 보안",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116095-4mz9t",
-    "createdAt": "2026-05-25T04:08:36.095Z"
+    "createdAt": "2026-05-25T04:08:36.095Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:41:26.249Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "- SLA",
-    "definition": "",
+    "definition": "서비스 품질 보장 위해, 상호 합의한 서비스 수준 명시한 계약",
     "mnemonic": "서비스 수준 협약서, 기준: 기소Ca메오메보 / (클라우드)가응확신지지고 \r\n기본계약서, SOW, 카달로그, 메트릭스, SLO, Measurement, 보고   / 가용,응답,혹신,신뢰,지속,지지,고객만족도",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116095-adu8t",
-    "createdAt": "2026-05-25T04:08:36.095Z"
+    "createdAt": "2026-05-25T04:08:36.095Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:41:41.409Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "- SLA, SLO 지표",
@@ -55,57 +67,75 @@
   },
   {
     "topic": "OLA",
-    "definition": "",
+    "definition": "SLA 달성 지원을 위해, 내부 조직 간 역할과 책임을 정의한 합의서",
     "mnemonic": "공급자 관리 vs 운영간 합의서, 목역지프에 / 목표, 역할, 지표, 프로세스 워클플로어, 에스컬레이션 절차",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116095-mj2kl",
-    "createdAt": "2026-05-25T04:08:36.095Z"
+    "createdAt": "2026-05-25T04:08:36.095Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:41:52.132Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "SLA지표",
-    "definition": "",
+    "definition": "서비스 품질 보장 위해, 핵심성과지표, 측정기준 정의한 협약",
     "mnemonic": "Penalty/Incentive 관리체계, SIP, Annual Reset\r\n - SLA 미달성 시 서비스 대가 삭감(페널티), 초과 달성 시 보상(인센티브) 부여 → 서비스 품질 유지 동기 부여\r\n - SLA 반복 위반 시, 개선계획 제출 및 실행을 의무화\r\n - LA 지표와 기준을 매년 재검토·조정하여 환경 변화(기술 발전, 서비스 범위 확장 등)에 맞게 리셋",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116095-1yn84",
-    "createdAt": "2026-05-25T04:08:36.095Z"
+    "createdAt": "2026-05-25T04:08:36.095Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:42:07.020Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "SLM",
-    "definition": "",
+    "definition": "서비스 품질 보증 위해, SLA 기반 관리한 체계",
     "mnemonic": "서비스 관리체계 (SLA + OLA)",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116095-h4gea",
-    "createdAt": "2026-05-25T04:08:36.095Z"
+    "createdAt": "2026-05-25T04:08:36.095Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:42:22.216Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "ITIL 3.0",
-    "definition": "",
+    "definition": "서비스 관리 효율화 위해, 프로세스, 기능, 역할 정의한 체계",
     "mnemonic": "ITSM, 전설전운지(절차 : 전략,설계,전환,운영,지속개선), \r\n4P(people, process, parners, products) / 전통적 방법",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116095-tjmt1",
-    "createdAt": "2026-05-25T04:08:36.095Z"
+    "createdAt": "2026-05-25T04:08:36.095Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:42:37.517Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "ITIL 4.0",
-    "definition": "",
+    "definition": "IT 서비스 관리 효율화 위해, 프로세스, 조직, 기술 통합한 프레임워크",
     "mnemonic": "ITSM BP, Agile, DevOps, Lean, 4차원모델(조정파가), SVS(서비스가치 시스템, 지거서지실, SVC)\r\n / 절차: 플인디오데임(Plan, Engage, design, obtain, deployment, improve / 관점 : 조정파가 > '조직, 정보, 파트너, 가치흐름\r\n// ITSM 성공요건 : 자동화 도구, 통합플랫폼, 데이터기반, 프로세스 전환, 표준화 , 조직, 인력, IT거버넌스, 책임문화(SRE)",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116095-wtm0i",
-    "createdAt": "2026-05-25T04:08:36.095Z"
+    "createdAt": "2026-05-25T04:08:36.095Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:42:53.931Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "SVS",
-    "definition": "",
+    "definition": "서비스 가용성 보장 위해, 장애 감지 및 복구 자동화한 체계",
     "mnemonic": "서비스가치시스템(SVC), 지거서지실, 실행: 일서기 34개",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-21rk4",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:43:09.695Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "SVC",
