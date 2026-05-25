@@ -59,7 +59,7 @@
     "topic": "멀티GPU",
     "definition": "병렬 처리 성능 향상 위해, 여러 GPU를 연동하여 사용하는 시스템",
     "mnemonic": "- 다중 그래픽 장치를 병렬로 작동하기 위해 사용하는 기술\n - 구성 :  GPU, 메인보드, PSU(Power Supply Unit, 전원공급장치)\n - 연결 기술(GPU간 인터커넥트, CXL 추가), 미들 웨어, 라이브러리",
-    "keyword": "",
+    "keyword": "nvlink",
     "extra": "",
     "images": [
       "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/46ed0774-7b0d-4e7d-b8bc-176e94d844b6.webp"
