@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "topic": "SVC",
+    "definition": "IT 서비스 가치 창출을 위해, 6가지 활동을 유기적으로 연계한 운영 모델",
+    "mnemonic": "서비스가치연계모델,  IT거버넌스, ITIL4, \n계참설빌지개(계획,업무참여,설계,빌드,지원,개선)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779638882608",
+    "createdAt": "2026-05-24T16:08:02.608Z"
+  },
+  {
+    "topic": "dggg",
+    "definition": "데이터 품질 확보 위해, 거버넌스 표준을 정립한 가이드라인",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/c73fa712-1de7-4b23-af7c-80e4e3d4f147.webp"
+    ],
+    "userId": "u1779673270502",
+    "createdAt": "2026-05-25T01:41:10.502Z",
+    "editedAt": "2026-05-25T03:45:34.114Z"
+  }
+]
