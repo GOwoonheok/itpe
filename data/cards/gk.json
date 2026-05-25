@@ -139,93 +139,123 @@
   },
   {
     "topic": "SVC",
-    "definition": "",
+    "definition": "데이터 전송 효율화를 위해, 가상회선 설정 및 패킷 교환한 통신방식",
     "mnemonic": "서비스가치연계모델,  IT거버넌스, ITIL4, \r\n계참설빌지개(계획,업무참여,설계,빌드,지원,개선)",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-b12ml",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:52:56.095Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "상호관계",
-    "definition": "",
+    "definition": "시스템 구성요소 간 영향 파악 위해, 의존성 및 연관성 분석한 논리적 관계",
     "mnemonic": "ITIL(BP) -> ISO20000(국제표준) -> ITSM체계(SVC관리) -> IT아웃소싱 계약(SLA, 품질보증, 인증)\r\n              (기반)                       (적용)                      (활용)",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-o3u63",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:53:17.313Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "ISO 20000",
-    "definition": "",
+    "definition": "IT 서비스 품질 향상 위해, 프로세스 체계와 PDCA 사이클을 적용한 IT 서비스 관리 표준",
     "mnemonic": "ITIL기반으로 IT서비스르 제공, IT아웃소싱 국제표준, 서비스 관계 문제해결, 통제, 릴리즈",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-q48zv",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:53:46.078Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "ITSM (설계,구축,전환)",
-    "definition": "",
+    "definition": "IT 서비스 품질 향상을 위해, 프로세스 표준화 및 ITIL 기반의 운영 관리 체계",
     "mnemonic": "정보기술서비스 관리체계, ISO20000(ITIL BP기반)\r\n설계: BIZ분석>아키텍처 설계>프로세스설계>서비스 카탈로그 > 위험관리\r\n구축: ITSM도입>프로세스수립> 솔루션도입(CMDB) > RACI>교육내자화\r\n전환: 변경릴리즈관리>지식관리>테스트검증>운영>모니터링",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-cqoup",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:54:07.928Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "RFI, RFP, Proposal",
-    "definition": "",
+    "definition": "사업자 선정 위해, 요구사항 명세와 제안서 제출을 통한 조달 절차",
     "mnemonic": "정보요구, 발주자요구, 제안서",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-0vzt0",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:54:29.262Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "IT 거버넌스",
-    "definition": "",
+    "definition": "IT 가치 극대화 위해, 전략적 정렬 및 성과 측정 수행하는 의사결정 체계",
     "mnemonic": "리조프(리더십,조직,프로세스)/ 전가위지성(전략, 가치, 위험, 지원, 성과 \r\n/ ISO38500 : 평가,지시,모니터링(EDM) IT,DATA,OSS, AI\r\n핵심원칙 : 책임, 투명, 전략, 성과측정, 리스크 기반관리 @책투전성리 / 거버넌스",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-7f9wq",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:54:55.104Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "SEM",
-    "definition": "",
+    "definition": "기업 통합 관리 위해, 전사적 자원과 정보 흐름을 최적화한 통합 정보시스템",
     "mnemonic": "전략적기업경영, 전사 / VBM, ABM, ABC, BSC : 경영,활동,원가,성과 /",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-wxr7e",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:55:16.032Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "BSC",
-    "definition": "",
+    "definition": "성과관리 위해, 재무/고객/내부프로세스/학습성장 관점의 균형잡힌 성과측정체계",
     "mnemonic": "균형성과 재고내학, KPI : 매출,만족,생산,자격증 -매칭-  IT BSC : 기사운미 : 기업,사용자,운영,미래\r\n재무적(ROI, TCO, NPV), 비재무적(고객, 내부프로세스, 학습성장)",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-5aomm",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:55:31.006Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "4C",
-    "definition": "",
+    "definition": "마케팅 전략 수립 위해, 고객 가치와 비용 및 편의성, 소통을 통합한 분석 프레임워크",
     "mnemonic": "Compay, Competitor, Custumer Channel / Circumstance",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-09jng",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:55:52.535Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "5 FORCE",
-    "definition": "",
+    "definition": "산업 수익성 분석 위해, 5가지 경쟁요인 활용한 전략모델",
     "mnemonic": "잠기구공대(잠재,기존,구매자,공급자,대체자)",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116096-0q8xa",
-    "createdAt": "2026-05-25T04:08:36.096Z"
+    "createdAt": "2026-05-25T04:08:36.096Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T05:56:20.264Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "KPI",
