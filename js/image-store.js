@@ -1,26 +1,28 @@
 // 이미지 저장 추상 레이어.
 // 현재: 클라이언트에서 압축 후 dataURL 반환 → /api/upload-image 가 R2 업로드.
 //
-// 압축 정책 — 학습 카드 가독성 유지 + 저장·전송량 최소화
-//   · 최대 변(maxDim)   : 800px  (학습 카드 표시 영역에 충분, 모바일·데스크탑 모두 OK)
-//   · 시작 품질         : 0.60   (WebP 기준 텍스트·도식 선명도 유지)
-//   · 목표 크기         : 150KB  (이 이하 되도록 적응 압축)
-//   · 적응 압축 단계    : (1) quality 0.60→0.52→0.45→0.38 순차 하강
-//                         (2) 0.38 이하로 못 줄면 해상도를 0.85x 단계 축소 + quality 0.55 부터 재시도
-//   · 품질 하한선       : 0.35  · 해상도 하한선: 400px
+// 압축 정책 — 스냅샷 글자/도식 가독성 우선 + 저장·전송량 최소화
+//   글자 가독성은 '해상도'가 좌우 → 해상도는 넉넉히, 품질·목표용량은 낮춰 WebP 로 "선명하되 작게".
+//   · 최대 변(maxDim)   : 1000px (스냅샷 빽빽한 글자도 알아볼 수 있게. 800→1000 상향)
+//   · 시작 품질         : 0.55   (WebP 는 저품질에서도 글자 에지 유지)
+//   · 목표 크기         : 120KB  (이 이하 되도록 적응 압축. 150→120 하향)
+//   · 적응 압축 단계    : (1) quality 0.55 → minQuality 까지 단계 하강
+//                         (2) 더 못 줄면 해상도 0.85x 축소 + quality 0.50 부터 재시도
+//   · 품질 하한선       : 0.40  (이하로는 글자가 뭉개져 가독성↓ — '보이기 적절' 보장)
+//   · 해상도 하한선     : 560px (글자 읽기 가능한 최소선)
 //   · 포맷              : WebP 우선 (텍스트·도식에 강함), JPEG 폴백
-//   · 스킵 조건         : SVG 그대로, 16KB 미만 원본 그대로 (재인코딩이 더 커지는 역효과 방지)
+//   · 스킵 조건         : SVG 그대로, 16KB 미만 원본 그대로 (재인코딩 역효과 방지)
 //   · 안전망            : 압축 결과가 원본보다 크면 원본 사용
 (function () {
     const DEFAULTS = {
-        maxDim: 800,
-        quality: 0.60,
-        targetBytes: 150 * 1024,
-        minQuality: 0.35,
-        minDim: 400,
+        maxDim: 1000,
+        quality: 0.55,
+        targetBytes: 120 * 1024,
+        minQuality: 0.40,
+        minDim: 560,
         qualityStep: 0.08,
         dimStep: 0.85,
-        maxAttempts: 8,
+        maxAttempts: 9,
         skipUnder: 16 * 1024,
         preferFormat: 'image/webp',
         fallbackFormat: 'image/jpeg',
@@ -74,12 +76,13 @@
         const originalSize = file.size;
         const fileType = (file.type || '').toLowerCase();
 
-        // Windows Snip & Sketch 등 대용량 PNG (1MB+) — 즉시 maxDim·quality 추가 축소
+        // 대용량 원본 — 해상도(가독성)는 지키되 시작 품질만 낮춰 적응 루프가 빨리 수렴하게.
+        //   (스냅샷은 보통 1MB+ PNG 이므로 여기서 해상도를 깎으면 글자가 흐려짐 → 해상도 유지)
         if (originalSize > 1024 * 1024) {
-            cfg = { ...cfg, maxDim: Math.min(cfg.maxDim, 800), quality: Math.min(cfg.quality, 0.7) };
+            cfg = { ...cfg, quality: Math.min(cfg.quality, 0.52) };
         }
         if (originalSize > 3 * 1024 * 1024) {
-            cfg = { ...cfg, maxDim: Math.min(cfg.maxDim, 700), quality: 0.65 };
+            cfg = { ...cfg, maxDim: Math.min(cfg.maxDim, 900), quality: 0.5 };
         }
 
         // SVG: 벡터라 재인코딩 불필요
