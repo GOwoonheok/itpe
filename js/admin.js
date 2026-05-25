@@ -1690,13 +1690,26 @@
             }
         }
 
+        // 카드 배열에서 R2(공개 http) 이미지 URL 만 수집 (data: 인라인·중복 제외)
+        function collectImageUrls(cards) {
+            const set = new Set();
+            for (const c of (Array.isArray(cards) ? cards : [])) {
+                const imgs = c && Array.isArray(c.images) ? c.images : [];
+                for (const s of imgs) {
+                    if (typeof s === 'string' && /^https?:\/\//i.test(s)) set.add(s);
+                }
+            }
+            return set;
+        }
+
         async function doUnitClear(u) {
             if (!u) return;
             // 1차 확인
             const c1 = confirm(
                 `'${u.name}' 단원의 모든 카드를 삭제합니다.\n\n` +
                 `· 서버에서 영구 삭제됩니다 (GitHub commit)\n` +
-                `· 다른 기기에도 즉시 반영됩니다\n` +
+                `· 이 단원에만 연결된 이미지는 스토리지에서 함께 삭제됩니다\n` +
+                `· 다른 기기에도 (재배포 후 ~1분) 반영됩니다\n` +
                 `· 되돌릴 수 없습니다\n\n` +
                 `정말 진행하시겠습니까?`
             );
@@ -1711,21 +1724,70 @@
 
             const isAdminWithSecret = !!(window.ITPEAdmin && window.ITPEAdmin.isAdminWithSecret && window.ITPEAdmin.isAdminWithSecret());
             try {
+                setStatus('unit-status', '단원 비우는 중…');
+
+                // 1) 삭제 대상 이미지 계산 — 이 단원에 쓰이지만 '다른 단원과 공유 안 된' 것만.
+                //    (라이브 스냅샷 기준. 비우기 전에 먼저 수집해야 정확)
+                let delImages = [];
+                if (isAdminWithSecret && window.ITPEAdmin.fetchCards) {
+                    try {
+                        const thisCards = await window.ITPEAdmin.fetchCards(u.id);
+                        const thisUrls = collectImageUrls(thisCards);
+                        if (thisUrls.size) {
+                            const all = await window.ITPEAdmin.fetchCards(); // { unitId: [...] }
+                            const otherUrls = new Set();
+                            if (all && typeof all === 'object' && !Array.isArray(all)) {
+                                for (const [uid, arr] of Object.entries(all)) {
+                                    if (uid === u.id) continue;
+                                    for (const s of collectImageUrls(arr)) otherUrls.add(s);
+                                }
+                            }
+                            delImages = [...thisUrls].filter((s) => !otherUrls.has(s));
+                        }
+                    } catch (e) {
+                        console.warn('[unit-clear] 이미지 수집 실패 — 카드만 삭제 진행', e);
+                    }
+                }
+
+                // 2) 서버 카드 비우기 (빈 배열 커밋)
                 if (isAdminWithSecret) {
                     await window.ITPEAdmin.saveCards(u.id, []);
                 }
-                // 로컬 캐시도 정리
+
+                // 3) 연결된(미공유) 이미지 스토리지에서 삭제
+                let imgResult = null;
+                if (isAdminWithSecret && delImages.length && window.ITPEAdmin.deleteImages) {
+                    try {
+                        imgResult = await window.ITPEAdmin.deleteImages(delImages);
+                    } catch (e) {
+                        console.warn('[unit-clear] 이미지 삭제 실패', e);
+                    }
+                }
+
+                // 4) 로컬 캐시도 정리
                 try {
                     localStorage.removeItem('itpe.userCards.' + u.id);
                     localStorage.removeItem('itpe.cardEdits.' + u.id);
                     localStorage.removeItem('itpe.removedJson.' + u.id);
                     localStorage.removeItem('itpe.checked.' + u.id);
                 } catch {}
+
+                // 5) 현재 학습 화면 즉시 반영 (state 비우고 모드 선택으로) — 재배포 지연과 무관하게 바로 빈 상태
+                try {
+                    if (window.ITPEFlash && typeof window.ITPEFlash.notifyUnitCleared === 'function') {
+                        window.ITPEFlash.notifyUnitCleared(u.id);
+                    }
+                } catch {}
+
                 await refreshCounts();
+
+                const imgMsg = imgResult
+                    ? ` · 이미지 ${imgResult.deletedCount || 0}장 삭제` + (imgResult.failedCount ? ` (실패 ${imgResult.failedCount})` : '')
+                    : (delImages.length ? ` · 이미지 ${delImages.length}장 삭제 시도` : '');
                 setStatus('unit-status',
                     isAdminWithSecret
-                        ? `✓ '${u.name}' 단원 전체 삭제 완료 — 서버·로컬 모두 비움`
-                        : `✓ 로컬만 비움 — 서버 동기화는 시크릿 입력 후 가능`,
+                        ? `✓ '${u.name}' 단원 전체 삭제 — 서버 커밋 완료${imgMsg}. 재배포 후 ~1분 내 다른 기기 반영.`
+                        : `✓ 로컬만 비움 — 서버·이미지 삭제는 관리자 로그인 후 가능`,
                     'ok'
                 );
             } catch (e) {

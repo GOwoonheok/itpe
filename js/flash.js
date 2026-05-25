@@ -1802,6 +1802,17 @@
     // admin.js bootFlashAdmin 가 호출 — 카드 로드된 뒤 패널 상태 갱신
     window.ITPEFlash = Object.assign(window.ITPEFlash || {}, {
         refreshAutoDef: () => { bindAutoDefButtons(); refreshAutoDefPanel(); },
+        // admin.js doUnitClear 가 호출 — 현재 단원이 비워졌으면 학습 화면을 즉시 빈 상태로.
+        notifyUnitCleared: (clearedId) => {
+            if (clearedId !== unitId) return;
+            state.jsonCards = [];
+            state.userCards = [];
+            state.cards = [];
+            state.order = [];
+            state.idx = 0;
+            try { state.checked.clear(); saveChecked(); } catch {}
+            try { showModeSelect(); } catch {}
+        },
     });
 
     // 토픽 중복 체크 — 자기 자신은 제외. 중복 시 기존 카드 정보 알려주고 false 반환.

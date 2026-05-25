@@ -38,6 +38,22 @@
         }
         return r.json();
     }
+    // 이미지 삭제 — 쿠키 인증. urls/keys 혼합 배열 전달 (R2 images/ 만 처리).
+    async function deleteImages(urlsOrKeys) {
+        const list = (Array.isArray(urlsOrKeys) ? urlsOrKeys : []).filter((s) => typeof s === 'string' && s);
+        if (list.length === 0) return { deletedCount: 0, failedCount: 0, matched: 0, requested: 0, skipped: true };
+        const r = await fetch('/api/delete-images', fetchOpts({
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ urls: list }),
+        }));
+        if (!r.ok) {
+            const body = await r.text().catch(() => '');
+            throw new Error('delete-images failed ' + r.status + ': ' + body);
+        }
+        return r.json();
+    }
+
     // 이미지 POST — 쿠키 인증
     async function uploadImage(dataUrl) {
         const preview = String(dataUrl || '').slice(0, 100);
@@ -83,6 +99,7 @@
         fetchCards,
         saveCards,
         uploadImage,
+        deleteImages,
         isAdminWithSecret,
         ensureSecretInteractive,
         fetchOpts, // 다른 모듈이 동일한 옵션을 쓰도록
