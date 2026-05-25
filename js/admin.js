@@ -463,6 +463,93 @@
     }
 
     // ─────────────────────────────────────────────────────────────
+    // 🧹 R2 orphan 이미지 정리 패널
+    // GET  /api/cleanup-orphans → 미리보기 (어떤 파일이 삭제될지)
+    // POST /api/cleanup-orphans → 실제 삭제
+    // ─────────────────────────────────────────────────────────────
+    function fmtBytes(b) {
+        if (b == null) return '?';
+        if (b < 1024) return b + 'B';
+        if (b < 1024 * 1024) return (b / 1024).toFixed(1) + 'KB';
+        return (b / 1024 / 1024).toFixed(2) + 'MB';
+    }
+
+    function renderImageCleanupPanel() {
+        const root = document.getElementById('admin-root');
+        if (!root || !window.ITPEAdmin) return;
+        const panel = h('section', 'admin-panel');
+        panel.id = 'cleanup-panel';
+        panel.appendChild(h('div', 'admin-head',
+            h('h2', 'admin-title', t('🧹 R2 사용 안 하는 이미지 정리')),
+            h('span', 'admin-badge', t('orphan 청소'))
+        ));
+        panel.appendChild(h('p', 'admin-hint',
+            t('카드에서 제거되거나 카드 자체가 삭제됐는데 R2 스토리지엔 남아있는 이미지를 찾아 제거합니다. ') +
+            t('먼저 [미리보기] 로 어떤 파일이 대상인지 확인 후 [삭제 실행] 하세요. 안전: 카드 JSON 에 참조된 URL 은 절대 안 지웁니다.')
+        ));
+        const btns = h('div', 'admin-btns');
+        btns.style.marginTop = '10px';
+        btns.appendChild(makeBtn('admin-btn admin-btn-dl', 'cleanup-preview-btn', '📋 미리보기',     'button'));
+        btns.appendChild(makeBtn('admin-btn admin-btn-tpl','cleanup-execute-btn', '🗑 삭제 실행',    'button'));
+        panel.appendChild(btns);
+        const st = h('p', 'admin-status'); st.id = 'cleanup-status';
+        panel.appendChild(st);
+        const list = h('div', 'admin-hint'); list.id = 'cleanup-list';
+        list.style.marginTop = '8px';
+        list.style.fontFamily = 'monospace';
+        list.style.fontSize = '0.85em';
+        list.style.whiteSpace = 'pre-wrap';
+        panel.appendChild(list);
+        root.appendChild(panel);
+
+        async function preview() {
+            setStatus('cleanup-status', '미리보기 조회 중…');
+            document.getElementById('cleanup-list').textContent = '';
+            try {
+                const r = await fetch('/api/cleanup-orphans', window.ITPEAdmin.fetchOpts());
+                const j = await r.json();
+                if (!r.ok) {
+                    setStatus('cleanup-status', '❌ 실패: ' + (j.error || r.status) + (j.detail ? ' · ' + j.detail : ''), 'err');
+                    return;
+                }
+                setStatus('cleanup-status',
+                    `📊 카드 참조 ${j.inUseCount}개 / R2 전체 ${j.totalCount}개 / ` +
+                    `🗑 orphan ${j.orphanCount}개 (${fmtBytes(j.orphanSize)})`, 'ok');
+                if (j.orphanCount > 0) {
+                    const sample = (j.orphanSample || []).join('\n');
+                    const more = j.orphanCount > j.orphanSample.length
+                        ? `\n… 외 ${j.orphanCount - j.orphanSample.length}개`
+                        : '';
+                    document.getElementById('cleanup-list').textContent =
+                        '삭제 예정 목록 (상위 ' + j.orphanSample.length + '개):\n' + sample + more;
+                }
+            } catch (e) {
+                setStatus('cleanup-status', '❌ 오류: ' + (e?.message || e), 'err');
+            }
+        }
+        async function execute() {
+            if (!confirm('카드에서 참조되지 않는 R2 이미지 파일을 영구 삭제합니다.\n\n· 카드에 사용 중인 이미지는 안전 (절대 안 지움)\n· 되돌릴 수 없음\n\n계속할까요?')) return;
+            setStatus('cleanup-status', '삭제 실행 중… (큰 양이면 몇 초 걸림)');
+            try {
+                const r = await fetch('/api/cleanup-orphans', window.ITPEAdmin.fetchOpts({ method: 'POST' }));
+                const j = await r.json();
+                if (!r.ok) {
+                    setStatus('cleanup-status', '❌ 실패: ' + (j.error || r.status) + (j.detail ? ' · ' + j.detail : ''), 'err');
+                    return;
+                }
+                setStatus('cleanup-status',
+                    `✅ 삭제 완료 — ${j.deletedCount}개 (${fmtBytes(j.freedBytes)} 확보)` +
+                    (j.failedCount ? ` · 실패 ${j.failedCount}개` : ''), 'ok');
+                document.getElementById('cleanup-list').textContent = '';
+            } catch (e) {
+                setStatus('cleanup-status', '❌ 오류: ' + (e?.message || e), 'err');
+            }
+        }
+        document.getElementById('cleanup-preview-btn').addEventListener('click', preview);
+        document.getElementById('cleanup-execute-btn').addEventListener('click', execute);
+    }
+
+    // ─────────────────────────────────────────────────────────────
     // 📚 단원(시트) 관리 패널 — admin.html 전용
     // GET /api/units → 로드, PUT /api/units → 저장
     // ─────────────────────────────────────────────────────────────
@@ -721,6 +808,7 @@
         renderUnitsPanel();
         renderAiPromptPanel('full');
         renderAiPromptPanel('def');
+        renderImageCleanupPanel();
         // (시크릿 입력 패널 제거됨 — 로그인 시 쿠키 자동 발급)
 
         document.getElementById('btn-tpl').addEventListener('click', doBulkTemplate);
