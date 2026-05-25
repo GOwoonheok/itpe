@@ -1,1 +1,1334 @@
-[]
+[
+  {
+    "topic": "전송부호화",
+    "definition": "",
+    "mnemonic": "아날로그->디지털화, 소채라, 소스(중복제거), 채널(오류정정), 라인(신호변환)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805751-1dvsn",
+    "createdAt": "2026-05-25T10:43:25.751Z"
+  },
+  {
+    "topic": "PCM",
+    "definition": "",
+    "mnemonic": "아날로그> 디지털신호 변조, 표양부, 재복재, 나이퀘스트 샘플링\r\n표본화, 양자화, 부호화, 재복재(수신즉 디지털-> 아날로그 복원)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-3fin4",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "나이퀘스트 샘플링",
+    "definition": "",
+    "mnemonic": "원래의 아날로그 신호를 손실 없이 재구성하려면 신호 대역폭의 2배 이상으로 표본화해야 함\r\n음성(대역폭 4kHz) → 최소 8kHz로 샘플링 필요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-r4drc",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "변조",
+    "definition": "",
+    "mnemonic": "신호전송의 적합한 형태로 변환 / 아날로그변조(AM, FM,PM) / 디지털변조(ASK,FSK,PSK,QAM)\r\n펄스변조(PCM, PAM, PPM, PDM)  @DD:Baseband /AD:PCM /AA:아날로그 변조/DD 디지털변조",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-encb6",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Ad-hoc Network",
+    "definition": "",
+    "mnemonic": "이동호스트 통신망, 단기간, 저전략, 라우팅기술 / 분류: Proactive(table driven, DSDV), Reactive(on-demend, AODV, DSR) , Hybrid(혼합, ZRP)  // 활용 : 재난, 전쟁, IoT, VANET 등\r\n@프로디 리아 하저릅 Proactive: DSDV, Reactive: AODV, DSR, Hybrid: ZRP",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-7a4s2",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "캡슐화/역캡슐화",
+    "definition": "",
+    "mnemonic": "프로토콜 데이터 유니트(PDU, Protocol Data Unit), (캡슐화)상위 데이터앞 헤더추가/(역캠슐화) 제거 \r\nPDU : 계층별 데이터 단위,  메시지 → 세그먼트 → 패킷 → 프레임 → 비트 \r\n@PDU => APP|MSG, 전송 | 세그먼트(TCP), 데이터그램(UDP),  NW|패킷(IP) , 데이터링크(Frame), 물리(bit)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-1uhnx",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "패킷단편화",
+    "definition": "",
+    "mnemonic": "PDU를 작은단위(MTU)로 나누는 동작, 재조립, Ipv4(576byte), IPv6(1280) /\r\n@fragmenation(MSG->TCP세그먼트 분할), segmetation(NW계층에서 패킷을 MTU보다 작게 나눔)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-5hvzl",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "서비스 프리미티브",
+    "definition": "",
+    "mnemonic": "계동방파, 요지응확 / 계층, 동작이름, 방향, 파라미터 , 요청>지시>응답> 확인  (SAP, service access point)  // T.Connect.request(addr, addr, param) : 요청계층명, 연결동작, 요청방향, 파라미터",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-h07md",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "데이터 전달방식",
+    "definition": "",
+    "mnemonic": "송수신측 전송방향을 정의하는 기법 \r\n/ 전이중, 반이중, 단방향",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-1176m",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "OSI 7 Layers",
+    "definition": "",
+    "mnemonic": "아파서티네다피 /(S퍼빵b, RBR) segment, packet, frame, bits / Router, Bridge, Repeater",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-0uz8k",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "TCP/IP 구조",
+    "definition": "",
+    "mnemonic": "ATINP(application, transport, internet, network, physical) @아TIP",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-thvru",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Application (7)",
+    "definition": "",
+    "mnemonic": "최상위, 서비스, 메시지, L7, UI화면 / Http(80), FTP(21), Telnet(23)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-i2p9i",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Presentation (6)",
+    "definition": "",
+    "mnemonic": "데이터, 암호화, 압축, 코드변화, MIME, SMTP, IMAP, SSL",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-wgofu",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Session (5)",
+    "definition": "",
+    "mnemonic": "대화유지, 논리적 연결담당, 동기화 / NetBios, RPC, Winsock, SMB",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-c8t50",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Transport (4)",
+    "definition": "",
+    "mnemonic": "데이터 송수신, Qos, 4계층, 세그먼트 / TCP혼잡제어, 흐름제어, 오류제어, 혼잡제어 (SS CA FR FR)\r\n@sliding window, Seq Num / TCP, UDP, SCTP",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-0i05o",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "오류종류",
+    "definition": "",
+    "mnemonic": "감쇠, 지연왜곡, 잡음, 에코, 지터, 백색잡음",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-143xc",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Network(3)",
+    "definition": "",
+    "mnemonic": "송수신 데이터전송, 세그먼트, 포워딩, 라우팅 / ARP, IGMP, IP, ISPF, RIP, ICMP, L3,  ISO 8208",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-5iidl",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "DataLink(2)",
+    "definition": "",
+    "mnemonic": "오류없이 데이터 전송, 프레임 , 오류제어(FEC, BEC), 흐름제어 , 회선제어 / SDLC, HDLC, MPLS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-vlf45",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- 회선제어",
+    "definition": "",
+    "mnemonic": "ENQ/ACK, Polling",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-1yfb0",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- 흐름제어",
+    "definition": "",
+    "mnemonic": "Stop&Wait, Sliding Window",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-zcho1",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- 오류제어",
+    "definition": "",
+    "mnemonic": "FEC(RS코드, 해밍코드, Convolution 코드, 터보코드),   @프로토콜 : PPP, HDLC, SLIP\r\nBEC(패리티체크, Block sum, CRC, Check sum / Stop&wait ARQ, go back N ARQ, Selective Repeat/ARQ)\r\n@패블C검, 스고세A",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-83n6u",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- 접근제어",
+    "definition": "",
+    "mnemonic": "CSMA/CD, CSMA/CA  / 유선(802.3) , 무선(802.11) / 회피, 탐지",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-dgpee",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Physical(1)",
+    "definition": "",
+    "mnemonic": "신호변환(인코딩, 디코딩), 10Based-T/5 / RS232, USB, 동케이블, 광섬유 \r\n@Star, bus, Ring, Tree, Mesh",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-bzjik",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "CSMA/CD",
+    "definition": "",
+    "mnemonic": "충돌 감지, 유선, 802.3\r\nDIFS (Distribute IFS: 최초 대기) \r\n→ RTS → SIFS(중간 대기)→ CTS → ACK",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-9akpt",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "CSMA/CA",
+    "definition": "",
+    "mnemonic": "충돌 회피, 무선, 802.11",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-62hr0",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "BEC 오류검출",
+    "definition": "",
+    "mnemonic": "검출하고 재전송, 에러정정  검출 : @패블C검  (패리티비트, 블록합, CRC, 검사합(check sum)\r\nH-ARQ (type1, CC, IR ) Type1(FEC + BEC에러제어), CC-ARQ(전체 재전송),  IR-ARQ(정정bit추가)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-4x2lk",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "BEC 오류정정",
+    "definition": "",
+    "mnemonic": "@스고셀아하 (stop&wait, Go-Back, Selective, Adaptive, Hybrid)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-43z84",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "FEC 에러정정",
+    "definition": "",
+    "mnemonic": "해리컨터 /  수신에서 스스로 검출/정정토록, 잉여비트(CRC,패리티) 추가전송 오류제어기법  \r\n@블럭코드 : 해밍, RS(Reed-Solomon), @Non블럭코드 : Convolution , Turbo 코드",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-34exd",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "ARQ",
+    "definition": "",
+    "mnemonic": "오류제어 (2계층), 자동재전송요구(ARQ)  / \r\n@유형 : Stop&wait ARQ, Go-back n ARQ, Selective Repeat ARQ, Hybrid",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-22i4x",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- Stop & wait",
+    "definition": "",
+    "mnemonic": "오류가 발생해 감지되면 \"모든\" 패키 재전송 요구 / 고대역포, 무선유리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-7j5vp",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- Go back N",
+    "definition": "",
+    "mnemonic": "오류가 발생한 패킷이후 모든 Frame 재전송 요구/비용효율,합리적",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-sl608",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- Selective",
+    "definition": "",
+    "mnemonic": "오류가 발생한 Frame만 재전송 요구/저대역,선별적 수정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-nwd8s",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- H-ARQ",
+    "definition": "",
+    "mnemonic": "오류시도 + 재전송(FEC+ARQ) / type1, CC-HRQ, IR-HRQ",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-t87a0",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "CRC",
+    "definition": "",
+    "mnemonic": "오류검출방식, 이진나눗셈 연산",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-cyi3y",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "해밍코드",
+    "definition": "",
+    "mnemonic": "오류제어(2계층),  2p>= d+p+1 / 패리티비트 오류 정정코드",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-8d01w",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "라우팅 프로토콜",
+    "definition": "",
+    "mnemonic": "경로고정(정정, 동적) / 내외부 라우티(IGP, EGP) / 라우팅 테이블 관리(거리, 링크)\r\n거리수베 링오이다",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-x824p",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "IGP, EGP",
+    "definition": "",
+    "mnemonic": "IGP(내부 게이트웨어 프로토콜), AS(Autonomous system)내에서 라우팅정보교환 프로토콜\r\n - AS내부,RIP(거리백터), OSPF(링크상태), IS-IS, EIGRP, 빠름, 내부최적화 \r\nEGP(외부 게이트웨이 프로토콜), AS간(외부), BGP, 정책기반, 경로속성, 느림, ISP간 연결",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-v4jr6",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "MODBUS 프로토콜",
+    "definition": "",
+    "mnemonic": "SCADA시스템에서 RTU, PC간 제어, 생태정보등 통신위해 시리얼과 TCP구현 가능한 통신계층 메시지 프로토콜 산업용 응용계층 메시지 프로토콜 (RTU, ASC2,   TCP, Over TCP)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-taiq7",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "내부 라우팅",
+    "definition": "",
+    "mnemonic": "라우터 집합 AS(RIP, OSPF)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-v5fr1",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "RIP, OSPF",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-91i39",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "외부 라우팅",
+    "definition": "",
+    "mnemonic": "AS사이 사용(EGP)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-fc2ld",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "라우팅 테이블관리",
+    "definition": "",
+    "mnemonic": "거리: @거리수배(거리백터, RIP, IGRP, 수시, 벨만포드) / 거리방향, hop count, 인접라우더, 일정주기 업뎃\r\n링크: @링오이다(OSPF, IS-IS사례, Dijkstra)  / 전체, Link변화 발생시마다",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-um8rv",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "OSPF",
+    "definition": "",
+    "mnemonic": "라우팅프로토콜, 링크상태, 대규모, 다이스트라 알고리즘",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-0r5nt",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Sliding window 알고리즘",
+    "definition": "",
+    "mnemonic": "TCP IP(5계층), 흐름제어 / 송신자 : 한번에 Win size만큼 전송, 수신자: 수신후 Ack번화 응답 -> 다시 송신자는  ACK받고, 윈도우 전진(다음번호부터) , min(RWND, CWND) \r\n@윈도우 크기, Seq번호, ACK번호, 흐름제어, 혼잡제어",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-64181",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "오류제어",
+    "definition": "",
+    "mnemonic": "4계층 :  세그먼트 손실, 훼손, 순서어긋나는 경우 -> 세그먼트 재전송 \r\n @오류검출 : 손상(check sum), 손실(sequence number & ack number), 시간초과(time-over)\r\n @오류정정 : 기본(go back-n), 옵션(selective repeat ARQ)\r\n2계층 : FEC(해밍코드, RS코드, 콘볼루션 코드, 터보코드)  BEC(검출:패리티체크, checksum, CRC, Block sum / 재전송:  S&W ARQ, gobackn ARQ, selective, repeat adaptive ARQ)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-jz42u",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "오류제어 (2,4계층 사용이유)",
+    "definition": "",
+    "mnemonic": "역할분담( 2계층  두 노드간 Peer to Peer, 프레임 송수신 - 검출 및 복구처리 \r\n                4계층  단대단(end to end) 데이터 순서, 손실여부, 중복 확인\r\n신뢰성확보 (2계층 라우터간 데이터전송 신뢰성, 4계층 종단간 데이터 전송 신뢰성 보장)\r\n오류최소화( 2개 층에서 더블 수행)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-7lraz",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "TCP 혼잡제어",
+    "definition": "",
+    "mnemonic": "SS, CA, FR, FR / CWND : 혼잡윈도우 크기, RWND \r\nTCP혼잡제어 매커니즘, 혼잡상황 감지, 혼잡상화 제어, 혼잡윈도우 크기",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-7ugo6",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "IPv4",
+    "definition": "",
+    "mnemonic": "32비트방식, 현재의 인터넷 주소체계, @비틀아플오 타프체사다 \r\nversion, IHL, TOS, total length, identification, Flags, Offset, time to live, protocol, checksum, source, destination address",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-yypnh",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "IPv6",
+    "definition": "",
+    "mnemonic": "128비트, 확장주소, 헤더포멧 간소화, QoS보장, 보안강화, 이동성 지원 @버터플파네오 \r\n/ Version, Traffic class, Flow label, Payload Length, Next Header, Hop Limit, source address, destination address",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-90lud",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "subnetting",
+    "definition": "",
+    "mnemonic": "네트워크를 작은 그룹으로 나눔, VSLM, NW세그멘트 분리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-ais72",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "supperneting",
+    "definition": "",
+    "mnemonic": "다수 작은 네트워크를 큰 네트워크로 통합, CIDR, NW세그먼트 통합",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-ylmrd",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "VLSM",
+    "definition": "",
+    "mnemonic": "서브넷팅, 마스크 다양화, 분리분할",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-aq0q4",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "CIDER",
+    "definition": "",
+    "mnemonic": "슈퍼네팅, 묶는 라우팅, 오버헤드, 트렉픽을 줄이는 방법(슈퍼네팅)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-j8rf2",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "GW변환 기술",
+    "definition": "",
+    "mnemonic": "dual stack, tunneling, address translation",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-k8mhf",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "NAT",
+    "definition": "",
+    "mnemonic": "공인-내부서설 연결 사상기술 / 기능 : IP Masquerading, Port Forwarding, Load Balancing \r\n@유형 : Static Nat, Dynamic Nat, Port Nat, Load sharing Nat",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-fsufe",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "ARP",
+    "definition": "",
+    "mnemonic": "네트워크 주소변환 (IP >> Mac 주소) / ARP, RARP (MAC >> IP)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-m5rk6",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "TCP",
+    "definition": "",
+    "mnemonic": "연결지향 신뢰성 프로토콜 / 연결, 순서, 흐름, 혼잡, 오류제어 / HTTP, FTP, SMTP @RPC 793\r\nSYN, SYN+ACK, ACK(연결)/FIN, Ack-FIN, ACK (해제),@신신액엑,  핀엑픽엑 , 핀판타클크나클\r\nfin_wait fin_wait Time_wait cloased / Close_wait, last_ack, cloased",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-59k1p",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "TCP Half open 문제점",
+    "definition": "",
+    "mnemonic": "SYN,  SYN+ACK (회신없이 사라짐) -> back log 큐에 계속 쌓아, 반즘열린 상태\r\n문제점 : 큐가 꽉차서 연결불가 -> 서비스 거부상태 발생(SYN Flodding ttack) // 큐킈 변경, Syncookies 활성화, Syn_received 타이머변경, SYN cache, Half open TCP 재활용, 방화벽 프록시",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-y697m",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "UDP",
+    "definition": "",
+    "mnemonic": "비연결지향, 무관계서비스, 빠른 전송속도/ 중복, 손실가능, 에러지 재전송 없음 \r\n/ DNS, SNMP, RIP @RPC 768",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-z63v3",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "SCTP",
+    "definition": "",
+    "mnemonic": "TCP + UDP 조합 / 멀티스트림, 멀티호밍 제공 /  4way 핸드쉐이킹  @RPC 2960\r\n@4way INT, INT+ACK, Cookie_echo, Cookie_ack)/3 shutdown, shutdown_ack , shutdown_complete",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-u39pv",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "MPTCP",
+    "definition": "",
+    "mnemonic": "Multipath TCP ,  다중경로를 통한 전송성능 향상, TCP Stream, TCP확장 프로토콜\r\n@application , MPTCP (TCP subflow - IP 여러 개) - IP기반 TCP sub_flow를 통해 다중경로 전송",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-5h9vq",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "NTP",
+    "definition": "",
+    "mnemonic": "Network Time Protocol, 인터넷 시간 정확 유지 통신망 시간 규약 / 다수 NTP서버, 멀티케스트 모드동작",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-17pdm",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "DNS",
+    "definition": "",
+    "mnemonic": "도메인 명과 IP주소 대응,  URL을 IP주소로 변환, \r\nHost Aliasing(단일IP주소를 보유한 호스트에 다양한 별치부영) \r\n@DNSSEC (전자서명 연결을 위해 활용)\r\n@구성: Name 공간, 리소스 레코드, Zone file, 네임서버, 리졸버\r\nDNS 쿼리(IP주소로 변환하기 위한방식)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-5o8qt",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "DNSSEC",
+    "definition": "",
+    "mnemonic": "전자서명 + DNS / DNSKEY, RRSING, DIS제코드, DS RRSet",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-ebnc5",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "DHCP",
+    "definition": "",
+    "mnemonic": "호스트에 IP주소 할당 4단계 / Discover, Offer, Request, Ack  @UDP67, 68\r\n@초기화: DORA, 갱신: RA, 종료:R  1) Broadcast, Discover  2) Offer(unicast) 3) Request(IP사용 승인전달) 4)ACK (unicast 최종승인 할당)\r\n1) 50%남은시점에, 연장 : 1) Request 2)ACK 3)Release  (RAR)\r\n@ DHCP 패킷을 Broadcast -> unicast 변환 전달 해결 방법 : DHCP Relay Agent \r\n//보안 : IP소진(DHCP starvation 공격, Spoofing 공격, 서버해킹) //대응 : 인증기반 DHCP도입, 보안설정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-6ydpx",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "HTTP/3",
+    "definition": "",
+    "mnemonic": "Quic 전송프로토콜, TLS1.3, 1-RTT, 0-RTT(즉시연결), Quic, HOL블로킹 해결 @RTT(Round Trip Time)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-furkt",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "TLS 1.3",
+    "definition": "",
+    "mnemonic": "Transport Layer Security,  인터넷상 데이터를 안전 암호 전송 최신 프로토콜(기밀성, 무결성, 인증)\r\nSSL->TLS 1.1, 1.2, 1.3 / 빠른 초기연결(1, 0-RTT) / 핸드쉐이크(C/S가 보안연결 대칭키 세션키 생성)\r\n@단계 :  clientHello -> serverHello > 인증서전송 > 키교환(디피헬만방식) certificate, Keyshare, 1-RTT(공유) > 통신완료(Finished) >> 이후 대칭키 암호화로 안전하게 통신\r\n@두사람 대화시 비밀언어(세션키) 약속(핸드쉐이크)후 대화진행",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-osd0h",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "QUIC",
+    "definition": "",
+    "mnemonic": "UDP위에서 작동, 지연시간 최소화, 스트림 분리, 모바일 환격최적, TCP+TLS+HTTP기늩 통합\r\n@처음연결 빠르고, 중간 끊겨도 다시 연결쉽게(바로연결) @구글, 국제표준, HTTP/3전송기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-rmr35",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "FTP",
+    "definition": "",
+    "mnemonic": "File Transfer Protocol / active , Passive 모드 / FTPS (SSL/TLS)  , SFTP(SSH활용)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-y5q5y",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Queue 관리",
+    "definition": "",
+    "mnemonic": "QoS / 기성회보, 대지터패(대역폭, 지연, 지터, 패킷손실),  Q트혼보 / 네트워크 품질관리\r\n1. Queue(대기) 관리 :  FIFO, PQ, CBQ, FQ, WFQ \r\n2. 트래픽 쉐이핑 (성형) : Shapping, Leaky Bucket 방식, Token Bucket, Hybrid 방식\r\n3. 혼잡회피 :  RED(Random Early Detection), WRED, tail drop \r\n4. QoS보장 :  IntServ(RSVP) , Diffserv(differentiaed Service), MPLS, CDN",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-gq55p",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- Queueing",
+    "definition": "",
+    "mnemonic": "NW장비 처리이상, 트랙픽발생시, 큐에 저장하고 스케줄정책에 따라 처리하는 기법\r\n@종류: FIFO, PQ(Priority), CQ(Custom Queuing, RR), WFQ(weighted Fair Queuing, 비율로처리)\r\n -> CBWFQ, LLQ(확장, Low Latecy Queue)\r\n@WFQ :  플로우간에서도 차별을 두는 스케쥴링 기법(공정한 큐잉)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-hpelw",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- 트래픽 폴리싱",
+    "definition": "",
+    "mnemonic": "초과하는 트래픽은 버림, 트래픽 대역폭 제거/ Meter, Marker 기반 입력 / \r\nQoS기술, Drop, Meter, Mark",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-6xu9k",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- 트랙픽 쉐이핑 (성형)",
+    "definition": "",
+    "mnemonic": "버퍼링을 통해 Packet Loss 가능성 저하, 대기열로 인한 Delay발생 \r\n@ Leaky Bucket  Token Buskct",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-5sur6",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- 폴리싱 vs 쉐이핑 구분",
+    "definition": "",
+    "mnemonic": "개념도, 초과트래픽, 상한구분, 구현구성, 전달보증, 구현비용, 전달속도, 활용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-6tsnq",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "IntServ",
+    "definition": "",
+    "mnemonic": "RSVP, 자원예약 프로코콜,   RESV, 종단간 QoS보장기술 , \r\nRSVP, PATH, RESV",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-u96jo",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "DiffServ",
+    "definition": "",
+    "mnemonic": "트래픽 클래스 묶어, 클래스마다 가중치 반영 /\r\n@ Classifier -> Matter -> (Marking ->Conditiner) > Queuing",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-q95cd",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "VPN",
+    "definition": "",
+    "mnemonic": "공중망에서 터널링 사용, IPSec, VPN, SSL, VPN 터널링",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-rei1t",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "VLAN",
+    "definition": "",
+    "mnemonic": "물리적 NW제약 극복 / 부하분산, 보안성 안정성 강화, 구성변경 용이 \r\n허브에서 포트형태 , 태그중심으로 구분 / 하나의 네트워크를 2개로 하는 기술\r\n 각각의 네트워크 Broadcast 형성( 지역에서 네트웤를 묶어서 구분하는 방식",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-obyze",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "VXLAN",
+    "definition": "",
+    "mnemonic": "기존 VLAN의 4096개 생성한계 극복하기 이해 1,600 VXLAN 생성가능",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-mg7ax",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "NFV",
+    "definition": "",
+    "mnemonic": "네트워크를 SW구현통한 관리 구현 기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-4agj6",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "스위치(L2",
+    "definition": "",
+    "mnemonic": "L2 : 러플포필(learning, Flooding, Forwarding, Filltering Aging)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-c8p2b",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "L4",
+    "definition": "",
+    "mnemonic": "L4 :  포트기반 / 트래픽제어, 로드밸런식",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-2gy71",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "L7",
+    "definition": "",
+    "mnemonic": "컨텐츠기반/ 고수준 트래픽 분산, 보안기능, 캐싱기능",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-6ig18",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "리버스 프록시",
+    "definition": "",
+    "mnemonic": "외부->내부 중간경유 서버 / 보안강화, 암호통신 고속화, 부하분산 / @포워드 프록시 (내부->외부)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-x6zhi",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "WIFI6",
+    "definition": "",
+    "mnemonic": "802.11ax 기반, 차세대 와이파이 지원/ 속도, 대역폭, 주파수, 기술, 안테나, 모듈 \r\n@9.6Gbps, 160Mhz 이상, 2.4/5Ghz, IEEE802.11ax, MIMO8*8, 1024QAM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-0fc0z",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "WIFI7",
+    "definition": "",
+    "mnemonic": "30Gbps, 320Mhz, 2.4/5/6Ghz, 802.11be, MiMO 16*16, 4096 QAM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-euw2f",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "WIFI8",
+    "definition": "",
+    "mnemonic": "대역표 320MHZ, 주파수대역댁 2.4.5.6Ghz, 속도: 100Gpbs, 변조: 4096QAM, 표준 802.11bn, \r\nMU-MIMO(다중입력, 다중출력)  , DSO(동적스팩트럼 최적화), NPCA(NW성능 및 혼잡방지)\r\ndRU(동적유닛지원)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-dx0qj",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "버전비교",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-l9qk0",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "UWB",
+    "definition": "",
+    "mnemonic": "Ultra Wide Band / 초광대역, 유비쿼터스 구현을 위한 초광대역 무선기술 / 저전력, 근거리 무선전송 Baseband  주파수(3.1~10.6GHz)  / Bluetooh 4.0, UWB, Zigbee",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-2kg9e",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Bluetooth 4.0",
+    "definition": "",
+    "mnemonic": "IEE802.15.1 / 2.4Ghz, TDMA, 10m~100m ,  음성, 팩스, AV",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-woynh",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Zigbee",
+    "definition": "",
+    "mnemonic": "IEEE802.15.4 / 2.4GHz, DSS , DSSS, CSMA/CA, 10m~100M, 저렴, 센서간 통신",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-ydnfp",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "NFC",
+    "definition": "",
+    "mnemonic": "10m이내에서 양방향 통신 비접촉 근거리 무선 통신 기술 13.56Mhz / Card, R/W, P2P mode",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-19qvg",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "MST",
+    "definition": "",
+    "mnemonic": "기존 신용카드 단말기 교체 불필요, 보안 취약해",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-azy4x",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "PS_LTE",
+    "definition": "",
+    "mnemonic": "IOPE, ProSE, DID, All IP6 --RAN세러링--> eMBWS, GCBE, BSMS -> MQTT, QoE",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-3hwdv",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- MCPTT",
+    "definition": "",
+    "mnemonic": "무전기 비슷, 1:1, 그룹통화 서비스",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-aypg1",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- IOPS",
+    "definition": "",
+    "mnemonic": "이동기지국 사용기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-2cmau",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- GCSE",
+    "definition": "",
+    "mnemonic": "동일그룹 통신, 1:1, 1:N",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-9w6vc",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- D2D, ProSe",
+    "definition": "",
+    "mnemonic": "기지국 없이 단말기간 직접통신 기능",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-okcck",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- eMBMS",
+    "definition": "",
+    "mnemonic": "방송서비스 기술 (동영상, 음성방송)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-vnqqo",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "RAN - Sharing",
+    "definition": "",
+    "mnemonic": "700Mhz, 주파수 간섭, MORAN, MOCN, GWCN / 공공안전만 간섭 문제 해결\r\n다른 LTE무선 접속망의 기지국 설비를 공유하여 트래픽 전달하는 기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-9t709",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- MORAN",
+    "definition": "",
+    "mnemonic": "RAN 요소만 공유하고, 주파수는 공유하지 않는 기법\r\n@ Core NW - GW - node - 주파수(Spectrum) // OP-A, B -> Shared->Shared -> OP_A,B",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-26fbo",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- MOCN",
+    "definition": "",
+    "mnemonic": "RAN요소 + 주파수 굥유 / 네트워크 세어링 기술 / 비용절감, 품질향상, 친환경 / \r\n@ Core NW - GW - node - 주파수(Spectrum) // OP-A, B -> Shared->Shared ->Shared",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-frpqi",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- GWCN",
+    "definition": "",
+    "mnemonic": "MOCN + Core NW 공유",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-7h67m",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "CDN",
+    "definition": "",
+    "mnemonic": "Caching, Load 발란싱, GSLB, SLB / 푸싱 캐싱 스플리팅\r\n콘텐츠 전달, USR-CDN SP-Cahce-pop서버-IX-ISP-CP",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-l0qr0",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "MIMO",
+    "definition": "",
+    "mnemonic": "다중 안테나를 통한 고속 데이터 전송, 무선채널환경,  송수신 다중안테나 / Multi input Multi output",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-nrpq6",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "SDR",
+    "definition": "",
+    "mnemonic": "소프트웨어 정의기반 이동통신 기술, 다중 무선접속 환경, 개방형 구조의 단일 하드웨어",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-e4kpf",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "5G (IMT-2020)",
+    "definition": "",
+    "mnemonic": "초고속, 초연결, 저지연 / eMBB(속도향상), mMTC(다수기기연결), URLLC(초저지연 실시간 서비스)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-asixs",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "네트워크 슬라이싱",
+    "definition": "",
+    "mnemonic": "5G 핵심기술, 물리적 하나 NW를 End to End 논리적 분리된 NW 생성 / 특화서비스 망\r\n@SDN(Control Plane, Data Plane, IF, APP),  NFV(NFVI, NFVs, MANO, E2E NW)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-n26vg",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "네트워크 가상화",
+    "definition": "",
+    "mnemonic": "NFV, VPN, VLAN, SDN 기숦필요\r\nLAN영역(브로드케스트) -> L2영역 , 맥주소\r\n인터넷 영역(L3) 라우터를 통해 외부 연결, IP주소, DNS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-zzb37",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "MEC",
+    "definition": "",
+    "mnemonic": "이동통신 기지국 + 클라우드 기술적용, 컨텐츠> 사용자 근처제공, 모바일 혼잡 최소화\r\n@근접성, 저지연 / cloud - MEC API (캐싱, 영상인식, 빅데이터분석, AI컴퓨팅)  <--> 단말기\r\n@LLM서비스, 연합학습, on-device AI,  AI 에이전트",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-vo6jx",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "RAN",
+    "definition": "",
+    "mnemonic": "원격 제어되는 머신등 기기 무선 링크를 통헤 네트워크의 다른 부분 연결하는 안테나, 무선장치, 컨트롤러를 갖춘 기지국으로 구성된 무선통신 기술 / closed, single vender",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-c9tpq",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "O-RAN",
+    "definition": "",
+    "mnemonic": "네트워크 밴터종속성 탈피, 5G 무선 IF와 SW를 개방형 표준으로 구축/ 제조사 종속 탈피\r\n@ Front 안테나- ( O-CU, O-DU, O-RU ) -> 5G 코어 (back) \r\nfronthaul, midhaul, backhaul >> CAPEX/OPEX 절감",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-sfh03",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "AI-RAN",
+    "definition": "",
+    "mnemonic": "5G,6G 이동통신망(폭증) 네트워크에서 AI기술을 접목하여 무선자원(RAN)을 최적화 자동화 관리필요 \r\nRAN 운영관리 (자원할당, 스케쥴링, 간섭제어, 에너지 효율)-> AI/ML 기반 최적화 / RangChain \r\n기술 : 3GPP Real 18/19 : AI/ML 기반 무선자원 표준반영, BS(기지국), O-RAN의 RIC데 탑재 \r\n       Near-RT-RIC(실시간), Non-RT RIC(비실시간) RRM, 데이터기반 학습(트래픽, QoE데이터) ML화\r\n       자원관리최적화(전력관리, MIMO빔포밍, 슬라이싱기반 자원보장), 예너지절감(셀 ON/OFF 자동화)\r\n       보안강화(이상 트랙픽, 이협패턴 분석 자율방어) \r\n장점 : 성능 최적화, 운영 자동화 / 학습데이터, 실시간성, 보안 문제",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-jkwca",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "5G 특화망",
+    "definition": "",
+    "mnemonic": "특정산업 전용망 / @유형 : 독립형, 공유형 /",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-ox62s",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "6G",
+    "definition": "",
+    "mnemonic": "성대공현정지 / Tbps,  100GHZ, 10km(지상),  6DoF, 0.1ms(정밀), AI기반 연결지능\r\n/성능,대역폭,공간,현실,정밀,지능  @ RF, 빔포밍기술, 통신-컴퓨팅 융합, AI내장\r\n테라헤르츠 주파수, NTN(비지상), 셀리스(사용자 중심), \r\nRIS(지능형 재구성표면), AI Native, 실감형(홀로그램), AI for RAN, on RAN, and RAN\r\n네트워크 슬라이싱  @자율운영 : IBN, AIOps, self-healing, Optimization",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-rsx4n",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "저궤도 위성통신",
+    "definition": "",
+    "mnemonic": "300~1500km, 대량 위성 배치, 인터네서비스 /  Space 공간(위섭탑제체), Ground (GW, NW센터), User\r\n위성간 링크, 사용자 링크, 피터링크",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-g2l1n",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "저궤도 군집위성",
+    "definition": "",
+    "mnemonic": "6G핵심기술, LSL, Feeder Link / 우주(위성,OBP), 지상(GW, NMC),  User(사용자 링크 안테나)\r\n@스타링크",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-pqnsc",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "5G-NTN",
+    "definition": "",
+    "mnemonic": "SW의한 제어, LEO, MEO, GEO, HAPS(고고도 플랫폼), 드론  등 지구표면위에서 동자 무선통신시스템",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-ndsvm",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "MPLS",
+    "definition": "",
+    "mnemonic": "고속패킷 전달을 통한 QoS 구현기술, IP패킷을 Label을 이용 고속전달 기술\r\nNW장비(LER, LSR) 프로토콜(LSP, LDP, LIB, FEC, LABEL)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-cu8se",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "SDN",
+    "definition": "",
+    "mnemonic": "개방형 OpenFlow 활용, NW의 트래픽 전달 동작을 SW기반 NW기술 \r\n@Control Plane, Open API , Data Plane, Host /\r\n#네트워크 포워딩",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-1i9pp",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Open Flow",
+    "definition": "",
+    "mnemonic": "NW>SDX , SDN환경에서 제어계층과 데이터 계층간 통신 프로토콜, 통신내용을 정의\r\n@구성 :  Controller(제어장치), OpenFlow Switch \r\n(Flow table, Group table, Pipeline, Openflow 프로토콜, 보안채널)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-9qhxt",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "SD-WAN",
+    "definition": "",
+    "mnemonic": "종단간 SDN 프로덕션 / WAN회선(MPLS, 4G, 5G 등)위에 , DataPlane, control Plane 분리하고 SW로 Overlay 네트워크를 구성하는 기술 \r\n@SD-WAN  CPE ==> control plane / Overlay Trunnel / Data Plane  ==> SD_WAN CPE",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-5abvg",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "CoAP",
+    "definition": "",
+    "mnemonic": "사물지능통신 / IOT > 메모리, 에너지, 성능에 제약이 있는 환경을 위한 웹 기반 프로토콜\r\nHTTP 기반 REST 사용,  파싱가능 헤더, URI  /  UDP기반, 지연적고 단순, GET,POST 지원",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-0alre",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "MQTT",
+    "definition": "",
+    "mnemonic": "사물지능통신 / IOT > 지연, 손실심한, 환경에서,  검침기, 센서 등 기기들의 신뢰성 있는 메시지 전달 오픈 애플리케이션 프로토콜  /@ pub, sub, Broker, topic",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-0ta3n",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "XMPP",
+    "definition": "",
+    "mnemonic": "XML기반, 2인 이상의 참여자간 구조적 데이터를 교환(XML 기반 TCP통신), 채팅/메신저, M2M통신",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-vv12t",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Matter",
+    "definition": "",
+    "mnemonic": "CSA 단계가 개발한 IoT 기기간 연결, 연동 제공, 개방형 IoT 통합표준 프로토콜\r\nTCP/IP, UDP IPV6, Wifi(802.11), 쓰레드(802.15.4), BLE, IOT기기",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-r08pz",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "V2X",
+    "definition": "",
+    "mnemonic": "차량과 기기, 차랑간의 인프라 구축 / V2I, V2V, V2N, V2P, IVN @OBE(차량단말), RSE(노변기지국)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-ze4wn",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "C-V2X",
+    "definition": "",
+    "mnemonic": "자율주행 기술, 3GPP에서 제정된 자율주행 차량용 직접 통신 지원 기술\r\nLTE Direct , LTE Broadcast",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-mwocl",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "Tor 네트워크",
+    "definition": "",
+    "mnemonic": "익명통신, Onion 라우터, 프록시, 디렉토리 서버 /  Clinet x => OR/OR -> 서버, 높은 익명성, 분산구조\r\nThe Onion Router, 양파라우팅, 전송전 여러겹 암호화, 릴레이는 한겹만 벗겨 다음홉을 확인 전송",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-s3j74",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "무선충전기술",
+    "definition": "",
+    "mnemonic": "근거리(자기유도, 자기공명방식), 장거리(전자기파 방식)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-hqvuo",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- 자기유도",
+    "definition": "",
+    "mnemonic": "13.56Ghz",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-97sb2",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- 가지공명",
+    "definition": "",
+    "mnemonic": "무해, 이동성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-uphcz",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "- 전자기파",
+    "definition": "",
+    "mnemonic": "2.45Ghz, 장거리, 유해",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-cwhk7",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "망중립성 원칙",
+    "definition": "",
+    "mnemonic": "비차별성, 상호접속, 접근성/ 컨텐츠, APP접속, 기기접속, 경재요건",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-mstcq",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "IBN",
+    "definition": "",
+    "mnemonic": "사용자 의도기반 네트워크 맞춤서비스, AI, 기계학습, 딥러닝, NLP, LLM발전에 기여,",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-3j9z8",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "AIoT",
+    "definition": "",
+    "mnemonic": "개념:센서·네트워크를 통해 수집된 데이터를 AI가 분석·판단하여 지능형 서비스를 제공/\r\n특징:초연결,지능화,실시간, 자율화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-zt7qk",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "양자컴퓨팅",
+    "definition": "",
+    "mnemonic": "알검마오제큐/ 통컴센 @알고리즘, 검증,마이크로파 제어, 오류정정, 제어기술, 큐빗 , 통신, 컴퓨팅, 센싱\r\n//큐빗,중첩,얽힘,간섭,양자게이트연산 - 쇼어,그로버,양자머신알고리즘, PQC, QML",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-gckhe",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "PoE",
+    "definition": "",
+    "mnemonic": "데이터와 전력을 동시 사용 / 전원어뎁터 불필요 @활용: IP카메라, 무선몌, IOT장비, 펨토셀/피코셀",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-7y1vz",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "USIM",
+    "definition": "",
+    "mnemonic": "Universal Subscriber Identity Module / 기능 : 이동통신 가입자 신분 인증, 서비스 접속 / 구성 : 가입자 식별고유정보(IMSI)상호인증 비밀키(Ki, Authentication Key)/ 위협요소 : 가입자 위장, Ki탈취위험 // 통신보안시스템(HLR/HSS/AuC)안전보관\r\n@구성 :  UE(휴대폰), 접속망(기지국, gNB, eNodeB, Base Station), 핵심망(HSS, HLR, AuC, MME, SGW)\r\n@동작 :  UE(유심읽음) <-> 핵심망(절의,새션키생성)  / 인증응답값과 세션키 계산 > 인증성공 > NW서비스 이용\r\n[단말기 + USIM] → [기지국(eNB/gNB)] → [MME/AMF] → [HSS/AUSF + UDM]",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-52tk3",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "BPF (Berkeley Packet Filter)",
+    "definition": "",
+    "mnemonic": "리눅스 커널의 NW필터링 가능 SW\r\nOS내장, LoTL기반 정상Tool 활용, Kernel(BPF)\r\n종류 : CBPF > EBPF\r\n★BPFDoor 요소 : BPF Controller, BPF Fillter, Reverse 쉘, Magic 필터\r\n절차 : ⓐ칩입(사회공학, 내부침입, Magic 필터), \r\nⓑ상주(파일리스,스텔스,리터럴무브빙 ) > ⓒ리버스쉘연결, 정보유출",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-rv4rw",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "스텔스공격, BPFdoor",
+    "definition": "",
+    "mnemonic": "[개념] NW패킷을 감시(BPF)하면서 외부에서 몰래 명령을 받아 처리의 백도어\r\n(유심, 조작, 문자탈취, 금융인증) /  시그니처 기반(IPS, EDR) 탐지 우회 공격 \r\n@동작 : 통신사 내부장악(HSS, AuC, MME) > BPFdoor는 패킷을 가로채도 탐지 안됨 > 유심재발급, 문자 통화 등 통신제어 권한 탈취(심스와핑 등 공격  )",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-vzq0k",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "BPFoddr 대응방안",
+    "definition": "",
+    "mnemonic": "대응방안 : 포트Open없는 백도어로, IPS, IDS탐지불가로 전통적 무력화 \r\n=> 행동기반, 커널수준 감시, 메모리, NW 이상징후 고도화 분석필요 \r\n=> EDR,XDR, Full packet 분석, eBPF 모니터링, UEBA, 파일무결성 탐지, 숨겨진 악성코드 탐지\r\n=> 제로트러스트 적용 (1~6단계)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-jji8i",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "행위기반 탐지",
+    "definition": "",
+    "mnemonic": "사용자 A : 로그인 : 4~8시)  vs 새벽3-4시에 활동(NW) -> AI기반 탐지 모델",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-pkbw9",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "룰기반 탐지",
+    "definition": "",
+    "mnemonic": "포트 443 열려있음 -> 경고 (BPF처럼 포트를 안열면 보안취약)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-wmkqr",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "UEBA User and Entity Behavior Analytics",
+    "definition": "",
+    "mnemonic": "사용자와 엔티티(예: 서버, IoT, DB계정 등) 행위패턴을 분석하여 보안탐지\r\nAI/머신러닝 기반  탐지 > 비정상 행동 패턴탐지\r\n/기능: 행위기반탐지, 이상치 탐지, 내부자 탐지, 위험점수 산정, 행동학습(AI)\r\n*SIEM(알려진 위협:시그니처) 탐지에 강점,  UEBA = SIEM + ML 기반 이상 탐지",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-hhs17",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "EU RED / EN 18031",
+    "definition": "",
+    "mnemonic": "[개념] 유럽시장 무선장치 안전성, 주파수 사용효율, 간섭, 보안성 관리하는 법적 지침(가이드)\r\n배경: IOT보안 위협증가로 사이버 보안 요건을 RED에 명시( Directive 2024/EU\r\n대상: 유럽판매 모든 무선 송수신기(핸드포, IoT,웨어러블\r\n항몯: 아티클3.1d.e,f (무선네트워크 보호, 개인보호, 금율사기 방지)\r\nEN 18031 :  RED3.3(def) 명시된 사이버 보안 요건 충족 유렵표준 기술 \r\n18031-1 : 인터넷 연결 모든 무선장비, 2(개인정보처리장치) 3(가상화폐, 전자결재)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-h6a97",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "펨토셀/피코셀",
+    "definition": "",
+    "mnemonic": "[개념] 이동통신망에서 기지국을 보완하기 위해 설치하는 소형 셀 기지국 /\r\n[특징] 소형, 저출력, 실내, 밀집지역 커버, 망용량품질개선\r\n@구성 : [Macrocell] ↔ [Backhaul망] ↔ [Femto/Pico BTS] ↔ [단말기]\r\n@펨토셀: 가정소규모 사무실용 초소형 기지국, 피코셀: 건물,공항,지하철 기지국, 백홀망 : 광,랜,브로드밴드망 이동통신  @SON(Self Organizing Network) 자동설치, 주파수, \r\n//보안사항 : 불법설치, 암호화취약, 취약IF, 펌웨어 취약점 존재\r\n//해결방안 : 장비인증강화, TLS/DTLS기반 보안강화, 구형2G3G호환모드 차단->5G강력암호만 허용, \r\nEOL장비는 교체, 네트워크 모니터링(DPI기반 비정상 트래픽 탐지), 보안가이드라인 준수, 교육, 공급망 보안(CC,GS제품), 보안점검 주기화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-9ax0w",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  },
+  {
+    "topic": "울트라 이더넷(UltraEthernet)",
+    "definition": "",
+    "mnemonic": "- AI·HPC(고성능 컴퓨팅) 워크로드에 특화된 초저지연·고대역폭 이더넷 기반 차세대 데이터센터 네트워크 표준",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779705805752-goh3w",
+    "createdAt": "2026-05-25T10:43:25.752Z"
+  }
+]
