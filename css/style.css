@@ -891,6 +891,16 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
     color: #fff;
     border-color: #2f80ed;
 }
+/* 열려있을 때 — 토글이 "활성/펼침" 임을 시각적으로 표시 (실선 + 약한 배경) */
+.admin-tools-toggle.is-open {
+    background: #2f80ed14;
+    color: #c4dafa;
+    border-style: solid;
+}
+.admin-tools-toggle.is-open:hover {
+    background: #2f80ed28;
+    color: #fff;
+}
 .admin-tools-exit {
     border-color: #c0392b80;
     color: #ffb3aa;

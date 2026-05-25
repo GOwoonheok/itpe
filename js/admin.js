@@ -1277,29 +1277,43 @@
         const toggleBtn = document.getElementById('admin-tools-toggle');
         const exitBtn   = document.getElementById('admin-tools-exit');
         const adminSections = ['unit-admin', 'autodef-panel', 'ai-panel'];
+        let adminToolsOpen = false;     // 기본: 닫혀있음
         function setAdminToolsOpen(open) {
+            adminToolsOpen = !!open;
             adminSections.forEach((id) => {
                 const el = document.getElementById(id);
-                if (el) el.hidden = !open;
+                if (el) el.hidden = !adminToolsOpen;
             });
-            if (toggleBtn) toggleBtn.hidden = open;
-            if (exitBtn)   exitBtn.hidden   = !open;
+            // 상단 토글은 항상 보이되 라벨·상태가 바뀜 (다시 누르면 닫힘)
+            if (toggleBtn) {
+                toggleBtn.hidden = false;
+                toggleBtn.textContent = adminToolsOpen
+                    ? '🛠 관리자 도구 접기 ▲'
+                    : '🛠 관리자 도구 펼치기 ▼';
+                toggleBtn.classList.toggle('is-open', adminToolsOpen);
+                toggleBtn.setAttribute('aria-expanded', adminToolsOpen ? 'true' : 'false');
+            }
+            // 하단 나가기는 열렸을 때만 (스크롤 아래에서 접을 때 편의)
+            if (exitBtn) exitBtn.hidden = !adminToolsOpen;
             // 열 때마다 autodef 패널 상태 갱신
-            if (open && window.ITPEFlash && typeof window.ITPEFlash.refreshAutoDef === 'function') {
+            if (adminToolsOpen && window.ITPEFlash && typeof window.ITPEFlash.refreshAutoDef === 'function') {
                 try { window.ITPEFlash.refreshAutoDef(); } catch {}
             }
         }
         if (toggleBtn) {
-            toggleBtn.hidden = false;     // 관리자에게 토글 노출
-            toggleBtn.addEventListener('click', () => setAdminToolsOpen(true));
+            // 관리자에게 노출 + 클릭마다 펼침/접힘 토글
+            toggleBtn.hidden = false;
+            toggleBtn.addEventListener('click', () => setAdminToolsOpen(!adminToolsOpen));
         }
         if (exitBtn) {
             exitBtn.addEventListener('click', () => {
                 setAdminToolsOpen(false);
-                // 모드 선택 화면 상단으로 스크롤
+                // 모드 선택 화면 상단으로 스무스 스크롤
                 try { document.getElementById('mode-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch {}
             });
         }
+        // 초기 상태 — 명시적으로 닫힘 (라벨·aria 일관)
+        setAdminToolsOpen(false);
 
         (async () => {
             const idx = await loadIndex();
