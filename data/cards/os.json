@@ -54,5 +54,14 @@
     "extra": "",
     "userId": "u1779699752866",
     "createdAt": "2026-05-25T09:02:32.866Z"
+  },
+  {
+    "topic": "CUDA",
+    "definition": "GPU 병렬처리 위해, 고성능 컴퓨팅을 지원하는 프로그래밍 모델",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779699831389",
+    "createdAt": "2026-05-25T09:03:51.389Z"
   }
 ]
