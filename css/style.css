@@ -448,6 +448,18 @@ a { color: inherit; text-decoration: none; }
 .th-ai-badge.conf-high   { box-shadow: 0 0 0 1px #6cd07a inset; }
 .th-ai-badge.conf-medium { box-shadow: 0 0 0 1px #f1c40f inset; }
 .th-ai-badge.conf-low    { box-shadow: 0 0 0 1px #ff8a80 inset; }
+/* '정의' 라벨 옆 작은 AI 마커 — 토픽 헤더 배지 대신 정의 옆에 조용히 */
+.def-ai-mark {
+    margin-left: 6px;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    color: #b79bff;                 /* 연보라 — 라벨 톤과 어울리되 AI 식별 */
+    vertical-align: middle;
+    opacity: 0.9;
+}
+.def-ai-mark.conf-medium { color: #f1c40f; }
+.def-ai-mark.conf-low    { color: #ff8a80; }
 .mode-option.mode-ai {
     background: linear-gradient(135deg, #2a1c4d 0%, #1c1c1e 100%);
     border-color: #6b3dde;

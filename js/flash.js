@@ -320,6 +320,7 @@
         // 카드 헤더 한 줄 — "분류명 >> 토픽명" (토픽명만 군청색 강조)
         renderTopicHeader(cat, topic);
         setSectionContent('definition', els.secDef,   def,       '정의가 비어 있습니다');
+        markAiDefinition(c);
         setSectionContent('mnemonic',   els.secMn,    mn,        '내용이 비어 있습니다');
         setSectionContent('keyword',    els.secKw,    kw,        '키워드가 비어 있습니다');
         // 참고자료 — 링크 리스트 (있을 때만 표시)
@@ -429,15 +430,24 @@
         tEl.className = 'th-topic';
         tEl.textContent = hasTopic ? topic : '주제를 입력하세요';
         body.appendChild(tEl);
-        // AI 생성 카드면 ✨ 배지
-        const c = currentCard();
+        // AI 표시는 토픽 헤더가 아니라 '정의' 라벨 옆에 작게 (markAiDefinition)
+    }
+
+    // AI 생성 카드면 '정의' 라벨 옆에 작은 ✨AI 마커 표시 (아니면 제거)
+    function markAiDefinition(c) {
+        const sec = document.querySelector('.card-section[data-key="definition"]');
+        if (!sec) return;
+        const label = sec.querySelector('.card-section-label');
+        if (!label) return;
+        const old = label.querySelector('.def-ai-mark');
+        if (old) old.remove();
         if (c && c.source === 'ai') {
-            const badge = document.createElement('span');
-            badge.className = 'th-ai-badge';
-            badge.textContent = '✨ AI';
-            if (c.aiConfidence) badge.classList.add('conf-' + c.aiConfidence);
-            badge.title = 'AI 생성 카드' + (c.aiGeneratedAt ? ' · ' + c.aiGeneratedAt.slice(0, 10) : '');
-            body.appendChild(badge);
+            const mark = document.createElement('span');
+            mark.className = 'def-ai-mark';
+            if (c.aiConfidence) mark.classList.add('conf-' + c.aiConfidence);
+            mark.textContent = '✨AI';
+            mark.title = 'AI 생성 정의' + (c.aiGeneratedAt ? ' · ' + c.aiGeneratedAt.slice(0, 10) : '');
+            label.appendChild(mark);
         }
     }
 
