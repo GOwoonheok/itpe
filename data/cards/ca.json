@@ -1,12 +1,15 @@
 [
   {
-    "category": "CPU",
-    "topic": "CPU",
-    "definition": "컴퓨터의 연산 및 제어를 위해, 명령어를 실행하는 핵심 장치",
-    "mnemonic": "[명령어 수행 과정] \n - 명령어 인출(fecth) : 기억장치로부터 명령어 읽어옴\n - 명령어 해독(Decode) : 수행해야 할 동작을 결정하기 위하여 명령어 해독\n - 필요 시 수행 : 데이터 인출, 데이터 처리, 데이터 쓰기\n - 직렬연산 담당",
-    "keyword": "지표 : Latency  (종료시간 - 시작시간)\n구성 : ALU, 내부CPU버스, 레지스터, 제어장치(주소, 데이터,제어), 순차접근",
+    "category": "컴퓨터 구조",
+    "topic": "GPU",
+    "definition": "그래픽 및 병렬 연산 위해, 다수의 코어를 활용한 고성능 프로세서",
+    "mnemonic": "이미지, 영상처리 핵심반도체, 넓은 대역폭, 고속병렬, 멀티쓰레드\nNVIDA, AMD, CUDA, OpenGL, 임의접근, 부동소숫점 연산처리\n구성 :  DRAM, 소형Cache/control, 다수ALU, SP, SM, TPC\n           수백 Core",
+    "keyword": "지표 : Throught (num of result / clcye)",
     "extra": "",
-    "userId": "u1779700413695-mv-14al",
-    "createdAt": "2026-05-25T08:47:51.241Z"
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/a0c9a43b-38be-4799-821e-7f8cd22c9872.webp"
+    ],
+    "userId": "u1779700417910-mv-8zzz",
+    "createdAt": "2026-05-25T08:53:09.379Z"
   }
 ]
