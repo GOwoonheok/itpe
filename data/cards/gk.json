@@ -2035,8 +2035,8 @@
   },
   {
     "topic": "COSO",
-    "definition": "",
-    "mnemonic": "COSO(Committee of Sponsoring Organization) Framework , (개념) 조직의 재무보고 신뢰성, 운영 효율성, 법규 준수를 보장하기 위해 내부통제를 체계적으로 설계·운영·평가하는 표준 프레임워크\r\n- 전사적 내부통제, 재무보고 신뢰성, IT컴플라이언스, 위험기반 통제구조",
+    "definition": "효과적 내부통제 위해, 5대 구성요소를 정의한 프레임워크",
+    "mnemonic": "COSO(Committee of Sponsoring Organization) Framework , (개념) 조직의 재무보고 신뢰성, 운영 효율성, 법규 준수를 보장하기 위해 내부통제를 체계적으로 설계·운영·평가하는 표준 프레임워크\n- 전사적 내부통제, 재무보고 신뢰성, IT컴플라이언스, 위험기반 통제구조",
     "keyword": "",
     "extra": "",
     "userId": "u1779682116097-57tka",
