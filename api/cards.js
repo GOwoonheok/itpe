@@ -1,17 +1,18 @@
 // /api/cards
 //   GET  /api/cards            → { gk:[...], sg:[...], ..., jm:[...] }
 //   GET  /api/cards?unit=jm    → [ {topic,...}, ... ]
-//   PUT  /api/cards?unit=jm    body: array → GitHub 커밋 (관리자만)
+//   PUT  /api/cards?unit=jm    body: array → R2 즉시 저장 (관리자만)
 //
 // 인증: HttpOnly 서명 쿠키 itpe_admin (api/_auth.js)
-// 저장: 번들 data/cards/<unitId>.json — PUT 시 GitHub Contents API 로 커밋,
-//        Vercel 자동 재배포 (약 30초~1분) 후 새 데이터가 반영됨.
-// 폴백: 파일이 없으면 빈 배열.
+// 저장: Cloudflare R2 객체 cards/<unitId>.json — 요청 시점에 즉시 읽기/쓰기.
+//        커밋·재배포 없음 → 지연/desync 없는 런타임 저장소.
+// 폴백: R2 에 해당 단원 객체가 아직 없으면 번들 시드 data/cards/<unitId>.json 사용
+//        (마이그레이션 무중단 — 관리자가 처음 저장하면 그때부터 R2 가 단일 소스).
 
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { verifyAdminRequest } from './_auth.js';
-import { commitJson, isConfigured as ghConfigured, notConfiguredResponse } from './_github.js';
+import * as r2 from './_r2.js';
 
 const DATA_DIR = join(process.cwd(), 'data', 'cards');
 
@@ -20,19 +21,34 @@ function isValidUnitId(u) {
     return typeof u === 'string' && /^[a-z0-9_-]{1,16}$/.test(u);
 }
 
-function readUnitCards(unit) {
+function cardsKey(unit) { return `cards/${unit}.json`; }
+
+// 번들 시드(배포 파일) 읽기 — R2 미존재 시 폴백 + 초기 데이터
+function readSeedCards(unit) {
     try {
         const p = join(DATA_DIR, unit + '.json');
-        const t = readFileSync(p, 'utf8');
-        const j = JSON.parse(t);
+        const j = JSON.parse(readFileSync(p, 'utf8'));
         return Array.isArray(j) ? j : [];
     } catch {
         return [];
     }
 }
 
+// 단원 카드 읽기 — R2 우선(객체 있으면 그것이 단일 소스), 없으면 시드.
+async function readUnitCards(unit) {
+    if (r2.isConfigured()) {
+        try {
+            const got = await r2.getJson(cardsKey(unit));
+            if (got) return Array.isArray(got.data) ? got.data : [];
+            // got === null → R2 에 객체 없음 → 시드 폴백
+        } catch {
+            // R2 일시 오류 → 시드 폴백 (읽기는 끊기지 않게)
+        }
+    }
+    return readSeedCards(unit);
+}
+
 // data/cards 안에 존재하는 모든 단원 파일 id 목록.
-// 콜드 스타트 시 1회 스캔 — 재배포마다 새로고침.
 let SEEDED_UNITS = [];
 try {
     SEEDED_UNITS = readdirSync(DATA_DIR)
@@ -51,7 +67,6 @@ function listActiveUnits() {
     const fromIndex = Array.isArray(SEED_INDEX.units)
         ? SEED_INDEX.units.map((u) => u.id).filter(isValidUnitId)
         : [];
-    // index.json 우선, 누락된 seeded 파일도 포함 (방어적)
     const seen = new Set(fromIndex);
     const merged = fromIndex.slice();
     for (const id of SEEDED_UNITS) {
@@ -117,30 +132,37 @@ function sanitizeCard(c) {
 }
 
 export default async function handler(req, res) {
-    // 정적 파일 기반이라 응답은 CDN 캐시 허용 — 재배포 시 자동 무효화.
-    // 다만 PUT 직후 잠시 동안은 옛 데이터 가능 (약 1분), 클라이언트가 사용자에게 안내.
-    res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    // R2 가 단일 소스 — 항상 신선하게 읽도록 캐시 안 함.
+    res.setHeader('Cache-Control', 'no-store');
 
     const unit = req.query?.unit ? String(req.query.unit) : '';
 
     if (req.method === 'GET') {
         if (!unit) {
             const activeUnits = listActiveUnits();
+            const pairs = await Promise.all(
+                activeUnits.map(async (u) => [u, await readUnitCards(u)])
+            );
             const all = {};
-            for (const u of activeUnits) all[u] = readUnitCards(u);
+            for (const [u, cards] of pairs) all[u] = cards;
             return res.status(200).json(all);
         }
         if (!isValidUnitId(unit)) {
             return res.status(400).json({ error: 'invalid unit', hint: '영문 소문자·숫자·-·_ 1~16자' });
         }
-        return res.status(200).json(readUnitCards(unit));
+        return res.status(200).json(await readUnitCards(unit));
     }
 
     if (req.method === 'PUT') {
         const auth = await verifyAdminRequest(req);
         if (!auth.ok) return res.status(401).json({ error: 'unauthorized', reason: auth.reason });
         if (!isValidUnitId(unit)) return res.status(400).json({ error: 'invalid unit', hint: '영문 소문자·숫자·-·_ 1~16자' });
-        if (!ghConfigured()) return notConfiguredResponse(res);
+        if (!r2.isConfigured()) {
+            return res.status(503).json({
+                error: 'storage not configured',
+                hint: 'Vercel 환경변수 R2_ACCOUNT_ID / R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY / R2_BUCKET 필요.',
+            });
+        }
 
         let body = req.body;
         if (typeof body === 'string') {
@@ -152,20 +174,16 @@ export default async function handler(req, res) {
         const cards = body.map(sanitizeCard).filter(Boolean);
 
         try {
-            const r = await commitJson(
-                `data/cards/${unit}.json`,
-                cards,
-                `chore(cards): update ${unit} (${cards.length} cards) by ${auth.email}`
-            );
+            await r2.putJson(cardsKey(unit), cards);
             return res.status(200).json({
                 ok: true,
                 unit,
                 count: cards.length,
-                commit: r.commit,
-                note: '커밋됨 — Vercel 재배포 후 약 30초~1분 뒤 반영됩니다.',
+                storage: 'r2',
+                note: '저장 완료 — 즉시 반영 (재배포 불필요).',
             });
         } catch (e) {
-            return res.status(500).json({ error: 'github commit failed', detail: e?.message || String(e) });
+            return res.status(500).json({ error: 'r2 save failed', detail: e?.message || String(e) });
         }
     }
 

@@ -10,6 +10,7 @@ import { AwsClient } from 'aws4fetch';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { verifyAdminRequest } from './_auth.js';
+import * as r2 from './_r2.js';
 
 const ACCOUNT_ID  = (process.env.R2_ACCOUNT_ID || '').trim();
 const ACCESS_KEY  = (process.env.R2_ACCESS_KEY_ID || '').trim();
@@ -32,30 +33,53 @@ function endpoint() {
     return `https://${ACCOUNT_ID}.r2.cloudflarestorage.com/${BUCKET}`;
 }
 
-// data/cards/*.json 의 모든 카드 images[] 중 R2 URL 의 key 부분만 수집
-function collectInUseKeys() {
-    const inUse = new Set();
+// 활성 단원 id 목록 — 번들 시드 파일 + index.json
+function listUnitIds() {
     const cardsDir = join(process.cwd(), 'data', 'cards');
-    let files = [];
+    const ids = new Set();
     try {
-        files = readdirSync(cardsDir).filter((f) => f.endsWith('.json'));
+        for (const f of readdirSync(cardsDir)) {
+            if (f.endsWith('.json')) ids.add(f.slice(0, -5));
+        }
     } catch {}
-    const basePrefix = PUBLIC_BASE + '/';
-    for (const f of files) {
+    try {
+        const idx = JSON.parse(readFileSync(join(process.cwd(), 'data', 'index.json'), 'utf8'));
+        if (Array.isArray(idx.units)) for (const u of idx.units) if (u && u.id) ids.add(String(u.id));
+    } catch {}
+    return [...ids].filter((u) => /^[a-z0-9_-]{1,16}$/.test(u));
+}
+
+// 단원 카드 읽기 — R2 우선(단일 소스), 없으면 번들 시드. cards.js 와 동일 규칙.
+async function readUnitCards(unit) {
+    if (r2.isConfigured()) {
         try {
-            const j = JSON.parse(readFileSync(join(cardsDir, f), 'utf8'));
-            if (!Array.isArray(j)) continue;
-            for (const card of j) {
-                if (!card || !Array.isArray(card.images)) continue;
-                for (const url of card.images) {
-                    if (typeof url !== 'string') continue;
-                    if (url.startsWith(basePrefix)) {
-                        const key = url.slice(basePrefix.length);
-                        if (key) inUse.add(key);
-                    }
+            const got = await r2.getJson(`cards/${unit}.json`);
+            if (got) return Array.isArray(got.data) ? got.data : [];
+        } catch {}
+    }
+    try {
+        const j = JSON.parse(readFileSync(join(process.cwd(), 'data', 'cards', unit + '.json'), 'utf8'));
+        return Array.isArray(j) ? j : [];
+    } catch { return []; }
+}
+
+// 모든 단원 카드 images[] 중 R2 공개 URL 의 key 부분만 수집 (R2 가 단일 소스).
+async function collectInUseKeys() {
+    const inUse = new Set();
+    const basePrefix = PUBLIC_BASE + '/';
+    const lists = await Promise.all(listUnitIds().map((u) => readUnitCards(u)));
+    for (const cards of lists) {
+        if (!Array.isArray(cards)) continue;
+        for (const card of cards) {
+            if (!card || !Array.isArray(card.images)) continue;
+            for (const url of card.images) {
+                if (typeof url !== 'string') continue;
+                if (url.startsWith(basePrefix)) {
+                    const key = url.slice(basePrefix.length);
+                    if (key) inUse.add(key);
                 }
             }
-        } catch {}
+        }
     }
     return inUse;
 }
@@ -117,7 +141,7 @@ export default async function handler(req, res) {
 
     try {
         const client = r2Client();
-        const inUseKeys = collectInUseKeys();
+        const inUseKeys = await collectInUseKeys();
         const allObjects = await listAllObjects(client);
         // 안전 — images/ prefix 만 대상 (다른 폴더가 추가될 경우 보호)
         const candidates = allObjects.filter((o) => o.key.startsWith('images/'));
