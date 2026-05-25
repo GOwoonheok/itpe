@@ -1,9 +1,45 @@
 [
-    {
-        "topic": "12-Factor App",
-        "definition": "클라우드 네이티브를 위해, 12원칙을 정의한 방법론",
-        "mnemonic": "(C-D-C-B...)\nCodebase·Dep·Config·Backing services·Build/Release/Run·Process·Port·Concurrency·Disposability·Dev/Prod parity·Logs·Admin",
-        "keyword": "Stateless, Config in env, Twelve-Factor, Cloud Native",
-        "extra": "Heroku 창립자가 정의(2011). 클라우드·MSA·컨테이너 시대의 표준 가이드. 환경변수 설정·Stateless·로그 stdout 등이 핵심."
-    }
+  {
+    "topic": "12-Factor App",
+    "definition": "클라우드 네이티브를 위해, 12원칙을 정의한 방법론",
+    "mnemonic": "(C-D-C-B...)\nCodebase·Dep·Config·Backing services·Build/Release/Run·Process·Port·Concurrency·Disposability·Dev/Prod parity·Logs·Admin",
+    "keyword": "Stateless, Config in env, Twelve-Factor, Cloud Native",
+    "extra": "Heroku 창립자가 정의(2011). 클라우드·MSA·컨테이너 시대의 표준 가이드. 환경변수 설정·Stateless·로그 stdout 등이 핵심."
+  },
+  {
+    "topic": "ffff",
+    "definition": "f",
+    "mnemonic": "f",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779676202531",
+    "createdAt": "2026-05-25T02:30:02.531Z"
+  },
+  {
+    "topic": "fff",
+    "definition": "ff",
+    "mnemonic": "ff",
+    "keyword": "ff",
+    "extra": "",
+    "userId": "u1779674678751",
+    "createdAt": "2026-05-25T02:04:38.751Z"
+  },
+  {
+    "topic": "www",
+    "definition": "ww",
+    "mnemonic": "w",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779675304732",
+    "createdAt": "2026-05-25T02:15:04.732Z"
+  },
+  {
+    "topic": "ff",
+    "definition": "ff",
+    "mnemonic": "",
+    "keyword": "ff",
+    "extra": "",
+    "userId": "u1779675329088",
+    "createdAt": "2026-05-25T02:15:29.088Z"
+  }
 ]
