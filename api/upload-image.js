@@ -118,14 +118,36 @@ export default async function handler(req, res) {
     const ext = ALLOWED[mime];
     const key = `images/${id}.${ext}`;
 
+    // 환경변수 값을 trim 으로 정리 — 복붙 시 공백·줄바꿈 차단
+    const accountIdClean = ACCOUNT_ID.trim();
+    const bucketClean    = BUCKET.trim();
+
     // R2 S3-호환 endpoint 에 PUT 으로 업로드
     const client = new AwsClient({
-        accessKeyId: ACCESS_KEY,
-        secretAccessKey: SECRET_KEY,
+        accessKeyId: ACCESS_KEY.trim(),
+        secretAccessKey: SECRET_KEY.trim(),
         service: 's3',
         region: 'auto',
     });
-    const putUrl = `https://${ACCOUNT_ID}.r2.cloudflarestorage.com/${BUCKET}/${key}`;
+    const putUrl = `https://${accountIdClean}.r2.cloudflarestorage.com/${bucketClean}/${key}`;
+
+    // 진단 — URL 유효성 사전 검증
+    try { new URL(putUrl); } catch (e) {
+        return res.status(500).json({
+            error: 'r2 url invalid',
+            detail: e?.message || String(e),
+            urlPreview: putUrl.slice(0, 200),
+            envCheck: {
+                R2_ACCOUNT_ID_len: ACCOUNT_ID.length,
+                R2_ACCOUNT_ID_trimmedLen: accountIdClean.length,
+                R2_ACCOUNT_ID_hasWhitespace: /\s/.test(ACCOUNT_ID),
+                R2_BUCKET_len: BUCKET.length,
+                R2_BUCKET_trimmedLen: bucketClean.length,
+                R2_BUCKET_hasWhitespace: /\s/.test(BUCKET),
+            },
+        });
+    }
+
     try {
         const r = await client.fetch(putUrl, {
             method: 'PUT',
@@ -141,12 +163,16 @@ export default async function handler(req, res) {
             return res.status(502).json({ error: 'r2 put failed', status: r.status, detail: detail.slice(0, 500) });
         }
         return res.status(200).json({
-            url: `${PUBLIC_BASE}/${key}`,
+            url: `${PUBLIC_BASE.replace(/\/+$/, '')}/${key}`,
             pathname: key,
             size: buf.length,
             mime,
         });
     } catch (e) {
-        return res.status(500).json({ error: 'r2 upload error', detail: e?.message || String(e) });
+        return res.status(500).json({
+            error: 'r2 upload error',
+            detail: e?.message || String(e),
+            urlPreview: putUrl.slice(0, 200),
+        });
     }
 }
