@@ -270,6 +270,50 @@
         el.className = 'admin-status' + (kind ? ' admin-status-' + kind : '');
     }
 
+    // 접이식 admin 패널 생성 헬퍼
+    //   - title: 헤더 텍스트 (예: '📚 단원(시트) 관리')
+    //   - badge: 헤더 우측 작은 배지 텍스트 (없으면 생략)
+    //   - panelId: <section> 의 id 속성 (옵션)
+    //   - onFirstOpen: 처음 펼칠 때만 호출되는 callback (지연 로드용, 옵션)
+    // 반환: { panel, body, setOpen, isOpen }
+    function makeCollapsiblePanel({ title, badge, panelId, onFirstOpen }) {
+        const panel = h('section', 'admin-panel collapsible');
+        if (panelId) panel.id = panelId;
+
+        const headChildren = [h('h2', 'admin-title', t(title))];
+        if (badge) headChildren.push(h('span', 'admin-badge', t(badge)));
+        headChildren.push(h('span', 'admin-chevron', t('▼')));
+        const head = h('div', 'admin-head admin-head-clickable', ...headChildren);
+        head.setAttribute('role', 'button');
+        head.setAttribute('tabindex', '0');
+        head.setAttribute('aria-expanded', 'false');
+        panel.appendChild(head);
+
+        const body = h('div', 'admin-body');
+        body.hidden = true;
+        panel.appendChild(body);
+
+        let opened = false;
+        let loadedOnce = false;
+        function setOpen(open) {
+            opened = !!open;
+            body.hidden = !opened;
+            head.setAttribute('aria-expanded', opened ? 'true' : 'false');
+            panel.classList.toggle('is-open', opened);
+            const chev = head.querySelector('.admin-chevron');
+            if (chev) chev.textContent = opened ? '▲' : '▼';
+            if (opened && !loadedOnce && typeof onFirstOpen === 'function') {
+                loadedOnce = true;
+                try { onFirstOpen(); } catch (e) { console.warn('panel onFirstOpen', e); }
+            }
+        }
+        head.addEventListener('click', () => setOpen(!opened));
+        head.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(!opened); }
+        });
+        return { panel, body, setOpen, isOpen: () => opened };
+    }
+
     // ============================================================
     // 1) index.html — 하단 툴바 중앙에 관리자 아이콘 버튼
     // ============================================================
@@ -342,14 +386,24 @@
     function renderUsersPanel() {
         const root = document.getElementById('admin-root');
         if (!root) return;
-        const p = h('section', 'admin-panel');
         const cnt = h('span', 'user-mgmt-count', t('…')); cnt.id = 'user-count';
-        p.appendChild(h('div', 'admin-head',
-            h('h2', 'admin-title', t('👤 사용자 화이트리스트')),
-            cnt
-        ));
-        p.appendChild(h('p', 'admin-hint', t('등록된 이메일만 로그인 가능합니다. 저장 시 GitHub commit → 재배포 후 약 1분 내 반영.')));
-        const ul = h('ul', 'user-list'); ul.id = 'user-list'; p.appendChild(ul);
+        const { panel, body } = makeCollapsiblePanel({
+            title: '👤 사용자 화이트리스트',
+            panelId: 'users-panel',
+            // user-count 배지는 별도로 추가 (badge 옵션은 단일 문자열용)
+            onFirstOpen: () => {
+                // 패널 열 때마다 최신 카운트 갱신 — bootAdminPage 의 renderUserList 가 이미 호출되지만,
+                // 닫혀있던 시점엔 표시 안 됐을 수 있어 한 번 더 트리거
+                try { renderUserList(); } catch {}
+            },
+        });
+        // 사용자 수 배지를 chevron 앞에 삽입
+        const head = panel.querySelector('.admin-head');
+        const chev = head.querySelector('.admin-chevron');
+        head.insertBefore(cnt, chev);
+
+        body.appendChild(h('p', 'admin-hint', t('등록된 이메일만 로그인 가능합니다. 저장 시 GitHub commit → 재배포 후 약 1분 내 반영.')));
+        const ul = h('ul', 'user-list'); ul.id = 'user-list'; body.appendChild(ul);
         const form = h('form', 'user-add'); form.id = 'user-add-form';
         const input = document.createElement('input');
         input.className = 'form-input';
@@ -360,9 +414,9 @@
         input.placeholder = '새 이메일 추가';
         form.appendChild(input);
         form.appendChild(makeBtn('admin-btn admin-btn-up', '', '추가', 'submit'));
-        p.appendChild(form);
-        const st = h('p', 'admin-status'); st.id = 'user-status'; p.appendChild(st);
-        root.appendChild(p);
+        body.appendChild(form);
+        const st = h('p', 'admin-status'); st.id = 'user-status'; body.appendChild(st);
+        root.appendChild(panel);
     }
     function h(tag, cls, ...children) {
         const el = document.createElement(tag);
@@ -443,52 +497,54 @@
         });
     }
 
-    // 🤖 AI 시스템 프롬프트 편집 패널 — admin.html 전용 (kind='full'|'def')
-    // 패널 — AI 프롬프트 (전체 / 정의 전용 탭으로 통합)
+    // 🤖 AI 시스템 프롬프트 편집 패널 — admin.html 전용 (kind='full'|'def') · 토글 형태
     function renderAiPromptPanel() {
         const root = document.getElementById('admin-root');
         if (!root || !window.ITPEAdmin) return;
         let activeKind = 'full';
 
-        const panel = h('section', 'admin-panel');
-        panel.id = 'ai-prompt-panel';
-        panel.appendChild(h('div', 'admin-head',
-            h('h2', 'admin-title', t('🤖 AI 시스템 프롬프트')),
-            h('span', 'admin-badge', t('Gemini 2.5 Flash'))
-        ));
+        const { panel, body } = makeCollapsiblePanel({
+            title: '🤖 AI 시스템 프롬프트',
+            badge: 'Gemini 2.5 Flash',
+            panelId: 'ai-prompt-panel',
+            onFirstOpen: () => {
+                // 처음 펼칠 때만 현재 활성 탭의 프롬프트 자동 로드
+                if (window.ITPEAdmin.isAdminWithSecret()) loadAiPromptInto(activeKind);
+            },
+        });
 
         // 탭 선택 (full / def)
         const tabs = h('div', 'ai-prompt-tabs');
         const tabFull = makeBtn('ai-prompt-tab is-active', 'ai-prompt-tab-full', '카드 전체 생성', 'button');
         const tabDef  = makeBtn('ai-prompt-tab',           'ai-prompt-tab-def',  '정의만 재생성',  'button');
         tabs.appendChild(tabFull); tabs.appendChild(tabDef);
-        panel.appendChild(tabs);
+        body.appendChild(tabs);
 
         const hint = h('p', 'admin-hint'); hint.id = 'ai-prompt-hint';
-        panel.appendChild(hint);
+        body.appendChild(hint);
 
         const ta = document.createElement('textarea');
         ta.id = 'ai-prompt-input';
         ta.className = 'form-input form-area';
         ta.rows = 12;
         ta.placeholder = '시스템 프롬프트 (기본값 사용 시 비워두기)';
-        panel.appendChild(ta);
+        body.appendChild(ta);
 
         const btns = h('div', 'admin-btns'); btns.style.marginTop = '8px';
         btns.appendChild(makeBtn('admin-btn admin-btn-dl',  'ai-prompt-load',  '📥 불러오기', 'button'));
         btns.appendChild(makeBtn('admin-btn admin-btn-up',  'ai-prompt-save',  '💾 저장',     'button'));
         btns.appendChild(makeBtn('admin-btn admin-btn-tpl', 'ai-prompt-reset', '↺ 기본값',   'button'));
-        panel.appendChild(btns);
+        body.appendChild(btns);
 
         const st = h('p', 'admin-status'); st.id = 'ai-prompt-status';
-        panel.appendChild(st);
+        body.appendChild(st);
 
         const dump = h('details', 'ai-prompt-default');
         const sum = document.createElement('summary'); sum.textContent = '기본 프롬프트 보기';
         dump.appendChild(sum);
         const pre = document.createElement('pre'); pre.id = 'ai-prompt-default'; pre.className = 'ai-prompt-default-pre';
         dump.appendChild(pre);
-        panel.appendChild(dump);
+        body.appendChild(dump);
         root.appendChild(panel);
 
         function setHint(k) {
@@ -510,9 +566,8 @@
         document.getElementById('ai-prompt-save').addEventListener('click',  () => saveAiPromptUnified(activeKind));
         document.getElementById('ai-prompt-reset').addEventListener('click', () => resetAiPromptUnified(activeKind));
 
-        // 초기 로드
+        // 초기 hint 만 설정 — 프롬프트 로드는 패널 펼칠 때까지 지연
         setHint('full');
-        if (window.ITPEAdmin.isAdminWithSecret()) loadAiPromptInto('full');
     }
 
     async function loadAiPromptInto(kind) {
@@ -669,23 +724,12 @@
         const root = document.getElementById('admin-root');
         if (!root || !window.ITPEAdmin) return;
 
-        const panel = h('section', 'admin-panel collapsible');
-        panel.id = 'units-panel';
-
-        // ─── 헤더 (클릭 시 열림/닫힘) ───
-        const head = h('div', 'admin-head admin-head-clickable',
-            h('h2', 'admin-title', t('📚 단원(시트) 관리')),
-            h('span', 'admin-badge', t('순서·추가·삭제·이름변경')),
-            h('span', 'admin-chevron', t('▼'))
-        );
-        head.setAttribute('role', 'button');
-        head.setAttribute('tabindex', '0');
-        head.setAttribute('aria-expanded', 'false');
-        panel.appendChild(head);
-
-        // ─── 바디 (기본 닫힘) ───
-        const body = h('div', 'admin-body');
-        body.hidden = true;
+        const { panel, body } = makeCollapsiblePanel({
+            title: '📚 단원(시트) 관리',
+            badge: '순서·추가·삭제·이름변경',
+            panelId: 'units-panel',
+            onFirstOpen: loadUnits,    // 처음 펼칠 때만 API 호출
+        });
 
         body.appendChild(h('p', 'admin-hint', t(
             '단원을 추가·삭제·이동(↑↓). 저장 시 GitHub commit → 재배포 후 ~1분 내 반영. ' +
@@ -721,7 +765,6 @@
         const st = h('p', 'admin-status'); st.id = 'units-status';
         body.appendChild(st);
 
-        panel.appendChild(body);
         root.appendChild(panel);
 
         // 이벤트
@@ -729,25 +772,6 @@
         document.getElementById('units-save').addEventListener('click',  saveUnits);
         document.getElementById('units-reset').addEventListener('click', resetUnits);
         addBtn.addEventListener('click', addUnitFromForm);
-
-        // 토글 — 첫 번째 펼침 시에만 자동 로드 (불필요한 API 호출 방지)
-        let loadedOnce = false;
-        function togglePanel() {
-            const opening = body.hidden;
-            body.hidden = !opening;
-            head.setAttribute('aria-expanded', opening ? 'true' : 'false');
-            panel.classList.toggle('is-open', opening);
-            const chev = head.querySelector('.admin-chevron');
-            if (chev) chev.textContent = opening ? '▲' : '▼';
-            if (opening && !loadedOnce) {
-                loadedOnce = true;
-                loadUnits();
-            }
-        }
-        head.addEventListener('click', togglePanel);
-        head.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePanel(); }
-        });
     }
 
     function labeled(label, input) {
