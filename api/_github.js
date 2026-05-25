@@ -114,8 +114,20 @@ export async function deletePath(path, message) {
 
 // 표준화된 503 응답 헬퍼 — 핸들러에서 사용
 export function notConfiguredResponse(res) {
+    // 진단용 — 어느 변수가 빠졌는지 표시 (값은 노출 안 함, 길이만)
+    const missing = [];
+    if (!TOKEN)  missing.push('GITHUB_TOKEN');
+    if (!OWNER)  missing.push('GITHUB_OWNER');
+    if (!REPO)   missing.push('GITHUB_REPO');
     return res.status(503).json({
         error: 'storage not configured',
-        hint: 'GitHub 환경변수를 설정한 뒤 재배포가 필요합니다 (GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO).',
+        missing,
+        present: {
+            GITHUB_TOKEN: TOKEN ? `(${TOKEN.length} chars)` : null,
+            GITHUB_OWNER: OWNER || null,
+            GITHUB_REPO:  REPO  || null,
+            GITHUB_BRANCH: BRANCH,
+        },
+        hint: 'Vercel Settings → Environment Variables 에서 위 missing 변수를 추가하고 재배포 (또는 빈 commit push) 필요.',
     });
 }
