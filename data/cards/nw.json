@@ -1,1 +1,623 @@
-[]
+[
+  {
+    "topic": "폰노이만 아키텍처",
+    "definition": "한번에 하나씩 명령 실행 컴퓨터 구조\r\n구성 : / ALU, CU, Registry \r\n        / 주대제(주소, 데이터, 제어)  \r\n        / 주기억,보조기억, 구현 용이",
+    "mnemonic": "한번에 하나씩 명령실행(SSID), 프로세스-명령어 메모리 \r\n                                                  | 데이터 메모리 \r\n파이프라인의 구조적 해저드 발생, 병목현상(단점)\r\n*하나의 메모리(명령어+데이터)\r\n[상세] ALU(산술,논리연산), CU(명령어 해독,ALU/메모리 제어), \r\nRegister(PC,IR,AC,MAR,MBR), \r\n데이터버스(32bit시스템은 한번에 32bit씩), 제어버스(기억장치RW,IO RW), \r\n주기억장치(CPU가까이 위치,고속엑세스), 보조기억장치(Disk)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807132-oaf32",
+    "createdAt": "2026-05-25T10:26:47.132Z"
+  },
+  {
+    "topic": "하버드아키텍쳐",
+    "definition": "각 메모리 분리, 병렬구현 컴퓨터 아키텍처",
+    "mnemonic": "명령어, 데이터 분리, 병렬구현 컴퓨터, \r\nRISC구현, 파이프라인 기술 사용\r\n폰노이만 단점 해결 방식\r\n구성 : 데이터 메모리, 명령어 메모리, ALU, Control",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807132-d8epr",
+    "createdAt": "2026-05-25T10:26:47.132Z"
+  },
+  {
+    "topic": "CPU",
+    "definition": "Control Process Unit",
+    "mnemonic": "Control Process Unit / 동작 : 명령어(인출 해독) , 데이터(인출처리, 쓰기) / 지표 : Latency\r\n구성 : ALU, 내부CPU버스, 레지스터, 제어장치 버스(주소, 데이터, 제어), 직렬연산, 순차접근",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-9cfmn",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "GPU",
+    "definition": "Graphics Processing Unit",
+    "mnemonic": "이미지, 영상 처리 핵심 반도체,  넓은 대역폭, 고속병렬, 멀티쓰레드  \r\nNVIDA, AMD, CUDA, OpenGL, 병렬처리, 임의의 접근, 부동소숫점 연산장치, GPGPU\r\n지표 : Throught ( number of result / cycle)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-56por",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "GPGPU",
+    "definition": "CPU+GPU 기술",
+    "mnemonic": "GPU 일반 컴퓨팅 영역 활용 / 구성 :  PCI express 버스, 연동부, 그래픽메모리, 캐시메모리, SIMD코어 \r\nGPGPU 플랫폼 : CUDA, Open CL, C++AMP, Open CC\r\n절차 : 1.메인->GPU로 복사 2. CPU가 GPU지시 3.GPU가 코어에 병렬수행 4.GPU에서 메인에 복사",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-8x9ev",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "주기억장치(메모리)",
+    "definition": "메모리 관리기법",
+    "mnemonic": "여러 프로세스 상주, 세분화 기법 \r\n기법 : 납입, 배치, 교체, 할당 (할배인교) \r\n페이징(메모리 내부단편화), 세그먼트(외부단편화) // 해결별(재배치, 통합, 압축기법)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-p4j5v",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "DMA",
+    "definition": "데이터 전송 담당 장치\r\nBCDI, 초요RG명완, 단통입",
+    "mnemonic": "CPU없이 데이터전송 장치,  전송방식 : BCDI, 단계 : 초요RG명완, 연결방식 : 단통입\r\n버스점유방식 : Brust, Cycle Stealing, DMA점유방식 : Demand Transfer Mode(DREQ), Interleaved DMA\r\n연결 : 단일버스분리식, 단일버스통합형, 입출력버스(단통입)\r\n절차 : DMA초기화 (CPU → DMA) > DMA 요청 (IO → DMA)\r\n> BUS Request (DMA → CPU) > BUS Grant (CPU → DMA)\r\n> DMA 명령 수행 (DMA → IO → Memory) > 완료 Interrupt (DMA → CPU)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-lyrko",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "시스템버스",
+    "definition": "데이터 교환통로",
+    "mnemonic": "데이터 교환통로/ 주소, 데이터, 제어버스, 전용/다중화 번스",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-i7oro",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "버스중재",
+    "definition": "시스템 버스 효율동작",
+    "mnemonic": "시스템버스 효율동작/ 버스 경합시 버스 마스터들 중에서 한개씩 선택하여 사용동작",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-kuxjp",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "부트로더",
+    "definition": "운영체제 시동프로그램",
+    "mnemonic": "운영체게 시동프로그램, 기능 : 메모리/하드웨어 초기화, 커널적재 및 부팅, \r\n종류 : 리눅스(LILO, GRUB), 윈도우(NTLDR), BLOB, U_BooT  / \r\n하자입커 (절차 : 하드웨어 초기화, 자동부트, 입력명령처리, 커널로딩/start   / \r\n유닉스 부팅과정 : Bios > mbr > gnub > knernel > init > run leve",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-xge8o",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "SSD",
+    "definition": "Solid state drive",
+    "mnemonic": "Solid state drive , 삭제후쓰기 / 구성 : SSD, SSD컨트롤러, CPU, DRAM, 플래시 컨트롤러, 플래시 메모리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-rhgv1",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "Flash Memory(NOR,NAND)",
+    "definition": "반도체 기반 저장장치",
+    "mnemonic": "\"비휘발성, 고 직접도, 저전력, 고신뢰성 특징\r\n전기적 데이터 삭제/저장, 유지에 전력X, 비휘발성 메모리\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-7hin3",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "3D 낸드플래시",
+    "definition": "NAND 플래시 직접공정기술",
+    "mnemonic": "NAND 플래시 직접공정 기술, 기술(3차원 원통형 CTF), 공정(증착, 식각, 게이트 패턴기술, CMP)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-1a516",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "메모리 관리(MMU)",
+    "definition": "메모리 계층구조",
+    "mnemonic": "논리적 주소를 물리적 주소로 변환하는 HW, TTB / page Table : 가상과 물리주소 연결 테이블 \r\n구성 : CPU > MMU <-> memory(TTB)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-0ywyf",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "메모리 인터리빙",
+    "definition": "메모리 성능증가 기법\r\n상(MSB), 하(LSB), 혼합방식",
+    "mnemonic": "메모리 성능증가 기법 /  유형 : 상(MSB), 하(LSB), 혼합방식  : 상하혼뱅모 CD/비교 : 특징/방식/장/단점 \r\n- 하위로 모듈지정, 상위비트, 상은 뱅크로 하는 모듈지정\r\n- C엑세스(순차전송, 중첩), S엑세스(일괄전송, 파이프라인), \r\n- 연속주소, 공간확보, 오류에 독립\r\n- 하나오류는 전체영향, 연속주소지정불가, 구현복잡",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-vjji2",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "C/S엑세스",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-jdgd7",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "단편화",
+    "definition": "통압재매\r\n내외버디슬랩",
+    "mnemonic": "메모리가 낭비되는 부분적인 공간 발생 현상, 낭비공간, 내부(고정, 페이징), 외부(가변, 세그먼트)\r\n해결법 : 공통(통합, 압출, 재배치, 메모리 풀), 외부(버디메모리), 내부(슬랩할당자)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-mgn7e",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "Cache 메모리",
+    "definition": "장치간의 속도차이 극복\r\n고속 반도체 기억장치",
+    "mnemonic": "CPU와 메모리, 장치간 속도차이 극복,  특징 : LoMaC C워메B - Locality(시간,공간, 순차적), Mapping(직접,연관), Coherence(일관성, 공유cache) / CPU(워드, 4byte) <> Cache <> 메모리(Block)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-96gaq",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "캐시일관성 문제원인",
+    "definition": "",
+    "mnemonic": "지역성(미고려, 지역적 설계), 페이지(페이지 교체 알고리즘 오류, 페이지 부재증가), 멑티(과한 멀티)\r\n쓰기연산 불일치(CPU가 데이터수정해도 다른 CPU 캐시 미반영),  쓰기 전파 지연, 동시접근경쟁",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-r3aar",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "Cache 일관성 유지방법",
+    "definition": "캐시이용, 멀티프로세스 일관성 유지(MESI)기법\r\n버스갱무, 디/플리차",
+    "mnemonic": "캐시이용, 멀티프로세스 일관성 유지(MESI)기법 / \r\n쓰기정책 : 즉시(Write Through), 나중(Write Back), around (추가) \r\nSW, HW적용기법 => (SW : 공유캐시 사용, 데이터 공유/잠금변수 캐시 미사용)\r\n                            (HW : 버스감시, Snoopy 컨트롤러, 쓰기: 쓰기갱신, 쓰기무효) ,\r\n디렉토리 기법  :  Full Map, Limit, Chained Directory)   MESI활용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-t1gg7",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "MESI",
+    "definition": "\"캐시일관성 유지 프로토콜\r\n수배공무\r\nCoherence\"",
+    "mnemonic": "캐시일관성 유지 프로토콜 (수배공무),  Local Write\r\n수정(Modified, 변경, 이 캐시만): Local Write, M <- E, S, \r\n배타(Exclusive, 동일, 이 캐시만): Local Read, E <- I, \r\n공유(Shared, 동일, 다른 캐시), Remote Read, S <- M, E, \r\n무효(Invalid): Remote Write, I <- M, E, S,",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-4s7yj",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "Cache Flush_Cache Clean",
+    "definition": "",
+    "mnemonic": "\"cache Flush :  모든 캐시의 데이터를 무효화 (V bit 클리어)\r\ncache Clean :  데이터를 메모리 적제한뒤  D,Vbit 클리어)\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-znl7p",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "직접사상",
+    "definition": "주기억장치 블록 지정 사상기법",
+    "mnemonic": "\"사상유형: 직연집 (지연집),\r\n기억장치 주소: [태라단],\r\n기억장치 주소, 비교기, 캐시 (태그+데이터/단어, 라인)\r\n동작원리: 캐시라인 선택> 태그비교 (캐시적중) > 태그비교 (캐시미스)\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-s1gvd",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "연관사상",
+    "definition": "장치간 속도차이 극복, 라인무관 적제 사상기법",
+    "mnemonic": "\"기억장치 주소: [태단],\r\n기억장치 주소, 비교기, 캐시 (태그+데이터/단어, 라인)\r\n동작원리:  태그비교 (캐시적중) > 태그비교 (캐시미스)\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-qyvkc",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "집합연관사상",
+    "definition": "직접사상과 연관사상 조합한 사상방식",
+    "mnemonic": "\"기억장치 주소: [태세단],\r\n기억장치 주소, 비교기, 캐시 (태그+데이터/단어, 세트/라인0+라인1)\r\n동작원리:  태그비교 (캐시적중) > 태그비교 (캐시미스)\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-nuuey",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "캐시메모리 쓰기정책",
+    "definition": "",
+    "mnemonic": "즉시쓰기, 나중쓰기 / 캐시데이터 갱신기법 / 나중쓰기 문제(공유데이터 불일치) > 해결 : 공유캐시 저장 금리, 버스감시, 디렉토리 기반 캐시 프로그램 사용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-mhq93",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "교체알고리즘",
+    "definition": "캐시메모리 교체 알고리즘\r\nLRU, FIFO, LFU",
+    "mnemonic": "LRU, FIFO, LFU  / 주기억장치에서 신규블럭이 캐시 적재시 교체기법  // \r\n페이지 교체의 문제, 해결 >\r\n (문제) Demand Paging, Page Falut, 쓰레싱 \r\n (해결) Local control, Locality, Working Set, PFF\r\n-- 캐시메모리 교체알고리즘:\r\n랜덤, LRU(Last Recently Used), LFU(Frequently), FIFO, RR, \r\n최적(Belady's Optimal), MRU(Most recently used)\r\nTLRU(time awareness Recently used) LIFO  \r\n작은사용, 잦은사용, 처음온것, 라운드로빈, FIFO최적, 최근사용한것",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-wo3gq",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "CAM",
+    "definition": "content addressable memeory",
+    "mnemonic": "페이징 내용 주소화 기억장치",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-cshd4",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "가상메모리",
+    "definition": "보조기억장치 부분을 주기억장치처럼 사용기법",
+    "mnemonic": "필요 : 멀티프로그램, 동적공유, 분할관리, 제한탈피\r\n할당 : How much, 고정(정적),가변(동적)\r\n배치 : Placement, where, First, BEST,Next, Worsrt Fit \r\n인출/호출 : Fech When, 요구호출, 예측호출 \r\n교체 : Replacement, who , FIFO, LFU, LRU, MRO, OPT, NUR \r\n페이지 잦은교체는 성능저하(쓰레싱) // 지역성, WST, PFF",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-4o63j",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "주소변환기법",
+    "definition": "페이지 교체 알고리즘",
+    "mnemonic": "페이지 교체 알고리즘 : 페이징(메모리를 고정 작은 프레임으로 나누어 주기억장치에 사상\r\n할당정책 : Paging(고정할당), \r\n Segmentation(가변할당), Paged Segmentation\r\n교체정책 : FIFO, LRU, LFU, NUR (-> Thrashing)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-e7aoa",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "페이징기법",
+    "definition": "",
+    "mnemonic": "페이징 (매핑테이블, 내부단편화, PMT(page map table), \r\n VPN(virtual page number), \r\n PPN(physical page number), vpn, PPN",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-ngi53",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "세그멘테이션",
+    "definition": "",
+    "mnemonic": "세그멘테이션 : 가변분할로 가상기억장치 구성기법, \r\n ST(Base, Limit), 매핑테이블(세그먼트번호 + 주소 + 크기), \r\n외부단변화 발생",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-s80b8",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "페이지드 세그멘테이션",
+    "definition": "",
+    "mnemonic": "Paged  Segmentation 기법\r\n물리주소처리 : 페이징\r\n주고검색처리 : 세그멘테이션\r\n\r\n구성:  가상주소(SN, VPN, 오프셋),\r\nSN, 제어부분, 크기, PTP\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-2ifye",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "관리정책",
+    "definition": "할배인교",
+    "mnemonic": "할당정책 / Allocation (고정/정적 할당, 가변/동적 할당), \r\n배치정책 / Placement (First fit, Best fit, Next fit, Worst fit), \r\n호출(인출)정책/ Fetch (요구/demand Fetch, 예측/Pre-fetch), \r\n교체정책 / Replacement (FIFO, OPT, LRU, LFU, MFU)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-78o57",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "Belady's Anomaly FIFO이상현상",
+    "definition": "FIFO 문제점 설명",
+    "mnemonic": "문제 : 페이지 프레임 수를 증가시키면 PageFault가 증가하는 이상현상 \r\n해결 : 페이지 교체 정책(LRU, OPT 사용)\r\n최적화 원칙 설계(Locality, PFF) -시간, 공간, 순차적 지역성 활용, working set  PFF(page fault Freequency),",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-uyixp",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "TLB",
+    "definition": "(Translation Look-aside Buffer)",
+    "mnemonic": "[정의] 자주 참조되는 가상메모리 주소를 실제 메모리 주소로 매핑 시 성능 개선을 위해 MMU(Memory Management Unit)에서 사용하는 고속 캐시\r\n[구성]  TLB Hit , TLB Miss, 페이지 Fault   TLB Hit(CPU가 TLB통해 물리주소 생성)\r\n TLB miss(페이지 테이블 참조), 페이지 Fault (가상->주메모리 데이터 적재, TLB갱신) \r\n* Memory Management Unit\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-pkkhn",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "병렬처리 개념",
+    "definition": "비변프테작, 그풀메(미중큰, SSMM, SMLN)",
+    "mnemonic": "2개 이상의 프로세스 동시 실행 / 단위 : 비트>변수>프로세스>테스트 > 적업\r\n그레인(병렬처리 단위)의 병렬성 분류  : 미세그레인, 중간그레인, 큰그레인 병렬성\r\nFlynn(풀린)의 분류 및 메모리 분류 \r\n- SISD, SIMD, MISD, MIMD, 공유기억장치, 분산기억장치, \r\n- SMP, MPP, LCMP, NUMA",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-mi4tr",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "병렬처리 문제",
+    "definition": "분스동케",
+    "mnemonic": "분할, 스케줄링, 동기화, 캐시 메모리 관리 (분스동케) \r\n/  문제점 : 테스트단위 결정문제, 스케쥴링 배정 문제, 메모리 공유, 활용문제 \r\n// 해결 : 분할 (Fine/Medium/Coarse, Task 단위), - 묶음,병렬성 탐지\r\n스케쥴링 (정적/동적, Task 실행 프로세서 배정),  - 부하공유, 갱스케쥴링\r\n동기화 (상호배제/세마포어/모니터, Race Condition 방지), \r\n캐시 메모리 관리 (사상함수/교체알고리즘/쓰기정책, 여러프로세스 공유)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-98a3s",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "파이프라인",
+    "definition": "",
+    "mnemonic": "명령어 세분화 : FI, DI, EI, WB / Fetch instruction, Decode Instruction, Execute Instruction, Write Back \r\nVLIW(very long instruction Word)-  인출,명령어 해석, 실행, 쓰기 (FiDEB) 인해실쓰\r\n컴파일러 수준에서 하나 명령으로 압축, 수행하는 병렬처리 기술\r\n유형: Pipeline, Super Pipeline, Super Scalar, Super Pipelined Super Scalar, VLIW(컴파일러수준)\r\nFI DI EI WEB          FI DI EI WEB          FI DI EI WEB          \r\n    FI DI EI   WEB      FI DI EI WEB        FI DI EI WEB    \r\n                                                                   FI DI EI WEB    \r\n                                                                    FI DI EI WEB",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-6wcpe",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "파이프라인 헤저드",
+    "definition": "파이프라이닝 방해요소 (구대제)",
+    "mnemonic": "파이프라이닝 방해요소 ,  종류/원인\r\n-구조적 해저드 / 자원의 충돌,  -데이터 해저드 / RAW, WAR, WAW , -제어해저드 /분기 (구데제)\r\nRead after write, Write after Read, Write after Wrte",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-i8kc8",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "파이프라인 해저즈 해결방안",
+    "definition": "해결방안",
+    "mnemonic": "공통(Stall and Bubble cycle), 구조적(하버드로 변경, 자원추가, 메모리 인터리빙)\r\n데이터(Forwarding Reordering Restrict SW), 제어(순서변경, 분기예측)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-omixd",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "CISC",
+    "definition": "단일캐시",
+    "mnemonic": "complex instruction set computer, CISC(수백개의 명령어, 가변길이 명령어, Microprogram),",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-h9hlb",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "RISC",
+    "definition": "명령과 데이터 캐시 분리",
+    "mnemonic": "Reduced Instruction set computer, RISC(빈도높은 명령어 위주, 고정길이 명령어, Hard-wired),",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-sqsi6",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "EISC",
+    "definition": "임베디드 시스템 유리",
+    "mnemonic": "임베디드 시스템 유리 // Extensible instruction set compter  EISC(오퍼랜드 확장, Simple/Advanced EISC)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-fcamx",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "명령어 형식",
+    "definition": "OpCode(연산자)\r\nOperand(데이터 또는 저장주소)",
+    "mnemonic": "\"OpCode , Operand\r\n형식: 0-주소 명령, 1-주소 명령, 2-주소 명령, 3-주소 명령\r\n기능:   함수(+,-,*, %), 자료전달(load, store), \r\n         제어 (if, go to), 입출력 (input, output)\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-4f2a0",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "주소지정방식",
+    "definition": "프로그램 수행시 오퍼랜드(Data)를 지정하는 방식,  오퍼랜드 참조전에 명령어 주소필드를 변경하는 형식\r\n즉 직간레간묵편",
+    "mnemonic": "[Data] 즉치 주소지정방식 (Operand=Data), \r\n[주소] 직접주소(Operand=직접주소), 간접주소(Operand=기억장치 주소), \r\n[레지스터] 레지스터주소지정 (Operand= register 번호), \r\n        레지스터간접주소지정(Operand=레지스터 번호/ Reg 내 주소저장), \r\n[주소변환] 묵시적 (MBR, 계수기),\r\n                  변위 (직접주소와 레지스터간접의 조합)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-70luc",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "HA",
+    "definition": "고가용성",
+    "mnemonic": "고가용성, 시스템 장애시 서비스를 Fail Over BCP유지 매커니즘 / 가용성, 연속성, 신뢰성\r\n Heart-beat신호, Hot-standby, Mutualover, Concurrent Access, Fail over 없이 가용성 보장\r\n구성유형 : Hot standby  active - DB - standby \r\n             Mutual Takeover    active A, Standby B -  DB/DB - activeB, Standby A\r\n             Concureent Acces  여러시스템 동시에 업무 병렬처리 all active 상태\r\n             * Failover 없이 가용성 보장함",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-47vo8",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "FTS",
+    "definition": "결함허용컴퓨터\r\n데이터 무결성",
+    "mnemonic": "고장에도 정상적, 부분적 기능 수행팔수 있는 시스템 \r\n단계특성 : 결함 감지, 진단, 통제, 복구 ---> 단계\r\nFTS 기법 :  HW(TMR, HW중복, RAID, Watchdog timer ), SW (check point, Recovery Block, Conversation, self check ), DB(Rollback, Log file 활용회복, check point, Shadow Paging )\r\n----\r\n비교 : Failover time, 동시성, 비용, APP, OS, HW\r\n HA : 30~300초, 불필요, 2배 이상, 범용제품, 범용OS, 범용OS\r\n FTS : 0초, 필수, 10~20배,    제한적,   전용OS, 전용HW",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-kznoa",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "RAID",
+    "definition": "RAID(Redundant Array of Independent Disks), \r\n유형 : 스미해바블인더\r\n0스1미2이3페4블5분6더",
+    "mnemonic": "RAID 0(Striping), RAID 1(Mirroring),\r\nRAID 2(비트수준분산+해밍코드), RAID 5(블록분산+패리티분산), \r\nRAID 0+1(Striping 후 Mirror), RAID 1+0(Mirror 후 Striping)\r\n0 스트라이핑, 1 미러링, 2 ECC 해밍코드, \r\n3 바이트/패리티, 4 블록, 5 인터리빙/패리티 분산, 6 더블",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-86xpr",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "DAS NAS SAN SDS FAN",
+    "definition": "",
+    "mnemonic": "DAS: 케이블 직접 접속, SCSI, IEEE1394, FC(Fiber Channel)\r\nNAS: LAN, WAN 망으로 접속, 공유, 이더넷 스위치\r\nSAN: Fiber SAN Switch, Fiber Channel, 대규모, 유연성/확장성\r\nFAN: NAS, SAN 기반, 파일 및 가상화 관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-o6xf1",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "데이터전송방식",
+    "definition": "`",
+    "mnemonic": "인터럽트 입출력 제어방식(다데포), 다중회선, 단일회선,(데이지체인, 폴링)\r\nCPU 관여 (Programmed I/O 방식, 인터럽트 I/O 방식),\r\nCPU 독립적 (DMA 제어 방식, Channel I/O 제어 방식)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-yvrsa",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "In Memoy 컴퓨팅",
+    "definition": "",
+    "mnemonic": "메인 메모리에 DB데이터 저장하고 처리 컴퓨팅 기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-ijcx1",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "메모리 중심 컴퓨팅",
+    "definition": "프로세스 중심 컴퓨팅 \r\n병목현상 해결 컴퓨팅",
+    "mnemonic": "데이터 이동 최소화로, 대규모 SCM메모리 풀로 메모리간 연결망 다수공유 기능\r\n기능 : 하드웨어(연결망으로 메모리 풀연결, 메모리 풀, 브릿지), \r\n        SW(접속장치 드라이버, Rest기반 인터페이스), - 메모리 풀, 컴퓨팅 모듈, 연계의 SW 기술로 구성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-4kaj0",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "뉴로모픽칩",
+    "definition": "\"뉴런 시냅스 구조\r\n연산 + 저장 + 통신\"",
+    "mnemonic": "[정의] 연산과 저장을 하나의 칩에 통합/동시 처리, 폰노이만 구조의 병목현상 해결한 인공두뇌 모방 칩\r\n[특징] 저전력 고성능 병렬처리, 뉴런-시냅스 구조  \r\n/ 뉴런시냅스구조 : 연산 + 저장 + 통신",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-m1nob",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "PIM",
+    "definition": "메모리 반도체 내부에 연산\r\nProcess in Memory",
+    "mnemonic": "메모리 반도체 내부에 연산/  기술 : Logic DIE, 3D-Packedged DRAM / \r\n유형 : Near Memory PIM, In-Memory PIM \r\nLogic DIE (TSV Interface, PIM Core, DMA), \r\n3D-packaged DRAM (Memory DIE), \r\nTraditional Computing (Memory Controller, Unit) \r\n  -> 인공지능 측면에서 접근 강화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-enk3t",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "FPGA",
+    "definition": "Field Programaable Gate Array\r\n재구성형 병렬연산 반도체\r\n특징 : 병렬처리, 재구성, 고속연산\r\n활용 : AI딥러닝 가속기, 신호영상, 5G, SDR, ADAS, 센서융합",
+    "mnemonic": "[정의] 사용자가 논리회로를 정의·구성할 수 있는 메모리 기반 재구성형 하드웨어 플랫폼\r\n연산단위 : (Configurable Logic Block-CLB (LUT, Flip Flop), 가변배선망 : SM (Programmable Interconnect), \r\n입출력 : I/O Block (Programmable I/O), 기타자원 : Logic Block, Memory Resource,\r\n룩업 테이블(LUTs; (Look-Up Tables = 진리표 있음, 조합에 따라 출력), \r\n개발방식 : HDL, VHDL, Verilog, HW디스크립션 언어*(프로그래머블 로직을 이용해 회로설계개발)\r\n메모리 기반임(즉, SRAM기반  전원이 오프되면 매번 구성을 다시 해줘야 함)\"",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-byoeu",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "CXL",
+    "definition": "PCI 기반 고자공확 (고속·자원공유·확장)\r\nCXL = “고속·공유·확장”\r\nCPU-GPU 간 병목 해결\r\nXpress (PCIe 기반 고대역폭)\r\nLink (자원 공유·확장)",
+    "mnemonic": "배경 : AI시대, 고용량 데이터처리, 초저지연 요구 > CPU-메모리-가속기간 연결(PCLe기반)은 병목현상 해결 \r\n개념 : PCIe 5.0기반의 고대역폭·저지연 인터커넥트 표준, CPU·GPU·메모리·스토리지 자원 공유·확장 기술\r\n기술 : PCLe호환성, 서브프로토콜(CXLio, CXLcache, CXLmem), 기능: 메모리 확장/풀링, 저지연고대역폭 제공\r\n활용 : AI/ML학습추론, 빅데이터분석, 클라우드 리소스공유, HPC(고성능PC) 연산 최적화 \r\n개념:  PCIe 기반 초고속 인터커넥트로 CPU·GPU·메모리 자원 공유·확장을 실현하는 핵심 기술\r\n[CPU]──PCIe 5.0──[CXL Switch]──[GPU/NPU/Memory Pool/Storage]\r\n             │\r\n         +CXL.io (I/O전송)\r\n         +CXL.cache (캐시공유)\r\n         +CXL.mem (메모리확장)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-ni4bc",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "NAS, SAN, DAS",
+    "definition": "",
+    "mnemonic": "DAS (Direct Attached Storage): 직접 연결이 가능한 스토리지 장비(ex>외장하드, 소규모). \r\nNAS (Network Attached Storage):  파일서버로 운영체제 존재, 이더넷 등 NW로 연결(파일, 중규모) \r\nSAN (Storage Area Network): 하드 수백개  SAN 스토리지에 fiber 채널 이용하여 고속 전용망(블록, 대규모)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-i6y7r",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "IP_SAN, SDS",
+    "definition": "",
+    "mnemonic": "IP-SAN: SAN 네트워크를 IP 네트워크를 통해 확장, 거리의 제한을 극복 - FAN)\r\nSDS (Software Defined Storage): 소프트웨어를 추상화하여 하드웨어에서 스토리지 소프트웨어를 분리\r\nDAS ─▶ NAS ─▶ SAN ─▶ IP-SAN ─▶ SDS\r\n (직접연결)   (파일공유)   (전용망고속)   (IP망기반)   (가상화·SW기반)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-dd3yc",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "토러스",
+    "definition": "고성능 다차원망, TORUS",
+    "mnemonic": "개념: 노드들이 격자(Grid) 형태로 연결된 다차원 메시(Mesh) 구조를 양방향 링(ring) 으로 연결한 고속 병렬 네트워크 토폴로지\r\n요약 : 균등한 경로 / 저지연 / 고대역폭 / HPC 구조 핵심",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-ysgz0",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "NPU",
+    "definition": "인공지능 전용 가속기\r\nNeural Processing Unit",
+    "mnemonic": "[요약] 뉴런·가중치·누산기·시그모이드 LUT 구조를 하드웨어화하고, NPE·Interconnect·클러스터 제어를 통해 AI 연산을 초고속·저전력으로 수행하는 지능형 반도체\r\n/절차 : 뉴런가중치, 누산기, 단일곱셈, 시그모이드 LUT\r\n/NPE Interconnect, Clust Controller\r\n\r\n[Input Data] -> \r\n[뉴런]─(가중치×입력)→[단일곱셈]→[누산기]→[Sigmoid LUT]→[출력]\r\n                          │ NPE Cluster (병렬처리 엔진) │    \r\n\r\n비교 : NPU/GPU--->\r\n딥러닝/그래픽처리,  저전력고성능/고속그래픽 병렬\r\n다수유닛연산/SMID고대역메모리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-zz3vf",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "QPU",
+    "definition": "양자 컴퓨팅 구현의 핵심 프로세서\r\n(Quantum Processing Unit)",
+    "mnemonic": "개념: 양자역학 원리의 큐비트(Qubit) 단위로 병렬 계산, 양자컴퓨팅 전용 프로세서\r\n구성: 큐비트 연산, 중첩, 얽힘, 간섭, 양자 상태, 양자 회로, 초전도, 이온, 광자, 양자 게이트, 양자 오류정정 \r\n\r\n[기술] 큐비트(초전도, 이온트랩, 반도체 스핀, 광자큐비트), \r\n   양자게이트(단일, 다중 큐비트 게이트), 양자오류수정, 냉각/제어, 양자 프로그래밍, 양자컴퓨팅 컴파일러",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-kbpx9",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "AI반도체",
+    "definition": "대규모연산 병렬처리, 초고속, 초전력 비메모리 반도체",
+    "mnemonic": "[발전]  CPU/GPU > FPGA/ASIC > 뉴로모픽 \r\n[방향] 혁신기술, 인재양성, 테스트베드 구축, 공정혁신, K-클러스터 \r\n[비반도체] GPU, NPU, TPU, QPU\r\n[반도체] 뉴모로픽, HBM, PIM, 뉴모로픽, 3D 낸드 플래시",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-grjt1",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "인터럽트 개념",
+    "definition": "작업중단하고 특정작업 수행",
+    "mnemonic": "작업중단하고 특정작업 수행 / 종류 : 외부(전원이상, 기계착오, 외부 입출력) 내부(프로그램 검사, Exception, OverFlow, UnderFlow), SW(SVC, 복잡입출력) - 외내소",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-kb0cg",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "블록, 파일, 오브젝트 스토리지",
+    "definition": "",
+    "mnemonic": "블럭 : 데이터가 블럭 균등, 파일 : 파일의 트리형, 오프젝트 : 개체지향  /SAN, NAS, Object /\r\n블록 : FC, iSCI, SAN  파일 : NFS, SMB, NAS  오브젝트 : Restfull API, Object",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-nefhk",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "SOC",
+    "definition": "System on Chip",
+    "mnemonic": "System on Chip / 전체 시스템을 침 하나에 담은 기술집약 다기능 반도체 \r\nSOC(System in package) SIP(System on Pacage), SOP(하이브리드)  /\r\n기술 : 고효율(RISC, 저전력 / Piplelined execcution, NoC) , 저전력(DVS), 저발열(배선, 타이밍 최적화)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-9mj2o",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "프로세스 상태5단계",
+    "definition": "생성, 준비, 실행, 대기, 종료",
+    "mnemonic": "생성, 준비, 실행, 대기, 종료 / 하나의 프로세스가 생성 종료하는 동안 여러 가지 상태를 전이하며 실행\r\n생성 > 준비 > 실행(디스패치) > 대기(IO이벤트),   실행->종료",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-6ata1",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "백업스토리지 아카이브 스토리지",
+    "definition": "",
+    "mnemonic": "백업스토리지 : 데이터 손실, 장애, 외부 공격대비 보호 복사\r\n- 핫,원데이터, 덮어쓰기 가능, 복구가 필요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-hnyfv",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  },
+  {
+    "topic": "폴락의 법칙",
+    "definition": "CPU-GPU시대",
+    "mnemonic": "CPU-GPU시대 / 프로세스 성능은 면적 증가량의 제복근과 비례하다는 법칙으로 이런한 문제를 해결\r\n> 멀티코어 프로세스, 파이프라인, 면적대비, 전력소비",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779704807133-gsfrp",
+    "createdAt": "2026-05-25T10:26:47.133Z"
+  }
+]
