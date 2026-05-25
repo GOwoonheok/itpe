@@ -227,7 +227,7 @@
   {
     "topic": "모니터",
     "definition": "",
-    "mnemonic": "타이밍 문제, 언어수준의 \n동기화요소 : 배타동기, 임계영역, 조건동기, \n언어적요소: synchronized, wait, notify, \n                     notifyAll\n1. 모니터에 작업요청\n 2. 큐에 저장후 순서처리\n임계구역 최대 하나의 쓰레드만 처리",
+    "mnemonic": "타이밍 문제, 언어수준의 \r\n동기화요소 : 배타동기, 임계영역, 조건동기, \r\n언어적요소: synchronized, wait, notify, \r\n                     notifyAll\r\n1. 모니터에 작업요청\r\n 2. 큐에 저장후 순서처리\r\n임계구역 최대 하나의 쓰레드만 처리",
     "keyword": "프로그램 수준 동기화 제공 기법",
     "extra": "",
     "userId": "u1779705006548-egy1t",
@@ -365,6 +365,10 @@
     "mnemonic": "운영체제가 관리하는 자원할당 단위, 실행되는 프로그램으로 프로세스ID를 할당받고, PCB유지상태로 실행되는 명령어 집합",
     "keyword": "",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/d0b6a526-96f4-47ea-93ff-7a7a21b07bc0.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/67a29b60-483e-48b6-9d58-a0df11270075.webp"
+    ],
     "userId": "u1779705006548-kesgs",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
