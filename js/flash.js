@@ -75,10 +75,13 @@
     if (!unitId) return showError('단원 정보가 없습니다. 시트 목록으로 돌아가세요.');
 
     // 데이터 로드 — /api/units 우선, 실패 시 번들 폴백
+    // indexData: 다음 .then 체인에서도 참조 (notebooklmUrl 등 전역 메타용)
+    let indexData = null;
     fetch('/api/units?_t=' + Date.now(), { cache: 'no-store' })
         .then((r) => r.ok ? r.json() : Promise.reject(new Error('units ' + r.status)))
         .catch(() => fetch('data/index.json', { cache: 'no-cache' }).then((r) => r.json()))
         .then((data) => {
+            indexData = data;                                       // 스코프 외부에 보관
             state.unit = (data.units || []).find((u) => u.id === unitId);
             if (!state.unit) throw new Error('단원 없음: ' + unitId);
             return fetch('/api/cards?unit=' + encodeURIComponent(unitId) + '&_t=' + Date.now(), { cache: 'no-store' })
@@ -107,7 +110,7 @@
             // 카드 0장이어도 모드 선택 화면(엑셀 업로드 등 관리자 도구 포함)은 노출
 
             // 📓 NotebookLM URL — data/index.json 의 전역 메타. 있으면 툴바 버튼 노출.
-            state.notebooklmUrl = (data && typeof data.notebooklmUrl === 'string' && data.notebooklmUrl.trim()) || '';
+            state.notebooklmUrl = (indexData && typeof indexData.notebooklmUrl === 'string' && indexData.notebooklmUrl.trim()) || '';
             const nlmBtn = document.getElementById('btn-nlm');
             if (nlmBtn) nlmBtn.hidden = !state.notebooklmUrl;
 
