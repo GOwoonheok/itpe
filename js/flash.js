@@ -407,9 +407,10 @@
         });
     }
 
-    // 토픽 빠른검색(🔎) — 토픽을 URL 쿼리로 바로 넣어 새 탭. {q} 자리에 encodeURIComponent(질의).
-    //   바꾸고 싶으면 이 한 줄만 교체: 예) 'https://www.google.com/search?q={q}'
-    const TOPIC_SEARCH_URL = 'https://www.perplexity.ai/search?q={q}';
+    // 토픽 빠른검색(🔎) — 토픽을 URL 쿼리로 바로 넣어 새 대화/검색 탭. {q}=encodeURIComponent(질의).
+    //   Claude: claude.ai/new?q= (로그인 필요·유료 구독자 OK, 질문 프리필 후 새 대화)
+    //   바꾸고 싶으면 이 한 줄만 교체: 예) 'https://www.perplexity.ai/search?q={q}' / 'https://www.google.com/search?q={q}'
+    const TOPIC_SEARCH_URL = 'https://claude.ai/new?q={q}';
     //   답변 형식·언어를 유도하는 지시문 — 토픽 뒤에 붙여 질의.
     //   (정의=개조식, 관련 기술요소, 구성요소, 활용방안 측면으로 한국어 간단 요약)
     const TOPIC_SEARCH_SUFFIX = ' 에 대해 한국어로 간단히 요약 정리해줘: ① 정의(개조식 2줄), ② 관련 기술요소 : 간단설명, ③ 구성요소: 간단설명, ④ 활용방안 측면';
@@ -444,14 +445,14 @@
         tEl.className = 'th-topic';
         tEl.textContent = hasTopic ? topic : '주제를 입력하세요';
         body.appendChild(tEl);
-        // 토픽 옆 🔎 빠른검색 — 이 토픽을 Perplexity 새 탭으로 (클립보드 우회 없이 바로)
+        // 토픽 옆 🔎 빠른검색 — 이 토픽을 Claude 새 대화로 (클립보드 우회 없이 바로)
         if (hasTopic) {
             const searchBtn = document.createElement('button');
             searchBtn.type = 'button';
             searchBtn.className = 'th-search';
             searchBtn.textContent = '🔎';
-            searchBtn.setAttribute('aria-label', '이 토픽 검색');
-            searchBtn.title = '이 토픽 빠른검색 (Perplexity)';
+            searchBtn.setAttribute('aria-label', '이 토픽 Claude 질문');
+            searchBtn.title = '이 토픽 Claude 에게 질문 (새 대화)';
             searchBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 openTopicSearch(topic);
