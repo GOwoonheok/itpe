@@ -2179,5 +2179,18 @@
     "source": "ai",
     "aiGeneratedAt": "2026-05-25T05:00:04.707Z",
     "aiConfidence": "high"
+  },
+  {
+    "topic": "답안 서·본·결 구성",
+    "definition": "논리적 답안을 위해, 정의·도식·결론으로 구성한 패턴",
+    "mnemonic": "(서-본-결)\n서: 정의·필요성\n본: 도식·구성요소·동작\n결: 한계·발전방향",
+    "keyword": "개요, 도식, 핵심구성, 결론",
+    "extra": "서론(정의·배경)→본론(도식·구성·원리·사례)→결론(한계·전망). 도식이 합격의 70%.",
+    "images": [
+      "data:image/png;base64,",
+      "data:image/png;base64,"
+    ],
+    "userId": "u1779701972085-mv-hc6j",
+    "createdAt": "2026-05-25T09:39:32.085Z"
   }
 ]
