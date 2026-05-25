@@ -410,8 +410,9 @@
     // 토픽 빠른검색(🔎) — 토픽을 URL 쿼리로 바로 넣어 새 탭. {q} 자리에 encodeURIComponent(질의).
     //   바꾸고 싶으면 이 한 줄만 교체: 예) 'https://www.google.com/search?q={q}'
     const TOPIC_SEARCH_URL = 'https://www.perplexity.ai/search?q={q}';
-    //   답변 언어를 한국어로 유도하는 지시문 — 토픽 뒤에 붙여 질의.
-    const TOPIC_SEARCH_SUFFIX = ' 한국어로 답변해줘';
+    //   답변 형식·언어를 유도하는 지시문 — 토픽 뒤에 붙여 질의.
+    //   (정의=개조식, 관련 기술요소, 구성요소, 활용방안 측면으로 한국어 간단 요약)
+    const TOPIC_SEARCH_SUFFIX = ' 에 대해 한국어로 간단히 요약 정리해줘: ① 정의(개조식), ② 관련 기술요소, ③ 구성요소, ④ 활용방안 측면';
     function openTopicSearch(topic) {
         const t = (topic || '').trim();
         if (!t) return;
