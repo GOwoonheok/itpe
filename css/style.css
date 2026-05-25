@@ -320,6 +320,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ============ 이미지 피커 (추가 모달) ============ */
 .img-picker { display: flex; flex-direction: column; gap: 10px; }
+.img-pick-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.img-pick-row > .img-pick-btn { flex: 1 1 auto; min-width: 140px; border: none; }
 .img-pick-btn {
     display: inline-flex;
     align-items: center;
@@ -334,6 +336,7 @@ a { color: inherit; text-decoration: none; }
     padding: 0 14px;
     font-size: 0.95rem;
 }
+.img-pick-row > #add-img-clipboard { background: #6c5ce7; }
 .img-pick-btn:active { transform: scale(0.98); }
 .img-pick-icon { font-size: 1.15rem; }
 .img-pick-info { font-size: 0.78rem; color: var(--text-muted); margin: 0; }

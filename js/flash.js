@@ -1317,6 +1317,49 @@
         e.target.value = '';
     });
 
+    // 📋 클립보드 다시 시도 버튼 — paste 이벤트 없이 직접 navigator.clipboard.read() 호출.
+    // Snip 캡처가 placeholder 0byte 로 잡혔을 때 / paste 이벤트가 막혔을 때 / 확장이 가로챘을 때
+    // 안전한 폴백 경로를 사용자 손에 쥐어주는 용도.
+    const clipboardBtn = document.getElementById('add-img-clipboard');
+    if (clipboardBtn) {
+        clipboardBtn.addEventListener('click', async () => {
+            if (!navigator.clipboard || !navigator.clipboard.read) {
+                ttsToast('❌ 이 브라우저는 클립보드 API 미지원 — 다른 브라우저(Chrome/Edge)로 시도', 'err');
+                return;
+            }
+            ttsToast('📋 클립보드 읽는 중…', 'info');
+            try {
+                const blobs = await readClipboardImagesWithRetry(4, 200);
+                if (blobs.length === 0) {
+                    ttsToast(
+                        '❌ 클립보드에 이미지 없음 — Snip(Shift+Win+S) 캡처 후 "캡처됨" 알림이 사라지기 전에 다시 시도하거나, 캡처 후 편집기 열고 Ctrl+C 한 번 더',
+                        'err'
+                    );
+                    return;
+                }
+                ttsToast('📋 ' + blobs.length + '장 발견 — 처리 중…', 'info');
+                let added = 0;
+                for (let i = 0; i < blobs.length; i++) {
+                    try {
+                        const ok = await attachImageBlob(blobs[i], 'clip-' + Date.now() + '-' + i + '.png');
+                        if (ok) added++;
+                    } catch (e) {
+                        ttsToast('❌ ' + (e?.message || e), 'err');
+                    }
+                }
+                if (added > 0) ttsToast('✅ 클립보드 ' + added + '/' + blobs.length + '장 첨부 완료', 'ok');
+            } catch (e) {
+                const msg = e?.message || String(e);
+                // NotAllowedError — 포커스/권한 안내
+                if (/NotAllowed|denied/i.test(msg)) {
+                    ttsToast('🔒 클립보드 권한 거부됨 — 사이트 권한에서 "클립보드 읽기" 허용 필요. 또는 페이지를 클릭해 포커스 후 다시 시도.', 'err');
+                } else {
+                    ttsToast('❌ 클립보드 읽기 실패: ' + msg, 'err');
+                }
+            }
+        });
+    }
+
     // 클립보드 paste — 모달에서 Ctrl+V 시 스크린샷 즉시 첨부
     // capture phase + modal 직접 등록 → textarea/input 포커스 상태에서도 우선 처리
     function extractImagesSync(cd) {
@@ -1346,35 +1389,55 @@
         console.log('[ITPE paste] items: ' + itemStr + '  →  blobs: ' + blobStr);
         return blobs;
     }
+    // navigator.clipboard.read() 로 이미지 회수 — 재시도 포함 (Snip 캡처 직후 placeholder 회피)
+    async function readClipboardImagesWithRetry(maxTries = 4, delayMs = 180) {
+        if (!navigator.clipboard || !navigator.clipboard.read) return [];
+        const out = [];
+        let lastErr = null;
+        for (let attempt = 1; attempt <= maxTries; attempt++) {
+            try {
+                // 포커스 없으면 NotAllowedError — 모달이 떠있을 때 사용자 클릭이 보장. 보조로 focus 한 번
+                try { window.focus(); } catch {}
+                const items = await navigator.clipboard.read();
+                let gotThisRound = 0;
+                for (const item of items) {
+                    for (const type of (item.types || [])) {
+                        if (type && type.startsWith('image/')) {
+                            try {
+                                const b = await item.getType(type);
+                                if (b && b.size > 0) { out.push(b); gotThisRound++; }
+                            } catch (e) { lastErr = e; }
+                        }
+                    }
+                }
+                if (gotThisRound > 0) {
+                    console.log(`[ITPE clipboard] retry ${attempt}: got ${gotThisRound} valid blob(s)`);
+                    return out;
+                }
+                console.log(`[ITPE clipboard] retry ${attempt}: 0 valid, waiting ${delayMs}ms`);
+            } catch (e) {
+                lastErr = e;
+                console.warn(`[ITPE clipboard] retry ${attempt} error:`, e?.message || e);
+            }
+            if (attempt < maxTries) await new Promise((r) => setTimeout(r, delayMs));
+        }
+        if (lastErr) console.warn('[ITPE clipboard] all retries failed, last error:', lastErr?.message || lastErr);
+        return out;
+    }
+
     async function processPastedBlobs(blobs) {
-        // 0byte blob (Snip 캡처 실패·확장 간섭 등) 필터링 + navigator.clipboard 폴백
+        // 0byte blob (Snip 캡처 직후 placeholder · 확장 간섭 등) 필터링 + 폴백 재시도
         let validBlobs = blobs.filter((b) => b && b.size > 0);
 
         if (validBlobs.length === 0 && blobs.length > 0) {
-            ttsToast('⚠ 클립보드 이미지가 0byte — navigator.clipboard 폴백 시도…', 'info');
-            try {
-                if (navigator.clipboard && navigator.clipboard.read) {
-                    const items = await navigator.clipboard.read();
-                    for (const item of items) {
-                        for (const type of (item.types || [])) {
-                            if (type && type.startsWith('image/')) {
-                                try {
-                                    const b = await item.getType(type);
-                                    if (b && b.size > 0) validBlobs.push(b);
-                                } catch {}
-                            }
-                        }
-                    }
-                    console.log('[ITPE paste] clipboard.read() recovered ' + validBlobs.length + ' blobs');
-                }
-            } catch (e) {
-                console.warn('[ITPE paste] clipboard.read failed', e);
-            }
+            ttsToast('⚠ 클립보드 이미지가 0byte — 재시도 (최대 0.7초)…', 'info');
+            const recovered = await readClipboardImagesWithRetry();
+            validBlobs = recovered;
         }
 
         if (validBlobs.length === 0) {
             ttsToast(
-                '❌ 클립보드 비어있음 (0byte) — Snip 캡처 시 우하단 "캡처됨" 알림 클릭해서 편집기 열고, 거기서 Ctrl+C 후 다시 Ctrl+V 하세요. 또는 AnkiConnect 같은 확장이 클립보드를 가로채는지 확인',
+                '❌ 클립보드 비어있음 (0byte) — [📋 클립보드 다시 시도] 버튼을 눌러보세요. 그래도 안 되면 Snip 캡처 후 "캡처됨" 알림 클릭해서 편집기에서 Ctrl+C 다시 실행, 또는 클립보드 확장(Ditto, AnkiConnect 등) 비활성화 확인.',
                 'err'
             );
             return;

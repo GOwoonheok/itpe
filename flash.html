@@ -243,15 +243,21 @@
                     <div class="form-row" data-key="image">
                         <span class="form-label">이미지 (선택, 여러 장 가능)</span>
                         <div class="img-picker">
-                            <label class="img-pick-btn" for="add-img-file">
-                                <span class="img-pick-icon">📷</span>
-                                <span>사진/카메라 추가</span>
-                            </label>
+                            <div class="img-pick-row">
+                                <label class="img-pick-btn" for="add-img-file">
+                                    <span class="img-pick-icon">📷</span>
+                                    <span>사진/카메라 추가</span>
+                                </label>
+                                <button class="img-pick-btn" id="add-img-clipboard" type="button" title="Snip 캡처 후 Ctrl+V 가 0byte 로 실패하면 이 버튼을 누르세요">
+                                    <span class="img-pick-icon">📋</span>
+                                    <span>클립보드에서 가져오기</span>
+                                </button>
+                            </div>
                             <input id="add-img-file" type="file" accept="image/*" multiple hidden>
                             <div id="add-img-grid" class="add-img-grid" hidden></div>
                             <p id="add-img-info" class="img-pick-info">선택된 이미지 없음</p>
                             <p id="add-img-sync-status" class="img-pick-hint"></p>
-                            <p class="img-pick-hint">💡 스크린샷을 Ctrl+V 로 바로 붙여넣거나 이 영역으로 드래그 가능</p>
+                            <p class="img-pick-hint">💡 Ctrl+V 또는 드래그&드롭. Shift+Win+S 캡처가 0byte 로 실패하면 [📋 클립보드에서 가져오기]</p>
                         </div>
                     </div>
                     <p class="form-hint">사용자 추가 카드(이미지 포함)는 이 기기의 로컬 저장소에 보관됩니다. 다른 기기에 동기화되지는 않습니다.</p>
