@@ -1805,20 +1805,27 @@
             }
         }
 
-        async function refreshCounts() {
+        // expectedServerCount 가 숫자면 서버 조회(재배포 ~1분 지연) 대신 그 값을 즉시 표시.
+        // 방금 업로드/저장한 직후 stale 서버값으로 "0장"처럼 보이던 문제 방지.
+        async function refreshCounts(expectedServerCount) {
             const el = document.getElementById('unit-counts');
             try {
-                // 우선 라이브 Blob/API 의 최신 수치 — Blob 갱신 즉시 반영
+                const useExpected = typeof expectedServerCount === 'number';
                 let serverCount = 0;
-                try {
-                    if (window.ITPEAdmin && window.ITPEAdmin.fetchCards) {
-                        const apiCards = await window.ITPEAdmin.fetchCards(unit.id);
-                        if (Array.isArray(apiCards)) serverCount = apiCards.length;
-                    } else {
-                        const jsonCards = await loadJsonCards(unit);
-                        serverCount = jsonCards.length;
-                    }
-                } catch {}
+                if (useExpected) {
+                    serverCount = expectedServerCount;
+                } else {
+                    // 우선 라이브 Blob/API 의 최신 수치 — Blob 갱신 즉시 반영
+                    try {
+                        if (window.ITPEAdmin && window.ITPEAdmin.fetchCards) {
+                            const apiCards = await window.ITPEAdmin.fetchCards(unit.id);
+                            if (Array.isArray(apiCards)) serverCount = apiCards.length;
+                        } else {
+                            const jsonCards = await loadJsonCards(unit);
+                            serverCount = jsonCards.length;
+                        }
+                    } catch {}
+                }
                 const userCards = loadUserCards(unit.id);
                 const total = serverCount + userCards.length;
                 while (el.firstChild) el.removeChild(el.firstChild);
@@ -1826,7 +1833,8 @@
                 const strong = document.createElement('strong');
                 strong.textContent = String(total);
                 el.appendChild(strong);
-                el.appendChild(document.createTextNode('장 · 서버 ' + serverCount + ' + 로컬 ' + userCards.length));
+                el.appendChild(document.createTextNode('장 · 서버 ' + serverCount + ' + 로컬 ' + userCards.length
+                    + (useExpected ? ' (재배포 후 ~1분 내 반영)' : '')));
             } catch { el.textContent = '카드 수 확인 실패'; }
         }
         async function doUnitTemplate(u) {
@@ -1933,6 +1941,13 @@
                         localStorage.removeItem('itpe.cardEdits.' + u.id);
                         localStorage.removeItem('itpe.removedJson.' + u.id);
                     } catch {}
+                    // 메인화면(시트 목록) 갯수 현행화 힌트 — 서버 재배포(~1분) 따라잡을 때까지 기대값 우선 표시
+                    try {
+                        const raw = localStorage.getItem('itpe.countHints');
+                        const map = raw ? (JSON.parse(raw) || {}) : {};
+                        map[u.id] = { count: fresh.length, ts: Date.now() };
+                        localStorage.setItem('itpe.countHints', JSON.stringify(map));
+                    } catch {}
                 } else {
                     // 시크릿 미설정 — 로컬 추가만
                     const userCards = loadUserCards(u.id);
@@ -1940,10 +1955,12 @@
                     saveUserCards(u.id, merged);
                 }
                 markStep('save', 'done');
-                await refreshCounts();
+                // 관리자 저장 직후엔 서버가 stale(재배포 전) 이므로 방금 올린 수(fresh.length)를 즉시 표시.
+                // 비관리자(로컬)는 서버 조회가 정확하므로 그대로.
+                await refreshCounts(isAdminWithSecret ? fresh.length : undefined);
                 setStatus('unit-status',
                     isAdminWithSecret
-                        ? `✓ 완료 — ${fresh.length}장 (엑셀 순서) 서버 저장. 다른 기기에서 즉시 보입니다.`
+                        ? `✓ 완료 — ${fresh.length}장 (엑셀 순서) 서버 저장. 재배포 후 ~1분 내 다른 기기 반영.`
                         : `✓ 로컬 저장 완료 — ${fresh.length}장. (시크릿 미설정으로 다른 기기와 공유 안 됨)`,
                     'ok'
                 );
