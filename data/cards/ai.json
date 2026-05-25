@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "category": "AI",
+    "topic": "RAG",
+    "definition": "환각 방지를 위해, 외부 지식을 검색·결합하는 기술",
+    "mnemonic": "문서 분할 (Chunking)\\n벡터 변환 (Embedding)\\n벡터 저장소 (Vector DB)\\n유사도 검색 (Retrieval)\\n답변 생성 (Generation)",
+    "keyword": "벡터 데이터베이스, 청킹, 임베딩, 코사인 유사도, 환각 현상",
+    "extra": "",
+    "userId": "u1779682452625-mv-xw05",
+    "createdAt": "2026-05-25T04:13:40.175Z"
+  }
+]
