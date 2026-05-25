@@ -853,6 +853,31 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
     max-width: 60%;
 }
 .admin-hint { font-size: 0.8rem; color: var(--text-muted); margin: 6px 0 12px; line-height: 1.4; }
+
+/* AI 프롬프트 패널 — full/def 탭 */
+.ai-prompt-tabs {
+    display: flex;
+    gap: 6px;
+    margin: 6px 0 10px;
+    padding: 4px;
+    background: #0d1219;
+    border-radius: 10px;
+    border: 1px solid #2f80ed30;
+}
+.ai-prompt-tab {
+    flex: 1 1 0;
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    border-radius: 8px;
+    height: 36px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+.ai-prompt-tab:hover { color: #fff; }
+.ai-prompt-tab.is-active { background: #2f80ed; color: #fff; }
 .admin-btns { display: flex; gap: 8px; flex-wrap: wrap; }
 .admin-btn {
     flex: 1 1 calc(33.333% - 8px);

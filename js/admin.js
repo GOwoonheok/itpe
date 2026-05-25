@@ -205,17 +205,15 @@
         wrap.append(p1, p2);
         root.appendChild(wrap);
     }
-    function renderAdminUI(root) {
-        // 정적 골격은 DOM API 로 안전하게 조립 (사용자 입력 절대 보간 안 함)
-        while (root.firstChild) root.removeChild(root.firstChild);
-
-        // 패널 1 — 엑셀/JSON 관리
-        const p1 = h('section', 'admin-panel');
-        p1.appendChild(h('div', 'admin-head',
-            h('h2', 'admin-title', t('📊 엑셀 일괄 관리')),
-            h('span', 'admin-badge', t(email || ''))
+    // 패널 — 엑셀 일괄 관리
+    function renderBulkExcelPanel() {
+        const root = document.getElementById('admin-root');
+        if (!root) return;
+        const p = h('section', 'admin-panel');
+        p.appendChild(h('div', 'admin-head',
+            h('h2', 'admin-title', t('📊 엑셀 일괄 관리'))
         ));
-        p1.appendChild(h('p', 'admin-hint', t('JSON 카드는 영향 없이 사용자 추가 카드만 관리됩니다.')));
+        p.appendChild(h('p', 'admin-hint', t('단원별 카드를 엑셀 한 번에 내려받기·올리기. JSON 일괄 다운로드는 백업용.')));
         const btns = h('div', 'admin-btns');
         btns.appendChild(makeBtn('admin-btn admin-btn-tpl',  'btn-tpl',  '📥 템플릿 다운로드'));
         const upLabel = h('label', 'admin-btn admin-btn-up', t('📤 엑셀 업로드'));
@@ -228,20 +226,24 @@
         upLabel.appendChild(upInput);
         btns.appendChild(upLabel);
         btns.appendChild(makeBtn('admin-btn admin-btn-dl',   'btn-export',      '📊 엑셀 다운로드'));
-        btns.appendChild(makeBtn('admin-btn admin-btn-json', 'btn-export-json', '⬇ JSON 일괄 다운로드'));
-        p1.appendChild(btns);
-        const st1 = h('p', 'admin-status'); st1.id = 'admin-status'; p1.appendChild(st1);
-        root.appendChild(p1);
+        btns.appendChild(makeBtn('admin-btn admin-btn-json', 'btn-export-json', '⬇ JSON 백업'));
+        p.appendChild(btns);
+        const st = h('p', 'admin-status'); st.id = 'admin-status'; p.appendChild(st);
+        root.appendChild(p);
+    }
 
-        // 패널 2 — 사용자 관리
-        const p2 = h('section', 'admin-panel');
+    // 패널 — 사용자(화이트리스트) 관리
+    function renderUsersPanel() {
+        const root = document.getElementById('admin-root');
+        if (!root) return;
+        const p = h('section', 'admin-panel');
         const cnt = h('span', 'user-mgmt-count', t('…')); cnt.id = 'user-count';
-        p2.appendChild(h('div', 'admin-head',
-            h('h2', 'admin-title', t('👤 사용자 관리')),
+        p.appendChild(h('div', 'admin-head',
+            h('h2', 'admin-title', t('👤 사용자 화이트리스트')),
             cnt
         ));
-        p2.appendChild(h('p', 'admin-hint', t('등록된 이메일만 로그인 가능합니다. 사용자 목록은 Vercel Blob 에 저장되어 모든 기기에서 즉시 공유됩니다.')));
-        const ul = h('ul', 'user-list'); ul.id = 'user-list'; p2.appendChild(ul);
+        p.appendChild(h('p', 'admin-hint', t('등록된 이메일만 로그인 가능합니다. 저장 시 GitHub commit → 재배포 후 약 1분 내 반영.')));
+        const ul = h('ul', 'user-list'); ul.id = 'user-list'; p.appendChild(ul);
         const form = h('form', 'user-add'); form.id = 'user-add-form';
         const input = document.createElement('input');
         input.className = 'form-input';
@@ -252,10 +254,9 @@
         input.placeholder = '새 이메일 추가';
         form.appendChild(input);
         form.appendChild(makeBtn('admin-btn admin-btn-up', '', '추가', 'submit'));
-        p2.appendChild(form);
-        p2.appendChild(h('p', 'user-mgmt-hint', t('이메일은 서버(Vercel Blob)에 저장되며 로그인 시 화이트리스트로 검증됩니다.')));
-        const st2 = h('p', 'admin-status'); st2.id = 'user-status'; p2.appendChild(st2);
-        root.appendChild(p2);
+        p.appendChild(form);
+        const st = h('p', 'admin-status'); st.id = 'user-status'; p.appendChild(st);
+        root.appendChild(p);
     }
     function h(tag, cls, ...children) {
         const el = document.createElement(tag);
@@ -280,39 +281,30 @@
         return b;
     }
 
-    // 🔑 서버 동기화 상태 패널 — 쿠키 기반 인증으로 전환됨.
-    // 시크릿 입력 UI 는 제거되고 현재 세션 상태와 연결 테스트만 노출.
-    function renderApiSecretPanel() {
+    // 패널 — 관리자 세션 상태 (최상단)
+    function renderSessionPanel() {
         const root = document.getElementById('admin-root');
         if (!root || !window.ITPEAdmin) return;
-
         const isAdminSession = !!(window.ITPEAuth && window.ITPEAuth.isAdmin && window.ITPEAuth.isAdmin());
 
         const panel = h('section', 'admin-panel');
-        panel.id = 'api-secret-panel';
+        panel.id = 'session-panel';
         panel.appendChild(h('div', 'admin-head',
-            h('h2', 'admin-title', t('☁ 서버 동기화 (Vercel Blob)')),
+            h('h2', 'admin-title', t('🔐 관리자 세션')),
             h('span', 'admin-badge api-status ' + (isAdminSession ? 'badge-on' : 'badge-off'),
-                t(isAdminSession ? '✅ 활성 (쿠키 세션)' : '⚠ 관리자 로그인 필요')
+                t(isAdminSession ? '✅ ' + (email || '로그인됨') : '⚠ 비관리자')
             )
         ));
+        panel.appendChild(h('p', 'admin-hint', t(
+            isAdminSession
+                ? '저장은 GitHub commit → 재배포 후 약 1분 내 모든 기기 반영. 이미지는 Cloudflare R2 에 업로드.'
+                : '관리자 이메일로 로그인하면 저장 기능이 활성화됩니다.'
+        )));
 
-        const banner = h('div', 'sync-banner ' + (isAdminSession ? 'sync-on' : 'sync-off'));
-        if (isAdminSession) {
-            banner.appendChild(h('p', 'sync-banner-title', t('☁ 서버 저장 활성 — 모든 기기 공유')));
-            banner.appendChild(h('p', 'sync-banner-desc',
-                t('관리자 로그인 시 발급된 HttpOnly 쿠키로 인증됩니다. 카드·이미지·단원·AI 프롬프트 변경이 자동으로 Vercel Blob 에 저장되어, 다른 PC·핸드폰에서도 즉시 같은 데이터를 봅니다. 클라이언트에는 시크릿이 저장되지 않습니다.')));
-        } else {
-            banner.appendChild(h('p', 'sync-banner-title', t('⚠ 비관리자 — 읽기 전용')));
-            banner.appendChild(h('p', 'sync-banner-desc',
-                t('관리자 이메일로 로그인하면 자동으로 서버 저장이 활성화됩니다.')));
-        }
-        panel.appendChild(banner);
-
-        const btns = h('div', 'admin-btns', null);
+        const btns = h('div', 'admin-btns');
         btns.style.marginTop = '10px';
-        btns.appendChild(makeBtn('admin-btn admin-btn-dl', 'api-test-btn', '🔬 연결 테스트', 'button'));
-        btns.appendChild(makeBtn('admin-btn admin-btn-tpl', 'api-logout-btn', '🚪 관리자 로그아웃', 'button'));
+        btns.appendChild(makeBtn('admin-btn admin-btn-dl', 'api-test-btn', '🔬 이미지 업로드 테스트', 'button'));
+        btns.appendChild(makeBtn('admin-btn admin-btn-tpl', 'api-logout-btn', '🚪 로그아웃', 'button'));
         panel.appendChild(btns);
 
         const st = h('p', 'admin-status'); st.id = 'api-secret-status';
@@ -320,12 +312,12 @@
         root.appendChild(panel);
 
         document.getElementById('api-test-btn').addEventListener('click', async () => {
-            setStatus('api-secret-status', '서버 연결 테스트 중…');
+            setStatus('api-secret-status', '이미지 업로드 테스트 중…');
             const tinyPng = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';
             try {
                 const r = await window.ITPEAdmin.uploadImage(tinyPng);
                 if (r && r.url) {
-                    setStatus('api-secret-status', '✅ 연결 성공! 쿠키 세션 정상.\n업로드 URL: ' + r.url, 'ok');
+                    setStatus('api-secret-status', '✅ 성공 — R2 정상.\n' + r.url, 'ok');
                 } else {
                     setStatus('api-secret-status', '⚠ 응답에 url 없음: ' + JSON.stringify(r), 'err');
                 }
@@ -333,133 +325,145 @@
                 const status = e?.status;
                 const reason = e?.detail?.reason;
                 let hint = '';
-                if (status === 401) hint = ' (관리자 로그아웃 상태이거나 쿠키 만료 — 다시 로그인 필요)';
-                setStatus('api-secret-status', '❌ 연결 실패: ' + (e?.message || e) + (reason ? ' [' + reason + ']' : '') + hint, 'err');
+                if (status === 401) hint = ' (쿠키 만료 — 다시 로그인)';
+                if (status === 503) hint = ' (R2 환경변수 미설정)';
+                setStatus('api-secret-status', '❌ 실패: ' + (e?.message || e) + (reason ? ' [' + reason + ']' : '') + hint, 'err');
             }
         });
         document.getElementById('api-logout-btn').addEventListener('click', async () => {
-            if (!confirm('관리자 세션을 종료하고 로그인 화면으로 이동합니다. 계속할까요?')) return;
-            try {
-                window.ITPEAuth.signOut();
-            } catch (e) {
-                setStatus('api-secret-status', '로그아웃 실패: ' + (e?.message || e), 'err');
-            }
+            if (!confirm('관리자 세션을 종료합니다. 계속할까요?')) return;
+            try { window.ITPEAuth.signOut(); }
+            catch (e) { setStatus('api-secret-status', '로그아웃 실패: ' + (e?.message || e), 'err'); }
         });
     }
 
     // 🤖 AI 시스템 프롬프트 편집 패널 — admin.html 전용 (kind='full'|'def')
-    function renderAiPromptPanel(kind) {
+    // 패널 — AI 프롬프트 (전체 / 정의 전용 탭으로 통합)
+    function renderAiPromptPanel() {
         const root = document.getElementById('admin-root');
         if (!root || !window.ITPEAdmin) return;
-        const k = (kind === 'def') ? 'def' : 'full';
-        const title = (k === 'def') ? '✏ AI 정의 전용 프롬프트' : '🤖 AI 시스템 프롬프트 (전체)';
-        const badge = (k === 'def') ? '정의만 재생성' : 'Gemini 2.5 Flash';
-        const hint  = (k === 'def')
-            ? '카드 추가 모달의 "AI 채우기 (정의)" 버튼이 사용하는 프롬프트입니다. 30자 이내 정의 한 줄만 생성. 빈 값 저장 = 기본값 복원.'
-            : 'AI 자동 생성(jm 단원 + 카드 추가 모달 "AI 채우기")에서 사용할 프롬프트입니다. 빈 값으로 저장하면 기본값 복원. Vercel Blob 저장.';
-        const ids = {
-            panel:   'ai-prompt-panel-'   + k,
-            input:   'ai-prompt-input-'   + k,
-            load:    'ai-prompt-load-'    + k,
-            save:    'ai-prompt-save-'    + k,
-            reset:   'ai-prompt-reset-'   + k,
-            status:  'ai-prompt-status-'  + k,
-            defPre:  'ai-prompt-default-' + k,
-        };
+        let activeKind = 'full';
 
         const panel = h('section', 'admin-panel');
-        panel.id = ids.panel;
+        panel.id = 'ai-prompt-panel';
         panel.appendChild(h('div', 'admin-head',
-            h('h2', 'admin-title', t(title)),
-            h('span', 'admin-badge', t(badge))
+            h('h2', 'admin-title', t('🤖 AI 시스템 프롬프트')),
+            h('span', 'admin-badge', t('Gemini 2.5 Flash'))
         ));
-        panel.appendChild(h('p', 'admin-hint', t(hint)));
+
+        // 탭 선택 (full / def)
+        const tabs = h('div', 'ai-prompt-tabs');
+        const tabFull = makeBtn('ai-prompt-tab is-active', 'ai-prompt-tab-full', '카드 전체 생성', 'button');
+        const tabDef  = makeBtn('ai-prompt-tab',           'ai-prompt-tab-def',  '정의만 재생성',  'button');
+        tabs.appendChild(tabFull); tabs.appendChild(tabDef);
+        panel.appendChild(tabs);
+
+        const hint = h('p', 'admin-hint'); hint.id = 'ai-prompt-hint';
+        panel.appendChild(hint);
+
         const ta = document.createElement('textarea');
-        ta.id = ids.input;
+        ta.id = 'ai-prompt-input';
         ta.className = 'form-input form-area';
-        ta.rows = (k === 'def') ? 10 : 14;
+        ta.rows = 12;
         ta.placeholder = '시스템 프롬프트 (기본값 사용 시 비워두기)';
         panel.appendChild(ta);
-        const btns = h('div', 'admin-btns', null);
-        btns.style.marginTop = '8px';
-        btns.appendChild(makeBtn('admin-btn admin-btn-dl',   ids.load,  '📥 현재 값 불러오기', 'button'));
-        btns.appendChild(makeBtn('admin-btn admin-btn-up',   ids.save,  '💾 저장 (Blob)',       'button'));
-        btns.appendChild(makeBtn('admin-btn admin-btn-tpl',  ids.reset, '↺ 기본값으로 복원',    'button'));
+
+        const btns = h('div', 'admin-btns'); btns.style.marginTop = '8px';
+        btns.appendChild(makeBtn('admin-btn admin-btn-dl',  'ai-prompt-load',  '📥 불러오기', 'button'));
+        btns.appendChild(makeBtn('admin-btn admin-btn-up',  'ai-prompt-save',  '💾 저장',     'button'));
+        btns.appendChild(makeBtn('admin-btn admin-btn-tpl', 'ai-prompt-reset', '↺ 기본값',   'button'));
         panel.appendChild(btns);
-        const st = h('p', 'admin-status'); st.id = ids.status;
+
+        const st = h('p', 'admin-status'); st.id = 'ai-prompt-status';
         panel.appendChild(st);
+
         const dump = h('details', 'ai-prompt-default');
         const sum = document.createElement('summary'); sum.textContent = '기본 프롬프트 보기';
         dump.appendChild(sum);
-        const pre = document.createElement('pre'); pre.id = ids.defPre; pre.className = 'ai-prompt-default-pre';
+        const pre = document.createElement('pre'); pre.id = 'ai-prompt-default'; pre.className = 'ai-prompt-default-pre';
         dump.appendChild(pre);
         panel.appendChild(dump);
         root.appendChild(panel);
 
-        document.getElementById(ids.load).addEventListener('click',  () => loadAiPrompt(k));
-        document.getElementById(ids.save).addEventListener('click',  () => saveAiPrompt(k));
-        document.getElementById(ids.reset).addEventListener('click', () => resetAiPrompt(k));
-        if (window.ITPEAdmin.isAdminWithSecret()) loadAiPrompt(k);
+        function setHint(k) {
+            hint.textContent = (k === 'def')
+                ? '카드 추가 모달의 "AI 채우기 (정의)" 가 사용. 30자 이내 정의 한 줄만 생성.'
+                : '"AI 채우기" 가 카드 한 장(분류·정의·두음·키워드·출처) 전체를 생성.';
+        }
+        function selectTab(k) {
+            activeKind = k;
+            tabFull.classList.toggle('is-active', k === 'full');
+            tabDef.classList.toggle('is-active',  k === 'def');
+            setHint(k);
+            loadAiPromptInto(k);
+        }
+        tabFull.addEventListener('click', () => selectTab('full'));
+        tabDef.addEventListener('click',  () => selectTab('def'));
+
+        document.getElementById('ai-prompt-load').addEventListener('click',  () => loadAiPromptInto(activeKind));
+        document.getElementById('ai-prompt-save').addEventListener('click',  () => saveAiPromptUnified(activeKind));
+        document.getElementById('ai-prompt-reset').addEventListener('click', () => resetAiPromptUnified(activeKind));
+
+        // 초기 로드
+        setHint('full');
+        if (window.ITPEAdmin.isAdminWithSecret()) loadAiPromptInto('full');
     }
 
-    async function loadAiPrompt(kind) {
+    async function loadAiPromptInto(kind) {
         const k = (kind === 'def') ? 'def' : 'full';
-        const ta  = document.getElementById('ai-prompt-input-'   + k);
-        const pre = document.getElementById('ai-prompt-default-' + k);
-        const statusId = 'ai-prompt-status-' + k;
+        const ta = document.getElementById('ai-prompt-input');
+        const pre = document.getElementById('ai-prompt-default');
+        const statusId = 'ai-prompt-status';
         setStatus(statusId, '불러오는 중…');
         try {
             const r = await fetch('/api/ai-prompt?kind=' + k + '&_t=' + Date.now(), {
-                cache: 'no-store',
-                credentials: 'include',
+                cache: 'no-store', credentials: 'include',
             });
             if (!r.ok) {
-                if (r.status === 401) { setStatus(statusId, '관리자 권한 없음 — 다시 로그인 필요', 'err'); return; }
+                if (r.status === 401) { setStatus(statusId, '관리자 권한 없음', 'err'); return; }
                 throw new Error('HTTP ' + r.status);
             }
             const j = await r.json();
             ta.value = j.prompt || '';
             if (pre) pre.textContent = j.defaultPrompt || '';
             setStatus(statusId,
-                j.isDefault ? '✓ 기본 프롬프트 사용 중 (' + j.length + '자)' : '✓ 사용자 정의 프롬프트 로드됨 (' + j.length + '자)',
+                j.isDefault ? '✓ 기본값 사용 중 (' + j.length + '자)' : '✓ 사용자 정의 (' + j.length + '자)',
                 'ok'
             );
         } catch (e) {
             setStatus(statusId, '로드 실패: ' + (e?.message || e), 'err');
         }
     }
-    async function saveAiPrompt(kind) {
+    async function saveAiPromptUnified(kind) {
         const k = (kind === 'def') ? 'def' : 'full';
-        const ta = document.getElementById('ai-prompt-input-' + k);
-        const statusId = 'ai-prompt-status-' + k;
-        const prompt = ta.value || '';
+        const ta = document.getElementById('ai-prompt-input');
+        const statusId = 'ai-prompt-status';
         setStatus(statusId, '저장 중…');
         try {
             const r = await fetch('/api/ai-prompt', {
-                method: 'PUT',
-                credentials: 'include',
+                method: 'PUT', credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ prompt, kind: k }),
+                body: JSON.stringify({ prompt: ta.value || '', kind: k }),
             });
             if (!r.ok) {
-                let detail = ''; try { detail = JSON.stringify(await r.json()); } catch {}
-                throw new Error('HTTP ' + r.status + ' ' + detail);
+                let d = ''; try { d = JSON.stringify(await r.json()); } catch {}
+                throw new Error('HTTP ' + r.status + ' ' + d);
             }
             const j = await r.json();
             setStatus(statusId,
-                j.reset ? '✓ 기본값으로 복원됨' : '✓ 저장 완료 (' + j.length + '자) — 1분 내 적용',
+                j.reset ? '✓ 기본값으로 복원 (재배포 후 ~1분)' : '✓ 저장 완료 (' + j.length + '자, 재배포 후 ~1분)',
                 'ok'
             );
         } catch (e) {
             setStatus(statusId, '저장 실패: ' + (e?.message || e), 'err');
         }
     }
-    async function resetAiPrompt(kind) {
-        const k = (kind === 'def') ? 'def' : 'full';
-        if (!confirm('사용자 정의 프롬프트를 삭제하고 기본값으로 복원합니다. 계속할까요?')) return;
-        document.getElementById('ai-prompt-input-' + k).value = '';
-        await saveAiPrompt(k);
-        await loadAiPrompt(k);
+    async function resetAiPromptUnified(kind) {
+        if (!confirm('사용자 정의를 삭제하고 기본값으로 복원합니다. 계속할까요?')) return;
+        const ta = document.getElementById('ai-prompt-input');
+        if (ta) ta.value = '';
+        await saveAiPromptUnified(kind);
+        await loadAiPromptInto(kind);
     }
 
     // ─────────────────────────────────────────────────────────────
@@ -566,8 +570,8 @@
             h('span', 'admin-badge', t('순서·추가·삭제·이름변경'))
         ));
         panel.appendChild(h('p', 'admin-hint', t(
-            '단원 목록을 추가·삭제·이동(↑↓)할 수 있습니다. 저장하면 Vercel Blob (units.json) 에 반영되어 모든 기기에서 즉시 보입니다. ' +
-            'ID(영문 소문자/숫자/-) 는 카드 저장 키(파일명) 가 되므로 신중하게. 기존 ID 의 이름·이모지·색은 변경 가능.'
+            '단원을 추가·삭제·이동(↑↓). 저장 시 GitHub commit → 재배포 후 ~1분 내 반영. ' +
+            'ID(영문 소문자/숫자/-) 는 카드 파일명이 되므로 신중하게. 이름·이모지·색은 변경 가능.'
         )));
 
         const list = document.createElement('div');
@@ -803,14 +807,24 @@
             renderNotAdmin(root);
             return;
         }
-        renderAdminUI(root);
-        renderApiSecretPanel();
-        renderUnitsPanel();
-        renderAiPromptPanel('full');
-        renderAiPromptPanel('def');
-        renderImageCleanupPanel();
-        // (시크릿 입력 패널 제거됨 — 로그인 시 쿠키 자동 발급)
+        // 기존 내용 한 번 비우고 새 순서로 조립
+        while (root.firstChild) root.removeChild(root.firstChild);
 
+        // 패널 순서:
+        //   1) 세션 상태 (최상단)
+        //   2) 단원 관리 (자주 쓰는 것)
+        //   3) 엑셀 일괄
+        //   4) 사용자 화이트리스트
+        //   5) AI 프롬프트 (탭 통합)
+        //   6) R2 이미지 정리 (유지보수 — 맨 아래)
+        renderSessionPanel();
+        renderUnitsPanel();
+        renderBulkExcelPanel();
+        renderUsersPanel();
+        renderAiPromptPanel();
+        renderImageCleanupPanel();
+
+        // 이벤트 바인딩 (DOM 추가 후)
         document.getElementById('btn-tpl').addEventListener('click', doBulkTemplate);
         document.getElementById('btn-export').addEventListener('click', doBulkExport);
         document.getElementById('btn-export-json').addEventListener('click', doExportJsonBundle);
@@ -1451,7 +1465,7 @@
             // 1차 확인
             const c1 = confirm(
                 `'${u.name}' 단원의 모든 카드를 삭제합니다.\n\n` +
-                `· 서버(Vercel Blob)에서 영구 삭제됩니다\n` +
+                `· 서버에서 영구 삭제됩니다 (GitHub commit)\n` +
                 `· 다른 기기에도 즉시 반영됩니다\n` +
                 `· 되돌릴 수 없습니다\n\n` +
                 `정말 진행하시겠습니까?`
@@ -1603,7 +1617,7 @@
                 setAllPriorDone('save'); await tick(80);
                 // 단원 카드를 엑셀 내용 그대로 교체 (row 순서 유지)
                 if (isAdminWithSecret) {
-                    // Vercel Blob 에 PUT — 즉시 다른 기기 동기화
+                    // 서버에 PUT — GitHub commit → 재배포 후 ~1분 내 반영
                     try {
                         await window.ITPEAdmin.saveCards(u.id, fresh);
                     } catch (err) {

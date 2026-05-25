@@ -1583,9 +1583,7 @@
     }
     function validateImageDataUrl(src) {
         if (typeof src !== 'string' || src.length === 0) return false;
-        // Vercel Blob URL (영구 저장됨, 다른 기기 공유) — 최우선
-        if (/^https:\/\/.+\.public\.blob\.vercel-storage\.com\//i.test(src)) return true;
-        // 일반 https image URL
+        // 일반 https image URL (R2 · 커스텀 도메인 · 옛 Vercel Blob 등)
         if (/^https:\/\/[^\s]+\.(webp|jpe?g|png|gif|svg)(\?[^\s]*)?$/i.test(src)) return true;
         // 모든 data:image/... base64 (이 기기에만 저장)
         if (/^data:image\/[a-z+]+(;[a-z0-9-]+=[^;,]+)*;base64,/i.test(src)) return true;
@@ -2069,8 +2067,8 @@
         const hasSecret = !!(window.ITPEAdmin && window.ITPEAdmin.isAdminWithSecret && window.ITPEAdmin.isAdminWithSecret());
         const msg = hasSecret
             ? `🗑 카드 "${topic}" 를 삭제합니다.\n\n` +
-              `· 서버(Vercel Blob)에서 영구 삭제됩니다\n` +
-              `· 다른 PC·핸드폰에도 즉시 반영됩니다\n` +
+              `· 서버에서 영구 삭제됩니다 (GitHub commit)\n` +
+              `· 재배포 후 ~1분 내 다른 기기에 반영됩니다\n` +
               `· 되돌릴 수 없습니다\n\n계속하시겠습니까?`
             : `🗑 카드 "${topic}" 를 삭제합니다.\n\n` +
               `⚠ 시크릿 미설정 — 이 기기에서만 사라집니다.\n` +
