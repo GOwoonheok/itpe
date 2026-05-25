@@ -120,7 +120,10 @@
     "definition": "경량 가상화를 위해, OS 커널을 공유한 격리 기술",
     "mnemonic": "(C-V)\nVM: Hypervisor + 게스트 OS\nContainer: 호스트 커널 공유 + namespace/cgroup",
     "keyword": "Namespace, cgroup, Docker, Hypervisor, OCI",
-    "extra": "VM은 게스트 OS 통째 → 무겁지만 강한 격리. Container는 호스트 커널 공유 → 가볍지만 격리 약함(커널 취약점 시 위험). Kata Containers는 절충."
+    "extra": "VM은 게스트 OS 통째 → 무겁지만 강한 격리. Container는 호스트 커널 공유 → 가볍지만 격리 약함(커널 취약점 시 위험). Kata Containers는 절충.",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/ca4a57a3-2924-44a1-8286-f9bb82a12702.webp"
+    ]
   },
   {
     "topic": "Kubernetes",
