@@ -1779,6 +1779,16 @@
                     }
                 } catch {}
 
+                // 6) 메인화면(시트 목록) 갯수도 0 으로 현행화 — 서버 재배포(~1분) 따라잡을 때까지 우선 표시
+                if (isAdminWithSecret) {
+                    try {
+                        const raw = localStorage.getItem('itpe.countHints');
+                        const map = raw ? (JSON.parse(raw) || {}) : {};
+                        map[u.id] = { count: 0, ts: Date.now() };
+                        localStorage.setItem('itpe.countHints', JSON.stringify(map));
+                    } catch {}
+                }
+
                 await refreshCounts();
 
                 const imgMsg = imgResult

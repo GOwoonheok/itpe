@@ -81,7 +81,33 @@
         });
         return jsonAlive.length + userCards.length;
     }
+    // 이동/삭제 직후 갯수 현행화 힌트 — 서버(재배포 ~1분)가 따라잡을 때까지 기대값 우선 표시.
+    const COUNT_HINT_TTL = 5 * 60 * 1000; // 5분
+    function loadCountHints() {
+        try { const raw = localStorage.getItem('itpe.countHints'); return raw ? (JSON.parse(raw) || {}) : {}; }
+        catch { return {}; }
+    }
+    function saveCountHints(map) {
+        try {
+            if (map && Object.keys(map).length) localStorage.setItem('itpe.countHints', JSON.stringify(map));
+            else localStorage.removeItem('itpe.countHints');
+        } catch {}
+    }
+    // 서버 계산값 serverN 에 힌트 적용 → 표시할 갯수 반환. hints/dirty 는 참조로 갱신.
+    function applyCountHint(unitId, serverN, hints, now, dirtyRef) {
+        const h = hints[unitId];
+        if (!h || typeof h.count !== 'number') return serverN;
+        if ((now - (h.ts || 0)) > COUNT_HINT_TTL || serverN === h.count) {
+            delete hints[unitId]; dirtyRef.dirty = true;   // 만료 또는 서버 반영 완료 → 폐기
+            return serverN;
+        }
+        return h.count;   // 서버 지연 중 — 기대값 표시
+    }
+
     function refreshRealCounts(metaEls) {
+        const hints = loadCountHints();
+        const now = Date.now();
+        const dirtyRef = { dirty: false };
         // /api/cards 한 번 호출로 전체 단원 카운트 처리 (시드 + Blob 자동 폴백)
         fetch('/api/cards?_t=' + Date.now(), { cache: 'no-store' })
             .then((r) => r.ok ? r.json() : null)
@@ -91,9 +117,10 @@
                     const el = metaEls[u.id];
                     if (!el) return;
                     const cards = Array.isArray(all[u.id]) ? all[u.id] : [];
-                    const n = realCountFor(u, cards);
+                    const n = applyCountHint(u.id, realCountFor(u, cards), hints, now, dirtyRef);
                     el.textContent = n + ' 카드';
                 });
+                if (dirtyRef.dirty) saveCountHints(hints);
             })
             .catch(() => {
                 // 폴백 — 번들 JSON 개별 조회
@@ -103,8 +130,10 @@
                     fetch('data/cards/' + u.file, { cache: 'no-cache' })
                         .then((r) => r.ok ? r.json() : [])
                         .then((cards) => {
-                            const n = realCountFor(u, Array.isArray(cards) ? cards : []);
+                            const serverN = realCountFor(u, Array.isArray(cards) ? cards : []);
+                            const n = applyCountHint(u.id, serverN, hints, now, dirtyRef);
                             el.textContent = n + ' 카드';
+                            if (dirtyRef.dirty) saveCountHints(hints);
                         })
                         .catch(() => { el.textContent = (u.count ?? 0) + ' 카드'; });
                 });

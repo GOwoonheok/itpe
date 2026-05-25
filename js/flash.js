@@ -2059,6 +2059,19 @@
         moveList.appendChild(frag);
     }
 
+    // 메인화면(시트 목록) 갯수 즉시 현행화용 힌트.
+    // 이동/삭제 직후 서버(재배포 ~1분)·오버레이 정리 사이의 공백 동안
+    // app.js refreshRealCounts 가 이 기대값을 우선 표시 → 서버가 따라잡으면 자동 폐기.
+    function setCountHint(uid, count) {
+        if (!uid || typeof count !== 'number' || count < 0) return;
+        try {
+            const raw = localStorage.getItem('itpe.countHints');
+            const map = raw ? (JSON.parse(raw) || {}) : {};
+            map[uid] = { count, ts: Date.now() };
+            localStorage.setItem('itpe.countHints', JSON.stringify(map));
+        } catch {}
+    }
+
     function confirmMove(card, destUnit) {
         const topicTxt = card.topic ?? card.q ?? '';
         const hasSecret = !!(window.ITPEAdmin && window.ITPEAdmin.isAdminWithSecret && window.ITPEAdmin.isAdminWithSecret());
@@ -2129,6 +2142,9 @@
             const wasIdx = state.idx;
             rebuildOrder();
 
+            // 출발 단원 갯수 현행화 힌트 (이동으로 1장 빠진 새 갯수)
+            setCountHint(unitId, state.cards.length);
+
             const lastEmpty = state.order.length === 0;
             if (!lastEmpty) {
                 state.idx = Math.min(wasIdx, state.order.length - 1);
@@ -2147,7 +2163,10 @@
                         const destBase = await window.ITPEAdmin.fetchCards(destUnit.id);
                         const destCards = Array.isArray(destBase) ? destBase.slice() : [];
                         destCards.push(moved);
-                        await window.ITPEAdmin.saveCards(destUnit.id, destCards.map(packCardForServer).filter(Boolean));
+                        const destPacked = destCards.map(packCardForServer).filter(Boolean);
+                        await window.ITPEAdmin.saveCards(destUnit.id, destPacked);
+                        // 도착 단원 갯수 현행화 힌트 (서버 기준 새 갯수)
+                        setCountHint(destUnit.id, destPacked.length);
                         ttsToast('✅ 이동 완료 — ' + destUnit.name + ' 으로 ' + topicTxt, 'ok');
                     } catch (e) {
                         ttsToast('❌ 이동 서버 저장 실패: ' + (e?.message || e), 'err');
