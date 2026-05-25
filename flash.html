@@ -57,6 +57,23 @@
                     <p class="admin-status" id="unit-status"></p>
                 </section>
 
+                <!-- 🤖 빈 정의 백그라운드 자동 생성 — 관리자 전용. 단원의 빈 definition 카드를 차례로 채움. -->
+                <section class="unit-admin" id="autodef-panel" hidden>
+                    <div class="admin-head">
+                        <h3 class="admin-title">🤖 빈 정의 자동 생성</h3>
+                        <span class="admin-badge" id="autodef-count">0장</span>
+                    </div>
+                    <p class="admin-hint">
+                        이 단원에서 정의(definition)가 비어있는 카드를 찾아 AI로 자동 생성합니다.
+                        백그라운드로 진행되며 학습은 계속할 수 있습니다. 10장마다 GitHub commit.
+                    </p>
+                    <div class="admin-btns">
+                        <button class="admin-btn admin-btn-json" id="autodef-start" type="button">▶ 자동 생성 시작</button>
+                        <button class="admin-btn admin-btn-tpl"  id="autodef-stop"  type="button" hidden>⏸ 정지</button>
+                    </div>
+                    <p class="admin-status" id="autodef-status"></p>
+                </section>
+
                 <!-- ✨ AI 토픽 자동 생성 (jm 단원 전용 — 정보관리기술사 학습용) -->
                 <section class="unit-admin ai-panel" id="ai-panel" hidden>
                     <div class="admin-head">

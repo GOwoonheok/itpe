@@ -106,6 +106,11 @@
             state.checked = loadChecked();
             // 카드 0장이어도 모드 선택 화면(엑셀 업로드 등 관리자 도구 포함)은 노출
 
+            // 🤖 빈 정의 자동 생성 패널 갱신 — cards 가 채워진 시점
+            if (window.ITPEFlash && window.ITPEFlash.refreshAutoDef) {
+                try { window.ITPEFlash.refreshAutoDef(); } catch {}
+            }
+
             // 이전 학습 위치 복원 시도 (같은 단원일 때만)
             const saved = loadLastPosition();
             const savedSameUnit = saved && saved.unitId === unitId;
@@ -1564,6 +1569,201 @@
             return false;
         }
     }
+
+    // ─────────────────────────────────────────────────────────────
+    // 🤖 빈 정의 자동 생성 — 관리자 전용 백그라운드 서비스
+    //   · 단원 안 카드 중 definition 이 빈 카드를 찾아 /api/ai-fill (mode=def) 로 1장씩 채움
+    //   · 1.2초 간격 (Gemini rate-limit 회피 + 정중함)
+    //   · 10장마다 자동 commit (GitHub) — 마지막은 무조건 commit
+    //   · 페이지 떠나면 남은 변경 commit 후 중단
+    //   · 다른 사용자가 동시 학습 중이어도 in-memory 상태와 충돌 없음 (관리자 본인 기기 기준)
+    // ─────────────────────────────────────────────────────────────
+    const autoDef = {
+        running: false,
+        total: 0,
+        done: 0,
+        failed: 0,
+        pendingCommit: 0,    // 마지막 commit 후 채운 카드 수
+        BATCH_COMMIT: 10,
+        DELAY_MS: 1200,
+    };
+
+    function isAdminNow() {
+        return !!(window.ITPEAuth && window.ITPEAuth.isAdmin && window.ITPEAuth.isAdmin());
+    }
+
+    function countEmptyDefinitions() {
+        let n = 0;
+        for (const c of state.cards) {
+            const def = (c && (c.definition ?? c.a)) || '';
+            const topic = (c && (c.topic ?? c.q)) || '';
+            if (topic.trim() && !def.trim()) n++;
+        }
+        return n;
+    }
+
+    function refreshAutoDefPanel() {
+        const panel = document.getElementById('autodef-panel');
+        if (!panel) return;
+        if (!isAdminNow()) { panel.hidden = true; return; }
+
+        const startBtn = document.getElementById('autodef-start');
+        const stopBtn  = document.getElementById('autodef-stop');
+        const countEl  = document.getElementById('autodef-count');
+        const statusEl = document.getElementById('autodef-status');
+        if (!startBtn || !stopBtn || !countEl || !statusEl) return;
+
+        const empties = countEmptyDefinitions();
+        if (autoDef.running) {
+            countEl.textContent = autoDef.done + '/' + autoDef.total;
+            startBtn.hidden = true;
+            stopBtn.hidden = false;
+            const remaining = autoDef.total - autoDef.done;
+            statusEl.textContent = `생성 중… 완료 ${autoDef.done} · 남음 ${remaining}` +
+                (autoDef.failed ? ` · 실패 ${autoDef.failed}` : '');
+            statusEl.className = 'admin-status admin-status-info';
+        } else {
+            countEl.textContent = empties + '장';
+            startBtn.hidden = false;
+            stopBtn.hidden = true;
+            startBtn.disabled = (empties === 0);
+            if (empties === 0) {
+                statusEl.textContent = '✓ 모든 카드에 정의가 있음';
+                statusEl.className = 'admin-status admin-status-ok';
+            } else {
+                statusEl.textContent = `정의가 없는 카드 ${empties}장 — [시작] 누르면 백그라운드로 채웁니다.`;
+                statusEl.className = 'admin-status';
+            }
+        }
+    }
+
+    async function autoDefCommit() {
+        if (!isAdminNow() || !state.unit) return false;
+        try {
+            const cards = state.cards.map(packCardForServer).filter(Boolean);
+            await window.ITPEAdmin.saveCards(state.unit.id, cards);
+            // 메모리 상태 일치화 (다음 GET 과 동일)
+            state.jsonCards = state.cards.slice();
+            state.userCards = [];
+            autoDef.pendingCommit = 0;
+            return true;
+        } catch (e) {
+            console.warn('[autodef] commit failed (계속 진행)', e);
+            return false;
+        }
+    }
+
+    async function startAutoDef() {
+        if (autoDef.running) return;
+        if (!isAdminNow()) { alert('관리자만 사용 가능합니다.'); return; }
+        if (!state.unit) return;
+
+        // 대상 카드 인덱스 수집 (인덱스로 보관 — state.cards 가 재구성돼도 추적 가능하도록 ID 기반)
+        const targets = [];
+        state.cards.forEach((c, i) => {
+            const def = (c && (c.definition ?? c.a)) || '';
+            const topic = (c && (c.topic ?? c.q)) || '';
+            if (topic.trim() && !def.trim()) targets.push({ idx: i, card: c, topic: topic.trim() });
+        });
+        if (targets.length === 0) return;
+
+        autoDef.running = true;
+        autoDef.total = targets.length;
+        autoDef.done = 0;
+        autoDef.failed = 0;
+        autoDef.pendingCommit = 0;
+        refreshAutoDefPanel();
+        ttsToast('🤖 빈 정의 ' + targets.length + '장 자동 생성 시작', 'info');
+
+        for (let i = 0; i < targets.length; i++) {
+            if (!autoDef.running) break;
+            const t = targets[i];
+            // 카드가 여전히 존재하고 여전히 비어있는지 재확인 (다른 흐름이 채웠을 수 있음)
+            if (!t.card || (t.card.definition && t.card.definition.trim())) continue;
+
+            try {
+                const r = await fetch('/api/ai-fill', {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ topic: t.topic, mode: 'def' }),
+                });
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                const j = await r.json();
+                const item = j.items && j.items[0];
+                if (item && item.definition && !item.error) {
+                    t.card.definition = String(item.definition).trim();
+                    if (item.confidence) t.card.aiConfidence = item.confidence;
+                    if (!t.card.source) t.card.source = 'ai';
+                    t.card.aiGeneratedAt = new Date().toISOString();
+                    autoDef.done++;
+                    autoDef.pendingCommit++;
+
+                    // 5장마다 가벼운 토스트 (스팸 방지)
+                    if (autoDef.done % 5 === 0) {
+                        ttsToast(`🤖 ${autoDef.done}/${autoDef.total} 생성됨`, 'info');
+                    }
+
+                    // 10장마다 commit
+                    if (autoDef.pendingCommit >= autoDef.BATCH_COMMIT) {
+                        await autoDefCommit();
+                    }
+                } else {
+                    autoDef.failed++;
+                }
+            } catch (e) {
+                autoDef.failed++;
+                console.warn('[autodef] 카드 실패', t.topic, e?.message || e);
+            }
+            refreshAutoDefPanel();
+
+            // 정중한 간격 (Gemini RPM 회피)
+            await new Promise((res) => setTimeout(res, autoDef.DELAY_MS));
+        }
+
+        // 마무리 commit (남은 변경분)
+        if (autoDef.pendingCommit > 0) await autoDefCommit();
+
+        const wasRunning = autoDef.running;
+        autoDef.running = false;
+
+        // 화면 갱신 — 새 정의가 학습 화면에 즉시 보이도록
+        try { rebuildOrder(); render(); } catch {}
+
+        refreshAutoDefPanel();
+        if (wasRunning) {
+            ttsToast(`✅ 자동 생성 완료 — 성공 ${autoDef.done} · 실패 ${autoDef.failed}`, 'ok');
+        } else {
+            ttsToast(`⏸ 중지됨 — 완료 ${autoDef.done}/${autoDef.total}`, 'info');
+        }
+    }
+
+    function stopAutoDef() {
+        autoDef.running = false;
+    }
+
+    // 페이지 떠나기 직전 — 진행 중이면 commit 트라이 (best effort)
+    window.addEventListener('beforeunload', () => {
+        if (autoDef.running && autoDef.pendingCommit > 0) {
+            // 동기 호출은 불가 — sendBeacon 미지원이므로 그냥 멈춤 (다음 진입 시 이어서)
+            autoDef.running = false;
+        }
+    });
+
+    // 패널 버튼 바인딩 (DOM 이 준비되면)
+    function bindAutoDefButtons() {
+        const start = document.getElementById('autodef-start');
+        const stop  = document.getElementById('autodef-stop');
+        if (start && !start._bound) { start.addEventListener('click', startAutoDef); start._bound = true; }
+        if (stop  && !stop._bound)  { stop.addEventListener('click',  stopAutoDef);  stop._bound  = true; }
+    }
+    if (document.readyState !== 'loading') bindAutoDefButtons();
+    else document.addEventListener('DOMContentLoaded', bindAutoDefButtons);
+
+    // admin.js bootFlashAdmin 가 호출 — 카드 로드된 뒤 패널 상태 갱신
+    window.ITPEFlash = Object.assign(window.ITPEFlash || {}, {
+        refreshAutoDef: () => { bindAutoDefButtons(); refreshAutoDefPanel(); },
+    });
 
     // 토픽 중복 체크 — 자기 자신은 제외. 중복 시 기존 카드 정보 알려주고 false 반환.
     function checkTopicDuplicate(topic, originalCard) {

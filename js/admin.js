@@ -1304,6 +1304,16 @@
             bindInlinePromptEditor();
         }
 
+        // 🤖 빈 정의 자동 생성 패널 — 관리자에 노출, 실제 로직은 flash.js 가 담당
+        const autodefPanel = document.getElementById('autodef-panel');
+        if (autodefPanel) {
+            autodefPanel.hidden = false;
+            // flash.js 에 카드 로드 끝났음을 알림 — 패널 갱신 트리거
+            if (window.ITPEFlash && typeof window.ITPEFlash.refreshAutoDef === 'function') {
+                window.ITPEFlash.refreshAutoDef();
+            }
+        }
+
         function bindInlinePromptEditor() {
             const ta       = document.getElementById('jm-ai-prompt-input');
             const loadBtn  = document.getElementById('jm-ai-prompt-load');
