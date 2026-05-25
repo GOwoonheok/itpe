@@ -669,13 +669,25 @@
         const root = document.getElementById('admin-root');
         if (!root || !window.ITPEAdmin) return;
 
-        const panel = h('section', 'admin-panel');
+        const panel = h('section', 'admin-panel collapsible');
         panel.id = 'units-panel';
-        panel.appendChild(h('div', 'admin-head',
+
+        // ─── 헤더 (클릭 시 열림/닫힘) ───
+        const head = h('div', 'admin-head admin-head-clickable',
             h('h2', 'admin-title', t('📚 단원(시트) 관리')),
-            h('span', 'admin-badge', t('순서·추가·삭제·이름변경'))
-        ));
-        panel.appendChild(h('p', 'admin-hint', t(
+            h('span', 'admin-badge', t('순서·추가·삭제·이름변경')),
+            h('span', 'admin-chevron', t('▼'))
+        );
+        head.setAttribute('role', 'button');
+        head.setAttribute('tabindex', '0');
+        head.setAttribute('aria-expanded', 'false');
+        panel.appendChild(head);
+
+        // ─── 바디 (기본 닫힘) ───
+        const body = h('div', 'admin-body');
+        body.hidden = true;
+
+        body.appendChild(h('p', 'admin-hint', t(
             '단원을 추가·삭제·이동(↑↓). 저장 시 GitHub commit → 재배포 후 ~1분 내 반영. ' +
             'ID(영문 소문자/숫자/-) 는 카드 파일명이 되므로 신중하게. 이름·이모지·색은 변경 가능.'
         )));
@@ -683,7 +695,7 @@
         const list = document.createElement('div');
         list.id = 'units-list';
         list.className = 'units-list';
-        panel.appendChild(list);
+        body.appendChild(list);
 
         // 추가 폼
         const addForm = h('div', 'units-add');
@@ -696,26 +708,46 @@
         const addBtn = makeBtn('admin-btn admin-btn-up', 'units-add-btn', '+ 추가', 'button');
         addBtn.style.height = '36px';
         addForm.appendChild(addBtn);
-        panel.appendChild(addForm);
+        body.appendChild(addForm);
 
         // 액션 버튼
         const actions = h('div', 'admin-btns', null);
         actions.style.marginTop = '12px';
         actions.appendChild(makeBtn('admin-btn admin-btn-dl',  'units-load',  '📥 다시 불러오기', 'button'));
-        actions.appendChild(makeBtn('admin-btn admin-btn-up',  'units-save',  '💾 저장 (Blob)',  'button'));
+        actions.appendChild(makeBtn('admin-btn admin-btn-up',  'units-save',  '💾 저장',          'button'));
         actions.appendChild(makeBtn('admin-btn admin-btn-tpl', 'units-reset', '↺ 시드(번들)로 복원', 'button'));
-        panel.appendChild(actions);
+        body.appendChild(actions);
 
         const st = h('p', 'admin-status'); st.id = 'units-status';
-        panel.appendChild(st);
+        body.appendChild(st);
 
+        panel.appendChild(body);
         root.appendChild(panel);
 
+        // 이벤트
         document.getElementById('units-load').addEventListener('click',  loadUnits);
         document.getElementById('units-save').addEventListener('click',  saveUnits);
         document.getElementById('units-reset').addEventListener('click', resetUnits);
         addBtn.addEventListener('click', addUnitFromForm);
-        loadUnits();
+
+        // 토글 — 첫 번째 펼침 시에만 자동 로드 (불필요한 API 호출 방지)
+        let loadedOnce = false;
+        function togglePanel() {
+            const opening = body.hidden;
+            body.hidden = !opening;
+            head.setAttribute('aria-expanded', opening ? 'true' : 'false');
+            panel.classList.toggle('is-open', opening);
+            const chev = head.querySelector('.admin-chevron');
+            if (chev) chev.textContent = opening ? '▲' : '▼';
+            if (opening && !loadedOnce) {
+                loadedOnce = true;
+                loadUnits();
+            }
+        }
+        head.addEventListener('click', togglePanel);
+        head.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePanel(); }
+        });
     }
 
     function labeled(label, input) {

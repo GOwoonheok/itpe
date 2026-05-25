@@ -908,6 +908,53 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
 }
 .admin-tools-exit:hover { background: #c0392b22; color: #fff; border-color: #c0392b; }
 
+/* 접이식 admin 패널 — 헤더 클릭 시 열림/닫힘 */
+.admin-panel.collapsible .admin-head-clickable {
+    cursor: pointer;
+    user-select: none;
+    padding: 6px 4px;
+    margin: -6px -4px 0;
+    border-radius: 8px;
+    transition: background 0.15s;
+}
+.admin-panel.collapsible .admin-head-clickable:hover {
+    background: #2f80ed14;
+}
+.admin-panel.collapsible .admin-chevron {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    transition: color 0.15s;
+}
+.admin-panel.collapsible.is-open .admin-chevron { color: #9ec4ff; }
+.admin-panel.collapsible .admin-body { animation: panelOpen 0.18s ease-out; }
+@keyframes panelOpen {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* admin.html — 페이지 하단 "메인으로 돌아가기" 링크 */
+.admin-page-exit {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 28px 0 18px;
+    padding: 12px 14px;
+    background: transparent;
+    border: 1px dashed #c0392b80;
+    border-radius: 10px;
+    color: #ffb3aa;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.admin-page-exit:hover {
+    background: #c0392b22;
+    color: #fff;
+    border-color: #c0392b;
+}
+
 /* AI 프롬프트 패널 — full/def 탭 */
 .ai-prompt-tabs {
     display: flex;
