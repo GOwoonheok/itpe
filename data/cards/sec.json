@@ -1,1 +1,2351 @@
-[]
+[
+  {
+    "topic": "보안개요",
+    "definition": "",
+    "mnemonic": "[암호화] 원리, 공격기법 / 양방향암호화 > 비밀키=대칭키, 스트림 ,블록: 구조/Feistel-DES-SEED/SPN-AES/ARIA/LEA, 운영모드/공개키(소인수분해,RSA,이산대수, DSA, 디피헬만,타원곡선-ECC) / 단방향 암호화(해시, MAC-HMAC, MDC-MD5 / 양자암호(Gover-블록, Shor-소인수-공개, 양자내성암호-PQC:격자,해시,아이소제니, 다변수 / 양자암호통신(QKD,BB84) / PET(형태,순서보존암호, 동형암호, 영지식증명(타원)/ 활용(인증-PK-인증서, 전자서명, 이중서명), 정책(KCMVP)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-hexdp",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "보안",
+    "definition": "",
+    "mnemonic": "기밀성, 무결성, 가용성, 부인방지, 3A (Accountability 책임, Authentication 인증, Authorization 권한) / 예탐저교(예방,탐지, 저지, 교정) / 지침,규칙,표준,절차서 \r\n부가원칙 : 인증, 부인방지, 추적성, 보증, 컴플라이언스",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-9v71y",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- 보안범위",
+    "definition": "",
+    "mnemonic": "보안범위 : 물리적, NW, APP, 시스템, DB, 개인정보\r\n물리(출입,도난), NW(도청,변조,위조>인증,암호호,무결성>FW,IDS,VPN등), APP(PGP, MIME), \r\nDB(암호화,정책), 시스템(중앙정부 누출방지, 서버보안, 바이러스, 백신)\r\nPD(비식별화, 가총삭범마, 비식별화 평가방법 : K-익명성, L-다양성, T-접근성, M-유일성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-49jrd",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- 기밀성",
+    "definition": "",
+    "mnemonic": "데이터 정보의 노출보호, 기밀유지 For (스누핑, 스니핑, 스푸핑) \r\n/ NW상 몰래획득(스누핑), 타인 패킷 훔침(스니핑), 유도훔침(스푸핑)\r\n@대응: 사용자 인증, 암호화, 접근제어",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-8avlj",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- 무결성",
+    "definition": "",
+    "mnemonic": "민감한 정보에 허가받지 않은자가 변경금지 For (변조,가장,부인) / 악성코드, 바이러스, 랜섬, 트로이목마\r\n@대응: 해쉬함수, 메시지 인증, 디지털서명 - MDC, MAC, PKI",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-baihv",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- 가용성",
+    "definition": "",
+    "mnemonic": "허거받지 않은자가 접근금지(DoS, DDoS) \r\n@Anti-DDoS, FT(RAID, 복제), 고가용성(Fail-over, Fail Back, Active-A/S, Clustering, Hearbeat)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-0c5md",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "예탐저교(흐름)",
+    "definition": "",
+    "mnemonic": "사전, 발생중, 사후/ 예탐저교\r\n예방(WIPS, DRM, IAM, 접근통제, 파일백업, 보안정책, 모의해킹, 가이드라인), \r\n탐지(IDS, IPS, ESM, SIEM, SOAR), \r\n저지(FW, 백신, EDR, XDR, CCTV, 경고문구), \r\n교정(백업도구, 보안패치, 사고대응 포렌식 분석, ISMS-P, 27001, 보안감사)\r\n@강화방안 : RED/BLUE팀, CoE역할, 모의해킹(버그바운티), ZeroDay Attack",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-oqj9i",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "변조,위조",
+    "definition": "",
+    "mnemonic": "(변조)중간 탈취후 변경 / (위조)송신자 가장, 악성코드 생성전달 (DNS포밍, 메일사칭)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-entoo",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "정보보호거버넌스",
+    "definition": "",
+    "mnemonic": "개념 : 정보보호 의사결정 권한+책임할당, BIZ전략적 연계, 법규정 준수의 프로세스, 실행체계\r\n6대원칙 : 1.전체 보호계획수립, 2.위험기반 접근방식, 3.투자방향설정, 4.요구사항 확인, 5.환경조성, 6.성과검토 \r\n구성 : EDM / 평지모의감(평가,지시,모니터,의사소통,감사), ISO 38500, 예탐저교  Evaluate, Direct, Monitor",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-c1mdk",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "ISO 27000 시리즈",
+    "definition": "",
+    "mnemonic": "정보보호 관리시스템 국제표준 체계 > 27000 : overview-용어 , 27001 : ISMS,  27002 : Code of ISMS, 27003 : ISMS 구현가이드,  27004 : Measurement-수준측정,  27005 : 보안위험관리 27006 : ISMS 인증기관, 심사자격 조건, 27011 : 통신분야 ISM지침, 27033: NW분야 통제, 27799: 의료정보 ISM지침",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-6ri6s",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "ISO 27001",
+    "definition": "",
+    "mnemonic": "정보보안경영시스템(ISMS) 국제표준, 실행을 위한 프레임웤, 자사적용 지침 제공 @정책,조직,자산,인적, 물리, 운영,접근,시스템,사고,연속성,준거성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-z2uth",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "ISO 27017",
+    "definition": "",
+    "mnemonic": "클라우드 보안 (27001, 27002, 29100(개인정보), 27018(클라우드 개인정보)\r\n도메인 : 정책, 조직, 인적, 자산,  접근, 암호화, 물리, 운영/ 통신, 시스템 개발, 공급망, 정보보호사고, 연속성, 준거성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-ob051",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "ISO 27018",
+    "definition": "",
+    "mnemonic": "클라우드 개인정보보호 : 클라우드 환경에서, PII를 보호위한 통제 국제표준\r\n항목 : 개요, 동의, 사용목적, 수집제한, 데이터최소화, 사용제한, 정확성, 공정성, 참여, 책임, 정보보호, 프라이버시 보호 규정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-k5fbw",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "ISO 29100",
+    "definition": "",
+    "mnemonic": "개인정보보호 국제표준 (27018과 두음 같음)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-n31k0",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "ISO 31000",
+    "definition": "",
+    "mnemonic": "리스크관리 국제표준(원칙, 프레잌워크, 프로세스) / \r\n조직이 불확실성을 체계적 식별, 평가, 대응하여 가치를 보호 창출하는 지원",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-5skyx",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "CSAP",
+    "definition": "",
+    "mnemonic": "개념 : 공공기관 안전성, 신뢰성이 검증된 민간 클라우드 서비스 공급지원 제도 \r\n/ 클라우드컴퓨팅법 5조 (클라우드보안인증제) / 절차 : 준비,평가,인증단계\r\n@정책,인사,자원,공유, 침해사고, 서버,준거성,물리적, /  가상화, 접근통제, 데이터, 네트웍, 시큐어, 국가",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-fkx0w",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- CSAP-항목",
+    "definition": "",
+    "mnemonic": "116, 79, 31, 110 / IaaS, SaaS(표준,간편), DaaS, 최초(1년), 사후매년(매회4회) ->1년(갱신평가)\r\n@ 상(물리분리, 안보, 국방, 통일), 중(물리분리, 비공개 업무자료, 운영), 하(논리, 공공데이터 포함) >N2SF 변경 필요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-q2ohu",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "ISMS-P",
+    "definition": "",
+    "mnemonic": "ISMS(80개) + PIMS(21개) / 관보개(관리,보안,개인정보) , 총 101개",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-vzshp",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "ISMS-P 의무대상 간편대상",
+    "definition": "",
+    "mnemonic": "자율신청/통신망법47조 \r\n의무대상: ISP, IDC, (1500억매출)학교, 병원 / (통신)저년도 매출100억 또는 100만 접속\r\n간편인증 목적, 대상 : 시간단축, 비용완화  / 소기업, 300억 미만 중기업, 300억 이상 중기업(정보통신설비 미보유자), ISMS-P 인증받은 호스팅 및 클라우드 서비스(SaaS, PaaS) 이용자\r\n문제점 : 인증신뢰, K8S신기술 대응미비, 심사원 역량, 툴부족, 심사독립성, 과도한 이의제기\r\n대응방안 : 신기술인증, 역량교육, 점검툴 확보, 심사독립, 이의제기절차 마련",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-3ta2h",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "글로벌 CBPR (Cross Border Privacy Rule)",
+    "definition": "",
+    "mnemonic": "전자상거래활성화, APEC->글로벌화, 개인보호 체계 평가인증 제도 /\r\n개보위(정책), KISA(인증), 위원회, 심사, APEC(개발,운영) / 최소1개월 소요\r\n9원칙 : 고지, 수집제한, 목적내이용, 선택권, 무결성,보호대책, 열람, 책임성, 피해구제\r\n인증기준: 관리체계(2), 개인정보수집(9), 이용위탁(7), 정보추제권리(11), 무결성(5), 보호대책(16)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-31ioc",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "ISO 15408 CC인증",
+    "definition": "",
+    "mnemonic": "정보보호시스템 평가인증, 내용(CCRA, SFR, SAR),구성(TOE, PP, ST, EAL) / 상호인정협정(CCRA), \r\nCC종류: 일기보프패(15408-1,2,3,4,5,18045) / 1일반모델, 2보안기능(SFR), 3보증활동(SAR), 4활동프레임웍, 5보안패키지, 보안평가등급(18045)\r\n@PP(Protection Profile)기준에 따라, 제품을 ST(sec Target)통해, 구현하고, 최종(ToE) 제품을 만들어 EAL평가 등급 획득",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-xc2kk",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "가명정보처리 가이드라인(22.4월)",
+    "definition": "",
+    "mnemonic": "(대상) 통계, 과학, 공익 / 절차★목(사)위가적안 / \r\n개보법 제28조 \r\n목적,사전준비>위험성검토>가명화>적정성검토>안전관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-e1ajb",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "가명처리 기술",
+    "definition": "",
+    "mnemonic": "삭제, 통계, 일반화(라운딩, 범주화), 암호화(해쉬, 순서, 형태보존 암호화), 무작위화(잡음,치환,토큰화)\r\n가명화, 총계, 삭제, 범주화, 마스킹",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-l39a2",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "프라이버시 보호모델",
+    "definition": "",
+    "mnemonic": "개념 : 비식별 처리된 데이터간 연계/결합을 통한 재식별 공격에 대응하는 재식별 방지 모델\r\n비식별 조치 > (연) K익>(동배) L다 > (쏠유) T근 (->비식별정보), 연/동배/쏠유 + M유\r\n데이터 측면 : 차분, 재현, 동형, GAN\r\n  - K익명성: 연결공격 방어 / 준식별자 K=4 이상 동일 데이터로 비식별 처리\r\n  - L다양성: 동질성, 배경지식 공격 / 서로 다른 L=3 이상 민감정보 포함 비식별 처리\r\n- T근접성: 쏠림, 유사성 공격 / 전체분포와 유사하게, 관련 정보로 유추되지 않도록 민감정보 열추가",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-1g90l",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "비정형 데이터 가명처리기술",
+    "definition": "",
+    "mnemonic": "영상: 이미지 필터링, 블러링, 픽셀화, 이미지 암호화, 얼굴합성, 인페인팅, 마스킹, 스크러빙 \r\n음성: STT/TTS, 음성자체 가명화 (통계기반, GMM, HMM)\r\nTEXT: 스크러빙, 정규화, 어노테이션, Text가명처리 / 기타 : 암호화, 합성처리, 확대처리, AI이용\r\n비정형 문제점 : 판단어려움, 기술분완전, 재식별 공격위험",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-ngi5t",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "개인정보 안심구역",
+    "definition": "",
+    "mnemonic": "개인정보활용, PET실증, 안전환경을 개보위가 전문심의를 지원 지원하는 제도\r\n지정절차 : 신청>검토>지정결정통지(개보위) : 통계청 등\r\n이용절차 : 이용신청>심의요청>심의>이용>반출심사>결과관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-mpg2o",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "데이터안심구역",
+    "definition": "",
+    "mnemonic": "데이터산업법, 지정절차 : 서류제출(신청기관)-> 안심구역 자문단 심사 -> 지정(과기부)\r\n*지정요건 : 운영책임자, 보안책임자 등 4명이상, 보안구비된 건물(IT자원포함)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-x5eoe",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "PET (Privacy Enhanced Technology)",
+    "definition": "",
+    "mnemonic": "개념: 개인정보,데이터보호위해 위헙으로 보호 기술, 방법, 지시 등 포괄 추상개념 \r\n유형 : 삭제(전체,부분), 대체(마스킹, 통계, 범주화, 암호화, 무작위), \r\n데이터처리(표본, 재구성:차분프라이버시, 연합학습, 재현데이터), 기타 : 노이즈,압축,교란",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-xir2r",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "PEC (privacy Enhancing Computation)",
+    "definition": "",
+    "mnemonic": "개념 : 개인정보보호, 보안유지로 데이터 사용처리에 개인정보 보호강화된 기술 \r\n동형암호, 차분프라이버시, GAN, 다자간 \r\n컴퓨팅, 영지식, 연합학습, 기밀컴퓨팅, TEE",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-dsnog",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "기밀컴퓨팅",
+    "definition": "",
+    "mnemonic": "데이터보호 + 개인정보보호 중점 기술적 제공, \r\n구성요소 : TEE, 실행증명, 주변장치 (TDX, SEV활용, VM), 응용(TPM)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-a4jbo",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "합성데이터",
+    "definition": "",
+    "mnemonic": "가상데이터, 완전/부분/복합, GAN, VAE\r\n생성절차 : 사전준비>생성 <반복> 유용성, 안전성 검증 > 활용\r\n생성기술 : 목업, 더미모형, 3D(스캐너, NeRF)\r\nAI기술 : 이미지(stable Diffusion, CLIP), 변환(Text2IMG, CycleGAN), 합성(ControlNet)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-j21bd",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "PBD",
+    "definition": "",
+    "mnemonic": "Design, Usability, Coverage : 개인정보보호 설계부터, 편의성을 조직서비스 광범위하게 적용의 평가 \r\n@개인정보 디자인 DUC \r\nD : 초기설정, 사전예방, 프라이버시설계, U : 가시성, 이용자존중, C : 생애주기, 균형 (7원칙)\r\n@설계의 예방성 + 이용자의 투명성 + 운영의 지속성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-jfbwz",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- PBD 인증제도",
+    "definition": "",
+    "mnemonic": "개념: 개인정보고려, 침해사전예방, 인증제도\r\n인증기준 : 기본요구사항, 처리의 적합성, 정보보안/프라이버시 강화, 조직적 보호)\r\n@Lite, Basic, Standard",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-c92ah",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "가명정보 결합/반출",
+    "definition": "",
+    "mnemonic": "절차: 신청(수요기관) > 결합(키생성 kisa > 전문기관 결합) > 분석(수요기관+전문기관內)  > 반출\r\n(신청>평가승인>반출)  / 결합: 모의결합, 결합률 확인, 가명정보 추출",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-0vofr",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "개인정보보호 OECD(8원칙)",
+    "definition": "",
+    "mnemonic": "수집제한, 정보정확성, 목적명확성, 이용제한, 안전성, 공개성, 개인참가, 책임성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-5k5nv",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "개인정보영향평가(PIA)",
+    "definition": "",
+    "mnemonic": "개보법,령/33,35조 조건: 5,50,100만,변경시/ (민감정보수, 공공기관 연계정보, 정보주체수 포함)\r\n사전준비(계획작성, 사업자선정),영향평가(평가계획, 자료수집, 흐름분석, 침해분석, 개선수립, 평가작성) \r\n이행단계(개선점검, 개선사항 이행확인)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-x56dy",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "개인정보 익명화",
+    "definition": "",
+    "mnemonic": "가총삭범마 + 암호화 \r\n가명처리 : 시계열(k익명화), 부분그래프, 차수익명화, 매크로, 휴리스틱익명화\r\n총계 : 프라이버시 모델, 마이크로기법\r\n삭제 : 식별자/준식별자 제거, \r\n범주 : 범위방법, 랜덤올림, 제어올림, 마스킹 : 잡음추가, 공백대체",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-55cj7",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "가명처리(알고리즘)",
+    "definition": "",
+    "mnemonic": "개념 : 식별자 대신 인식기호를 붙이는 기법\r\n기법 : 시계열 데이터마이닝(K-익명화) 부분그래프 익명화, 차수익명화, (부분그래프+차수익명화) /\r\n매크로 기법, 휴리스틱 익명화\r\n@해외 : 유럽연합 GDPR(EU 개인정보보호규정),  미국 HIPAA(의료보험이동,신뢰성 법률), \r\n            영국 : 익명화 완전성 측면",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-e349a",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "암호화",
+    "definition": "",
+    "mnemonic": "단방향 : 해시함수, MDC(sha-1, MD5), MAC(Hmac, Nmac, CBC-MAC)\r\n양방향 : - 대칭키(비밀키), 스트림 방식(1bit, XOR, HW용이, OTPAD, RC4), \r\n                                 블록 방식(운용모드, 구조(Feistel DES,SEED / SPN-AES, ARIA, LEA) \r\n           - 비대칭키 : 공개키, 소인수분해(RSA), 이산대수(엘가멜, DSA, 디피헬만), 타원곡선(ECC)\r\n양자암호 : Grover(블록), Shor(소인수),  PQC(양자내성암호, 격코다아해,  양자암호통신(BB84)\r\nPET : 형태/순서보존암호, 동형암호, 영지식증명(ECC)\r\n활용: 인증(PKI), 인증서, 전자서명(메시지인증, 전자봉투, 이중서명)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-5xegp",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "암호화 원리",
+    "definition": "",
+    "mnemonic": "데이터 변형(대치,블록화,치환) 난수화(압축, 혼돈, 확산)\r\n@세넌의 암호화원칙 (혼돈, 확산)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-uwzao",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "비밀키",
+    "definition": "",
+    "mnemonic": "암호화키 = 복호화키  / 대칭키,  AES, SEED, DES, 복잡",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-8dyvt",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "스트림 암호화",
+    "definition": "",
+    "mnemonic": "쉬프트 레지스트리(이진수열), 고속비트, HW용이 / 고속, 낮은전송오류, one time pad / \r\n종류 :  RC4, SEA, OTP\r\n특징 : 고속, 낮은오류, 일회용 패드(One-time Pad) 기반",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-s6j29",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "블록암호화",
+    "definition": "",
+    "mnemonic": "평문을 일정 블록으로 나누어 각 블록마다 암호화 과정 > 고정된 블럭단위의 암호문 생성하는 기술\r\n(장)SW구현용이, 전치대치 반복, 데이터, 대용량 저장시 활용, (단)느린암호화,속도문제\r\nS-Box, P-Box, (운영모드)ECPCOC / 에러파급 큼, 해독어려움, 암호문 추가/변경 어려움 / 속도느림, 복잡, Padding /@ ECB-IV->CBC(자가증식PCBC) -IV암호화> CFB(성능개선OFB) -count추가> CTR",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-8zwo8",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "암호문 공격(137)",
+    "definition": "",
+    "mnemonic": "커크호프 원칙(Key): 암호체계 시스템은 키를 제외한  모든 내용이 유출되더라도 암호체계가 안전해야 한다는 원칙\r\nCOA, KPA, CPA, CCA  COKCPCA  , 중간자공격\r\n단순 암호문 공격 (Ciphertext Only Attack, COA)  암호문만 / 추측기반 \r\n알려진 평문 공격 (Known Plaintext Attack, KPA) 일부 평문+암호문 쌍에서 획득 / 강력\r\n선택 평문 공격 (Chosen Plaintext Attack, CPA) 능동 평문+암호문 일부 / 대응분석 \r\n선택 암호문 공격 (Chosen Ciphertext Attack, CCA) 평문선택 후 암호문 획득 / 분석\r\n중간자 공격 (Man-in-the-Middle, MITM) 중간가로채기 / 변조, 위조\r\n개념 : 암호키없이 해독하거나 PW를 알아내는 적극적 공격행위",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-brdrl",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "Feistel",
+    "definition": "",
+    "mnemonic": "개념 : 평문을 두 블록으로 나누어 XOR(Exclusive-OR)와 Swap 기법을 이용하는 라운드를 R번 반복으로 암호문을 만드는 블록 암호화 기술\r\nS-Box, XOR, SWAP, Round 반복 / 블럭암호화 기술/ 평문을 두블록 XOR Swap / FDS( DES, SEED )\r\n구성 : Plan text 평문 > Round Key > Round Fun(Sbox) > 암호문(chiper text)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-8qlk8",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "SPN",
+    "definition": "",
+    "mnemonic": "개념 : S대P치(대체, 치환), 라운드키, 반복연산, 블록암호화 알고리즘\r\n특징 : S-Box, P-Box, SAA(AES, ARIA) / \r\n구성 : Plan Text > Round key > S치환 P대치 > 암호문(chiper text)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-v8vig",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "DES",
+    "definition": "",
+    "mnemonic": "56bit의 키를 이용, 64Bit의 평문 블록을 64bit의 암호문 블록으로 만드는 \r\n블록 암호 방식의 미국 표준",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-fevpn",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "AES",
+    "definition": "",
+    "mnemonic": "개념 : DES를 대체 미국 표준 암호화 알고리즘, 암복호화시 동일키 사용(대칭키) 기반 암호화 알고리즘\r\n특징 : S-BOX, P-BOX 이용, 네트워크에 사용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-qwsux",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "디피헬만",
+    "definition": "",
+    "mnemonic": "송수신자가 암호화되지 않은 통신망을 통해 안전하게 통신할 대칭키 알고리즘 사용에 이산대수, 비밀키 교환\r\n (key = g^xy mod p), R1=g^x mod p  ||  R2=g^y mod p \r\n\r\n\r\n\r\n\r\n\r\n취약점 : MITM(중간자공격), 이산대수를 양자컴 등장에 취약, 정적키 사용문제, 작은소수 문제\r\n대응점 : 인증결합(X.509+PKI), DHE(세션마다 임시키), 양자내성암호(PQC)\r\nDH → DHE → ECDHE → PFS\r\n - DH(이산대수, 미밀키) >(MITM) RSA(소인수분해, 개인공개키) > shor알고리즘 > (양자암호 통신, 양자역학/BBB84 프로토콜)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-va11n",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "RSA",
+    "definition": "",
+    "mnemonic": "큰 소수의 곱의 소인수분해가 어렵다는 수학적 난제를 기반 / RSA (Rivest, Shamir, Adleman) \r\n공개키(비대칭암호) / @특징: 비대칭, 속도느림, 높은 보안성\r\n@동작 : 큰소수(p,q) > n=p*q계산(공개키, 개인키), p,q찾기어렴, 키교환, 서명, 높은계산, 복잡도 기반",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-cw08i",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "타원곡선",
+    "definition": "",
+    "mnemonic": "Elliptic(타원형의, 일립틱한) Curve,  y2=x3 + aX +b\r\n공개키 암호화 방식, 짧은 키 사이즈, 대등한 안전도\r\nECDH(Elliptic Curve Diffie hellman)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-9thmn",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "영지식증명",
+    "definition": "",
+    "mnemonic": "개념: 증명자가 검증자에게 자신이 참/거짓외 어떤 정보도 노출하지 않고 증명하는 방식\r\n특성: 완건영, 대화(ZK-stik), 비대화형(ZK-SNARK, XK-STARK) / 검증자, 판별자",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-i69o1",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "암호학적 해시함수(그림)",
+    "definition": "",
+    "mnemonic": "압효단강약충, Mac(key), MDC(MD5, SHA256) / Rainbow table, Birthday Paradox salt, Streatching\r\n@고정길이 압축,  계산이 빠른 효율성, 단반향(*역상저항성) \r\n약한충돌내성(*2차역상저항성), 강한충돌내성(*충돌회피성)\r\n* 원문유추불가, 다른원문찾기힘듦, \r\n  동일해시값의 다른원문 찾기불가 \r\nMD5, SHA, HAS, 디지털 증거, 위변조 방지, 전자서명",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-b73um",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- MAC, MDC",
+    "definition": "",
+    "mnemonic": "MDC : Modification Detection Code  : 무결성 보장을 위해 수신한 메시지이 MDC를 계싼하고 송신측이 보내준 MDC와 동일한지 비교하는 알고리즘 (MD5, SHA)\r\nMAC : 해시함수와 대칭키를 이용하여 메시지 무결성을 확인하고 메시지에 대한 인증을 알고리즘\r\n- Nested MAC, HMAC, CBC-MAC, CMAC",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-mz1k9",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "해시쏠트",
+    "definition": "",
+    "mnemonic": "개념 : 해시 다이제스트 생성시 임의 문자열을 추가, \r\n암호화해 해시값을 달라지도록 보안성을 강화한 기법\r\n[알고리즘] PBKDF2(Password-Based Key Derivation Function]",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-s27i5",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "키스트레칭",
+    "definition": "",
+    "mnemonic": "개념 : 생성된 다이제스트를 입력값으로 반복하여 N번째 생성하는 기법(반복)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-szjxc",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "MAC(메시지 인증)",
+    "definition": "",
+    "mnemonic": "신원인증, 사전키공유, MAC비교 / Nested NAC, HMAC, CMAC",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-8hckk",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "양자암호통신",
+    "definition": "",
+    "mnemonic": "중얽불순/ 결잃음, 우월성 / Qubit, QKD, QRANG, BB84, COW04\r\n@QRNG, 양자광확계,\r\n@구성 :편광, 위상, 양자채널, Public 채널, BBB84, QRANG\r\n@기술 :양자광원, 단일광자 검출기, 난수발생기, 양자암호 프로토콜 \r\nQKD > 암호장비 -(일반통신망) - 암호장비 > QKD, QRNG\r\n          QKD --------        @양자채널      ---------  QKD",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-8iqzm",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "BB84",
+    "definition": "",
+    "mnemonic": "0비트(편광2가지), 1비트(편광2가지) > 십자필터, 대각필터 > 양자채널 키교환 프로토콜/무조건 안전성\r\n1. 송신자(임의비트, 101011) > 편광신호 선택(+X+XX) > 편광신호(대각필터/) 생성\r\n2. 수신자(임의편광, +X++X) -> 퍼블릭채널 데이터 교환 ->같은필터 사용비트 보관(1_0_1), 나머지 제거",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-fsnab",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "PQC",
+    "definition": "",
+    "mnemonic": "shore 공개키, Grove 대칭, 격자,코드,다자간,해시,아이소제니\r\n격코다해아 (NTRU, McEliess, Rainbow, SPINKS, SIDH), FIPS 203~205)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-nbqnt",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "형태보전암호화(FPE)",
+    "definition": "",
+    "mnemonic": "통계활용, 동일형태 암호화,\r\nTFP, Tweak, Feistel, PRN(의사난수) / Cycle-Walk, General Feistel\r\nTweakable Format-Preserving,  Pseudo-Random Number",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-q10wk",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "순서보전암호화(OPE)",
+    "definition": "",
+    "mnemonic": "검색이용, 순서보존, 단조증가, Nosie  /\r\n (단노버P) 단조증가 함수, 노이즈삽입, 버킷부호, POPIS\r\nPartially Order Preserving Index Scheme(POPIS)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-if6uh",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "동형암호(4세대)",
+    "definition": "",
+    "mnemonic": "암호화 형태로 연산가능 , 연산결과 평문계산과 동일한 차세대암호기술\r\n종류 : 부분, 준, 완전 / 기술 : 부트스트래핑, 스쿼싱 / Zen09, CRT-Based",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-co5p2",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "접근제어 및 관리",
+    "definition": "",
+    "mnemonic": "개념: 접근주체 정보를 식별>인증>인가>추적, 시스템접근 관리기술\r\n정책 : MAC, DAC, RBAC  모델 : BLP, BiBa, 클락윌슨\r\n매커니즘 : ACL(객체), CL(주체), SL(보안속성집합)\r\n구현 : LDAP  * 참조: ABAC(속성), PBAC(의미), LBAC(이해)\r\n절차 : 식별(id/pw), 인증(OTP,FIDO), 인가(ACL, CL, SL), 추적(Log, audit)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-nwm1q",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "정책",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-3blpy",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "식별",
+    "definition": "",
+    "mnemonic": "개념 : 자신이 누구인지 주장하는 행위, 시스템에 사용자 존재를 인식시키는 것(ID, 이메일, 주민)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-hldfl",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "인증",
+    "definition": "",
+    "mnemonic": "개념 : 사용자가 진짜임을 검증하는 과정,  방법 : 지식, 소유, 존재, 행동 / MFA(멀티채널)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-zc6eg",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "무자각 지속인증",
+    "definition": "",
+    "mnemonic": "개념 : 사용자 행위 환경 정보를 활용하여 명시적 개입없이 지속적 신원을 검증하는 기술\r\n절차 : 관찰, 프로파일 생성/갱신, 비교, 결정 / 수단 : 얼굴, 음성, 걸음걸이, 터치, 문체, 위치, 모바일 장치",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-3jr2l",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "래터럴 무브먼트",
+    "definition": "",
+    "mnemonic": "개념: 해킹성공이후, 내부망에서 사용되는 계정정보 획득하여 수평 이동하여 공격기법\r\n절차: 침투, 내부이동, 유출, 파괴 기술: 크레덴셜, RDP, 파워셀 접근\r\n대응: 인증강화, 허니팟, 머신러닝, 인증변경",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-u6ptl",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "접근통제",
+    "definition": "",
+    "mnemonic": "개념 : 허가없는 자원, 접근, 신원으로부터 객체(자원)을 보호하는 기법\r\n정책(MAC, DAC, RABC, ABAC), 매커니즘(ACL, CL, SL), 모델(BLP, BIBA, Clark&Wilson, 만리장성)\r\n4단계 : 식별(ID)> 인증(PW,생체)>인가(ACL)>추적(기록, 모니터링) \r\n고려사항 : 필요한 업무에, 최소한 권한으로, 직무를 분리, 권한정책(DB가용성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-p3exc",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- 접근통제 정책",
+    "definition": "",
+    "mnemonic": "MAC(강제, 등급, 규칙Rule, 시스템, 군정부), DAC(객체, ID, 신분기반, ACL/ CL, OS), RBAC(역할, 관리자가 통제함, 기업, 조직), ABAC(속성, 세밀한 권한관리: 직원, 데이터, 작업, 환경 등) / 최소권한, 직무분리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-5tqkq",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- ABAC",
+    "definition": "",
+    "mnemonic": "개념 : 속성기반 접근권한 주체와 대상을 동적으로 분석하여 시스템 권한을 부여하는 정책\r\nRBAC 확장, 사용자 리소스 속성 환경/ 작업권한 + 행동특성 정책 /\r\n구성: 속성(주체, 객체자원, 환경속성), 정책(통제, 특권)\r\nMAC + ABAC : (필요)보안강력, 실시간정책 조정, 규정준수, 유연성, 최소권한 적용필수, 클라우드 적용 (운영)동적속성 세부접근 통제, 위험실시간탐지, 유연성확보, 규제준수 및 대응\r\nLBAC -> Lattice 모델",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-h5f0o",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- 접근통제 메커니즘",
+    "definition": "",
+    "mnemonic": "ACL, CL, SL // 객체 어떤? / 직무 / 보안속성정보 집합\r\n@Acess control List(객체-사용자 어떤 관계) 주체 - 객체(*) 세로\r\n@Capability List(직무 & 접근) 주체(*) - 객체 가로  @Security Lable(객체보안 속성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-js7e7",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "접근통제 모델",
+    "definition": "",
+    "mnemonic": "기밀성 : 벨라파둘라(NRU, NWD), 무결성 : 비바(NRD, NWU),  상업적 : 클럭윌신(CDI, UDI,TP,IVP) , \r\n만리장성(이해관계 방지 충돌 모델)\r\nConsistent Data Item(무결성보장 데이터)\r\nUnconstrained Data Item(외부비보장 데이터) \r\nTransformation Procedure(CDIs에서 입력화면 TX),\r\nIntegrity Verification Procedure(무결성 검증)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-4dyk3",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "- 만리장성",
+    "definition": "",
+    "mnemonic": "개념 : 사용자가 한 정보 집합에 접근하면, 그와 충돌할 수 있는 다른 정보 집합에는 접근할 수 없도록 제한을 두는 방식의 모델. (이해관계 충돌 방지)\r\n구성: 주체,객체,  제어(접근권한, 충돌집합, 접근제어규칙, 안전성검사",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-nxsbb",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "LBAC (Lattice-Base Access Control) HRU (harrison-ruzzo-ullman) 모델",
+    "definition": "",
+    "mnemonic": "인가 등급, 보안 등급, *Property, Access Matrix, 상태, 상태 전이\r\nLBAC :  사용자나 주체에 부여된 인가 등급(Security Clearance)과 객체에 부여된 보안등급(Security Classification)을 적용하여 접근통제를 결정하는 모델 > 정보의 흐름관리 *Property, Access Matrix \r\nHRU :  객체  대한 주체 의 접근 권한을 편집할 수 있는 유한한 절차 집합에 대한 아이디어를 기반한 시스템 내 접근 권한의 무결성을 다루는 접근통제 모델 (상태, 상태전이)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-8dwxg",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "전자서명",
+    "definition": "",
+    "mnemonic": "송신자의 개인키로 암호화, 송신자의 공개키로 복호화하는 신원증명 기술\r\n특징: 무결성, 부인방지, 기밀성 미보장, 위/변조 불가, 재사용 불가",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-9y1bi",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "전자봉부",
+    "definition": "",
+    "mnemonic": "메시지>해시함수(MD) > 송신자 개인키 > \r\n[MG+서명된MD+송신자 공개키] > 비밀키 암호화 \r\n-> [암호문+비밀키를 수신자 공개키로 암호화(전자봉투)] > 전송  @기밀성 보장\r\n@송신자 개인키 전자서명 생성 -> 비밀키로 암호화 > 수신자 공개키로 그 비밀키 암호화한 전자봉투 생성 전송",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-vgo5o",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "이중서명 암호화(그림)",
+    "definition": "",
+    "mnemonic": "SET, 구매정보해시(M1), 결재정보 해시(M2), M1M2해시(M) -> 송신자 개인키로 암호화 (전자서명) \r\nH ( h(구매) + h(결제) ), 비밀키(결제), 결제사공개키(비밀키) --> 4개전송 \r\n예) 구매자가 PG사에게 돈있어요! (서명) -> 판매자에겐 \"이 돈 드릴게요\" 따로 서명처리 방법",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-twukt",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "이중서명 판매자",
+    "definition": "",
+    "mnemonic": "H'(구매) 대체, 비교, 인증",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-8nfek",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "이중서명 결제사",
+    "definition": "",
+    "mnemonic": "결제정보(M2)는 비밀키로 암호화, 그 비밀키는 PG사 공개키로 암호화(전자봉투)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-9p45b",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "Oauth 2.0",
+    "definition": "",
+    "mnemonic": "RFC 6749, 6750 / \r\n제3앱 자원접근, APP, User, 인증서버, 자원서버 \r\n@아유아레, AUAR\r\n@Application, User(Resource Owner), Authorization, Resource 서버 \r\n@비번불필요, 클라이언트별 관리, Https, SSL사용, 인증서버 api서버 분리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-frbwl",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "FIDO2.0 (그림) (Fast Identity Online)",
+    "definition": "",
+    "mnemonic": "웹브라우저 생체인증 확장,  모바일>PC, IOT 생체인증, RP  C/S, FIDO, CTAP, ASM, 자체프로토콜\r\n외부인증장치(CTAP)>RP&FIDO client, ASM,빌트인인증자 < (자체프로토콜) > RP서버-FIDO서버 \r\nRP/사용자인증처리(Relying Party) @1.0(UAF),  2.0(자체프로토콜) // CTAP(USB,NFC,BLE등)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-c19tg",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "FIDO2.0",
+    "definition": "",
+    "mnemonic": "FIDO client와 ASM 활용 범용인증기술 표준규격\r\n운영체제 플랫폼 + 웹\r\nUAF사용하지 않고, 자체프로토콜\r\n외부인증장치 CTAP\r\n스마트폰(1.0) -> 사용변화  > 웹+PC 확장(2.0)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-g27pa",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "생체인증 보호 6대 원칙",
+    "definition": "",
+    "mnemonic": "비적목통안투 6대원칙(비례성, 적법성, 목적제한, 통제권보장, 안전성, 투명성)\r\n생체정보: 지문, 얼굴, 정맥, 음성, 필적\r\n인식정보 : 인식할 목적 기술수단을 통해 처리된느 정보(원본정보, 특징정보)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-bawu5",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "제로트러스트 2.0",
+    "definition": "",
+    "mnemonic": "모니터링, SDP, Micro Segmentation, 무신뢰, 로그 / 선인증 후연결\r\n@제로트러스트 프레임워크 : \r\n@성숙도모델 : 기본, 초기, 향상, 최적화\r\n(식기네응데) - 시각화/분석 - 자동화/통합 - 거버넌스(경영,문화) \r\n@식별자, 기기(device), 네트웍, 응용, 데이터\r\n/PIP - PDP, Control Plane (PA, PE)  - dataplane(PEP) - PIP\r\n절차: 준비> 계획>구현>운영>피드백개선",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-jew64",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "보안시스템 (개요)",
+    "definition": "",
+    "mnemonic": "체계 : 계층적 방어, 제로트러스트 2.0  서비스 : 보안관계서비스 \r\n플랫폼:SIEM, SOAR, XDR 기본 :FW, IDS, IPS, 지능형보안솔루션 \r\n통합:UTMS, ESM, 보안오케스트레이션\r\n분석: 샌드박스, 허니팟, 사이버딥센션 \r\n[목적구분] 유출방지(DLP), 망분리(논리, 물리, 망구성, 망연계), EndPoint 보안, 금융사기(FDS)\r\n[NW보안]  터널링, VPN(IPSec, SSL, MPLS, MoVPN), TLS\r\n[컨텐츠보안] 마스킹, 스테가노그래피, 워터마킹, 핑거프린팅, DOI, INDECS, DRM, 전자지문, CDR",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-pq062",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "하니 Pot",
+    "definition": "",
+    "mnemonic": "의도적 노출, 공격유인 시스템 / 기법연구, 보안성 향상, 조기감지 / NW분리, 로깅\r\n침입 패턴 분석, 로깅, (방화벽 내부,외부/DMZ 내부) 위치에 따라 특징 다름, 허니넷",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-g5c0e",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "사이버디셉션",
+    "definition": "",
+    "mnemonic": "hony pot + 미키(Decoy) + 함정(Trap),  Deception System // 실시간 유인 탐지, 예방의 보안기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-ou4iy",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "샌드박스",
+    "definition": "",
+    "mnemonic": "개념: 외부로부터 받은 파일을 보호된 영역에서 실행시켜 외부로부터 들어오는 파일과 프로그램이 내부 시스템에 악영향을 주는 것을 미연에 방지하는 기술\r\n보호영역 실행 -> 시스템 악영향 방지기술 / 악성코드 대응, 포렌식 적용가능, 정보유출차단",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-hs2j2",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "방화벽",
+    "definition": "",
+    "mnemonic": "개념 : 외부침입과, 정보유출 방지를 위해 내부 서버의 불법적 접근을 제어 L4(IP, 포트) 보안시스템\r\n기능 : 접근제어, 인증, 감사, 로깅, 프록시, NAT\r\n제어방식 : 패킷필터, 앱 게이트웨이, Circuit GW, 하이브리드 / 정책 : Deny ALL, Permit ALL\r\n최신 : NGFW, Screening, GW Proxy /\r\n유형 : 스크린 라우터, Bastion Host, GW서버, Screened Subnet GW, GW/Proxy Server",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-4wcx4",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "WAF",
+    "definition": "",
+    "mnemonic": "개념: IDS,IPS가 못하는 웹 관련 공격에 대한 방어 수행 웹어플리케이션 방화벽\r\n웹방화벽 for (SQL인젝션, XSS공격대응, 버퍼오버플로어) / 인라인, Proxy 모드\r\n기능 : APP접근제어, UP로드 파일검사, 컨텐츠 보호(유출차단, 변조금지), 보안(SSL, TLS)\r\n구성 : 외부 - 방화벽/UTM - IDS/IPS - WAF - 서버\r\n고려 : TPS, 성능, 보안성, 가용성   (무선)WIPS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-6acrk",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "IDS(Intrusion Detection SYS)",
+    "definition": "",
+    "mnemonic": "탐지/ 오용탐지 한계 / 기능 : 경보, 세션차단, 실시간탐지, 리포팅\r\n@무결성, 기밀성, 가용성 저해하는 행동, 보안정책을 위반하는 행위 탐지\r\n유형 : 호스트기반(HIDS), 네트웍기반(NIDS),  탐지모델 : 오용칩임탐지, 이상칩임탐지",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-wxdqz",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "IPS",
+    "definition": "",
+    "mnemonic": "IDS 오탐, 미탐 극복 / (유형)  Host기반(HIPS), Network 기반(NIPS)\r\n경계 : In Line, out of Line 탐지/차단,  모든 패킷 자체탐지 @L3 ~ L7, 포트취약점 대응",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-746gk",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "NAC",
+    "definition": "",
+    "mnemonic": "EndPoint, 네트워크 접근제어, 인증, 무결성체크, 트래픽 탐지, 차단\r\n절차 : 요청>인증>NW접근허용 or 차단\r\n구현방식: 802.1x 방식, VLAN 방식, ARP 방식, SW Agent 방식, DHCP 방식\r\n주요기능: 무결성(사용자/단말기 인증) 검사, 정책 준수여부, 권한관리, 접근제어, 모니터링 등",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-7ezgr",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "ESM",
+    "definition": "",
+    "mnemonic": "Enterprise Security Management : 이기종 보안장비 로그 수집, 분석, 시각화 지원 하는 솔루션 \r\n구성 : Agent(로그수집), Manager(분석/저장/관리), 콘솔 (시각화, 의사결정지원, Log리포팅)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-ers0q",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "SIEM",
+    "definition": "",
+    "mnemonic": "빅포상, 빅데이터, 포랜식, 상관분석 / ESM -> SIEM* -> SOAR(SOA, SIRP, TIP)\r\n*기술요소: 클라우드, 하둡, 실시간, 시각화표현, Rule관리, 모니터링 \r\nSecurity Information and Event Management, ESM의 발전  @수집/통합, 분석, 시각화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-87ssd",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "SOAR",
+    "definition": "",
+    "mnemonic": "자동화, SOA, SIRP, TIP / WorkFlow, OpenAPI, RPA, Sandbox, Playbook \r\n@ 보안오케스트레이션, 자동화 / SIRP 보안사고 및 대응플랫폼 / TIP 위협 인텔리젼스 플랫폼",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-5rbkt",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "SOA, SIRP, TIP",
+    "definition": "",
+    "mnemonic": "아키텍처: SOAR = SOA + SIRP + TIP\r\n  - SOA(Security Orchestration Automation) : 보안조직 Workflow 자동화, 관리\r\n  - SIRP(Security Incident Response Platform): 탐지된 위협대응 자동화, 프로세스 자동화\r\n  - TIP(Threat Intelligence Platform): 위협관련 데이터 실시간 검색/분석 자동화, 최적 의사결정\r\n절차: 수집(우선순위), 분석(ML), 탐지(위협헌팅), 대응(교정, 분류), 모니터링(리포팅, 자동화)\r\n기대효과: 투자효율, Playbook, 일관된 대응, 이기종 통합, 업무효율, 신속대응, 역량강화\r\n발전: ESM - SIEM - SOAR - XDR - SOAPA\r\n* SOC(Security Operation Center, 보안관제센터)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-v1mz5",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "EDR (endpoint detection & Response)",
+    "definition": "",
+    "mnemonic": "EndpPoint 레밸> 행위기반으로 지속적 모니터링\r\n/ 예측, 탐지, 예방, 치료(예탐예치, PDPR)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190320-unfej",
+    "createdAt": "2026-05-25T11:06:30.320Z"
+  },
+  {
+    "topic": "XDR (eXtended Detection Response)",
+    "definition": "",
+    "mnemonic": "EDR + NW, cloud, NDR, SWG, CWPP, CASB, AL/ML / 서비스매시??와 비슷한듯 \r\n주요기능 @front_end(수집, 위협모니터링, 대응조치), \r\n              Back_end(데이터수집, 통합, 위협탐지, 위협대응)\r\n구성요소: (Frontend)F/W, NDR, EDR, SWG, UEM, SEG, IAM, CWPP, CASB - 정보수집/대응\r\n             (Backend)클라우드, API, 데이터 레이크, 자동화, SOA, SIRP, TIP - 탐지/대응\r\n효과 : 보안 운영능력 향상, 보안인력 생산성\r\n* UEM(Unified Email Management), SEG(Security Email G/W)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-w1njw",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "DLP",
+    "definition": "",
+    "mnemonic": "데이터 유출방지 시스템,  구성 : 데이터 분류 및 흐름 감시, 데이터센터, 네트워크, 엔드포인트\r\n기술요소: RBAC, XACML, AES, RSA, 트펙픽제어, 컨텐츠제어, 사전/사후관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-bbbo1",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "FDS",
+    "definition": "",
+    "mnemonic": "이상금융거래 탐지, 탐지모델 : Fraud Detection System\r\n@오패상(오용-패턴탐지모델, 상태전이모델), 이통마(이상-통계모델, 데이터마이닝 모델)\r\n절차: 정보 수집(이용자, 사고), 분석(오용/이상탐지), 대응(거래차단, 추가인증), 모니터링(감사)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-yiiww",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "EndPoint",
+    "definition": "",
+    "mnemonic": "NAC, 안티바이러스, PMS, DRM, SBC, 망분리, 개인정보보호",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-7kin1",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "클라우드 컴퓨팅 보안",
+    "definition": "",
+    "mnemonic": "SASE, SECaaS, CSPM, CWPP, CNAPP, CDR, CASB, 책임공유모델(SRM), 클라우드서비스 도입시 문제,CSMA, SWG, FWaaS, NGFW, ZTNA,, CSAB",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-bg3tk",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "SASE",
+    "definition": "",
+    "mnemonic": "개념: SD-WAN 등 NW가상화 기술과 보안기술 융합한 클라우드 NW융합보안 모델\r\n네트워크 가상화 : SD-WAN, SDP, PoP(point of presense )\r\n클라우드 보안 : ZTNA, SWG, FWaaS  /  SECaaS, 사이버보안메시(SWG, FWaaS, ZTNA, CASB)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-v4rt6",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "클라우드 도입 시 보안 문제와 고려될 보안요소",
+    "definition": "",
+    "mnemonic": "설계상 문제노출: 클라우드 블리드(엣지서버의 민감정보 복사원인의 데이터 유출), \r\n                                 클라우드 스토밍(과도한 리소스 점유로 가용성 급하락), 쉐도우 데이터(관리 공백)\r\n악의적 공격노출: 클라우드 랜섬웨어, 그리덴셜 스푸핑(계정정보기반 위장로그인 공격), 공급망 공격\r\n보안요소: (정책)전사적 정책, 책임공유모델, (조직)관제조직 전문성, 콜센터 운영,\r\n                 (프로세스)보험처리방안, 보안인증, 사고대응 프로세스, 추가적 보안솔루션, 실시간 소통\r\n                  + 기밀성, 무결성, 가용성 측면",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-tjno0",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "SWG",
+    "definition": "",
+    "mnemonic": "Security Web Gateway, 기업의 웹접근 정책설정으로 외부공격으로 부터 내부자원 보호\r\n기능 : 접근제어, 트래픽분석, 멀웨어 탐지, DLP정책, SSL탐지 등",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-nvpf6",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CSMA",
+    "definition": "",
+    "mnemonic": "Cyber Security Mesh Architecture\r\n사람/신원 중심의 보안경계를 정의해 어디서든 상관없이 보안 자산에 접근가능한 통합 아키텍처 기술\r\n구성요소: SWG, FWaaS(NGFW), ZTNA, CASB",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-r43b5",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CSPM",
+    "definition": "",
+    "mnemonic": "Cloud Security Posture Management, 컴플라이언스\r\n/개발보안 정책에 따라 클라우드 인프라 위협요소 탐지/예측하여  클라우드 위협을 지속적 관리하는 솔루션",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-sc55i",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "SECaaS",
+    "definition": "",
+    "mnemonic": "보안 애플리케이션/서비스를 제공하는 클라우드 서비스형 보안시스템\r\n유형: CSP(Cloud Service Provider, Customer Security Plan), CSP 제공\r\n         SSP(Security Service Provider, System Security Plan), 보안 전문",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-g8q1o",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "SRM",
+    "definition": "",
+    "mnemonic": "Shard Responsibility Model, 클라우드 서비스 안전성/보안성 위한 책임분담/책임의식 공유모델\r\n서비스별 : IaaS, SaaS, PaaS 책임분담 \r\n/ 영역 : 보안, 접근통제, 앱, 데이터, OS, 서버, 하이퍼바이저, NW, 패치, 교육, \r\n고려사항  : SLA (클라우드 지표)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-vtyq2",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CDR",
+    "definition": "",
+    "mnemonic": "Content Disarm & Reconstruction / 콘텐츠 무해화, 재구성 기술 / 외부문서>CDR>필터링된 문서\r\n@컨테츠식별: DOI, URI / 메타: INDECS, XML, ODRL",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-vzckv",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "DOI",
+    "definition": "",
+    "mnemonic": "(Digtal Ojbect Identifier) 모든 디지털 콘텐츠 부여 식별번호, ISO26324:2012에 따른 국제표준화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-xu3mh",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "사이버 레질리언스",
+    "definition": "",
+    "mnemonic": "부정적 영향 > BCP, 실패해도 안전",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-bipru",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "ASM",
+    "definition": "",
+    "mnemonic": "디지털발자국, 단계 : ★발분모사위 (발견, 분석, 모의대응, 사후조치, 위험공유)  BYoD \r\n// 최소화 방안 : 제로트러스트 모델, 표면가시화, \r\n지속가속 정찰, 네트워크 세분화, 직원교육\r\n@CTEM (★범발우확수) 범위,발견,우선순위,확인,수정\r\n@ASM(공격표면관리) + CTEM(지속위협노출관리) + ABAC(속성기반 접근제어)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-jsav6",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CTEM",
+    "definition": "",
+    "mnemonic": "가트너제시, 범위식별, 발견, 우선순위, 확인, 수정 / ASM 비교 \r\n(진단)scope, discovery, 우선순위\r\n(개선)확인, 수정\r\n(행동)사이버우험관리, 치료, 최적화\r\n관련기술 : ASM, BAS(모의공격), VM, SIEM/SOAR, XDR",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-sih7q",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CPO",
+    "definition": "",
+    "mnemonic": "Chief Privacy Officer ,  개인정보 보호 책임자, 개인정보보호법 제31조, GDPR\r\n@CISO(information Security) 전사정보보호(기술포함), 정보보호법, ISMS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-gfe03",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "보안공격 방어",
+    "definition": "",
+    "mnemonic": "[ 변조,위조 공격 ] : 스니핑, 부채널공격, IP스푸핑, ARP스푸핑, ARP포이즈닝, ARP리다이렉트\r\n[DDoS] RUDY, 스머핑(ICMP), Tcp SYN Flooding, Slowloris(http) \r\n[APT] 침탐수유/워터링홀, 레터럴무먼트, 권한상승\r\n[랜섬웨어] 워너크라이, 랜섬웹, RaaS(다크웹)\r\n// 대응 ATT&CK \r\n[탈취/사기] 피싱,크리덴셜스터핑, 파밍, 스미싱, 큐싱, DBD, 스피어피싱, 사회공학, BIZ캠, Ai하이제킹 \r\n[프로그램 취약점] 포멧스트링, 버퍼오버플로우,  익스플로잇, 은닉채널, 논리폭탄, / 트립도어락(랜섬)\r\n[악성코드] 탐지방법(시그니처, 행위기반) [분석방법] 정적, 동적분석, 자동화분석, 사이버게놈\r\n// 대응(C-TAS, CVE, CWE  (웹취약성] OWASP top 10, SQL인젝션, CSRF, 시스템개발 패턴, 개발",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-2k8sc",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "스니핑 (도청)",
+    "definition": "",
+    "mnemonic": "NW상 데이터를 몰래 가로채는 행위, 도청, NW감청, 패킷가로채기 @스니핑 도구 : windump, Snoop\r\n/공격기법 : Switch jamming, ARP Redirect, ICMP Redirect, ICMP Router Advertisement\r\n// 대응법 : 암호화, SSL, MIME, SSH, Keberous(신뢰된 사용자 인증), VPN",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-poqf1",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "ARP Redirect",
+    "definition": "",
+    "mnemonic": "자신의 MAC을 라우터인척, ARP를 조작해 트래픽을 공격자에게 유도/경로변경, MITM, 라우팅조작",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-2cv25",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "ARP Spoofing(변조)",
+    "definition": "",
+    "mnemonic": "ARP프로토콜을 악용해 MAC주소 위조,  ARP테이블조작, Man in the Middle\r\n데이터링크계층, ARP/RARP(MAC <-> IP), 모든주소확인(arp –a), 정적주소할당(arp –s) 서버존, 클라이언트존, ARP Reply",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-go22j",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "크리덴셜 스터핑",
+    "definition": "",
+    "mnemonic": "자격증명 탈취+무작위 대입 / 다크웹구매 // 횟수제한, 추가인증, 비번변경",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-onn77",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "세션 하이재킹",
+    "definition": "",
+    "mnemonic": "세션탈취 인증회피, 가로채기",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-s8sif",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "스머핑",
+    "definition": "",
+    "mnemonic": "발신주소 변환",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-vmdt9",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "SQL 인젝션",
+    "definition": "",
+    "mnemonic": "Blind, Error,  SQL Based 'or'  1=1",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-e3mhp",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CSRF",
+    "definition": "",
+    "mnemonic": "개념: 공격자가 희상자의 웹 브라우저를 이용하여 인증 된 희생자의 권한을 이용해 악의적인 요청을 보내 는 웹 어플리케이션 취약점을 이용한 공격\r\nClient-side , 사용자 권한으로 공격하는 기법 \r\n//  인증(Oauth, OID), HTTP검증, 보안장비(WAF)\r\n절차 : 사전준비, 스크립트 게시 >\r\n사용자 클릭> 정보탈취 > 공격",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-bjse5",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "SSRF",
+    "definition": "",
+    "mnemonic": "개념: 공격자의 악의적인 요청을 실행하도록 속이는 공격으로, 외부에 노출되어 있는 웹 서버를 통해 내부 리소스에 접근하는 공격\r\nServer-side, 서버측 요청 위조공격기법, OWASP10, Web APP 취약점 \r\n/ 유형: Non blind, Blind SSRF\r\n// One time token, 입력값 검증, 쿠키관리, 인증강화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-vxwf8",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "APT",
+    "definition": "",
+    "mnemonic": "침탐수유 / 관찰, 사회공학, 제로데이 @침입, 탐색, 수집, 제어/유출\r\n@칩입:워터링홀, DBD (검색)횡적이동, 레터렁무브먼트, 포트스캔 (수입)백도어, 루트깃, MITM \r\n(유출) 랜섬웨어, 리버스쉘, Bind쉡, 파일리스공격 \r\n@ASM, ZTN, XDR, EDR, DevSecOps, RED/BLUE팀, 공격표면관리, CTEM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-ei9sm",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "공급망공격",
+    "definition": "",
+    "mnemonic": "SBOM, OSS거버넌스(정획적운관) / 공급망, 악성코드, 제조공정,데이터저장소, 서버침투\r\n// 기술(SBOM, SandBox), 관리(업데이트 체계관리, 침해사고, OSS거버넌스)\r\n// 컨정조-요조분평-계설개패시-설운유기커-컴교모",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-yfk9l",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "DOS, DDOS",
+    "definition": "",
+    "mnemonic": "C&C, 좀비PC/분산서비스 거부 공격, TCPUDP Flooding, 3Way hand Shake, DRDOS, TCP 트래픽 플러딩\r\nC&C(명령어제어서버)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-b4edv",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "LAND Attack",
+    "definition": "",
+    "mnemonic": "개념 : 출발지와 목적지 주소를 동일 함으로써, 실행 속도를 느리게 하거나 동작을 마비시켜 서비스 거부 상 태에 빠지도록 하는 공격 기법",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-95i71",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "TCP Syn 플러딩",
+    "definition": "",
+    "mnemonic": "세션유지, 자원낭비 / 3way handshake, half open // Backlog 큐크기, PPS임계치",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-5sd07",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "Slowloris DOS 공격",
+    "definition": "",
+    "mnemonic": "http 개행문자 조작 / \\r\\n) slow dos 공격 // 세션임계치 제한, connection 타임아웃, 개행묹 1회차단",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-c81b3",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "RUDY",
+    "definition": "",
+    "mnemonic": "Post, 대량분할 송신 / 임계치 제한, 타임아웃 설정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-9wx9y",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "Slow Read DDOS",
+    "definition": "",
+    "mnemonic": "느리게 전달, 1초 1byte / 정상HTTP요청 Web서버가 그것을 느리게 읽어, 서버가 반응못하도록 공격",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-609we",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "DBD",
+    "definition": "",
+    "mnemonic": "동의없이 실행, 악성코드 다운로드, 클릭시 감염 \r\n// Secure 코딩, Web필터링 설치, 보안브라우저 사용, 무차별 공격(Mass Attack)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-tocwu",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "워터링홀",
+    "definition": "",
+    "mnemonic": "잠복하는 공격기법 , 표적공격, 정보수집, 지역내부 침투하여 공격, 제로데이 공격\r\n//안티exploit, 차단, 타겟형 공격(Targeted APT)// 보안업데이트, 신뢰사이트도 주의, 위협인텔리전스",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-z2q40",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "사회공학 기법",
+    "definition": "",
+    "mnemonic": "비기술적, 인간상호작용, 신뢰기반, ★정관공실 / 숄더스니핑, Piggybacking, 도청, 휴지통뒤지기\r\n정보수집, 관계형성, 공격(감정에 호소), 실행 // 교육, 보안거버넌스, DRM/DLP, UTM, ACL, 접근제어",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-neh6d",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "부채널공격",
+    "definition": "",
+    "mnemonic": "물리적 특성, 빛, 소리, 열, 시간, 전력, 자기장 / De-Packing, Glitch, DFA, 템퍼링공격, 타이밍공격\r\n유형 :  모듈접근, 계산과정, 표본자료 분석  / 시차공격, 오류공격, 전력분석공격, 전자파 분석공격\r\n침해공격, 비침해공격, 무작위성, 블라인딩, 마스킹, 부채널 분석 시스템\r\n// 대응 : 무작위성, 블라인딩, 마스킹, 부채널 분석시스템(SPA, DPA)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-klryv",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "부채널공격 대응",
+    "definition": "",
+    "mnemonic": "단순부채널공격, 차분부채널공격 / 무작위성, 블라인딩, 부채널 분석시스템(SPA, DPA)\r\nHW(전력,시간패턴균일, 보안칩, 난수), SW(데이터 무작위,상수난수), 시스템(보안분리,intel SGX, ARM TrustZone), 관리적(FIPS 140-3, CC인증, 모의, 대응매뉴얼 수립)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-s1r6r",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "랜섬웨어",
+    "definition": "",
+    "mnemonic": "암호화하여 인질로 금전요구 / 인질, 멀버타이징 / 기술 : 암포화처리(AES 등), Key기반, 암호화폐\r\n/(유형) 심플Locker(단순암호), 스케어웨어(문자만 공포), CrytoLocker(크립토락커, 데이터 암호화), 락스크린(화면잠금) @심스크락\r\n/(관리) 설비 (백업,보안,BCP), 직원(교육), 외부(버그바운티), 정책(클라우드화)\r\n/기술대응 : NW(샌드박스, IDPS), Device(EDR), Platform, EndPoint\r\n@멀버타이징 : 악성코드(Malware) + Advertising @백업유형 : 전체, 증분, 차등, 신세틱",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-717c3",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "백업",
+    "definition": "",
+    "mnemonic": "잔차증신 / 전체, 차등, 증분, 신세틱 \r\nKISA 백업(321)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-e4rn2",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "인포스틸러",
+    "definition": "",
+    "mnemonic": "프로그램 저장정보 탈취 / 절차 : 감염>스캔>개인정보수집,전송,활용>사용자PC무력화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-2kfz3",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "다크패턴",
+    "definition": "",
+    "mnemonic": "편오방압 > 편취(숨은갱신,순차공개, 몰래장바구니추가), 오도형(거짓할인, 추천, 유인판매, 위장광고)\r\n방해(취소, 탈퇴방지, 굼은정보), 압박형(반복간섭, 시간제한, 낮은제고 알림)\r\n//대응방안 : 정책, 인공지능 알고리즘, 사용자 행동추적도구, 사용자단 테스트,",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-ogjmx",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "피싱",
+    "definition": "",
+    "mnemonic": "위장사이트, URL입력유도, PhaaS(phishing as a Service, 피싱서비스화) //인증, 안티피싱,사실확인",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-7i0tm",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "큐싱",
+    "definition": "",
+    "mnemonic": "QR코드 + 피싱 //백신최신, 신고(악성앱)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-nq874",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "파밍",
+    "definition": "",
+    "mnemonic": "DNS Host변조. 진짜사이트로 오인 // DNS정적테이블(DNS주소변경금지), DNSSEC, 도메인 Lock",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-4chi4",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "WebShell",
+    "definition": "",
+    "mnemonic": "웹스크립트 파일, 유형: jsp, asp, php, cgi/ 위협:파일업로드,암호설정,SQL직접입력,파일명 직접입력\r\n예방: 파일업로드 폴더실행제한, SQL인젝션 방지 / 탐지:폴더분석, MITRE ATT&CK참조",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-92by0",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "리버스 쉘 Bind Shell",
+    "definition": "",
+    "mnemonic": "BPF, BPFDoor, 매직필터, Controller",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-qz7a0",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "미라이 봇넷",
+    "definition": "",
+    "mnemonic": "IoT 좀비화, 디폴트 패스워드, DDOS공격, BusyBOx전파 //NW단절, 재부팅초기화, 강한암호",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-9yqyc",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "스턱스넷",
+    "definition": "",
+    "mnemonic": "SCADA 악성코드, 목표명확, ZeroDay, SMB (Server Message Block)\r\n//통합보안(DCS, 저장매체제어), 보안감사(SCADA infra 패치수행, SW보안최신화), 관리(교육, 모의훈련)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-2scnr",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "사이버킬체인",
+    "definition": "",
+    "mnemonic": "★정무전익설C행 / 정찰, 무기화, 전달, 취약점, 설치, C&C, 행동개시 (command & control)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-alnrl",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "ATT&CK",
+    "definition": "",
+    "mnemonic": "MITRE 보안 프레임워크, Tatics, Techniques, Matrix @(adversarial Tactics Tech & common knowledge)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-gd689",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "사이버보안 매시",
+    "definition": "",
+    "mnemonic": "사람중심 보안경계, / SWG, CASB, ZTNA, FWaaS @스카제퐈 \r\n/ App보안, cloud보안, NW보안, 차세대FW",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-o0tqn",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "쇼단",
+    "definition": "",
+    "mnemonic": "IP기반 검색엔진, 사물인터넷 검색엔진 / IOTㅂ보안",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-7jo84",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "IOT 보안 7대원칙",
+    "definition": "",
+    "mnemonic": "설계/개발(정보보호/PBD 고려설계, 안전기술), 배포/구성(초기설정, 보안프로토콜)\r\n운영/폐기(보안패치, 보호관리체계, 침해대응)  @설기 초보 패관대",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-61vjs",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "디지털포렌식",
+    "definition": "",
+    "mnemonic": "원칙(정당,재현,신속,연계,무결), \r\n절차(준비,수집,보관,분석,보고) / 활용:e-discovery, 내부감사\r\n목적: 사고대응포렌식, 정보추출 포렌식 \r\n대상: 디스크, 시스템, 인터넷, 모바일, 암호, 회계, 이메일 \r\n(HW)디캐핑, 마이크로프로빙, (SW)패킷분석, 메모리분석, (안티포렌식) 디가우징, 스테가노그래픽",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-zbgri",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "아트팩트(ArtiFact) (137",
+    "definition": "",
+    "mnemonic": "데이터 분석후에 확인된 자료",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-xfikz",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "클라우드 포렌식",
+    "definition": "",
+    "mnemonic": "클라우드 자료 조사(IaaS, PaaS, SaaS, XaaS) /물리위치,- 멑티테넌시 샌드박스 Toolchain, -데이터 소유권, APP보호책임, 컨테이너, - 다양한 SRM, 서비스 분화\r\n/식별(유형, SRM), 수집(공조요청, 데이터카빙, e-discovery), 분석(Bitwise, FTK), \r\n증거제출(국경간 제출, 법연계)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-4gwdr",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "e-discovery",
+    "definition": "",
+    "mnemonic": "전자적 증거개시, ESI(전자적저장소) / (절차) 식별,보존,수집,처리,검토,분석,생산,제시",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-1rm7d",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "안티포렌식",
+    "definition": "",
+    "mnemonic": "ⓐ(삭제)디가우징(자기장), 와이핑(덮어쓰기), ⓑ암호화(문서,압축 파일), \r\nⓒ은닉(스테가노그래피, 데이터은닉)\r\n@와이프가 다가오면 스테가노그래프를 암호화해야지",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-oalso",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "안티안티포렌식",
+    "definition": "",
+    "mnemonic": "//Steganalysis(파일찾기), 데이터검색(bitwise), 슬랙복구 \r\n/기술 : 데이터삭제, 암호화, 은닉 // 대응기술 : 스테가노그래피 탐지, 데이터검색, 데이터복구",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-b0zsp",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "데이터 카빙",
+    "definition": "",
+    "mnemonic": "개념: 바이너리 데이터로부터 의미있는 정보 획득하는 기법\r\n데이터가 연속적 카빙(헤더_, 램슬랙_, 파일크기_, 파일검증_카빙) \r\n비연속적 카빙(시그니처 탬색, 엔트로피, 바이트 분포, 바이트 편차)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-k0knn",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "파일슬랙",
+    "definition": "",
+    "mnemonic": "종류: (램드파시)램슬랙, 드라이브슬랙, 파일슬랙, 파일시스템 슬랙 / 공간구분 : 파티션>클러스터>섹터\r\n포렌식 관점 : 슬랙공간 분석, 삭제파일 복구, 비할당 클러스터 분석",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-91prv",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "악성코드 탐지기술",
+    "definition": "",
+    "mnemonic": "시휴행/ 시그니처, 휴리스틱, 행위",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-4mxwu",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "-시그니처",
+    "definition": "",
+    "mnemonic": "스명C바(스트림, 명령어, CFG, ByteSequence) @CFG(control flow graph)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-x2hbj",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "-휴리스틱",
+    "definition": "",
+    "mnemonic": "악성코드 탐지기술 / 악네유) 악성코드, 네거티브 휴리스틱, 유전알고리즘",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-nyqzo",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "-행위기반",
+    "definition": "",
+    "mnemonic": "동작모니터링, Sandbox, 무결성 검사(바꿈이 있나?), 행위차단 방법(행위 촉발한 실행 프로그램 찾기)\r\n@행위기반 악성코드 탐지 > Hash값 생성 > 저장소 > 해시값 비교 (새로운것과)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-0oq8a",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "시큐어코딩",
+    "definition": "",
+    "mnemonic": "입보시에코캡A (입력데이터검증, 보안, 시간/상태, 에러처리, 코드오류, 캡슐화, API오용)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-ve3mz",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "Secure SDLC",
+    "definition": "",
+    "mnemonic": "개발 생명주기 보안활동 / 안전한SW개발방법론 :  MS SDL, STPSS, OWASP CLASP",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-vgodv",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "난독화",
+    "definition": "",
+    "mnemonic": "★구데집제예(구획, 데이터, 집합, 제어, 예방), 역공학 방지기술\r\n구획 난독화:  SW 영향없는 세부요소들을 변화/제거하는 기법(형식, 주석제거)\r\n데이터 난독화: 변수, 데이터담을 변수를 합,나누기하여 어렵게 하는기술\r\n집합 난독화: 순서를 이용 코드를 난독화(자료순서 변환, 병합평탄화)\r\n제어 난독화: 문장이 묶이는 단위를 조정하는 기법\r\n예방 난곧화: 이미 알려진것 봉쇄",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-iev5m",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "컨텐츠 보안",
+    "definition": "",
+    "mnemonic": "컨텐츠보호 : 암호화, ACL(접근제어), 수신제한기술(CAS), DRM, CDR(컨텐츠 무해기술), 워터마킹, \r\n컨텐츠관리 : DOI, CCL, INDECS, DPI, MPEG21  컨텐츠 배포 : PKI, Sw 스트리밍, CDN",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-fu7t4",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "IP 터널링",
+    "definition": "",
+    "mnemonic": "IPSec, AH, ESP, 터널모드/ 인터넷상의 가상의 파이프라인 생성기술 / Point to Point\r\n@캡슐화 :상위-<헤더추가>- 하위 \r\n@IPSec 기술활용한 IP터널링 : AH, ESP, 전송모드, 터널모드 \r\n@기술활용:  VPN통한 보안기능, IPv4->IPV6, 무선이동성 제공, p2P(오브레이 NW, NAT - STUN)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-4po5u",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "VPN",
+    "definition": "",
+    "mnemonic": "인터넷망을 사설망화, 투명성, 경제성, 커스터마이징 @기술요소 : 터널링, 암호화, 인증, 접근제어\r\n@종류  IPSec, SSL, MPLS VPN",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-9ltr6",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "SSL VPN",
+    "definition": "",
+    "mnemonic": "SSL/TLS 이용한 가상 네트워크, OSI4~7계층, SSL VPN, 터널링 // 부하감소 : SSL Offloading *\r\n* CS간 SSL암호화 통신을 제공하는 기술(인증서 배치, 암복호화, Auto scaling)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-gb6xy",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "IPSec",
+    "definition": "",
+    "mnemonic": "3계층, 프로토콜 -> 인증헤더(AH), (암호화 캡슐화)ESP, 동작모드(터널모드, 전송모드), \r\n정책(SP, SPD, SA, SAD) / 키관리(IKE), 프로토콜(AH, ESP)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-rzuoj",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "MPLS",
+    "definition": "",
+    "mnemonic": "Multiprotocol Lable Switching, IP패킷+레이블(Label) 경로기반 고속전송 기술\r\n/ 속도향상(by 레이블스위칭) QoS지원(트래픽별 우선순위 부여), 다중프로토콜지원(IP, ATM, Frame Relay 등 연동)\r\n@구성 : LER(진입, 이탈지점), LSR(패킷 스위칭),  Label(식별자), LSP(레이블 전송경로), FEC(Forwarding Equivalence Class, 같은그룹)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-uluwx",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "MPLS VPN",
+    "definition": "",
+    "mnemonic": "2계층, CE, PE, QoS / 연결지향적/@구성도 : CE, PE, P, VRF / VPN별 논리적 분리, \r\n@연결지향성의 패킷 스위칭 기술(MPLS) 인터넷상 가상 전용NW 구성기술/가입자별 트랙픽 분리, 전송품질 보장 @구성도: CE(라우터) -- PE(MPLS 끝단) -- P(내부라우터) P -- PE --CE , VRF(PE에서 라우팅 테이블 정보)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-jeveg",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "레이블, 고속전송 (MPLS)",
+    "definition": "",
+    "mnemonic": "짧은식별자(ID)로  패킷라벨을 보고 단순 테이블 조회만으로 \r\n다음홉(hop) 결정, HW기반처리 고속전송\r\n(vs)기존 IP주소를 분석 ->\r\n 라우팅 테이블을 검색하여 다음홉 결정(느림)\r\n\r\n Routing Table을 lookup하지 않고도\r\n 라우터가 패킷을 전송",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-5n34d",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "무선랜 보안",
+    "definition": "",
+    "mnemonic": "무선LAN은 Broadcast (AP) > 타인의 송수신 내용 확인(보안취약, 불법접속 가능, MITM, 도청, MAC스푸핑, DoS), \r\n무선랜 암호화 기술 : WEP, WPA, WPA2(802.11i), WPA3, 인증방식 : PSK(Pre-Shard key), 802.1x port\r\n암호화방법 : RC4, TKIP, CCMP// 802.11i , wips, 비인가AP탐지, 보안도구, 교육, 위험평가, 보안정책수립",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-fnoyh",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "SDP",
+    "definition": "",
+    "mnemonic": "클라우드 환경, 선인증 후연결, SDP Agent(PKI, Oauth), SDP controller(ZT, RBAC), SDP GW(IPSec) - 시스템(system)\r\n\r\n\r\n\r\n\r\n<기술요소>\r\n- SDP Client/Agent : PKI, SAML, OAuth, EDR / XDR\r\n- SDP Controller : 제로트러스트, RBAC/ABAC, IAM, MFA\r\n- SDP Gateway : IPsec, mTLS, SPA (Single Packet Authorization), Reverse Proxy",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-obnfu",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "망분리",
+    "definition": "",
+    "mnemonic": "2pc, Switch / SBC, CBC, 정보통신망법 28조  원칙 : 분리운영, 주변기기 관리, 네트워크\r\n- 분리운영 : PC분리, 패치관리, 망간자료전송\r\n- 주변기기 : 프린터 등 업무용 분리, 보조기억장치 관리\r\n- 네트워크 : 접근제어, 무선랜 이용시 보안강화\r\n논리적(서버가상화 : SBC, VDI/ PC가상화 :(CBC-VM방식, 앱(app)가상화) \r\n물리적(다중PC, 스위치형(망전환), 완전분리, 보안강화, 높은 비용)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-j68d1",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "망연계",
+    "definition": "",
+    "mnemonic": "소켓(LAN, TCP암호화통신), 시리얼(IEEE1394, 중계서버간), 스토리지(공유스토리지)\r\n/기술유형: 자료연계,  스트림 연계,  메일 송수신연계, 전용 프로토콜",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-kq631",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "OWASP top 10",
+    "definition": "",
+    "mnemonic": "접암인디설 오인소로서 / 취약한 접근통제, 암호학적 실패, 인젝션, 안전못한 디자인, 보안설정 오류, 오래된 컴포넌트, 식별인증실패, SW데이터 무결성 실패, 보안로깅과 모니터링 실패, SSRF)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-uuvaj",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CWE, CVE, CCE",
+    "definition": "",
+    "mnemonic": "oMITRE, CVE(Conmmon Vluerabilites and Exposures)-발생년도-취약점번호  버그바운티, Vulnerabilities\r\nCWE(common weakness Enumeration)-약점번호,  Weakness을 사전식으로 분류하고 표준화한 체계 \r\n/CWE 928(OWASP top10)  // 패치, 보안업뎃, 취약점 분석\r\no NIST,  CCE (common Configuration Enumeration 시스템 구성오류 식별 // 재구성, 보안정책강화, 설정변경\r\n*참고:CVSS(Common Vulnerability Scoring System) 보안취약점의 심각도를 평가 위한 개방형 표준 프레임워크",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-y34yd",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CASB",
+    "definition": "",
+    "mnemonic": "/개념:클라우드 서비스 접속보안 브로커\r\n주요기능 : 위암접디로이 (위험평가, 암호화, 접근통제, DLP, 로깅, 이상탐지)\r\n유형 : SW형(에이전트, 사용자 단말, API형/개발자), HW형(private/아웃바운드 트래픽, public/내부)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-boh7x",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CWPP",
+    "definition": "",
+    "mnemonic": "IaaS보안 (시스템통합, 모니터링, 화이트리스트)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-89ztn",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CNAPP",
+    "definition": "",
+    "mnemonic": "CSPM + CWPP +CIEM, KSPM(k8s Seccurity Posture Mgmt) / 클라우드 통합 보안 도구 /\r\n@cloud : CSPM, CWPP, CIEM, KSPM  infa:  Iac 스캐닝, NW 보안책",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-v3w2s",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "가상화, 하이퍼레저",
+    "definition": "",
+    "mnemonic": "취약점/대응기술 :  기존보안 탐지 불가, 다중임대성격, 복잡한 보안관리 // @대응: VMI, SECaaS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-zon3h",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "IOT 보안위협",
+    "definition": "",
+    "mnemonic": "취약점: 마이크로프로빙, 디캐핑, 부채널공격, 취약한 암호화 + stuxnet, 미라이봇넷 \r\nARM Trust zone, Intel SGX, TPM, SE, FIPS 140-2",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-ppbvn",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "IOT 보안대응",
+    "definition": "",
+    "mnemonic": "TEE, TPM, SE, RISC-V, LEA, PUF",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-g9ow2",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "TEE",
+    "definition": "",
+    "mnemonic": "HW보안 매커니즘을 통해 민감데이터에 안전접하고 처리하는 격리보호 환경기술\r\n보안영역, intel SGX, ARM TrusetZone\r\n개념도 :  REE (TEE 프로토콜, TEE clinet API)) => || TEE보호구역 - TEE(Truested APP, 내부연결 API)\r\n                               OS          - <Shared Truested 공간>     TOS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-1q7ju",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "PUF",
+    "definition": "",
+    "mnemonic": "공정편차 이용 난수 생성 반도체",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-2vwks",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "OSS 취약점 및 대응",
+    "definition": "",
+    "mnemonic": "Zeroday, 악성코드 삽입배포, 자체조치불가, 패치지연/ SBOM, Sandbox",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-46qfc",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "OSS 거버넌스",
+    "definition": "",
+    "mnemonic": "정획적운관 / 컨정조 요조분평 계설개패 설운유커 컴교모",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-ana8w",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "스마트 팩토리 취약 대응",
+    "definition": "",
+    "mnemonic": "부채널, IOT취약점들 센서, 엑츄레이터, 디캐핑, 퍼듀모델, ISO 62443",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-wowqa",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "디지털트윈 보안 위협",
+    "definition": "",
+    "mnemonic": "생전종이행 / XR위협, AI권한, 변조DATA / AIOPs, ZTNA, PET, TEE등\r\n생성 > 전달 > 종합과분석 > 이해 > 행동",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-7cglw",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "드론취약 대응",
+    "definition": "",
+    "mnemonic": "GPS 재밍, 전파방해 위장센서 교란/채널확보, 자동회귀, Geo-Fencing// HW(안전업뎃, 변조대응), 인증(사용자, 드론식별), 안전통신(전소데이터 보호), 안전한 비행(자율비행, 자동회귀), \r\n중요data보호(접근통제)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-kc9a0",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "스마트카 취약",
+    "definition": "",
+    "mnemonic": "V2X방해, Fake교통정보, 해킹(ECU, 제어메세지), V2V통신도청, 리플레이 공격, 디도스공격, V2I도청",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-zzvxr",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "스마트카 취약 대응",
+    "definition": "",
+    "mnemonic": "V2X암호화, PKI인증, 방화벽, GPS안티재밍, V2V통신 암호화, 안티얜, 시큐어부트, 접근제어",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-1k3ya",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "블록체인 취약대응",
+    "definition": "",
+    "mnemonic": "키도난 분실, 합의가로채기(51%), 권한오남용, 내부담합//다중서명, 키분리, 거래수수료, 거버넌스확립",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-10px3",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "매타버스 윤리원칙",
+    "definition": "",
+    "mnemonic": "온안지 진자개호사 공포책 \r\n/온전한 자아, 안전사회, 지속번영 - 진정성, 자율성, 호혜성, 사생활, 공정성, 개인보호, 포용성, 책임성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-llvyq",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "프라이버시 8원칙",
+    "definition": "",
+    "mnemonic": "수정목이 안공참책 /원칙:수집제한, 정보정확성, 목적명확화, 이용제한, 안전성, 공개원칙,개인참가,책임원칙",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-9osdv",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "정보보호 공시 가이드라인",
+    "definition": "",
+    "mnemonic": "이용자 안전이용, 정보보호 투자 활성화 위한 정보보호 투자, 인력, 인증, 활동 자율의무 공시제도\r\n/예산, 전담인력, 자격보유, 교육, ISMS-P, 지침활동내역  (투인인활)\r\n정보보호산업법 13조, ISP, IDC 상급종합병원 CSP (정보통신) 100만, 상장법인 3000억, CISO>CEO\r\n@절차 : 정보현황 작성, 현황승인, 현황제출, 확인게시, 공시내용 변경, 공시이해 후속조치\r\n(작승제확변후)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-fbm5n",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "블럭체인 암호기술",
+    "definition": "",
+    "mnemonic": "암계전압원컨디 / 암호사용기준, 계정관리, 데이터전송보안, 합의프로토콜, 원장, 스마트컨트렉트, DB",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-rrd4v",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "다중벡터공격",
+    "definition": "",
+    "mnemonic": "여러공격 동시, 성공률 향상 DDOS등",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-5ia3d",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "PIT",
+    "definition": "",
+    "mnemonic": "개인정보침해기술/ 도청, 악성코드, 피싱, 사회공학, 웹공격, 디바이스탈취, 암호미흡",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-b5juz",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "PET",
+    "definition": "",
+    "mnemonic": "개인프라이버시 보호기술 / 가명,익명,마스킹 - 동형암호, MPC, 구간암호, 차등프라이버시, 노이즈삽입, 다자간 연산(MPC), 연합학습(Fed Learning) , \r\nPPDM(Privacy Preserving Data Mining, 데이터 상관관계 활용, 노이즈)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-jeqj1",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "PEC",
+    "definition": "",
+    "mnemonic": "개인정보 또는 민감 데이터를 외부에 노출하지 않고도 분석·연산·학습이 가능하도록 하는 기술\r\nPTE > PEC(동형암호, MPC, 연합학습, 차등프라이버시, TEE)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-uwm32",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "PPDM, PPDP",
+    "definition": "",
+    "mnemonic": "PPDM (프라이버시 보호 데이터 마이닝) PPDP (프라이버시 보호 데이터 공개)\r\nPPDP는 데이터를 외부에 제공하기 위한 '비식별화' 중심의 기술\r\nPPDM은 분석 중 개인 프라이버시를 보호하는 '연산보호' 기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-547z2",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "CCTV개인정보보호",
+    "definition": "",
+    "mnemonic": "관물기/출입통제, 암호화, 교육)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-i6q36",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "PassKey",
+    "definition": "",
+    "mnemonic": "비번없는 자격증명 기술, Webauthn api, Fido2.0, 단말기, 개인키",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-e7lit",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "차븐프라이버시모델",
+    "definition": "",
+    "mnemonic": "노이즈 삽입, 원본추정 가능성 제한, 프라이버시 보호 기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-sfmxy",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "ZeroTrust 가이드 2.0",
+    "definition": "",
+    "mnemonic": "6원칙: 무신뢰, 강화인증, 중앙집중, 논리경계, 차등권한, 모니터링\r\n절차: 준비>계획>구현>운영>피드백 개선 / Usease, 목표요구사항, 구현 \r\n// 인증, 정책엔진>집행>서비스 / PIP, PDP, PEP",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-reuam",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "ZeroTurst 성숙도모델",
+    "definition": "",
+    "mnemonic": "기초향최 : 기존-초기-향상-최적화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-q5r1j",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "생상정보, 생체인식정보",
+    "definition": "",
+    "mnemonic": "생체정보: 지문, 얼굴, 홍채, DNA, 음성\r\n인식정보: 지문스캔, 얼굴인식, 음성인식\r\n개인정보 : 특정개인, 결합해서 알아볼수 있는 정보 \r\n(생체정보) 신체, 생리적, 행동적 특징 인식 처리 정보",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-ej1vl",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "생체인식정보 보호 6대원칙(주모)",
+    "definition": "",
+    "mnemonic": "(생체인식정보) 생체인식을 식별,인증에 기술적 수단을 통해 처리되는 정보\r\n - 원본정보(특징정보 생성에 필요정보) 특징정보(원번정보에서 특징점 추출로 생성된 정보)\r\n★비적목통안투(비례성, 적법성, 목적제한, 통제권보장, 안전성, 투명성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-vpp0b",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "생체인식정보 보호조치 (5단계)",
+    "definition": "",
+    "mnemonic": "★(5단계) 기획설계 > 수집단계 > 이용제공단계 >보관파기 단계 > 상시점검 @기수이보상\r\n@기(필요성검토, PbD, 개인정보영향평가) 수(적접수집,위변조대첵 ) 이(목적범위사용, 통제수단제공)\r\n   보(저장시 암호화, 파기보관) 상 (저리방법공개, 취급자 감독)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-fzffq",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "AnyID",
+    "definition": "",
+    "mnemonic": "은행, 통신사 등 제공하는 민간ID서비스 간편인증, 모바일 신분증\r\n국민이 원하는 인증수단, 정부모든 사이트 간편 로그인 서비스",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-te5lo",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "다자간 컴퓨팅",
+    "definition": "",
+    "mnemonic": "동형암호화, GMM,",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-0tfo9",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "다자간 연산",
+    "definition": "",
+    "mnemonic": "SMPC (안전한 다자간 연산) 자기가 갖은 데이터 공개없어 참여자 모두가 공통의 연산 결과를 가질수 있도록 하는 분산 컴퓨팅 기술 \r\n - ‘신뢰할 제3자 없이’ 여러 주체가 ‘원본 비공개’로 ‘공동 결과만’ 계산하는 PET\r\n[과정] 자신의 원본데이터를 조각나눔 >개별 연산(암호회로)>각 계산값 합산/확인>>보안성 확보\r\n[유형] 비밀공유(데이터를 조각화 저장, 일부조각을 모아 원래 데이터를 복원)\r\n        왜곡회로(암호화된 회로를 만들어 연산을 수행하며, 수신자는 필요한 정보만 해독)\r\n[기술] FEE, TEE와 함께 하이브리드 구성함, DP(차등프라이버시) 함께 사용\r\n[활용] 기관간 공동통계, 프라이빗 매칭/교집합, 공동모델, 피처계산,",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-ln6gf",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "IoT HW보안",
+    "definition": "",
+    "mnemonic": "SE, RISC-v, TPM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-tun8h",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "허위정보보안",
+    "definition": "",
+    "mnemonic": "가트너 25, 가짜정보 대응기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-wvll8",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "MLS (N2SF)",
+    "definition": "",
+    "mnemonic": "공공기관 대상 망분리 개선, 기밀공(기밀, Classified), (민감, Sensitive) , (공개, Open) \r\n절차 : 준분모대평(준비-분류(CSO)-모델링-보안대책-적절성 평가)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-9dssz",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "금융권 망분리 완화정책",
+    "definition": "",
+    "mnemonic": "o 생성형AI허용 / 클라우드 이용확대 / 연구개발 망분리 개선 / \r\no 규제특례 정규제도화 / 규제특례 고도화 / 정보처리 위탁제도정비\r\no 디지털금융보안법 제정(자율보안, 결과책임, 책임강화)\r\n@생클련 규고위 디금보",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-rvj7p",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "위성체 보안",
+    "definition": "",
+    "mnemonic": "직접, 통신구간, 지상국, 공급망, 내부자/보안대응",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-9yx9s",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "OWASP top 10 for LLM",
+    "definition": "",
+    "mnemonic": "프롬프트 인젝션, 출력처리 미흡, 학습데이터 오염, 모델DOS, \r\n공급망공격, Plug in 취약, 과도권한, 환각, 모델탈취 @프출학모, 공P과환모 \r\n입 : Prompt Injection (입력조작)\r\n출 : Insecure Output Handling (출력검증 미흡)\r\n학 : Training Data Poisoning (학습 데이터 공격)\r\n모 : Model DoS (모델 과부하)\r\n공 : Supply Chain (공급망 취약)\r\n민 : Sensitive Info (민감정보 유출)\r\n플 : Insecure Plugin (플러그인 취약)\r\n과 : Excessive Agency (과도한 자율성)\r\n의 : Overreliance (의존성 과다)\r\n탈 : Model Theft (모델 탈취) @입출학/모공민/플과의탈>입출학 모공민이 플과의 탈출을 했다",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-fc4g3",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "프롬프트 인젝션",
+    "definition": "",
+    "mnemonic": "잘못된 명령, 잘못해석, 취약한 모델 / (유형) 직접 : 지침무력, 역할극, 맥란혼동, 순차명령, 코드인젝션 \r\n간접 : 웹콘텐츠 주입, 소스조작, 이미지기반 주입공격 \r\n// 입력검증, 콘텐츠격리, 출력제한, 데이터신뢰, 모델보안강화, 교육",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-45dn5",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "TARA",
+    "definition": "",
+    "mnemonic": "ISO21434, 자동차 사이버위험 평가방법론 / 절차 : @아이자위공영가위처목  \r\n> 아이템 → 자산 → 위협 → 공격경로 → 영향/가능성 → 위험 → 처리 → 보안목표",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-9ne52",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "AI TRISM",
+    "definition": "",
+    "mnemonic": "인공지능 시스템의 신뢰성, 위험, 보안관리에 관한 프레임워크 \r\nunmanaged Risks -> AI TRiSM -> Managed Risks // \r\n@Explainability & model 모니터링, ModelOps, AI app 보안, privacy",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-oukyb",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "RED팀",
+    "definition": "",
+    "mnemonic": "AI시대 새로운 위협에 긴급, 실시간 적군대응 보안 조직",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-dspa9",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "JWT세션",
+    "definition": "",
+    "mnemonic": "Json 암호화, Claim 기반 토큰방식, 유효기간 @header, Payload, sgniture \r\n@장점: 인증 저장소 불필요, MSA 환경지원, 확장용이 \r\n@단점: 사용자 정보수정 어려움, 토큰사이즈 증가, 데이터 트랙픽 증가",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-47c9w",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "Observability",
+    "definition": "",
+    "mnemonic": "사전에 정의되지 않은 속성기반으로 시스템을 디버깅 기술/ Logs, Metrics\r\n모니터링 디버깅",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-l7r1g",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "사이버보안 프레임워크2.0",
+    "definition": "",
+    "mnemonic": "적용범위 확대(모든 조직에 적용 > 범위확대, 관리기능 추가, 공급망 위험관리 강화)\r\n@구성 : 코어, 조직, 구현 / 기능 : 관리, 식별, 보호, 탐지, 대응, 복구",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-isdqn",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "LoTL (Living-off-the Land)",
+    "definition": "",
+    "mnemonic": "합법적 SW 악용, 자급자족 공격 \r\n/절차 : 초기접근(사회공학, 워터링홀, 스피어피싱) > 도구악용(TMI, 파워쉘) > 내부확산(레터럴무브먼트) > 정상유도-공격(백도어 활용, Reverse Shell, bind Shell) \r\n@대응 : 교육, 모니터링, EDR, SIEM구축",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-j8eyt",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "HNDL",
+    "definition": "",
+    "mnemonic": "선취합 후복호화 공격기법 / PQC(다변수, NTRU, 레인보우), IBE, NTN, MLS, MFA, 패스키",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-si9ir",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "51%공격",
+    "definition": "",
+    "mnemonic": "블럭체인 해시파워 51%지분 > 체인변경 / POW개선, Nonce상향, 앵커링, 사이트체인, 2nd계약\r\n51%공격으로 이중지불은 블록체인 신뢰붕괴",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-9cv2e",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "J2공격 (Jailbreaking-to-jailbreak Attack",
+    "definition": "",
+    "mnemonic": "LLM모델 취약점공격, 2세대 공격, 우회공격 / \r\n공격기술: 프롬프트 인젝션, 가드레인우회, 금지응답유도, 필터링 무력화, 컨텍스트 조작, 토큰파괴, 역할기반 공격, 허구설정, 사고흐름유도\r\n// 강력필터링, 프롬프트 교육, RedTeam, 모델강화, RLHF, RLAIF 사전훈련 \r\n@도구 : Moderation API, Constituional AI, Guardrails AI",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-7apcc",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "Text2SQL",
+    "definition": "",
+    "mnemonic": "AI활용 SQL쉽게 활용,전화 기술 / LLM, STT, 토큰화, 구문 파싱,  문법 파싱, 트랜스포머 모델 기반\r\n//NLP, NLG, STT, LLM, 프롬프트",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-axrwf",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "딥보이스 피싱",
+    "definition": "",
+    "mnemonic": "AI이용 보이스 복제 공격, ★수집>생성>복제>공격 \r\n/(수집)SNS, 피싱, Pitch, 음성분석,\r\n (분석)TTS, encoding, 백터화 \r\n (생성) LLM, GAN, 공명주파수, AE, VAE\r\n/(금전) 비트코인, 암호화폐, 거래은닉 \r\n@대응: FDS, AML, KYC",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-0i6u6",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "세넌의 암호설계 원칙",
+    "definition": "",
+    "mnemonic": "혼돈(암호문과 키사이 관계 복잡화), 확산(평문변화 암호문 전체 영향화)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-soeko",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "커버로스",
+    "definition": "",
+    "mnemonic": "MIT에서 개발한 대칭키 기반 인증 프로토콜, 비밀번호를 직접 노출없이 클라이언트-서버 간 상호 인증\r\n구조: KDC(AS, TGS), 티켓, 세션키\r\n동작: AS → TGS → 서버 (3단계 인증)\r\n특징: 대칭키, 비번 미전송, SSO\r\n장단점: 안전성↑, SPOF/시간동기↓\r\n결론: Zero Trust·클라우드 통합 필요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-gchgj",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "BPF (Berkeley Packet Filter)",
+    "definition": "",
+    "mnemonic": "개념 : 원하는 패킷만 수신토록 OS수준에서 필터링하여  운영체제 성능 향상 매커니즘  / 특징 : 커널모드 동작, 보안감시, 속도향상 / 유형: cBPF, eBPF\r\n@취약점 :  BPF기반 NW패킷을 감시중에, 해커가 몰래 스니핑, 커널공격 가능, BFPDoor 설치후 방화벽 등 보안대책을 우회해 공격 \r\n// 대응 : 권한제한(BPF), eBPF확장자는 상시모니터링\r\n@기술요소 : 침투기술(xss, Webshell), BPF필터, BPFDoor Controller, Blind Shell\r\n@절차: 침투, 설치, 활성화, 공격 수행",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-h3jxd",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "BPF + Backdorr (BPFDoor)",
+    "definition": "",
+    "mnemonic": "#스텔스백도어 : BPF이용한 백도어/특징: 탐지어려움, 리눅스 시스템에 숨어 명령기다림, FW보안 피함\r\n/구성: BPFcontroller, Magic 필터, Reverse Shell, BindShell, 원격제어\r\n@작동 : 설치 > 해커(패킷) > BPF이용 패킷 필터링 떄문 내부감시 실패) >\r\n > 특정패턴 NW신호에 백도어 열림(공격) \r\n// 위험요소 : No 포트, 실행 흔적 없음, 리눅스기반 보안도구  \r\n@대응 :  로그분석, 바이너리-프로세스 탐지, EDR감시,  NW패턴 감지",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-s6v8p",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "BPFDoor와 기존백도어 차이",
+    "definition": "",
+    "mnemonic": "특정 포트 은밀히 감시\r\n찾기가 어려움, 방화벽 무력화\r\n매직패킷\r\n@기업문제점 \r\n- 정보유출, 서비스중단, 보안무력화\r\n// 관리적: 접근통제, 최소권한\r\n// 기술적: 탐지, 트래픽 탐지",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-4b2zb",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "타이포 스쿼팅 (주모)",
+    "definition": "",
+    "mnemonic": "URL 오타를 노려 유사도 메인 등록>피싱>악성코드 유포, \r\n/(공격) 트래픽 탈취, 사회공학기법, DBD공격, 파일리스공격\r\n/(예방) DNS보안, 브랜드 모니터링, 오입력방지기능, \r\n사용자*시스템 측면(URL필터링, 보안식교육)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-hz59r",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "마이데이터 지원플랫폼 (주모)",
+    "definition": "",
+    "mnemonic": "개보법 35조2(개인정보 전송 요구) 자시정보를 본인, 3자에게 전송을 요구할수 있는 권리\r\n@정보주체, 정보수신자(보유기관), 정보전송자(본인, 3자에게 안전제공), 중계전문기관(행안부), 지원플랫폼(전송이력확인, 철회, 이용과정 지원) / API, Json, mTLS,   인증(OAuth2.0, X.509 , 인가:자격증명, JWS)\r\n@절차 : 개인 - 정보수신자 - 중계전문기관(지원플랫폼) - 정보전송자",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-70hba",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "IT보안, OT보안 (주모)",
+    "definition": "",
+    "mnemonic": "IT보안 : 서버, NW 등 정보시스템과 데이터를 보호하는 활동\r\nOT보안: ICSS 생산설비, 공정제어 등 물리적 프로세스와 정비를 관리하고 제어하는 운영활동",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-duebk",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "개인정보 유출대응절차(주모)",
+    "definition": "",
+    "mnemonic": "정보주체 피해구제 절차, 개보법 제34조(개인정보 유출 등의 통지신고)\r\n대상: 개인정보처리자, 범위: 개인정보유출 등 의무:통지,신고, 3천만원 이하 과태료, 1명이상, 72시간내\r\n홈페이지, 서면 등 개별통지 / 민감정보, 고유식별정도 유출, KISA, 개보위",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-na1zo",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "자동화된 결정에 대한 개인정보처리자의 조치기준(개보위, 24.9월)",
+    "definition": "",
+    "mnemonic": "개보법 제37조(자동화 결정에 대한 정보주체의 권리 등) / \r\n★목적 : 투명성 강화, 정보비대칭 해소, 절차공개, XAI, 대응권 강화\r\n★대상 인공지능(AI) 등 자동화된 결정*이 기업 등이 준수\r\nⓐ완전자동화 > yes ⓑ개인정보포함 > yes \r\nⓒ정보주체권리 > yes ⓓ처리자 주관여부=> yes(all) 의무대상\r\n★처리자 조치사항 : 거부권(자동화 결정중 생명,재산, 권리 영향시 거부가능)\r\n설명요구권(간결하고 의미있는 설명제공 필요)\r\n조치기간방법(거절10일, 완료30일, 조치연장(30일 2회연장), 고지방법(우편,팩스등)\r\n@XAI : 전체모델설명(룰, 규칙, 선형회귀), 지역설명(LIME, SHARP)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-h05rd",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "SSDF(secure soft dev FW) (주모)",
+    "definition": "",
+    "mnemonic": "NIST 발행, SW개발시 보안강화 지침 BP가이드(프레임워크) / 배경 : SW공급망 보안 다각화\r\n / @핵심 프랙티스 : 조직준비, SW보호, 보안SW개발, 취약대응 (조소보취)\r\n★ 조직(Red팀, 보호팀구성), SW보호(인프라환경보호, 배포보안), 보안SW개발(보안TEST), 취약(CVE,CWE모니터링)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-yfw7d",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "BitB (Browser in the Browser)",
+    "definition": "",
+    "mnemonic": "웹브라우저 창을 가장한 가짜로그인 창/ 사용자 인증정보 탈취\r\nsocial 엔지니어링 기법\r\n사용자 : 접속(악성사이트), 공격자(가짜 창 표시), \r\n사용자(인증정보 입력), 인증정보 확인(전송)\r\n@절차 : 유도>탈취>이용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-ixq6o",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "텝프 프로핑",
+    "definition": "",
+    "mnemonic": "템퍼 프루핑(Tamper-Proofing), 데이터, SW, HW, 장치 등 불법적 수정위조 되지 않은 기술방법\r\n종류: SW(코드난독화, 해시,서명, 런타임 무결성 체크), \r\nHW(TPM, HSM, 봉인, 홀로그램) 데이터(암호화, B/C 암호화)\r\n/ 인공지능 생성의 별도표식을 넣는 기술\r\n(AI모델 ->생성결과(워커마크, 노이즈, 표식, 보인, C2PA 등) 삽입 -> 최종결과물\r\n/딥페이크 방어기술 : C2PA, 클로바 그린아이, 모니터링, 검색, Fakecatcher(인텔)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-jazww",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "SW Metrics",
+    "definition": "",
+    "mnemonic": "소프트웨어 품질, 성능, 생산성 등을 정량적으로 측정하고 평가하는 지표 (Product Matrics, Process Matrics, Project Metrics)  / LOC, FP, code coverage , MTTR, 실패율, 공수 \r\n@측정프로세스 : 품질용구 > 식별 > 자료수집 > 계산 > 결과분석 > 검증(SW Metrics)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-20d86",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "AI & Security",
+    "definition": "",
+    "mnemonic": "AI for Security : AI로 보안 고도화(관제·위협탐지·자동대응)  머신러닝, LLM, 보안에 AI기술 활용\r\nSecurity for AI : AI 자체 보호(데이터 중독, 적대적 공격, 프롬프트 인젝션 방어) \r\n대응 : 데이터·모델 보안, 운영통제, 인증·거버넌스 강화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-4lxjo",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "BPFDoor",
+    "definition": "",
+    "mnemonic": "리눅스 BPF 악용 백도어, 탐지 회피·장기간 잠복",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-e07ka",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "심 스와핑",
+    "definition": "",
+    "mnemonic": "유심 탈취로 번호 장악 → 금융·인증서비스 무력화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-z7bd4",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "랜드어텍 DDOS",
+    "definition": "",
+    "mnemonic": "소스 IP와 목적 IP가 동일하게 구성하여 타겟을 마비시키는 Land Attack을 통한 DDOS 사례\r\n기법 :  IP획득 > 데이터전송 > 서비스 마비 \r\n대응 : (관리) 정책수립, 모의훈련, 대응계획, 백업체계 \r\n(기술)FW, IPS/IDS, SIEM, 스크러빙센터, CDN서비스",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-qfqju",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "스푸핑",
+    "definition": "",
+    "mnemonic": "",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-0knou",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  },
+  {
+    "topic": "다중 갈취 랜섬웨어",
+    "definition": "",
+    "mnemonic": "단순히 데이터를 암호화하여 복구 비용을 요구하던 기존 방식에서 벗어나, 여러 단계의 추가 협박을 통해 피해자가 돈을 지불할 수밖에 없게 만드는 진화된 공격 기법\r\n//RaaS 활용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779707190321-x639p",
+    "createdAt": "2026-05-25T11:06:30.321Z"
+  }
+]
