@@ -1092,12 +1092,26 @@
     }
 
     // ============ 상태 영속화 ============
+    // 체크는 '계정별'로 저장 — 같은 기기에서 계정이 달라도 섞이지 않고, 재로그인해도 유지.
+    //   키: itpe.checked.<email>.<unitId>  (로그아웃은 세션만 지우므로 체크는 보존됨)
+    function checkedAcct() {
+        try {
+            const s = window.ITPEAuth && window.ITPEAuth.getSession && window.ITPEAuth.getSession();
+            return (s && s.email) ? s.email.toLowerCase().trim() : 'anon';
+        } catch { return 'anon'; }
+    }
+    function checkedKey() { return 'itpe.checked.' + checkedAcct() + '.' + unitId; }
     function saveChecked() {
-        try { localStorage.setItem('itpe.checked.' + unitId, JSON.stringify([...state.checked])); } catch {}
+        try { localStorage.setItem(checkedKey(), JSON.stringify([...state.checked])); } catch {}
     }
     function loadChecked() {
         try {
-            const raw = localStorage.getItem('itpe.checked.' + unitId);
+            let raw = localStorage.getItem(checkedKey());
+            // 레거시(계정 비구분) 키에서 1회 이관 — 기존 체크 보존
+            if (raw == null) {
+                const legacy = localStorage.getItem('itpe.checked.' + unitId);
+                if (legacy != null) raw = legacy;
+            }
             return new Set(raw ? JSON.parse(raw) : []);
         } catch { return new Set(); }
     }
