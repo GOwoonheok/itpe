@@ -138,13 +138,13 @@ a { color: inherit; text-decoration: none; }
     overscroll-behavior: contain;
     padding: 4px 8px;
     scroll-behavior: smooth;
-    gap: 4px;
+    gap: 10px;
 }
-/* 메뉴 항목 — 1~11번을 한 화면에 세로로 균등 채워 배치 (공간 남으면 늘려 채움) */
-.menu-content .sheet-item { padding: 4px 12px; gap: 10px; flex: 1 1 auto; min-height: 38px; }
-.menu-content .sheet-name { font-size: 0.92rem; }
-.menu-content .sheet-num { width: 22px; height: 22px; font-size: 0.78rem; }
-.menu-content .sheet-meta { font-size: 0.72rem; }
+/* 메뉴 항목 — 약 3배 크게 (큰 탭 영역, 넘치면 스크롤) */
+.menu-content .sheet-item { padding: 16px 16px; gap: 14px; }
+.menu-content .sheet-name { font-size: 1.35rem; }
+.menu-content .sheet-num { width: 50px; height: 50px; font-size: 1.3rem; }
+.menu-content .sheet-meta { font-size: 0.95rem; }
 /* 스크롤바 살짝 보이게 (TV 화면 느낌) */
 .menu-content .sheet-list { scrollbar-width: thin; scrollbar-color: #ffffff55 #ffffff10; }
 .menu-content .sheet-list::-webkit-scrollbar { width: 7px; }
@@ -1661,6 +1661,8 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
 /* 시트 목록 화면 — 찾기·글자크기 활성, 연속그림·Prev 비활성 */
 .toolbar.context-list .tb-cont,
 .toolbar.context-list .tb-prev { opacity: 0.35; pointer-events: none; }
+/* 시트 목록 하단 — 메뉴·🔍 줄 밑에 검은 여백 50px 추가 (toolbar 배경 #000) */
+.toolbar.context-list { padding-bottom: calc(var(--safe-bottom) + var(--tb-gap) + 50px); }
 
 /* 시트 목록은 학습 화면보다 버튼을 좀 더 크게 — 키 손 닿기 쉽게 */
 .toolbar.context-list .toolbar-actions .tb-menu {
