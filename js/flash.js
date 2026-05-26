@@ -133,8 +133,9 @@
                 return;
             }
 
-            // URL filter=ai → AI 생성 카드만 보기
+            // URL filter=ai → AI 생성만 / filter=checked → 체크한 카드만 (새로고침 유지)
             if (initialFilter === 'ai') state.filterAi = true;
+            else if (initialFilter === 'checked') state.filterChecked = true;
 
             // 단원 진입 정책: URL에 명시적 mode 가 있을 때만 학습 화면 직행.
             if (initialMode === 'random' || initialMode === 'sequence') {
@@ -195,6 +196,16 @@
                 else { aiBtn.hidden = true; }
             }
         } catch {}
+        // ✅ 체크한 카드만 출제 — 체크된 카드가 있을 때만 노출
+        try {
+            const chkCount = state.cards.filter((c) => isChecked(c)).length;
+            const chkBtn = document.querySelector('.mode-option.mode-checked');
+            const chkCountEl = document.getElementById('mode-checked-count');
+            if (chkBtn) {
+                if (chkCount > 0) { chkBtn.hidden = false; if (chkCountEl) chkCountEl.textContent = String(chkCount); }
+                else { chkBtn.hidden = true; }
+            }
+        } catch {}
     }
     document.querySelectorAll('.mode-option').forEach((b) => {
         b.addEventListener('click', () => {
@@ -202,12 +213,10 @@
                 alert('이 단원에 카드가 없습니다.\n\n아래 "📤 엑셀 업로드" 또는 학습 화면 "+추가"로 먼저 카드를 등록하세요.');
                 return;
             }
-            // ✨ AI 필터 옵션
-            if (b.dataset.filter === 'ai') {
-                state.filterAi = true;
-            } else {
-                state.filterAi = false;
-            }
+            // 필터 옵션: ai(AI 생성만) · checked(체크한 카드만) · 그 외(전체)
+            const filter = b.dataset.filter || '';
+            state.filterAi = (filter === 'ai');
+            state.filterChecked = (filter === 'checked');
             state.mode = b.dataset.mode;
             rebuildOrder();
             if (state.filterAi && state.order.length === 0) {
@@ -216,10 +225,17 @@
                 rebuildOrder();
                 return;
             }
+            if (state.filterChecked && state.order.length === 0) {
+                state.filterChecked = false;
+                alert('체크한 카드가 없습니다.');
+                rebuildOrder();
+                return;
+            }
             if (state.mode === 'random') shuffleOrder();
             const url = new URL(location.href);
             url.searchParams.set('mode', state.mode);
             if (state.filterAi) url.searchParams.set('filter', 'ai');
+            else if (state.filterChecked) url.searchParams.set('filter', 'checked');
             else url.searchParams.delete('filter');
             history.replaceState(null, '', url);
             showStudy();
@@ -1143,6 +1159,8 @@
                 state.checked = new Set(arr);
                 try { localStorage.setItem(checkedKey(), JSON.stringify(arr)); } catch {}
                 updateCheckUI();
+                // 모드 선택 화면이면 '체크한 카드만' 옵션 카운트 갱신
+                try { if (els.modeScreen && !els.modeScreen.hidden) showModeSelect(); } catch {}
                 if (state.filterChecked) { rebuildOrder(); render(); }
             } else if (state.checked.size > 0) {
                 pushCheckedToServer();    // 서버 미존재 + 로컬 체크 있음 → 서버로 이관

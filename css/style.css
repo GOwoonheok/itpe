@@ -502,6 +502,12 @@ a { color: inherit; text-decoration: none; }
     color: #c4a8ff;
 }
 .mode-option.mode-ai:active { transform: scale(0.985); background: linear-gradient(135deg, #3a2a5d 0%, #2a2a2c 100%); }
+.mode-option.mode-checked {
+    background: linear-gradient(135deg, #133024 0%, #1c1c1e 100%);
+    border-color: var(--accent-green);
+    color: #8fe6b0;
+}
+.mode-option.mode-checked:active { transform: scale(0.985); background: linear-gradient(135deg, #1a4030 0%, #2a2a2c 100%); }
 
 .card-section-body {
     font-size: max(10px, calc(1.06rem + var(--font-size-step) * 0.08rem));
