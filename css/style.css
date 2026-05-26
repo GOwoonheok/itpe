@@ -1478,10 +1478,11 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
    좁은 화면: 좌측 Prev 바로 왼쪽(첫 자식) · 넓은 화면: 우측 Prev 옆(맨 오른쪽) */
 .tb-cont-side {
     flex: 0 0 46px;          /* 아이콘(28px)보다 가로로 넓게 */
+    order: 10;               /* 항상 우측 Prev 바로 왼쪽에 (그림 → 우측 Prev 순서) */
     align-self: stretch;     /* 높이는 Prev(행 높이)에 동일하게 자동 정렬 — 브레이크포인트 무관 */
     min-height: 24px;
     border-radius: 7px;
-    /* "[그림]" 텍스트 표시 */
+    /* "그림" 텍스트 표시 */
     font-size: 0.64rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1489,10 +1490,10 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
     background: #e3d8a4;
     color: #4a4128;
 }
+/* 우측 Prev 를 그림 오른쪽으로 — 결과: [Prev(좌)] … [그림][Prev(우)] */
+.toolbar-actions > .tb-prev-side:last-child { order: 11; }
 @media (min-width: 600px) {
-    /* 해상도 커지면 우측 Prev 옆으로 — 단 '이미지 → Prev' 순서 유지(🖼이 우측 Prev 왼쪽) */
-    .tb-cont-side { order: 10; flex-basis: 56px; }
-    .toolbar-actions > .tb-prev-side:last-child { order: 11; }
+    .tb-cont-side { flex-basis: 56px; }
 }
 
 /* 2행 — [Enter] [중앙 보조 컨트롤] [Enter] */
