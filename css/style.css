@@ -498,21 +498,21 @@ a { color: inherit; text-decoration: none; }
 .card-section-body {
     font-size: max(10px, calc(1.06rem + var(--font-size-step) * 0.08rem));
     font-weight: 500;             /* 명시 (브라우저 default 400 대신) — 다크모드에서 두툼 ↑ */
-    line-height: 1.78;            /* 한글 가독성 핵심 — 1.75 → 1.78 살짝 더 호흡 */
+    line-height: 1.4;             /* 줄 간격 축소 (1.78→1.4, 여백분 약 절반) */
     letter-spacing: 0;             /* 본문은 자간 중립 */
-    word-spacing: 0.04em;          /* 한글은 띄어쓰기 살짝 넓혀 가독 ↑ */
+    word-spacing: 0.02em;          /* 낱말 간격 절반 (0.04→0.02) */
     padding: 2px 6px;
     white-space: pre-wrap;
     word-break: keep-all;
     color: var(--text);
 }
-/* 두음(mnemonic) 은 여러 줄 나열이 많아 행간 추가 확보 */
+/* 두음(mnemonic) 은 여러 줄 나열이 많아 행간 살짝 더 (그래도 축소) */
 .card-section[data-key="mnemonic"] .card-section-body {
-    line-height: 1.88;
+    line-height: 1.45;
 }
 /* 키워드는 쉼표 구분 인라인 — 단어 단위 끊김 자연스럽게 */
 .card-section[data-key="keyword"] .card-section-body {
-    word-spacing: 0.06em;
+    word-spacing: 0.03em;
 }
 .card-section.is-empty .card-section-body {
     color: var(--text-dim);
