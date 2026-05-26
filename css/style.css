@@ -1428,9 +1428,9 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
 .tb-enter-side {
     flex: 1 1 0;
     min-width: 150px;
-    max-width: 50%;
-    height: 78px;            /* 약 2배 (44→78) */
-    font-size: 1.18rem;
+    max-width: 60%;          /* 가로 더 키움 (50→60%) */
+    height: 40px;            /* 높이 반절 (78→40) */
+    font-size: 1.05rem;
     border-radius: 10px;
     background: var(--accent-green);
     color: #fff;
@@ -1768,9 +1768,9 @@ body[data-fz="-2"] { --font-size-step: -2; }
     .tb-enter-side {
         min-width: 0;
         flex: 1 1 0;
-        max-width: 50%;
-        height: 74px;            /* 약 2배 */
-        font-size: 1.12rem;
+        max-width: 60%;          /* 가로 더 키움 */
+        height: 38px;            /* 높이 반절 */
+        font-size: 1.02rem;
     }
     .tb-prev-side {
         flex: 0 0 58px;          /* 더 키움 */
@@ -1837,8 +1837,8 @@ body[data-fz="-2"] { --font-size-step: -2; }
     .toolbar-actions,
     .toolbar-nav { gap: 3px; }
     .tb-enter-side {
-        height: 66px;            /* 약 2배 */
-        font-size: 1.04rem;
+        height: 34px;            /* 높이 반절 */
+        font-size: 0.96rem;
         letter-spacing: 0.02em;
     }
     .tb-prev-side {
@@ -1898,8 +1898,8 @@ body[data-fz="-2"] { --font-size-step: -2; }
 
     .toolbar { padding: 3px 4px calc(var(--safe-bottom) + var(--tb-gap)); gap: 3px; }
     .tb-enter-side {
-        height: 56px;            /* 약 2배 */
-        font-size: 0.96rem;
+        height: 30px;            /* 높이 반절 */
+        font-size: 0.9rem;
     }
     .tb-prev-side {
         flex: 0 0 44px;          /* 더 키움 */
@@ -1950,7 +1950,7 @@ body[data-fz="-2"] { --font-size-step: -2; }
 @media (max-height: 480px) and (orientation: landscape) {
     .app-content { padding-top: calc(var(--safe-top) + 10px); padding-bottom: 6px; }
     .toolbar { padding: 4px 10px calc(var(--safe-bottom) + var(--tb-gap)); gap: 3px; }
-    .tb-enter-side { height: 48px; font-size: 1rem; }   /* 가로모드는 세로공간 제한 — 적당히 */
+    .tb-enter-side { height: 28px; font-size: 0.92rem; }   /* 높이 반절 */
     .tb-prev-side { height: 30px; }
     .tb-cont-side { height: 30px; flex-basis: 38px; }   /* Prev 높이 맞춤 + 폭 축소 */
     .num-area .timer-btn { height: 30px; }
