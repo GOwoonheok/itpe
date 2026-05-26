@@ -26,7 +26,7 @@ body {
     /* Pretendard Variable 우선 — 다크모드 가독성 ↑, 한글 세로획 명확.
        fallback: NanumSquareRound (옛 데이터), Apple SD Gothic Neo (iOS), Noto Sans KR. */
     font-family: 'Pretendard Variable', Pretendard, 'NanumSquareRound', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-    font-weight: 450;               /* Regular(400)보다 살짝 굵게 — 다크모드 ghosting 방지 */
+    font-weight: 400;               /* 조금 얇게 — 선명·깔끔 (Pretendard 400 + antialiased) */
     color: var(--text);
     background: var(--bg);
     overscroll-behavior-y: contain;
@@ -448,7 +448,7 @@ a { color: inherit; text-decoration: none; }
 }
 .th-cat   { color: var(--text-muted); font-weight: 700; }
 .th-sep   { color: var(--text-dim);   font-weight: 700; margin: 0 6px; }
-.th-topic { color: #6f9bff; font-weight: 900; letter-spacing: -0.005em; }  /* 군청 + 다크 가독성 */
+.th-topic { color: #6f9bff; font-weight: 700; letter-spacing: -0.005em; }  /* 군청 + 다크 가독성 (900→700 얇게) */
 /* 토픽 옆 🔎 빠른검색 버튼 — 작고 조용하게, 충분한 탭 영역 */
 .th-search {
     appearance: none;
@@ -502,7 +502,7 @@ a { color: inherit; text-decoration: none; }
 
 .card-section-body {
     font-size: max(10px, calc(1.06rem + var(--font-size-step) * 0.08rem));
-    font-weight: 500;             /* 명시 (브라우저 default 400 대신) — 다크모드에서 두툼 ↑ */
+    font-weight: 400;             /* 조금 얇게 (500→400) — 두껍던 본문 선명하게 */
     line-height: 1.4;             /* 줄 간격 축소 (1.78→1.4, 여백분 약 절반) */
     letter-spacing: 0;             /* 본문은 자간 중립 */
     word-spacing: 0.02em;          /* 낱말 간격 절반 (0.04→0.02) */
@@ -537,7 +537,7 @@ a { color: inherit; text-decoration: none; }
 .card-section.is-hidden .card-section-body::after {
     content: " ";
 }
-.card-section .topic-text { font-weight: 800; font-size: max(10px, calc(1.22rem + var(--font-size-step) * 0.08rem)); }
+.card-section .topic-text { font-weight: 700; font-size: max(10px, calc(1.22rem + var(--font-size-step) * 0.08rem)); }
 
 .card-hint-cmd {
     text-align: center;
