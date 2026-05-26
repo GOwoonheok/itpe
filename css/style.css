@@ -162,7 +162,7 @@ a { color: inherit; text-decoration: none; }
     display: flex;
     flex-direction: column;
     overflow: hidden;              /* 스크롤은 내부 프레임이 담당 */
-    padding: calc(var(--safe-top) + 50px) 12px 50px;   /* 상세화면 상·하 여백 50 */
+    padding: calc(var(--safe-top) + 50px) 12px 5px;   /* 상단 여백 50 · 하단(툴바와 간격)은 최소 5 */
 }
 .card-frame {
     flex: 1 1 auto;
