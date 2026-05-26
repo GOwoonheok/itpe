@@ -38,6 +38,9 @@ body {
 }
 button { font-family: inherit; touch-action: manipulation; cursor: pointer; }
 a { color: inherit; text-decoration: none; }
+/* hidden 속성이 항상 우선 — .tb-btn{display:inline-flex}·.admin-tools-*{display:block}
+   같은 author display 규칙이 [hidden] 을 무력화하던 문제 차단(비관리자에게 관리자 UI 노출 방지) */
+[hidden] { display: none !important; }
 
 .app-shell {
     height: 100dvh;
