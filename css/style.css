@@ -48,6 +48,9 @@ a { color: inherit; text-decoration: none; }
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    /* 가로/넓은 화면 — 최대 700px 로 고정 + 가운데 정렬 (좁은 세로 폰은 영향 없음) */
+    max-width: 700px;
+    margin-inline: auto;
 }
 @supports (height: 100dvh) { .app-shell { height: 100dvh; } }
 .app-content {
