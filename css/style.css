@@ -51,6 +51,11 @@ a { color: inherit; text-decoration: none; }
     /* 가로/넓은 화면 — 최대 700px 로 고정 + 가운데 정렬 (좁은 세로 폰은 영향 없음) */
     max-width: 700px;
     margin-inline: auto;
+    background: var(--bg);        /* 박스는 검정 톤 유지 (옆 배경과 구분) */
+}
+/* 넓은 화면 — 박스 옆 뒷배경을 순흑 대신 약간 회색 섞인 검정으로 (박스가 도드라지게) */
+@media (min-width: 700px) {
+    body { background: #1b1b1e; }
 }
 @supports (height: 100dvh) { .app-shell { height: 100dvh; } }
 .app-content {
