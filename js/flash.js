@@ -172,6 +172,8 @@
             } else {
                 showModeSelect();
             }
+            // 체크 상태 서버 동기화 (계정별, 기기 간) — 비동기, 완료 시 UI 갱신
+            syncCheckedFromServer();
         })
         .catch((err) => { console.error(err); showError('카드 데이터를 불러오지 못했습니다.'); });
 
@@ -1101,8 +1103,22 @@
         } catch { return 'anon'; }
     }
     function checkedKey() { return 'itpe.checked.' + checkedAcct() + '.' + unitId; }
+    let _checkedPushTimer = null;
+    // 서버(R2)에 현재 단원 체크 목록 저장 — /api/user-state (계정별, 기기 간 동기화)
+    function pushCheckedToServer() {
+        try {
+            fetch('/api/user-state?unit=' + encodeURIComponent(unitId), {
+                method: 'PUT', credentials: 'include', cache: 'no-store',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ checked: [...state.checked] }),
+            }).catch(() => {});
+        } catch {}
+    }
     function saveChecked() {
+        // 1) 로컬 즉시 저장 2) 서버는 디바운스 후 푸시(연타 시 호출 절감)
         try { localStorage.setItem(checkedKey(), JSON.stringify([...state.checked])); } catch {}
+        clearTimeout(_checkedPushTimer);
+        _checkedPushTimer = setTimeout(pushCheckedToServer, 700);
     }
     function loadChecked() {
         try {
@@ -1114,6 +1130,24 @@
             }
             return new Set(raw ? JSON.parse(raw) : []);
         } catch { return new Set(); }
+    }
+    // 로드 시 서버 체크 상태와 동기화 — 서버가 단일 출처(다른 기기·해제 반영).
+    // 서버에 아직 없으면 기존 로컬 체크를 서버로 이관(seed).
+    async function syncCheckedFromServer() {
+        try {
+            const r = await fetch('/api/user-state', { credentials: 'include', cache: 'no-store' });
+            if (!r.ok) return;            // 미로그인·쿠키없음(401) 등 → 로컬만 사용
+            const j = await r.json();
+            const arr = (j && j.checked && Array.isArray(j.checked[unitId])) ? j.checked[unitId] : null;
+            if (arr) {
+                state.checked = new Set(arr);
+                try { localStorage.setItem(checkedKey(), JSON.stringify(arr)); } catch {}
+                updateCheckUI();
+                if (state.filterChecked) { rebuildOrder(); render(); }
+            } else if (state.checked.size > 0) {
+                pushCheckedToServer();    // 서버 미존재 + 로컬 체크 있음 → 서버로 이관
+            }
+        } catch {}
     }
     function saveHiddenState() {
         try { localStorage.setItem('itpe.hidden.' + unitId, JSON.stringify(state.hidden)); } catch {}

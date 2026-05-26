@@ -166,3 +166,49 @@ export async function verifyAdminRequest(req) {
     if (!session) return { ok: false, reason: 'no-session' };
     return { ok: true, email: session.email, exp: session.exp };
 }
+
+// 등록 사용자(관리자 포함) 누구나 — 쿠키 서명·만료·등록여부 확인. {email}|null.
+async function verifyCookieAnyUser(value) {
+    if (typeof value !== 'string' || value.length < 20) return null;
+    const parts = value.split('.');
+    if (parts.length !== 4) return null;
+    const [ver, emailB64, expStr, sig] = parts;
+    if (ver !== COOKIE_VERSION) return null;
+    const payload = ver + '.' + emailB64 + '.' + expStr;
+    let expected;
+    try { expected = sign(payload); } catch { return null; }
+    if (!constantTimeEqHex(sig, expected)) return null;
+    const exp = Number(expStr);
+    if (!Number.isFinite(exp) || exp < Date.now()) return null;
+    const email = b64urlDecode(emailB64);
+    if (!(await isRegisteredEmail(email))) return null;
+    return { email, exp };
+}
+
+// 사용자 단위 인증(관리자 아니어도 OK) — 사용자별 상태 저장 등에 사용.
+// 관리자 전용 작업에는 절대 사용 금지(그건 verifyAdminRequest).
+export async function verifyUserRequest(req) {
+    const method = String(req.method || '').toUpperCase();
+    const isWrite = (method === 'POST' || method === 'PUT' || method === 'PATCH' || method === 'DELETE');
+    if (isWrite) {
+        const origin = req.headers.origin || '';
+        const referer = req.headers.referer || '';
+        const host = (req.headers['x-forwarded-host'] || req.headers.host || '').toLowerCase();
+        const allowed = host && (
+            origin.toLowerCase().endsWith('//' + host) ||
+            origin.toLowerCase().endsWith('//' + host.split(':')[0]) ||
+            referer.toLowerCase().includes('//' + host) ||
+            (origin === '' && referer === '')
+        );
+        if (!allowed && origin) return { ok: false, reason: 'cross-origin' };
+    }
+    const cookies = parseCookies(req.headers.cookie || '');
+    const cv = cookies[COOKIE_NAME];
+    const session = cv ? await verifyCookieAnyUser(cv) : null;
+    if (!session) return { ok: false, reason: 'no-session' };
+    const admin = await isAdminEmail(session.email);
+    return { ok: true, email: session.email, isAdmin: admin };
+}
+
+// 모든 등록 사용자에게 동일 서명 쿠키 발급 (관리자 여부는 검증 시점에 화이트리스트로 판별)
+export function setUserCookie(res, email) { return setAdminCookie(res, email); }
