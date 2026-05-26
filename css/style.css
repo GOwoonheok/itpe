@@ -154,11 +154,12 @@ a { color: inherit; text-decoration: none; }
 .menu-content .empty-state, .menu-content .error-state { margin: auto; padding: 30px 18px; }
 
 /* ====== 카드 화면(flash.html) — 메뉴 화면과 동일한 'TV 화면' 프레임 + 내부 스크롤 ====== */
-.card-content {
+/* .app-content.card-content (0,2,0) — standalone/브레이크포인트의 .app-content 규칙보다 우선 */
+.app-content.card-content {
     display: flex;
     flex-direction: column;
     overflow: hidden;              /* 스크롤은 내부 프레임이 담당 */
-    padding: calc(var(--safe-top) + 10px) 12px 12px;
+    padding: calc(var(--safe-top) + 50px) 12px 50px;   /* 상세화면 상·하 여백 50 */
 }
 .card-frame {
     flex: 1 1 auto;
@@ -1951,6 +1952,8 @@ body[data-fz="-2"] { --font-size-step: -2; }
 /* 짧은 가로 모드 (landscape, height ≤ 480px) — 상하 패딩 축소 */
 @media (max-height: 480px) and (orientation: landscape) {
     .app-content { padding-top: calc(var(--safe-top) + 10px); padding-bottom: 6px; }
+    /* 가로모드는 세로공간 제한 — 상세화면 50/50 여백 대신 컴팩트 */
+    .app-content.card-content { padding-top: calc(var(--safe-top) + 8px); padding-bottom: 6px; }
     .toolbar { padding: 4px 10px calc(var(--safe-bottom) + var(--tb-gap)); gap: 3px; }
     .tb-enter-side { height: 28px; font-size: 0.92rem; }   /* 높이 반절 */
     .tb-prev-side { height: 30px; }
