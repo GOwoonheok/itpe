@@ -1416,9 +1416,9 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
     gap: 6px;
 }
 .tb-prev-side {
-    flex: 0 0 56px;
-    height: 30px;
-    font-size: 0.74rem;
+    flex: 0 0 66px;          /* 더 키움 (56→66) */
+    height: 38px;            /* 더 키움 (30→38) */
+    font-size: 0.82rem;
     border-radius: 7px;
     background: var(--accent-grey);
     color: #fff;
@@ -1429,8 +1429,8 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
     flex: 1 1 0;
     min-width: 150px;
     max-width: 50%;
-    height: 44px;
-    font-size: 1.05rem;
+    height: 78px;            /* 약 2배 (44→78) */
+    font-size: 1.18rem;
     border-radius: 10px;
     background: var(--accent-green);
     color: #fff;
@@ -1481,9 +1481,9 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
 /* 🖼 연속그림 — Prev 옆 측면 버튼.
    좁은 화면: 좌측 Prev 바로 왼쪽(첫 자식) · 넓은 화면: 우측 Prev 옆(맨 오른쪽) */
 .tb-cont-side {
-    flex: 0 0 46px;          /* 아이콘(28px)보다 가로로 넓게 */
+    flex: 0 0 40px;          /* 조금 줄임 (46→40) */
     order: 10;               /* 항상 우측 Prev 바로 왼쪽에 (그림 → 우측 Prev 순서) */
-    height: 30px;            /* Prev(.tb-prev-side) 와 동일 높이 — 브레이크포인트별로 아래에서 맞춤 */
+    height: 38px;            /* Prev(.tb-prev-side) 와 동일 높이 — 브레이크포인트별로 아래에서 맞춤 */
     align-self: center;
     border-radius: 7px;
     /* "그림" 텍스트 표시 */
@@ -1532,32 +1532,32 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
 .toolbar-nav .num-area .tb-input { flex: 1; align-self: auto; }
 .num-area .timer-btn {
     flex: 0 0 auto;
-    width: 42px;
-    height: 38px;
+    width: 34px;             /* 최소화 (42→34) */
+    height: 32px;            /* 최소화 (38→32) */
     flex-direction: column;
     gap: 1px;
-    padding: 0 4px;
+    padding: 0 3px;
 }
-.num-area .timer-btn .timer-icon { font-size: 1rem; }
+.num-area .timer-btn .timer-icon { font-size: 0.86rem; }
 .num-area .timer-btn .timer-label-text { font-size: 0.58rem; line-height: 1; }
 .num-area .timer-btn .timer-label-text:empty { display: none; }
 /* 2행으로 옮긴 글자크기 −/+ — ⏱·🔊 옆에 작게. 높이는 num-area(align-items:stretch)에 자동 정렬 */
 .num-area .num-sign {
     flex: 0 0 auto;
-    width: 28px;
+    width: 23px;             /* 최소화 (28→23) */
     padding: 0;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 900;
-    border-radius: 8px;
+    border-radius: 7px;
     background: var(--accent-grey);
     color: #fff;
 }
 .num-area .tb-filter {
     flex: 0 0 auto;
-    min-width: 44px;
-    height: 38px;
-    padding: 0 10px;
-    font-size: 0.78rem;
+    min-width: 36px;         /* 최소화 (44→36) */
+    height: 32px;            /* 최소화 (38→32) */
+    padding: 0 8px;
+    font-size: 0.74rem;
 }
 .timer-btn {
     flex: 1;
@@ -1767,14 +1767,15 @@ body[data-fz="-2"] { --font-size-step: -2; }
         min-width: 0;
         flex: 1 1 0;
         max-width: 50%;
-        height: 42px;
-        font-size: 1rem;
+        height: 74px;            /* 약 2배 */
+        font-size: 1.12rem;
     }
     .tb-prev-side {
-        flex: 0 0 48px;
-        height: 30px;
-        font-size: 0.7rem;
+        flex: 0 0 58px;          /* 더 키움 */
+        height: 36px;
+        font-size: 0.78rem;
     }
+    .tb-cont-side { height: 36px; flex-basis: 38px; }   /* 그림 — Prev 높이 맞춤 + 폭 축소 */
     .toolbar-actions .tb-menu {
         min-width: 44px;
         height: 26px;
@@ -1834,16 +1835,16 @@ body[data-fz="-2"] { --font-size-step: -2; }
     .toolbar-actions,
     .toolbar-nav { gap: 3px; }
     .tb-enter-side {
-        height: 38px;
-        font-size: 0.92rem;
+        height: 66px;            /* 약 2배 */
+        font-size: 1.04rem;
         letter-spacing: 0.02em;
     }
     .tb-prev-side {
-        flex: 0 0 42px;
-        height: 26px;
-        font-size: 0.66rem;
+        flex: 0 0 50px;          /* 더 키움 */
+        height: 32px;
+        font-size: 0.72rem;
     }
-    .tb-cont-side { height: 26px; }   /* Prev 와 동일 */
+    .tb-cont-side { height: 32px; flex-basis: 36px; }   /* Prev 높이 맞춤 + 폭 축소 */
     .toolbar-actions .tb-menu {
         min-width: 38px;
         height: 24px;
@@ -1861,11 +1862,12 @@ body[data-fz="-2"] { --font-size-step: -2; }
     .tb-icon.tb-add,
     .tb-icon.tb-edit { width: 34px; padding: 0 4px; }
     .tb-icons .tb-icon.tb-sign { width: 16px; height: 16px; font-size: 0.76rem; }
-    .num-area { gap: 4px; }
-    .num-area .timer-btn { width: 38px; height: 34px; }
-    .num-area .timer-btn .timer-icon { font-size: 0.92rem; }
-    .num-area .timer-btn .timer-label-text { font-size: 0.54rem; }
-    .num-area .tb-filter { min-width: 40px; height: 34px; padding: 0 8px; }
+    .num-area { gap: 3px; }
+    .num-area .timer-btn { width: 32px; height: 30px; }   /* 최소화 */
+    .num-area .timer-btn .timer-icon { font-size: 0.8rem; }
+    .num-area .timer-btn .timer-label-text { font-size: 0.5rem; }
+    .num-area .tb-filter { min-width: 34px; height: 30px; padding: 0 6px; font-size: 0.7rem; }
+    .num-area .num-sign { width: 22px; }
 
     .app-content { padding-left: 14px; padding-right: 14px; }
 }
@@ -1894,15 +1896,15 @@ body[data-fz="-2"] { --font-size-step: -2; }
 
     .toolbar { padding: 3px 4px calc(var(--safe-bottom) + var(--tb-gap)); gap: 3px; }
     .tb-enter-side {
-        height: 36px;
-        font-size: 0.84rem;
+        height: 56px;            /* 약 2배 */
+        font-size: 0.96rem;
     }
     .tb-prev-side {
-        flex: 0 0 36px;
-        height: 24px;
-        font-size: 0.6rem;
+        flex: 0 0 44px;          /* 더 키움 */
+        height: 28px;
+        font-size: 0.64rem;
     }
-    .tb-cont-side { height: 24px; }   /* Prev 와 동일 */
+    .tb-cont-side { height: 28px; flex-basis: 32px; }   /* Prev 높이 맞춤 + 폭 축소 */
     .toolbar-actions .tb-menu {
         min-width: 32px;
         padding: 0 4px;
@@ -1920,10 +1922,10 @@ body[data-fz="-2"] { --font-size-step: -2; }
     .tb-icon.tb-add,
     .tb-icon.tb-edit { width: 30px; padding: 0 3px; }
     .tb-icons .tb-icon.tb-sign { width: 14px; height: 14px; font-size: 0.68rem; }
-    .num-area .timer-btn { width: 34px; height: 32px; }
-    .num-area .timer-btn .timer-icon { font-size: 0.82rem; }
-    .num-area .tb-filter { min-width: 36px; height: 32px; padding: 0 6px; font-size: 0.72rem; }
-    .num-area .num-sign { width: 24px; font-size: 0.95rem; }
+    .num-area .timer-btn { width: 30px; height: 28px; }   /* 최소화 */
+    .num-area .timer-btn .timer-icon { font-size: 0.76rem; }
+    .num-area .tb-filter { min-width: 32px; height: 28px; padding: 0 5px; font-size: 0.68rem; }
+    .num-area .num-sign { width: 21px; font-size: 0.9rem; }
 
     .app-content { padding-left: 10px; padding-right: 10px; }
 
@@ -1946,9 +1948,11 @@ body[data-fz="-2"] { --font-size-step: -2; }
 @media (max-height: 480px) and (orientation: landscape) {
     .app-content { padding-top: calc(var(--safe-top) + 10px); padding-bottom: 6px; }
     .toolbar { padding: 4px 10px calc(var(--safe-bottom) + var(--tb-gap)); gap: 3px; }
-    .tb-enter-side { height: 32px; font-size: 0.9rem; }
-    .tb-prev-side { height: 26px; }
-    .tb-cont-side { height: 26px; }   /* Prev 와 동일 */
+    .tb-enter-side { height: 48px; font-size: 1rem; }   /* 가로모드는 세로공간 제한 — 적당히 */
+    .tb-prev-side { height: 30px; }
+    .tb-cont-side { height: 30px; flex-basis: 38px; }   /* Prev 높이 맞춤 + 폭 축소 */
+    .num-area .timer-btn { height: 30px; }
+    .num-area .tb-filter { height: 30px; }
     .toolbar-row,
     .toolbar-actions,
     .toolbar-nav { gap: 4px; }
