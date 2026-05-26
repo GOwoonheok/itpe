@@ -1479,8 +1479,8 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
 .tb-cont-side {
     flex: 0 0 46px;          /* 아이콘(28px)보다 가로로 넓게 */
     order: 10;               /* 항상 우측 Prev 바로 왼쪽에 (그림 → 우측 Prev 순서) */
-    align-self: stretch;     /* 높이는 Prev(행 높이)에 동일하게 자동 정렬 — 브레이크포인트 무관 */
-    min-height: 24px;
+    height: 30px;            /* Prev(.tb-prev-side) 와 동일 높이 — 브레이크포인트별로 아래에서 맞춤 */
+    align-self: center;
     border-radius: 7px;
     /* "그림" 텍스트 표시 */
     font-size: 0.64rem;
@@ -1828,6 +1828,7 @@ body[data-fz="-2"] { --font-size-step: -2; }
         height: 26px;
         font-size: 0.66rem;
     }
+    .tb-cont-side { height: 26px; }   /* Prev 와 동일 */
     .toolbar-actions .tb-menu {
         min-width: 38px;
         height: 24px;
@@ -1886,6 +1887,7 @@ body[data-fz="-2"] { --font-size-step: -2; }
         height: 24px;
         font-size: 0.6rem;
     }
+    .tb-cont-side { height: 24px; }   /* Prev 와 동일 */
     .toolbar-actions .tb-menu {
         min-width: 32px;
         padding: 0 4px;
@@ -1930,6 +1932,7 @@ body[data-fz="-2"] { --font-size-step: -2; }
     .toolbar { padding: 4px 10px calc(var(--safe-bottom) + var(--tb-gap)); gap: 3px; }
     .tb-enter-side { height: 32px; font-size: 0.9rem; }
     .tb-prev-side { height: 26px; }
+    .tb-cont-side { height: 26px; }   /* Prev 와 동일 */
     .toolbar-row,
     .toolbar-actions,
     .toolbar-nav { gap: 4px; }
