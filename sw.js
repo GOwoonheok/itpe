@@ -1,6 +1,6 @@
 // 개발/배포 모두 친화: 네트워크 우선, 실패 시 캐시 폴백.
 // 새 코드 배포 시 사용자가 두 번 새로고침 없이도 즉시 반영되도록.
-const CACHE = 'itpe-flash-v104';
+const CACHE = 'itpe-flash-v105';
 const APP_SHELL = [
     './',
     './index.html',
