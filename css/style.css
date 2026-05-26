@@ -565,7 +565,8 @@ a { color: inherit; text-decoration: none; }
 /* 우하단 칩 — 텍스트 칩은 흐릿, +/* 액션 칩은 또렷 */
 .chip-row {
     position: fixed;
-    right: 10px;
+    /* 넓은 화면에서 뷰포트 우측 끝으로 튀지 않게 — 700px 중앙 박스의 우측 안쪽에 고정 */
+    right: max(10px, calc(50vw - 340px));
     bottom: calc(var(--toolbar-h, 200px) + 4px);
     display: flex;
     gap: 5px;
