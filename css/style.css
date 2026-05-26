@@ -15,8 +15,8 @@
     --accent-green: #1e9f50;
     --accent-grey: #4a4a4d;
     --safe-top: env(safe-area-inset-top, 0px);
-    --safe-bottom: env(safe-area-inset-bottom, 0px);
-    --tb-gap: 10px;           /* 하단 툴바 버튼과 시스템 내비바 사이 간격 (흰 바에 안 가리게 ≥10) */
+    --safe-bottom: max(env(safe-area-inset-bottom, 0px), 6px);
+    --tb-gap: 18px;           /* 하단 툴바 버튼과 시스템 내비바 사이 간격 (Enter 가 폰 내비에 붙지 않게) */
     --font-size-step: 0;
 }
 
@@ -253,6 +253,10 @@ a { color: inherit; text-decoration: none; }
     overscroll-behavior: contain;
     padding: 4px 0 22px;
     scroll-behavior: smooth;
+    /* 내용이 짧으면 세로 가운데 정렬, 길면(관리자 도구 펼침) 위에서부터 스크롤(safe) */
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
 }
 /* 스크롤 바 살짝 보이게 — iOS/Android 모두 */
 .mode-body::-webkit-scrollbar { width: 4px; }
@@ -1709,7 +1713,7 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
        보고되는 버그 대응 — 설치형(PWA)일 때만 시스템 내비바(약 48px) 높이를
        바닥값으로 강제해 하단 툴바가 내비바 뒤로 깔리지 않게 한다.
        브라우저 탭에서는 이 블록이 적용되지 않으므로 영향 없음. */
-    :root { --safe-bottom: max(env(safe-area-inset-bottom, 0px), 40px); }
+    :root { --safe-bottom: max(env(safe-area-inset-bottom, 0px), 22px); }
 }
 
 /* 폰트 사이즈 단계 */
