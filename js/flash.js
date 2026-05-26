@@ -180,6 +180,9 @@
         els.modeScreen.hidden = false;
         els.studyScreen.hidden = true;
         els.chipRow.hidden = true;
+        // 학습 카드가 아닌 화면 — '그림' 버튼 숨김
+        const contBtn = document.getElementById('btn-cont');
+        if (contBtn) contBtn.hidden = true;
         // AI 카드 수 카운트 노출
         try {
             const aiCount = state.cards.filter((c) => c && c.source === 'ai').length;
@@ -328,6 +331,10 @@
 
         // 다중 이미지 썸네일
         renderThumbs(images);
+
+        // '그림' 버튼 — 현재 카드에 이미지가 있을 때만 노출
+        const contBtn = document.getElementById('btn-cont');
+        if (contBtn) contBtn.hidden = images.length === 0;
 
         // 숨기기 상태 반영
         applyHideState();

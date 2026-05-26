@@ -1496,6 +1496,8 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
 }
 /* 우측 Prev 를 그림 오른쪽으로 — 결과: [Prev(좌)] … [그림][Prev(우)] */
 .toolbar-actions > .tb-prev-side:last-child { order: 11; }
+/* 이미지 없을 때 '그림' 버튼 확실히 숨김 (.tb-btn display 가 [hidden] 무력화하는 것 방지) */
+.tb-cont-side[hidden] { display: none; }
 @media (min-width: 600px) {
     .tb-cont-side { flex-basis: 56px; }
 }
