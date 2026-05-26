@@ -1485,8 +1485,9 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
     /* 배경/글자색은 .tb-cont(노랑) 유지 */
 }
 @media (min-width: 600px) {
-    /* 해상도 커지면 우측 Prev 옆(툴바 오른쪽 끝)으로 이동 */
-    .tb-cont-side { order: 99; flex-basis: 56px; }
+    /* 해상도 커지면 우측 Prev 옆으로 — 단 '이미지 → Prev' 순서 유지(🖼이 우측 Prev 왼쪽) */
+    .tb-cont-side { order: 10; flex-basis: 56px; }
+    .toolbar-actions > .tb-prev-side:last-child { order: 11; }
 }
 
 /* 2행 — [Enter] [중앙 보조 컨트롤] [Enter] */
