@@ -1537,6 +1537,17 @@ mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; 
 .num-area .timer-btn .timer-icon { font-size: 1rem; }
 .num-area .timer-btn .timer-label-text { font-size: 0.58rem; line-height: 1; }
 .num-area .timer-btn .timer-label-text:empty { display: none; }
+/* 2행으로 옮긴 글자크기 −/+ — ⏱·🔊 옆에 작게. 높이는 num-area(align-items:stretch)에 자동 정렬 */
+.num-area .num-sign {
+    flex: 0 0 auto;
+    width: 28px;
+    padding: 0;
+    font-size: 1.05rem;
+    font-weight: 900;
+    border-radius: 8px;
+    background: var(--accent-grey);
+    color: #fff;
+}
 .num-area .tb-filter {
     flex: 0 0 auto;
     min-width: 44px;
@@ -1908,6 +1919,7 @@ body[data-fz="-2"] { --font-size-step: -2; }
     .num-area .timer-btn { width: 34px; height: 32px; }
     .num-area .timer-btn .timer-icon { font-size: 0.82rem; }
     .num-area .tb-filter { min-width: 36px; height: 32px; padding: 0 6px; font-size: 0.72rem; }
+    .num-area .num-sign { width: 24px; font-size: 0.95rem; }
 
     .app-content { padding-left: 10px; padding-right: 10px; }
 

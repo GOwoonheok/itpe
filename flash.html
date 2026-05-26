@@ -301,7 +301,7 @@
 
         <!-- 하단 툴바 -->
         <footer class="toolbar" id="toolbar">
-            <!-- 1행: [Prev]  [+ ✎ 🗑 메뉴 🔍 − + 🖼]  [Prev] -->
+            <!-- 1행: [Prev] [+ ✎ 🗑 메뉴 🔍] [그림][Prev] -->
             <div class="toolbar-row toolbar-actions">
                 <button class="tb-btn tb-cont tb-cont-side" id="btn-cont" type="button" aria-label="연속그림" title="연속그림">그림</button>
                 <button class="tb-btn tb-prev tb-prev-side" data-act="prev" type="button">Prev</button>
@@ -314,14 +314,11 @@
                     <button class="tb-btn tb-menu" id="btn-menu" type="button">메뉴</button>
                     <div class="tb-icons">
                         <button class="tb-btn tb-icon tb-find"  id="btn-find"  type="button" aria-label="찾기" title="찾기">🔍</button>
-                        <button class="tb-btn tb-icon tb-sign"  id="btn-minus" type="button" aria-label="글자 작게" title="글자 작게">−</button>
-                        <button class="tb-btn tb-icon tb-sign"  id="btn-plus"  type="button" aria-label="글자 크게" title="글자 크게">+</button>
-                        <button class="tb-btn tb-icon tb-nlm"   id="btn-nlm"   type="button" aria-label="NotebookLM에서 보기" title="NotebookLM에서 깊이 보기 (현재 토픽 자동 복사)" hidden>📓</button>
                     </div>
                 </div>
                 <button class="tb-btn tb-prev tb-prev-side" data-act="prev" type="button">Prev</button>
             </div>
-            <!-- 2행: [Enter]  [⏱ 🔊 ★0 모두]  [Enter] -->
+            <!-- 2행: [Enter]  [⏱ 🔊 − + ★0 모두]  [Enter] -->
             <div class="toolbar-row toolbar-nav">
                 <button class="tb-btn tb-enter tb-enter-side" data-act="enter" type="button">Enter</button>
                 <div class="num-area">
@@ -333,6 +330,8 @@
                         <span class="timer-icon" aria-hidden="true">🔊</span>
                         <span id="tts-label" class="timer-label-text"></span>
                     </button>
+                    <button class="tb-btn num-sign" id="btn-minus" type="button" aria-label="글자 작게" title="글자 작게">−</button>
+                    <button class="tb-btn num-sign" id="btn-plus"  type="button" aria-label="글자 크게" title="글자 크게">+</button>
                     <button class="tb-filter" id="btn-filter-checked" type="button">★ <span id="filter-count">0</span></button>
                     <button class="tb-filter is-on" id="btn-filter-all" type="button">모두</button>
                 </div>
