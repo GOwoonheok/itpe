@@ -2513,9 +2513,15 @@
     }
 
     // ============ 폰트 크기 (공통) ============
-    function initFontSize() {
-        const fz = parseInt(localStorage.getItem('itpe.fz') || '0', 10);
+    // 글자크기: 연속 step(--font-size-step) 인라인 설정. + 는 사실상 무제한(상한 30),
+    // − 는 본문이 10px 에 닿는 지점에서 멈춤(하한 -6). 실제 10px 바닥은 CSS max(10px,…) 가 보장.
+    function applyFz(fz) {
         document.body.dataset.fz = String(fz);
+        document.body.style.setProperty('--font-size-step', String(fz));
+    }
+    function initFontSize() {
+        const fz = parseInt(localStorage.getItem('itpe.fz') || '0', 10) || 0;
+        applyFz(Math.max(-6, Math.min(30, fz)));
     }
     function syncToolbarHeight() {
         const tb = document.getElementById('toolbar');
@@ -2523,9 +2529,9 @@
         document.documentElement.style.setProperty('--toolbar-h', tb.offsetHeight + 'px');
     }
     function stepFontSize(delta) {
-        let fz = parseInt(document.body.dataset.fz || '0', 10) + delta;
-        fz = Math.max(-2, Math.min(3, fz));
-        document.body.dataset.fz = String(fz);
+        let fz = (parseInt(localStorage.getItem('itpe.fz') || '0', 10) || 0) + delta;
+        fz = Math.max(-6, Math.min(30, fz));   // + 무제한(상한 30) · − 는 10px 부근에서 멈춤
+        applyFz(fz);
         localStorage.setItem('itpe.fz', String(fz));
     }
 

@@ -369,14 +369,18 @@
     }
 
     // ============ 폰트 크기 (공통) ============
-    function initFontSize() {
-        const fz = parseInt(localStorage.getItem('itpe.fz') || '0', 10);
+    function applyFz(fz) {
         document.body.dataset.fz = String(fz);
+        document.body.style.setProperty('--font-size-step', String(fz));
+    }
+    function initFontSize() {
+        const fz = parseInt(localStorage.getItem('itpe.fz') || '0', 10) || 0;
+        applyFz(Math.max(-6, Math.min(30, fz)));
     }
     function stepFontSize(delta) {
-        let fz = parseInt(document.body.dataset.fz || '0', 10) + delta;
-        fz = Math.max(-2, Math.min(3, fz));
-        document.body.dataset.fz = String(fz);
+        let fz = (parseInt(localStorage.getItem('itpe.fz') || '0', 10) || 0) + delta;
+        fz = Math.max(-6, Math.min(30, fz));   // + 무제한(상한 30) · − 는 10px 부근에서 멈춤
+        applyFz(fz);
         localStorage.setItem('itpe.fz', String(fz));
     }
 })();
