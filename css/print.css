@@ -78,10 +78,14 @@ body {
     font-size: 16pt; font-weight: 800; margin: 0 0 5mm;
     padding-bottom: 2mm; border-bottom: 2px solid var(--ink);
 }
+/* 목차도 A4 좌·우 2단 (가운데 구분선) — 제목은 전폭 유지 */
+.toc-cols { column-count: 2; column-gap: 12mm; column-rule: 0.4mm solid #b8b8b8; }
 .toc-group {
     font-size: 11pt; font-weight: 700; color: var(--accent);
     margin: 4mm 0 1.5mm;
+    break-inside: avoid; break-after: avoid-column;   /* 그룹 제목이 단 끝에 혼자 남지 않게 */
 }
+.toc-entry { break-inside: avoid; }
 .toc-entry {
     display: flex; align-items: baseline; gap: 3px;
     text-decoration: none; color: var(--ink);

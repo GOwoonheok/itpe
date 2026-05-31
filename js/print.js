@@ -158,9 +158,11 @@
         const sec = document.createElement('section'); sec.className = 'toc';
         const h = document.createElement('h1'); h.className = 'toc-title'; h.textContent = '카드 목록';
         sec.appendChild(h);
+        // 본문처럼 좌·우 2단으로 흐르게 (제목은 전폭, 그룹·항목은 2단)
+        const cols = document.createElement('div'); cols.className = 'toc-cols';
         tocGroups.forEach((g) => {
             const gh = document.createElement('h2'); gh.className = 'toc-group'; gh.textContent = g.name;
-            sec.appendChild(gh);
+            cols.appendChild(gh);
             g.entries.forEach((e) => {
                 const a = document.createElement('a'); a.className = 'toc-entry'; a.href = '#' + e.id; a.dataset.target = e.id;
                 const num = document.createElement('span'); num.className = 'toc-n'; num.textContent = e.n + '.';
@@ -168,9 +170,10 @@
                 const dots = document.createElement('span'); dots.className = 'toc-dots';
                 const p = document.createElement('span'); p.className = 'toc-page'; p.textContent = '';
                 a.append(num, t, dots, p);
-                sec.appendChild(a);
+                cols.appendChild(a);
             });
         });
+        sec.appendChild(cols);
         root.insertBefore(sec, root.firstChild);   // 목차를 맨 앞에
     }
 
