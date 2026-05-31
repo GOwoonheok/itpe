@@ -38,8 +38,8 @@ body {
     padding-bottom: 2mm; border-bottom: 2px solid var(--ink);
 }
 
-/* 카드 2단 마소리 흐름 */
-.cards { column-count: 2; column-gap: 8mm; }
+/* A4 좌·우 반쪽 구조 — 가운데 세로 구분선 + 2단 마소리 흐름 */
+.cards { column-count: 2; column-gap: 12mm; column-rule: 0.4mm solid #b8b8b8; }
 .card {
     break-inside: avoid;
     margin: 0 0 5mm; padding: 3mm 3.5mm;
@@ -92,11 +92,17 @@ body {
 .toc-dots { flex: 1 1 auto; border-bottom: 1px dotted #bbb; }
 .toc-page { flex: none; min-width: 2.5em; text-align: right; font-variant-numeric: tabular-nums; }
 
-/* 인쇄 규칙 — 하단 가운데 페이지번호(Paged.js margin box; 네이티브 인쇄는 무시) */
-@page {
-    size: A4; margin: 12mm;
-    @bottom-center { content: counter(page); font-size: 9pt; color: #666; }
+/* A4 좌·우 반쪽 페이지번호 라벨 (Paged.js 레이아웃 후 JS가 주입) */
+.pagedjs_pagebox { position: relative; }
+.half-page-label {
+    position: absolute; bottom: 4mm; font-size: 8.5pt; color: #777;
+    font-variant-numeric: tabular-nums; pointer-events: none;
 }
+.half-page-label.left  { left: 25%; transform: translateX(-50%); }
+.half-page-label.right { left: 75%; transform: translateX(-50%); }
+
+/* 인쇄 규칙 */
+@page { size: A4; margin: 12mm; }
 @media print {
     body { background: #fff; }
     .print-toolbar { display: none !important; }

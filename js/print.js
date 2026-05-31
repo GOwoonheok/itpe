@@ -187,7 +187,7 @@
         if (bigExport) showProgress();
         const previewer = new window.Paged.Previewer();
         previewer.preview(html, ['css/print.css'], document.body)
-            .then(() => { hideProgress(); fillTocPages(); if (autoPrint) setTimeout(() => window.print(), 400); })
+            .then(() => { hideProgress(); assignHalfPages(); fillTocPages(); if (autoPrint) setTimeout(() => window.print(), 400); })
             .catch((err) => {
                 hideProgress();
                 console.error('[print] Paged.js 실패 — 원본 복구 후 인쇄', err);
@@ -195,12 +195,34 @@
                 if (autoPrint) setTimeout(() => window.print(), 300);
             });
     }
+    // A4 좌·우 반쪽을 각각 한 '쪽'으로 — 카드마다 반쪽번호(좌=2P-1, 우=2P) 부여 + 하단 라벨 주입
+    function assignHalfPages() {
+        document.querySelectorAll('.pagedjs_page').forEach((pageEl) => {
+            const P = parseInt(pageEl.getAttribute('data-page-number'), 10) || 0;
+            const box = pageEl.querySelector('.pagedjs_pagebox') || pageEl;
+            const area = pageEl.querySelector('.pagedjs_page_content') || box;
+            const r = area.getBoundingClientRect();
+            const midX = r.left + r.width / 2;
+            pageEl.querySelectorAll('.card').forEach((card) => {
+                const cr = card.getBoundingClientRect();
+                const left = (cr.left + cr.width / 2) < midX;
+                card.dataset.halfpage = String((P - 1) * 2 + (left ? 1 : 2));
+            });
+            const mk = (num, side) => {
+                const l = document.createElement('div');
+                l.className = 'half-page-label ' + side;
+                l.textContent = '— ' + num + ' —';
+                box.appendChild(l);
+            };
+            mk((P - 1) * 2 + 1, 'left');
+            mk((P - 1) * 2 + 2, 'right');
+        });
+    }
     function fillTocPages() {
         document.querySelectorAll('.toc-entry').forEach((entry) => {
             const id = entry.dataset.target;
             const el = id && document.getElementById(id);
-            const page = el && el.closest('.pagedjs_page');
-            const n = page ? page.getAttribute('data-page-number') : '';
+            const n = (el && el.dataset.halfpage) ? el.dataset.halfpage : '';
             const ps = entry.querySelector('.toc-page');
             if (ps) ps.textContent = n || '';
         });
