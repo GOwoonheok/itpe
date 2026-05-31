@@ -7,6 +7,26 @@
     const wanted = (params.get('units') || '').split(',').map((s) => s.trim()).filter(Boolean);
     const autoPrint = params.get('auto') !== '0';
 
+    // ========= 진행표시 오버레이 (대용량 전체 출력 시) =========
+    let bigExport = false, _pageCount = 0;
+    function showProgress() {
+        if (document.getElementById('print-progress')) return;
+        const ov = document.createElement('div');
+        ov.id = 'print-progress';
+        ov.setAttribute('style', 'position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(20,20,22,.82);color:#fff;font:600 15px/1.7 system-ui,sans-serif;text-align:center');
+        ov.innerHTML = '<div>📄 PDF 준비 중…<br><span id="pp-n">0</span>쪽 구성<br><span style="font-weight:400;font-size:12px;opacity:.75">전체 출력은 수십 초 걸릴 수 있어요</span></div>';
+        document.body.appendChild(ov);
+    }
+    function hideProgress() { const ov = document.getElementById('print-progress'); if (ov) ov.remove(); }
+    // Paged.js 페이지별 콜백 — 진행 쪽수 갱신(오버레이 없으면 무해)
+    if (window.Paged && window.Paged.registerHandlers) {
+        try {
+            window.Paged.registerHandlers(class extends window.Paged.Handler {
+                afterPageLayout() { _pageCount++; const el = document.getElementById('pp-n'); if (el) el.textContent = _pageCount; }
+            });
+        } catch (e) {}
+    }
+
     // ========= 데모 데이터 (?units= 없을 때 — 레이아웃·페이지번호 빠른 확인용) =========
     const DEMO = [
         { name: '경영·컨설팅', cards: [
@@ -164,10 +184,12 @@
         }
         const html = root.innerHTML;
         root.remove();   // 원본 제거(중복 방지) — Paged.js 가 document.body 에 분할 페이지를 그림
+        if (bigExport) showProgress();
         const previewer = new window.Paged.Previewer();
         previewer.preview(html, ['css/print.css'], document.body)
-            .then(() => { fillTocPages(); if (autoPrint) setTimeout(() => window.print(), 400); })
+            .then(() => { hideProgress(); fillTocPages(); if (autoPrint) setTimeout(() => window.print(), 400); })
             .catch((err) => {
+                hideProgress();
                 console.error('[print] Paged.js 실패 — 원본 복구 후 인쇄', err);
                 document.body.appendChild(root);
                 if (autoPrint) setTimeout(() => window.print(), 300);
@@ -207,6 +229,7 @@
             return;
         }
         buildToc(tocGroups);
+        bigExport = tocGroups.reduce((s, g) => s + g.entries.length, 0) > 60;   // 대용량이면 진행표시
         waitImages(paginateThenPrint);
     }
 

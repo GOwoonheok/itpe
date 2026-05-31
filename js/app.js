@@ -8,6 +8,8 @@
         units: [],
         // 시트 목록 화면에서 선택(하이라이트)된 단원 (Enter로 진입)
         selected: 0,
+        // 단원별 실제 카드 수 (PDF 출력 모달에서 사용) — refreshRealCounts 가 채움
+        counts: {},
     };
 
     // 폰트 크기 (전역 공유)
@@ -139,6 +141,7 @@
                     const cards = Array.isArray(all[u.id]) ? all[u.id] : [];
                     const n = applyCountHint(u.id, realCountFor(u, cards), hints, now, dirtyRef);
                     el.textContent = n + ' 카드';
+                    state.counts[u.id] = n;
                 });
                 if (dirtyRef.dirty) saveCountHints(hints);
             })
@@ -153,6 +156,7 @@
                             const serverN = realCountFor(u, Array.isArray(cards) ? cards : []);
                             const n = applyCountHint(u.id, serverN, hints, now, dirtyRef);
                             el.textContent = n + ' 카드';
+                            state.counts[u.id] = n;
                             if (dirtyRef.dirty) saveCountHints(hints);
                         })
                         .catch(() => { el.textContent = (u.count ?? 0) + ' 카드'; });
@@ -167,6 +171,62 @@
     });
 
     document.getElementById('btn-find').addEventListener('click', () => openGlobalFind());
+
+    // ============ PDF 출력: 전체 다운로드 + 단원 선택 모달 ============
+    const pdfModal  = document.getElementById('pdf-modal');
+    const pdfList   = document.getElementById('pdf-unit-list');
+    const pdfGo     = document.getElementById('pdf-go');
+    const pdfGoAll  = document.getElementById('pdf-go-all');
+    const pdfSelAll = document.getElementById('pdf-select-all');
+
+    function buildPdfList() {
+        pdfList.innerHTML = '';
+        state.units.forEach((u) => {
+            const count = state.counts[u.id];          // undefined = 로딩 중
+            const empty = count === 0;
+            const row = document.createElement('label');
+            row.className = 'pdf-unit-item' + (empty ? ' is-disabled' : '');
+            const cb = document.createElement('input');
+            cb.type = 'checkbox'; cb.value = u.id; cb.checked = !empty; cb.disabled = empty;
+            cb.addEventListener('change', updatePdfGo);
+            const name = document.createElement('span');
+            name.className = 'pdf-unit-label';
+            name.textContent = u.description ? (u.name + ' · ' + u.description) : u.name;
+            const cnt = document.createElement('span');
+            cnt.className = 'pdf-unit-count';
+            cnt.textContent = (count == null ? '…' : count) + ' 토픽';
+            row.append(cb, name, cnt);
+            pdfList.appendChild(row);
+        });
+        updatePdfGo();
+    }
+    function allNonEmptyIds() {
+        return state.units.filter((u) => state.counts[u.id] !== 0).map((u) => u.id);
+    }
+    function checkedUnitIds() {
+        return Array.from(pdfList.querySelectorAll('input:checked')).map((cb) => cb.value);
+    }
+    function updatePdfGo() { pdfGo.disabled = checkedUnitIds().length === 0; }
+    function openPdf(ids) {
+        if (!ids.length) return;
+        pdfModal.hidden = true;
+        window.open('print.html?units=' + encodeURIComponent(ids.join(',')), '_blank', 'noopener');
+    }
+    function openPdfModal() { buildPdfList(); pdfModal.hidden = false; }
+    function closePdfModal() { pdfModal.hidden = true; }
+
+    document.getElementById('btn-pdf').addEventListener('click', openPdfModal);
+    document.getElementById('pdf-modal-close').addEventListener('click', closePdfModal);
+    pdfModal.addEventListener('click', (e) => { if (e.target === pdfModal) closePdfModal(); });
+    document.addEventListener('keydown', (e) => { if (!pdfModal.hidden && e.key === 'Escape') closePdfModal(); });
+    pdfSelAll.addEventListener('click', () => {
+        const boxes = Array.from(pdfList.querySelectorAll('input:not(:disabled)'));
+        const allOn = boxes.every((cb) => cb.checked);
+        boxes.forEach((cb) => { cb.checked = !allOn; });
+        updatePdfGo();
+    });
+    pdfGo.addEventListener('click', () => openPdf(checkedUnitIds()));
+    pdfGoAll.addEventListener('click', () => openPdf(allNonEmptyIds()));
 
     // ============ 전체 카드 검색 모달 ============
     const findModal = document.getElementById('global-find-modal');

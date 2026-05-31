@@ -50,6 +50,44 @@
             </div>
         </div>
 
+        <!-- PDF 출력: 전체 다운로드 + 단원 선택 모달 -->
+        <div class="modal" id="pdf-modal" role="dialog" aria-modal="true" aria-labelledby="pdf-modal-title" hidden>
+            <div class="modal-panel">
+                <header class="modal-head">
+                    <h2 id="pdf-modal-title" class="modal-title">PDF 출력</h2>
+                    <button class="modal-close" id="pdf-modal-close" type="button" aria-label="닫기">×</button>
+                </header>
+                <div class="modal-body">
+                    <button class="pdf-go-all" id="pdf-go-all" type="button">📄 전체 단원 한 번에 다운로드</button>
+                    <div class="pdf-or">또는 단원 선택</div>
+                    <div class="pdf-unit-list" id="pdf-unit-list"><!-- app.js 가 단원 체크박스를 채웁니다 --></div>
+                    <div class="pdf-actions">
+                        <button class="pdf-select-all" id="pdf-select-all" type="button">전체 선택/해제</button>
+                        <button class="pdf-go" id="pdf-go" type="button">선택 단원 출력</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .tb-pdf { }
+            .pdf-go-all { display:block; width:100%; padding:14px; margin-bottom:6px; border:none; border-radius:10px;
+                background:#2f80ed; color:#fff; font-size:1rem; font-weight:800; cursor:pointer; }
+            .pdf-go-all:hover { background:#3d8bf0; }
+            .pdf-or { text-align:center; font-size:.8rem; color:var(--text-dim,#999); margin:10px 0 8px; }
+            .pdf-unit-list { display:flex; flex-direction:column; gap:6px; max-height:46vh; overflow-y:auto; }
+            .pdf-unit-item { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:9px;
+                border:1px solid #ffffff14; background:var(--surface,#26262b); cursor:pointer; }
+            .pdf-unit-item input { width:18px; height:18px; flex:none; accent-color:#2f80ed; cursor:pointer; }
+            .pdf-unit-item.is-disabled { opacity:.4; cursor:not-allowed; }
+            .pdf-unit-label { flex:1; font-weight:700; }
+            .pdf-unit-count { font-size:.78rem; color:var(--text-dim,#aaa); }
+            .pdf-actions { display:flex; gap:10px; margin-top:12px; }
+            .pdf-select-all { flex:none; padding:11px 14px; border-radius:9px; background:transparent;
+                color:var(--text,#eee); border:1px solid #ffffff22; cursor:pointer; }
+            .pdf-go { flex:1; padding:12px; border-radius:9px; background:#444; color:#fff; border:none; font-weight:700; cursor:pointer; }
+            .pdf-go[disabled] { opacity:.4; cursor:not-allowed; }
+        </style>
+
         <!-- 공통 하단 툴바 — 한 줄: 메뉴 · 계정 · 로그아웃 · 관리자 · 조회 -->
         <footer class="toolbar context-list" id="toolbar">
             <div class="toolbar-row toolbar-actions">
@@ -59,6 +97,7 @@
                     <button class="nav-logout-btn" id="btn-logout-nav" type="button" aria-label="로그아웃">로그아웃</button>
                     <!-- 관리자 아이콘 (admin only, admin.js 가 주입) -->
                 </div>
+                <button class="tb-btn tb-icon tb-pdf" id="btn-pdf" type="button" aria-label="PDF 출력" title="전체/단원 PDF 출력">🖨</button>
                 <button class="tb-btn tb-icon tb-find" id="btn-find" type="button" aria-label="조회" title="조회">🔍</button>
             </div>
         </footer>
