@@ -65,6 +65,7 @@
         checked: new Set(),       // 체크된 카드 키 집합
         filterChecked: false,     // "체크만 보기" 모드
         filterAi: false,          // "AI 생성만 보기" 모드
+        revealed: false,          // Enter 단계별 노출 — 현재 카드의 숨긴 섹션을 일시 공개 중인가
     };
 
     initFontSize();
@@ -354,7 +355,8 @@
         const contBtn = document.getElementById('btn-cont');
         if (contBtn) contBtn.hidden = images.length === 0;
 
-        // 숨기기 상태 반영
+        // 숨기기 상태 반영 — 새 카드는 다시 숨김 상태로 시작
+        state.revealed = false;
         applyHideState();
 
         // TTS — 카드가 실제로 바뀌었을 때만 재발화
@@ -512,7 +514,8 @@
     function applyHideState() {
         els.sections.forEach((sec) => {
             const k = sec.dataset.key;
-            sec.classList.toggle('is-hidden', !!state.hidden[k]);
+            // 숨김 섹션은 state.revealed 동안만 일시 노출 (Enter 단계별 공개)
+            sec.classList.toggle('is-hidden', !!state.hidden[k] && !state.revealed);
         });
     }
 
@@ -547,6 +550,16 @@
         state.idx = ni;
         render();
     }
+    // Enter 진행 — 숨긴 섹션이 있으면 1)먼저 공개 → 2)다음 카드(다시 숨김). 숨김 없으면 바로 다음 카드.
+    function enterAction() {
+        const hideActive = Object.values(state.hidden).some(Boolean);
+        if (hideActive && !state.revealed) {
+            state.revealed = true;
+            applyHideState();
+            return;
+        }
+        go(+1);   // go → render 가 revealed 를 false 로 리셋(다음 카드는 다시 숨김)
+    }
     function jumpTo(n) {
         if (n < 1 || n > state.cards.length) {
             alert(`1~${state.cards.length} 사이 번호를 입력하세요.`);
@@ -564,7 +577,7 @@
     });
     // 좌·우 대칭 Prev / Enter (양 손 엄지 모두 닿도록)
     document.querySelectorAll('[data-act="prev"]').forEach((b) => b.addEventListener('click', () => { go(-1); kickAutoTimer(); }));
-    document.querySelectorAll('[data-act="enter"]').forEach((b) => b.addEventListener('click', () => { go(+1); kickAutoTimer(); }));
+    document.querySelectorAll('[data-act="enter"]').forEach((b) => b.addEventListener('click', () => { enterAction(); kickAutoTimer(); }));
     document.getElementById('btn-plus').addEventListener('click', () => stepFontSize(+1));
     document.getElementById('btn-minus').addEventListener('click', () => stepFontSize(-1));
     document.getElementById('btn-find').addEventListener('click', openFindModal);
@@ -1099,7 +1112,7 @@
         if (e.key === 'Escape') { closeOverlay(); els.hidePanel.classList.remove('is-open'); hideTimerPopover(); }
         else if (e.key === 'ArrowLeft')  { go(-1); kickAutoTimer(); }
         else if (e.key === 'ArrowRight') { go(+1); kickAutoTimer(); }
-        else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); go(+1); kickAutoTimer(); }
+        else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); enterAction(); kickAutoTimer(); }
     });
 
     let touchStartX = null;
