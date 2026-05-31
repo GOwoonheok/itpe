@@ -568,11 +568,42 @@
     document.getElementById('btn-plus').addEventListener('click', () => stepFontSize(+1));
     document.getElementById('btn-minus').addEventListener('click', () => stepFontSize(-1));
     document.getElementById('btn-find').addEventListener('click', openFindModal);
-    // 🖨 현재 단원을 A4 학습시트 PDF로 출력 (독립 print.html — 기존 화면 영향 없음)
-    document.getElementById('btn-print').addEventListener('click', () => {
-        if (!unitId) return;
-        window.open('print.html?units=' + encodeURIComponent(unitId), '_blank', 'noopener');
-    });
+    // 🖨 현재 단원을 A4 학습시트 PDF로 출력 — 전체/체크한 토픽 선택 (독립 print.html, 기존 화면 영향 없음)
+    const printModal = document.getElementById('print-modal');
+    function openPrintModal() {
+        if (!state.cards || !state.cards.length) {
+            try { ttsToast('출력할 카드가 없습니다', 'info'); } catch {}
+            return;
+        }
+        const chkN = state.cards.filter(isChecked).length;
+        document.getElementById('print-all-n').textContent = state.cards.length;
+        document.getElementById('print-checked-n').textContent = chkN;
+        document.getElementById('print-checked').disabled = chkN === 0;
+        printModal.hidden = false;
+    }
+    function closePrintModal() { printModal.hidden = true; }
+    function doPrint(mode) {
+        const cards = mode === 'checked' ? state.cards.filter(isChecked) : state.cards;
+        if (!cards.length) return;
+        const u = state.unit || {};
+        const name = u.description ? (u.name + ' · ' + u.description) : (u.name || '학습 시트');
+        try {
+            localStorage.setItem('itpe.printReq', JSON.stringify({ name, cards }));
+        } catch (e) {
+            // localStorage 용량 초과 등 — 서버에서 전체 단원 로드하는 방식으로 폴백
+            closePrintModal();
+            window.open('print.html?units=' + encodeURIComponent(unitId), '_blank', 'noopener');
+            return;
+        }
+        closePrintModal();
+        window.open('print.html?req=1', '_blank', 'noopener');
+    }
+    document.getElementById('btn-print').addEventListener('click', openPrintModal);
+    document.getElementById('print-all').addEventListener('click', () => doPrint('all'));
+    document.getElementById('print-checked').addEventListener('click', () => doPrint('checked'));
+    document.getElementById('print-modal-close').addEventListener('click', closePrintModal);
+    printModal.addEventListener('click', (e) => { if (e.target === printModal) closePrintModal(); });
+    document.addEventListener('keydown', (e) => { if (!printModal.hidden && e.key === 'Escape') closePrintModal(); });
     document.getElementById('btn-cont').addEventListener('click', () => {
         // 🖼 — 현재 카드의 이미지만 풀스크린 페이저로 (다른 카드 이미지 섞이지 않음)
         const c = currentCard();

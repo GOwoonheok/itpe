@@ -215,7 +215,21 @@
     if (btn) btn.addEventListener('click', () => window.print());
 
     // ========= 부트 =========
-    if (wanted.length) {
+    // flash 화면이 넘긴 선택(전체/체크) — localStorage 로 정확한 카드 목록을 그대로 전달받아 렌더
+    if (params.get('req') === '1') {
+        try {
+            const raw = localStorage.getItem('itpe.printReq');
+            const req = raw ? JSON.parse(raw) : null;
+            if (req && Array.isArray(req.cards) && req.cards.length) {
+                finalize([{ name: req.name || '학습 시트', cards: req.cards }]);
+            } else {
+                root.innerHTML = '<div class="print-empty">출력할 카드가 없습니다.</div>';
+            }
+        } catch (e) {
+            console.error('[print] printReq parse fail', e);
+            root.innerHTML = '<div class="print-empty">출력 데이터를 불러오지 못했습니다.</div>';
+        }
+    } else if (wanted.length) {
         loadUnits()
             .then((units) => loadAllCards(units).then((all) => {
                 const picked = units.filter((u) => wanted.includes(u.id));

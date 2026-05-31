@@ -302,6 +302,31 @@
             </div>
         </div>
 
+        <!-- PDF 출력 범위 선택 모달 -->
+        <div class="modal" id="print-modal" role="dialog" aria-modal="true" aria-labelledby="print-modal-title" hidden>
+            <div class="modal-panel print-modal-panel">
+                <header class="modal-head">
+                    <h2 id="print-modal-title" class="modal-title">PDF 출력 범위</h2>
+                    <button class="modal-close" id="print-modal-close" type="button" aria-label="닫기">×</button>
+                </header>
+                <div class="modal-body">
+                    <button class="print-opt" id="print-all" type="button">📄 전체 토픽 <span class="print-opt-n" id="print-all-n">0</span></button>
+                    <button class="print-opt" id="print-checked" type="button">★ 체크한 토픽만 <span class="print-opt-n" id="print-checked-n">0</span></button>
+                </div>
+            </div>
+        </div>
+        <style>
+            .print-modal-panel { max-width: 340px; }
+            .print-opt { display:flex; align-items:center; justify-content:space-between; gap:10px;
+                width:100%; margin:8px 0 0; padding:14px 16px; border-radius:10px;
+                border:1px solid #ffffff22; background:var(--surface,#2a2a30); color:var(--text,#eee);
+                font-size:1rem; font-weight:700; cursor:pointer; }
+            .print-opt:hover { background:var(--surface-2,#34343c); }
+            .print-opt[disabled] { opacity:.4; cursor:not-allowed; }
+            .print-opt-n { font-size:.85rem; font-weight:600; color:var(--text-dim,#aaa);
+                background:#ffffff14; border-radius:999px; padding:1px 9px; }
+        </style>
+
         <!-- 하단 툴바 -->
         <footer class="toolbar" id="toolbar">
             <!-- 1행: [Prev] [+ ✎ 🗑 메뉴 🔍] [그림][Prev] -->
