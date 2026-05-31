@@ -1,0 +1,106 @@
+/* 학습 시트 PDF 출력 — 화면 미리보기 + 인쇄 공통 */
+:root { --ink: #111; --line: #d0d0d0; --accent: #2f80ed; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+    font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+    color: var(--ink);
+    background: #f3f3f3;          /* 화면에서 종이 느낌 */
+    font-size: 10.5pt;
+    line-height: 1.4;
+}
+
+/* 상단 도구막대 — 화면에서만, 인쇄 시 숨김 */
+.print-toolbar {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 16px; background: #fff; border-bottom: 1px solid var(--line);
+}
+.print-toolbar button {
+    font: inherit; font-weight: 600; padding: 8px 14px;
+    border: 1px solid var(--accent); color: #fff; background: var(--accent);
+    border-radius: 6px; cursor: pointer;
+}
+.print-hint { color: #666; font-size: 9pt; }
+
+/* 인쇄 본문 — 화면에서는 A4 폭으로 가운데 정렬 */
+#print-root {
+    max-width: 210mm; margin: 0 auto; padding: 12mm;
+    background: #fff;
+}
+
+/* 단원 섹션 */
+.unit { break-before: page; }
+.unit:first-of-type { break-before: auto; }
+.unit-title {
+    font-size: 15pt; font-weight: 800; margin: 0 0 6mm;
+    padding-bottom: 2mm; border-bottom: 2px solid var(--ink);
+}
+
+/* 카드 2단 마소리 흐름 */
+.cards { column-count: 2; column-gap: 8mm; }
+.card {
+    break-inside: avoid;
+    margin: 0 0 5mm; padding: 3mm 3.5mm;
+    border: 1px solid var(--line); border-left: 3px solid var(--accent);
+    border-radius: 4px; background: #fff;
+}
+.card-head { margin-bottom: 1.5mm; }
+.card-num {
+    display: inline-block; min-width: 1.4em; text-align: center;
+    font-size: 8.5pt; font-weight: 700; color: #fff; background: var(--accent);
+    border-radius: 3px; padding: 0 3px; margin-right: 5px; vertical-align: top;
+}
+.card-cat { font-size: 8.5pt; color: #666; margin-right: 4px; }
+.card-cat::after { content: "≫"; margin-left: 4px; color: #999; }
+.card-topic { font-size: 11.5pt; font-weight: 700; color: var(--accent); }
+
+.card-field { margin-top: 1.5mm; }
+.field-label {
+    display: inline-block; font-size: 8pt; font-weight: 700;
+    color: #fff; background: #888; border-radius: 3px;
+    padding: 0 4px; margin-right: 4px; vertical-align: top;
+}
+.field-body { display: block; margin-top: 1mm; white-space: pre-wrap; }
+
+.card-images { margin-top: 2mm; }
+.card-images img {
+    display: block; max-width: 100%; max-height: 60mm;
+    margin: 1mm auto 0; border: 1px solid var(--line);
+}
+
+.print-empty { padding: 40px; text-align: center; color: #666; }
+
+/* ===== 첫 페이지 목차 (카드 목록 + 진짜 페이지번호) ===== */
+.toc { break-after: page; }
+.toc-title {
+    font-size: 16pt; font-weight: 800; margin: 0 0 5mm;
+    padding-bottom: 2mm; border-bottom: 2px solid var(--ink);
+}
+.toc-group {
+    font-size: 11pt; font-weight: 700; color: var(--accent);
+    margin: 4mm 0 1.5mm;
+}
+.toc-entry {
+    display: flex; align-items: baseline; gap: 3px;
+    text-decoration: none; color: var(--ink);
+    font-size: 10pt; padding: 0.6mm 0;
+}
+.toc-n { flex: none; min-width: 2.2em; color: #666; }
+.toc-text { flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.toc-dots { flex: 1 1 auto; border-bottom: 1px dotted #bbb; }
+.toc-page { flex: none; min-width: 2.5em; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* 인쇄 규칙 — 하단 가운데 페이지번호(Paged.js margin box; 네이티브 인쇄는 무시) */
+@page {
+    size: A4; margin: 12mm;
+    @bottom-center { content: counter(page); font-size: 9pt; color: #666; }
+}
+@media print {
+    body { background: #fff; }
+    .print-toolbar { display: none !important; }
+    #print-root { max-width: none; margin: 0; padding: 0; }
+    .card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .field-label, .card-topic, .unit-title { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

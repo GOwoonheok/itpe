@@ -433,8 +433,8 @@
     }
 
     // 답변 형식·언어 유도 지시문 — 토픽 뒤에 붙여 질의.
-    //   (정의=개조식, 관련 기술요소, 구성요소, 활용방안 측면으로 한국어 간단 요약)
-    const TOPIC_SEARCH_SUFFIX = ' 에 대해 한국어로 간단히 요약 정리해줘: ① 정의(개조식 2줄), ② 관련 기술요소 : 간단설명, ③ 구성요소: 간단설명, ④ 활용방안 측면';
+    //   (정의=개조식, 관련 개념도·기술요소, 구성요소, 활용방안 측면으로 한국어 간단 요약)
+    const TOPIC_SEARCH_SUFFIX = ' 용어에 대해 한국어로 간단히 요약 정리해줘: ① 정의(개조식 2줄), ② 관련 개념도, 기술요소 : 간단설명, ③ 구성요소: 간단설명, ④ 활용방안 측면';
     // 토픽 옆 검색 아이콘 — 사용자가 골라서 사용. {q}=encodeURIComponent(토픽+지시문).
     //   🔎 Perplexity: 새 탭에서 자동 조회 (로그인 불필요)
     //   🤖 Claude    : 새 대화에 질문 프리필 (로그인 필요·유료 OK, Enter 로 전송)
@@ -568,6 +568,11 @@
     document.getElementById('btn-plus').addEventListener('click', () => stepFontSize(+1));
     document.getElementById('btn-minus').addEventListener('click', () => stepFontSize(-1));
     document.getElementById('btn-find').addEventListener('click', openFindModal);
+    // 🖨 현재 단원을 A4 학습시트 PDF로 출력 (독립 print.html — 기존 화면 영향 없음)
+    document.getElementById('btn-print').addEventListener('click', () => {
+        if (!unitId) return;
+        window.open('print.html?units=' + encodeURIComponent(unitId), '_blank', 'noopener');
+    });
     document.getElementById('btn-cont').addEventListener('click', () => {
         // 🖼 — 현재 카드의 이미지만 풀스크린 페이저로 (다른 카드 이미지 섞이지 않음)
         const c = currentCard();

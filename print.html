@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학습 시트 출력 — ITPE Flash</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+    <link href="css/print.css" rel="stylesheet">
+    <!-- Paged.js: 첫 페이지 목차의 진짜 페이지번호 계산용. auto:false 로 수동 실행(데이터 렌더 후) -->
+    <script>window.PagedConfig = { auto: false };</script>
+    <script src="https://cdn.jsdelivr.net/npm/pagedjs@0.4.3/dist/paged.polyfill.js"></script>
+</head>
+<body>
+    <div class="print-toolbar" id="print-toolbar">
+        <button type="button" id="btn-print-now">🖨 PDF로 저장 / 인쇄</button>
+        <span class="print-hint">인쇄 대화상자에서 "PDF로 저장"을 선택하세요</span>
+    </div>
+    <main id="print-root">
+        <!-- ?units= 가 있으면 js/print.js 가 실데이터로 채우고, 없으면 데모 데이터로 채웁니다 -->
+    </main>
+    <script src="js/print.js"></script>
+</body>
+</html>
