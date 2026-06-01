@@ -2173,8 +2173,8 @@
         } catch (e) { console.error(e); }
     }
 
-    function openMoveModal() {
-        const c = currentCard();
+    function openMoveModal(card) {
+        const c = card || currentCard();
         if (!c) return;
         ensureUnitsLoaded().then(() => {
             const topic = c.topic ?? c.q ?? '(제목 없음)';
@@ -2427,8 +2427,54 @@
         const start = Math.max(0, idx - 20);
         return (start > 0 ? '… ' : '') + flat.slice(start, start + 80);
     }
+    // ── 찾기 목록에서 카드 순서 변경 (관리자 전용) ────────────────────
+    // 변경된 순서는 state.cards 에 즉시 반영되고, 디바운스 후 서버(R2)로 저장.
+    let _orderPushTimer = null;
+    function schedulePersistOrder() {
+        const hasSecret = !!(window.ITPEAdmin && window.ITPEAdmin.isAdminWithSecret && window.ITPEAdmin.isAdminWithSecret());
+        if (!hasSecret) {
+            ttsToast('↕ 순서 변경됨 — 서버 저장은 관리자 시크릿 필요', 'info');
+            return;
+        }
+        clearTimeout(_orderPushTimer);
+        ttsToast('↕ 순서 변경 — 잠시 후 서버 저장…', 'info');
+        _orderPushTimer = setTimeout(async () => {
+            const ok = await pushToServerIfAdmin();
+            ttsToast(ok ? '✅ 카드 순서 서버 저장 완료' : '⚠ 순서 서버 저장 실패', ok ? 'ok' : 'err');
+        }, 1500);
+    }
+    // state.cards 안에서 card 객체를 neighbor 객체 앞/뒤로 재배치. 학습 중 카드 위치는 유지.
+    function relocateCard(card, neighbor, after) {
+        const cur = currentCard();
+        const from = state.cards.indexOf(card);
+        if (from < 0 || card === neighbor) return false;
+        state.cards.splice(from, 1);
+        let nb = state.cards.indexOf(neighbor);
+        if (nb < 0) return false;
+        state.cards.splice(after ? nb + 1 : nb, 0, card);
+        rebuildOrder();
+        if (cur) {
+            const ci = state.cards.indexOf(cur);
+            const pos = ci >= 0 ? state.order.indexOf(ci) : -1;
+            if (pos >= 0) state.idx = pos;
+        }
+        return true;
+    }
+    // matches: 화면에 보이는 [{c,i}] 순서. p 위치 카드를 dir(-1 위 / +1 아래) 인접 카드 기준으로 이동.
+    function moveWithinDeck(matches, p, dir) {
+        const tp = p + dir;
+        if (tp < 0 || tp >= matches.length) return false;
+        return relocateCard(matches[p].c, matches[tp].c, dir > 0);
+    }
+    // 드래그: fromP 카드를 toP 위치(보이는 행 기준)로 이동.
+    function moveToVisiblePos(matches, fromP, toP) {
+        if (fromP === toP || fromP < 0 || toP < 0 || fromP >= matches.length || toP >= matches.length) return false;
+        return relocateCard(matches[fromP].c, matches[toP].c, toP > fromP);
+    }
+
     function renderFindList() {
         const q = findInput.value.trim().toLowerCase();
+        const isAdmin = !!(window.ITPEAuth && window.ITPEAuth.isAdmin && window.ITPEAuth.isAdmin());
         const currentCardIdx = state.order[state.idx];
         let matches = state.cards.map((c, i) => ({ c, i }));
         if (q) matches = matches.filter(({ c }) => getCardHay(c).includes(q));
@@ -2443,13 +2489,17 @@
             return;
         }
         const frag = document.createDocumentFragment();
-        matches.forEach(({ c, i }) => {
-            const btn = document.createElement('button');
-            btn.type = 'button';
-            btn.className = 'find-item' + (i === currentCardIdx ? ' is-current' : '');
-            btn.dataset.cardIdx = i;
+        matches.forEach((m, p) => {
+            const { c, i } = m;
             const topic = c.topic || c.q || '(제목 없음)';
             const isCk = isChecked(c);
+            const isCur = (i === currentCardIdx);
+
+            // 점프 영역 — 클릭 시 해당 카드로 이동
+            const jump = document.createElement('button');
+            jump.type = 'button';
+            jump.className = (isAdmin ? 'find-jump' : 'find-item') + (isCur ? ' is-current' : '');
+            jump.dataset.cardIdx = i;
 
             const numEl = document.createElement('span');
             numEl.className = 'find-num';
@@ -2469,9 +2519,73 @@
             starEl.className = 'find-star' + (isCk ? '' : ' off');
             starEl.textContent = '★';
 
-            btn.append(numEl, textEl, starEl);
-            btn.addEventListener('click', () => jumpToCardIdx(i));
-            frag.appendChild(btn);
+            jump.append(numEl, textEl, starEl);
+            jump.addEventListener('click', () => jumpToCardIdx(i));
+
+            if (!isAdmin) {
+                frag.appendChild(jump);
+                return;
+            }
+
+            // 관리자 — 점프 영역 + 도구(▲▼ 순서이동, ↗ 단원이동) + PC 드래그
+            const row = document.createElement('div');
+            row.className = 'find-item is-admin' + (isCur ? ' is-current' : '');
+
+            const tools = document.createElement('div');
+            tools.className = 'find-tools';
+            const up = document.createElement('button');
+            up.type = 'button'; up.className = 'find-tool t-up'; up.textContent = '▲';
+            up.title = '위로 이동'; up.setAttribute('aria-label', '위로 이동');
+            up.disabled = (p === 0);
+            const down = document.createElement('button');
+            down.type = 'button'; down.className = 'find-tool t-down'; down.textContent = '▼';
+            down.title = '아래로 이동'; down.setAttribute('aria-label', '아래로 이동');
+            down.disabled = (p === matches.length - 1);
+            const mv = document.createElement('button');
+            mv.type = 'button'; mv.className = 'find-tool t-move'; mv.textContent = '↗';
+            mv.title = '다른 단원으로 이동'; mv.setAttribute('aria-label', '다른 단원으로 이동');
+
+            up.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (moveWithinDeck(matches, p, -1)) { renderFindList(); render(); schedulePersistOrder(); }
+            });
+            down.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (moveWithinDeck(matches, p, +1)) { renderFindList(); render(); schedulePersistOrder(); }
+            });
+            mv.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeFindModal();
+                openMoveModal(c);
+            });
+            tools.append(up, down, mv);
+
+            // PC 드래그로 순서 변경 (보조 수단)
+            jump.setAttribute('draggable', 'true');
+            jump.addEventListener('dragstart', (e) => {
+                row.classList.add('dragging');
+                try { e.dataTransfer.setData('text/plain', String(p)); } catch {}
+                if (e.dataTransfer) e.dataTransfer.effectAllowed = 'move';
+            });
+            jump.addEventListener('dragend', () => row.classList.remove('dragging'));
+            row.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                if (e.dataTransfer) e.dataTransfer.dropEffect = 'move';
+                row.classList.add('drag-over');
+            });
+            row.addEventListener('dragleave', () => row.classList.remove('drag-over'));
+            row.addEventListener('drop', (e) => {
+                e.preventDefault();
+                row.classList.remove('drag-over');
+                let fromP = NaN;
+                try { fromP = parseInt(e.dataTransfer.getData('text/plain'), 10); } catch {}
+                if (Number.isInteger(fromP) && moveToVisiblePos(matches, fromP, p)) {
+                    renderFindList(); render(); schedulePersistOrder();
+                }
+            });
+
+            row.append(jump, tools);
+            frag.appendChild(row);
         });
         findList.appendChild(frag);
     }

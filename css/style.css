@@ -818,6 +818,62 @@ a { color: inherit; text-decoration: none; }
 .find-star { color: var(--accent-yellow); font-size: 1rem; }
 .find-star.off { color: #3a3a3c; }
 .find-empty { color: var(--text-muted); text-align: center; padding: 30px 10px; font-size: 0.9rem; }
+
+/* 관리자 찾기 행 — 점프 영역(.find-jump) + 도구(▲▼↗) */
+.find-item.is-admin {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: default;
+}
+.find-item.is-admin.is-current { background: none; }
+.find-jump {
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid #ffffff14;
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: var(--text);
+    flex: 1;
+    min-width: 0;
+    cursor: pointer;
+}
+.find-jump:active { background: var(--surface-2); }
+.find-jump.is-current { border-color: var(--accent-yellow); background: #2a2a1c; }
+.find-tools {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+    flex: 0 0 auto;
+}
+.find-tool {
+    min-width: 32px;
+    border-radius: 8px;
+    background: #2a2a2c;
+    border: 1px solid #ffffff14;
+    color: #c7c7cc;
+    font-size: 0.82rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.find-tool:active { background: var(--surface-2); }
+.find-tool:disabled { opacity: 0.3; cursor: default; }
+.find-tool.t-up   { grid-column: 1; grid-row: 1; }
+.find-tool.t-down { grid-column: 1; grid-row: 2; }
+.find-tool.t-move { grid-column: 2; grid-row: 1 / span 2; font-size: 1.05rem; color: var(--accent-yellow); }
+.find-item.is-admin.dragging { opacity: 0.5; }
+.find-item.is-admin.drag-over .find-jump { border-color: var(--accent-yellow); border-style: dashed; }
 mark { background: #f1c40f; color: #1a1a1a; padding: 0 2px; border-radius: 3px; }
 
 /* ============ 로그인 화면 ============ */
