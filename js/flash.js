@@ -2611,10 +2611,17 @@
     function closeFindModal() {
         findModal.hidden = true;
     }
-    // 입력 중에는 목록 갱신하지 않고, Enter 누르면 검색어로 필터 적용
+    // 입력 즉시 조회 (엔터 불필요). 대소문자는 renderFindList 에서 무시됨.
+    // 빠른 타이핑 시 과도한 렌더를 막기 위해 짧게 디바운스. Enter 는 즉시 반영.
+    let _findTimer = null;
+    findInput.addEventListener('input', () => {
+        clearTimeout(_findTimer);
+        _findTimer = setTimeout(renderFindList, 120);
+    });
     findInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
+            clearTimeout(_findTimer);
             renderFindList();
         }
     });
