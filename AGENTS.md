@@ -23,6 +23,7 @@
 |---|---|
 | `npm run check` | JS 구문 + 데이터 무결성 통합 검증 (커밋 전 필수, 수 초) |
 | `npm test` | node:test — 데이터·구문 테스트 |
+| `npm run test:e2e` | Playwright E2E — 핵심 3흐름 + 스크린샷(`test-results/screens/`). UI 변경 시 필수, 스크린샷을 증빙으로 제시 |
 | `vercel dev` | 로컬 실행 — 단, `ADMIN_SESSION_SECRET` 를 셸 환경변수로 직접 주입해야 로그인 가능 (`.env.local` 무시됨) |
 
 ## 함정 (반복 실수 방지)

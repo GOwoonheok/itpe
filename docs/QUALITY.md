@@ -23,9 +23,9 @@
 | 기능 완성도 | 5 | 학습·검색·인쇄·동기화·AI생성 — 사용자가 최적화 완료 선언 |
 | 성능 | 4 | 정적 읽기·외부 호출 없음. 쓰기 반영 30초~1분 지연(수용됨) |
 | 보안 | 4 | CSP·HMAC 세션·XSS 의식 패턴. 자동 보안 검사는 부재 |
-| 테스트 | 2→3 | 0개 → check.mjs + 데이터·구문 테스트 도입 (E2E 미도입) |
+| 테스트 | 2→4 | 0개 → check.mjs + 데이터·구문 테스트 + Playwright E2E 3흐름·스크린샷 증빙 |
 | 문서화 | 1→4 | MIGRATION.md 만 → AGENTS/ARCHITECTURE/SECURITY/docs 체계 구축 |
 | 구조 | 3 | flash.js 2,636줄·admin.js 1,860줄 비대 — 분할은 P5 과제 |
 | 자동화 | 1→4 | 없음 → 훅 + npm scripts + CI 도입 |
 
-차기 목표: 테스트 4 (Playwright 3흐름 + 스크린샷), 구조 4 (flash.js 모듈 분할).
+차기 목표: 구조 4 (flash.js 모듈 분할 — E2E 커버리지 확대 후, exec-plans/2026-06-06-harness-p4-e2e.md 의 재개 조건 참조).

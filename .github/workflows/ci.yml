@@ -18,3 +18,22 @@ jobs:
         run: node scripts/check.mjs
       - name: 테스트
         run: node --test "tests/**/*.test.mjs"
+
+  # E2E — 핵심 3흐름(로그인·단원 진입·찾기 점프)을 실제 브라우저로 검증 + 스크린샷 증빙
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test
+      - name: 스크린샷 증빙 업로드
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-screens
+          path: test-results/screens/
+          if-no-files-found: ignore

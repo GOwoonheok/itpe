@@ -9,13 +9,17 @@
     },
     "scripts": {
         "check": "node scripts/check.mjs",
-        "test": "node --test \"tests/**/*.test.mjs\""
+        "test": "node --test \"tests/**/*.test.mjs\"",
+        "test:e2e": "playwright test"
     },
     "dependencies": {
-        "ai": "^5.0.0",
-        "@ai-sdk/openai": "^2.0.0",
         "@ai-sdk/google": "^2.0.0",
-        "zod": "^3.23.0",
-        "aws4fetch": "^1.0.20"
+        "@ai-sdk/openai": "^2.0.0",
+        "ai": "^5.0.0",
+        "aws4fetch": "^1.0.20",
+        "zod": "^3.23.0"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.60.0"
     }
 }
