@@ -1,0 +1,20 @@
+# CI 게이트 — main 푸시(코드·데이터 커밋 모두)와 PR 에서 검증 실행.
+# 의존성 설치 불필요(검증은 node 내장 기능만 사용) — 실행 시간 ~30초, 무료 한도 내.
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 통합 검증 (JS 구문 + 데이터 무결성)
+        run: node scripts/check.mjs
+      - name: 테스트
+        run: node --test "tests/**/*.test.mjs"

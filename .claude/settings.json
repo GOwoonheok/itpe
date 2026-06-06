@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run check)",
+      "Bash(npm test)",
+      "Bash(node --check *)",
+      "Bash(node scripts/check.mjs)",
+      "Bash(node --test *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/hook-check.mjs"
+          }
+        ]
+      }
+    ]
+  }
+}
