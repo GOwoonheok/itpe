@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24   # --test 글롭 패턴은 Node 21+ — 로컬(24)과 버전 일치
       - name: 통합 검증 (JS 구문 + 데이터 무결성)
         run: node scripts/check.mjs
       - name: 테스트
