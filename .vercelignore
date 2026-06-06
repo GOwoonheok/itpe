@@ -1,7 +1,20 @@
 node_modules
 .git
 .DS_Store
-docs/design
 serve.json
 *.log
 .vscode
+
+# 하네스·문서 층 — 운영 서빙 불필요 (앱은 이 파일들을 참조하지 않음)
+docs
+tests
+scripts
+playwright.config.mjs
+.claude
+.github
+AGENTS.md
+ARCHITECTURE.md
+SECURITY.md
+CLAUDE.md
+MIGRATION.md
+README.md
