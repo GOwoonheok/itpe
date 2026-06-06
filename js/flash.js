@@ -2599,6 +2599,16 @@
         }
         state.idx = pos >= 0 ? pos : 0;
         closeFindModal();
+        // 모드 선택(첫 화면)에서 점프한 경우 — 순서대로 모드로 학습 화면에 진입해 바로 카드 표시
+        if (els.studyScreen.hidden) {
+            state.mode = 'sequence';
+            try {
+                const url = new URL(location.href);
+                url.searchParams.set('mode', state.mode);
+                history.replaceState(null, '', url);
+            } catch {}
+            showStudy();
+        }
         render();
     }
     function openFindModal() {
