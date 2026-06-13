@@ -103,12 +103,11 @@
       "count": 30
     },
     {
-      "id": "ss",
+      "id": "12",
       "name": "임시",
-      "emoji": "",
-      "color": "",
-      "description": "주모임시",
-      "file": "ss.json",
+      "color": "#2980b9",
+      "description": "임시",
+      "file": "12.json",
       "count": 0
     }
   ]
