@@ -97,7 +97,7 @@
       "id": "jm",
       "name": "주모",
       "emoji": "📝",
-      "color": "#e17055",
+      "color": "#9c3a21",
       "description": "주제별 모음",
       "file": "jm.json",
       "count": 30
@@ -108,6 +108,14 @@
       "color": "#2980b9",
       "description": "임시",
       "file": "12.json",
+      "count": 0
+    },
+    {
+      "id": "13",
+      "name": "면접",
+      "color": "#2980b9",
+      "description": "면접",
+      "file": "13.json",
       "count": 0
     }
   ]
