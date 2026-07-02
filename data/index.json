@@ -105,6 +105,7 @@
     {
       "id": "12",
       "name": "임시",
+      "emoji": "📝",
       "color": "#2980b9",
       "description": "임시",
       "file": "12.json",
@@ -113,6 +114,7 @@
     {
       "id": "13",
       "name": "면접",
+      "emoji": "📝",
       "color": "#2980b9",
       "description": "면접",
       "file": "13.json",
