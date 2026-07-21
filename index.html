@@ -24,6 +24,25 @@
     <div class="app-shell">
         <main class="app-content menu-content">
             <div class="sheet-container">
+                <style>
+                    .interview-entry { display:flex; align-items:center; gap:14px; padding:14px 16px; margin-bottom:10px;
+                        border-radius:14px; background:linear-gradient(180deg,#23283a,#1b1f2c); border:1px solid #3a4a86;
+                        transition:transform 120ms ease; }
+                    .interview-entry:active { transform:scale(0.99); }
+                    .interview-entry-emoji { font-size:1.5rem; flex:none; }
+                    .interview-entry-text { flex:1; min-width:0; display:flex; flex-direction:column; }
+                    .interview-entry-title { font-weight:800; font-size:1rem; }
+                    .interview-entry-desc { font-size:0.8rem; color:var(--text-muted); }
+                    .interview-entry-arrow { color:var(--text-dim); font-size:1.3rem; flex:none; }
+                </style>
+                <a class="interview-entry" href="interview.html" aria-label="면접 대비">
+                    <span class="interview-entry-emoji" aria-hidden="true">🎤</span>
+                    <span class="interview-entry-text">
+                        <span class="interview-entry-title">면접 대비</span>
+                        <span class="interview-entry-desc">구술 답변을 4단 구조로 연습</span>
+                    </span>
+                    <span class="interview-entry-arrow" aria-hidden="true">›</span>
+                </a>
                 <div id="sheet-list" class="sheet-list" aria-busy="true">
                     <!-- 단원 항목이 app.js 로 채워집니다 -->
                 </div>

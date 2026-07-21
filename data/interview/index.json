@@ -1,0 +1,22 @@
+{
+    "title": "기술사 면접 대비",
+    "subtitle": "Flash 카드로 답변을 연습하세요",
+    "categories": [
+        {
+            "id": "career",
+            "name": "이력기반",
+            "emoji": "📋",
+            "file": "career.json",
+            "mode": "sequence",
+            "description": "이력·경력 기반 예상 질문을 순서대로"
+        },
+        {
+            "id": "expected",
+            "name": "예상토픽",
+            "emoji": "🎲",
+            "file": "expected.json",
+            "mode": "shuffle",
+            "description": "예상 토픽 문항을 랜덤 순서로"
+        }
+    ]
+}

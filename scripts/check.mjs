@@ -122,6 +122,72 @@ export function validateData() {
 }
 
 // ──────────────────────────────────────────────
+// 3) 면접 모드 데이터 무결성 (data/interview/*.json)
+//    매니페스트(index.json) ↔ 카테고리 파일. 필수: id(유일)·question. 규칙은 js/interview.js 사용 방식 기준.
+//    디렉터리가 없으면 조용히 건너뜀(기능 미도입 상태 안전).
+// ──────────────────────────────────────────────
+export function validateInterview() {
+    const errors = [];
+    const warns = [];
+    const dir = join(ROOT, 'data', 'interview');
+    if (!existsSync(dir)) return { errors, warns };
+
+    const manifestPath = join(dir, 'index.json');
+    if (!existsSync(manifestPath)) {
+        // 파일이 하나라도 있는데 매니페스트가 없으면 오류
+        const hasJson = readdirSync(dir).some((f) => f.endsWith('.json'));
+        if (hasJson) errors.push('data/interview/index.json — 매니페스트 누락');
+        return { errors, warns };
+    }
+
+    let manifest;
+    try {
+        manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+    } catch (e) {
+        errors.push(`data/interview/index.json — JSON 파싱 실패: ${e.message}`);
+        return { errors, warns };
+    }
+    if (!Array.isArray(manifest.categories)) {
+        errors.push('data/interview/index.json — categories 배열이 없음');
+        return { errors, warns };
+    }
+
+    const seenCats = new Set();
+    for (const c of manifest.categories) {
+        if (!c || typeof c.id !== 'string' || !c.id) { errors.push('data/interview/index.json — id 없는 카테고리'); continue; }
+        if (seenCats.has(c.id)) errors.push(`data/interview/index.json — 카테고리 id 중복: ${c.id}`);
+        seenCats.add(c.id);
+        if (typeof c.file !== 'string' || !c.file) { errors.push(`data/interview/index.json — ${c.id}: file 누락`); continue; }
+        if (!existsSync(join(dir, c.file))) { errors.push(`data/interview/index.json — ${c.id}: data/interview/${c.file} 파일 없음`); continue; }
+
+        const rel = `data/interview/${c.file}`;
+        let items;
+        try {
+            items = JSON.parse(readFileSync(join(dir, c.file), 'utf8'));
+        } catch (e) {
+            errors.push(`${rel} — JSON 파싱 실패: ${e.message}`);
+            continue;
+        }
+        if (!Array.isArray(items)) { errors.push(`${rel} — 최상위가 배열이 아님`); continue; }
+
+        const seenIds = new Set();
+        items.forEach((it, i) => {
+            if (!it || typeof it !== 'object' || Array.isArray(it)) { errors.push(`${rel}[${i}] — 문항이 객체가 아님`); return; }
+            const id = (it.id ?? '').toString().trim();
+            if (!id) { errors.push(`${rel}[${i}] — id 없음`); }
+            else if (seenIds.has(id)) { errors.push(`${rel}[${i}] — id 중복: ${id}`); }
+            else seenIds.add(id);
+            if (!(it.question ?? '').toString().trim()) warns.push(`${rel}[${i}] — question 비어 있음`);
+            if (it.references !== undefined && (!Array.isArray(it.references) || it.references.some((s) => typeof s !== 'string'))) {
+                errors.push(`${rel}[${i}] — references 가 문자열 배열이 아님`);
+            }
+        });
+    }
+
+    return { errors, warns };
+}
+
+// ──────────────────────────────────────────────
 // 실행부 (직접 실행 시에만)
 // ──────────────────────────────────────────────
 const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
@@ -135,10 +201,13 @@ if (isMain) {
     }
     console.log(`✔ JS 구문 검사: ${files.length - failed}/${files.length} 통과`);
 
-    const { errors, warns } = validateData();
+    const dataRes = validateData();
+    const ivRes = validateInterview();
+    const errors = dataRes.errors.concat(ivRes.errors);
+    const warns = dataRes.warns.concat(ivRes.warns);
     for (const w of warns) console.warn(`⚠ ${w}`);
     for (const e of errors) console.error(`✖ ${e}`);
-    console.log(`✔ 데이터 검사: 오류 ${errors.length} · 경고 ${warns.length}`);
+    console.log(`✔ 데이터 검사: 오류 ${errors.length} · 경고 ${warns.length} (카드 + 면접)`);
 
     if (failed + errors.length > 0) {
         console.error('\n검증 실패 — 커밋 전에 위 오류를 해결하세요.');

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no">
+    <meta name="theme-color" content="#0e0e10">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ITPE Flash">
+    <title>면접 대비 — ITPE Flash</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.svg">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/interview.css" rel="stylesheet">
+    <script src="js/auth.js"></script>
+    <script src="js/orientation.js"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <main class="app-content iv-content" id="iv-app">
+            <!-- 모드 선택 화면 -->
+            <section id="iv-mode-screen" class="iv-mode-screen">
+                <header class="iv-home-head">
+                    <h1 class="iv-title">기술사 면접 대비</h1>
+                    <p class="iv-subtitle">Flash 카드로 답변을 연습하세요</p>
+                </header>
+                <div class="iv-mode-list" id="iv-mode-list" aria-busy="true">
+                    <!-- 모드 카드가 interview.js 로 채워집니다 -->
+                </div>
+                <p class="iv-foot" id="iv-foot"></p>
+            </section>
+
+            <!-- 학습 화면 -->
+            <section id="iv-study-screen" class="iv-study-screen" hidden>
+                <header class="iv-study-head">
+                    <button class="iv-back" id="iv-home" type="button">← 홈</button>
+                    <span class="iv-cat" id="iv-cat-title"></span>
+                    <button class="iv-reshuffle" id="iv-shuffle" type="button" aria-label="다시 섞기" title="다시 섞기">↻</button>
+                </header>
+                <div class="iv-progress"><div class="iv-progress-bar" id="iv-progress-bar"></div></div>
+                <div class="iv-progress-num" id="iv-progress-num"></div>
+                <div class="iv-card" id="iv-card">
+                    <span class="iv-badge" id="iv-badge"></span>
+                    <h2 class="iv-question" id="iv-question"></h2>
+                    <button class="iv-reveal" id="iv-reveal" type="button">정답 보기</button>
+                    <p class="iv-hint" id="iv-hint">먼저 스스로 답변을 구성해 보세요</p>
+                    <div class="iv-answer" id="iv-answer" hidden></div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="toolbar iv-toolbar" id="iv-toolbar" hidden>
+            <div class="iv-nav">
+                <button class="iv-nav-btn" id="iv-prev" type="button">이전</button>
+                <button class="iv-nav-btn iv-nav-next" id="iv-next" type="button">다음</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/interview.js"></script>
+</body>
+</html>
