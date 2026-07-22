@@ -181,7 +181,9 @@
     border-top: 1px solid var(--divider);
     background: var(--bg);
 }
-.iv-nav { display: flex; gap: 8px; max-width: 560px; margin: 0 auto; }
+/* width:100% 가 없으면 세로 flex 인 .toolbar 안에서 margin:0 auto 로 인해
+   내용 폭으로 줄어든다 — .sheet-container 와 동일한 패턴으로 좌우를 채운다. */
+.iv-nav { display: flex; gap: 8px; width: 100%; max-width: 560px; margin: 0 auto; }
 .iv-nav-btn {
     flex: 1;
     min-width: 0;               /* 3버튼 나란히 — 좁은 화면에서 넘치지 않게 */
