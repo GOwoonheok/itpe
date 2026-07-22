@@ -133,19 +133,6 @@
     font-weight: 800;
     line-height: 1.4;
 }
-.iv-reveal {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    padding: 14px;
-    border: none;
-    border-radius: 12px;
-    background: var(--accent-blue);
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 800;
-}
-.iv-reveal:active { filter: brightness(0.94); }
 .iv-hint {
     text-align: center;
     color: var(--text-dim);
@@ -188,22 +175,40 @@
 .iv-refs { margin-top: 4px; font-size: 0.86rem; color: var(--text-muted); }
 .iv-refs a { color: var(--accent-cyan); text-decoration: underline; word-break: break-all; }
 
-/* ============ 하단 이전/다음 툴바 ============ */
+/* ============ 하단 이전 / 정답 보기 / 다음 툴바 ============ */
 .iv-toolbar {
     padding: 10px 14px calc(var(--safe-bottom) + var(--tb-gap));
     border-top: 1px solid var(--divider);
     background: var(--bg);
 }
-.iv-nav { display: flex; gap: 10px; max-width: 560px; margin: 0 auto; }
+.iv-nav { display: flex; gap: 8px; max-width: 560px; margin: 0 auto; }
 .iv-nav-btn {
     flex: 1;
-    padding: 14px;
+    min-width: 0;               /* 3버튼 나란히 — 좁은 화면에서 넘치지 않게 */
+    padding: 14px 8px;
     border: 1px solid #ffffff1a;
     border-radius: 12px;
     background: var(--surface-2);
     color: var(--text);
     font-size: 1rem;
     font-weight: 800;
+    white-space: nowrap;
 }
 .iv-nav-btn:disabled { opacity: 0.4; }
-.iv-nav-next { background: var(--accent-blue); color: #fff; border-color: transparent; }
+
+/* 가운데 '정답 보기' — 공개 전 주 동작이므로 강조 + 약간 넓게. 공개되면 JS 가 hidden 처리 */
+.iv-reveal {
+    flex: 1.35;
+    border-color: transparent;
+    background: var(--accent-blue);
+    color: #fff;
+}
+.iv-reveal:active { filter: brightness(0.94); }
+
+/* 파란 주버튼은 항상 하나만 — 공개 전엔 '정답 보기', 공개 후엔 '다음'(원래 스타일) */
+.iv-nav-next { background: var(--surface-2); color: var(--text); }
+.iv-reveal[hidden] ~ .iv-nav-next {
+    background: var(--accent-blue);
+    color: #fff;
+    border-color: transparent;
+}
