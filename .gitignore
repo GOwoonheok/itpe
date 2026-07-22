@@ -12,4 +12,8 @@ playwright-report/
 # (api/_auth.js, api/_github.js 같은 private 모듈은 빌드에 필요하므로 _*.js 규칙 두지 않음.)
 _*.html
 
+# 개인 면접 자료 — 이력카드 PDF(개인정보)·기출 복기록·생성 문서·엑셀.
+# repo 가 public 이고 data/ 는 Vercel 이 그대로 정적 서빙한다 (SECURITY.md 3항).
+data/면접자료/
+
 .env*
