@@ -41,6 +41,7 @@
                 <header class="iv-study-head">
                     <button class="iv-back" id="iv-home" type="button">← 홈</button>
                     <span class="iv-cat" id="iv-cat-title"></span>
+                    <button class="iv-star" id="iv-bookmark" type="button" aria-pressed="false" aria-label="선택토픽에 넣기" title="선택토픽에 넣기">☆</button>
                     <button class="iv-reshuffle" id="iv-shuffle" type="button" aria-label="다시 섞기" title="다시 섞기">↻</button>
                 </header>
                 <div class="iv-progress"><div class="iv-progress-bar" id="iv-progress-bar"></div></div>
@@ -51,6 +52,17 @@
                     <p class="iv-hint" id="iv-hint">먼저 스스로 답변을 구성해 보세요</p>
                     <div class="iv-answer" id="iv-answer" hidden></div>
                 </div>
+            </section>
+
+            <!-- 소개하기 화면 -->
+            <section id="iv-intro-screen" class="iv-intro-screen" hidden>
+                <header class="iv-study-head">
+                    <button class="iv-back" id="iv-intro-home" type="button">← 홈</button>
+                    <span class="iv-cat">소개하기</span>
+                    <span class="iv-head-spacer" aria-hidden="true"></span>
+                </header>
+                <p class="iv-intro-note">자기소개·포부·윤리강령을 미리 작성해 두고 반복 낭독하세요. 입력은 자동 저장됩니다.</p>
+                <div class="iv-intro-list" id="iv-intro-list"></div>
             </section>
         </main>
 
