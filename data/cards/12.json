@@ -1,0 +1,622 @@
+[
+  {
+    "category": "139회 1교시",
+    "topic": "WBS(Work Breakdown Structure) 작성방법",
+    "definition": "프로젝트 전체 작업 범위를 산출물 중심 계층구조로 세분화한 체계도이다.",
+    "mnemonic": "<축> 작성절차5 / 구성요소 / 작성원칙\n- 작성절차5: 범위정의-산출물식별-작업분할-작업단위정의-작업확정\n- 구성요소: Work Package, Planning Package, WBS Dictionary, Code of Account, Control Account\n- 작성원칙: 100% Rule, MECE, 레벨 3~5단계, WP는 80시간·10일·2주 이내\n<포인트> 먼 미래 작업은 상위수준으로 두고 점진 상세화하는 Rolling Wave Planning",
+    "keyword": "프로젝트관리, 계층구조, 100% Rule, MECE, Work Package, WBS Dictionary, Code of Account, Control Account, Rolling Wave",
+    "extra": "",
+    "userId": "u1785080495031-001g",
+    "createdAt": "2026-07-26T15:41:35.032Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "대수의 법칙과 중심극한정리",
+    "definition": "표본이 커질수록 표본평균이 모평균에 수렴하고 그 분포가 정규화되는 원리이다.",
+    "mnemonic": "<축> 대수의 법칙 / 중심극한정리 / 비교\n- 대수의 법칙: n이 커질수록 표본평균이 기대값에 수렴, 약대수(확률적 수렴)와 강대수(거의 확실한 수렴)\n- 중심극한정리: n이 30 이상이면 모집단 분포와 무관하게 표본평균의 분포가 정규분포에 근사\n- 비교: 대수는 평균의 수렴성, 중심극한은 분포의 정규성\n<포인트> 관심대상이 표본평균 값이냐 표본평균 분포냐가 갈림",
+    "keyword": "대수의법칙, 중심극한정리, 표본평균, 약대수, 강대수, 확률적수렴, 정규분포 근사, n≥30, 신뢰구간",
+    "extra": "",
+    "userId": "u1785080495031-002g",
+    "createdAt": "2026-07-26T15:41:35.033Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "Advanced RAG와 Modular RAG 비교",
+    "definition": "검색 최적화를 더한 선형 RAG와 모듈을 조립·교체하는 비선형 RAG이다.",
+    "mnemonic": "<축> 구조 / 주요기법 / 적합케이스\n- 구조: Advanced는 선형·순차 파이프라인, Modular는 비선형·그래프 기반 모듈형\n- 주요기법: Advanced는 HyDe·Step-Back·Re-Rank, Modular는 RAG-Fusion·Self-RAG·REPLUG\n- 적합케이스: Advanced는 정밀도·안정성, Modular는 멀티홉 추론·에이전틱 워크플로우\n<포인트> Modular가 Advanced를 포함하는 상위 패러다임 — 수직개선 대 수평개선",
+    "keyword": "Native RAG, 선형 파이프라인, 모듈형, HyDe, Re-Rank, RAG-Fusion, Self-RAG, LangGraph, HayStack, Agentic RAG",
+    "extra": "",
+    "userId": "u1785080495031-003g",
+    "createdAt": "2026-07-26T15:41:35.034Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "IT 프로젝트의 부정적 위험(Negative Risk) 대응 전략",
+    "definition": "프로젝트 목표에 부작용을 초래하는 불확실성과 그 4대 대응전략이다.",
+    "mnemonic": "<축> 회피 / 전가 / 완화 / 수용\n- 회피: 위험 원인 제거·계획 변경, 미검증 기술을 검증 기술로 대체\n- 전가: 책임과 영향을 제3자에게 이전, 고위험 모듈 외주·배상보험\n- 완화: 발생확률·영향도를 허용수준으로 감소, PoC·이중화·백업\n- 수용: 대응비용이 손실보다 크면 수용하되 대응계획은 사전 수립\n<포인트> 회피·전가는 소극적, 완화·수용은 적극적 — 이후 잔여·이차 위험 모니터링",
+    "keyword": "PMBOK, 부정적위험, 회피, 전가, 완화, 수용, 소극적대응, 적극적대응, 잔여위험, Scope Creep",
+    "extra": "",
+    "userId": "u1785080495031-004g",
+    "createdAt": "2026-07-26T15:41:35.035Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "소프트웨어 무중단 배포 방식",
+    "definition": "서비스 운영 중에 중단 없이 새 버전을 반영하는 배포 방식이다.",
+    "mnemonic": "<축> 롤링 / 블루그린 / 카나리\n- 롤링: 서버 일부씩 순차 업데이트, 자원 적음·배포 느림·롤백 복잡(역순 재배포)\n- 블루그린: 독립된 두 환경 준비 후 트래픽 전환, 자원 2배·전환 즉시·롤백 매우 쉬움\n- 카나리: 일부 사용자에 먼저 노출 후 점진 확대, 자원 보통·롤백 쉬움·필드 테스트 가능\n<포인트> 자원 절약이면 롤링, 리스크 최소화면 카나리 — 기반은 로드밸런서와 서버 다중화",
+    "keyword": "롤링 배포, 블루-그린 배포, 카나리 배포, 로드밸런서, 서버 다중화, 롤백, 트래픽 전환, MSA, 컨테이너",
+    "extra": "",
+    "userId": "u1785080495031-005g",
+    "createdAt": "2026-07-26T15:41:35.036Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "엣지(Edge) 컴퓨팅과 클라우드(Cloud) 컴퓨팅의 차이점",
+    "definition": "데이터 생성지점 인근 실시간 처리와 중앙집중 대규모 처리로 갈리는 컴퓨팅이다.",
+    "mnemonic": "<축> 표준 / 비교기준4 / 기술요소\n- 표준: 엣지는 ISO/IEC TR 23188·TR 30164, 클라우드는 ISO/IEC 22123\n- 비교기준4: 처리위치(근거리/원거리), 처리능력(제한/높음), 지연(수ms/수십~수백ms), 통신의존(낮음/높음)\n- 기술요소: 엣지는 UPF·MEC·KubeEdge, 클라우드는 Auto-Scaling·Hypervisor·IaaS/PaaS/SaaS\n<포인트> 둘을 하나의 논리 뷰로 연계하는 엣지·클라우드 컨티뉴엄이 결론",
+    "keyword": "ISO/IEC TR 23188, ISO/IEC TR 30164, ISO/IEC 22123, 초저지연, MEC, UPF, Auto-Scaling, IaaS/PaaS/SaaS, Computing Continuum",
+    "extra": "",
+    "userId": "u1785080495031-006g",
+    "createdAt": "2026-07-26T15:41:35.037Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "분산 데이터베이스의 투명성",
+    "definition": "분산된 DB를 하나의 통합 DB처럼 쓰도록 복잡성을 숨기는 특성이다.",
+    "mnemonic": "<축> 위치·분할 / 지역 / 복제 / 병행·장애\n- 위치·분할: 물리적 위치·단편 분할을 몰라도 됨, 분산 데이터 디렉터리 필요\n- 지역: 지역 시스템 이름과 무관한 논리적 이름 사용, 질의 최적화로 통신비용 감소\n- 복제: 복제 여부를 몰라도 됨, 데이터 일관성 유지 방안 필요\n- 병행·장애: Locking·TimeStamp로 직렬성 보장, 장애 시 무결성·자동 Fail-over\n<포인트> 위·분·지·복·병·장 6개를 세어 말하기",
+    "keyword": "위치투명성, 분할투명성, 지역투명성, 복제투명성, 병행투명성, 장애투명성, 분산 데이터 디렉터리, Locking, Fail-over",
+    "extra": "",
+    "userId": "u1785080495031-007g",
+    "createdAt": "2026-07-26T15:41:35.038Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "과적합(Overfitting)과 과소적합(Underfitting)",
+    "definition": "학습데이터에 과도하게 맞거나 못 미쳐 일반화에 실패하는 현상이다.",
+    "mnemonic": "<축> 과적합 / 과소적합 / Trade-off\n- 과적합: 모델복잡도 과다·과도한 Epoch가 원인, Regularization·Dropout·Early Stopping으로 해결\n- 과소적합: 모델 단순·Feature 부족·학습 부족이 원인, 복잡도 증가·Feature Engineering·학습데이터 확보\n- Trade-off: 과적합은 고분산, 과소적합은 고편향\n<포인트> 복잡도 증가 시 Bias 감소·Variance 증가, 균형점에서 일반화 오차 최소",
+    "keyword": "일반화 오류, 모델복잡도, Regularization, Dropout, Early Stopping, Feature Selection, Feature Engineering, 고분산, 고편향",
+    "extra": "",
+    "userId": "u1785080495031-008g",
+    "createdAt": "2026-07-26T15:41:35.039Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "순환복잡도(McCabe's Cyclomatic Complexity)",
+    "definition": "제어흐름 그래프로 소스코드의 복잡도를 정량화한 지표이다.",
+    "mnemonic": "<축> 구성요소 / 계산식3 / 평가지표\n- 구성요소: 노드(N), 엣지(E), 분기노드(P'), 연결성분(P, 단일 프로그램은 1)\n- 계산식3: V(G)=E-N+2, V(G)=P'+1(의사결정수), V(G)=R+1(폐구간)\n- 평가지표: 1~10 안정, 11~20 다소 복잡, 21~50 매우 복잡, 51 이상 고위험\n<포인트> 맥케이브는 화이트박스 테스트케이스 상한선, 할스테드는 연산자·피연산자 기반 노력 예측",
+    "keyword": "노드, 엣지, 분기노드, 연결성분, V(G)=E-N+2, 의사결정수, 폐구간, 화이트박스 테스트, 할스테드 메트릭",
+    "extra": "",
+    "userId": "u1785080495031-009g",
+    "createdAt": "2026-07-26T15:41:35.040Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "Wi-Fi 7(IEEE 802.11be)",
+    "definition": "320MHz·MLO·4K QAM을 지원하는 IEEE 802.11be 무선랜이다.",
+    "mnemonic": "<축> 성능Spec / MAC / PHY\n- 성능Spec: 2.4/5/6GHz, 채널 320MHz, 46Gbps, 지연 5ms 이하, EHT 표준\n- MAC: MLO(다중대역 동시 결합), Multi-AP Coordination, 512 Block Ack, HARQ\n- PHY: 16x16 MU-MIMO, Hybrid Beamforming, 4K QAM, Multiple RUs\n<포인트> Wi-Fi 6 대비 대역폭 160→320MHz, 속도 9.6→46Gbps",
+    "keyword": "IEEE 802.11be, EHT, 320MHz, 46Gbps, MLO, Multi-AP Coordination, 16x16 MU-MIMO, 4K QAM, Hybrid ARQ, Multiple RUs",
+    "extra": "",
+    "userId": "u1785080495031-010g",
+    "createdAt": "2026-07-26T15:41:35.041Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "CTEM(Continuous Threat Exposure Mgmt.)",
+    "definition": "보안 위협 노출을 지속 탐지·평가·우선순위화해 대응하는 프레임워크이다.",
+    "mnemonic": "<축> 5단계 / 기술요소 / 기존 대비\n- 5단계: Scoping(범위)-Discovery(탐색)-Prioritization(우선순위)-Validation(유효성)-Mobilization(대응)\n- 기술요소: 식별은 EASM·IASM, 관제는 SOAR·CNAPP, 검증은 BAS·취약점평가\n- 기존 대비: 주기적→지속적, 전수 목록화→공격자 관점, 전수 패치→위험도 기반 선택 대응\n<포인트> 일회성 진단이 아닌 5단계 반복 구조 — 침해사고 3분의 2 감소 예측",
+    "keyword": "Scoping, Discovery, Prioritization, Validation, Mobilization, EASM, IASM, SOAR, CNAPP, BAS",
+    "extra": "",
+    "userId": "u1785080495031-011g",
+    "createdAt": "2026-07-26T15:41:35.042Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "양자머신러닝(QML, Quantum Machine Learning)",
+    "definition": "양자컴퓨팅 원리를 머신러닝에 접목한 첨단 융합 기술이다.",
+    "mnemonic": "<축> 양자특성3 / 기반기술 / 알고리즘\n- 양자특성3: 중첩(0과 1을 동시에), 얽힘(큐비트 상태가 즉각 연동), 간섭(특정 결과 증폭·감소)\n- 기반기술: 양자 데이터 인코딩(Amplitude·Angle), 파라미터화된 양자회로(RY·RZ·CNOT), 양자커널\n- 알고리즘: QAOA(조합 최적화), VQE(변분 고유값 해법), QKM(힐베르트 공간 맵핑), QBM(양자 볼츠만 머신)\n<포인트> 인코딩→회로→측정 흐름과 QAOA·VQE 구분이 갈림",
+    "keyword": "중첩, 얽힘, 간섭, 데이터 인코딩, 파라미터화된 양자회로, 양자커널, QAOA, VQE, QKM, QBM",
+    "extra": "",
+    "userId": "u1785080495031-012g",
+    "createdAt": "2026-07-26T15:41:35.043Z"
+  },
+  {
+    "category": "139회 1교시",
+    "topic": "개인정보보호를 위한 가명처리 기법",
+    "definition": "추가정보 없이는 특정 개인을 알아볼 수 없도록 처리하는 기법이다.",
+    "mnemonic": "<축> 대상 / 정형기법5 / 비정형기법\n- 대상: 고유식별자, 준식별자, 특이정보, 관계정보, 결합키\n- 정형기법5: 삭제(마스킹), 통계(총계·부분총계), 범주화(라운딩·범위), 암호화(일방향·순서보존·동형), 무작위화(잡음·순열)\n- 비정형기법: 영상은 블러링·픽셀화·인페인팅, 음성은 변형·GMM매핑·STT후 가명처리, 텍스트는 스크러빙·정규표현식\n<포인트> 개인정보보호법 제28조의2 — 통계작성·과학적연구·공익적기록보존은 동의 없이 활용",
+    "keyword": "개인정보보호법 제28조의2, 삭제, 통계, 범주화, 암호화, 무작위화, 블러링, 픽셀화, STT, 텍스트 스크러빙",
+    "extra": "",
+    "userId": "u1785080495031-013g",
+    "createdAt": "2026-07-26T15:41:35.044Z"
+  },
+  {
+    "category": "139회 2교시",
+    "topic": "AI 리스크(보안·프라이버시·사회적)",
+    "definition": "AI 개발·활용·관리 전 과정에서 생기는 잠재적 손실·부정적 결과이다",
+    "mnemonic": "<축> 보안 / 프라이버시 / 사회적\n- 보안: 모델·데이터·활용연계의 안정성 위협 — 모델탈취, 적대적공격, 데이터 포이즈닝, 프롬프트 인젝션\n- 프라이버시: 수집·전처리~서비스 제공 전 단계 과잉수집·노출로 자기결정권 침해 — 딥페이크\n- 사회적: 알고리즘 편향·차별, 일자리 대체, 감시사회 등 사회구조 위협\n<포인트> 대응 축이 다르다 — 보안=기술방어, 프라이버시=가명·합성데이터·차분프라이버시, 사회적=법제도",
+    "keyword": "적대적공격, 데이터 포이즈닝, 모델탈취, 프롬프트 인젝션, 딥페이크, 차분프라이버시, 자기결정권, 알고리즘 편향, 워터마킹",
+    "extra": "",
+    "userId": "u1785080495031-014g",
+    "createdAt": "2026-07-26T15:41:35.045Z"
+  },
+  {
+    "category": "139회 2교시",
+    "topic": "파인튜닝·RAG와 RLHF·RAFT 학습 파이프라인 비교",
+    "definition": "LLM을 가중치 재학습(파인튜닝)과 외부지식 검색(RAG)으로 보강하는 기법이다",
+    "mnemonic": "<축> 파인튜닝 / RAG / RLHF / RAFT\n- 파인튜닝: 모델 가중치 미세조정 — 적은 데이터 재학습, Transfer Learning\n- RAG: 추론 시점 외부지식 질의로 프롬프트 증강 — 벡터DB, 할루시네이션 최소화\n- RLHF: 인간 피드백 기반 PPO 강화학습으로 선호 정렬 — 피드백 비용·편향\n- RAFT: 검색 문서로 재학습하는 RAG 환경 최적화 파인튜닝\n<포인트> 공개형 AI엔 RAG·RAFT, Private LLM엔 파인튜닝·RLHF",
+    "keyword": "Fine-Tuning, RAG, RLHF, RAFT, PPO, 정렬(Alignment), 벡터DB, 할루시네이션 방지, Continuous Learning",
+    "extra": "",
+    "userId": "u1785080495031-015g",
+    "createdAt": "2026-07-26T15:41:35.046Z"
+  },
+  {
+    "category": "139회 2교시",
+    "topic": "데이터 레이크(Data Lake)와 데이터 스웜프(Swamp)",
+    "definition": "원천 형식 그대로 저장하고 읽는 시점에 스키마를 적용하는 대규모 저장소이다",
+    "mnemonic": "<축> 수집연계 / 저장 / 처리 / 활용\n- 수집연계: Batch, Streaming, API\n- 저장: Object Storage(원천), Curated(정제), RAG 인덱스(청크·임베딩)\n- 처리: Stream Processing, ETL/ELT, 파이프라이닝\n- 활용: BI 분석·시각화, AI/ML 학습·검증·추론 데이터\n<포인트> 메타데이터·품질·소유권 통제 부재가 데이터 스웜프 — 온보딩 게이트, 액티브 메타데이터, Data Owner 지정",
+    "keyword": "Object Storage, Schema-on-Read, Zone Architecture, Curated, RAG 인덱스, ETL/ELT, 데이터 스웜프, 액티브 메타데이터, 데이터 거버넌스",
+    "extra": "",
+    "userId": "u1785080495031-016g",
+    "createdAt": "2026-07-26T15:41:35.047Z"
+  },
+  {
+    "category": "139회 2교시",
+    "topic": "터보퀀트(TurboQuant)",
+    "definition": "LLM의 KV 캐시를 3~4비트로 압축하는 온라인 벡터 양자화 기술이다",
+    "mnemonic": "<축> 메커니즘 / 성능 / 기존 양자화와 차이\n- 메커니즘: PolarQuant 극좌표 변환 압축 + QJL 잔차 부호비트(+1/-1) 보정으로 기하구조 보존\n- 성능: KIVI 대비 6X 압축, 4-bit·H100 최대 8X 가속, 104K 토큰 Perfect Recall\n- 차이: 기존=모델 가중치·캘리브레이션 필요 / 터보퀀트=KV 캐시·Drop-in·최적 왜곡률 증명\n<포인트> Zero 정확도 손실 — 재학습·캘리브레이션 없이 추론 시점 Drop-in",
+    "keyword": "KV 캐시, PolarQuant, QJL, 4-bit 양자화, Drop-in, 캘리브레이션 불필요, 6X 압축, 8X 가속, Zero 정확도 손실",
+    "extra": "",
+    "userId": "u1785080495031-017g",
+    "createdAt": "2026-07-26T15:41:35.048Z"
+  },
+  {
+    "category": "139회 2교시",
+    "topic": "공공 SLA와 정보시스템 등급제",
+    "definition": "행정·공공 정보시스템의 가용성·품질을 등급별로 보증하는 계약 표준이다",
+    "mnemonic": "<축> 등급기준 / 적용방식 / 표준안\n- 등급기준: 국민영향도(서비스 중요도 50%)·서비스 연속성·사용자수·파급도·대체가능성 합산 → A1~A4\n- 적용방식: A1~A3 필수, A4 권고 — 가용성·장애·운영·정보보안·성능·서비스지원 지표\n- 표준안: 가용률 A1·A2 100%, A3·A4 99.98% / 장애조치 최대 120·180·300·480분\n<포인트> 위약금=유지관리비(분)×위약시간(분)×등급가중치, 전자정부법 개정 2027년 의무화",
+    "keyword": "국민영향도, 서비스 파급도, 대체가능성, A1~A4 등급, 가용률, 장애조치 허용시간, 위약금 체계, 전자정부법, 2027 의무화",
+    "extra": "",
+    "userId": "u1785080495031-018g",
+    "createdAt": "2026-07-26T15:41:35.049Z"
+  },
+  {
+    "category": "139회 2교시",
+    "topic": "데이터 가치평가 및 데이터 자산화",
+    "definition": "데이터의 경제적 효익을 평가해 거래 가능한 재무적 자산으로 만드는 제도이다",
+    "mnemonic": "<축> 수익 / 원가 / 시장 + 자산화 3요소\n- 수익접근법: 증분수익접근법·데이터기여도법 — 적용 전후 사업가치 차이\n- 원가접근법: 역사적원가·재생산원가·대체원가 — 투입비용−감가상각\n- 시장접근법: 시장거래 사례 비교법 — 유사 거래조건 비교\n- 자산화 3요소: 식별가능성(표준화·카탈로그)/통제(거버넌스·스마트컨트랙트)/경제적 가치(가치평가·품질·리터러시)\n<포인트> 핵심변수 3 — 경제적 수명·할인율·데이터기여도 (데이터산업법 제14조)",
+    "keyword": "데이터산업법 제14조, 수익접근법, 원가접근법, 시장접근법, 증분수익접근법, 데이터기여도법, 식별가능성, 통제, 경제적 가치, 데이터 담보대출",
+    "extra": "",
+    "userId": "u1785080495031-019g",
+    "createdAt": "2026-07-26T15:41:35.050Z"
+  },
+  {
+    "category": "139회 3교시",
+    "topic": "다중 에이전트 시스템(MAS, Multi Agent System)",
+    "definition": "여러 자율 에이전트가 협력·경쟁·조정으로 공동 목표를 달성하는 시스템이다.",
+    "mnemonic": "<축> 특성 / 단일비교 / 고려사항\n- 특성: 자율성·협력성·분산성·적응성·지능성 5가지\n- 단일비교: 단일은 고정 Tool 선형 추론, MAS는 오케스트레이션(Supervisor) 동적 라우팅과 에이전트 간 검증(FIPA ACL, KQML)\n- 고려사항: 인프라 통신비용 폭증, 운영 무한루프, 보안 연쇄 오염, 신뢰성 할루시네이션 전파\n<포인트> 대응은 비동기 큐·Human-in-the-Loop 승인·ACL 격리·Consensus 교차검증",
+    "keyword": "자율성, 협력성, 분산성, 오케스트레이션, Supervisor, FIPA ACL, KQML, Human-in-the-Loop, Cascade 오염, 교차검증",
+    "extra": "",
+    "userId": "u1785080495031-020g",
+    "createdAt": "2026-07-26T15:41:35.051Z"
+  },
+  {
+    "category": "139회 3교시",
+    "topic": "데이터 분석의 이상치(Outlier)와 편향(Bias)",
+    "definition": "분포에서 현저히 벗어난 관측값이 이상치, 한쪽으로 치우친 현상이 편향이다.",
+    "mnemonic": "<축> 유형 / 영향 / 처리\n- 유형: 이상치는 오류형·자연발생·다변량·맥락적·집단적, 편향은 선택·생존자·측정·확증·역사적\n- 영향: 이상치는 기술통계·회귀계수 왜곡, 편향은 추정량 체계오차와 부분집단 성능격차\n- 처리: 이상치는 IQR·Z-Score·LOF·Isolation Forest 탐지 후 제거·대체·Winsorization, 편향은 SMOTE·가중치·L1/L2\n<포인트> 이상치 무조건 제거 금지, 편향은 Pre·In·Post 3단계 통합",
+    "keyword": "Outlier, Bias, IQR, Z-Score, Isolation Forest, Winsorization, SMOTE, 선택편향, 공정성-정확도 Trade-off, Data Cleansing",
+    "extra": "",
+    "userId": "u1785080495031-021g",
+    "createdAt": "2026-07-26T15:41:35.052Z"
+  },
+  {
+    "category": "139회 3교시",
+    "topic": "기술부채·코드스멜·리팩토링(Refactoring)",
+    "definition": "임시방편 선택이 남긴 추가 비용이 기술부채, 그 잠재 징후가 코드스멜이다.",
+    "mnemonic": "<축> 기술부채 4종 / 코드스멜 / 리팩토링 절차\n- 기술부채: 설계·코드·테스트·문서 부채, 불명확 요구사항이 비선형 증가를 유발\n- 코드스멜: 중복코드, 긴 파라미터, 거대 클래스, 기능 욕심, 미들맨, 산탄총 수술, 게으른 클래스, 거부된 유산\n- 절차: 대상선정(McCabe·Fan-In/Out) → 테스트 확보 → 소규모 변형 → 빌드·회귀테스트 → 커밋·부채상환\n<포인트> 리팩토링은 기능 변화 없이 내부구조만 변경(이동/분리/일반화/통합)",
+    "keyword": "설계부채, 코드부채, 테스트부채, 문서부채, 중복코드, 산탄총 수술, 기능 욕심, McCabe 순환복잡도, Fan-In/Out, Move Method",
+    "extra": "",
+    "userId": "u1785080495031-022g",
+    "createdAt": "2026-07-26T15:41:35.053Z"
+  },
+  {
+    "category": "139회 3교시",
+    "topic": "소프트웨어 테스트 7대 원리와 테스트케이스 작성",
+    "definition": "요구사항 충족과 신뢰성 향상을 위해 결함의 존재를 밝히는 활동이다.",
+    "mnemonic": "<축> 7대 원리 / 박스 비교 / 케이스\n- 7원리: 결함발견·초기집중(요르돈)·파레토(80:20)·살충제 패러독스·오류부재궤변·불완전성·정황의존성\n- 비교: 화이트=구조기반 개발자관점 커버리지(구문·조건·MC/DC), 블랙=명세기반 사용자관점 동등분할·경계값\n- 케이스: 동등분할 -5,50,65,75,85,95,105 / 경계값 -1,0,59,60,69,70,79,80,89,90,100,101\n<포인트> 경계값은 구간마다 시작·상한 짝, 범위 밖 ERROR",
+    "keyword": "결함발견, 초기집중, 파레토 법칙, 살충제 패러독스, 오류부재궤변, 불완전성, 정황의존성, 동등분할, 경계값 분석, 그레이박스",
+    "extra": "",
+    "userId": "u1785080495031-023g",
+    "createdAt": "2026-07-26T15:41:35.054Z"
+  },
+  {
+    "category": "139회 3교시",
+    "topic": "이진 탐색 트리(BST)와 라우팅 테이블 탐색",
+    "definition": "탐색 범위를 계층적으로 줄이는 BST 원리가 라우팅 LPM 탐색의 기반이다.",
+    "mnemonic": "<축> BST / 6단계 / 상관 / 발전\n- BST: Left<Parent<Right, 중복키 불가, 평균 O(log N)\n- 6단계: 수신 → IP추출 → Route Lookup → LPM → Next-Hop → 전달\n- 상관: 계층 탐색·범위 축소·Divide&Conquer 공통\n- 발전: BST·AVL O(logN) → Trie·Patricia O(W) → TCAM O(1)\n<포인트> BST는 Prefix·LPM 지원 제한적이라 Trie 계열로 발전",
+    "keyword": "BST, Longest Prefix Match, Route Lookup, O(log N), Divide and Conquer, AVL Tree, Trie, Patricia Trie, TCAM, BGP Prefix",
+    "extra": "",
+    "userId": "u1785080495031-024g",
+    "createdAt": "2026-07-26T15:41:35.055Z"
+  },
+  {
+    "category": "139회 3교시",
+    "topic": "AI 학습용 데이터 품질관리(특성·지표·활동)",
+    "definition": "AI 모델 학습·검증 데이터의 품질을 지표와 생애주기 활동으로 확보하는 관리다.",
+    "mnemonic": "<축> 특성 / 지표 4영역 / 활동 6단계\n- 특성: 지도는 정답 라벨·대표성, 비지도는 구조·충분한 양, 강화는 상태-행동-보상\n- 지표: 공정 적정성(계획수립성·체계준수성), 데이터 적합성(완전성·유용성·기준적합성·다양성), 가공 정확성(구문·의미), 모델 적합성(알고리즘 적정성·유효성)\n- 활동: 110 구축계획 → 210 수집 → 220 정제 → 230 가공 → 240 학습 → 310 운영\n<포인트> 근거는 AI 데이터 품질관리 가이드라인 v4.0",
+    "keyword": "AI 데이터 품질관리 가이드라인 v4.0, 계획수립성, 체계준수성, 완전성, 유용성, 기준적합성, 다양성, 구문 정확성, 의미 정확성, 알고리즘 적정성",
+    "extra": "",
+    "userId": "u1785080495031-025g",
+    "createdAt": "2026-07-26T15:41:35.056Z"
+  },
+  {
+    "category": "139회 4교시",
+    "topic": "빅데이터 분석기법 — 클러스터링·필터링·이상치 탐지",
+    "definition": "필터링·클러스터링·이상치탐지로 대용량 데이터의 패턴을 찾는 분석기법이다.",
+    "mnemonic": "<축> 클러스터링 / 필터링 / 이상치탐지\n- 클러스터링: 비지도 군집화, 분할(K-Means)·계층·밀도(DBSCAN)·모델(GMM), 실루엣계수\n- 필터링: 내용기반(TF-IDF)·협업(KNN,SVD)·신호(Kalman)·하이브리드, 협업은 콜드스타트 약점\n- 이상치탐지: 통계(Z-score,IQR)·밀도(LOF)·ML(iForest)·딥러닝(AutoEncoder), FDS 적용\n<포인트> 필터링 정제 → 클러스터링 군집화 → 이탈 데이터를 이상치로 식별",
+    "keyword": "K-Means, DBSCAN, 비지도학습, 협업 필터링, Isolation Forest, AutoEncoder, FDS, 추천시스템, 실루엣 계수, 콜드스타트",
+    "extra": "",
+    "userId": "u1785080495031-026g",
+    "createdAt": "2026-07-26T15:41:35.057Z"
+  },
+  {
+    "category": "139회 4교시",
+    "topic": "프로세스 동기화 — 뮤텍스·세마포어·모니터",
+    "definition": "임계구역 상호배제로 공유자원 경쟁상태를 막는 동기화 기법이다.",
+    "mnemonic": "<축> 뮤텍스 / 세마포어 / 모니터\n- 뮤텍스: Lock/Unlock과 대기큐, 소유권 기반 단일자원 상호배제, 잠근 스레드만 해제 가능\n- 세마포어: OS 커널의 정수변수 S, P(S-1)/V(S+1) 연산, Binary·Counting, 다중자원 제어\n- 모니터: 언어레벨 캡슐화, 상호배제 큐·조건동기 큐·조건변수, wait/signal 자동 제어\n<포인트> 한계가 진화 순서다 — 뮤텍스 확장성 한계 → 세마포어 P/V 타이밍 오류 → 모니터 교착 가능",
+    "keyword": "상호배제, 임계구역, Lock/Unlock, 소유권, P/V 연산, Binary/Counting, 상호배제 큐, 조건동기 큐, 동시성 제어, 교착상태",
+    "extra": "",
+    "userId": "u1785080495031-027g",
+    "createdAt": "2026-07-26T15:41:35.058Z"
+  },
+  {
+    "category": "139회 4교시",
+    "topic": "재난·재해 대비 데이터센터(IDC) 위치선정·대응전략",
+    "definition": "재난·재해에 대비해 IDC 입지를 정하고 서비스 연속성을 확보하는 전략이다.",
+    "mnemonic": "<축> 자연재해 / 인프라 / 물리안전 / 대응전략\n- 자연재해: 활성단층 회피, 해발 50m 이상, 침수·해일·기후 안전권\n- 인프라: 회선 3개 이상(Carrier-Neutral), 변전소 2개 이중전력, TIA-942\n- 물리안전: 동기복제 30~50km, DR센터 100km 이상 이격, RTO/RPO\n- 대응전략: 시설방호·전력통신 이중화·백업소산·DR·BCP\n<포인트> 행안부 고시 2026-23호 A1~A4 등급별 DRS 구축, 연 1회 이상 복구훈련",
+    "keyword": "지리적 안전성, TIA-942, 전력·통신 이중화, 센터간 이격 100km, DRS, RTO/RPO, BCP/DRP, A1~A4 등급, 행안부 고시 2026-23호",
+    "extra": "",
+    "userId": "u1785080495031-028g",
+    "createdAt": "2026-07-26T15:41:35.059Z"
+  },
+  {
+    "category": "139회 4교시",
+    "topic": "가상메모리 관리기법과 단편화 최소화",
+    "definition": "필요한 부분만 물리 메모리에 적재해 용량 한계를 보완하는 기법이다.",
+    "mnemonic": "<축> 관리기법 4(할배인교) / 내부단편화 / 외부단편화\n- 관리기법: 할당(연속·불연속) 배치(First·Best·Worst-Fit) 인출(요구·예측) 교체(FIFO·LRU·LFU·OPT)\n- 내부단편화: 고정분할·페이징의 블록 내부 낭비 → 페이지 크기 최적화, 슬랩 할당자\n- 외부단편화: 가변분할·세그멘테이션의 빈 공간 산재 → 통합·압축, 버디 시스템\n<포인트> 부하제어 Working Set·PFF도 관리기법 — 분할방식과 단편화의 짝이 갈림",
+    "keyword": "할당, 배치, 인출, 교체, 페이징, 세그멘테이션, 내부단편화, 외부단편화, 버디 시스템, Working Set/PFF",
+    "extra": "",
+    "userId": "u1785080495031-029g",
+    "createdAt": "2026-07-26T15:41:35.060Z"
+  },
+  {
+    "category": "139회 4교시",
+    "topic": "VPP(가상발전소) 전력수요 예측 AI",
+    "definition": "시계열딥러닝·강화학습·GNN으로 VPP 전력수요를 예측하는 AI 기술이다.",
+    "mnemonic": "<축> 시계열딥러닝 / 강화학습 / 그래프신경망\n- 시계열딥러닝: RNN(장기의존성 한계)→LSTM(3게이트·셀상태)→Transformer\n- 강화학습: Model-Free(PPO, Q-Learning·DQN) / Model-Based(Dyna-Q) / 혼합 Actor-Critic\n- 그래프신경망: 발전원·ESS를 노드/엣지로, 이웃 집계→임베딩, GCN·GraphSAGE·GAT\n<포인트> 시계열=시간축, GNN=공간축(전력망 구조), 강화학습=분산자원 제어",
+    "keyword": "전력수요 예측, RNN, LSTM, Transformer, PPO, Q-Learning, DQN, GCN, GraphSAGE, GAT",
+    "extra": "",
+    "userId": "u1785080495031-030g",
+    "createdAt": "2026-07-26T15:41:35.061Z"
+  },
+  {
+    "category": "139회 4교시",
+    "topic": "서브네팅·슈퍼네팅과 VLSM 분할 계산",
+    "definition": "네트워크를 잘게 나누거나 하나로 묶어 IP 낭비를 줄이는 기법이다.",
+    "mnemonic": "<축> 슈퍼네팅 / 서브네팅 / VLSM 계산\n- 슈퍼네팅: 작은 망을 묶어 Route Aggregation, Network ID 비트 축소\n- 서브네팅: 큰 망을 쪼개 브로드캐스트 도메인 분할, ID 비트 확장, IP 낭비 제거\n- VLSM: 192.168.0.0/22는 1024개, 큰 부서부터 2^n ≥ 필요수+2로 할당\n<포인트> 개발500=/23 0.0 / 영업250=/24 2.0 / 인사125=/25 3.0 / 보안125=/25 3.128",
+    "keyword": "슈퍼네팅, 서브네팅, VLSM, CIDR, Route Aggregation, Subnet Mask, 네트워크 주소, 브로드캐스트 주소, /23 255.255.254.0",
+    "extra": "",
+    "userId": "u1785080495031-031g",
+    "createdAt": "2026-07-26T15:41:35.062Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "NIST AI RMF(AI 위험관리 프레임워크)",
+    "definition": "AI 시스템 설계·개발·도입 조직을 위한 NIST의 자발적 위험관리 가이드이다.",
+    "mnemonic": "<축> 4대 구조(GMMM) / 7대 신뢰특성 / 적용\n- 구조: Govern(위험관리 문화)/Map(위험 식별)/Measure(분석·평가)/Manage(우선순위·개선)\n- 특성: 유효·신뢰성, 책임·투명성, 안전성, 보안·탄력성(기반4) + 설명가능성, 개인정보보호강화, 공정성(부가3)\n- 적용: 각 단계 TEVV(테스트·평가·확인·검증), ISO/IEC 42001 연계\n<포인트> Govern이 나머지 셋을 감싸는 문화 축, 특성은 기반4+부가3으로 갈린다",
+    "keyword": "Govern, Map, Measure, Manage, T.E.V.V, 기반특성, 부가특성, AI 행위자, 책임감 있는 AI, ISO/IEC 42001",
+    "extra": "",
+    "userId": "u1785080495031-032g",
+    "createdAt": "2026-07-26T15:41:35.063Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "프로젝트 위험관리(Project Risk Management)",
+    "definition": "위험을 식별·분석·대응해 프로젝트 실패요인을 사전제거하는 관리기법이다.",
+    "mnemonic": "<축> PLAN 5 / DO / Check&Act\n- PLAN: 위험관리계획→위험식별(WBS·위험관리대장)→정성분석(PI매트릭스)→정량분석(EMV·의사결정트리)→대응계획\n- DO: 위험대응 실행 및 결과 관리(위험 실행 보고서)\n- Check&Act: 위험감시 — 추적·잔여위험 관리(변경관리, WPI)\n<포인트> 정성=발생가능도×영향도 PI매트릭스, 정량=수치화 EMV로 갈린다",
+    "keyword": "PMBOK, 위험관리계획, 위험식별, 정성분석, PI매트릭스, 정량분석, EMV, 위험대응계획, 위험감시, 위험관리대장",
+    "extra": "",
+    "userId": "u1785080495031-033g",
+    "createdAt": "2026-07-26T15:41:35.064Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "ISO/IEC 42001:2023(AI 경영시스템)",
+    "definition": "조직의 AI 경영시스템(AIMS) 구축·운영 요구사항을 규정한 최초 국제표준이다.",
+    "mnemonic": "<축> PDCA 구조 / 10개 조항 / 인증 연계\n- PDCA: 4~6조 기획(Plan)-7·8조 지원·운용(Do)-9조 성과평가(Check)-10조 개선(Act)\n- 조항: 1적용범위 2인용표준 3용어 4조직상황 5리더십 6기획 7지원 8운용 9성과평가 10개선\n- 인증: CAT 2.0(AI 신뢰성)은 42001·38507·23894 기반, AI+ 품질인증과 병행\n<포인트> 42001은 조직(경영시스템) 대상, 23894는 제품·서비스 위험관리 대상",
+    "keyword": "AIMS, PDCA, 10개 조항, AI 영향평가, CAT 2.0, ISO/IEC 23894, ISO/IEC 38507, Responsible AI, AI 거버넌스",
+    "extra": "",
+    "userId": "u1785080495031-034g",
+    "createdAt": "2026-07-26T15:41:35.065Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "베이즈 정리(Bayes' Theorem)",
+    "definition": "사전확률에 새 증거를 반영해 사후확률로 갱신하는 조건부확률 이론이다.",
+    "mnemonic": "<축> 4요소 / 공식 / 유도 3단계 / 사례\n- 4요소: 사전확률 P(A1), 우도 P(B|A1), 증거 P(B), 사후확률 P(A1|B)\n- 공식: P(A1|B) = P(B|A1)·P(A1) / P(B)\n- 유도: 조건부확률 정의 → 확률의 곱셈법칙 → 전확률의 법칙\n- 사례: 유병률 10%, 양성 99%, 위양성 5% → 0.099/0.144 = 68.75%\n<포인트> 분모 P(B)를 전확률(0.1×0.99+0.9×0.05=0.144)로 푸는 게 핵심",
+    "keyword": "사전확률, 우도, 증거, 사후확률, 조건부확률, 확률의 곱셈법칙, 전확률, 확률 갱신, 나이브 베이즈",
+    "extra": "",
+    "userId": "u1785080495031-035g",
+    "createdAt": "2026-07-26T15:41:35.066Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "안면인식 결제 서비스(Face Pay)",
+    "definition": "얼굴 정보만으로 본인인증과 결제를 처리하는 카드리스 생체인증 서비스이다.",
+    "mnemonic": "<축> 기술 3분류 / 처리 5단계\n- 인식: CNN(특징 추출), ViT(가려짐·변형), Feature Extraction, NPU\n- 보안: Liveness Detection, PAD(프레젠테이션 공격), TEE\n- 인프라: Edge AI(단말 자체 인식), FIDO 2.0(생체인증 표준)\n- 절차: 서비스 등록→얼굴 등록→결제 요청(Liveness)→신원 매칭→결제 승인\n<포인트> 딥페이크·가면 공격 방어가 핵심 — Liveness/PAD + FDS 결합",
+    "keyword": "Liveness Detection, PAD, TEE, CNN, ViT, Feature Extraction, FIDO 2.0, Edge AI, 카드리스, 생체정보 보호",
+    "extra": "",
+    "userId": "u1785080495031-036g",
+    "createdAt": "2026-07-26T15:41:35.067Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "선도개발을 위한 개발방법론 테일러링(Tailoring)",
+    "definition": "표준 방법론을 선도개발 특성에 맞게 조정하는 맞춤형 적용 관리절차이다.",
+    "mnemonic": "<축> 절차 4단계 / 조정 / 문서화\n- 절차: 특징 정의→표준 프로세스 선정·검증→상위·세부 커스터마이징→테일러링 문서화\n- 선정: 반복 시연 가능한 Agile/Prototyping, 기술 Spike 수용 여부 검증\n- 조정: PoC→MVP→Baseline 생명주기, 중간보고 통합, 코드리뷰·시연 강화\n- 문서화: 기술·아키텍처 선택 이유 기록, 기술 전문가 중심 검토·승인\n<포인트> 관리문서는 최소화, 기술 가이드·환경설정서는 상세히",
+    "keyword": "선도개발, Agile, Prototyping, Spike, PoC, MVP, Baseline, 프로젝트 프로파일, 테일러링 정의서",
+    "extra": "",
+    "userId": "u1785080495031-037g",
+    "createdAt": "2026-07-26T15:41:35.068Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "자기회귀모형(AR)과 이동평균모형(MA)",
+    "definition": "과거 관측값 결합이 AR, 과거 백색잡음 결합이 MA인 시계열 모형이다.",
+    "mnemonic": "<축> AR / MA / ARIMA\n- AR: 현 시점을 과거 p 시점 자료로 설명, 자기상관성 표현, 안정성은 회귀계수가 결정\n- MA: 현 시점을 유한개 백색잡음의 선형결합으로 표현 → 항상 정상성 만족, 단기예측 유용\n- ARIMA(p,d,q): 비정상 시계열을 d번 차분해 정상화 후 AR(p)+MA(q) 결합\n<포인트> 차수 p 작으면 설명 부족·크면 과적합, 잔차가 백색잡음이면 모델 적합",
+    "keyword": "자기상관성, 정상성, 백색잡음, AR(1), AR(2), 차수 결정, 잔차분석, 차분, ARIMA, SARIMA",
+    "extra": "",
+    "userId": "u1785080495031-038g",
+    "createdAt": "2026-07-26T15:41:35.069Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "데이터 관측가능성(Data Observability)",
+    "definition": "데이터 파이프라인 전반의 상태·품질을 감지·진단·예방하는 관측 체계이다.",
+    "mnemonic": "<축> 핵심요소 5 / 기술요소 5 / 비교\n- 핵심 5: 최신성, 볼륨, 분포, 스키마, 데이터 계보\n- 기술 5: 메타데이터 수집, 데이터 프로파일링, 이상 탐지(AI/ML), 계보 추적, 알림·워크플로 연계\n- 비교: 관측가능성=감지+진단+예방·엔드투엔드·계보 기반 / 모니터링=이상 감지·특정 지표·임계값\n<포인트> 모니터링을 포함하되 원인과 영향까지 진단하는 운영 능력이라는 점",
+    "keyword": "최신성, 볼륨, 분포, 스키마, 데이터 계보, 메타데이터 수집, 데이터 프로파일링, 이상 탐지, 계보 추적, 데이터 다운타임",
+    "extra": "",
+    "userId": "u1785080495031-039g",
+    "createdAt": "2026-07-26T15:41:35.070Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "정보모델링의 참조 무결성(Referential Integrity)",
+    "definition": "모든 외래키 값이 참조 테이블의 기본키로 존재해야 하는 제약조건이다.",
+    "mnemonic": "<축> 3규칙 / 삭제·수정 옵션 / 입력 옵션\n- 3규칙: 삭제(기본키 삭제 시 연쇄), 입력(기본키 있어야 입력), 수정(연쇄 수정)\n- 삭제·수정: Cascade, Null, Default, Restrict(자식 참조 시 거부), No action\n- 입력: Automatic(부모 자동생성), Null, Default, Dependent(부모 있을 때만 허용)\n<포인트> 옵션 미지정 시 Restrict, 외래키는 Null 허용·기본키는 Null 불가",
+    "keyword": "기본키, 외래키, 삭제규칙, 입력규칙, 수정규칙, Cascade, Restrict, Dependent, Automatic, 개체무결성",
+    "extra": "",
+    "userId": "u1785080495031-040g",
+    "createdAt": "2026-07-26T15:41:35.071Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "TTPs(Tactics, Techniques and Procedures)",
+    "definition": "사이버공격의 목적·수단·절차를 계층적으로 정형화한 위협 프로파일이다.",
+    "mnemonic": "<축> 3계층 / 수립 5절차 / 활용\n- 3계층: 전술(전략적 목표)→기법(구체적 기술)→절차(도구·명령어·실행순서)\n- 5절차: 위협데이터 수집·분석→전술 정의→기법 맵핑→절차 상세화→방어 시나리오 우선순위\n- 활용: 선제적 방어·조기탐지, SOAR 최적화·CTI 연계, 위험평가로 보안투자 ROI 확대\n<포인트> 단순 IoC(IP·도메인) 차단의 한계를 넘어 행위 기반 능동적 방어로 전환(NIST SP 800-150)",
+    "keyword": "전술, 기법, 절차, MITRE ATT&CK, NIST SP 800-150, IoC, APT, 능동적 방어, SOAR, CTI",
+    "extra": "",
+    "userId": "u1785080495031-041g",
+    "createdAt": "2026-07-26T15:41:35.072Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "은행가 알고리즘(Banker's Algorithm)",
+    "definition": "자원 할당 전 안전상태를 검사해 교착상태를 회피하는 알고리즘이다.",
+    "mnemonic": "<축> 4대 자료구조 / 판정 / 회피 원리\n- 자료구조: AVAILABLE(가용 자원), MAX(최대 요구), ALLOCATION(할당 자원), NEED(추가 요구)\n- 관계: NEED = MAX - ALLOCATION, 요청이 NEED와 AVAILABLE 이하일 때만 시험 할당\n- 판정: 모든 프로세스를 끝낼 안전순서가 있으면 안전상태, 없으면 불안전상태\n<포인트> 불안전상태가 곧 교착은 아니다 — 교착 가능성 때문에 할당을 보류하는 회피 기법",
+    "keyword": "AVAILABLE, MAX, ALLOCATION, NEED, 안전상태, 불안전상태, 안전순서, 교착상태 회피",
+    "extra": "",
+    "userId": "u1785080495031-042g",
+    "createdAt": "2026-07-26T15:41:35.073Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "프롬프트 인젝션(Prompt Injection)",
+    "definition": "명령과 데이터를 못 가르는 LLM 특성을 악용해 지시문을 주입하는 공격이다.",
+    "mnemonic": "<축> 유형 4 / 대응 2단\n- 직접: Instruction Override, Jailbreak\n- 간접: Document Injection, RAG Context Hijack\n- 툴: Argument Manipulation, Tool Output Injection\n- 오용: Token Bomb, Prompt Leakage\n- 대응: 사전 신뢰경계·최소권한, 사후 출력검증·HITL\n<포인트> Jailbreak는 인젝션의 하위 유형, OWASP LLM Top10",
+    "keyword": "직접 인젝션, 간접 인젝션, Jailbreak, RAG Context Hijack, Tool Output Injection, Prompt Leakage, 신뢰경계 분리, 최소권한, Human-in-the-Loop, OWASP LLM Top10",
+    "extra": "",
+    "userId": "u1785080495031-043g",
+    "createdAt": "2026-07-26T15:41:35.074Z"
+  },
+  {
+    "category": "138회 1교시",
+    "topic": "모델 전도 공격(Model Inversion Attack)",
+    "definition": "모델 출력을 역추적해 학습에 쓰인 민감 데이터를 복원하는 공격이다.",
+    "mnemonic": "<축> 절차 4단계 / 대응 4가지\n- 절차: 대상 모델 분석(화이트/블랙박스·신뢰도 점수 제공 여부)→초기화(무작위 노이즈)→반복 쿼리·오차 계산→경사하강법으로 복원\n- 대응(학습): 차분 프라이버시로 통계적 노이즈 주입, Gradient Masking으로 가중치 은닉\n- 대응(운영): 출력 정보 최소화(최상위 결과만), 이상 쿼리 탐지로 반복 요청 차단\n<포인트> 신뢰도 점수 노출이 공격 성립 조건 — MaaS 확산으로 위험 증가",
+    "keyword": "신뢰도 점수, 경사하강법, 학습데이터 복원, 탐색적 공격, 차분 프라이버시, Gradient Masking, 출력 최소화, 이상 쿼리 탐지, MaaS",
+    "extra": "",
+    "userId": "u1785080495031-044g",
+    "createdAt": "2026-07-26T15:41:35.075Z"
+  },
+  {
+    "category": "138회 2교시",
+    "topic": "상용 DBMS의 오픈소스 DBMS 전환",
+    "definition": "상용 DBMS를 오픈소스로 바꿔 TCO·벤더종속성을 줄이는 전환이다",
+    "mnemonic": "<축> 배경 / 제약 / 절차 / HA\n- 배경: TCO·라이선스 절감, 벤더종속성 탈피, 스케일아웃·DBaaS\n- 제약: PL/SQL 비호환, 실행계획 변동, TDE·FGAC/VPD 구현난, 커넥션 풀링 한계\n- 절차: 준비평가→계획→스키마·데이터 이행→테스트·전환→운영최적화\n- HA: 프록시 VIP, Quorum 반동기 복제, 자동 Failover, Split-Brain 차단\n<포인트> 제약은 성능(SQL·옵티마이저)과 보안(TDE·VPD)으로 갈라 쓴다",
+    "keyword": "TCO 감축, 벤더종속성 탈피, PL/SQL 비호환, 실행계획 변동, TDE, FGAC/VPD, 커넥션 풀링, Quorum 반동기 복제, DCS(etcd), PITR",
+    "extra": "",
+    "userId": "u1785080495031-045g",
+    "createdAt": "2026-07-26T15:41:35.076Z"
+  },
+  {
+    "category": "138회 2교시",
+    "topic": "ISP(정보화전략계획)와 ISMP 비교",
+    "definition": "경영전략과 연계해 중장기 정보화 방향을 수립하는 계획활동이다",
+    "mnemonic": "<축> 목적 / 절차5 / ISMP비교\n- 목적: 전략 정합성, 중장기 비전, As-Is 진단, To-Be 모델, 과제·로드맵, 투자효율\n- 절차5: 환경분석→현황분석(As-Is)→전략수립→목표모델설계(To-Be)→통합이행계획\n- ISMP비교: ISP는 전략중심(Why·What)·전사·중장기, ISMP는 실행중심(How)·단위사업·단기, 산출물은 로드맵 vs RFP·요구사항정의서\n<포인트> 공통가이드 제9판 — 총구축비 20억원 미만 사업은 수립 의무 면제",
+    "keyword": "전략 정합성, 중장기 비전, To-Be 아키텍처, 이행 로드맵, 환경·현황분석, ISMP, RFP, 기능점수(FP), ISP·ISMP 수립 공통가이드 제9판",
+    "extra": "",
+    "userId": "u1785080495031-046g",
+    "createdAt": "2026-07-26T15:41:35.077Z"
+  },
+  {
+    "category": "138회 2교시",
+    "topic": "AI 학습용 GPU와 TPU(Tensor Processing Unit)",
+    "definition": "GPU는 범용 병렬 프로세서, TPU는 행렬연산 전용 ASIC 가속기이다",
+    "mnemonic": "<축> 구조 / 강약 / TPU선호 / 효율성\n- 구조: GPU는 SIMT+NVLink, TPU는 Systolic Array+ICI 토러스\n- 강약: GPU 유연성·CUDA 생태계 vs TPU 행렬연산 효율, 딥러닝 외 불가\n- TPU선호: 제어 오버헤드·데이터이동 최소화(On-chip 메모리)\n- 효율성: 동일전력 대비 TOPS/W 우위, XLA 컴파일 최적화\n<포인트> 개발주체 NVIDIA vs Google, PyTorch vs TensorFlow·JAX",
+    "keyword": "SIMT, Systolic Array, CUDA, TensorFlow/JAX, 데이터이동 최소화, On-chip 메모리, Performance per Watt(TOPS/W), NVLink, ICI·TPU POD, XLA",
+    "extra": "",
+    "userId": "u1785080495031-047g",
+    "createdAt": "2026-07-26T15:41:35.078Z"
+  },
+  {
+    "category": "138회 2교시",
+    "topic": "클라우드 네이티브 전환의 TA와 AA 역할·협업",
+    "definition": "인프라를 맡는 TA와 애플리케이션 구조를 맡는 AA의 역할 분담이다",
+    "mnemonic": "<축> 범위 / 책임 / 산출물 / 협업\n- 범위: TA는 K8s·IaC·Service Mesh, AA는 MSA·API GW·12-Factor\n- 책임: TA 가용성·보안·클러스터, AA 도메인설계·정합성·독립배포\n- 산출물: TA는 IaC·매니페스트·DR매뉴얼, AA는 MSA설계서·API명세\n- 협업: 설계(DevSecOps)→구축(IaC·관측성)→운영(Auto-Scaling)\n<포인트> Auto-Scaling(TA)+서킷브레이커(AA) 통합설계 = 원팀 체계",
+    "keyword": "TA, AA, 클라우드 네이티브, IaC, Kubernetes, Service Mesh, MSA, 12-Factor App, DevSecOps, One-Team",
+    "extra": "",
+    "userId": "u1785080495031-048g",
+    "createdAt": "2026-07-26T15:41:35.079Z"
+  },
+  {
+    "category": "138회 2교시",
+    "topic": "재공학과 역공학(Re/Reverse-engineering)",
+    "definition": "기존 SW를 분석·재구성해 유지보수성과 재사용성을 높이는 기법이다",
+    "mnemonic": "<축> 3R / 재공학 / 역공학\n- 3R: 역공학(Reverse) / 재공학(Re) / 재사용(Reuse) — 유지보수의 3대 축\n- 재공학: 기존 시스템을 재구조화(Restructuring)해 유지보수성을 높이고 수명을 연장\n- 역공학: de-compile 등으로 코드에서 설계·명세를 역추적해 문서를 복원(문서화)하고 재사용\n<포인트> 방향이 갈린다 — 역공학은 코드→설계(상향), 재공학은 설계 개선→코드 재생성",
+    "keyword": "유지보수, 3R, 역공학, 재공학, 재사용, de-compile, 문서화, 재구조화",
+    "extra": "",
+    "userId": "u1785080495031-049g",
+    "createdAt": "2026-07-26T15:41:35.080Z"
+  },
+  {
+    "category": "138회 2교시",
+    "topic": "프로세스 메모리 4대 영역(코드·데이터·힙·스택)",
+    "definition": "프로세스 가상주소공간을 코드·데이터·힙·스택으로 나눈 구조이다",
+    "mnemonic": "<축> 코드 / 데이터 / 힙 / 스택\n- 코드: 기계어·함수 로직, R-X 쓰기금지, 라이브러리 공유, ASLR·NX\n- 데이터: 전역·정적 변수, .data/.bss(0 초기화), rodata, 정적 수명\n- 힙: malloc 동적할당, brk/sbrk·mmap 확장, 누수·단편화·UAF\n- 스택: 인자·지역변수·반환주소 프레임, LIFO 자동관리, 오버플로우\n<포인트> 권한은 Code R-X, Data·Heap·Stack R-W+NX, rodata는 R--",
+    "keyword": "가상주소공간(VAS), .data/.bss, rodata, malloc/free, mmap, 단편화, 메모리 누수, UAF, LIFO, 스택 오버플로우",
+    "extra": "",
+    "userId": "u1785080495031-050g",
+    "createdAt": "2026-07-26T15:41:35.081Z"
+  },
+  {
+    "category": "138회 3교시",
+    "topic": "생성형 AI 서비스 이용자 보호 가이드라인(2025.2.28)",
+    "definition": "생성형 AI 이용자 권익 보호를 위해 실천방안을 제시한 가이드라인이다.",
+    "mnemonic": "<축> 서비스 안전성 / 서비스 운영 / 생성 콘텐츠\n- 안전성: 이용자 인격권 보호(혐오·명예훼손 통제), 다양성 존중(편향 저감·신고)\n- 운영: 결정 과정 알리기(워터마크·안내문구), 입력 데이터 관리(학습활용 사전고지·동의/거부)\n- 콘텐츠: 문제 해결 책임과 참여(피해구제·감사), 건전한 유통·배포(라벨링 추적·차단)\n<포인트> 문제는 4가지를 묻지만 콘텐츠 측면 2가지까지 6가지로 답하면 갈린다",
+    "keyword": "인격권 보호, 다양성 존중, 결정 과정 알리기, 입력 데이터 관리, 워터마크, 생성형 인공지능 생성물, 개발사, 서비스 제공자, 이용자 보호 실행방식",
+    "extra": "",
+    "userId": "u1785080495031-051g",
+    "createdAt": "2026-07-26T15:41:35.082Z"
+  },
+  {
+    "category": "138회 3교시",
+    "topic": "로우코드(Low Code) 플랫폼",
+    "definition": "최소한의 코딩으로 시각적 모델링을 통해 앱을 개발하는 플랫폼이다.",
+    "mnemonic": "<축> 주요 특징 / 노코드 비교 / 한계점\n- 특징: 시각적 모델링(Drag&Drop), 재사용 컴포넌트, 시민 개발자, 확장성, RBAC 거버넌스\n- 비교: 노코드는 코딩 불필요·폐쇄형 Monolithic·벤더종속 높음, 로우코드는 최소코딩·개방형 MSA·커스텀 코드\n- 한계: 복잡 로직·대량 트랜잭션 성능, 디버깅 불투명·보안 블랙박스, 벤더 Lock-In, 기술부채\n<포인트> 극복은 핵심로직 MSA 분리·표준 API·정기 리팩토링·규제영역 전통개발 병행",
+    "keyword": "시각적 모델링, 재사용 컴포넌트, 시민 개발자, 노코드 비교, MSA 개방형, 벤더 Lock-In, 기술부채, 리팩토링, 전통개발 병행",
+    "extra": "",
+    "userId": "u1785080495031-052g",
+    "createdAt": "2026-07-26T15:41:35.083Z"
+  },
+  {
+    "category": "138회 3교시",
+    "topic": "분산 DB 구축을 위한 데이터베이스 분할",
+    "definition": "하나의 논리적 릴레이션을 여러 물리적 단편으로 나누는 기법이다.",
+    "mnemonic": "<축> 전제조건 / 분할단위 / 수평 / 수직\n- 전제: 완전성, 재생성, 상호중첩 배제\n- 단위: 스키마-테이블-레코드-속성-혼합-파티션/샤드 (뒤로 갈수록 복잡도·성능↑)\n- 수평: 행 기준, Shard Key로 별도 서버, Scale-out, Range/Key/Directory 분할\n- 수직: 컬럼 기준, PK 중복 포함·동일 서버, Scale-up, 접근빈도/기능/민감정보\n<포인트> 수평=Scale-out·샤드키 vs 수직=Scale-up·PK 중복",
+    "keyword": "완전성, 재생성, 상호중첩 배제, 분할 단위, 파티션/샤드, 수평분할, 수직분할, Shard Key, 데이터 지역성",
+    "extra": "",
+    "userId": "u1785080495031-053g",
+    "createdAt": "2026-07-26T15:41:35.084Z"
+  },
+  {
+    "category": "138회 3교시",
+    "topic": "가용성 보장 — FTS와 HA 구현·비교",
+    "definition": "무중단을 노리는 FTS와 신속 Failover로 중단을 줄이는 HA이다.",
+    "mnemonic": "<축> FTS 3단계 / HA 3유형 / 비교\n- FTS: 감지(Heartbeat)-진단-통제/복구(중복·격리), TMR·Watchdog·체크포인팅, 후향/전향 복구\n- HA: Hot Standby / Mutual Takeover / Concurrent Access, 99.999%\n- 비교: Failover 0초 vs 30~400초, 비용·복잡도 FTS↑, FTS=미션크리티컬 / HA=일반\n<포인트> HA 복구절차는 장애발생-감지-자원이전-재기동 4단계",
+    "keyword": "결함 감지, TMR, Watchdog Timer, 후향/전향 복구, Hot Standby, Mutual Takeover, Concurrent Access, Failover, Five Nines",
+    "extra": "",
+    "userId": "u1785080495031-054g",
+    "createdAt": "2026-07-26T15:41:35.085Z"
+  },
+  {
+    "category": "138회 3교시",
+    "topic": "공격 표면·공격 벡터와 측면 이동(Lateral Movement)",
+    "definition": "공격 접점 총합인 표면과 침투 경로인 벡터로 내부 확산하는 위협이다.",
+    "mnemonic": "<축> 표면 / 벡터 / 측면이동 4단계 / 대응\n- 표면: 물리·네트워크·소프트웨어·인적 접점 총합, Shadow IT·공급망으로 비가시 영역 확대\n- 벡터: 네트워크/애플리케이션/사회공학/공급망/물리 5분류, 멀티벡터화\n- 측면이동: 내부정찰-자격증명 탈취-권한상승-내부확산, 목적은 확장과 전이\n- 기법: 포트스캐닝·AD탐색, LSASS 덤프·SAM, UAC 우회·토큰복제, PtH·PtT·SMB\n<포인트> 대응은 ASM·XDR·제로트러스트 세그멘테이션",
+    "keyword": "공격 표면, 공격 벡터, 내부정찰, 자격증명 탈취, 권한상승, 내부확산, Pass-the-Hash, Pass-the-Ticket, ASM, 제로트러스트",
+    "extra": "",
+    "userId": "u1785080495031-055g",
+    "createdAt": "2026-07-26T15:41:35.086Z"
+  },
+  {
+    "category": "138회 3교시",
+    "topic": "ISMS 인증체계와 ISMS-P 간편인증",
+    "definition": "정보통신망법 제47조에 근거한 정보보호 관리체계 인증제도이다.",
+    "mnemonic": "<축> 인증영역·근거 / 관리과정 / 간편인증 / 강화\n- 영역: 관리체계 수립·운영 16 + 보호대책 요구사항 64, 정보통신망법 제47조·ISMS 고시\n- 관리과정: 정책수립-범위설정-위험관리-구현-사후관리 (5단계 14통제)\n- 간편인증: 소기업·정보통신 매출 300억 미만 중기업, 62~65개 항목(ISP·IDC·금융 제외)\n- 강화: 의무화, 중대결함 인증취소, 예비심사 반려, 모의침투 검증\n<포인트> 16+64와 간편인증 62/65 항목 수가 변별점",
+    "keyword": "정보통신망법 제47조, 관리체계 수립 및 운영, 보호대책 요구사항, 관리과정 5단계, ISMS-P 간편인증, 중소기업기본법, 인증수수료, 인증 의무화, 모의침투",
+    "extra": "",
+    "userId": "u1785080495031-056g",
+    "createdAt": "2026-07-26T15:41:35.087Z"
+  },
+  {
+    "category": "138회 4교시",
+    "topic": "인공지능기본법(2026.1.22 시행)",
+    "definition": "인공지능 발전과 신뢰기반 조성을 규율하는 국가 기본법이다.",
+    "mnemonic": "<축> 목적·기본원칙 / 기본계획 / 전략위원회 / 육성시책\n- 목적·원칙: 인공지능 발전과 신뢰기반 조성, 우선허용·사후규제와 신뢰성·안전성\n- 기본계획: 인공지능 진흥과 신뢰 확보를 위한 중장기 국가계획\n- 전략위원회: 국가인공지능전략위원회가 정책 심의·조정 총괄\n- 육성시책: 기술개발·산업육성 시책 4가지\n<포인트> 정식명칭은 「인공지능 발전과 신뢰기반 조성 등에 관한 기본법」, 고위험영역 규율이 쟁점",
+    "keyword": "인공지능기본법, 2026.1.22 시행, 우선허용·사후규제, 고위험영역, 신뢰성·안전성, 국가인공지능전략위원회, 인공지능 기본계획, 산업육성 시책",
+    "extra": "",
+    "userId": "u1785080495031-057g",
+    "createdAt": "2026-07-26T15:41:35.088Z"
+  },
+  {
+    "category": "138회 4교시",
+    "topic": "단방향 해시함수와 Rainbow Table 대응",
+    "definition": "임의 길이 입력을 고정길이 다이제스트로 변환하는 단방향 함수이다.",
+    "mnemonic": "<축> 문제점 / Rainbow / 솔트·키스트레칭 / 활용\n- 문제점: 결정성 패턴노출, GPU 크래킹, 사전계산 취약, MD5 충돌\n- Rainbow: H/R 체인의 Start·End만 저장하는 시간-공간 트레이드오프\n- 대응: 솔트로 테이블 재사용 차단, 키스트레칭(PBKDF2·bcrypt·Argon2)으로 대입비용 증가\n- 활용: 무결성, 전자서명·HMAC, 계정보호, 포렌식·IOC\n<포인트> 절차는 End 매칭→Start 조회→체인 재계산→평문 도출",
+    "keyword": "단방향 해시함수, 다이제스트, 사전공격, 브루트포스(GPU), Rainbow Table, Reduction 함수, Start/End 체인, Time-Memory Tradeoff, Salt, Key Stretching",
+    "extra": "",
+    "userId": "u1785080495031-058g",
+    "createdAt": "2026-07-26T15:41:35.089Z"
+  },
+  {
+    "category": "138회 4교시",
+    "topic": "6G AI-Native Network",
+    "definition": "설계 단계부터 AI를 필수 요소로 내장해 스스로 진화하는 6G 네트워크이다.",
+    "mnemonic": "<축> 자율 최적화 / AI-RAN / 디지털트윈 관리\n- 자율 최적화: 학습·적응·제어로 최적 자원할당(NW 파운데이션 모델·지능형 위성통신·종단간 NW)\n- AI-RAN: RAN에 AI 적용, 플랫폼(엣지 학습·추론)·무선링크 성능향상·통신센싱 융합(ISAC)\n- 디지털트윈: 가상복제본서 장애예측·최적화 검증 후 실제망 적용, 물리NW/트윈/App 3계층\n<포인트> 특징은 AI 내재화·실시간 의사결정·E2E 지능화, 트윈은 폐쇄루프(Closed-loop)",
+    "keyword": "AI-Native Network, 자율 최적화, NW 파운데이션 모델, AI-RAN, ISAC, 디지털트윈 네트워크, 폐쇄루프, 3계층 구조, 에너지 효율·ESG",
+    "extra": "",
+    "userId": "u1785080495031-059g",
+    "createdAt": "2026-07-26T15:41:35.090Z"
+  },
+  {
+    "category": "138회 4교시",
+    "topic": "오류 제어 — Stop-and-Wait/Go-Back-N ARQ",
+    "definition": "전송 중 발생한 비트 오류를 검출·정정해 신뢰성을 보장하는 기술이다.",
+    "mnemonic": "<축> 검출 / 정정 / Stop-and-Wait / Go-Back-N\n- 검출: 패리티비트, 블록합, 체크섬, CRC\n- 정정: FEC는 자체 정정, BEC는 ARQ 재전송\n- Stop-and-Wait: ACK 받고 다음 전송, 오류 패킷만 재전송(윈도우1, Half-Duplex)\n- Go-Back-N: 윈도우 N 연속전송, 오류 이후 전부 재전송(누적ACK)\n<포인트> 오류 프레임만 재전송은 Selective Repeat, 6G는 Hybrid ARQ",
+    "keyword": "오류 검출, 오류 정정, 패리티비트, 체크섬, CRC, FEC, BEC, Stop-and-Wait ARQ, Go-Back-N ARQ, 슬라이딩 윈도우",
+    "extra": "",
+    "userId": "u1785080495031-060g",
+    "createdAt": "2026-07-26T15:41:35.091Z"
+  },
+  {
+    "category": "138회 4교시",
+    "topic": "랜섬웨어와 RaaS(Ransomware as a Service)",
+    "definition": "파일을 암호화하고 복호화 대가로 금전을 요구하는 악성프로그램이다.",
+    "mnemonic": "<축> 개념 / 감염경로 / 암호화 / 대응\n- RaaS: 다크웹에서 제작자가 툴 제공, 공격자와 수익 배분하는 서비스형 범죄\n- 감염경로: 홈페이지 방문, 이메일·SNS, 웜(자가전파), 타깃형(APT)\n- 암호화: C&C 공개키 수신·AES 생성 → 대칭키를 공개키로 이중잠금 → VSS 삭제·랜섬노트\n- 대응: 격리(랜선 차단) → 분석·증거보존(종류 식별) → 복구(공식 복호화툴·재설치)\n<포인트> 전원 강제 종료 금지 — 메모리의 암호화 키가 사라진다",
+    "keyword": "랜섬웨어, RaaS, 다크웹, 홈페이지 방문, 이메일·SNS 유포, 웜, 타깃형(APT), 하이브리드 암호화, 섀도 복사본(VSS) 삭제, 침해사고 대응",
+    "extra": "",
+    "userId": "u1785080495031-061g",
+    "createdAt": "2026-07-26T15:41:35.092Z"
+  },
+  {
+    "category": "138회 4교시",
+    "topic": "개인정보보호강화기술(PET)",
+    "definition": "개인 데이터 기밀성을 지키며 수집·분석·공유를 가능하게 하는 기술이다.",
+    "mnemonic": "<축> 등장배경 / 기술분류 / 3대기술 비교\n- 배경: AI·디지털전환 데이터활용, 프라이버시 보호, 표준화(ITU-T SG17)\n- 분류: 암호화(HE·IBE·SMPC) / 분산(TEE·연합학습) / 데이터(차분프라이버시·합성데이터·영지식증명)\n- 비교: 동형암호=원본 무노출·정확100%·매우느림, 차분프라이버시=노이즈로 정확도감소, 합성데이터=원본대체(GAN·VAE)\n<포인트> 적용단계로 갈린다 — 연산단계(HE)/통계공개(DP)/데이터유통(합성데이터)",
+    "keyword": "PET, 동형암호(HE), 신원기반암호화(IBE), SMPC, TEE, 연합학습, 차분프라이버시, 합성데이터, 영지식증명, ITU-T SG17",
+    "extra": "",
+    "userId": "u1785080495031-062g",
+    "createdAt": "2026-07-26T15:41:35.093Z"
+  }
+]
