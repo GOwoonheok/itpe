@@ -87,6 +87,10 @@
 }
 .iv-cat {
     flex: 1;
+    min-width: 0;               /* 헤더 버튼 4개와 나란히 — 좁은 화면에서 넘치지 않게 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     text-align: center;
     font-weight: 800;
     font-size: 1rem;
@@ -107,6 +111,19 @@
 }
 .iv-star.is-on { color: #f5c542; border-color: #f5c54255; background: #f5c5421a; }
 .iv-head-spacer { flex: none; width: 44px; }
+
+/* 🖨 인쇄 버튼 — 현재 범위를 A4 출력 페이지(새 탭)로 */
+.iv-print {
+    flex: none;
+    padding: 8px 10px;
+    background: var(--surface-2);
+    color: var(--text-muted);
+    border: 1px solid #ffffff14;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1;
+}
 
 .iv-progress {
     height: 4px;
@@ -153,6 +170,43 @@
     color: var(--text-dim);
     font-size: 0.86rem;
     margin: 16px 0 0;
+}
+
+/* ---- 음성 낭독(TTS) 바 — 질문 아래. 헤더·하단 툴바는 건드리지 않는다 ---- */
+.sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.iv-tts {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+.iv-tts-btn {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #ffffff1a;
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+.iv-tts-btn:disabled { opacity: 0.4; }
+.iv-tts-label { font-size: 0.82rem; color: var(--text-dim); font-weight: 700; }
+.iv-tts select {
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: 1px solid #ffffff1a;
+    background: var(--surface-2);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
 }
 
 /* ---- 4단 구술 답변 ---- */
@@ -240,7 +294,7 @@
 .iv-refs { margin-top: 4px; font-size: 0.86rem; color: var(--text-muted); }
 .iv-refs a { color: var(--accent-cyan); text-decoration: underline; word-break: break-all; }
 
-/* ============ 소개하기 화면 ============ */
+/* ============ 소개하기 화면 — 카드 1장씩 넘기며 낭독 ============ */
 .iv-intro-screen { display: flex; flex-direction: column; gap: 12px; }
 .iv-intro-note {
     text-align: center;
@@ -248,27 +302,34 @@
     color: var(--text-muted);
     margin: 0;
 }
-.iv-intro-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    max-width: 640px;
-    width: 100%;
-    margin: 0 auto;
+/* ✏ 편집 토글 — ☆/🖨 와 같은 헤더 아이콘 버튼 계열 */
+.iv-edit {
+    flex: none;
+    padding: 8px 12px;
+    background: var(--surface-2);
+    color: var(--text-muted);
+    border: 1px solid #ffffff14;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1;
 }
-.iv-intro-card {
-    background: var(--surface);
-    border: 1px solid #ffffff10;
-    border-radius: 16px;
-    padding: 16px 16px 18px;
+.iv-edit.is-on { color: var(--accent-cyan); border-color: #4dd0e155; background: #4dd0e11a; }
+.iv-intro-hint { margin: 10px 0 0; font-size: 0.84rem; color: var(--text-dim); font-weight: 600; }
+.iv-intro-body {
+    margin-top: 14px;
+    font-size: 1.12rem;
+    line-height: 1.75;
+    color: var(--text);
+    word-break: keep-all;
 }
-.iv-intro-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-.iv-intro-label { flex: none; white-space: nowrap; font-size: 1.05rem; font-weight: 800; color: var(--text); }
-.iv-intro-hint { flex: 1; min-width: 0; font-size: 0.8rem; color: var(--text-dim); font-weight: 600; }
+.iv-intro-body p { margin: 0 0 14px; }
+.iv-intro-body p:last-child { margin-bottom: 0; }
 .iv-intro-ta {
     width: 100%;
     box-sizing: border-box;
-    min-height: 120px;
+    margin-top: 14px;
+    min-height: 240px;
     resize: vertical;
     padding: 12px 14px;
     border-radius: 12px;

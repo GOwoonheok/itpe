@@ -1,0 +1,147 @@
+/* 면접자료 A4 출력 — 지면(종이) 스타일. 이 파일만 Paged.js preview() 에 전달한다.
+   상세 답변집 = 1단(body.is-full) / 회독 요약본 = 2단(body.is-brief).
+   ★ 도구막대·진행표시 등 화면 크롬은 css/interview-print-ui.css 에 둔다 —
+     Paged.js 가 이 파일의 @media print 를 화면에도 적용하기 때문(크롬이 사라짐).
+   css/print.css(카드 출력)와 독립 — ivp- 프리픽스로 스코프. */
+:root { --ink: #111; --sub: #555; --dim: #777; --line: #d5d5d5; --accent: #2f80ed; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+    font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+    color: var(--ink);
+    background: #f3f3f3;          /* 화면에서 종이 느낌 */
+    font-size: 10pt;
+    line-height: 1.5;
+}
+
+/* ===== 본문 — 화면에서는 A4 폭으로 가운데 정렬 ===== */
+#ivp-root { max-width: 210mm; margin: 0 auto; padding: 12mm; background: #fff; }
+.ivp-empty { padding: 40px; text-align: center; color: var(--sub); }
+
+/* ===== 표지 겸 목차 (블록 단위 + 실제 페이지번호) ===== */
+.ivp-toc { break-after: page; }
+.ivp-toc-title {
+    font-size: 17pt; font-weight: 800; margin: 0 0 2mm;
+    padding-bottom: 2mm; border-bottom: 2px solid var(--ink);
+}
+.ivp-toc-sub { margin: 0 0 6mm; font-size: 9.5pt; color: var(--sub); }
+.ivp-toc-cat {
+    font-size: 12pt; font-weight: 800; color: var(--accent);
+    margin: 5mm 0 2mm; break-inside: avoid; break-after: avoid;
+}
+.ivp-toc-entry {
+    display: flex; align-items: baseline; gap: 4px;
+    text-decoration: none; color: var(--ink);
+    font-size: 10pt; padding: 0.8mm 0; break-inside: avoid;
+}
+.ivp-toc-text { flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ivp-toc-cnt { flex: none; font-size: 8.5pt; color: var(--dim); }
+.ivp-toc-dots { flex: 1 1 auto; border-bottom: 1px dotted #bbb; min-width: 6mm; }
+.ivp-toc-page { flex: none; min-width: 2.5em; text-align: right; font-variant-numeric: tabular-nums; color: var(--sub); }
+.ivp-toc-note { margin: 8mm 0 0; padding: 3mm 4mm; background: #f4f7fd; border-left: 3px solid var(--accent); font-size: 9pt; color: var(--sub); }
+
+/* ===== 카테고리 · 블록 ===== */
+.ivp-cat { break-before: page; }
+.ivp-cat:first-of-type { break-before: auto; }
+.ivp-cat-title {
+    font-size: 14pt; font-weight: 800; margin: 0 0 4mm;
+    padding-bottom: 1.5mm; border-bottom: 2px solid var(--ink);
+}
+.ivp-block-title {
+    font-size: 11pt; font-weight: 800; color: var(--accent);
+    margin: 4mm 0 2mm; padding-bottom: 1mm; border-bottom: 1px solid #dbe6f7;
+    break-inside: avoid; break-after: avoid-column; break-after: avoid;
+}
+.ivp-flow > .ivp-block-title:first-child { margin-top: 0; }
+
+/* ===== 상세(1단) / 요약(2단) 흐름 ===== */
+body.is-full .ivp-flow { column-count: 1; }
+body.is-brief .ivp-flow {
+    column-count: 2; column-gap: 9mm; column-rule: 0.3mm solid #c8c8c8;
+}
+
+/* ===== 문항 블록 =====
+   상세(1단)는 문항이 반쪽 이상이라 통째로 avoid 하면 한 쪽에 한 문항만 들어가 절반이 빈다.
+   → 문항은 쪽을 채우며 흐르게 두되(auto), 4단 답변·압박대응 같은 하위 블록만 avoid 해
+   쪽 경계가 항상 블록 사이에서 떨어지게 한다. 요약(2단)은 짧으므로 문항 통째로 avoid. */
+.ivp-item {
+    break-inside: auto;
+    margin: 0 0 3mm; padding: 2mm 2.6mm;
+    border: 1px solid var(--line); border-left: 3px solid var(--accent);
+    border-radius: 4px; background: #fff;
+}
+.ivp-q-row { display: flex; align-items: baseline; gap: 5px; break-after: avoid; }
+.ivp-n {
+    flex: none; display: inline-block; min-width: 1.5em; text-align: center;
+    font-size: 8.5pt; font-weight: 800; color: #fff; background: var(--accent);
+    border-radius: 3px; padding: 0.4mm 1mm;
+}
+.ivp-q { flex: 1 1 auto; margin: 0; font-size: 11pt; font-weight: 800; line-height: 1.4; }
+.ivp-prob { flex: none; font-size: 8pt; color: var(--dim); font-variant-numeric: tabular-nums; }
+
+/* 4단 구술 답변 — 라벨을 좌측 열로 빼 한 줄씩 절약. 색 테두리로 흑백 인쇄에서도 톤 구분 */
+.ivp-part {
+    --c: #888;
+    display: grid; grid-template-columns: 12mm 1fr; column-gap: 2mm; align-items: start;
+    margin-top: 1.4mm; padding-left: 2mm; border-left: 2px solid var(--c);
+    break-inside: avoid;
+}
+.ivp-lab {
+    font-size: 8pt; font-weight: 800; color: var(--c); text-align: center;
+    border: 1px solid var(--c); border-radius: 3px; padding: 0.2mm 0; margin-top: 0.4mm;
+}
+.ivp-txt { font-size: 9.5pt; line-height: 1.48; }
+.ivp-txt p { margin: 0 0 1.2mm; }
+.ivp-txt p:last-child { margin-bottom: 0; }
+.ivp-part.p-restate   { --c: #2f80ed; }
+.ivp-part.p-structure { --c: #1f9d55; }
+.ivp-part.p-concept   { --c: #7a4fd0; }
+.ivp-part.p-case      { --c: #b8860b; }
+
+/* 키워드 칩 */
+.ivp-kws { margin-top: 1.6mm; padding-top: 1.2mm; border-top: 1px dashed #ddd; break-inside: avoid; }
+.ivp-kw {
+    display: inline-block; margin: 0 1mm 0.8mm 0; padding: 0.2mm 1.5mm;
+    font-size: 8pt; font-weight: 700; color: #333;
+    background: #f0f2f5; border: 1px solid #dfe3e8; border-radius: 3px;
+}
+
+/* 면접관 압박 대응 + 함정 */
+.ivp-guard {
+    margin-top: 1.6mm; padding: 1.5mm 2.2mm; background: #f7f9fc;
+    border: 1px solid #e2e8f2; border-radius: 3px; break-inside: avoid;
+}
+.ivp-guard-h { font-size: 8.2pt; font-weight: 800; color: #2b6cb0; margin-bottom: 0.8mm; }
+.ivp-guard-list { margin: 0; padding-left: 4mm; }
+.ivp-guard-list li { font-size: 8.6pt; line-height: 1.42; margin-bottom: 0.6mm; }
+.ivp-pit { margin: 1.2mm 0 0; font-size: 8.6pt; line-height: 1.42; color: #a02128; }
+.ivp-refs { margin-top: 1.5mm; font-size: 8.5pt; color: var(--dim); word-break: break-all; }
+
+/* ===== 요약본 전용 ===== */
+.ivp-item.is-brief { break-inside: avoid; padding: 2mm 2.4mm; margin-bottom: 3mm; }
+.ivp-item.is-brief .ivp-q { font-size: 9.8pt; }
+.ivp-brief-s { margin-top: 1.4mm; font-size: 9pt; font-weight: 700; color: #1f9d55; line-height: 1.45; }
+.ivp-brief-c { margin-top: 1mm; font-size: 9.2pt; line-height: 1.5; }
+.ivp-item.is-brief .ivp-kws { margin-top: 1.4mm; padding-top: 1.2mm; }
+.ivp-item.is-brief .ivp-kw { font-size: 7.8pt; }
+
+/* ===== 페이지번호 (Paged.js 레이아웃 후 JS가 주입) ===== */
+.pagedjs_pagebox { position: relative; }
+.ivp-pageno {
+    position: absolute; bottom: 4mm; left: 50%; transform: translateX(-50%);
+    font-size: 8.5pt; color: var(--dim);
+    font-variant-numeric: tabular-nums; pointer-events: none;
+}
+
+/* ===== 인쇄 규칙 =====
+   Paged.js 는 이 블록을 화면에도 적용한다 — 지면에만 해당하는 규칙만 둘 것.
+   화면 크롬(도구막대·진행표시) 숨김은 css/interview-print-ui.css 담당. */
+@page { size: A4; margin: 12mm; }
+@media print {
+    body { background: #fff; }
+    #ivp-root { max-width: none; margin: 0; padding: 0; }
+    .ivp-item, .ivp-n, .ivp-lab, .ivp-kw, .ivp-guard, .ivp-toc-note {
+        -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+}

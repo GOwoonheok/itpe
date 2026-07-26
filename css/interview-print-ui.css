@@ -1,0 +1,47 @@
+/* 면접자료 출력 — 화면 크롬(도구막대·진행표시) 전용.
+   ★ 이 파일은 Paged.js 의 preview(html, styles, …) 에 넘기지 않는다.
+   Paged.js 는 넘겨받은 스타일시트의 @media print 블록을 화면에도 적용하므로,
+   여기서 도구막대를 숨기면 지면 분할 직후 도구막대가 사라진다.
+   지면 스타일은 css/interview-print.css 가 담당(그쪽만 Paged.js 에 전달). */
+:root { --ui-ink: #111; --ui-sub: #555; --ui-dim: #777; --ui-line: #d5d5d5; --ui-accent: #2f80ed; }
+
+.ivp-toolbar {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
+    padding: 10px 16px; background: #fff; border-bottom: 1px solid var(--ui-line);
+    font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+    color: var(--ui-ink);
+}
+.ivp-tb-group { display: flex; align-items: center; gap: 6px; }
+.ivp-tb-label { font-size: 9pt; font-weight: 700; color: var(--ui-sub); }
+.ivp-toolbar select {
+    font: inherit; font-size: 9.5pt; padding: 6px 8px;
+    border: 1px solid #c4c4c4; border-radius: 6px; background: #fff; color: var(--ui-ink);
+}
+.ivp-seg { display: inline-flex; border: 1px solid #c4c4c4; border-radius: 6px; overflow: hidden; }
+.ivp-seg button {
+    font: inherit; font-size: 9.5pt; font-weight: 700; padding: 6px 12px;
+    border: 0; background: #fff; color: var(--ui-sub); cursor: pointer;
+}
+.ivp-seg button + button { border-left: 1px solid #e0e0e0; }
+.ivp-seg button.is-on { background: var(--ui-accent); color: #fff; }
+.ivp-tb-check { display: flex; align-items: center; gap: 5px; font-size: 9.5pt; color: var(--ui-sub); cursor: pointer; }
+.ivp-tb-check input:disabled + span, .ivp-tb-check:has(input:disabled) { opacity: 0.45; }
+.ivp-print-btn {
+    font: inherit; font-weight: 700; font-size: 9.5pt; padding: 7px 14px;
+    border: 1px solid var(--ui-accent); color: #fff; background: var(--ui-accent);
+    border-radius: 6px; cursor: pointer;
+}
+.ivp-hint { color: var(--ui-dim); font-size: 8.5pt; }
+
+#ivp-progress {
+    position: fixed; inset: 0; z-index: 99999;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(20, 20, 22, 0.82); color: #fff;
+    font: 600 15px/1.7 system-ui, sans-serif; text-align: center;
+}
+
+/* 실제 인쇄에서만 크롬을 감춘다 (Paged.js 가 건드리지 않는 시트라 화면에는 영향 없음) */
+@media print {
+    .ivp-toolbar, #ivp-progress { display: none !important; }
+}

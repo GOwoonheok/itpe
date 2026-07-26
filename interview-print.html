@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>면접자료 출력 — ITPE Flash</title>
+    <script src="js/auth.js"></script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+    <!-- ui = 화면 크롬(Paged.js 에 넘기지 않음) / print = 지면(Paged.js 에 전달) -->
+    <link href="css/interview-print-ui.css" rel="stylesheet">
+    <link href="css/interview-print.css" rel="stylesheet">
+    <!-- Paged.js: 목차의 진짜 페이지번호 계산용. 자체 호스팅(외부 네트워크 불필요), auto:false 수동 실행 -->
+    <script>window.PagedConfig = { auto: false };</script>
+    <script src="js/vendor/paged.polyfill.js"></script>
+</head>
+<body class="is-full">
+    <div class="ivp-toolbar" id="ivp-toolbar">
+        <div class="ivp-tb-group">
+            <label class="ivp-tb-label" for="ivp-cat">범위</label>
+            <select id="ivp-cat"></select>
+        </div>
+        <div class="ivp-tb-group">
+            <span class="ivp-tb-label">형식</span>
+            <span class="ivp-seg">
+                <button type="button" data-density="full">상세 답변집</button>
+                <button type="button" data-density="brief">회독 요약본</button>
+            </span>
+        </div>
+        <label class="ivp-tb-check"><input type="checkbox" id="ivp-guard"> 압박 대응 포함</label>
+        <button type="button" class="ivp-print-btn" id="ivp-print">🖨 PDF로 저장 / 인쇄</button>
+        <span class="ivp-hint">인쇄 대화상자에서 "PDF로 저장" · 배경 그래픽 켜기</span>
+    </div>
+    <main id="ivp-root">
+        <!-- js/interview-print.js 가 data/interview/*.json 으로 채웁니다 -->
+    </main>
+    <script src="js/interview-print.js"></script>
+</body>
+</html>

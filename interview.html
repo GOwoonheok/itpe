@@ -42,6 +42,7 @@
                     <button class="iv-back" id="iv-home" type="button">← 홈</button>
                     <span class="iv-cat" id="iv-cat-title"></span>
                     <button class="iv-star" id="iv-bookmark" type="button" aria-pressed="false" aria-label="선택토픽에 넣기" title="선택토픽에 넣기">☆</button>
+                    <button class="iv-print" id="iv-print" type="button" aria-label="A4로 인쇄" title="지금 범위를 A4로 인쇄">🖨</button>
                     <button class="iv-reshuffle" id="iv-shuffle" type="button" aria-label="다시 섞기" title="다시 섞기">↻</button>
                 </header>
                 <div class="iv-progress"><div class="iv-progress-bar" id="iv-progress-bar"></div></div>
@@ -49,20 +50,35 @@
                 <div class="iv-card" id="iv-card">
                     <span class="iv-badge" id="iv-badge"></span>
                     <h2 class="iv-question" id="iv-question"></h2>
+                    <div class="iv-tts" id="iv-tts" hidden>
+                        <button class="iv-tts-btn" id="iv-tts-q" type="button">🔊 질문</button>
+                        <button class="iv-tts-btn" id="iv-tts-a" type="button" disabled>🔊 답변</button>
+                        <label class="iv-tts-rate">
+                            <span class="sr-only">낭독 속도</span>
+                            <select id="iv-tts-rate">
+                                <option value="0.8">0.8x</option>
+                                <option value="1">1.0x</option>
+                                <option value="1.2">1.2x</option>
+                                <option value="1.5">1.5x</option>
+                            </select>
+                        </label>
+                    </div>
                     <p class="iv-hint" id="iv-hint">먼저 스스로 답변을 구성해 보세요</p>
                     <div class="iv-answer" id="iv-answer" hidden></div>
                 </div>
             </section>
 
-            <!-- 소개하기 화면 -->
+            <!-- 소개하기 화면 — 카드 1장씩 넘기며 낭독, ✏ 로 그 자리에서 수정 -->
             <section id="iv-intro-screen" class="iv-intro-screen" hidden>
                 <header class="iv-study-head">
                     <button class="iv-back" id="iv-intro-home" type="button">← 홈</button>
                     <span class="iv-cat">소개하기</span>
-                    <span class="iv-head-spacer" aria-hidden="true"></span>
+                    <button class="iv-edit" id="iv-intro-edit" type="button" aria-pressed="false" aria-label="이 카드 수정" title="이 카드 수정">✏️</button>
                 </header>
-                <p class="iv-intro-note">자기소개·포부·윤리강령을 미리 작성해 두고 반복 낭독하세요. 입력은 자동 저장됩니다.</p>
-                <div class="iv-intro-list" id="iv-intro-list"></div>
+                <div class="iv-progress"><div class="iv-progress-bar" id="iv-intro-bar"></div></div>
+                <div class="iv-progress-num" id="iv-intro-num"></div>
+                <div class="iv-card" id="iv-intro-card"></div>
+                <p class="iv-intro-note" id="iv-intro-note">✏️ 를 누르면 이 카드를 바로 수정할 수 있습니다. 입력은 자동 저장됩니다.</p>
             </section>
         </main>
 
@@ -73,8 +89,18 @@
                 <button class="iv-nav-btn iv-nav-next" id="iv-next" type="button">다음</button>
             </div>
         </footer>
+
+        <!-- 소개하기 전용 하단바 — 학습 화면 툴바와 완전 분리(기존 동작 불변) -->
+        <footer class="toolbar iv-toolbar" id="iv-intro-toolbar" hidden>
+            <div class="iv-nav">
+                <button class="iv-nav-btn" id="iv-intro-prev" type="button">이전</button>
+                <button class="iv-nav-btn iv-reveal" id="iv-intro-speak" type="button">▶ 듣기</button>
+                <button class="iv-nav-btn iv-nav-next" id="iv-intro-next" type="button">다음</button>
+            </div>
+        </footer>
     </div>
 
+    <script src="js/tts.js"></script>
     <script src="js/interview.js"></script>
 </body>
 </html>

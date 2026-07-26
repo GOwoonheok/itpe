@@ -22,6 +22,7 @@
         home:        document.getElementById('iv-home'),
         shuffle:     document.getElementById('iv-shuffle'),
         bookmark:    document.getElementById('iv-bookmark'),
+        print:       document.getElementById('iv-print'),
         progressBar: document.getElementById('iv-progress-bar'),
         progressNum: document.getElementById('iv-progress-num'),
         badge:       document.getElementById('iv-badge'),
@@ -31,10 +32,65 @@
         answer:      document.getElementById('iv-answer'),
         prev:        document.getElementById('iv-prev'),
         next:        document.getElementById('iv-next'),
+        ttsBar:      document.getElementById('iv-tts'),
+        ttsQ:        document.getElementById('iv-tts-q'),
+        ttsA:        document.getElementById('iv-tts-a'),
+        ttsRate:     document.getElementById('iv-tts-rate'),
         introScreen: document.getElementById('iv-intro-screen'),
         introHome:   document.getElementById('iv-intro-home'),
-        introList:   document.getElementById('iv-intro-list')
+        introEdit:   document.getElementById('iv-intro-edit'),
+        introCard:   document.getElementById('iv-intro-card'),
+        introBar:    document.getElementById('iv-intro-bar'),
+        introNum:    document.getElementById('iv-intro-num'),
+        introToolbar: document.getElementById('iv-intro-toolbar'),
+        introPrev:   document.getElementById('iv-intro-prev'),
+        introNext:   document.getElementById('iv-intro-next'),
+        introSpeak:  document.getElementById('iv-intro-speak')
     };
+
+    // ── 음성 낭독(TTS) — js/tts.js 래퍼 위의 화면 연동 ────
+    var tts = window.ITPETts || null;
+    var ttsSource = null;   // 'q' | 'a' | 'intro' — 지금 읽고 있는 대상(버튼 라벨 동기화용)
+
+    function ttsAvailable() { return !!(tts && tts.supported()); }
+    function ttsStop() {
+        if (tts) tts.stop();
+        ttsSource = null;
+        syncTts();
+    }
+    // 같은 대상을 다시 누르면 정지(토글). 다른 대상이면 그쪽으로 갈아탄다.
+    function ttsPlay(src, text) {
+        if (!ttsAvailable()) return;
+        if (ttsSource === src && tts.isSpeaking()) { ttsStop(); return; }
+        tts.stop();
+        ttsSource = src;
+        if (!tts.speak(text)) ttsSource = null;
+        syncTts();
+    }
+    function syncTts() {
+        var on = ttsAvailable() && tts.isSpeaking();
+        if (els.ttsQ) els.ttsQ.textContent = (on && ttsSource === 'q') ? '■ 정지' : '🔊 질문';
+        if (els.ttsA) els.ttsA.textContent = (on && ttsSource === 'a') ? '■ 정지' : '🔊 답변';
+        if (els.introSpeak) els.introSpeak.textContent = (on && ttsSource === 'intro') ? '■ 정지' : '▶ 듣기';
+    }
+    function buildRateSelect() {
+        var sel = document.createElement('select');
+        [['0.8', '0.8x'], ['1', '1.0x'], ['1.2', '1.2x'], ['1.5', '1.5x']].forEach(function (o) {
+            var op = document.createElement('option');
+            op.value = o[0];
+            op.textContent = o[1];
+            if (tts && parseFloat(o[0]) === tts.getRate()) op.selected = true;
+            sel.appendChild(op);
+        });
+        sel.addEventListener('change', function () { if (tts) tts.setRate(sel.value); });
+        return sel;
+    }
+    if (tts) {
+        tts.onChange(function (activeNow) {
+            if (!activeNow) ttsSource = null;
+            syncTts();
+        });
+    }
 
     // ── localStorage (선택토픽 북마크 · 소개하기) ──────────
     var BM_KEY = 'iv:bookmarks';
@@ -61,20 +117,22 @@
 
     // 소개하기 섹션 정의 + 초기 시드(사용자 편집 가능)
     var INTRO_SECTIONS = [
-        { key: 'about', label: '자기소개', hint: '완전 암기 — 첫 답변 자동화',
-          seed: '면접번호 ○번 고운혁입니다. 저는 25년간 공공 조달 IT 분야에서 발주자로 일해 온 정보관리기술사 수검자입니다. 차세대 나라장터 950억 사업의 발주 PM으로 사업자 이탈과 국가정보자원관리원 화재를 겪으며, 발주자의 기술판단 하나가 하도급 대금 7조원의 정상 지급을 좌우한다는 것을 체감했습니다. 현재는 공공AX 기획을 총괄하며 조달 업무에 생성형 AI를 도입하고 있습니다.' },
-        { key: 'aspiration', label: '마지막 포부', hint: '30초 — 발주자·수주자 기술 갭을 메우는 중간다리',
-          seed: '25년간 발주자와 수주자 사이의 기술 갭이 공공 SW 품질을 무너뜨리는 것을 현장에서 봐 왔습니다. 저는 그 간극을 메우는 기술사가 되겠습니다. 하나, AI 사업은 불확실성이 커서 기존 조달·평가 체계로 담기 어렵습니다. 제가 제안해 정부 과제로 추진 중인 발주지원 플랫폼처럼 RFP 자동작성과 규모산정, 평가 기준까지 AI 시대의 발주 표준을 만들겠습니다. 둘, 순환보직으로 어려움을 겪는 발주 담당 공무원을 위해 국가 정보화사업 발주 교육과정을 개설해, 배운 것을 나누는 기술사가 되겠습니다. 감사합니다.' },
+        { key: 'about', label: '자기소개', hint: '1분 — 초기·중기·현재 3단 + 정량성과',
+          seed: '안녕하십니까. 경력 중심으로 소개드리겠습니다.\n\n저는 25년 2개월간 공공정보화의 기획과 예산, 조달 발주체계를 담당해 온 발주자입니다.\n\n초기 7년은 전자정부지원사업입니다. BPR·ISP 로드맵과 대가산정, 감리·PMO로 사업 품질을 잡았습니다.\n\n중기 6년은 90억 규모 e-발주평가시스템입니다. 대면평가가 막히자 온라인 제출과 화상평가를 도입했습니다. DRM과 안면인식으로 보안과 본인확인을 자동화했습니다. 온라인 100% 전환과 연간 약 350억을 절감했습니다. 국정자원 화재 때는 하도급지킴이 DR로 추석 하도급 대금 약 7조 원을 차질 없이 집행했습니다.\n\n현재는 조달AX 기본계획을 세우고 있습니다. RAG와 sLLM에 사람 검토를 결합한 규정 질의응답을 설계했고, 정부 30대 핵심과제로 추진 중입니다.\n\n정부조달의 벽 앞에서 돌아서는 IT 기업의 어려움을 정책과 기술로 풀어내는 기술사가 되겠습니다. 감사합니다.' },
+        { key: 'aspiration', label: '마지막 포부', hint: '40초 — 국가적·사회적 2축, 강하고 자신감 있게',
+          seed: '마지막으로 포부를 말씀드리겠습니다. 국가적으로 하나, 사회적으로 하나입니다.\n\n첫째, 국가적으로는 AI 시대의 발주 표준을 세우겠습니다. 지금 기준은 코드 기준이라 데이터와 모델 성능을 담지 못합니다. 제가 규모산정과 평가 기준을 다시 만들겠습니다.\n\n둘째, 사회적으로는 현장의 갈등을 푸는 기술사가 되겠습니다. 수요기관은 더 넣자 하고 업체는 못 한다 합니다. 과업변경이 생기면 감이 아니라 기준으로 판단하겠습니다. 절차는 과업심의로, 근거는 요구사항 추적으로 남기겠습니다.\n\n정책과 기술, 두 언어를 다 하는 기술사가 되겠습니다. 감사합니다.' },
         { key: 'ethics', label: '기술사 윤리강령 6항', hint: '두문자: 국·자·정·사·신·비',
-          seed: '기술사 윤리강령 6항 — ①국가·사회 봉사 ②자기개발(계속교육) ③정직·공정 ④사명감 ⑤신의·성실 ⑥비밀유지. 두문자 「국·자·정·사·신·비」. 조달 종사자 핵심 덕목은 국가·사회 봉사와 비밀유지(입찰 공정성·사전정보 유출 방지).' },
+          seed: '기술사 윤리강령 6항 — ①국가·사회 봉사 ②자기개발(계속교육) ③정직·공정 ④사명감 ⑤신의·성실 ⑥비밀유지. 두문자 「국·자·정·사·신·비」. 조달 종사자 핵심 덕목은 국가·사회 봉사와 비밀유지(입찰 공정성·사전정보 유출 방지).\n\n기술사법 제3조 직무(윤리강령과 별개 암기) — 계획·연구·설계·분석·시험·운영·평가 + 지도·감리·기술판단·기술중재·기술자문.' },
         { key: 'numbers', label: '수치근거·두문자 암기', hint: '즉답용 숫자 카드',
-          seed: '총경력 25년 10월 · 차세대나라장터 950억 · e-발주평가 90억 · 하도급 대금 7조원 정상지급 · 화상평가 전환 인쇄비 등 약 335억/년 절감 · 온라인 100% 전환.' }
+          seed: '총경력 25년 2월 — 조달정보화AX 2년5개월 / AI발주지원 3년6개월 / e-발주평가 6년8개월 / 전자정부지원 7년1개월 / 행정정보공유 5년6개월.\n\ne-발주평가 사업비 90억 · 온라인 100% 전환 · 절감 연간 약 350억(인쇄·제본비 + 출장비 + 평가 운영비를 연간 입찰 건수로 합산한 추정치) · 하도급 대금 약 7조원 집행 · RFP 작성 평균 10일 단축 · 정부 30대 핵심과제.\n\n자격 — 정보처리기사 2006-06-05 / PMP 2008-09-23.' }
     ];
     function getIntro() {
         var saved = lsGet(INTRO_KEY, null);
         var out = {};
         INTRO_SECTIONS.forEach(function (s) {
-            out[s.key] = (saved && typeof saved[s.key] === 'string') ? saved[s.key] : s.seed;
+            var v = (saved && typeof saved[s.key] === 'string') ? saved[s.key] : null;
+            // 저장값이 비어 있으면 기본 원고로 되돌린다 — 내용을 비우면 최신 기본값을 다시 볼 수 있다.
+            out[s.key] = (v && v.trim()) ? v : s.seed;
         });
         return out;
     }
@@ -177,6 +235,12 @@
             cat: 'intro', mode: null, emoji: '🙋', name: '소개하기',
             desc: '자기소개·포부·윤리강령 작성·저장', count: null, special: 'intro'
         });
+        // '인쇄하기' 카드 — A4 답변집·요약본 출력 (독립 페이지, 새 탭)
+        cards.push({
+            cat: 'print', mode: null, emoji: '🖨', name: '인쇄하기',
+            desc: '답변집·회독 요약본을 A4로 뽑아 보기', count: null,
+            meta: '상세 · 요약 선택', special: 'print'
+        });
 
         cards.forEach(function (c) {
             var btn = document.createElement('button');
@@ -199,7 +263,8 @@
 
             var meta = document.createElement('div');
             meta.className = 'iv-mode-meta';
-            if (c.count === null) meta.textContent = '작성 · 저장';
+            if (c.meta) meta.textContent = c.meta;
+            else if (c.count === null) meta.textContent = '작성 · 저장';
             else if (c.special === 'bookmarks') meta.textContent = c.count + '문항 · 내가 고른 카드';
             else meta.textContent = c.count + '문항 · ' + (c.mode === 'shuffle' ? '셔플' : '순서');
 
@@ -208,6 +273,7 @@
             btn.appendChild(desc);
             btn.appendChild(meta);
             btn.addEventListener('click', function () {
+                if (c.special === 'print') { openPrint('all'); return; }
                 if (c.special === 'intro') { showIntroScreen(); return; }
                 if (c.special === 'bookmarks') {
                     if (getBookmarks().length === 0) {
@@ -226,10 +292,12 @@
     }
 
     function showModeScreen() {
+        ttsStop();
         state.cat = null;
         els.studyScreen.hidden = true;
         els.introScreen.hidden = true;
         els.toolbar.hidden = true;
+        els.introToolbar.hidden = true;
         els.modeScreen.hidden = false;
         renderModeScreen(); // 북마크 수 갱신
         history.replaceState(null, '', location.pathname);
@@ -253,6 +321,7 @@
 
         els.modeScreen.hidden = true;
         els.introScreen.hidden = true;
+        els.introToolbar.hidden = true;
         els.studyScreen.hidden = false;
         els.toolbar.hidden = false;
 
@@ -279,6 +348,11 @@
         els.badge.textContent = item.category || state.catTitle.textContent;
         els.question.textContent = item.question || '';
         syncBookmarkBtn(item);
+
+        // 카드가 바뀌면 읽던 음성은 멈춘다. 답변 낭독은 정답 공개 후에만.
+        ttsStop();
+        if (els.ttsBar) els.ttsBar.hidden = !ttsAvailable();
+        if (els.ttsA) els.ttsA.disabled = true;
 
         state.revealed = false;
         els.answer.hidden = true;
@@ -394,6 +468,13 @@
         }
 
         els.answer.hidden = false;
+        if (els.ttsA) els.ttsA.disabled = false;
+    }
+
+    // 답변 낭독 — 4단을 순서대로 이어 읽는다(키워드·압박대응은 제외).
+    function answerText(item) {
+        return PARTS.map(function (p) { return (item[p.key] || '').toString().trim(); })
+            .filter(Boolean);
     }
 
     function go(delta) {
@@ -426,46 +507,111 @@
         syncBookmarkBtn(item);
     }
 
-    // ── 소개하기 ─────────────────────────────────────────
-    function renderIntro() {
-        clearEl(els.introList);
+    // ── 인쇄 (독립 페이지 interview-print.html · 새 탭) ──
+    // 범위만 넘기고 형식(상세/요약)·압박대응 포함 여부는 인쇄 페이지 도구막대에서 고른다.
+    function openPrint(cat) {
+        var c = cat || state.cat || 'all';
+        if (c === 'bookmarks' && getBookmarks().length === 0) c = 'all';
+        window.open('interview-print.html?cat=' + encodeURIComponent(c) + '&density=full',
+            '_blank', 'noopener');
+    }
+
+    // ── 소개하기 — 카드 1장씩 넘기며 낭독, ✏ 로 그 자리에서 수정 ──
+    var introIdx = 0;
+    var introEdit = false;   // ✏ 상태는 카드를 넘겨도 유지(연속 수정 편의)
+
+    function renderIntroCard() {
+        var s = INTRO_SECTIONS[introIdx];
+        if (!s) return;
         var data = getIntro();
-        INTRO_SECTIONS.forEach(function (s) {
-            var card = document.createElement('div');
-            card.className = 'iv-intro-card';
+        clearEl(els.introCard);
 
-            var head = document.createElement('div');
-            head.className = 'iv-intro-head';
-            var lab = document.createElement('span');
-            lab.className = 'iv-intro-label';
-            lab.textContent = s.label;
-            var hint = document.createElement('span');
-            hint.className = 'iv-intro-hint';
-            hint.textContent = s.hint;
-            head.appendChild(lab);
-            head.appendChild(hint);
+        var badge = document.createElement('span');
+        badge.className = 'iv-badge';
+        badge.textContent = s.label;
+        els.introCard.appendChild(badge);
 
+        var hint = document.createElement('p');
+        hint.className = 'iv-intro-hint';
+        hint.textContent = s.hint;
+        els.introCard.appendChild(hint);
+
+        if (introEdit) {
             var ta = document.createElement('textarea');
             ta.className = 'iv-intro-ta';
             ta.value = data[s.key] || '';
-            ta.setAttribute('rows', '5');
+            ta.setAttribute('rows', '12');
             ta.setAttribute('data-key', s.key);
             ta.addEventListener('input', function () {
                 var cur = getIntro();
                 cur[s.key] = ta.value;
                 lsSet(INTRO_KEY, cur);
             });
+            els.introCard.appendChild(ta);
+        } else {
+            var body = document.createElement('div');
+            body.className = 'iv-intro-body';
+            (data[s.key] || '').split(/\n{2,}/).forEach(function (para) {
+                var t = para.trim();
+                if (!t) return;
+                var p = document.createElement('p');
+                p.textContent = t;
+                body.appendChild(p);
+            });
+            els.introCard.appendChild(body);
+        }
 
-            card.appendChild(head);
-            card.appendChild(ta);
-            els.introList.appendChild(card);
-        });
+        if (ttsAvailable()) {
+            var row = document.createElement('div');
+            row.className = 'iv-tts';
+            var lab = document.createElement('span');
+            lab.className = 'iv-tts-label';
+            lab.textContent = '낭독 속도';
+            row.appendChild(lab);
+            row.appendChild(buildRateSelect());
+            els.introCard.appendChild(row);
+        }
+
+        var n = INTRO_SECTIONS.length;
+        els.introNum.textContent = (introIdx + 1) + ' / ' + n;
+        els.introBar.style.width = ((introIdx + 1) / n) * 100 + '%';
+        els.introPrev.disabled = introIdx <= 0;
+        els.introNext.disabled = introIdx >= n - 1;
+        els.introSpeak.disabled = !ttsAvailable();
+        els.introEdit.setAttribute('aria-pressed', introEdit ? 'true' : 'false');
+        els.introEdit.classList.toggle('is-on', introEdit);
+        syncTts();
     }
+
+    function introGo(delta) {
+        var next = introIdx + delta;
+        if (next < 0 || next >= INTRO_SECTIONS.length) return;
+        ttsStop();
+        introIdx = next;
+        renderIntroCard();
+    }
+    function introToggleEdit() {
+        introEdit = !introEdit;
+        renderIntroCard();
+        if (introEdit) {
+            var ta = els.introCard.querySelector('.iv-intro-ta');
+            if (ta) ta.focus();
+        }
+    }
+    function introSpeakCurrent() {
+        var s = INTRO_SECTIONS[introIdx];
+        if (!s) return;
+        ttsPlay('intro', getIntro()[s.key] || '');
+    }
+
     function showIntroScreen() {
-        renderIntro();
+        ttsStop();
+        introIdx = 0;
+        renderIntroCard();
         els.modeScreen.hidden = true;
         els.studyScreen.hidden = true;
         els.toolbar.hidden = true;
+        els.introToolbar.hidden = false;
         els.introScreen.hidden = false;
         history.replaceState(null, '', location.pathname + '?intro=1');
     }
@@ -477,5 +623,24 @@
     els.home.addEventListener('click', function () { showModeScreen(); });
     els.shuffle.addEventListener('click', reshuffle);
     if (els.bookmark) els.bookmark.addEventListener('click', onToggleBookmark);
+    if (els.print) els.print.addEventListener('click', function () { openPrint(state.cat); });
     if (els.introHome) els.introHome.addEventListener('click', function () { showModeScreen(); });
+
+    // TTS — 문항(질문·답변) / 소개하기 카드
+    if (els.ttsQ) els.ttsQ.addEventListener('click', function () {
+        var item = currentItem();
+        if (item) ttsPlay('q', item.question || '');
+    });
+    if (els.ttsA) els.ttsA.addEventListener('click', function () {
+        var item = currentItem();
+        if (item && state.revealed) ttsPlay('a', answerText(item));
+    });
+    if (els.ttsRate) {
+        if (tts) els.ttsRate.value = String(tts.getRate());
+        els.ttsRate.addEventListener('change', function () { if (tts) tts.setRate(els.ttsRate.value); });
+    }
+    if (els.introEdit) els.introEdit.addEventListener('click', introToggleEdit);
+    if (els.introPrev) els.introPrev.addEventListener('click', function () { introGo(-1); });
+    if (els.introNext) els.introNext.addEventListener('click', function () { introGo(1); });
+    if (els.introSpeak) els.introSpeak.addEventListener('click', introSpeakCurrent);
 })();
