@@ -94,14 +94,6 @@
       "count": 0
     },
     {
-      "id": "13",
-      "name": "면접",
-      "color": "#2980b9",
-      "description": "면접",
-      "file": "13.json",
-      "count": 0
-    },
-    {
       "id": "jm",
       "name": "주모",
       "emoji": "📝",

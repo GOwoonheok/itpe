@@ -1082,8 +1082,8 @@
   },
   {
     "topic": "HDFS",
-    "definition": "",
-    "mnemonic": "대용량 저장 범용 클러스터 분산파일 시스템 / 구성 : name node, datanode , replication(복제)\r\n마스터-슬레이브 구조 , TCP/IP 이용 블럭단위로 저장(64,128MB), 복제구조",
+    "definition": "빅데이터 분산 저장 위해, 내결함성 및 고처리량 지원하는 파일 시스템",
+    "mnemonic": "대용량 저장 범용 클러스터 분산파일 시스템 / 구성 : name node, datanode , replication(복제)\n마스터-슬레이브 구조 , TCP/IP 이용 블럭단위로 저장(64,128MB), 복제구조",
     "keyword": "",
     "extra": "",
     "userId": "u1779706793131-13yeh",
@@ -1379,8 +1379,8 @@
   },
   {
     "topic": "델타레이크",
-    "definition": "",
-    "mnemonic": "Data Lake + Data Warehouse // ACID 지원, 데이터 버져닝(기록), 스키마 변경, 병합기능(CDC), 성능향상\r\n기존 데이터 레이크에 버전관리와 트랜잭션 기능을 붙인 강화된 저장소",
+    "definition": "데이터레이크 신뢰성 위해, ACID 트랜잭션과 메타데이터 관리를 지원하는 스토리지 계층",
+    "mnemonic": "Data Lake + Data Warehouse // ACID 지원, 데이터 버져닝(기록), 스키마 변경, 병합기능(CDC), 성능향상\n기존 데이터 레이크에 버전관리와 트랜잭션 기능을 붙인 강화된 저장소",
     "keyword": "",
     "extra": "",
     "userId": "u1779706793131-2dz3l",
@@ -1601,5 +1601,18 @@
     "extra": "",
     "userId": "u1779706793131-vtr2g",
     "createdAt": "2026-05-25T10:59:53.131Z"
+  },
+  {
+    "topic": "DW",
+    "definition": "의사결정 지원을 위해, 주제지향적이고 통합된 데이터를 시계열로 축적한 데이터베이스",
+    "mnemonic": "drill down\nRoll Up, Drill Across, Through, Pivot",
+    "keyword": "MOLP, ROLAP, HOLP, DOLAP",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/700788ea-d988-4e84-9e2f-8ed438906eb1.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/1a84335b-a7c7-4a90-8185-cf7ff2521a39.webp"
+    ],
+    "userId": "u1779768659850-mv-oboj",
+    "createdAt": "2026-05-25T12:29:15.211Z"
   }
 ]

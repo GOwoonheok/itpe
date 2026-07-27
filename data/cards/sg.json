@@ -1,12 +1,1754 @@
 [
   {
-    "category": "SW공학",
-    "topic": "test",
-    "definition": "품질 확보를 위해, 정적·동적 기법으로 결함을 발견하고 요구사항을 검증하는 활동",
-    "mnemonic": "결함 존재 증명\n완벽한 테스팅 불가능\n초기 테스팅\n결함 집중\n살충제 패러독스",
-    "keyword": "정적 테스트,동적 테스트,화이트박스,블랙박스,V-모델",
+    "category": "분류 (선택)",
+    "topic": "SW공학",
+    "definition": "고품질 SW의 효율적 개발을 위해, 체계적이고 정량적인 공학적 접근을 적용하는 학문",
+    "mnemonic": "요구사항 분석\n설계\n구현\n테스트\n유지보수",
+    "keyword": "요구사항공학, 소프트웨어 설계, 소프트웨어 구현, 소프트웨어 테스팅, 소프트웨어 유지보수",
     "extra": "",
-    "userId": "u1779682462635-mv-mdbg",
-    "createdAt": "2026-05-25T04:13:40.176Z"
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/4f535454-a2f5-4d63-ba00-a8b2422b7e07.webp"
+    ],
+    "userId": "u1779723161294-jmi8t",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "소프트웨어 공학 특징",
+    "definition": "",
+    "mnemonic": "비복변무순/발전원리:공학접근,표준화,자동도구,품질보증/문제:예산,납기,품질\r\n리만(Lehman)의 SW분리 : E-Type (S-type 계산기, P-type 체스, E-type 환경에 밀접함) \r\n구성:원기언도산(원리, 기법,언어,도구,산출물)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-44e20",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "폭포수 모델",
+    "definition": "",
+    "mnemonic": "고전,순차,단계, 관리용이, 문서체계, 오류변경에 취약/ 빅뱅, 막판통합, Topdown",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-ma6mz",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "프로토타이핑 모델",
+    "definition": "",
+    "mnemonic": "요프검피상설, 시제품 승인후 본제품 개발, 점진적개발/경험X /유형: 재사용, 매체(종이,IT) 유사, 기능",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-g50ux",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "Spiral 모델",
+    "definition": "",
+    "mnemonic": "계위개고/위험최소, 나선형, 점진적",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-rej17",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "반복적 모델",
+    "definition": "",
+    "mnemonic": "증분형, 진화형 / (증)개발>범위확대>통합, 폭포기반, (진)핵심발전>개선, 프로토타이빙기반",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-4bgxs",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "RAD",
+    "definition": "",
+    "mnemonic": "Case TOOL, 2~3개월, 짧은기간, Time Boxing /\r\n지라크씨(JRP, JAD, Construction Phase, Cutover)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-zpm5j",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "애자일 모델",
+    "definition": "",
+    "mnemonic": "사람중심, 진화, 빠른배포, 의사소통/(헌장)개변동고/스크럼,XP,Lean,RUP/경험기반, 경량\r\n* 개인과 상호작용 중시, 변화대응, 동작하는 SW, 고객과 협업중시\r\n- 고요배의 동대소지 좋단자효, ROI 증대, Deliver Time 감소, 요구사항 변경 오버헤드\r\n고객만족, 요구변경, 짧은배포, 의사소통, 동기부여, 대화, 지속개발, 좋은SW, 단순, 자기조직, 효율성\r\n추정기법 : 스토리포인트, 플래닝 포커, 티셔츠 사이즈, 점투표, 시간 기반 추정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-kb670",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SW개발방법론",
+    "definition": "",
+    "mnemonic": "구정객CA 절방산관기도 / 표준화, 절차, 산출물 체계화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-5vygf",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "구조적 방법론",
+    "definition": "",
+    "mnemonic": "프로세스, 기능, 분할정복, 낮은 재사용, DFD, ERD, DD, 요분설개",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-1svs4",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "정보공학(IE) 방법론",
+    "definition": "",
+    "mnemonic": "(데이터흐름)데이터중심, 기업중심, 재사용성 낮음, 세모: ISP, BAA, BSD, SC / 전사,문서지향",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-yacu3",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "객체지형 방법론 -> 결국에는 AOP로 (핵심기능, 보조구분)",
+    "definition": "",
+    "mnemonic": "객속메, 객체지향, 캡추다정상, 재사용성, 유연함 / 클래스,객체,메소드,인스턴스 \n캡슐화, 추상화, 다형성, 정보은닉, 상속",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/b6242087-bac8-422f-b306-1f0d9b811806.webp"
+    ],
+    "userId": "u1779723161294-mkdox",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "CBD방법론",
+    "definition": "소프트웨어 재사용성 증대 위해, 독립적 컴포넌트 조립 활용한 개발 방법론",
+    "mnemonic": "컴포넌트, 생상성, 품질, Black Box Reuse, 2000년",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-4vk2x",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "CBD 특징",
+    "definition": "",
+    "mnemonic": "(특징)생고재변기관사 /조립, 재사용/(CD)분설-추설구인 (CBD)요분설조시 / \n* 생산성,고품질,재사용,변경용이, 기능중심,관리용이,사용자 중심",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/0d4fd8cf-e1bf-47f5-ac5e-ad936b5316ae.webp"
+    ],
+    "userId": "u1779723161294-z6m8j",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "category": "SW공학",
+    "topic": "SDLC, SW개발방법론",
+    "definition": "품질 향상을 위해, 개발 전 과정을 단계화한 모델",
+    "mnemonic": "타당성 분석\n개발 계획\n요구사항 분석\n설계 및 구현\n테스트 및 유지보수",
+    "keyword": "폭포수 모델, 애자일 모델, 나선형 모델, 반복적 모델, V-모델",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/e5aeb1d5-24f9-457d-a4dc-bad21b9e2864.webp"
+    ],
+    "userId": "u1779723161294-pei8s",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "category": "SW공학",
+    "topic": "객체지향 설계원리",
+    "definition": "유연한 변경을 위해, SOLID 원칙 기반으로 결합도를 낮추고 응집도를 높인 설계 지침",
+    "mnemonic": "SOLID",
+    "keyword": "SOLID, 응집도, 결합도, 재사용성, 유지보수성",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/4a16207a-1a80-42c9-ac6f-c7feaa44a8c6.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/2dbc166f-ee97-4e24-8412-bd48633c3616.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/7ca38f6c-54a7-4650-ad9f-6d2a40685aa2.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/3714e7d2-7888-46be-860d-8ab1edaaa691.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/dc75b15b-83f3-45b1-bdcd-47f8a1316978.webp"
+    ],
+    "userId": "u1779723161294-bfs4s",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SOLID개념도",
+    "definition": "",
+    "mnemonic": "계산 / 저장 / 출력 각각의 클래스가 하나의 책임만 수행",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-gkqdm",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SRP",
+    "definition": "객체지향 설계 위해, 단일 책임 원칙을 적용한 클래스 설계",
+    "mnemonic": "단일책임원칙, 객체 하나 책임, 응집도 향상, 단일책임\n클래스는 단 하나의 책임만 가져야 하며, 변경 사유는 하나\n(중요성) \n여러 책임을 가지면 결합도↑, \n유지보수 어려움 → 품질 저하\n계산 / 저장 / 출력 각각의 클래스가 하나의 책임만 수행",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/4dabeb4e-fc6f-4b82-bc31-c0a5e0ca8b00.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/45488100-ed30-41f4-bd06-6073d78618ba.webp"
+    ],
+    "userId": "u1779723161294-bqviw",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "OCP",
+    "definition": "",
+    "mnemonic": "개방 폐쇄, 확장 OPEN, 수정 CLOSE, 유연성 강조",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-lgapj",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "LSP",
+    "definition": "",
+    "mnemonic": "리스코프 치환, 부모자식간 호환성(대체)가능/ overloading, overriding",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-orhay",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "category": "네트워크",
+    "topic": "ISP",
+    "definition": "사용자에게 인터넷 접속 및 관련 서비스를 제공하는 사업자.",
+    "mnemonic": "인터페이스 분리, IF를 사용하는 클라이언트 기준으로 분리, 가독성 향상",
+    "keyword": "인터넷접속, 네트워크인프라, 데이터전송, 웹호스팅, 백본망",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/103f55bb-9306-47f8-9c95-f3872dcdd310.webp"
+    ],
+    "userId": "u1779723161294-r5x1z",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "DIP",
+    "definition": "",
+    "mnemonic": "의존성 역전, 높은 레벨은 낮은 레밸 모듈 의존안됨, 추상에 의존, 낮은 결함도, 확장성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-mh9y1",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "PL(제품계열)",
+    "definition": "",
+    "mnemonic": "생산체계, Core Asset, 재사용, 도메인공학, \r\n프로리인익(Proactive, Reactive, Incremental, Extract)\r\nSSPL(System of Software PL) 아키텍처, 컴포넌트,문서 핵심요소 재사용, 가변요소만 선택개발법",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-1skjh",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SSPL",
+    "definition": "",
+    "mnemonic": "대규모 SW제품군을 전략적으로 구축 진화시키는 방법론 \r\n@제언 : SSPL BP구축, 범국가적 선도, 맞춤인력, 국제표준",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-5k6bu",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "요구공학",
+    "definition": "",
+    "mnemonic": "(개발)추분명검 SRS, (관리)협기변확, 정명완일중검수추/확인(요구사항 추적표*), WBS\r\n* ID, 명칭, UseCaseID, 클래스다이어그램, 화면ID, 엔티디ID, 프로그램ID, 통합ID",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-qge49",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "요구공학 도출",
+    "definition": "",
+    "mnemonic": "수분표의데프컨전, 인포설벤브 문마친 다투 명관촉",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-z3wv7",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SRS(요구사항 명세)",
+    "definition": "",
+    "mnemonic": "인터뷰, 포커스그룹, 설문조사, 벤치마킹, 브레인스토밍\r\n/ 문서분석/마인드매핑, 친화도/ 투표,관찰",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-nt8ak",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "요구사항",
+    "definition": "",
+    "mnemonic": "기능, 비기능,기타/(개발)수집>분석>명세>검증>확인<>변경/추적관리\r\n / CSF : 관리,소통,시스템화 * 성능, 장비, IF, data, test, 보안, 품질, 제약",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-yooba",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "성능 요구사항",
+    "definition": "",
+    "mnemonic": "속도, 시간, 처리량, 동적용량, 정적용량, 가용성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-7fqiy",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "요구사항 명세서(SRS)",
+    "definition": "시스템 개발의 합의를 위해, 기능 및 비기능 요구사항을 명세화한 문서",
+    "mnemonic": "범목개제,IEEE830/원리\n/평가기준:정명완일검수추개,SW진흥법20조 \n/작성주의:이상기제 T품\n* 이해성, 상호성, 기능정의, 제약조건, 테스트기준, 품질측정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-m45x2",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "테일러링",
+    "definition": "프로젝트 특성 반영 위해, 표준 프로세스 선택/조정/보완한 기법",
+    "mnemonic": "특표상세문/내외부요건 상이(개발,요구,규모,기술,법제도) @3R, ISO33063(test Process모델)\n고려사항: 범위, 플랫폼, 기반산출물, 발주사, 관리적 요소, 절활산기도 맞춤형",
+    "keyword": "절차(Procedure)작업 단계와 순서 정의\n활동(Activity)각 단계에서 수행할 활동\n산출물(Deliverables)활동 수행 결과물\n기법(Technique)활동 수행에 필요한 기술·방법\n도구(Tool)활동을 지원하는 자동화 도구",
+    "extra": "",
+    "userId": "u1779723161294-b67pb",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "AOP (OOP -> AOP변화)",
+    "definition": "",
+    "mnemonic": "핵심관심(core concern), 횡단관심, Joint Point, Aspect, Weaving, Point Cut, Advice  /코조 애위포애 / 다같이 쓸스 있는것 Spring,  공통기능을 뽑아서, 관심사항 분리하는것",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-v83yh",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "TDD",
+    "definition": "",
+    "mnemonic": "요테코리 / 요구사항>Test case >심플 code 작성>Refectoring / 패턴 : 빨강, 초록 막대\r\nBDD(행위기반개발), ATDD(인수테스트 주도 개발, Acceptance Test Driven Dev)\r\n/페어프로그래밍,핑퐁(드라이버, 페어+TDD=핑퐁\r\n/테스트케이스 먼저 만듬(Red단계) > 코드작성(Green단계)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-pyo2s",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "코드 스멜",
+    "definition": "- 코드가 기술적으로는 틀리지 않지만, 설계 품질이 낮아질 가능성이 있는 코드 패턴\n- 당장 오류는 아니어도 리팩토링이 필요하다는 경고 신호",
+    "mnemonic": "중긴큰긴 / 이분일통, 주석, 재명명\n중복콛, 긴메소드, 큰/긴 클래스,  이동,분해,일관성,통",
+    "keyword": "-정적 코드 분석: 실행하지 않고 소스코드 구조를 검사해 코드 스멜을 찾아냄\n-리팩토링 기법: Extract Method, Move Method 같은 방식으로 구조를 개선.\n-테스트 커버리지: 수정 후 기능이 깨지지 않도록 검증하는 기반",
+    "extra": "",
+    "userId": "u1779723161294-kgets",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "DevOps",
+    "definition": "",
+    "mnemonic": "적시출시, 개발운영 테스트 자동화 문화 / 크로스펑셔널팀, 메트릭, 오토메이팅 / 개발,운영자동화, 최적화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-v1jdx",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "DevSecOps",
+    "definition": "개발, 보안, 운영 통합 위해, 자동화된 보안 프로세스 적용한 체계",
+    "mnemonic": "개발+운영 + 보안측면 포함",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-mbgeh",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SRE (Site realiability Eng)",
+    "definition": "",
+    "mnemonic": "DevOps > 확대, 문화조직 구성, 모용변장문 / SLI, SLO(세부지표), 수요기반 예측, 카나리, MTTR, Error Buget(한도), Toil제거  (모니터링, 용량계획, 변경관리, 장애대응, 문화정착)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-qidmu",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "무중단배포",
+    "definition": "",
+    "mnemonic": "서비스중단없이 신규버전을 사용자게 배포기술 / 필요성 : UX향상, BIZ연속, 빠른 피드백\r\n롤링배포 : 사용중을 새버젼으로 교체하는 무중단 배포 기본방식 \r\n블루그린 : 불루(구), 그린(신) 지칭하여 배포방식\r\n카나리 : 신버젼 범위 늘려가면서 모니터링,피드백 과정\r\n배포기술 : 리버스 프록시(서버숨김), 로그발런싱(부하분산)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-3gx5t",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SW 아키텍처",
+    "definition": "",
+    "mnemonic": "IEE42010, 표준메타, 기술요소, 행위표현/ 의사소통 \r\n/ 환(대이관뷰모)-아기뷰모-근(거)대(응)관/규(제)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-1ids1",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SW 아키텍처 평가",
+    "definition": "",
+    "mnemonic": "(개요) 시스템 품질, Risk 사전검증, 이해자설득(왜? 선택했는지), 비용절감, 적합한 구조판단\r\n(정방향) SAAM, CBAM, ATAM, EATAM , ADR, ARID(설계혼합) / (역방향)역공학, 코드분석",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-qearj",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "ATAM",
+    "definition": "",
+    "mnemonic": "품질&Biz목표 아키텍처 평가방법 / TradeOff, 품질(가보성사변시):가용성, 보안, 성능, 사용성, 변경가능성, 시험가능성 /소조테보(소개, 조사, 테스트, 보고), 협기상후(협력준비,기본-상세평가, 후속조치)\r\n품질우선순위 >유틸리티 트리 : (유품세시) 유틸리티>품질속성>세분화속성>시나리오",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-mwkev",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "CBAM",
+    "definition": "",
+    "mnemonic": "경제중심, Cost-이익 ROI / 시반아선 (시나리오, 효용반응곡선, 아키텍처접근법, 선정과검증)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-ktnji",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "ADR/ARID",
+    "definition": "",
+    "mnemonic": "응집도 / 초기에 적합",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-eqb0j",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "아키텍처 설계절차",
+    "definition": "",
+    "mnemonic": "컴포넌트간 관계, 품질속성* 등 구조/ 요참모프배 \r\n*품질속성 : 변경용이성, 테스트 용이성, 가용성, 성능, 보안성, 사용성, 비즈니스품질",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-6bqd5",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "아키텍처 드라이버",
+    "definition": "",
+    "mnemonic": "아키텍처 구성에 영향을 주는 요구사항 / 드라이버 목록 : 기능, 제악, 품질속성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-kfubg",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "아키틱처 패턴/스타일/모델 (SW Best Practice)",
+    "definition": "",
+    "mnemonic": "시스템전체(상위수준), 건물배치 /기능분할(계층,파이프필터,CS, MVC, MSA, Repository, 칠판형)\r\n배치(Monolithic, 2tier, 분산아키텍처, MSA, CloudNative, 엣지컴퓨팅), \r\n제어(중앙집중, 분산제어, 이벤트기반)   -> @디자인패턴 : 모듈-객체(하위수준), 가구배치",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-bk740",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "4+1 view",
+    "definition": "",
+    "mnemonic": "ULIPD(usecase, logical, process, implemnet, depolyment)/아키텍처 스타일을 사용자 관점별로 보여주는 것임",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-gtjbw",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SAD",
+    "definition": "",
+    "mnemonic": "IEEE 1471 -> 42010 발전, 아키텍처 설명표준(이해관계자, 관심사, 뷰, 뷰포인트, AD/문서)\r\n*목차 : 개요,배경, 요구사항, 참조아키텍처, 설계전략, 시스템뷰, 용어사전",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-mqaf8",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SOA",
+    "definition": "",
+    "mnemonic": "서비스통합, 큰단위, 모놀로식, 통사정매체(SOAP,WSDL,UDDI,XML,ESB) /통신,사용,정의,메시지,체널 / 동기, staefull",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-zvujp",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "REST 6원칙",
+    "definition": "",
+    "mnemonic": "클라이언트 서버구조, 무상태성, 캐시기능, 일관된 일관성, 계층화된 시스템, 코드온디멘트\n-REST(웹기존 기술과 HTTP프로토콜을\n 활용하여 시스템을 설계하는 아키텍처 스타일",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/32a26cc0-bb29-4039-ae4e-cf1d4b876abf.webp"
+    ],
+    "userId": "u1779723161294-qmi57",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "MSA",
+    "definition": "",
+    "mnemonic": "독립서비스, 작은, 마이크로, Ployglot,콘웨이, DDD,Json,Kafa,REST /도비테(DDD,BIZ설계,테스트) / 비동기, stateless / TX관련, 보상패턴이 필요 > SAGA 패턴 필요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-itr8f",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "서비스 매시",
+    "definition": "",
+    "mnemonic": "MSA-복잡해 (통신,복구, 인증,암호,장애) 인프라 수준에서 자동으로 해줌 (lstio, YAML)\r\n사디서로(사이트카, 디스커버리, 서키프레이크, 로드발란싱), control plane, Data plane",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-9z0a9",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "사가패턴(SAGA)",
+    "definition": "",
+    "mnemonic": "ACID, 정합성 맞춤, 2PC, 일관성 /  Choreography ,Choreography : 중앙/각각, 집중/분산",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-kj842",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "이벤트 스토밍",
+    "definition": "",
+    "mnemonic": "도메인전문가 + 개발워크숍/ \r\n도메인 도출>커맨드 도출>외부시스템 도출 / 엑터>애그리게이트> 컨텍스트경계그리기> 정책설정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-vhp8e",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "클린 아키텍처",
+    "definition": "",
+    "mnemonic": "계측중심/ 안쪽,바깥 관심분리/ 룰엔유인프(Rule, Entity->Usecase->IF adapter -> Framework Drivers) // 개념적인 개념인데, 나눠서 Biz간 뭉치고 있어서, 외부영향없이 각각\r\n> 이것을 헥사고날로 구현해서 만들어 놓은것임",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-ogmhp",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "헥사고날 아키텍처",
+    "definition": "",
+    "mnemonic": "포트 & Adaperts,도메인(Biz) 외부기술 분리 |  상호작용 분리 / 포트(플러그IF), 어댑터(변환기)\r\n육각형, 도메인 - <포트> - 면(IF) <outbound / inbound 어뎁터> 외부(DB,UI,API,MSG)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-hzep8",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "EDA",
+    "definition": "",
+    "mnemonic": "중재자, 브로커 토플로지 / 분산비동기 처리 아키텍처",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-g4dlm",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "MDA",
+    "definition": "",
+    "mnemonic": "Model Driven Architecture / 메타모델을 기반으로 구현 환경에 독립적 모델을 자동으로 구현환경에 적합한 구현 종속적 모델 (금융권에 사용)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-z3pqm",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "Service Discovery Pattern",
+    "definition": "",
+    "mnemonic": "MSA 서비스 위치(주소,ip,포트) 자동 찾고, 연결해주는 패턴/등록, 조회,호출/동적탐색 필수\r\n@구성: Service Registry, Service Provider, Service Consummer",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-5oye2",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "CQRS",
+    "definition": "",
+    "mnemonic": "CUD / R 처리 책임을 분리 /  구성:이메오플(이벤트, MQ, ORM, PolyglotDB)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-ktgc4",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "DDD",
+    "definition": "",
+    "mnemonic": "도메인 주도, 유비쿼터스 언어, 전략/전술적, 유비쿼터스언어, 바운디드 컨텍스트, CQRS\r\n(전략) Bounded Context, Context MAP, 이벤트 스토밍\r\n(전술) Aggregate, Model, Entity, Object, Event",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-jymdr",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "UML / Diagram",
+    "definition": "",
+    "mnemonic": "클오패컴 유스엑상, 표준화 표기법",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-ejuug",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "디자인패턴",
+    "definition": "",
+    "mnemonic": "생구행 (아비프로시바, ABCD파블로, CMI(CCMMII) / 객체를 생성, 연결, 소통",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-6m7ak",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "싱클톤 패턴(주모)",
+    "definition": "",
+    "mnemonic": "하나의 객체생성, 전역 인스턴스 공유 / 예: 로그저장, DB연결, 회사자판기",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-dvg6k",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "프락시 패턴",
+    "definition": "실제 객체 접근 제어 위해, 대리자를 통해 기능을 추가한 디자인 패턴",
+    "mnemonic": "대리인 서비스 전달(구조)/ 종류: 가상, 보호프락시) /예: 고객<->비서(대리인)<->사장",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-szzew",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "테스트 일반",
+    "definition": "",
+    "mnemonic": "Test Bed, Test Target Test 하네스(Driver , Stub), 화이트 박스, 블랙박스",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-dd7hp",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "테스트 계획서",
+    "definition": "",
+    "mnemonic": "IEEE829, TMO(Test Mang Office - 매니저, 리더, 설계자, 테스터, 엔지니어)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-ynvsj",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "테스트 오라클",
+    "definition": "",
+    "mnemonic": "테스트를 수행결과가 참/거짓인지를 판단위해 미리 정의한 참 값을 대비하여 비교하는 기법 활동\r\n참샘휴일 + 완자 (참오라클, 샘플링 오라클, 휴리스트",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-a6qyz",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "테스트 7원리",
+    "definition": "테스트의 효과 극대화 위해, 7가지 기본 원칙을 적용한 방법론",
+    "mnemonic": "결완초집살정오(결함,완전못함,초기집중,살충제,정황의존성,오류부재)",
+    "keyword": "①결함 존재의 증명 : 테스팅은 결함의 존재를 보일 뿐, 부재를 증명하지 못함\n②완벽한 테스팅 불가  : 모든 입력·경로 조합 테스트는 불가능 → 위험·우선순위 기반 수행\n③조기 테스팅  :  SDLC 초기(요구·설계 단계) 결함 발견 시 비용 최소화 (Shift-Left)\n④결함 집중  :  파레토 법칙(20% 모듈에 80% 결함 집중) → 집중 테스트\n⑤살충제 패러독스  :  동일 테스트 반복 시 새 결함 미발견 → 테스트 케이스 주기적 검토·갱신\n⑥상황 의존적 테스팅  :  도메인(금융·의료·국방·공공)에 따라 테스트 방식·강도 상이\n⑦오류 부재의 궤변  :  결함이 없어도 사용자 요구·기대에 부합하지 않으면 무용 (UX·요구사항 검증 필수)",
+    "extra": "",
+    "userId": "u1779723161294-0sdf1",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "V모델",
+    "definition": "",
+    "mnemonic": "검증및 확인모델/SDLC 단계별 개발자 검증(Verification), 사용자 확인(Validation) 지원모델\r\n/ 단통시인설, 알베감",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-n88ac",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "VV모델",
+    "definition": "",
+    "mnemonic": "임베디드, 국방 시스템, 수명주기 3연속, 모델 프로토타입, 최종검증",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-osl4b",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "RTM",
+    "definition": "",
+    "mnemonic": "요구사항 처리 메트릭스",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-pezqe",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "블랙박스 테스트 (명세기반 테스트)",
+    "definition": "",
+    "mnemonic": "블| 동경의상 유분페원오류예측 / 사용자과점\n동등분할(중간값)\n경계값(경계근처 값)\n의사결정테이블 테스트\n상태전이테스트\n유즈케이스(시나리오테스트)\n분류트리, 페어와이즈(조합1회이상)\n원인결과(And,Or,net, identity)\n심볼리 실행(모드 실행경로 탐색,",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/0acfd41e-a166-4274-93c9-229d7351fa2b.webp"
+    ],
+    "userId": "u1779723161294-dosvz",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "화이트박스 테스트",
+    "definition": "",
+    "mnemonic": "화제루, 구결조 조결 MC/DC 다중조건결정 / 개발자 관점 \r\n종류 : 경로커버리지, 커버리지(문장,분기,조건,결정, 조건/결정, 변경조건결정, 다중)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-8r6t9",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "분류트리 테스트",
+    "definition": "",
+    "mnemonic": "시스템의 입력조건을 분류, 트리구조로 표현하는 테스트 케이스를 생성 테스트 기법",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-likld",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "그레이박스 테스트",
+    "definition": "",
+    "mnemonic": "GrayBox",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-rl7so",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "탐색적 테스팅",
+    "definition": "",
+    "mnemonic": "차박노디,  휴리스틱, 경험기반,  차터, 타임박싱, 테스트 노트, 세션노트, 요약보고",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-2sqe9",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "테스트 자동화",
+    "definition": "",
+    "mnemonic": "뱡랼찰;  도구 : Git, Remin, FindBug, Jmeter, Jenkis",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-43b7z",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "회귀테스트",
+    "definition": "",
+    "mnemonic": "오류제거 수정 반복시험, 파급효과, 부작용 (Ripple Effect, Side Effect) \r\n/ Retest all, Selective, Priority  // SW변경 > 변경여향평가 > 회귀테스트 \r\n/ 단계 : 변경사항분석>테스트케이스 선택>회귀테스트, 테스트결과검토>재구조화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-rub3c",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "고릴라 테스트",
+    "definition": "",
+    "mnemonic": "특정모듀을 반복적으로 테스트(극한 검증), 특정기능 반복테스트(기능단위 테스트)\r\n//단위테스트, 특정기능 무한적 테스트",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-d3mr5",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "인수테스트",
+    "definition": "",
+    "mnemonic": "사운계규알배(사용자인수, 운영상, 계약인수, 규정인수, 알파, 베타 테스트)\r\n알파(개발자), 베타(사용자)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-1xoqk",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "Ad hoc 테스트",
+    "definition": "",
+    "mnemonic": "유형(몽키, 페어, 버디 테스트), 예상치 못한 발견 / 몽키:예측불가능한 입력을 무작위",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-00ikt",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "MC/DC",
+    "definition": "",
+    "mnemonic": "구문, 조건(23), 결정(34), 조건-결정(14), 변경조건-결정(123), 다중조건-결정 (1234)\n1 1 1  -> A  B  A&B\n1 0 1\n0 1 1\n0 0 0",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/44f92a1e-034a-48ef-9e6b-c47836e093cd.webp"
+    ],
+    "userId": "u1779723161294-9ldmz",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "성능테스트",
+    "definition": "",
+    "mnemonic": "리틀의 법칙(공간 객체수 = 유입 x 시간),  L = λW,  TPS - Active user / MRT(평균응답시간) \r\nTPS, Named user, Concurrent User,  Active - In Active user, Response Time, Think time, Request Interval\r\n목적 : 단복임(단위, 복합, 임계)/방법 (루스티가확가)Loopback, spike, Tier, 확장성, 가용성 테스트\r\n//절차: 계획(목표,범위,시나리오), 설계(환경구축, 준비, 도구선정), 실행, 결과보고(성능개선, 공유)\r\n//실제운영에서 시뮬레이션(Workload 평가)\r\n'대응방안 : 단위(AL개선, 캐싱-메모리 구조 최적화), 복합(API지연구간 분석-병목해결, 재설계), 임계(임계점 직전 자원 사용량 분석, 병목자원 확장),   루프백(NW,포트,점검, NIC업뎃, 스파이크(오토 스페일링, 큐잉, 버퍼링강화), 확장성(수평수직확장), 가용성(이중환, Failover), 티어어(WEb,Was, DB구성 점검), 부하(코드, 장애패턴 분석) 등",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-nwu51",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "사용성 테스트",
+    "definition": "",
+    "mnemonic": "정성적(직접관찰, 인터뷰, 생각하는 소리기법, 페이퍼 목업, 컨텍스트 기반 테스트\r\n정량적(AB테스트, 아이트래킹, 클릭분석, 스크린목업), \r\n탐색적(카드소팅, 프로토타입 test)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-yynf4",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "AB테스트",
+    "definition": "",
+    "mnemonic": "두가지버전(A,B), 동일조건 비교평가(클릭, 전환율, 체류시간)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-bbbte",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "AA테스트",
+    "definition": "",
+    "mnemonic": "동일한버전(A,A), 시간두고 동일여부 평가(신뢰성)  AA-> AB",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-gyab8",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "POC",
+    "definition": "",
+    "mnemonic": "제품 기능, 성능 사전 검증",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-q91dp",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "PT",
+    "definition": "",
+    "mnemonic": "사전개발, 위험발견, 기술금증, 소규모 선행 / 실제환경",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-n018j",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "ISO 29119",
+    "definition": "",
+    "mnemonic": "데프도테키 조관동, 명구경, SW테스트 국제표준, 33063(프로세스 심사), 20246(리뷰), 829(문서)\r\n1.개념 2.프로세스 3.산출물 4.기법, 5.키워드기반 테스팅\r\n//6. Agile, 11.AI시스템(42119), 13.Biometric지속 발전",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-rmljo",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "ISO 29119-2 (프로세스)",
+    "definition": "",
+    "mnemonic": "테스트 멀티Layer 구분(조직>관리>동적) / 1. 조직 테스트 정책, 표준수립 2. PJT별 테스트 계획, 관리 3. 실제 테스트 환경 동적 실행, 기록, 보고 // v-model, Agile 에서 활용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-v96r6",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "ISO 29119-4 (기술)",
+    "definition": "",
+    "mnemonic": "효과적 테스트 수행 Test 설계 기법 (명세, 구조, 경험) / 1. 동등, 경계값, 분류, 원인결과, 페어와이즈 2. 문장,분기,경로커버리지, 조건,결정, MCDC, 다중조건/결정 3. 탐색, 체크리스트, 차터, 유즈케이즈, 버그바운티, 겅험시나리오, 유사시뮬레이션",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-37vkk",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "ISO 29119-5 (KDD)",
+    "definition": "",
+    "mnemonic": "테스트 자동화, 반복수행 효율화로 키어드기반 접근법 \n/ TC를 키워드 조합으로 구성, 키워드만 수정\n/ 해석기, 시퀀스\n/ 장점 : 도메인전문가 테스터간 대화\n유지보수 향상, 자동화 도입가능\n@로그인, 파라미터(ID, PW) 절차 : 화면>ID,pW> 클릭>홈",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/7f1dc6f2-5b53-49fa-8d6a-50c45fbf838d.webp"
+    ],
+    "userId": "u1779723161294-som6x",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "Test Case",
+    "definition": "",
+    "mnemonic": "입력값, 실행조건, 예상값 / Test case = IEEE829 (식항입출환특의) / (원칙)명확,재현가능, 독립,완전,추적가능성, 단순성, 예외처리, 자동화가능성)\r\n준비(Test basis->Test case) 실행환경(Test Bed, Test Target, Harness, Driver, Stub, Data)  결과(Log, Report) 자동화(테스트 자동화 프레임워크)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-atyzy",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "테스트 완료조건",
+    "definition": "",
+    "mnemonic": "완목기커리스(테스트 완전성, 목적, 기준, 커버리지, 리스크, 스케쥴) / 테스트 종료시점 결정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-wfpst",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SW분할 발주",
+    "definition": "",
+    "mnemonic": "기공부/공정분할, 기능분할, 부품분할",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-sxb34",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SW규모 산정",
+    "definition": "",
+    "mnemonic": "하향식(전문가, 델파이), 상향식(LOC,M/M), 수학(FP, CoCoMO*)  /하상수\r\n*모듈 서브모듈, 인터페이스를 모두 합치는 것",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-qqg46",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "Function Point",
+    "definition": "",
+    "mnemonic": "유범이의 데이트 미인점개, ISO14143-1, \r\n유형: EI, EO, EQ 데이터 : ILF, EIF 복잡도 : DET, RET\r\n유형-범위-데이터기능-트랜잭션 / 미조정 점수-조정인자결정-조정기능점수 - 개발비\r\n605,784(약 9.5% 인상)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-ohpz2",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SW사업 대가산정 가이드",
+    "definition": "",
+    "mnemonic": "ISO12207, 사기보후직소, 규연성운보 / 간이법 : 평균복잡도 / 정규법 : 기능별 복잡도\r\n(방향) 사업유형(기획,구현,운영) 식별 -> 시점(예산,발주,사후정산) 식별 -> 모형선정",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-k8s7e",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "대가산정 2025",
+    "definition": "",
+    "mnemonic": "항목: (변경)전문작업비>커스터마이징 작업비 / \r\n사업유형(기본, 데이터, 모델형)을 요구분석>설계>DB구축>모델구현/학습>검증,안정화, \r\nDevops대가반영(FP+투입공수), 통합/운영업무 활동명확, 대규모 정보화사업 혁신방안 연계",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-rpe3l",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "SW대가 개발운영통합사업",
+    "definition": "",
+    "mnemonic": "개념 : 개운통 → 개발+운영 통합사업\r\n산정방식 : 개운통 → 개발비 / 운영비 / 통합계약(구분산정후 통합계약, 기간내 요구사항 변경,개선을 탄력적으로 반영, 운영중 소규모 기능 추가 변경도 통합 범위 내 관리)\r\n- 운영비에서 10~20%범위를 개선변경 대응 예산으로 편성\r\n- 기능점수와 투입공수로 산정하여 운영비에서 차감정산 \r\n- 기능추가 > CR접수 > 영향분석 > FP공수산정 > 운영비에서 사용함(초과분은 별도계약 전환)\r\n특징 : 애자일·데브옵스 / 예산효율 / 품질관리 / 유연계약\r\n시사점 : 지속적개선 / 예산절감 / 품질강화 / 선순환 / 빠른 반영, Agile./Devops방식 가능",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-0y13b",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "HW규모산정",
+    "definition": "",
+    "mnemonic": "수참시(수식,참조,시뮬레이션) / (절차) 방향,기초조사 > 업무분석 > 모델/규모산정 > 가중치 적용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-f8ust",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "Lehman 소프트웨 변화",
+    "definition": "",
+    "mnemonic": "계복규조 친지감피 / SW혁명 / S, P, E \r\n- 계속변경, 복잡증가, 규제, 조직안정, 친근성, 지속증가CICD, 감소품질, 피드백",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-csp1m",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "유지보수 분류",
+    "definition": "",
+    "mnemonic": "(목적)수완예적 (대상)데프문시 (시점)계예응지 // 조직, CAB, CCB, CMDB, 형상, 변경관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-pqrud",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "모듈화",
+    "definition": "",
+    "mnemonic": "응집도(우논시절통순기) 기능이 높음 || 결합도(내공외자스자) 낮아야 효율이 있다.",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-vb1lb",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "3R",
+    "definition": "",
+    "mnemonic": "역공학, 재공학, 재사용 / 산출물,코드기반으로 유지생산성, 비용점감",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-w1cm1",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "역공학 (Reverse)",
+    "definition": "",
+    "mnemonic": "현실소스 --> 재구조화  /  code추출 > 분석 > 문서화 \r\n 분석자료를 얻어내는 것이며, 오래된 시스템도 기능명세서, 차세대에서 AI 리버스 E",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-c4yml",
+    "createdAt": "2026-05-25T15:32:41.294Z"
+  },
+  {
+    "topic": "재공학(ReEng)",
+    "definition": "",
+    "mnemonic": "재구조화된 SW --> 현실화 / 순공학 준비,  역공학 > 재구조화(표준화 하는것) > 구현",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161294-84byn",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "재사용(Reuse)",
+    "definition": "",
+    "mnemonic": "리포지토리 --> 현실화 / 순공학 > 재사용  // copy, CBD, PL",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-qepds",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW 리펙토링",
+    "definition": "",
+    "mnemonic": "내부구조만 개선/중긴큰긴주,이분일통 /적용시점 : 삼진(중복3번), 기능추가, 버그, 코드리뷰\r\n/기법 : 결합도(Move 메소드, 속성, 분리 Class),  응집도(Pull up, push down 메소드, inline class)\r\n가독성(Rename, 변수(설명성, 파라미터), 주석",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-ej496",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "품질관리",
+    "definition": "",
+    "mnemonic": "계관통/계획(전문가, test검사계획), \r\n관리(Peer, Mang,Tech, Walkthrough, Inspection, Audit) 통제(특산관히파체충)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-akxuk",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW테스트 (정적)",
+    "definition": "",
+    "mnemonic": "리뷰(비공식리뷰, 워크스루, 기술리뷰, 인스펙션*, 감사)\r\n*ISO 20246,Ad hoc, 중재자, 체크리스트 및 문서 사전준비/ 종류 : 시스템설계, 설계, 코드인스펙션\r\n*절차(계획>사전교육>준비>인스펙션 회의>수정>>후속조치)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-hc0is",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "품질통졔",
+    "definition": "",
+    "mnemonic": "특성요인도(인과관계도), 산점도, 관리도, 히스토그램, 파레토, 체크시트 층별",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-2wpan",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "형상관리",
+    "definition": "",
+    "mnemonic": "가추무(가시성, 추적성, 무결성), 산출물관리, 식통감기, CCB, 기준선 : 기분설시제운 (기능,분배,설계,시험,제품,운영) // 이것이 안되면 리버스E, 단계별 기준선(BaseLine) 기능적 기준선, 분배적 기준선, 설계기준선, 시험기준선, 제품기준선, 운영기준선\r\n형상, 변경, 버전, 소스관리 (범위가 좁혀서 감) / 도구( SVN, Git ) / 무결성, 메타화 필요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-1szx3",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "신QC",
+    "definition": "",
+    "mnemonic": "친연매매계P애 / 친화, 연관,매트,메트릭스데이터분석,계층,PDPC,애로우",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-zymoz",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "MacCabe 회전복잡도",
+    "definition": "",
+    "mnemonic": "엣지-노드+2 / 폐구간 +1 / 의사결정수 +1  / 5간단, 5~10(안정) 20(복잡)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-1gdlq",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "CMMI2.0",
+    "definition": "",
+    "mnemonic": "SW프로세스 품질개선,  Select Category(DMEI), Select CA, PA, PG  / 레벨(0~5): 불초관정량최 / Do, Manage, Enable, Improve",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-q7x37",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "CMMI3.0",
+    "definition": "",
+    "mnemonic": "Agile, DevSecOps 등 반영 / 17개 Practice, 8개 Domain, DMEI\r\n조직의 프로세스 수준판단 + 개선점을 식별 / SW포함한 시스템 식별, 문서+인터뷰 \r\n외부선임심사원 1명 + 심사원(4~9명, 내부포함 가능), SW공학연구소, 5단계 연속적 모델\r\n대상 : 프로세스 범주(4개, PC), 프로세스 영역(22개) , Goal, Practice \r\n대상(프로세스관리, 프로젝트, 엔지니어링, 지원)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-gvyy8",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SP인증",
+    "definition": "",
+    "mnemonic": "프개지,프조(프로젝트, 개발, 지원 / 프로세스, 조직) 3등급 / 조직의 프로세스 수준을 평가, SW한정, NIPA(선임1, 심사원 3명), 3년유효, 5영역, 17개, 70개 세부평가항목",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-uhjyo",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "ISO 25010 (9126)",
+    "definition": "",
+    "mnemonic": "(내외부)기신사효유이보호 (사용품질)효생안만",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-eig8a",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "ISO 25000",
+    "definition": "",
+    "mnemonic": "품질측정 평가모델 / SQuaRE 프레임워크 : 요모관측평",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-hvk34",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "ISO 9000",
+    "definition": "",
+    "mnemonic": "품질경영과 품질보증에 관한 국제규격(제품의 설계, 개발, 제조, 설치 및 서비스 품질보증모델)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-xg40w",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "품질비용",
+    "definition": "",
+    "mnemonic": "적부 예평내외 /  (대응) 교육훈련 > 테스트검사 > 재작업 > 하자소송\r\n적합 > 예방비용(품질계획, 문서화, 매뉴얼, 교육, 감사비용), 평가비용(검사, SW test)\r\n부적합 > 내부실패비용(재작업, 대책검토비용),  외부실패비용(하자보수, 소송, 법적책임, 기회손실)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-dxv20",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "1:10:100 법칙",
+    "definition": "",
+    "mnemonic": "개발:생산:인도후->1:10:100 / 작업결함은 100배 비용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-fasn3",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "눈덩이 효과",
+    "definition": "",
+    "mnemonic": "초기개발 실패시 후반비용 상대적 증가",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-o01nb",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "하인리히 법칙",
+    "definition": "",
+    "mnemonic": "1:29:300 법칙, 큰사고전 경미사고 발생",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-ok5ps",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW 안전성 분석 개념",
+    "definition": "",
+    "mnemonic": "기능 실패 방지/ Risk(위험성), Hazard(위험원), Harm(유해) / 산출문검토, 안전요건도출\r\nFHA(기능위험), PHA(사전위험), FTA, FMEA, HAZOP, STPA / 프로르래밍: 화이트,블랙분석",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-26kvo",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "FTA (결함트리분석)",
+    "definition": "",
+    "mnemonic": "하향식 원인분석, 설계분석기법, Top Down, 연역적기법, 논리(AND, OR), 확률",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-wf9oq",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "FEMA",
+    "definition": "",
+    "mnemonic": "상향식 영향분석, HW고장위주,RPN = 심각도*발생도*검출도(심발검)(1~10점)//SW,상호작용은 어려움",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-87z6f",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "HAZOP",
+    "definition": "",
+    "mnemonic": "운영조건 변환 > 위험분석, 이탈 = 공정변수 * 가이드워드(무,증,감,배,추가,부분,반대,기타)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-erf83",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "ETA",
+    "definition": "",
+    "mnemonic": "이벤트 발생 가능성의 확률, 최종시나리오 도출(정량위험분석)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-kyd55",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "STPA (system Theorethic Process Analysis)",
+    "definition": "",
+    "mnemonic": "STAMP기반, 복잡시스템 제어, 판단실패, 상호작용 문제 고려/부적절한 명령(control),누락(제어사고)\r\n사컨언원(사고위험정의>CA도출>UCA도출>시나리오 도출  (예: 자율주행)\r\nUCA(비안전 제어) : CA부재, 부적절CA, 시간순서오류, 지속된CA",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-y4528",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "O&SHA",
+    "definition": "",
+    "mnemonic": "운영유지보수 단계 -> 사고 위험분석, Operation and Support Hazard Analysis / 감전, 잘못 조작",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-v0xej",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "PHM",
+    "definition": "",
+    "mnemonic": "실시간 예측 기반 유지보수 / 센모진예관(센싱 >모니터링>진단>예측>관리) // 미리정비\r\n(Prognostics and Health Management)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-ne85r",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "오픈소스 SW",
+    "definition": "",
+    "mnemonic": "무상소스코드 공개, 자코파일, 차통포(자유배포, 코드공개, 파생,일관성, 차별금지, 동일성, 포괄성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-bhxcx",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "OSS 거버넌스",
+    "definition": "",
+    "mnemonic": "정획적운관",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-fjd86",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "OSS보안위협",
+    "definition": "",
+    "mnemonic": "공개로 취약 // SBOM, DevSecOps, OSS거버넌스, 샌드박스 등",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-4u8oh",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "라이선스 분류",
+    "definition": "",
+    "mnemonic": "반환불필요: BSD, Apache / MIT , 반환필요 :  GPL, AGPL, LGPL",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-x2ueu",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "정보시스템 감리",
+    "definition": "",
+    "mnemonic": "57조1, 사업유형(EA, ISP, SD, DB, OP, MA) 감리영역, 관점, 기준 / 성과, 산출물, 절차",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-xjsk8",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "감리절차",
+    "definition": "",
+    "mnemonic": "예현시/ 예비조사, 현장감리,시정조치확인 (확인보고서)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-nyeh9",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "감리 수행시점",
+    "definition": "",
+    "mnemonic": "정상추 23, 설종/요설종   설계:종료 / 요구분석:설계:종료",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-rf9vg",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "상주감리",
+    "definition": "",
+    "mnemonic": "감리원 현장 상주, 사업관리(X),  제3자 , 감리사",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-7z5ai",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "PMO",
+    "definition": "",
+    "mnemonic": "발주자, 사업관리 지원 , 현장소장, 전자정부법 64조2, 시행령78조2-5\r\n(기능)지원, 관리절차, 포트폴리오관리, 내부컨설팅, 종합보고, 문제해결/갈등관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-w086u",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "Low Code / No code",
+    "definition": "",
+    "mnemonic": "CASE Tool, Drag & Drop / 바이브코드  / IDE Tool",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-qnh33",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SOM",
+    "definition": "",
+    "mnemonic": "공컴포해의자타(공급자, 컴포넌트명, 버전, 해시, 의존관계, 작성자, 타임스탬프)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-cz2k8",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "민간투자형 SW사업",
+    "definition": "",
+    "mnemonic": "소진40, 구매형(계획,검토,SW고시,선정,계약) , 개발형(민간50%이상, 20%현금, 운영비, 투자금 분할)\r\n임대형(BTL, SW임대료), 수익형(BTO, 사용료) / 경기정 (적중실 정공파혁)\r\n경제성, 기술성(적합성,중복,실현가능성), 정책성(정책연계성, 공공성, 파급효과, 혁신성)\r\n정기혁(정책성, 기술성, 혁신성)   AHP >= 0.5,  VFM (적격성 분석)\r\n사업여건, 재원조달, 사업특수성 / 기술적합, 중복연계성 / 민관협력, 효과성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-9dish",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW 안전 확보 지침",
+    "definition": "",
+    "mnemonic": "(SDLC,개발) 안전요구>위험원분석>설계구현>검증 / (운영) 계획>분석>점검>변경>장애관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-4clwz",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "전자정부 성과관리지침 (68조)",
+    "definition": "",
+    "mnemonic": "지표 : 비용(운영적정성,유지용이성,비용효율성), 업무(업무영향도, 사용편이, 성과달성도)\r\n대상: 1년경과 vs 2년내 폐기/통합 제외, <40~60점(폐,통,재)/대상>계획>증빙>적정성>측정>개선",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-3wpw9",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "운영기술",
+    "definition": "",
+    "mnemonic": "DevOps, DevSecOPS, MLOps, AIOps, PromptOps",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-fumc6",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "인공지능 도입사업 대가산정",
+    "definition": "",
+    "mnemonic": "사전준비(AL, 학습, 전처리) > 이용료계산(월,규모,수,이용료금) > 전문작업비 > 사업비 계산",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-e586i",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "IEC61508 SIL",
+    "definition": "",
+    "mnemonic": "전기/전자-기능안전 무결성 수준(SIL)평가기법 / SIL1~4 : 저빈도(1회/년) | 고빈도(1회이상)\r\nSIL 1~ 4 :  10-2 ~ -5 <= PFD < 10-1 ~ -4  ||  10-5 ~ -8 <= PFH < 10-6 ~ -9",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-jy2dv",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "ISO26262 ASIL",
+    "definition": "",
+    "mnemonic": "자동차 안전수명 수준(ASIL) , (저)ABCD(고) 등급 : 심각도(S) * 노출확율€ * 제어가능성©",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-3pqba",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "기능안전 표준",
+    "definition": "",
+    "mnemonic": "DO-179C(항공), IEC 62278(철도), IEC 60601(의료기기), 60880(원자력), 15998(교통수단)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-kvmv4",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "통합테스트",
+    "definition": "",
+    "mnemonic": "점진적 통합, 비점진적 통합, 상하통합방식, 테스트 드라이버, 스텁",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-sqji7",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "MSA 원칙",
+    "definition": "",
+    "mnemonic": "REST API 표준IF, 경량화, 다양언어, 컴포넌트 / 면확한 경계, 독립배포, 기술다양화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-z4lf9",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW아키텍처 수립절차",
+    "definition": "",
+    "mnemonic": "요분설검(요구분석, 아키텍처 분석 - 설계, 아키텍처 검증/승인)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-dguw3",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW품질평가 (개발,제품)",
+    "definition": "",
+    "mnemonic": "개발: CMMI, SPICE / 제품:ISO 9126, 12119, 14598, 12207",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-mxf8h",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW품질성능 평가",
+    "definition": "",
+    "mnemonic": "상용SW BMT",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-qpb12",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW 소스코드 품질평가",
+    "definition": "",
+    "mnemonic": "CMMI, SPICE / ISO9126, 12119 , 14598 / 성숙도, 오류허용성, 회복성, 준수성 \r\n// 품질확보 방안 : 리뷰, 리팩토링, 설명서, 코딩가이드",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-lobli",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "OSS 양립성",
+    "definition": "",
+    "mnemonic": "강(GPL), 약(MPL), 공개(BSDL) /  강+약 : 양립성 // 신규 라이선스 전환허용, 재라이선싱, 양립허용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-u8av7",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "정보시스템 유지 운영감리",
+    "definition": "",
+    "mnemonic": "(운영) 시스템 안정성, 신뢰, 효율 점검개선 (유지)기능개선, 향상, 평가개선 // 개발SW, 인프라 -상용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-6qhcg",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW대가 컨설팅 업무량 산정",
+    "definition": "",
+    "mnemonic": "컨설팅업무량 = 업무가중치 * 난이도 / 컨설팅 대가 : 컨설팅업무량 * 단가 + 직접경비\r\n투입공수 : 직무별 투입공수 * 기술자 평균임금/ 제경비 =인건비 * 144~154% /\r\n기술료 = (직접인건비 + 제경비 ) * 20~ 40% => 대가 = 직접인건비 + 제경비 + 기술료 + 직접경비",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-r0k22",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "메타모픽 테스트",
+    "definition": "",
+    "mnemonic": "입출력 답이 없을때 / 메타모픽 관계=입력'->출력' 예측 가능/ 사례: 검색엔진, DNN이미지 분류",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-qh1dc",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "뮤테이션 테스트",
+    "definition": "",
+    "mnemonic": "의도적 오류화 테스트 케이스 적합성 평가 / 뮤턴트 생성, 오류수정, 재생성 (반복)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-ygr92",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "키워드 기반 테스트",
+    "definition": "",
+    "mnemonic": "테스트자동화, 테스트케이스(TC) 생성, 실행, 결과 / 29119 part5 / 편집>해석>실행엔진>SUT>결과",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-pfidq",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "실행중 SW배포 및 테스트 전략",
+    "definition": "",
+    "mnemonic": "(배포) 롤블카 (테스트) 카나리, AB, shadow test / Cloud test기반(Devops, 컨테이너, MSA, Agile환경)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-fb9cj",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "AI개발방법론",
+    "definition": "",
+    "mnemonic": "AI모델개발, 실험적 기술, 미검정 기술, 관리자 신기술이해, 대규모 인프라, 혼련",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-gr1kj",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "MSA아키텍처",
+    "definition": "",
+    "mnemonic": "Ployglot Persistence, 보상TX,  Message Queuing",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-2sdfw",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW품질보증 절차,기법",
+    "definition": "",
+    "mnemonic": "(SDLC) 계획 > 구현 > 평가단계 > 개선단계 | 목표범위정의 >요구분석>테스트-결함 >문서-모니터링",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-el2aa",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "아키텍처 모델/스타일",
+    "definition": "",
+    "mnemonic": "파이프 필터, MSA, CS, MVC, 데이터중심(Repository)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-6rlhh",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "사용성 평가",
+    "definition": "",
+    "mnemonic": "(절차)계획>설계>실행>보고 | (항목)시간, 패턴, 정확성, 완성도, 학습용이성, 일관성\r\n(방법) 휴리스틱, 워스루, 벤치마킹, 설문, 인터뷰 (유형)탐색,평가,검증,비교테스트) \r\n휴리스틱(전문가) 평가 야콥닐슨 원칙 : 가시성, 일관성, 통일성, 문서화, 표준화, 실수방지",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-0unp4",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "카오스 엔지니어링",
+    "definition": "",
+    "mnemonic": "분산환경, 정상vs혼돈, 대조,설험군 / 예측못한 상황 대응(신뢰성)/ 가설>오류주입>측정>수정>검증   // 복원력의 정도 확인",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-xp7bu",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "AI기반 SW테스트",
+    "definition": "",
+    "mnemonic": "블랙박스(조합, 백투백, AB, 변성테스트, 메타몰픽) / 그림안에 키워드는 크게\r\n화이트박스(뉴런, 임계점, 부호변경, 값변경, 부호부호 커버리지)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-bkapu",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "모델기반 테스트",
+    "definition": "",
+    "mnemonic": "TC설계 자동화, 모델기반 테스트(test 모델 구축, TC자동생성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-e0wmm",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "Shit Left Test",
+    "definition": "",
+    "mnemonic": "개발초기부터 운영단계 까지 테스트를 수행(애자일, Ci/CD연계 간응 // AB테스트",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-y4en2",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "조합테스트",
+    "definition": "",
+    "mnemonic": "입력조건, 변수 조합하여 테스트 (A,B,C 옵션 -> A+B, A+C)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-mz38b",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "백투백",
+    "definition": "",
+    "mnemonic": "Old vs New 버전  -> 동일한 입력하여 테스트 비교/ 버젼검증",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-jtbf1",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "변성테스트(메타모픽)",
+    "definition": "",
+    "mnemonic": "코드에 작은 변형(변이) -> 테스그가 변이를 잡는지 평가기법",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-gk88m",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "테스트 커버리지",
+    "definition": "",
+    "mnemonic": "테스트가 기능, 코드의 검증범위 비율 / 코드, 기능, 조건 (80%완료, 완성도)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-00926",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "카오스 테스트",
+    "definition": "",
+    "mnemonic": "시스템이 실패할 수 있는 상황을 인위적으로 만들어 복원력 테스트 (넷플릭스 카오스몽키, 무작위 장애유발)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-tcwhn",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "뉴런 커버리지",
+    "definition": "",
+    "mnemonic": "모델내 뉴런의 일정 기준 활성화 비율 //  \r\n'1. 뉴런커버리지 = 활성화뉴런수/전체뉴런수 2. 부호변경 커버리지 = 부호변경 / 전체뉴런수  3. 값 변경 커버리지 = 값변경수/전체 뉴런수 4. 임계값 커버리지 = 임계값 뉴런수/전체수  5. 부호-부호 커버리지 = 부호변경 쌍 뉴런수 / 전체수  \r\n6. 레이어 커버리지 = 활성화 레이어 수/ 전체 은닉레이어수",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-dsw31",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "UX설계-UX프로세스",
+    "definition": "",
+    "mnemonic": "TX(total경험)UX(사용경험), 페르소나/목표>분석>모델링>UX전략>디자인>프로토타이핑>테스트>구현",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-amzcz",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "CI/CD구성",
+    "definition": "",
+    "mnemonic": "버전관리(GitHub),CI서버(Jenkis),빌드도구(Ant),테스트FW(Junit),코드품질분석도구(소나큐브), \r\n배포도구(GitHub,CI),모니터링및 로깅 도구(Stack)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-vodsb",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "기술부재",
+    "definition": "",
+    "mnemonic": "설계,코드,테스트,문서부채 / 추정,우선순위,템플릿,기술업뎃,리펙토링(PWIA)\r\n코드 리팩토링, 자동화 테스트, 의존성, Agile DevOps 도입, 점진적 개선 전략, 외부컨설팅",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-beg87",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "도메인, 설계, 계층",
+    "definition": "",
+    "mnemonic": "도메인(주문,결재 등),DDD, MSA, 유비쿼터스언어, 애그리거트(묶음), 바운드컨텍스트(경계)\r\n영역: Presentation, App, Domain, infrastructure Layer/장점: Biz이해,복잡관리,단점:도메인전문가필요\r\n* Front (표현레이어, APP레이어), 도메인드리븐, infrasture, 구조)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-aumsk",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "소프트웨어 설계유형",
+    "definition": "",
+    "mnemonic": "(유형) 상위: 아키텍처, 데이터, IF  / 하위:모듈, 자료구조, 알고리즘\r\n(원리) 일반: 추상, 정보은닉  구체화: 분할정복, 단계적 분해, 모듈화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-jqou9",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "MSA 성능기술",
+    "definition": "",
+    "mnemonic": "Pub/sub, 비동기, Circuit Breaker, Rate Limiting, event 드리븐, CQRS, 서비스매시",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-2ps0g",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "AI 바이브코딩",
+    "definition": "",
+    "mnemonic": "idea > AI > design > 결과 / Github, Frame AI, 커서 AI, Text2SQL",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-amlf3",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "SW진흥법",
+    "definition": "",
+    "mnemonic": "민간투자형 SW사업(제40조), 중소SW사업자의 사업참여지원(제48조),\r\n원격지 개발 근거 마련(제49조), 과업변경에 따른 계약금액 조정(제50조)\r\n20조(GS인증), 40조(민투사업)\r\n하도급 제한 (제51조), 54조(상용SW직접구매제도, 디지털서비스구매제도), \r\n55조(BMT 성능검증), 56조(SW품질관리) 57조(SW사업감독)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-jstm6",
+    "createdAt": "2026-05-25T15:32:41.295Z"
+  },
+  {
+    "topic": "파이선",
+    "definition": "",
+    "mnemonic": "휴학글고메 다객인생/ 휴먼관점, 학습쉬움, 오픈소스, 고급프로그래밍, 메모리 스스로, 다이나믹 타이핑, 객체활용, 인터프린터 기반, 생산성 좋음",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779723161295-pci8m",
+    "createdAt": "2026-05-25T15:32:41.295Z"
   }
 ]

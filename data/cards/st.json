@@ -1,1 +1,48 @@
-[]
+[
+  {
+    "category": "통계",
+    "topic": "독립표본 T 검정",
+    "definition": "독립된 두 집단의 평균 비교를 위해, 정규성과 등분산성 가정을 기반으로 t-분포를 활용하는 검정",
+    "mnemonic": "기본가정: 정독등 (정규성, 독립성, 등분산성)\n검정절차:\n1. 가설 설정 (귀무가설 vs 대립가설)\n2. 등분산 검정 (Levene 검정)\n3. t-통계량 산출 및 p-value 확인\n4. 귀무가설 기각 여부 결정",
+    "keyword": "https://www.perplexity.ai/search/f30f7ee3-2080-4285-93a6-07a751333977?login-source=floatingSignup&login-new=false",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/0c663477-3d78-483a-8064-99cad68fb545.webp"
+    ],
+    "userId": "u1779897544199",
+    "createdAt": "2026-05-27T15:59:04.199Z"
+  },
+  {
+    "category": "통계",
+    "topic": "자기회귀모형",
+    "definition": "시계열 예측을 위해, 과거 관측값과 백색잡음을 활용한 선형 확률 모형",
+    "mnemonic": "AR(p): p차 자기회귀 모형\n정상성: 시계열의 평균과 분산이 일정\nPACF: 편자기상관함수 시차 p 이후 절단\n백색잡음: 오차항의 독립성과 등분산성\n자기상관성: 시차에 따른 변수 간 상관관계",
+    "keyword": "시계열 분석, 정상성, PACF 절단, 백색잡음, AR(p)",
+    "extra": "",
+    "userId": "u1779899095001",
+    "createdAt": "2026-05-27T16:24:55.001Z"
+  },
+  {
+    "category": "통계",
+    "topic": "이동평균모형",
+    "definition": "추세 파악을 위해 백색잡음 선형결합을 이용하는 시계열 모형",
+    "mnemonic": "백색잡음(White Noise) 오차항의 영향\n항상 정상성(Stationarity) 만족\n자기상관함수(ACF) q차 이후 절단\n편자기상관함수(PACF) 점진적 감소\n가역성(Invertibility) 조건 만족 필요",
+    "keyword": "백색잡음, 정상성, ACF 절단, PACF 소멸, 가역성",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/f40d7ce4-2c3e-48ff-bd31-4d7c5d0d7870.webp"
+    ],
+    "userId": "u1779899111258",
+    "createdAt": "2026-05-27T16:25:11.258Z"
+  },
+  {
+    "category": "AI",
+    "topic": "혼동행렬활용 성능평가원리",
+    "definition": "분류 모델 성능 평가 위해, TP, FP, TN, FN 기반 지표를 산출하는 원리",
+    "mnemonic": "정오분류표: TP, FP, FN, TN\n정확도: 전체 중 맞게 예측한 비율\n정밀도: 참 예측 중 실제 참 비율\n재현율: 실제 참 중 참 예측 비율\nF1-Score: 정밀도와 재현율의 조화평균",
+    "keyword": "TP/TN/FP/FN, 정확도(Accuracy), 정밀도(Precision), 재현율(Recall), F1-Score",
+    "extra": "",
+    "userId": "u1779899145358",
+    "createdAt": "2026-05-27T16:25:45.358Z"
+  }
+]

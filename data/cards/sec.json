@@ -9,6 +9,15 @@
     "createdAt": "2026-05-25T11:06:30.320Z"
   },
   {
+    "topic": "CVD/VDP",
+    "definition": "-CVD(Coordinated Vulnerability Disclosure): 화이트해커·기업·기관·조정기관이 협력해 취약점을 발견, 신고, 조치, 공개까지 관리하는 체계\n-VDP(Vulnerability Disclosure Policy): 취약점 신고를 받을 범위, 방법, 처리 절차, 공개 기준 등을 미리 정해 둔 조직의 공개 정책",
+    "mnemonic": "기술요소\n - 취약점탐지 : 시스템, 서비스, 네트워크 보안결함 탐지기술\n - 신고접수체계 : 제보받아 전달 창구/프로세스\n - 조치/검증 : 발견된 취약점을 수정하고, 재발여부 \n - 공개관리 : 외부 공개 진행 \n구성요소 : 화이트해커, 보안연구자 / 기업기관(피신고자), 조정기관\n활용방안 : 보안사전예방, 신고활성화",
+    "keyword": "CVE/CWE,  CVSS, bug Bounty",
+    "extra": "",
+    "userId": "u1780036452228",
+    "createdAt": "2026-05-29T06:34:12.228Z"
+  },
+  {
     "topic": "보안",
     "definition": "",
     "mnemonic": "기밀성, 무결성, 가용성, 부인방지, 3A (Accountability 책임, Authentication 인증, Authorization 권한) / 예탐저교(예방,탐지, 저지, 교정) / 지침,규칙,표준,절차서 \r\n부가원칙 : 인증, 부인방지, 추적성, 보증, 컴플라이언스",

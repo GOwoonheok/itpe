@@ -1,111 +1,184 @@
 [
   {
     "topic": "OS",
-    "definition": "",
+    "definition": "컴퓨터 자원 관리 및 프로그램 실행 위해, 하드웨어와 소프트웨어를 제어하는 시스템",
     "mnemonic": "사용자 모드1, 커널모드 0",
     "keyword": "시스템 소프트웨어",
     "extra": "",
     "userId": "u1779705006548-nbcdc",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:30:30.003Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "부트로더",
-    "definition": "",
-    "mnemonic": "OS 시동프로그램, 메모리(HW초기화, 커널적제 및 부팅, 윈도우(NTLDR), 절차: PB부커O, 종류: LG\r\nPower On (전원인가) > BIOS (장치 정보 수집)  > 부트로더 (MBR의 부트로더 로딩) > 커널 시동준비(로딩 커널을 Mem 로딩) > OS 시동,  종류 : LILO/전통적, 리눅스(GRUB/유연성/기능개선)",
+    "definition": "운영체제 실행 위해, OS 로드하는 초기 프로그램",
+    "mnemonic": "OS 시동프로그램, 메모리(HW초기화, 커널적제 및 부팅, 윈도우(NTLDR), 절차: PB부커O, 종류: LG\nPower On (전원인가) > BIOS (장치 정보 수집)  > 부트로더 (MBR의 부트로더 로딩) > 커널 시동준비(로딩 커널을 Mem 로딩) > OS 시동,  종류 : LILO/전통적, 리눅스(GRUB/유연성/기능개선)",
     "keyword": "os 시동프로그램",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/8268e484-7e5d-4af9-bd2f-bb8ecb712d1f.webp"
+    ],
     "userId": "u1779705006548-h3zaj",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:30:35.148Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "커널",
-    "definition": "",
-    "mnemonic": "Monolithic 커널(많은 서비스, 높은 추상화),  Micro 커널(kernel 기능 최소화, IPC), \r\nExo Kernel (라이브러리, 낮은수준/HW접근, 최소한 추상화) Unikernels (커널 가볍게, 보안성 강화) Nano커널",
+    "definition": "하드웨어와 소프트웨어 자원 관리 위해, 운영체제의 핵심 기능을 수행하는 모듈",
+    "mnemonic": "Monolithic 커널(많은 서비스, 높은 추상화),  Micro 커널(kernel 기능 최소화, IPC), \nExo Kernel (라이브러리, 낮은수준/HW접근, 최소한 추상화) Unikernels (커널 가볍게, 보안성 강화) Nano커널",
     "keyword": "운영체제 핵심 프로그램",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/7e12e6ee-dbae-4fbc-acbd-bf2102dd71fe.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/87d8d4e0-99a3-47fe-a274-389928ae1ead.webp"
+    ],
     "userId": "u1779705006548-stwr5",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:30:39.678Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "모놀리틱 커널",
-    "definition": "",
+    "definition": "시스템 자원 효율적 관리를 위해, 모든 커널 기능이 단일 주소 공간에 통합된 구조",
     "mnemonic": "Monolithic 커널: 높은 수준의 가상계층, 고수준의 플랫폼 제공 / 모몰로식: 메모리관리, 프로세스관리, 관리자모드, 안정성 낮음, 오버헤드",
     "keyword": "",
     "extra": "",
     "userId": "u1779705006548-i425z",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:30:52.665Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "마이크로 커널",
-    "definition": "",
+    "definition": "운영체제 안정성 및 확장성 위해, 최소 기능만 커널에 포함한 구조",
     "mnemonic": "Micro 커널: HW 추상화 최소화, 사용자 구현으로 기능 제공 / 마이크로: 최소, 작아서 안전성은 큼, 이해관계 서비스, 최적화 여지, 임베디드 시스템(증권시스템 등)",
     "keyword": "",
     "extra": "",
     "userId": "u1779705006548-hrr9z",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:31:04.639Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "운영체제 특권레벨",
-    "definition": "",
+    "definition": "시스템 자원 보호 위해, CPU 모드 기반 권한 분리한 계층적 구조",
     "mnemonic": "분류 : 커널모드, 사용자 모드 / Ring0(커널), 1,2(드라이버), 3(사용자 모드), 권한 접근",
     "keyword": "메모리 접근 권한의 범위",
     "extra": "",
     "userId": "u1779705006548-m8v5x",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:31:09.743Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "CPU 스케쥴링",
-    "definition": "",
+    "definition": "자원 효율성 극대화를 위해, 선점 및 비선점 방식으로 프로세스를 할당하는 관리 기법",
     "mnemonic": "선점, 비선점의 프로세스 CPU할당 /\n선점 : RR, SRT, MQ , MFQ, \nRM (Rate Monotonic), ED (Earliest Deadline First)\n비선점 : 우선순위, 기한부, FCFS, SJF, HRN \n/주요문제 \n비선점: FCFS(호위효과), SJF(Starvation) -> HRN(Aging 적용),\n선점: RR(Job 특성 미반영), SRT(Starvation) -> MQ-> MFQ(Aging 적용),",
-    "keyword": "선점, 비선점의 프로세스에 CPU할당",
+    "keyword": "선점, 비선점의 프로세스에 CPU할당\n한판으로 외우자",
     "extra": "",
     "images": [
       "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/c6b23258-4722-4cf6-a7f8-17c0a8b7298d.webp",
       "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/84882ea6-8aaa-40f0-9f7c-3cae86a7cb9f.webp",
-      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/910e5f16-8f80-4851-beff-2edaeec82769.webp"
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/910e5f16-8f80-4851-beff-2edaeec82769.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/23c0c690-04b9-4c6d-a005-aeb1b5363eb8.webp"
     ],
     "userId": "u1779705006548-ub9mo",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:31:20.793Z",
+    "aiConfidence": "high"
+  },
+  {
+    "topic": "선점 스케쥴링",
+    "definition": "CPU 효율성 위해, 실행 중인 프로세스를 중단하고 다른 프로세스에 할당하는 방식",
+    "mnemonic": "RR, SRT, MLQ, MLFQ\n\n 우선순위 스케쥴링  : aging",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1780125808110",
+    "createdAt": "2026-05-30T07:23:28.110Z"
+  },
+  {
+    "topic": "비선점 스케쥴링",
+    "definition": "CPU 자원 관리를 위해, 할당된 CPU를 프로세스 완료까지 유지하는 스케쥴링 방식",
+    "mnemonic": "SJF, HRN",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/3ab5feca-0c96-4856-894b-5a786df35ef3.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/e6fb39b4-2bba-4d9a-8a37-d644a18f70d3.webp"
+    ],
+    "userId": "u1780125866308",
+    "createdAt": "2026-05-30T07:24:26.308Z"
+  },
+  {
+    "topic": "기아현상 (starvation)",
+    "definition": "공정하고 안정적인 자원 분배를 위해, 특정 프로세스가 자원 할당을 무한 대기하는 현상:",
+    "mnemonic": "해결방안 : Aging 기법,  HRN, RR, 우선순위 정책 적용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1780125935422",
+    "createdAt": "2026-05-30T07:25:35.422Z"
   },
   {
     "topic": "SSTF / SLTF",
-    "definition": "",
+    "definition": "디스크 성능 향상을 위해, 최소 탐색시간 및 회전지연 기준의 스케줄링 기법",
     "mnemonic": "근거리 요청 처리 우선 / 회전지연 최적화",
     "keyword": "",
     "extra": "",
     "userId": "u1779705006548-dom47",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:31:33.307Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "선점방식",
-    "definition": "",
+    "definition": "빠른 응답성 확보를 위해, 우선순위 기반 CPU를 강제 회수하는 스케줄링 방식",
     "mnemonic": "유형: RS멀레RE   / 우선순위 높은자가 현재를 뺏을수 있음\r\n라운드 로빈, SRTF(Shortest Remaining Time First), Multi-level Queue, Multi-level Feedback Queue, RM(정적, 수행주기), EDF(동적, 임계시간)",
     "keyword": "우선순위 높은 프로세스가 CPU 차지 스케줄링",
     "extra": "",
     "userId": "u1779705006548-my3nn",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:31:44.159Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "라운드 로빈",
-    "definition": "",
+    "definition": "공평한 CPU 분배를 위해, 시간 할당량 기준으로 순환하며 선점하는 스케줄링 방식",
     "mnemonic": "시분할 시스템, 순서대로, 끝나지 않으면 다시 돌아감(순환형), 시간순서로 CPU할당 기법",
     "keyword": "CPU 할당방식",
     "extra": "",
     "userId": "u1779705006548-moq7b",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:31:55.910Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "SRT(137)",
-    "definition": "",
+    "definition": "저지연 비디오 전송을 위해, ARQ와 암호화 기술로 패킷 손실을 복구하는 전송 프로토콜",
     "mnemonic": "Shortest Remaining Time  First  /  시간이 짧은것 우선,  긴것은 무한대기 잦은교체, 문맥교환 단점 존재",
     "keyword": "짧은 실행시간에 CPU 할당 방식",
     "extra": "",
     "userId": "u1779705006548-pwob8",
-    "createdAt": "2026-05-25T10:30:06.548Z"
+    "createdAt": "2026-05-25T10:30:06.548Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-25T11:32:07.661Z",
+    "aiConfidence": "high"
   },
   {
+    "category": "OS",
     "topic": "MLQ",
-    "definition": "",
+    "definition": "CPU 스케줄링 위해, 우선순위별 독립된 큐와 개별 알고리즘을 적용한 기법",
     "mnemonic": "프로세스 그룹 별 준비큐 적용기법",
     "keyword": "프로세스 그룹 별 준비큐 적용기법",
     "extra": "",
@@ -113,8 +186,21 @@
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
   {
+    "category": "OS",
+    "topic": "시스템 콜",
+    "definition": "사용자 프로그램이 OS 기능 사용 위해, 커널에 요청하는 인터페이스",
+    "mnemonic": "사용자-커널 모드 전환\n하드웨어 자원 접근\n보안 및 안정성 확보\n인터럽트 메커니즘\nAPI 하위 구현",
+    "keyword": "커널 모드,사용자 모드,인터럽트,API,자원 관리",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/8a620b36-86b1-4fd9-967f-8568138ae6a0.webp"
+    ],
+    "userId": "u1780121550699",
+    "createdAt": "2026-05-30T06:12:30.699Z"
+  },
+  {
     "topic": "MLFQ",
-    "definition": "",
+    "definition": "스케줄링 최적화를 위해, 다단계 큐와 피드백을 통해 우선순위를 동적 조정하는 기법",
     "mnemonic": "상위그릅에서 CPU time slice를 부여 , 수행후 점차 낮은 우선순위 부여 (RR형태)",
     "keyword": "MLQ보완기법",
     "extra": "",
@@ -204,19 +290,25 @@
   },
   {
     "topic": "세마포어",
-    "definition": "",
-    "mnemonic": "프로세스간 공유 자원 통제방법\r\n\"P연산: P(s)/ wait함수/ S--, \r\n V연산: V(s) / signal 함수/ S++, \r\nS: 커널만 접근/ mutex 시스템 변수,\r\n이진 세마포어 (변수가 0 or 1), Mutex와 동일,\r\n계수형 세마포어 (변수가 0 이상 정수)\r\nMutex: Task가 세마포어 획득해도 Mutex 있어야 리소스 접근 가능",
+    "definition": "공유 자원 접근 제어 위해, P/V 연산으로 상호 배제 및 동기화 구현한 기법",
+    "mnemonic": "프로세스간 공유 자원 통제 방법\n\n\"P연산: P(s)/ wait함수/ S--, \n V연산: V(s) / signal 함수/ S++, \nS : 커널만 접근/ mutex 시스템 변수,\n- 이진 세마포어 (변수가 0 or 1), Mutex와 동일,\n- 계수형 세마포어 (변수가 0 이상 정수)\n\n- Mutex : Task가 세마포어 획득해도 Mutex 있어야 리소스 접근 가능",
     "keyword": "프로세스간 공유 자원 통제방법",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/a3babce6-64ff-4fbd-a7bc-c8e4ed98a244.webp"
+    ],
     "userId": "u1779705006548-3urye",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
   {
     "topic": "뮤텍스",
-    "definition": "",
+    "definition": "공유 자원 동시 접근 제어 위해, 상호 배제 기반의 동기화 기법",
     "mnemonic": "Lock, Unlock / 임계영역에 단 하나의 스레드만 실행, 이진세마포어(0,1)",
     "keyword": "Lock, Unlock",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/418a69a2-0ad2-45db-9e1d-8c6e1acf82ed.webp"
+    ],
     "userId": "u1779705006548-iubcp",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
@@ -231,40 +323,78 @@
   },
   {
     "topic": "모니터",
-    "definition": "",
-    "mnemonic": "타이밍 문제, 언어수준의 \r\n동기화요소 : 배타동기, 임계영역, 조건동기, \r\n언어적요소: synchronized, wait, notify, \r\n                     notifyAll\r\n1. 모니터에 작업요청\r\n 2. 큐에 저장후 순서처리\r\n임계구역 최대 하나의 쓰레드만 처리",
+    "definition": "정보 표시를 위해, 시각적으로 출력하는 장치",
+    "mnemonic": "타이밍 문제, 언어수준의 \n동기화요소 : 배타동기, 임계영역, 조건동기, \n언어적요소 : synchronized, wait, notify, \n                      notifyAll\n1. 모니터에 작업요청\n 2. 큐에 저장 후 순서처리\n임계구역 최대 하나의 쓰레드만 처리",
     "keyword": "프로그램 수준 동기화 제공 기법",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/8057f57b-09c1-41f0-8af5-3f30409acc6e.webp"
+    ],
     "userId": "u1779705006548-egy1t",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
   {
-    "topic": "교착상태",
-    "definition": "",
+    "topic": "교착상태 (Dead Lock)",
+    "definition": "시스템 자원 무한 대기 방지 위해, 상호 배제, 점유 대기, 비선점, 순환 대기 조건으로 발생하는 상태",
     "mnemonic": "다중프로세스 무한대기 상태 \n/ 상점비환(발생원인) 예회발복(해결방법) \n상호배제(자원 배타적 점유), 점유와 대기(자원 점유+다른 자원요청), \n비선점, 환형대기(원형), \n예방(조건 부정), 회피(은행가, wait-die, wound-wait), \n발견(자원할당 그래프), 회복(프로세스 Kill)",
-    "keyword": "다중프로세스 무한대기 상태",
+    "keyword": "다중프로세스 무한대기 상태, 예피발복",
     "extra": "",
     "images": [
-      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/c3bf451e-a29d-40a1-b857-02e238c8d841.webp"
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/c3bf451e-a29d-40a1-b857-02e238c8d841.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/6f863b70-2a6c-4697-ba1a-8efc058f0172.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/596dca28-3aa5-403d-b52b-bf7e3b9611b4.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/4f5d0c1d-230d-40a9-a1b6-e2a2c57c0f30.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/3993b260-678f-4b32-8c65-4025044b31ec.webp"
     ],
     "userId": "u1779705006548-dnhax",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
   {
+    "category": "OS",
+    "topic": "은행가 알고리즘",
+    "definition": "교착 상태 회피 위해, 자원 할당 시 안전 상태를 검사하는 알고리즘",
+    "mnemonic": "안전 상태: 가용 자원, 최대 요구량, 할당량\n요청 처리: 자원 할당 가능성 시뮬레이션\n안전성 검사: Work, Finish 배열 활용\n목적: 교착상태 회피 및 자원 효율적 관리\n단점: 자원 정보 사전 인지 필요",
+    "keyword": "교착상태 회피, 안전 상태, 자원 할당, 데드락, 프로세스 동기화\nAMAN (Allcation, Max, Available, Need)",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/5dc1d91e-b922-4548-813b-eb45d0fe54f5.webp"
+    ],
+    "references": [
+      {
+        "title": "위키백과 - 은행가 알고리즘",
+        "url": "https://ko.wikipedia.org/wiki/%EC%9D%80%ED%96%89%EA%B0%80_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98"
+      },
+      {
+        "title": "SKBY.NET - 은행가 알고리즘",
+        "url": "https://blog.skby.net/bankers-algorithm/"
+      }
+    ],
+    "userId": "u1780125277360",
+    "createdAt": "2026-05-30T07:14:37.360Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-30T07:14:37.360Z"
+  },
+  {
     "topic": "wait die wound wait",
     "definition": "",
-    "mnemonic": "\"Wait-Die 기법은 환형대기 조건의 부정, \r\nWound-Wait 기법은 비선점 조건의 부정\"\r\n고기신다 신참다이 (고참이 기다리고 신잠이 다이)\r\n고다신기 심참대기 (고참이 기다리고 신참이 대기)\"",
+    "mnemonic": "\"Wait-Die 기법은 환형대기 조건의 부정, \nWound-Wait 기법은 비선점 조건의 부정\"\n고기신다 신참다이 (고참이 기다리고 신잠이 다이)\n고다신기 심참대기 (고참이 기다리고 신참이 대기)\"",
     "keyword": "교착상태 회피",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/832e24b0-76a4-49b6-959c-91f45da81be6.webp"
+    ],
     "userId": "u1779705006548-l3ant",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
   {
     "topic": "자원할당 그래프",
-    "definition": "",
-    "mnemonic": "교착상태 발견 목적(순환상태이면, 교착사애) / \r\n정점(Vertex): 프로세스, 자원,  간선(Edge): 요청 간선, 할당 간선",
+    "definition": "교착 상태 판별 위해, 프로세스와 자원 관계를 표현한 방향성 그래프",
+    "mnemonic": "교착상태 발견 목적(순환상태이면, 교착사애) / \n정점(Vertex): 프로세스, 자원,  간선(Edge): 요청 간선, 할당 간선",
     "keyword": "사이클 표현 그래프",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/ab75dbe3-f507-45e7-8767-99590bc50c57.webp"
+    ],
     "userId": "u1779705006548-usikh",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
@@ -279,10 +409,13 @@
   },
   {
     "topic": "스핀락",
-    "definition": "",
-    "mnemonic": "\"무한 루프를 돌면서 재시도한하는 구현된 락\r\n- 획득 - Fre spinlock 획득, 재시도 - 자원요청 스피닝,  >- 스핀락 획득\"",
-    "keyword": "Locking 매커니즘",
+    "definition": "공유 자원 동시 접근 제어 위해, 바쁜 대기 방식으로 임계 영역 보호하는 동기화 기법",
+    "mnemonic": "\"무한 루프를 돌면서 재시도한하는 구현된 락\n- 획득 - Fre spinlock 획득, 재시도 - 자원요청 스피닝,  >- 스핀락 획득\"",
+    "keyword": "Locking 매커니즘, Busy Waiting : 루프수행, CPU낭비",
     "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/8e791199-17d2-44df-a39b-b38836571fc9.webp"
+    ],
     "userId": "u1779705006548-7sjiv",
     "createdAt": "2026-05-25T10:30:06.548Z"
   },
@@ -310,15 +443,42 @@
   },
   {
     "topic": "문맥교환",
-    "definition": "",
+    "definition": "CPU 다중 프로세스 처리 위해, 현재 문맥 저장 및 다음 문맥 복원하는 기법",
     "mnemonic": "(개념) CPU가 할당된 프로세스가 시스템콜에 의해 PCB에 상태저장, 타프로세스에 상태가 복구과정\n생성(Create), 준비(Ready), 대기(Wait), 실행(Run), 종료(Terminated),\nDispatching, Time Slice, 입출력, 시스템콜\n병행처리, 상태전이 5, PCB, Stack, StackPointer, CPU Register\n[문맥교환 오버헤드 대응]\n(SW) 다중 프로그래밍 정도 낮춤, Stack 포인터 레지스터로 변경, \n  스레드(Thread) 이용으로 부하 최소화, 스케줄링 알고리즘 개선\n(HW) 공간/시간 지역성, 인터럽트 최소화, 메모리 할당 최적화\"",
     "keyword": "",
     "extra": "",
     "images": [
-      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/a66d83b2-2f60-4eef-9173-ef2aacf36687.webp"
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/a66d83b2-2f60-4eef-9173-ef2aacf36687.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/4c073b63-b076-438e-9d8c-96060b604d2a.webp"
     ],
     "userId": "u1779705006548-elgng",
     "createdAt": "2026-05-25T10:30:06.548Z"
+  },
+  {
+    "category": "SW공학",
+    "topic": "상태전이도",
+    "definition": "시스템의 동적 행위를 명확히 표현하기 위해, 객체의 상태와 상태 간 전이를 시각화한 모델",
+    "mnemonic": "상태: 객체 조건\n전이: 상태 변화\n이벤트: 전이 유발\n가드: 전이 조건\n액션: 전이 시 동작",
+    "keyword": "상태, 전이, 이벤트, 가드 조건, 액션",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/28a7fc45-2199-4e93-a75e-9490f9b75161.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/05e0bd47-592c-4894-add8-6c1f59b95dd5.webp"
+    ],
+    "references": [
+      {
+        "title": "위키백과: 상태 선도",
+        "url": "https://ko.wikipedia.org/wiki/%EC%83%81%ED%83%9C_%EC%84%A0%EB%8F%84"
+      },
+      {
+        "title": "SKBY.NET: UML 상태 다이어그램",
+        "url": "https://blog.skby.net/uml-state-diagram/"
+      }
+    ],
+    "userId": "u1780122480676",
+    "createdAt": "2026-05-30T06:28:00.676Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-30T06:28:00.676Z"
   },
   {
     "topic": "프로세스 상태5단계",
@@ -331,7 +491,7 @@
   },
   {
     "topic": "인터럽트 종류",
-    "definition": "",
+    "definition": "컴퓨터 시스템 외부, 내부, SW적인 원인으로 CPU가 처리하던 프로그램을 중단하고 우선 처리해야 할 작업을 먼저 수행할 수 있도록 보내는 제어신호",
     "mnemonic": "외부인터럽트>내부 인터럽트 > SW 인터럽트 // \n전원이상-> 기계 착오 -> 외부 신호->입.출력 ->프로그램검사->SVC 인터럽트\n\n처리방식: (HW)직렬, 병렬, (SW) 폴링, \n인터럽트 벡터 테이블(IVT), 인터럽트 처리(서비스) 루틴(ISR)\nISR: 인터럽트 금지, 저장/인터럽트 처리,인터럽트 허용",
     "keyword": "분류: 외내소 \n종류: 전기외입 - 프 - 서\n\n처리과정: IVT, ISR(금저복), PCB (복구)",
     "extra": "",

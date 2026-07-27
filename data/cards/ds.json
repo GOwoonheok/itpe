@@ -1,1 +1,2302 @@
-[]
+[
+  {
+    "category": "분류 (선택)",
+    "topic": "예시 토픽",
+    "definition": "정의 (30자 이내)",
+    "mnemonic": "내용 (두음·핵심요약, 선택)",
+    "keyword": "쉼표 구분 키워드",
+    "extra": "",
+    "userId": "u1779724550060-p80q2",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "WEB 3.0",
+    "definition": "",
+    "mnemonic": "소융개, 시개a클N메데디빅 : 시멘틱웹, 개인화, agent, 클라우드, 블럭체인, NFT, 메타버스, De-Fi, DAO,빅데이터\r\n /소유, 융합, 개인화, 상황인식, \r\n(특징) 개방, 소유, 안전성, 쌍방향, 탈중앙화, 수익창출, 생산가능 \r\n- 프로토콜경제 (플랫폼 경제 대응, 생산자 소비자간 주도적 거래, Web3.0)\r\n@WEB 2.0 공참개 / 참여 공유 개방, 사용자 참여중심 웹 플랫폼,  AJAX, WA, SNS, Mashup, REST, RIA, x-net\r\n@WEB 4.0 지능적 사용자 경험 인간+기계 동행",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-2n9k3",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "DarkWeb",
+    "definition": "",
+    "mnemonic": "정의: 토르네트워크,  비표준적 통신 사용, SW설정, 허가 있어야 접속 가능한 오버레이 네트워크(Overlay NW) \r\n[기술] 다크도메인(xxx.onion), 네트워크(Tor서버, E2c, VPS), 암호화(Onion Routing), 브라우저(TOR Tails), 암호폐(Bitcoin)\r\n[다크웹추적기술) 응용(Plugin 취약점, 코드인젝션, 제로데이 취약점), NW단계취약점분석, DarkWeb마이닝, 크롤링, 포렌식",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-t3dnh",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "DeepWeb",
+    "definition": "",
+    "mnemonic": "딥웹은 다크웹을 포함의 개념으로,  \r\n[특징] 폐쇄성, 일시적용도, 마약, 무기거래, 포르노사이트 등 사적인 부분 강함 > 범죄가 강하면 DarkWeb으로 기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-dcbn8",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "LOD",
+    "definition": "",
+    "mnemonic": "Linked Open data, \n[정의] 기계와 사람이 이해토록 시멘틱 웹 사상을 \n구현위해 데이터를 연결하는 데이터 모델\n팀 버너스리의 5 star 데이터 개방 단계 : ORORL\n- Open data, Readable , Open format, \n  RDF, Linked Data",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/77737d68-625a-4813-a473-6ea793901c40.webp"
+    ],
+    "userId": "u1779724550060-6pkzg",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "HTTP3.0",
+    "definition": "",
+    "mnemonic": "TLS1.3, 1,0 RTT, UDP사용, QUIC, TLS over HTTPS, 1way접속가능 / 구성 :  QUIC, TLS1.3, UDP, IP\r\nweb3.0 기반, 모바일웹, 금융앱, FIDO, OAUTH, Json Token // 토큰유출위험, DOS공격 등 유의",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-3eo2n",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "QUIC",
+    "definition": "웹 성능 향상 및 지연 감소를 위해, UDP 기반 다중화 및 암호화 적용한 전송 프로토콜",
+    "mnemonic": "TLS1.3기반, O-RTT, 1-RTT위해 접속처리 하는 모듈",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/2bb28a8b-6b5b-4508-be90-5a446274cc10.webp"
+    ],
+    "userId": "u1779724550060-qw9o5",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "API, Open API",
+    "definition": "",
+    "mnemonic": "[정의] 특정프로그램 기능, 데이터를 다른 프로그램에 접근할 수 있도록 미리 정한 통신규칙 \n[기술] API GW, OAuth2.0, REST(Post,Get,Put,Delete), SSL/TLS, XML, JSON\n[구성] API GW, Potal, Suport & Analysis, Cache, Authentication(인증), 개발자 포털",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/6dab4882-a304-4a6d-8ea3-c2fb10f828f0.webp"
+    ],
+    "userId": "u1779724550060-rl4hu",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "APIM, API GW",
+    "definition": "",
+    "mnemonic": "APIM (관리시스템, API 포털, API 서버, API GW, API Repository)\r\nAPI GW (보안, 라우팅, 암호화, 로그, 서비스 매칭, 로드발라싱, Http/JSON기반 프로토콜, 서비스통계)\r\nSPOF 위험성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-ub604",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "전자정부 UI/UX 설계기준",
+    "definition": "",
+    "mnemonic": "접호개최(웹접근,웹호환,웹개방,웹최적) / 설계기준7(필요,최소,일관,실수,모두사용,쉽게찾게)\r\n활용방안 착수(UX준수RFP, 교육) > 개발(참고설계, 산출물 포함) > 검사(점검표 체크)\r\n-접근(인식,운용,이해용이성), 호환(any 브라우저, OS, 디바이스)\r\n-개방(공개정보접근평가), 최적(응답시간 적절성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-r8ws5",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "디지털정부 UI/UX 가이드",
+    "definition": "",
+    "mnemonic": "일관성, 방향지침 제시, 비용절감 / 구조 : 원칙, 스타일, 컴포넌트, 기본패턴, 서비스패턴(원스컴기서)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-c356z",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "반응형 웹디자인",
+    "definition": "",
+    "mnemonic": "[정의]사용자 다양한 디바이스 환경에 따라, 해상도, 화면이 최적화된 환경으로 자동 변환기술\r\nN-screen, OSMU(one source multi use), 디자인(유동형, 열끌어놓기, 배치이동, 미세조정, 오프캔버스)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-d2vur",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "적응형 웹디자인",
+    "definition": "",
+    "mnemonic": "[정의] 기기마다 다른 템플릿으로 맞는 컨텐츠 다운로드, 전용웹페이지, MSMU, javascript",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-ih1jm",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "Web RTC",
+    "definition": "",
+    "mnemonic": "브라우저 : 음성,화상,데이터 / STUN, WAS, TURN / ICE, SDP, SRTP / TLS_SSL, VP8, 지터\r\n@다자간 통신유형 : P2P(매시), MCU, SFU",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-rxd71",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "웹서비스",
+    "definition": "",
+    "mnemonic": "컴퓨터간 상호작용 서비스, SOAP, WSDL, UDDI, REST / \r\nService : Provider<1>Broker(-Reg@UDDI)<2>Requester / publish(등록), Find(검색), Bind(소비) @WSDL,SOAP",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-akxxu",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "SOAP",
+    "definition": "",
+    "mnemonic": "4가지 측면 : UDDI, WSDL, XML, HTTP, \r\n웹서비스용 Protocol, Enveolp, Header, Body, Content",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-2ijxo",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "SOAP API",
+    "definition": "",
+    "mnemonic": "SOA구조, UDDI레지스트리, 웹서비스 기록, 탐색, 바인딩 / XML만 사용",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-vwev8",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "REST",
+    "definition": "",
+    "mnemonic": "API 자원 주소 지정,  Representational State Transfer / HTML, JSON, Text / http",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-qqw15",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "REST API",
+    "definition": "",
+    "mnemonic": "리소스 제공자가 직접 요청자에게 제공/ 웹아키텍처 스타일, 자원기반 전송방식/ HTTP, JSON,XML,TEST\r\nhttp(get, post, put, delete), stateless설계",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-ykem5",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "XML",
+    "definition": "",
+    "mnemonic": "DTD, XSL, XLL /단순성, 개방성, 확장성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-rovza",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "JSON",
+    "definition": "",
+    "mnemonic": "경량데이터, 가독성 낮음, 다양언어지원, name/value쌍, / 단점: 타입제한, 주석불가, eval() 악성코드화",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/3b8b0540-46cf-4979-9355-21417a308dc3.webp"
+    ],
+    "userId": "u1779724550060-gozo5",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "JSON Web Token (JWT)",
+    "definition": "",
+    "mnemonic": "[정의]선택적 서명, 암호화로 JSON형식 포멧, 토크기반 인증, JSON형식 문자로 암호화\r\n[구성] (header . Payload . Signature)  / \r\n장점: 인증저장소 불필요, MSA구현 확장용이 , \r\n단점: 수정어려움, 토큰사이즈 증가, 트팩픽증가\r\nheader : 토큰타입, 해시알고리즘(HMAC, SHA2\r\nPlayload : 클레임정보(Json data - 종류: registed, Public, private\r\nSignature : Secret key를 포함하여 암호화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-6t274",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "Oauth 2.0",
+    "definition": "",
+    "mnemonic": "RFC 6749, 6750 / APP이 비번X, 사용자 토큰이용 임시, 안전접속 위임/ user, APP, 리소스, 인증서버\n절차: APP  <1권한요청/2승인> 리소스오너(user)  ->\n        APP  <3토큰요청/4발급> 인증서버  -> \n        APP  <5이용가능> 자원서버\nAUARe",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/d7ee9a74-870f-4be2-982a-7d183c383f05.webp"
+    ],
+    "userId": "u1779724550060-w9lho",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "SSO",
+    "definition": "",
+    "mnemonic": "여러시스템 재인증없이 통합로그인, 인증서버(ACL), SSO agent, LDAP / \r\n(기술) PKI, 생체인식, OTP, 쿠키, SSL, IPSec",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-2oyp0",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "인증변화",
+    "definition": "",
+    "mnemonic": "SSO > EAM > IAM > ICAM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-jx5dn",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "디지털ID",
+    "definition": "",
+    "mnemonic": "온라인 개인식별 정보집합/ 유형: 개별, 중앙집중,연계,분산형",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-d122i",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "시멘틱 웹",
+    "definition": "",
+    "mnemonic": "온톨로지 표현, 논리적 추론, 의미기반/ URI, IRI, XML, RDF, SPARQL, OWL",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-efd6p",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "웹 어셈블리",
+    "definition": "",
+    "mnemonic": "고성능 웹앱개발, Native언어",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-ovnx6",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "클라우드 컴퓨팅",
+    "definition": "",
+    "mnemonic": "[정의] IT자원을 인터넷을 통해 온디멘드로 제공, Pay for use 서비스\r\n - 서비스모델  (IaaS, PaaS, SaaS ) -배포모델(private, Public, Hybrid)  \r\n[구성]유저 인터렉션IF, 서비스 카탈로그, System Mgt, 프로비져닝 툴, 모니터링&미터링, 서버(가상)\r\n[기술] 서대가C분병(서버가상화, 대용량클라우드, 가상서버관리, CDN, 분산스토리지, 병렬처리)\r\n오모빌네클SPV모(Open API, 모니터링, 빌링, NW가상화, 클라우드 보안, SLA, VPC, 모바일)\r\n가응확신 지지고(가용성, 응답성, 확장성, 지속성, 지원, 고객대응, MTTR, MTTSR), 잠금효과(이전비용) \r\n/ XaaS : AaaS, BaaS(Biz as a S, Backend as a S), DaaS, FaaS(Framework), HaaS(HW as a S), IDaaS, CaaS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-67ea9",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "클라우드 안전성 확보",
+    "definition": "",
+    "mnemonic": "전자정부법54조2, (보안성, 안정성, 확장성, 비용효율성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-rg99m",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "CNAPP",
+    "definition": "",
+    "mnemonic": "클라우드 보안위협 올인원 플랫폼 / CWPP, CIEM, CSPM, Iac, CSNS, SECaaS, SASE",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-2y4qm",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "Public",
+    "definition": "",
+    "mnemonic": "누구나, Multi -tenancy(하나의 자원, 여럿 사용자)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-kd10m",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "Private",
+    "definition": "",
+    "mnemonic": "특정조직, 높은 보안  / 모니터링, SLA, 가상화(서버,스토리지,DB), FW, DMZ",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-nke53",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "Hybrid",
+    "definition": "",
+    "mnemonic": "혼용,통합인증,  Public + private / SSO, OAuth2.0, SecaaS, IAM, SLA, QoS, Billing, Rest Proxy",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-yd79f",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "MSP(Managed Service Pro~)",
+    "definition": "",
+    "mnemonic": "제품, 컨설팅, 운영, 관리 서비스를 제공하는 기업",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-o6ol8",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "SRM 책임공유모델",
+    "definition": "",
+    "mnemonic": "클라우드 영역별 책임,  제공자/사용자 책임 (IaaS)통제,패치/보안,사용자관리\r\n (PaaS) NW보안설정/APP패치, (SaaS) APP패치,데이터보안/APP,사용자 관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-uggb6",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "클라우드 컴퓨팅 보안",
+    "definition": "",
+    "mnemonic": "(관리적): 남용, 이해부족, 내부자, (기술적): 유출, 손실, Dos,가상화취약 / 보안표준 : ISO 27017, 27018",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-pn8v2",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "NaaS",
+    "definition": "",
+    "mnemonic": "서비스형 네트워크, (서비스) SD-WAN, MANO, VPN, SDN",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-wvar5",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "엣지컴퓨팅",
+    "definition": "",
+    "mnemonic": "발생 지점 네트워크, 분석,활용 지원 컴퓨팅 기술 / AR,VR, Iot 접점 / 1hop, cacheing",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-4kt9q",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "포그컴퓨팅",
+    "definition": "",
+    "mnemonic": "시스코, 데이터 발생 주변, 선별적 분석, 활용의 컴퓨팅 기술 /end(스마트폰) -포그(분석)-클라우드",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-dv4ig",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "클라우드 컴퓨팅 발전법",
+    "definition": "",
+    "mnemonic": "지원체계마련(5조), 연구개발, 시범사업, 중소기업지원, 전문인력양상(8~17조)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-uozkf",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "민간 클라우드 SLA",
+    "definition": "",
+    "mnemonic": "가응확신 지지고, 평균응답시간, 최대복구시간, 데이터 복구시간",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550060-gcvp6",
+    "createdAt": "2026-05-25T15:55:50.060Z"
+  },
+  {
+    "topic": "공공 클라우드",
+    "definition": "",
+    "mnemonic": "CSAP필수, 디지털서비스 전문계약제도/ (절차) 준비계획>전환준비,검증>완료지원 \r\n기반기술 : 가상머신, 호스트가상화, 하이버파이저, 컨테이너, 분산데이터, 병렬처리, 분산파일 저장\r\n전환전략 : 기본원칙(핵심시스템, 민간클라우드), 센터지정, 전환대상 선정, 협의체 구성 제도화 추진",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-6gorm",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "클라우드 컴퓨팅 고시",
+    "definition": "",
+    "mnemonic": "전자정부법54조2",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-ohf8e",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "디지털서비스 전문계약",
+    "definition": "",
+    "mnemonic": "컴퓨팅법(20조), 공공, 클라우드 지원 융합서비스,국가법(26) 수의계약, 조달사업-카탈로그 계약\r\n(체계) 제공기업 디지털서비스 신청 > 심사위원회 > 등록(이용지원시스템) -> 이용계약(자체, 중앙)\r\n(단계) 준비(예산, 요구사항정의) > 계약체결(서비스검색, 조달, 계약, 등록) > 이용종료(점검, 계약종료)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-4uv6y",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "멀티 클라우드",
+    "definition": "",
+    "mnemonic": "2개 이상 CSP구성 / Failover, 호환성 \r\n@대응 : 공격표면확대, ASM , CTEM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-cxbre",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "멀티 클라우드 보안위협",
+    "definition": "",
+    "mnemonic": "면적확대>위협증가/요소: 데이터(유출,손실), 인증인가(권한,탈취), 네트워크(MITM,DOS), 시스템(악성)\r\n// 데이터(암호화, 백업복구), 인증(RBAC, MFA), 네트웍(SSL,IPSec, VPN, 대피소), 시스템(패치, 방지)\r\n// 클라우드 보안(CASB, ZTNA, CSPM), 보안(SIEM, EDR, SOAR, SASE, SD-WAN) // 교육, 거버넌스\r\n// 멀티로 -> data silo, 다른정책(CSP), 가시성 부족, 복잡성 증가",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-k6je6",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "멀리 클라우드 전환",
+    "definition": "",
+    "mnemonic": "/사유: 밴더종속, 서비스확대 요구, 단일취약점 보안 / 멀티클라우드 \r\n/절차: 계획 > 통합거버넌스(정책조직) > 환경구성(NW,SEC) > 정책적용(IAM, MFA) > \r\n        전환검증(Data >안정화(모니터링)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-ik5ay",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "클라우드 비용 최적화",
+    "definition": "",
+    "mnemonic": "오토스케일링, ReveOps, FinOps, 서비리스 아키텍처, 자원모니터링, Iac\r\n@오토스케쥴 유형 트랙픽, 스케쥴링",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-ycmx0",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "클라우드 네이티브 전환",
+    "definition": "",
+    "mnemonic": "MSA(API GW ,Service Mesh, discovery), 컨테이너(Doker, K8S), Devops(CI/CD, 품질), 애자일(XP)\r\n고려사항 : 6R(retire, Rehost, Rebuild, replace, RePlatform, REarchitect), 적합성판단(정책,프로세스,기술) 보안(CASB, CWPP, CSPM, SECaaS, CSAP)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-bm6kh",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "클라우드 서비스 확장",
+    "definition": "",
+    "mnemonic": "DB분야 : Slow Qury 제거, CQRS, 캐시사용(Redis, 메모리캐시), 샤딩(분산 저장)\r\n서비스 : Load발란서, 캐시사용, CDN, 컨테이너 사용, 오케스트레이션 // Matric - Scale out - 프로져닝",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-74863",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "소버린 클라우드",
+    "definition": "",
+    "mnemonic": "배경 : EU GDPR(자국 데이터 보호, 나라별 개인정보 규율적용), 데이터 주권 강화, 멀티클라우드 활용\r\n데이터주권 유지 : Local PC || 제어(오케스트레이션, 기밀컴퓨팅,암호) || 거버넌스, 코드(IaC, PaC)\r\n//장점: 데이터제어, 보안강화, 독립성  | 단점: 호환성, 경쟁력 한계, 국가기술 양극화 \r\n//거버넌스, 투명성, Local 지원, Training",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-0cbs7",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "클라우드 관리 플랫폼",
+    "definition": "",
+    "mnemonic": "클라우드 리소스 모니터링 제어 도구 모음/ 운영관점 : 가시성, 운영, 인적효율운영, 자원최적화, 요금\r\n사용자관점 : 표준화, 자동화, 거버넌스/ 보안, 워크플로우 자동화, 지원도구 / 선정기준도 비슷",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-1ber9",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "LXC",
+    "definition": "",
+    "mnemonic": "리눅스, Application가상화 Container(app), Livirt || Core : cgroup, namespace, SELinux, drivers, 커널 \r\n@ 하이퍼바이저 : OS기반 가상화, Host, HW, 전가상화, 반가상화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-9alf0",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "서버리스 컴퓨팅(136)",
+    "definition": "",
+    "mnemonic": "이벤트, 코드실행 단위과금 / client(SPA, web) - Front (API GW, LB), FaaS, Back (BaaS - DB)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-xeeg8",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "FaaS",
+    "definition": "",
+    "mnemonic": "함수단위 실행 호출, 과금 / event driven, 함수 in cloud @AWS Lambda, MS Azure Functions",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-3i1zc",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Infra 변화",
+    "definition": "",
+    "mnemonic": "DataCenter > IaaS > PaaS > Serverless",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-0t9r1",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Cloud Native",
+    "definition": "",
+    "mnemonic": "MSA, DevOps(Agile), CI/CD, 컨테이너(k8s), DDD / 15Factor 코종설B, 빌무포동 폐환로관 A관인",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-9t4c4",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "CAN 개발 15개",
+    "definition": "",
+    "mnemonic": "코드Base, 종속성, 설정, Backend서비스 / 빌드, 무상태, 포트바인딩, 동시성 / 폐기, 환경, 로그, 관리 / API우선, 관측, 인증",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-ea5ms",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "CNMM 성숙도",
+    "definition": "",
+    "mnemonic": "0 : ON프레미스, 1 Cloud Enable, 2 Optimizer, 3 Native  (온인옵네)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-1msub",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "cloud Native 개발가이드라인",
+    "definition": "",
+    "mnemonic": "상호운용성(App간 | 전송, 구문, 의미, 행위), 이식성(서비스간 APP이관) | 데이터, VM, App )\r\n분산처리(마이크로서비스, 이벤트, MQ, 비동기), 빠른 배포운영(CICD, gitOps, DevSecOps포함)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-996jy",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Strangler 패턴",
+    "definition": "",
+    "mnemonic": "레거시 시스템을 점전적 대체 패턴, 프록시와 기능분리 @ 요청 -> API GW/프록시 -> MSA or 레거시",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-f6n7p",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "클라우드 서비스 품질성능",
+    "definition": "",
+    "mnemonic": "클라우드컴퓨팅법 제23조(신뢰성향상) / (기능)가응확신 (서비스)지지고 @MTTR, MTTSR, MTBF, MTTF\r\n평균복구시간(mean time to Repair, 총고장시간/고장횟수), 최대서비스복구시간(max time to servce Recover)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-8w3jw",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Auto Scale UP/OUT(IN)",
+    "definition": "",
+    "mnemonic": "Load Balancer, 이벤트 기반, 부하기반, 스케쥴기반  \r\n(개념)서버의 CPU, 메모리, 디스크, 네트원 자원 메트릭(Matric)값을 모니터링 자동화 조절 기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-i7a8w",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "클라우드 전환",
+    "definition": "",
+    "mnemonic": "선정기준 : Biz가치, 기술노후, 운영복잡, 확장성, 보안규제 \r\n고려사항 : 아키텍처, 데이터, 보안, APP, 운영모니터링, 비용\r\n평가항목 : 적합성(전환 이식), 난이도(대상,모듈수), 위험도(RTO,RPO) 효과성(성능향상), 가용성(HA)\r\n절차 : 계획 > 환경구성 > 마이그레이션 > 확인 > 서비스 전환(6R) > 안전화 @(계환마확전안)\r\n=>기술, 비즈니스, 운영측면 정밀평가로 단계적 리스크 줄이고 가치 극대화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-ribgg",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "클라우드 전환 전략",
+    "definition": "",
+    "mnemonic": "6R (Retire, Retain, Rehost, Replatform, Refactory, Repurchase, Rearchitecture) @타테호플팩퍼(아)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-ixobx",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "클라우드 랜딩존",
+    "definition": "",
+    "mnemonic": "표준화 클리우드 기반 인프라 구축 환경",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-y1v81",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "CSAP 유형인증",
+    "definition": "",
+    "mnemonic": "116,(79,31),110 / 인증위원회 - KISA - NSR | 심사평가기관 -> 신청기관 @정인자서 침서준물 가접데네 시국\r\nIaaS, SaaS(표준,기본), DaaS / @최초>(1년)> 사후평가(매년1회, 총4회) >(1년)> 갱신평가\r\n정보보호,인적,자산,서비스공급망/침해사고,서비스연속,준거,물리보안/가상화보안,접근통제,NW,data,시스템개발보안,국가기관보안요구",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-vjedj",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "CCaaS",
+    "definition": "",
+    "mnemonic": "Contact Center / 가상챗봇, IVR, STT, TTS, CRM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-qkzkz",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "lac (코드형인프라스트럭처)",
+    "definition": "",
+    "mnemonic": "IT구성을 코드로 선언>배포관리 / 자동화,버전관리,일관성 / Puppt, Ansible, Chef, CLI, jenKis+Fabric",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-qjbgc",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "HCI (hyper converged Infrasture)",
+    "definition": "",
+    "mnemonic": "SDI, SDDC, 인프라가상화 / 분산 Scale Out 가능, SDS 하이퍼바이저, 프로비져닝, x86 / TCO,효율성 \r\n* 개별장비 > Rack 단위통합 > SW정의(SDI)통합 //@고려: 벤터마찰, 커스터마이징, 욜량, 기능확장성\r\n* 전통 > 컨버지드 인프라(CI) > HCI(sdi) > 클라우드 네이티브 (k8s, Iac, gitops, devops)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-1uc4c",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "가상화",
+    "definition": "",
+    "mnemonic": "APP, 서버, OS, 스토리지, 데스크탑 가상화 \r\n// SaaS , OS+HW가상화 , (OS)VMM/하이퍼바이저/도커, 전/반/OSS레벨가상화, \r\n// (스토리지)EMC,디스크, (desktop)VDI, SBC, PC가상화, zero PC",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-i23ae",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "데스트크톱 가상화",
+    "definition": "",
+    "mnemonic": "개념 : 중앙센터에서 자원을 원격으로 접속 환경 (필요성) 유연, 이동성 요구, 자원관리 어려움\r\n특징 : CAPEX, OPEX, 이동근무지원, 업무연속성, 논리적 망분리, 데이터 중앙화, 씬 프로비져닝, N스크린\r\n계층 : 사용자 영역(PC, 모바일), 관리서버(인증서버), VM서버(가상머신, 하이퍼바이저)\r\n원격접속 환경/ BYOC, 단말기, 세션브로커, 인증서버 / 가상화 스토리지-(SAN연결)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-af100",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "VDI",
+    "definition": "",
+    "mnemonic": "데이터센터 구축, 논리적 환경/ Clinet <>세션관리자(broker<>인증서버) <> VM할당(디스크)\r\nCAPEX(구축), On-premises, 예산최적, 사용자 관리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-tmyqd",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "DaaS",
+    "definition": "",
+    "mnemonic": "VDI를 클라우드 기술로 구현서비스(아웃소싱), Service, OPEX(운영), 구독, 확장용이/ MSP, CSP\r\n클라우드 보안 범위 : NW, FW,IPS,IDS, 하이퍼바이져, 관리시스템(Os, 솔루션, 인증 등)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-dgjf7",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "하이퍼바이져",
+    "definition": "",
+    "mnemonic": "1HW-2개운영체제 실행 / 보안,오버헤드 좋음 type1(서버용,고성능,안전성), type2(개인용 개발용) \r\n호스트타입 : BareMetal, Hosted, 가상화방식 : 전가상화(HW위, type1), 반가상화(OS위, type2)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-3q5ye",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "쿠버네티스",
+    "definition": "",
+    "mnemonic": "K8S,  Kubectl -> Master Node (API server, Ctl Manger, Scheduler) - etcd\r\n                      Worker Node (Kubelet, kubeProxy, Docker, Pod, container)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-52a7b",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "쿠버네틱스 연계도구",
+    "definition": "",
+    "mnemonic": "Helm : 패키징, 배포매니저 / ArgoCD : gitops 구현, CD도구",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-0wq26",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Helm",
+    "definition": "",
+    "mnemonic": "쿠버네티스 공유, 설치, 관리 매니저 / Yaml (개별배포 문제) -> Helm 일원화 관리배포",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-65cih",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Docker",
+    "definition": "",
+    "mnemonic": "LXC, Cgroups, Namespace, Libvirt, container  / 경량화 체계\n리눅스 응용APP 컨테이너 안내 배치시키는 자동화 오픈소스 프로젝트\n하이버바이저 없이 리눅스 컨테이너, 이미지",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/8f5f0274-4921-4018-86e7-357cd5957f3d.webp"
+    ],
+    "userId": "u1779724550061-9vycm",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "가상머신 vs 컨테이너",
+    "definition": "",
+    "mnemonic": "가상머신: HW-하이퍼바이저 - GuestOS - Bins/libs - App(s) // 다양한 OS / 자원독접, 오버헤드 발생\r\n컨테이너: HW-도커엔진 - Bins/Libs - App(s) // 단일OS / 빠름, 이미지, pid, Mnt, Net, ipc",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-azk4y",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "하버레지스트리",
+    "definition": "",
+    "mnemonic": "보안·접근제어·통제를 강화한 사내용 Docker 이미지 저장소/ \r\n* 보안취약점분석, RBAC, 복제, 인증(LDAP, OIDC), WebGUI, RestFull API제공\r\n* 도커 레지스트리(도커, 간편, ID/PW 소규모) -> 하버로 대규모 확대",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-by7lv",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "LDT(측위기술 전반)",
+    "definition": "",
+    "mnemonic": "방식 (네트워크 /cell id, AOA, ToA, TDoA), 위성신호(A_GPS, D-GPS), \r\n       Wifi신호(wifi AP, WPS), 혼합방식(XPS) , 실내측위 기술(IPS) \r\n* LDT = 실외(GPS) + 실내(IPS, wifi, ble, uwb)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-4sfeo",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "LAS/LBS",
+    "definition": "",
+    "mnemonic": "위치정보획득 (location aware system) : 위성통신(D/A-GPS), 이동통신(TOA,AOA,cellid), 무선(RFID, UWB, Wifi), 영상인식(시공간적 차이점) => 위치기반서비스 (Location based system) : LAS를 이용하여 부가정보 서비스(네비,RTLS, 맛집)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-5083g",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "IPS (실내측위기술)",
+    "definition": "",
+    "mnemonic": "(개념) 건물 내부 사용자 위치 파악, 스마트 폰 등 내장된 지도와 대조해 쉽게 찾게 제공 기술\r\n(유형) Wifi(cell ID, 삼각측량, Fingerprint) WPAN(Zigbee, UWB, BLU), 센서(자기장, 관성)\r\n활용:재난, 안전, 교통, 생활, 쇼핑게임 / 동향 : 안전(AI,음성인식), 자율주행 로봇 / 표준화, 센서",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-14o17",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "엠비언트 컴퓨팅",
+    "definition": "",
+    "mnemonic": "보이지 않은 IT, Zero UI, 인공지능 , VR/AR, 엣지컴퓨팅, 상황인지 / 스마트홈, 헬스, 교통",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-qgdtp",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "엠비언트 인비저블 인텔리전스",
+    "definition": "",
+    "mnemonic": "IoT디바이스를 상태추적하여 감지하여 인지하지 못하는 상태에서 필요정보를 요구를 예측지원 지능기술\r\n기술(수집, 센서,테그 , 에너지 수확 기술, 데이터처리, 네트워크, 프드백 제공)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-wcing",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "인터미턴트 컴퓨팅",
+    "definition": "",
+    "mnemonic": "불완전 환경 동작기술, 에너지 하베스팅, 신뢰성/ 비휘발성 메모리, 체크포인팅, 상태저장, 재실행 보장",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-er1rz",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "C-ITS",
+    "definition": "",
+    "mnemonic": "협력지능교통체계, V2X(V2P, V2V, V2I, V2C) 통신(DSRC, WAVE) / GPS, OBU, RSU + CAN, Lin\r\nLTE_V2X/5G_V2X : 실시간/자율주행,수백Mbps/10Gbps, 신뢰중족/초고신뢰99.99%, 지연30ms/10ms\r\n고려사항 : 기술(고속,저지연, 스트리밍), 시장(이익,규제), 서비스(표준화), 인프라측면(기지국, MEC)\r\n(구성) 차량간(v2v) -V2I- 인프라(RSU, TCC관제) -V2P (보행자, 스마트폰)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-701b0",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "WAVE - C_V2X",
+    "definition": "",
+    "mnemonic": "WAVE (v2v, RSU사이의 무선통신 랜 표준), IEEE802.11p, 5.9Ghz\r\nC-V2X (LTE, 5G의 셀룰러 이동통신 자량 통신기술), 3GPP Release 14/15/16/17, 28Ghz",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-71b15",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "V2V 기술",
+    "definition": "",
+    "mnemonic": "차량간 통신기술/ DSRC(차량간), SVA(속도), EEBL(불빛감지), RCHA(도면상태), CTA(교통량 통제)\r\n@요구사항: 호환,Hop통신지원, 보안성, 프라이버시",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-sctwx",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "UX",
+    "definition": "",
+    "mnemonic": "총체적 경험, RIA,  멀티모달, 햅틱 인터페이스, CEM(고객경험), 웹마이닝, QoE(품질)\r\n@조건: 유용성, 사용성, 감성 -최적경험 / @절차 : 사용자 조사 > 구조설계 > 디자인 > 사용테스트\r\n@세대: CLI(1), 실용> GUI(2), 편의 > NUI(3), 감성 > OUI(4), 가치",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-swi30",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "페르소나",
+    "definition": "",
+    "mnemonic": "가리실다재/ (절차) 가상화> 리서치 > 실체화 >다양화 > 재구성\r\n구성 : 기본(사진,이름), 목표,동기,태도,환경,숙련도,불만족",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-qx4wy",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Zero UI",
+    "definition": "",
+    "mnemonic": "Interface 최소화 기술, 음성비서 상황인지 / STT, 의미이해, 자연어처리, 대화관리 // 스마트 기기,센싱\r\n@엠비언트 컴퓨팅",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-uoffo",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "디지털 교과서",
+    "definition": "",
+    "mnemonic": "실감형 콘텐츠, Flipped Learning, 게이미피케이션, 개인기기",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-oy9a3",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "AR(증강현실)",
+    "definition": "",
+    "mnemonic": "몰입감 제공, 마커인식, 상호작용/ 구성 : 보정(패턴), 추적(객체움직임), 정합, 3D프로세싱(VRML)\r\n@종류 : 위치AR, 마커AR, 비마커기반AR",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-og7qi",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "메타버스",
+    "definition": "",
+    "mnemonic": "현실가상세계, 증라미가 , 증강현실, 라이프로깅, 미러월드, 가상세계 / 게임형, 소설형, 생활형, 산업형\r\n구성 : XR, Data, NW, AI, 사운드",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-htxgm",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "메타버스 전략",
+    "definition": "",
+    "mnemonic": "규제, 상호운용, 균형생태계 조성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-3v7uf",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "메타버스 윤리",
+    "definition": "",
+    "mnemonic": "온안지 / 진자호사 공개포책 / 온전자아, 안전경험,지속번영 \r\n@ 진정성,자율성,호혜성,사상활존중,공정성,개인정보보호, 포용성, 책임성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-y8k7y",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "메타버스 보안/전략",
+    "definition": "",
+    "mnemonic": "Real월드 <IF> XR <IF> 메타월드 / (리얼)개인정보, 불법권한상승, 자산탈취, 지리노출\r\n(IF) 송출데이터 스니핑, 로그삭제, 5G RAN DDOS  (메타) 신원변조, 불법거래, 저작권침해\r\n// 관리(인증체계,책임자,보험), 기술적(인증,VM), 서비스 측면(AI탐지, 표준기술)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-26lro",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "메타버스 문제",
+    "definition": "",
+    "mnemonic": "보안(개인정보, 플랫폼), 법제도(지재권, 사용료), 윤리(은둔, 사이버폭력) \r\n/ 불법권한 상승, 자산탈취, 바이오정보, 지리정보노출, 메타버스 로그삭제, Ddos \r\n/ 키도난, 트랙픽 도청, 비정상 거래, 탐지불가",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-zgpwz",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "가상현실(VR)",
+    "definition": "",
+    "mnemonic": "실제유사 경험환경 제공 / 핵심기술: 출력,음향,오감,모션,입력(오출임음모)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-b5iyl",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "VR 미디어 획득",
+    "definition": "",
+    "mnemonic": "3-DOF(5G) 회전운동, 6-DOC(6G) 회전+병진운동",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-pvu1g",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "MR",
+    "definition": "",
+    "mnemonic": "현실위 가상 혼합기술 / 증강현실과 동일",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-yail8",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "실감콘텐츠",
+    "definition": "",
+    "mnemonic": "유사체험,  디지털컨텐츠 + 실감기술(오감자극) / 특징 : 3i(몰입,상호작용,지능화)\r\n핵심기술 : Display, Rendering, Tracking, Interaction(디랜트인)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-3d1pb",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Computer Vision",
+    "definition": "",
+    "mnemonic": "기계가 사람화, 최소신장트리, PDA, YOLO / 영상>전처리, 특징추출 > 해석",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-pokiz",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "U-Health",
+    "definition": "",
+    "mnemonic": "의료,  PACS, HIS, HL7, DICOM, EMR, HER",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-un7s8",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Smart city",
+    "definition": "",
+    "mnemonic": "도시+IT+AI/ 인프라(센서,NW,통신,데이터)-산업(스마트교통,빌딩,정부,그리드)-서비스(환경,라이프,경제)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-oewru",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "스마트 그리드",
+    "definition": "",
+    "mnemonic": "차세대 전력망, AMI(과금), SCADA(설비), VPP, EMS(전력), DAS(배전), 전력망",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-x1r8h",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "AMI",
+    "definition": "",
+    "mnemonic": "양방향 원격검침 인프라, OMS(정전), WMS(작업자), ESB (ISO61968) / (통신) NAN, HAN",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-hidno",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "EMS",
+    "definition": "",
+    "mnemonic": "에너지 관리시스템 / 에너지 절감계획, 모니터링, 사용관리 / (유형)HEMS, FEMS, BEMS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-ifs32",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "VPP",
+    "definition": "",
+    "mnemonic": "클라우드기반, SW연계 가상발전소/ \r\n개념 : 분산발전자원(태양광, 풍력, 연료전지, ESS 등)을 ICT·AI 기반 하나의 가상발전소 \r\n기술 : 태양광, 풍력, 소수력, 연료전지, 전기차 충전소, 에너지저장장치(ESS)\r\nIoT 센서, AMI ,  EMS, 수요예측, 전력거래 자동화, 블록체인 기반 P2P 거래\r\nOpenADR, IEC 61850(전력 자동화 통신 표준)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-qgsjo",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "IDPP",
+    "definition": "",
+    "mnemonic": "클라우드 + 디지털 트윈 기반 가상발전소",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-10wzs",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "스마트 팩토리",
+    "definition": "",
+    "mnemonic": "첨단 ICT분야 접목, 설비, 공장, NW에 데이터 실시간 활용 최적화 \r\nCPS< 디지털트윈,  차세대공장, 공장시뮬레이션, UsN, Bigdata, 5G, 스마트로봇 >> 블랙아웃 팩토리",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-6t7y1",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "스마트 팜",
+    "definition": "",
+    "mnemonic": "기능(최적농사,재배 가이드, 생산성 가격 에측, 무인 농기계관제 / 병충해 피해 최소화, 동물피해 방어)\r\n기술(센서:상황인지, 생체인식, LPWAN WPAN, RFID, LPWAN, 빅데이터, CPS, 자율주행, 원격제어)\r\n      -EMS, DMS, MMS, FMS, FCS, FOS    인판제 (인식, 판단, 제어)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-wal7x",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "CPS",
+    "definition": "",
+    "mnemonic": "HW : 센서, 엑추레이터, 컨트롤러/ SW : 모델링, 자율, 실시간 미들웨어 / NW : 유무선 통신",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-h2sxq",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "산업제어시스템 보안표준",
+    "definition": "",
+    "mnemonic": "IEC 62443/ (일정시컴)  1일반, 2정책절차, 3시스템, 4컴포넌트 / \r\n@/개념,용어집/프로그램요구,보안래벨/기술,위험식별/제품개발,보안기술요구/",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-6fwo9",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "ICS 참조모델 퍼듀모델",
+    "definition": "",
+    "mnemonic": "산업제어(ICS), ISA99, PERA>퍼듀 Level54(IT영역), IDMZ, 3,2(OT), 10(센싱,AREA영역), SACADA,\r\n5(ERP) 4(이메일,HW위치), IDMZ(연계,중계), 3(운영감독), 2(현장,HMI), 1(기본제어), 0(센서,펌프,벨브)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-1t9xh",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "SCADA",
+    "definition": "",
+    "mnemonic": "ICS 원거리 감시제어시스템 / 경보,감시,지시,누산기, PLC, RTU, HMI + CPS\r\n* 사용자 > HMI > PLC, RTU > 센서, 엑추레이터(온도,밸브동작)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-m5w75",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "지능형 SCADA",
+    "definition": "",
+    "mnemonic": "SCADA + AI, 프로세스, MSA",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-1v9wf",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "지능형 CCTV",
+    "definition": "",
+    "mnemonic": "배경분리(가우시안, LMS>객체식별(YOLO,RCNN>객체추적(CAM, 필터)>이슈탐지(알람,SMS)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-48ish",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "디지털 트윈",
+    "definition": "",
+    "mnemonic": "모델링 기술 (현실 - 수집 - 현실+가상 > 시뮬레이션 -> 현실반영\r\n@성숙모델 : Level1(형상모사,2D) -> 2 정적트윈(CAM) -> 3트윈(CPS) ->4 상호작용 ->5 자율 디지털트윈",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-36734",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "디지털 트윈 모델링",
+    "definition": "",
+    "mnemonic": "모관모연자 (모사, 관제, 모의, 연합, 자율)\r\n모사–모형화 : 물리적 자산을 가상으로 재현 / 관제–실시간 관리 : 센서 기반 모니터링·제어\r\n모의–예측 시뮬레이션 : What-if 분석, 가상훈련 / 연합–통합 운영 : 이기종 시스템 연계\r\n자율–스스로 의사결정 : AI 자율제어, 무인화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-fjtue",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "디지털 스레드",
+    "definition": "",
+    "mnemonic": "제품정보 데이터 스토리라인 (데이터-> 디지털트윈)\n(개념) 제품 생애주기 정보 통합(제조, 운영, 유지보수까지 하나의 연속된 흐름의 통신 프레임워크\n\n데이트를 하나의 흐름으로 정리\n(수집, 저장, 통합, 분석, 보안)\n\n(실시간 모니터링, 피드백, 의사결정, 비용, 시간절감)",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/66fb7ec7-ac67-4701-9438-dcefa154ceeb.webp"
+    ],
+    "userId": "u1779724550061-df7wb",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "RPA",
+    "definition": "",
+    "mnemonic": "자동화, 워크플로어, PlayBook OCR, BPM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-f846g",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "로보틱스",
+    "definition": "",
+    "mnemonic": "HW, RPA(SW)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-ap8aj",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "디지털 트랜스포메이션",
+    "definition": "",
+    "mnemonic": "전략 조직 프로세스, 가치사슬전반 + 성공전략",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-4pcu7",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "블록체인",
+    "definition": "",
+    "mnemonic": "분산기술 /구조: 블록헤더(버전, 해시, Nonce, 머클루드) + 바디(TXn, 스마트 컨트랙트N) \r\n작업증명(POW, 채굴,보상), 지분증명(POS, 선출, 위임자)\r\n기술요소 : 분산합의 블록승인, 암호화(공개키, 해시, 채굴, 디지털서명, 거래입증)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-u466k",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "블록제인 경량화",
+    "definition": "",
+    "mnemonic": "NW노드 용량(저장) 저하 기술: 라이트 노드(최신헤더만), 트랙젝션 푸루닝(최신 TX만)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-5md2s",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "블록체인 분산저장기술",
+    "definition": "",
+    "mnemonic": "샤딩기술(병렬 여러노드 TX정보 저장), DHT(분산해시테이블), 이레이저 코드( 패리티 추가, 원본복구)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-tg4xa",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "블록체인 트릴레마",
+    "definition": "",
+    "mnemonic": "확장성, 탈중앙화, 보안성 / Trade off // (이슈 라이트노드 푸르닝 기술(탈중앙선 떨어짐) , 샤딩, DHT기술(보안성 취약), 이레이저 코드(복구비용큼)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-0jjpq",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "머클트리",
+    "definition": "",
+    "mnemonic": "이진트리, 거래유효성 검증, 경로, 쇄도효과(거래발생시 머클루트까지 해시변경), SHA-256, 32바이트",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-7bkz8",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "마이닝",
+    "definition": "",
+    "mnemonic": "작업증명(Pow), 블록추가 보상 / 이전블럭 + 거래내역 + nonce(32바이트) > 맞추기",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-hpn9p",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "분산원장기술",
+    "definition": "",
+    "mnemonic": "중앙서버 아닌 분산화된 NW각 노드(참여자)들이 모든 거래목록을 지속적으로 갱신하고 DB공유기술\n분산원장기술(DLT), 분산합의, 블록승인,  PoW, PoS, PBFT\n@유형\npublic (채굴자가 증명, 참여자거래, POW,POS), \nPrivate (중앙기관,참여자거래,PBFT,Paxos,Raft)",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/303da32b-2c2d-46ea-9e90-8ce25ac8852e.webp"
+    ],
+    "userId": "u1779724550061-bfofr",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "합의 알고리즘",
+    "definition": "",
+    "mnemonic": "P2P상 하나진실 도달 합의 알고리즘/ 일관성, 중앙없어도 보안, 이중지불방지, Fork 방지(체인2개)\r\n@PoW,PoS, Dpos(위임지분증명), PBFT(비잔틴 장애허용), PAXOS\r\n@순서 :  PoW -> 51%문제 -> PoS (초기지분자 독점) -> PBFT/Paxos/Raft (리더, 투표)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-ja9w7",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "스마트 컨트랙트",
+    "definition": "",
+    "mnemonic": "자동화거래체결기술, Solidity, Dapp, 마이닝, 전자서명, EVM , Dapp / 활용 : 송금, IP, 권리증명",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-eeqyu",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "스마트 계약원칙",
+    "definition": "",
+    "mnemonic": "관측가능성, 검증가능성, 사생활 보호, 강제가능성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-kkdhy",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Smart Contract Oracle",
+    "definition": "",
+    "mnemonic": "외부, 블록NW 연결(중계자)기술/ (종류) HW, SW inbound, outboud 오라클",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-n5y5w",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "라이트닝 네트워크",
+    "definition": "",
+    "mnemonic": "(문제) 느린거래, 수수료, 확장성 > (해결) BC밖에서 처리하고, 최종결과만 on체인기록 @Layer2 \r\n@즉시거래, 수수료0원, 보안보장, 반복거래 적합(ex: A->B(100, 200, 300 3보냄) -> 총600원 만 기록",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-ullhs",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "STO(Security token offering)",
+    "definition": "",
+    "mnemonic": "토큰 형태 발행 증권/ KYC, AML / 자산을 토큰으로 나눠 소액투자 참여 가능 / 디지털자산 @자본시장\r\n@순서 : 자산등록>토큰설계(?개)>규제검증(KYC/AML)>토큰발행(ERC,FA2)>판매>보관(토큰)>거래(STO거래소, OTC타인 판매)>계약실행(배당,스마트계약) // 오피스건물 100만개 토큰분할\r\n@표준 : 이더리움 ERC-14000,  POS, public, 법(KYC, AML), STO거래소(KODA)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-531u6",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "DID",
+    "definition": "",
+    "mnemonic": "블럭체인기반 신원인증서비스 / DIDs, Auth, DKMS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-1bh9c",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "CBDC",
+    "definition": "",
+    "mnemonic": "중앙은행 명목화폐 / 단일, 분산원장 / KYC(고객확인), 이자지급, 한도설정, 이용시간 설정\r\n발행구조 : 직접, 간접, 혼합형(한국은행-시중은행-국민)\r\n운영방식 : 암호기술(PQC, 다중서명, 영지식증명), 운영관리(이중화, 익명화), 속도(확장성)/ 한강",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-90d9g",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "CBDC 설계고려사항 (관점)",
+    "definition": "",
+    "mnemonic": "아키텍처(토큰vs계정기반, 온오프체인, 상호운영성), \r\n인프라(HA, DR, 클라우드/온프레미스, 블럭체인 여부)\r\n접근성(소외계층, 오프라인 결제, 모바일 지갑, KYC/AML),\r\n보안성(익명,추적성, 위변조 방지, MFA)\r\n개발관점( API, MSA, DevSecOps, 샌드박스, UI/UX) \r\n국가견계(국가간 결재, 법제도근거)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-l2rz1",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "KYC , AML",
+    "definition": "",
+    "mnemonic": "Know your Customer : 고객신원확인(범죄식별),  Anti-Money Laundering(자금세탁 방지)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-opgne",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "DeFi",
+    "definition": "",
+    "mnemonic": "탈중앙화 금융서비스 / 결제,송금,예금 / public 블록체인, Oracle, AML, KYC, 합의알고리즘",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-dz7e0",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "블럭체인",
+    "definition": "",
+    "mnemonic": "개념 : \r\n특징 :",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-0iyzg",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "NFT",
+    "definition": "",
+    "mnemonic": "대체불가능 토큰, ER 721, Mint, NFT Digitize /\r\n@구성도 : Server side ( NFT계약/Mint - 내부/외부저장소) <=> Usr side (생성자,주인) -구매자",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-e87pd",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "스테이블 코인",
+    "definition": "",
+    "mnemonic": "암호화폐 급격 변동 방지 -> 법정화폐, 실물자산 연동보장의 암호화폐 \r\n블럭체인기반 P2P거래, 탈중앙네트워크 사용, 퍼블릭 블록체인 기반(이더리움, 솔리나 등)\r\n@ DeFi, NFT 거래기준 통화역할, 글로벌 송금(수수료0), BTC, ETH교환 기준 통화\r\n@ 미국은 지니어스 법 통과(스테이블 코인 최초 연방 법제화)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-e4pwe",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "트래블 룰",
+    "definition": "",
+    "mnemonic": "가상자산 송수신자 정보 제공 규정/ FATF (2019년 권고)/ 불법 자금세탁 방지, 추적 \r\n@A -> B 거래소 1000달러 송금 (실명,지갑주소 포함), 매핑해 적법성 확인후 거래",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-76b3e",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "DAO",
+    "definition": "",
+    "mnemonic": "탈중앙조직/ DeFI 프로젝트, NFT조직, 오픈소스개발자 / 스마트계약, 토큰, DAO지갑",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-07sbq",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "IEC 61508",
+    "definition": "",
+    "mnemonic": "기능안전 국제표준 / 전기,전자,프로그램 / SIL, HW,SW / 설치운영유지보수,변경 폐기관리\r\n@ISO Guide51(ABC) >기본안전A, 그룹안전B*, 제품표준C(철도62278,원자61513,의료50601)\r\n@part(1~7)일반,EEPE요구,SW요구,용어정의,안전수준방법 사례,적용지침,기술방법개요(일ES용사지개)\r\n@SIL(1~4등급) : 10-2 이상 10-1미만, LowDdmand(-1~5), High(5~9)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-arauf",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "ISO 26262",
+    "definition": "",
+    "mnemonic": "자동차 SW 기능안전 국제표준 || ECU증가, 표준화, IEC61508 한계(자동차 측면)\r\n구성 : 용기구 시하소생 지A가반모",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-rxqg7",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "ASIL",
+    "definition": "",
+    "mnemonic": "차량안전등급(A-D), SEC (Sec + Exposure + Controllablity) /심각도,노출가능,통제가능성,  S0~S3, E0~E4, C0~C3",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-d1q5u",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "ISO 21434",
+    "definition": "",
+    "mnemonic": "차량 사이버보안 국체표준 / 26262(안전) --> 21434(보안) /@TARA(위험평가방법론)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-dmj6a",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "스마트카",
+    "definition": "",
+    "mnemonic": "자율차, RADAR, LIDAR, GPS, 카메라 / V2V, VMC, DSRC /  L2X, CAN, LIN(Local Interconnect Network)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-tsuxe",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "자율주행 위험",
+    "definition": "",
+    "mnemonic": "AI기술 > 인지판단제어 -> 단계(0~5단계)/ 무보부조고완 (무자율,보조,부분자율,조건부자율,고|완전자율)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-50owc",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "RADAR",
+    "definition": "",
+    "mnemonic": "전자기파 기반, CFAR, DBF, 추적알고리즘, 라디오 전파",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-t71gm",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "LIDAR",
+    "definition": "",
+    "mnemonic": "레이저기반/ 소스(LD, 공학계), Optics(렌즈, 거울, 프리즘), Detector(PD)\r\n@종류: TOF, PS, 회전형, 어레이형, 이미징 Lidar",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-bw9yk",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "LIN/CAN",
+    "definition": "",
+    "mnemonic": "Local Interconnect Network / 보조장치, 최대20kbps, 저럼, 실시간성 낮음/ 도어잠금, 좌석위치조절\r\nController Area Network / ECU들간 실시간 데이터 통신프로토콜, 분산NW, 엔진,제동신호전달, 1Mbps /ABS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-60ldj",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "MaaS",
+    "definition": "",
+    "mnemonic": "교통서비스, 수퍼앱, LDT, 간편결제 / Car공유, Ride공유",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-vwxxu",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "SDV",
+    "definition": "",
+    "mnemonic": "SW 재구성 자동차 / OTA, SOTA, FOTA, AutoSar, HMI, AI SW, 자율주행SW, 인공지능SW",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-9x7ko",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "드론",
+    "definition": "",
+    "mnemonic": "무인항공기 /  GPS 재밍/스푸핑, 악성코드감염, 도청, 탈취 / UAV(무인항공기),",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-pk7h1",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "안티드론",
+    "definition": "",
+    "mnemonic": "무력화기술/ 전파포, 전파교란, 파괴, 포획",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-rwnrs",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "SLAM",
+    "definition": "",
+    "mnemonic": "자율중행 센서퓨전 > SLAM(위치인식기술) > 자율주행, 정밀지도구축, 물류자동화\r\n@센서, 카메라, 필터(최적화), 매핑(지도) / Visual SLAM(카메라), LiDAR SLAM(레이저센서)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-u9637",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "UAM",
+    "definition": "",
+    "mnemonic": "미래도시교통체계 / eVTOL, 버티포티, MRO, 6G, 항법/ 멀티로터, 리프트&크루즈, 틸트형",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-qexhx",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "간편결제",
+    "definition": "",
+    "mnemonic": "카드정보 등록후 비밀/지문 결재 / 결재방식(MST, NFC) / (인식)지문,홍채,정맥,FIDO2.0\r\n중요정보저장기술(SE, TEE, HCE), 토큰화기술(Token, 난수발생, FPE(형태보존암호화)\r\n@구성: 사용자, 가맹점, 결재수단, PG사, 결제플랫폼 서버, 인증수단\r\n@흐름: 사용자 핸드폰  <등록>  (결제플랫폼) \r\n          사용자 핸드폰  <토큰>  (가맹점) --> PG사(토큰/승인) --> 결제플랫폼 (등록 정보확인)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-w81iv",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "디지털지갑",
+    "definition": "",
+    "mnemonic": "SE, TEE, HCE, FIDO2.0 / 설치형(쿠팡페이, 배민페이), 위임형(네이버페이, 카카오페이, 삼성페이)\r\n@ MST, NFC기술을 통해 저장된 결제정보를 PG사에 전달 SW",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-7y3vm",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "디지털 권리장전",
+    "definition": "",
+    "mnemonic": "헌장, 자공안디안(자유와 권리보장, 공정기회, 안전신뢰, 디지털혁신, 인류후생증진)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-lfhx5",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "초자동화",
+    "definition": "",
+    "mnemonic": "비정형업무까지 자동화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-j40z2",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "양자정보기술",
+    "definition": "",
+    "mnemonic": "양자통신, 양자컴퓨터, 양자센싱, 양자레이터, Qbit, 양자게이트, QKD, QRANG,",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-jt98a",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "양자특성",
+    "definition": "",
+    "mnemonic": "중첩,얽힘,불확정성,순간이동,복제불가 원리,양자병렬성(초양중복얽병순)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-u4fce",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "- 특징상세",
+    "definition": "",
+    "mnemonic": "중첩(0,1동시존재), 얽힘(거리무과 연결성), 불확정성(다양성 보안), 순간이동(143km순간), \r\n복제불가(선형성 기인 복제어려움), 양자병렬성(병렬성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-w4kzj",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "양자컴퓨터",
+    "definition": "",
+    "mnemonic": "초고속 연산, 큐비트 / 초전도 양자비트, 이온트랩, 실리콘 양자전환, 위상큐비트",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-xinx6",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "- 양자컴퓨팅",
+    "definition": "",
+    "mnemonic": "(구현)초전도(-273도) 루프, 위상, 이온트랩, 다이아몬드 점결합, 양자어닐링\r\n//유전자분석, 기상예측,수치해석\r\n//유형 -> 양자중첩(이온트랩, 과장),  양자얽힘(초전도체, 다이아몬트, 위상양자)\r\n//요소 -> 큐비트, 골리즘, 컴파일러, 오류제어, 관측, 양자중첩, 얽힘, 결맞음, 우월성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-0h3qd",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "- 양자컴퓨터 아키텍처",
+    "definition": "",
+    "mnemonic": "프랫폼, 논리회로, 물리적 시스템 ex) D-Wave",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-rxd2f",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "- 양자연산 알고리즘",
+    "definition": "",
+    "mnemonic": "Shor(공개키), Grover(대칭키)  >> PQC 대응",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-w4w6m",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "- 양자오류 처리 방법",
+    "definition": "",
+    "mnemonic": "양자컴퓨터가 큐비트의 취약성으로 연산중 오류발생에 탐지, 수정의 핵심기술\n- 여러장으로 만들어서 사본공유(확장),  \n- shor코드(1개 큐비트 -> 9개로 나눠저장),   suface 코드(바둑판)\n- 오류완화 : T-Rex, ZNE, PEC / \n- 변수(이산변수, 연산변수) 정정(Trex, PEC, ZNE)\n★양자오류(T1오류 : 상태전환시 오염, T2오류 : 큐비트 시간위상 오염, 누화오류: 인접 큐비트 영향줌)\n★처리방법 : 오류억제, 오류완화, 오류수정\n  - 오류억제(제어펄스 적용, 노이즈 최소화, 양자 피드백 제어, 동적 디커플링)\n  - 오류완화(PEC, 노이즈외삽, ZNE)  - 양자수정(Compiler 최적화, 검출코드 분석)",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/d9bfa97e-69c9-4ea1-9f1a-b4d45c8bc5c8.webp",
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/8191a989-cd7d-4ec3-8491-1d5338386ef3.webp"
+    ],
+    "userId": "u1779724550061-p4lv7",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "양자암호통신",
+    "definition": "",
+    "mnemonic": "최신뢰 보안(포스트양자암호, 내성암호, 양자통신) /(장비)QKD, 양자통신채널, 양자중계기, 양자인증\r\n@송수신기술 :  광원기술, 난수기술(QRNG), 양자암호키구현기술(plug&plug), 양자프로토콜(BBB84,COW04)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-dhdis",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "양자센서",
+    "definition": "",
+    "mnemonic": "초정밀 계측(중력,항법,시간,전기장,자기장,광학) //이미지센서, 초정밀영상,지질탐사",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-50rqq",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "양자인터넷",
+    "definition": "",
+    "mnemonic": "큐비트 정보의 양자 네트워크와 활용서비스 / 양자노드, 양자채널, 양자중계기, 양자수신기",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-5d8o4",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "디지털역기능",
+    "definition": "",
+    "mnemonic": "부작용 통칭/ 포비아 격차 과의존 치매",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-xvoae",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "K-UAM",
+    "definition": "",
+    "mnemonic": "안전, 민간, 단계별 인프라, 산학연합협력강화 / '24실증>'25상용>'30본격",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-qlz3v",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "저지연기술",
+    "definition": "",
+    "mnemonic": "CDN, edge컴퓨팅",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-9hfoe",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "Scaling 기술",
+    "definition": "",
+    "mnemonic": "서버추가, 클리우드 버스팅",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-4adyy",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "DataCenter 연계기술",
+    "definition": "",
+    "mnemonic": "고속광, NW, MPLS, 북제 동기화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-7bjky",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "모바일 신분증",
+    "definition": "",
+    "mnemonic": "운전,국가보훈, 외국인신분증,",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-qg32x",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "게이미피케이션",
+    "definition": "",
+    "mnemonic": "도전, 경쟁, 성취, 보상, 관계",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-zv7fw",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "공간컴퓨팅 (모고)",
+    "definition": "",
+    "mnemonic": "데이터+로직+3D, 기술(XR, IOT, AI) / 몰입, 현실, 입체, 상호작용 / 6DoF, XIA, NLP  공간+참여자+기계\r\n@위치 : GPS, SLAM, 센서융합, RTLS  \r\n@3D공간 : 디지털트윈, 3D좌표  \r\n@상호작용 : AR/XR/VR\r\n@공간분석 : 위치기반, 시뮬레이션 \r\n@연산 : 엣지컴퓨팅, GPS",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-qzrf1",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "기계고객",
+    "definition": "",
+    "mnemonic": "자율구매, 예측유지서비스, 지능형Agent",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-r44if",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "CTEM",
+    "definition": "",
+    "mnemonic": "범발순검이",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-oip4m",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "2024가트너",
+    "definition": "",
+    "mnemonic": "AI TrisM , CTEM, 지속가능기술(푸드테크, 에그리테크, 헬스테크, 그린테크), 플랫폼 엔지니어링, AI증강,\r\n 산업클라우드 플랫폼, 지능형App, 보편화 생성형AI기술, 증강연결되 구조, 기계고객",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-4644t",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "2025가트너",
+    "definition": "",
+    "mnemonic": "에이전트형 AI, AI거버넌스 플랫폼, 허위정보보안, PQC, 엠비언트 인비져블 인텔리젼스, \r\n에너지효율적 컴퓨팅, 하이브리드 컴퓨팅, 공간컴퓨팅, 다기능 로봇, 신경학적 향상",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-zytz2",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "세부기술내용",
+    "definition": "",
+    "mnemonic": "가트너 전략기술 2025 - Google Docs",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-0ig3o",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "- 에이전트형 AI",
+    "definition": "",
+    "mnemonic": "사용자 목표 자동계획하고 실행의 AI 소프트웨어 시스템 / 업무자동화, 일정관리 보고",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-6l41k",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "- 거너넌스 플랫폼",
+    "definition": "",
+    "mnemonic": "AI사용 윤리,법적문제 관리하고 정책시행 시스템//투명성, 책임성 강화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-qp1ch",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "- 허위정보보안",
+    "definition": "",
+    "mnemonic": "가짜뉴스, 딥페이크 정보위협 대응 기술/",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-aw9mj",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "- PQC(포스트 양자암호)",
+    "definition": "",
+    "mnemonic": "양자 컴퓨터의 해독 위험 대응, 데이터 보호기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-32460",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "-ambient inviible 인테리젼스",
+    "definition": "",
+    "mnemonic": "초저가 소형 스마트 테크,센서로 추적 감지 가능 기술/",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550061-hnc43",
+    "createdAt": "2026-05-25T15:55:50.061Z"
+  },
+  {
+    "topic": "- 에너지 효율컴퓨팅",
+    "definition": "",
+    "mnemonic": "AI로 에너지 소비줄이는 컴퓨팅 기술 / 광학, 뉴로모픽, 신규가속기 기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-4heil",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 하이브리드 컴퓨팅",
+    "definition": "",
+    "mnemonic": "복잡계산, 컴퓨팅, 저장, 네트워크 메커니즘 결합한 시스템",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-5vn9i",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 공간컴퓨팅",
+    "definition": "",
+    "mnemonic": "AR, VR기술을 활용 물리세계의 디지털화",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/15d7fc18-9910-4fff-ac47-281b8adfc26c.webp"
+    ],
+    "userId": "u1779724550062-z1wg7",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 다기능 로봇",
+    "definition": "",
+    "mnemonic": "여러가지 기능을 사용하는 로봇 시스템(스마트 로봇)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-1cmh7",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 신경학적 향상",
+    "definition": "",
+    "mnemonic": "뇌 활동을 읽고 해석, 인간 인지능력 향상 기술",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-usnpr",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "가트너 2026",
+    "definition": "",
+    "mnemonic": "(설계자) AI 네이티브 개발 플랫폼 , AI슈퍼컴퓨팅 플랫폼, 기밀컴퓨팅  (디지털 환경 구축, 속도, 보안, 확장)\r\n(통합자) 멀티에이전트 시스템, 도메인 특화언어 모델, 물리적 AI (워크플로어, 제품, 경험 전반 혁신주도)\r\n(선봉장) 선제적 사이버보안, 디지털 출처확인, AI보안 플랫폼, 지오패트리에이션(리스크,신뢰, 소버린 초점)\r\n=> 기술,어떻게 통합할것인지? 결국 보안이 필요한데,, 미리 적극적 (뱅가드)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-5cmuf",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- AI 네이티브 개발플랫폼",
+    "definition": "",
+    "mnemonic": "원샷도국, 바이브 코딩, 원시개발 플랫폼을 하나로 통합(도구)\r\n고용된 M/M -> 사람 + AI 연계(융합)/ CICD, GIT, Docker, K8S, ML파이프라인, CICD파이프라인 자동화\r\n로우,No코드 플랫폼, 품질관리, 유지보수 > 개발자 역할은 목표>설계>품질검수로 전환필요",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-cgje0",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- AI슈퍼컴퓨팅",
+    "definition": "",
+    "mnemonic": "HPC(확장 가능한 AI컴퓨팅 고려)  \r\n(사례) 최적화, 다기능 로봇, 에너지 탐사, 기후시뮬레이션, 신규소재, 신약개발\r\n기초모델, SLM특화모델, AI에이전트 / 하이브리드 오케스트레이션 계층: 자동스케쥴, 런타임API \r\n- 뉴로모픽, 6G, 양자컴퓨팅 기술로 적용, HBM, NPU, CXL",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-hv3t8",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 기밀컴퓨팅",
+    "definition": "",
+    "mnemonic": "기본제어 > 키관리 > 기밀까지 관리의 상태\r\n위로 갈수록, 오버헤드 비용이 증가됨, TEE환경을 통한 정보의 환경 제공\r\nPET기술, TEE관련 기술 (신뢰실행 환경)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-0c8tb",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 멀티agent 시스템",
+    "definition": "",
+    "mnemonic": "멀티벤트 상호운용성 지원 (RAG, 자율먀 에이전트 측면 고려",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-lyftz",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 도메인 특화언어",
+    "definition": "",
+    "mnemonic": "데이터 운영, 머신러닝 운영, 모델, 개발, 배포 / ModelOPs, 백터 데이터베이스, 임베딩(BERT 등)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-hvwln",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 피지컬 AI",
+    "definition": "",
+    "mnemonic": "센서, 엑추레이터, AI모델을 결함하여 판단, 행동으로 하여 물리적인 작업을 자동화\r\n(디지털 트윈, 합성데이터, GAN, VAE, 프라이버시 보호, 피지컬 AI훈련)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-tu1yk",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 선제적 사이버 보안",
+    "definition": "",
+    "mnemonic": "AI를 이용한 공격에 맛선 AI,   공격표면관리, ASM, CTEM, AITRisM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-xk225",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 디지털 출처확인",
+    "definition": "",
+    "mnemonic": "SBOM, 머신러닝 모델 구성 명세서(MLBOM), ,증명 데이터베이스, 워터마킹 도구",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-klxmo",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- AI 보안 플랫폼",
+    "definition": "",
+    "mnemonic": "AISPs, 보안 통제를 통합하는 플랫폼(XAI, OWASP LLM for 10)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-wwc1b",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "- 지오패트리에이션",
+    "definition": "",
+    "mnemonic": "지속가능 기술, 데이터 주권(데이터 레지던시)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-s1x94",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "OWASP top 10 LLM",
+    "definition": "",
+    "mnemonic": "프롬프트 인젝션, 부적절한 출력, 시스템 프롬프트 누출, 훈련데이터 오염, 모델서비스 거부\r\n부제한적 자원소비, 공급망 취약점, 안전못한 Plug in, 고도한 자율성, 허위정보, 모델탈취, 백터취약점\r\n바이브코딩의 한계/역량(토픽에서 확인)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-isirr",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "인더스트리 5.0",
+    "definition": "",
+    "mnemonic": "지속가능성, 회복탄력성, 기계-인간 상호작용/디지털트윈 시뭎레이션, AI, 애자일 정부\r\n4.0 - 5.0차이 :기계끼리 - 인간기계, 무인공장 - 협업로봇, 자동화-맞춤형, 기계중심-AI기반",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-s5bos",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "가상융합산업진흥법",
+    "definition": "",
+    "mnemonic": "메타버스 / 4(자율규제), 6(진흥시책), 10(사업자지원), 19(센터) 26(영향평가), 30(이용자 보호, 생태계조성)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-t9kqp",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "BCI (Brain computer I/F)",
+    "definition": "",
+    "mnemonic": "생각을 사물동작 / 뇌파, 침습형, 비침습형 / 뇌파측정 > 신호처리,특징추출 > 기계제어 명령 >피드백",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-u2fiy",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "데이터 오케스트레이션",
+    "definition": "",
+    "mnemonic": "데이터관리 자동화/ 처리(소스,수집,저장) 관리(품질,거버넌스,모니터링), 연결공통(워크플로 관리)\r\n클라우드 데이터 오케스트레이션 : AWS step Funtions, Azure data factory, GCP",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-y242v",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "재난문자서비스",
+    "definition": "",
+    "mnemonic": "셀 브로드케스팅(기지국 중심 전달), TAC(Tracking Area code, 시군구 세분화)\r\n문자시스템(CBS, CBC, MME) ->4G5G(cNB, gNB) -> 핸드폰(문자)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-xhm8c",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "MLOPS",
+    "definition": "",
+    "mnemonic": "순서: 데이터 수집, 전처리 > 모델학습 > 배포 > 모니터링 >성능분석/재학습 > 메타,재학습\r\n구성: 머신러닝 워크플로어, 신경망 작업 자동화, Low,No code / 관리, CICD, 모니터링",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-hgjv2",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "GovTec",
+    "definition": "",
+    "mnemonic": "정부 + 기술합성어 / (유형) 거버넌스, 아이디어공모, 플랫폼 활용, 문제해결, 혁신연구형",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-em4eo",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "Trusted Web",
+    "definition": "",
+    "mnemonic": "신뢰기반 차세대 웹 생태계/ 구성:  정보출처 인증, 신원검증, 개인보호, 위변조 방지, 투명알고리즘\r\n활용기술 : 분산레지스터, 디지털지갑,서명, 블록체인, DID, 메타데이터, 디지털증명서, AI, XAI\r\n핵심기능 : 분산화, 데이터진본성, 자기주권, 공정성/독립성",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-bzymc",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "Matter",
+    "definition": "",
+    "mnemonic": "개방형 스마트홈 연동 표준/ 연동, 보안, 성능/\r\n 응용(표준), 전송(TCP), NW(IPV6), 데이터링크(Wfi 802.11, Thread 802.15.4, BLE) 물리(지원제품)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-7vilk",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "온디바이스AI(127)",
+    "definition": "",
+    "mnemonic": "스마트기기 자체처리, 개인정보보호, 저전력/저비용, NPU, 엣지TPU, 경량화(ResNet, DeseNet, SqueesNet)\r\n합성곱 필터(MobileNet, ShuffleNet), 자동모델탐색(NEtAdapt, MNasNet), 모델압출(Deep Compression)\r\n시사점 : 엠비언트 컴퓨팅, 스몰데이터 부상\r\n기슬스텍(HW, 런타임, 경량화 기술, 어플리케이션)  \r\n-> NPU, GPU, DSP(Digiatl Signal Processor), 하드웨어 추상화(HAL), \r\n-> 경량화기술(MobileNet, EfficientNet, TinyML모델)\r\n->  지연시간(Latency), 프라이버시/보안 강화, NW의존도 감소, 맞춤형 서비스",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-l3v8g",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "오토 스케일링",
+    "definition": "",
+    "mnemonic": "시스템 자원(CPU,MEM,DISK,NW) 모니터링 > Alert > 스케일정책 > Scale Out>프로비져닝>헬스체크",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-oc5q9",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "촉각인터넷",
+    "definition": "",
+    "mnemonic": "사람의 촉각수준 빠른 인터넷, 6G가상화, 네트워크 슬라이싱/ 저지연, 저궤도, 멀티모달, AI기반통신, \r\n촉각센서, MEC AI처리 기술 / 의료수술, 스마트공자 조작, 자율주행, 원격조장, VRAR 촉감",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-cxunw",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "멀티모달",
+    "definition": "",
+    "mnemonic": "인간중심 기술, 센서, 위치, 자원, 기기간 상호간 통신\n키보드, 마우드, 다양한 입력(Text, 이미지, 오디오, 센서 등)\n시각, 청각, 촉각, 미각, 후각\n I/F (입출력 처리, 세션환경, 상황인지)",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/0a5dffe6-1a27-48cb-8a5e-e081589d925d.webp"
+    ],
+    "userId": "u1779724550062-y6fl0",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "AI 에이전트",
+    "definition": "",
+    "mnemonic": "환경변화인지, 특정목적 대신 수행 / 자율성, 반응성, 목표지향성 /\r\n@유형: 단순반사, 모델기반, 목표기반, 학습형, 추천형 / 활용: AI비서, 의료, 금융, 멀티에이젼트",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-mg3om",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "Agentic AI",
+    "definition": "",
+    "mnemonic": "인간개입 최소화, 목표설정, 자율판단 / 목표지향/ 주변환경과 변화 능동 / 인공지능 시스템",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-x5x01",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "전통적 검색엔진 AI검색엔진",
+    "definition": "",
+    "mnemonic": "저작물 크롤링, 인덱싱하여 제공 검색 / 크롤링 > 색인 > 질의 > 키워드 도출 > 비교회신\r\n질의에 맥락, 의도 확인 > RAG > 검색결과 확인  / 추론 맥락확인",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-5nhu3",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "RWA (Real World Asset)",
+    "definition": "",
+    "mnemonic": "실물연계자산(부동산, 미술품) 디지털화/ 분산원장, 분할소유 / POS, POA, KYC, AML, DeFi, 스마트계약\r\n@NFT : 디지털자산의 가치화  @STO : 금융자산",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-8pt1i",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "Overlay Network",
+    "definition": "",
+    "mnemonic": "데이터센터 가상화 기술, SDN기반 기술 / VLAN, GRE, VxLAN / Overlay Network --> Underlay Network",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-v9tmz",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "HCI",
+    "definition": "",
+    "mnemonic": "HW간(X86 스토리지, 서버) SDI활용 가상화 기술 /(개념도) APP - 가상화(VM) - x86(SSD) / SDI, SDDC",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-x2ws2",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "데이터 패브릭",
+    "definition": "",
+    "mnemonic": "저장위치 상관없이, 적시에 접근지원의 통합플랫폼/ 데이터거버넌스, 통합저장,가상화\r\n증강 데이터 카탈로그, 지식 그래프, 메타데이터 활성화/ DataOps",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-0fhf2",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "데이터 레이크",
+    "definition": "",
+    "mnemonic": "모든 정형,비정형 중앙집중식 저장소",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-hci4k",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "공공 SaaS 이용가이드라인",
+    "definition": "",
+    "mnemonic": "이용기획>이용계약준비>이용계약>이용>종료 / \r\n간소화(ISP제외, 산정기간 생략, 과심의 간소화, 사전협의 제외",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-2km8w",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "무선충전기술",
+    "definition": "",
+    "mnemonic": "근거리(자기유도, 자기공명), 장거리(전자기파)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-aibda",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "플랫폼 엔지니어링",
+    "definition": "",
+    "mnemonic": "SW개발 생산성 향상, 효율적 운영 인프라, 도구 관리 엔지니어링 / XaaS, 재사용, 지식규칙 / 조직, 인프라@인프라(클라우드, 온프레미스) / 플랫폼 팀 (CD재사용, Tools, 규칙) / 조직(XaaS, 품질팀, 운영팀)\r\n// 플랫폼E / 데브옵스 :  전사/개발운영팀, 개발집중/개발자가 학습배포",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-zsxlt",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "제로클릭 콘텐츠",
+    "definition": "",
+    "mnemonic": "페이지 클릭없이 정보 확인기술/ 검색요약답변, 연관질문, AI요약, 정보확인 / @유형\r\n최적화",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-zgdov",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "AAM",
+    "definition": "",
+    "mnemonic": "Advanced Air Mobility/ UAM -> AAM",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-gcx6r",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "PPP(Public Pirvate Partnership)",
+    "definition": "",
+    "mnemonic": "공공민간이 공동으로 인프라 활용 민관협력형 클라우드/배경: DPG, AI산업육성, 재정효율, 글로벌대응\r\n확산 우려와 고려사항 : 보안주권, 의존성(Lock-in), 규제, 서비스품질 / 보안, 표준, 거버넌스, TCO, 중소\r\n - LandZone(IAM, SRM, SLA, SLO,  LaC, 클라우드 서비스, 핵심보안 N2SF(CSO)\r\n국내 : 대구PPP존에(삼성, 네이버입주) , LLM모델, SaaS(CSAP, 상)통과하여 디지털서비스 확대 \r\n외국 : EU(GAIA-X), 미국(FedRAMP), 중국(알리바바, 화웨이 주도), 일본(Gov-Cloud)추진",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-nmgq3",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "휴머노이드 로봇",
+    "definition": "",
+    "mnemonic": "(개념)사람의 유형을 유사한 구조를 가지며, 인간처럼 움직이고 상호작용을 하도록 하는 AI기반 자율로봇\r\n(기술)센싱:시작,청각,자이로센선 AI:AI반도체, 컴퓨터비전, SLAM, 대화형로봇  /엑추에이션: 전기모터, 인공",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-zwfzk",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "HDMAP",
+    "definition": "",
+    "mnemonic": "구글의 반출신청으로 이슈(심의 보류)\r\nHigh Definition Map, 도로주변 지형정보 정교화(10~20cm) 식별, 신뢰성 높은 지도, 10배(기존), 3D속성정보\r\n(필요성) 안전성, 시대성, 사업성/ (구성)Basic Map > Planned  / and Forecast > Traffic 정보 > 종합정보 추가\r\n(처리) Raw data 수집> 정합/보정 > 맵생성 > 자동검수",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-5gvj0",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "통합 에이전트 시스템",
+    "definition": "",
+    "mnemonic": "AI 오케스트레이션(Agentic AI시스템) , AI챗봇 -> AI Agent -> AI 오케스트레이션 \n표준화된 프로토콜 필요 / (유형) 중앙집중형, 계층형, 적응형, 자발적",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/a5c2a522-b689-481d-8edc-1d5c1bd136d2.webp"
+    ],
+    "userId": "u1779724550062-6k9or",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "클라우드 중립적 구조",
+    "definition": "",
+    "mnemonic": "Cloude Agnostic , CSP에 종속되지 않고, 코드수정없이 여러 클라우드 제공업체(CSP) 자유롭게 배포방식\r\n(필요성) 벤더 락인방지, 기술주권확보, 멀티클라우드, 하이브리드 전략실현, 비용최적화, 협상력 강화, 지역별 규정 준수 및 데이터 주권",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-2jub1",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "소버린 AI 필요성/기대효과",
+    "definition": "",
+    "mnemonic": "(필요성) 국가안보, 전략적 자율성 확보, 데이터 주권, 정보보안 강화, 언어문화적 특성반영, 사회문제 해결\r\n(기대효과) 비용효율성, 경제적 기회창출, 글로벌 기술 경쟁력 확보",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-9x2l9",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "AI 슈퍼앱",
+    "definition": "",
+    "mnemonic": "(개념) 다양한 서비스를 하나의 플랫폼에 통합하고 LLM, AI 에이젼트 기술 활용하여 사용자 의도맥락을 이해하고 지능적으로 맞춤형 서비스를 제공하는 통합 플랫폼 \n(로드맵) AI기능 도입 > AI 생태계 확장 > 구현 > 거버넌스 \n(사례) 카카오톡(OpenAI GPT적용), 위쳇(Wechat), \nGrab(AI기반 경로추천, 음식추천), \nAlipay(중국) 결제, 금융",
+    "keyword": "",
+    "extra": "",
+    "images": [
+      "https://pub-b64cc3b14f9540f89a46f708c2c9322d.r2.dev/images/1a30cff1-21c5-45ed-bbfb-67557b075646.webp"
+    ],
+    "userId": "u1779724550062-wk1il",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "예지정비 + 피지컬AI",
+    "definition": "",
+    "mnemonic": "(예지정비) 설비의 노후 잔여수명, 상태 분석, 최소화, 유지보수 체계 구축 // 효과 가용성, 비용절감\r\n(구현방법+피지컬AI) 다중센터 기반 데이터 수집, , 엣지,사용자 디바이스 AI측면, MLOps, AIOps 파이프라인",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-fkn0r",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "스마트 글래스",
+    "definition": "",
+    "mnemonic": "디스플래이(MicroLED, OLEDoS) 광학계, 공간(6DoF, SLAM), 센서(IMU, ToF), 통신(wifi, BLE, 5G), 베터리\r\nMata(Ray BAN), MS(HoloLens 2) 구글(Enterprise Edition Glasses), 애플(비전 프로), 삼성(XR 디바이스)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-vteqk",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  },
+  {
+    "topic": "러닝라이트(Learnright)",
+    "definition": "",
+    "mnemonic": "- 인공지능(AI)의 대량데이터 학습에 따른 창작자의 권리를 보호하고 정당한 보상을 보장하기 위해 제안된 새로운 개념의 지식재산권(IP)",
+    "keyword": "",
+    "extra": "",
+    "userId": "u1779724550062-b8f2j",
+    "createdAt": "2026-05-25T15:55:50.062Z"
+  }
+]

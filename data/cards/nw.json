@@ -1,57 +1,75 @@
 [
   {
     "topic": "전송부호화",
-    "definition": "",
+    "definition": "데이터 전송 효율성 및 신뢰성 확보 위해, 디지털 신호 변환 및 오류 제어하는 기법",
     "mnemonic": "아날로그->디지털화, 소채라, 소스(중복제거), 채널(오류정정), 라인(신호변환)",
     "keyword": "",
     "extra": "",
     "userId": "u1779705805751-1dvsn",
-    "createdAt": "2026-05-25T10:43:25.751Z"
+    "createdAt": "2026-05-25T10:43:25.751Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-27T03:11:04.485Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "PCM",
-    "definition": "",
+    "definition": "아날로그 신호 디지털 변환 위해, 표본화, 양자화, 부호화 과정을 거친 변조 방식",
     "mnemonic": "아날로그> 디지털신호 변조, 표양부, 재복재, 나이퀘스트 샘플링\r\n표본화, 양자화, 부호화, 재복재(수신즉 디지털-> 아날로그 복원)",
     "keyword": "",
     "extra": "",
     "userId": "u1779705805752-3fin4",
-    "createdAt": "2026-05-25T10:43:25.752Z"
+    "createdAt": "2026-05-25T10:43:25.752Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-27T03:11:08.787Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "나이퀘스트 샘플링",
-    "definition": "",
+    "definition": "아날로그 신호 복원 위해, 최고 주파수 2배 이상으로 샘플링하는 기법",
     "mnemonic": "원래의 아날로그 신호를 손실 없이 재구성하려면 신호 대역폭의 2배 이상으로 표본화해야 함\r\n음성(대역폭 4kHz) → 최소 8kHz로 샘플링 필요",
     "keyword": "",
     "extra": "",
     "userId": "u1779705805752-r4drc",
-    "createdAt": "2026-05-25T10:43:25.752Z"
+    "createdAt": "2026-05-25T10:43:25.752Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-27T03:11:14.088Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "변조",
-    "definition": "",
+    "definition": "데이터 무결성 훼손 위해, 정보나 시스템을 무단 변경하는 행위",
     "mnemonic": "신호전송의 적합한 형태로 변환 / 아날로그변조(AM, FM,PM) / 디지털변조(ASK,FSK,PSK,QAM)\r\n펄스변조(PCM, PAM, PPM, PDM)  @DD:Baseband /AD:PCM /AA:아날로그 변조/DD 디지털변조",
     "keyword": "",
     "extra": "",
     "userId": "u1779705805752-encb6",
-    "createdAt": "2026-05-25T10:43:25.752Z"
+    "createdAt": "2026-05-25T10:43:25.752Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-27T03:11:18.601Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "Ad-hoc Network",
-    "definition": "",
+    "definition": "임시적 통신 위해, 인프라 없이 자율 구성되는 무선 네트워크",
     "mnemonic": "이동호스트 통신망, 단기간, 저전략, 라우팅기술 / 분류: Proactive(table driven, DSDV), Reactive(on-demend, AODV, DSR) , Hybrid(혼합, ZRP)  // 활용 : 재난, 전쟁, IoT, VANET 등\r\n@프로디 리아 하저릅 Proactive: DSDV, Reactive: AODV, DSR, Hybrid: ZRP",
     "keyword": "",
     "extra": "",
     "userId": "u1779705805752-7a4s2",
-    "createdAt": "2026-05-25T10:43:25.752Z"
+    "createdAt": "2026-05-25T10:43:25.752Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-27T03:11:22.779Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "캡슐화/역캡슐화",
-    "definition": "",
+    "definition": "데이터 전송 효율성 위해, 계층별 헤더/트레일러 추가 및 제거한 데이터 처리 방식",
     "mnemonic": "프로토콜 데이터 유니트(PDU, Protocol Data Unit), (캡슐화)상위 데이터앞 헤더추가/(역캠슐화) 제거 \r\nPDU : 계층별 데이터 단위,  메시지 → 세그먼트 → 패킷 → 프레임 → 비트 \r\n@PDU => APP|MSG, 전송 | 세그먼트(TCP), 데이터그램(UDP),  NW|패킷(IP) , 데이터링크(Frame), 물리(bit)",
     "keyword": "",
     "extra": "",
     "userId": "u1779705805752-1uhnx",
-    "createdAt": "2026-05-25T10:43:25.752Z"
+    "createdAt": "2026-05-25T10:43:25.752Z",
+    "source": "ai",
+    "aiGeneratedAt": "2026-05-27T03:11:27.836Z",
+    "aiConfidence": "high"
   },
   {
     "topic": "패킷단편화",
